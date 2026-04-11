@@ -27,10 +27,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule? Schedule { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch? Schedule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule Schedule { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch Schedule { get; set; }
 #endif
         /// <summary>The schedule_type property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule_type? ScheduleType { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "failure_issue_threshold", n => { FailureIssueThreshold = n.GetIntValue(); } },
                 { "max_runtime", n => { MaxRuntime = n.GetIntValue(); } },
                 { "recovery_threshold", n => { RecoveryThreshold = n.GetIntValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule>(global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>(global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "schedule_type", n => { ScheduleType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule_type>(); } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
             };
@@ -89,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("failure_issue_threshold", FailureIssueThreshold);
             writer.WriteIntValue("max_runtime", MaxRuntime);
             writer.WriteIntValue("recovery_threshold", RecoveryThreshold);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>("schedule", Schedule);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Monitor_for_a_Project_200_config_schedule_type>("schedule_type", ScheduleType);
             writer.WriteStringValue("timezone", Timezone);
             writer.WriteAdditionalData(AdditionalData);

@@ -15,10 +15,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The active property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.List_a_Project_s_Data_Filters_200_active? Active { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch? Active { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.List_a_Project_s_Data_Filters_200_active Active { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch Active { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "active", n => { Active = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.List_a_Project_s_Data_Filters_200_active>(global::Soenneker.Sentry.OpenApiClient.Models.List_a_Project_s_Data_Filters_200_active.CreateFromDiscriminatorValue); } },
+                { "active", n => { Active = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>(global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.List_a_Project_s_Data_Filters_200_active>("active", Active);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>("active", Active);
             writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }

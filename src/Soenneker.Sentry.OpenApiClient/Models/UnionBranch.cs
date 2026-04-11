@@ -9,7 +9,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Fetch_Alerts_200_triggers_actions : IAdditionalDataHolder, IParsable
+    public partial class UnionBranch : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -23,21 +23,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Value { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Fetch_Alerts_200_triggers_actions"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch"/> and sets the default values.
         /// </summary>
-        public Fetch_Alerts_200_triggers_actions()
+        public UnionBranch()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Fetch_Alerts_200_triggers_actions"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.Fetch_Alerts_200_triggers_actions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.Fetch_Alerts_200_triggers_actions();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -15,20 +15,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_actions? Actions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch? Actions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_actions Actions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_conditions? Conditions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch? Conditions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_conditions Conditions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch Conditions { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,8 +79,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_actions>(global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_actions.CreateFromDiscriminatorValue); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_conditions>(global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_conditions.CreateFromDiscriminatorValue); } },
+                { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>(global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>(global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "logicType", n => { LogicType = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
@@ -93,8 +93,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_actions>("actions", Actions);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Mutate_an_Organization_s_Alerts_200_actionFilters_conditions>("conditions", Conditions);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UnionBranch>("conditions", Conditions);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("logicType", LogicType);
             writer.WriteStringValue("organizationId", OrganizationId);
