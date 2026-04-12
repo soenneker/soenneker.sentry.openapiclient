@@ -36,20 +36,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Own
         /// <summary>
         /// Retrieves test suites belonging to a repository&apos;s test results.It accepts a list of test suites as a query parameter to specify individual test suites.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_test_suites_belonging_to_a_repository_s_test_results_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTestSuitesBelongingToARepositorySTestResults200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_test_suites_belonging_to_a_repository_s_test_results_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Owner.Item.Repository.Item.TestSuites.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTestSuitesBelongingToARepositorySTestResults200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Owner.Item.Repository.Item.TestSuites.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_test_suites_belonging_to_a_repository_s_test_results_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Owner.Item.Repository.Item.TestSuites.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTestSuitesBelongingToARepositorySTestResults200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Owner.Item.Repository.Item.TestSuites.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_test_suites_belonging_to_a_repository_s_test_results_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_test_suites_belonging_to_a_repository_s_test_results_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTestSuitesBelongingToARepositorySTestResults200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTestSuitesBelongingToARepositorySTestResults200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves test suites belonging to a repository&apos;s test results.It accepts a list of test suites as a query parameter to specify individual test suites.

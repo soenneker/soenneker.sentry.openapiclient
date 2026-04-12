@@ -36,20 +36,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Own
         /// <summary>
         /// Regenerates a repository upload token and returns the new token.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Regenerates_a_repository_upload_token_and_returns_the_new_token_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RegeneratesARepositoryUploadTokenAndReturnsTheNewToken200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Regenerates_a_repository_upload_token_and_returns_the_new_token_200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RegeneratesARepositoryUploadTokenAndReturnsTheNewToken200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Regenerates_a_repository_upload_token_and_returns_the_new_token_200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RegeneratesARepositoryUploadTokenAndReturnsTheNewToken200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Regenerates_a_repository_upload_token_and_returns_the_new_token_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Regenerates_a_repository_upload_token_and_returns_the_new_token_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RegeneratesARepositoryUploadTokenAndReturnsTheNewToken200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RegeneratesARepositoryUploadTokenAndReturnsTheNewToken200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Regenerates a repository upload token and returns the new token.

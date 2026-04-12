@@ -53,40 +53,40 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AlertRules.
         /// <summary>
         /// ## Deprecated🚧 Use [Fetch a Monitor](/api/monitors/fetch-a-monitor) and [Fetch an Alert](/api/monitors/fetch-an-alert) instead.Return details on an individual metric alert rule.A metric alert rule is a configuration that defines the conditions for triggering an alert.It specifies the metric type, function, time interval, and thresholdvalues that determine when an alert should be triggered. Metric alert rules are used to monitorand notify you when certain metrics, like error count, latency, or failure rate, cross apredefined threshold. These rules help you proactively identify and address issues in yourproject.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Retrieve_a_Metric_Alert_Rule_for_an_Organization_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDRetrieveAMetricAlertRuleForAnOrganization200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Retrieve_a_Metric_Alert_Rule_for_an_Organization_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDRetrieveAMetricAlertRuleForAnOrganization200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Retrieve_a_Metric_Alert_Rule_for_an_Organization_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDRetrieveAMetricAlertRuleForAnOrganization200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Retrieve_a_Metric_Alert_Rule_for_an_Organization_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Retrieve_a_Metric_Alert_Rule_for_an_Organization_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDRetrieveAMetricAlertRuleForAnOrganization200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDRetrieveAMetricAlertRuleForAnOrganization200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;## Deprecated🚧 Use [Update a Monitor by ID](/api/monitors/update-a-monitor-by-id) and [Update an Alert by ID](/api/monitors/update-an-alert-by-id) instead.Updates a metric alert rule. See **Metric Alert Rule Types** under[Create a Metric Alert Rule for an Organization](/api/alerts/create-a-metric-alert-rule-for-an-organization/#metric-alert-rule-types)to see valid request body configurations for different types of metric alert rule types.&gt; Warning: Calling this endpoint fully overwrites the specified metric alert.A metric alert rule is a configuration that defines the conditions for triggering an alert.It specifies the metric type, function, time interval, and thresholdvalues that determine when an alert should be triggered. Metric alert rules are used to monitorand notify you when certain metrics, like error count, latency, or failure rate, cross apredefined threshold. These rules help you proactively identify and address issues in yourproject.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule_200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule_200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// ## Deprecated 🚧 Use [Delete a Monitor](/api/monitors/delete-a-monitor) and [Delete an Alert](/api/monitors/delete-an-alert) instead. Delete a specific metric alert rule. A metric alert rule is a configuration that defines the conditions for triggering an alert. It specifies the metric type, function, time interval, and threshold values that determine when an alert should be triggered. Metric alert rules are used to monitor and notify you when certain metrics, like error count, latency, or failure rate, cross a predefined threshold. These rules help you proactively identify and address issues in your project.
@@ -134,11 +134,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AlertRules.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Update_a_Metric_Alert_Rule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDUpdateAMetricAlertRule body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

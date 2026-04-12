@@ -36,41 +36,41 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules
         /// <summary>
         /// &quot;## Deprecated🚧 Use [Fetch an Organization&apos;s Monitors](/api/monitors/fetch-an-organizations-monitors) and [Fetch Alerts](/api/monitors/fetch-alerts) instead.Return a list of active issue alert rules bound to a project.An issue alert rule triggers whenever a new event is received for any issue in a project that matches the specified alert conditions. These conditions can include a resolved issue re-appearing or an issue affecting many users. Alert conditions have three parts:- Triggers: specify what type of activity you&apos;d like monitored or when an alert should be triggered.- Filters: help control noise by triggering an alert only if the issue matches the specified criteria.- Actions: specify what should happen when the trigger conditions are met and the filters match.&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_List_a_Project_s_Issue_Alert_Rules_200&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDListAProjectSIssueAlertRules200&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_List_a_Project_s_Issue_Alert_Rules_200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDListAProjectSIssueAlertRules200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_List_a_Project_s_Issue_Alert_Rules_200>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDListAProjectSIssueAlertRules200>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_List_a_Project_s_Issue_Alert_Rules_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_List_a_Project_s_Issue_Alert_Rules_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDListAProjectSIssueAlertRules200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDListAProjectSIssueAlertRules200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;## Deprecated🚧 Use [Create a Monitor for a Project](/api/monitors/create-a-monitor-for-a-project) and [Create an Alert for an Organization](/api/monitors/create-an-alert-for-an-organization) instead.Create a new issue alert rule for the given project.An issue alert rule triggers whenever a new event is received for any issue in a project that matches the specified alert conditions. These conditions can include a resolved issue re-appearing or an issue affecting many users. Alert conditions have three parts:- Triggers: specify what type of activity you&apos;d like monitored or when an alert should be triggered.- Filters: help control noise by triggering an alert only if the issue matches the specified criteria.- Actions: specify what should happen when the trigger conditions are met and the filters match.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project_201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project_201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project_201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project_201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;## Deprecated🚧 Use [Fetch an Organization&apos;s Monitors](/api/monitors/fetch-an-organizations-monitors) and [Fetch Alerts](/api/monitors/fetch-alerts) instead.Return a list of active issue alert rules bound to a project.An issue alert rule triggers whenever a new event is received for any issue in a project that matches the specified alert conditions. These conditions can include a resolved issue re-appearing or an issue affecting many users. Alert conditions have three parts:- Triggers: specify what type of activity you&apos;d like monitored or when an alert should be triggered.- Filters: help control noise by triggering an alert only if the issue matches the specified criteria.- Actions: specify what should happen when the trigger conditions are met and the filters match.&quot;
@@ -99,11 +99,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATED_Create_an_Issue_Alert_Rule_for_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DEPRECATEDCreateAnIssueAlertRuleForAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

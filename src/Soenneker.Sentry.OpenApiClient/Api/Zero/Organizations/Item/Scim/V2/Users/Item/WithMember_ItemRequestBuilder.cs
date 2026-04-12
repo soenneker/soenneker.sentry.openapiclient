@@ -53,20 +53,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Use
         /// <summary>
         /// Query an individual organization member with a SCIM User GET Request.- The `name` object will contain fields `firstName` and `lastName` with the values of `N/A`.Sentry&apos;s SCIM API does not currently support these fields but returns them for compatibility purposes.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Query_an_Individual_Organization_Member_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.QueryAnIndividualOrganizationMember200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Query_an_Individual_Organization_Member_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryAnIndividualOrganizationMember200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Query_an_Individual_Organization_Member_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryAnIndividualOrganizationMember200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Query_an_Individual_Organization_Member_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Query_an_Individual_Organization_Member_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.QueryAnIndividualOrganizationMember200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.QueryAnIndividualOrganizationMember200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an organization member&apos;s attributes with a SCIM PATCH Request.
@@ -77,11 +77,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Use
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users.Item.WithMember_PatchResponse?> PatchAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_an_Organization_Member_s_Attributes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users.Item.WithMember_PatchResponse?> PatchAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationMemberSAttributes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users.Item.WithMember_PatchResponse> PatchAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_an_Organization_Member_s_Attributes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users.Item.WithMember_PatchResponse> PatchAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationMemberSAttributes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -134,11 +134,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Use
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_an_Organization_Member_s_Attributes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationMemberSAttributes body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_an_Organization_Member_s_Attributes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationMemberSAttributes body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

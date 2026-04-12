@@ -36,20 +36,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Seer.ModelsRequests
         /// <summary>
         /// Get list of actively used LLM model names from Seer.Returns the list of AI models that are currently used in production in Seer.This endpoint does not require authentication and can be used to discover which models Seer uses.Requests to this endpoint should use the region-specific domaineg. `us.sentry.io` or `de.sentry.io`
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.List_Seer_AI_Models_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListSeerAIModels200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.List_Seer_AI_Models_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListSeerAIModels200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.List_Seer_AI_Models_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListSeerAIModels200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.List_Seer_AI_Models_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.List_Seer_AI_Models_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListSeerAIModels200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListSeerAIModels200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get list of actively used LLM model names from Seer.Returns the list of AI models that are currently used in production in Seer.This endpoint does not require authentication and can be used to discover which models Seer uses.Requests to this endpoint should use the region-specific domaineg. `us.sentry.io` or `de.sentry.io`

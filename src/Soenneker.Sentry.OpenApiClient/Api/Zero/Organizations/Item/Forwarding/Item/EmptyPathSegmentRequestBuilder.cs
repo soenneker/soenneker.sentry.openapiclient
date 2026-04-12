@@ -53,22 +53,22 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
         /// <summary>
         /// &quot;Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization_200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization_200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a data forwarder for an organization. All project-specific overrides will be deleted as well.
@@ -97,11 +97,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Data_Forwarder_for_an_Organization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateADataForwarderForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

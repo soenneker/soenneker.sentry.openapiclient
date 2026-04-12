@@ -36,20 +36,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// <summary>
         /// &quot;Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Size_Analysis_results_for_a_given_artifact_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSizeAnalysisResultsForAGivenArtifact200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Size_Analysis_results_for_a_given_artifact_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.SizeAnalysis.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSizeAnalysisResultsForAGivenArtifact200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.SizeAnalysis.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Size_Analysis_results_for_a_given_artifact_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.SizeAnalysis.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSizeAnalysisResultsForAGivenArtifact200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.SizeAnalysis.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Size_Analysis_results_for_a_given_artifact_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Size_Analysis_results_for_a_given_artifact_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSizeAnalysisResultsForAGivenArtifact200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSizeAnalysisResultsForAGivenArtifact200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.&quot;

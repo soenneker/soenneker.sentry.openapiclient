@@ -53,61 +53,61 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
         /// <summary>
         /// List custom symbol sources configured for a project.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Add a custom symbol source to a project.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project_201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject201"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project_201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project_201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project_201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project_201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a custom symbol source in a project.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source_200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source_200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a custom symbol source from a project.
@@ -155,11 +155,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Add_a_Symbol_Source_to_a_Project body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.AddASymbolSourceToAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -177,11 +177,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.Update_a_Project_s_Symbol_Source body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAProjectSSymbolSource body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -252,68 +252,68 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
 #endif
         }
         /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4"/>
+        /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4"/>
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Retrieve_a_Project_s_Symbol_Sources_200 : IComposedTypeWrapper, IParsable
+        public partial class RetrieveAProjectSSymbolSources200 : IComposedTypeWrapper, IParsable
         {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1? RetrieveAProjectSSymbolSources200Member1 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1? RetrieveAProjectSSymbolSources200Member1 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1 RetrieveAProjectSSymbolSources200Member1 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1 RetrieveAProjectSSymbolSources200Member1 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2? RetrieveAProjectSSymbolSources200Member2 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2? RetrieveAProjectSSymbolSources200Member2 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2 RetrieveAProjectSSymbolSources200Member2 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2 RetrieveAProjectSSymbolSources200Member2 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3? RetrieveAProjectSSymbolSources200Member3 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3? RetrieveAProjectSSymbolSources200Member3 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3 RetrieveAProjectSSymbolSources200Member3 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3 RetrieveAProjectSSymbolSources200Member3 { get; set; }
 #endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4"/></summary>
+            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4? RetrieveAProjectSSymbolSources200Member4 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4? RetrieveAProjectSSymbolSources200Member4 { get; set; }
 #nullable restore
 #else
-            public global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4 RetrieveAProjectSSymbolSources200Member4 { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4 RetrieveAProjectSSymbolSources200Member4 { get; set; }
 #endif
             /// <summary>
             /// Creates a new instance of the appropriate class based on discriminator value
             /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200"/></returns>
+            /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200"/></returns>
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200 CreateFromDiscriminatorValue(IParseNode parseNode)
+            public static global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200 CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.Retrieve_a_Project_s_Symbol_Sources_200();
+                var result = new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources.EmptyPathSegmentRequestBuilder.RetrieveAProjectSSymbolSources200();
                 if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.RetrieveAProjectSSymbolSources200Member1 = new global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1();
+                    result.RetrieveAProjectSSymbolSources200Member1 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.RetrieveAProjectSSymbolSources200Member2 = new global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2();
+                    result.RetrieveAProjectSSymbolSources200Member2 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.RetrieveAProjectSSymbolSources200Member3 = new global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3();
+                    result.RetrieveAProjectSSymbolSources200Member3 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3();
                 }
                 else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
                 {
-                    result.RetrieveAProjectSSymbolSources200Member4 = new global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4();
+                    result.RetrieveAProjectSSymbolSources200Member4 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4();
                 }
                 return result;
             }
@@ -350,19 +350,19 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(RetrieveAProjectSSymbolSources200Member1 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member1>(null, RetrieveAProjectSSymbolSources200Member1);
+                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member1>(null, RetrieveAProjectSSymbolSources200Member1);
                 }
                 else if(RetrieveAProjectSSymbolSources200Member2 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member2>(null, RetrieveAProjectSSymbolSources200Member2);
+                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member2>(null, RetrieveAProjectSSymbolSources200Member2);
                 }
                 else if(RetrieveAProjectSSymbolSources200Member3 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member3>(null, RetrieveAProjectSSymbolSources200Member3);
+                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member3>(null, RetrieveAProjectSSymbolSources200Member3);
                 }
                 else if(RetrieveAProjectSSymbolSources200Member4 != null)
                 {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_a_Project_s_Symbol_Sources_200Member4>(null, RetrieveAProjectSSymbolSources200Member4);
+                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProjectSSymbolSources200Member4>(null, RetrieveAProjectSSymbolSources200Member4);
                 }
             }
         }

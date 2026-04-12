@@ -36,38 +36,38 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Prevent.Own
         /// <summary>
         /// Gets syncing status for repositories for an integrated organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Gets_syncing_status_for_repositories_for_an_integrated_org_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetsSyncingStatusForRepositoriesForAnIntegratedOrg200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Gets_syncing_status_for_repositories_for_an_integrated_org_200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetsSyncingStatusForRepositoriesForAnIntegratedOrg200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Gets_syncing_status_for_repositories_for_an_integrated_org_200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetsSyncingStatusForRepositoriesForAnIntegratedOrg200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Gets_syncing_status_for_repositories_for_an_integrated_org_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Gets_syncing_status_for_repositories_for_an_integrated_org_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetsSyncingStatusForRepositoriesForAnIntegratedOrg200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetsSyncingStatusForRepositoriesForAnIntegratedOrg200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Syncs repositories for an integrated organization with GitHub.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Syncs_repositories_from_an_integrated_org_with_GitHub_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.SyncsRepositoriesFromAnIntegratedOrgWithGitHub200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Syncs_repositories_from_an_integrated_org_with_GitHub_200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.SyncsRepositoriesFromAnIntegratedOrgWithGitHub200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Syncs_repositories_from_an_integrated_org_with_GitHub_200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.SyncsRepositoriesFromAnIntegratedOrgWithGitHub200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Syncs_repositories_from_an_integrated_org_with_GitHub_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Syncs_repositories_from_an_integrated_org_with_GitHub_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.SyncsRepositoriesFromAnIntegratedOrgWithGitHub200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.SyncsRepositoriesFromAnIntegratedOrgWithGitHub200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Gets syncing status for repositories for an integrated organization.

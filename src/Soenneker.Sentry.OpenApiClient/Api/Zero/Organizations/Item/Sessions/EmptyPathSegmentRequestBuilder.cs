@@ -36,20 +36,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
         /// <summary>
         /// Returns a time series of release health session statistics for projects bound to an organization.The interval and date range are subject to certain restrictions and rounding rules.The date range is rounded to align with the interval, and is rounded to at least onehour. The interval can at most be one day and at least one hour currently. It has to cleanlydivide one day, for rounding reasons.Because of technical limitations, this endpoint returnsat most 10000 data points. For example, if you select a 90 day window grouped by releases,you will see at most `floor(10k / (90 + 1)) = 109` releases. To get more results, reduce the`statsPeriod`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Release_Health_Session_Statistics_200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Release_Health_Session_Statistics_200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Release_Health_Session_Statistics_200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Release_Health_Session_Statistics_200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.Retrieve_Release_Health_Session_Statistics_200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a time series of release health session statistics for projects bound to an organization.The interval and date range are subject to certain restrictions and rounding rules.The date range is rounded to align with the interval, and is rounded to at least onehour. The interval can at most be one day and at least one hour currently. It has to cleanlydivide one day, for rounding reasons.Because of technical limitations, this endpoint returnsat most 10000 data points. For example, if you select a 90 day window grouped by releases,you will see at most `floor(10k / (90 + 1)) = 109` releases. To get more results, reduce the`statsPeriod`.
