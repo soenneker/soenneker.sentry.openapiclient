@@ -28816,7 +28816,188 @@
             "type": "string"
           },
           "createdBy": {
-            "$ref": "#/components/schemas/DashboardDetailsModelCreatedBy"
+            "required": [
+              "avatarUrl",
+              "dateJoined",
+              "email",
+              "emails",
+              "experiments",
+              "has2fa",
+              "hasPasswordAuth",
+              "id",
+              "isActive",
+              "isManaged",
+              "isStaff",
+              "isSuperuser",
+              "lastActive",
+              "lastLogin",
+              "name",
+              "username"
+            ],
+            "type": "object",
+            "properties": {
+              "identities": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "dateSynced",
+                    "dateVerified",
+                    "id",
+                    "name",
+                    "organization",
+                    "provider"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "organization": {
+                      "required": [
+                        "name",
+                        "slug"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "slug": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "provider": {
+                      "required": [
+                        "id",
+                        "name"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "dateVerified": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "dateSynced": {
+                      "type": "string",
+                      "format": "date-time"
+                    }
+                  }
+                }
+              },
+              "avatar": {
+                "type": "object",
+                "properties": {
+                  "avatarType": {
+                    "type": "string"
+                  },
+                  "avatarUuid": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "avatarUrl": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              },
+              "authenticators": {
+                "type": "array",
+                "items": {
+                  "type": "object"
+                }
+              },
+              "canReset2fa": {
+                "type": "boolean"
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "avatarUrl": {
+                "type": "string"
+              },
+              "isActive": {
+                "type": "boolean"
+              },
+              "hasPasswordAuth": {
+                "type": "boolean"
+              },
+              "isManaged": {
+                "type": "boolean"
+              },
+              "dateJoined": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "lastLogin": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "has2fa": {
+                "type": "boolean"
+              },
+              "lastActive": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "isSuperuser": {
+                "type": "boolean"
+              },
+              "isStaff": {
+                "type": "boolean"
+              },
+              "experiments": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "emails": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "email",
+                    "id",
+                    "is_verified"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "is_verified": {
+                      "type": "boolean"
+                    }
+                  }
+                }
+              }
+            },
+            "nullable": true
           },
           "widgets": {
             "type": "array",
@@ -29092,7 +29273,23 @@
             "$ref": "#/components/schemas/DashboardDetailsModelFilters"
           },
           "permissions": {
-            "$ref": "#/components/schemas/DashboardDetailsModelPermissions"
+            "required": [
+              "isEditableByEveryone",
+              "teamsWithEditAccess"
+            ],
+            "type": "object",
+            "properties": {
+              "isEditableByEveryone": {
+                "type": "boolean"
+              },
+              "teamsWithEditAccess": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            },
+            "nullable": true
           },
           "isFavorited": {
             "type": "boolean"
@@ -29915,7 +30112,16 @@
             }
           },
           "latestRelease": {
-            "$ref": "#/components/schemas/DetailedProjectLatestRelease"
+            "required": [
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "options": {
             "type": "object",
@@ -30235,7 +30441,32 @@
         "type": "object",
         "properties": {
           "owner": {
-            "$ref": "#/components/schemas/DetectorOwner"
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "createdBy": {
             "type": "string",
@@ -31094,7 +31325,52 @@
             "$ref": "#/components/schemas/InstallInfoResponseAppInfo"
           },
           "gitInfo": {
-            "$ref": "#/components/schemas/InstallInfoResponseGitInfo"
+            "required": [
+              "baseRef",
+              "baseRepoName",
+              "baseSha",
+              "headRef",
+              "headRepoName",
+              "headSha",
+              "prNumber",
+              "provider"
+            ],
+            "type": "object",
+            "properties": {
+              "headSha": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseSha": {
+                "type": "string",
+                "nullable": true
+              },
+              "provider": {
+                "type": "string",
+                "nullable": true
+              },
+              "headRepoName": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseRepoName": {
+                "type": "string",
+                "nullable": true
+              },
+              "headRef": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseRef": {
+                "type": "string",
+                "nullable": true
+              },
+              "prNumber": {
+                "type": "integer",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "platform": {
             "type": "string",
@@ -31204,7 +31480,44 @@
             "nullable": true
           },
           "user": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseUser"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "username": {
+                "type": "string",
+                "nullable": true
+              },
+              "ip_address": {
+                "type": "string",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "geo": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "data": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "tags": {
             "type": "array",
@@ -31332,10 +31645,208 @@
             "type": "object"
           },
           "release": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseRelease"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "commitCount": {
+                "type": "integer"
+              },
+              "data": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "dateCreated": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "dateReleased": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "deployCount": {
+                "type": "integer"
+              },
+              "ref": {
+                "type": "string",
+                "nullable": true
+              },
+              "lastCommit": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                },
+                "nullable": true
+              },
+              "lastDeploy": {
+                "required": [
+                  "dateFinished",
+                  "environment",
+                  "id",
+                  "name"
+                ],
+                "type": "object",
+                "properties": {
+                  "dateStarted": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "url": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "environment": {
+                    "type": "string"
+                  },
+                  "dateFinished": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  }
+                },
+                "nullable": true
+              },
+              "status": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "nullable": true
+              },
+              "userAgent": {
+                "type": "string",
+                "nullable": true
+              },
+              "version": {
+                "type": "string",
+                "nullable": true
+              },
+              "versionInfo": {
+                "required": [
+                  "buildHash",
+                  "package",
+                  "version"
+                ],
+                "type": "object",
+                "properties": {
+                  "description": {
+                    "type": "string"
+                  },
+                  "package": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "version": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  },
+                  "buildHash": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "userReport": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseUserReport"
+            "required": [
+              "comments",
+              "dateCreated",
+              "email",
+              "event",
+              "eventID",
+              "id",
+              "name",
+              "user"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "eventID": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "comments": {
+                "type": "string"
+              },
+              "dateCreated": {
+                "type": "string"
+              },
+              "user": {
+                "required": [
+                  "avatarUrl",
+                  "email",
+                  "id",
+                  "ipAddress",
+                  "name",
+                  "username"
+                ],
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "email": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "ipAddress": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "avatarUrl": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                },
+                "nullable": true
+              },
+              "event": {
+                "required": [
+                  "eventID",
+                  "id"
+                ],
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "eventID": {
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "nullable": true
           },
           "sdkUpdates": {
             "type": "array",
@@ -31370,10 +31881,338 @@
         "type": "object",
         "properties": {
           "latestArtifact": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseLatestArtifact"
+            "required": [
+              "appInfo",
+              "buildConfiguration",
+              "buildId",
+              "codesigningType",
+              "downloadCount",
+              "gitInfo",
+              "installGroups",
+              "installUrl",
+              "isCodeSignatureValid",
+              "isInstallable",
+              "platform",
+              "profileName",
+              "projectId",
+              "projectSlug",
+              "releaseNotes",
+              "state"
+            ],
+            "type": "object",
+            "properties": {
+              "buildId": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "appInfo": {
+                "required": [
+                  "appId",
+                  "artifactType",
+                  "buildNumber",
+                  "dateAdded",
+                  "dateBuilt",
+                  "name",
+                  "version"
+                ],
+                "type": "object",
+                "properties": {
+                  "appId": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "version": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "buildNumber": {
+                    "type": "integer",
+                    "nullable": true
+                  },
+                  "artifactType": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "dateAdded": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "dateBuilt": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              },
+              "gitInfo": {
+                "required": [
+                  "baseRef",
+                  "baseRepoName",
+                  "baseSha",
+                  "headRef",
+                  "headRepoName",
+                  "headSha",
+                  "prNumber",
+                  "provider"
+                ],
+                "type": "object",
+                "properties": {
+                  "headSha": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseSha": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "provider": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "headRepoName": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseRepoName": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "headRef": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseRef": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "prNumber": {
+                    "type": "integer",
+                    "nullable": true
+                  }
+                },
+                "nullable": true
+              },
+              "platform": {
+                "type": "string",
+                "nullable": true
+              },
+              "projectId": {
+                "type": "string"
+              },
+              "projectSlug": {
+                "type": "string"
+              },
+              "buildConfiguration": {
+                "type": "string",
+                "nullable": true
+              },
+              "isInstallable": {
+                "type": "boolean"
+              },
+              "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "downloadCount": {
+                "type": "integer"
+              },
+              "releaseNotes": {
+                "type": "string",
+                "nullable": true
+              },
+              "installGroups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "isCodeSignatureValid": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "profileName": {
+                "type": "string",
+                "nullable": true
+              },
+              "codesigningType": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "currentArtifact": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseCurrentArtifact"
+            "required": [
+              "appInfo",
+              "buildConfiguration",
+              "buildId",
+              "codesigningType",
+              "downloadCount",
+              "gitInfo",
+              "installGroups",
+              "installUrl",
+              "isCodeSignatureValid",
+              "isInstallable",
+              "platform",
+              "profileName",
+              "projectId",
+              "projectSlug",
+              "releaseNotes",
+              "state"
+            ],
+            "type": "object",
+            "properties": {
+              "buildId": {
+                "type": "string"
+              },
+              "state": {
+                "type": "string"
+              },
+              "appInfo": {
+                "required": [
+                  "appId",
+                  "artifactType",
+                  "buildNumber",
+                  "dateAdded",
+                  "dateBuilt",
+                  "name",
+                  "version"
+                ],
+                "type": "object",
+                "properties": {
+                  "appId": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "version": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "buildNumber": {
+                    "type": "integer",
+                    "nullable": true
+                  },
+                  "artifactType": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "dateAdded": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "dateBuilt": {
+                    "type": "string",
+                    "nullable": true
+                  }
+                }
+              },
+              "gitInfo": {
+                "required": [
+                  "baseRef",
+                  "baseRepoName",
+                  "baseSha",
+                  "headRef",
+                  "headRepoName",
+                  "headSha",
+                  "prNumber",
+                  "provider"
+                ],
+                "type": "object",
+                "properties": {
+                  "headSha": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseSha": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "provider": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "headRepoName": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseRepoName": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "headRef": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "baseRef": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "prNumber": {
+                    "type": "integer",
+                    "nullable": true
+                  }
+                },
+                "nullable": true
+              },
+              "platform": {
+                "type": "string",
+                "nullable": true
+              },
+              "projectId": {
+                "type": "string"
+              },
+              "projectSlug": {
+                "type": "string"
+              },
+              "buildConfiguration": {
+                "type": "string",
+                "nullable": true
+              },
+              "isInstallable": {
+                "type": "boolean"
+              },
+              "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "downloadCount": {
+                "type": "integer"
+              },
+              "releaseNotes": {
+                "type": "string",
+                "nullable": true
+              },
+              "installGroups": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "isCodeSignatureValid": {
+                "type": "boolean",
+                "nullable": true
+              },
+              "profileName": {
+                "type": "string",
+                "nullable": true
+              },
+              "codesigningType": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -31893,7 +32732,36 @@
             "nullable": true
           },
           "lastDeploy": {
-            "$ref": "#/components/schemas/OrgReleaseResponseLastDeploy"
+            "required": [
+              "dateFinished",
+              "environment",
+              "id",
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "dateStarted": {
+                "type": "string",
+                "nullable": true
+              },
+              "url": {
+                "type": "string",
+                "nullable": true
+              },
+              "id": {
+                "type": "string"
+              },
+              "environment": {
+                "type": "string"
+              },
+              "dateFinished": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "firstEvent": {
             "type": "string",
@@ -31939,7 +32807,32 @@
             "type": "string"
           },
           "versionInfo": {
-            "$ref": "#/components/schemas/OrgReleaseResponseVersionInfo"
+            "required": [
+              "buildHash",
+              "package",
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "description": {
+                "type": "string"
+              },
+              "package": {
+                "type": "string",
+                "nullable": true
+              },
+              "version": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              },
+              "buildHash": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "data": {
             "type": "object",
@@ -35049,7 +35942,20 @@
             "type": "boolean"
           },
           "rateLimit": {
-            "$ref": "#/components/schemas/ProjectKeyRateLimit"
+            "required": [
+              "count",
+              "window"
+            ],
+            "type": "object",
+            "properties": {
+              "window": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              }
+            },
+            "nullable": true
           },
           "dsn": {
             "$ref": "#/components/schemas/ProjectKeyDsn"
@@ -35113,7 +36019,66 @@
         "type": "object",
         "properties": {
           "schema": {
-            "$ref": "#/components/schemas/ProjectOwnershipSchema"
+            "required": [
+              "$version",
+              "rules"
+            ],
+            "type": "object",
+            "properties": {
+              "$version": {
+                "type": "integer"
+              },
+              "rules": {
+                "type": "array",
+                "items": {
+                  "required": [
+                    "matcher",
+                    "owners"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "matcher": {
+                      "required": [
+                        "pattern",
+                        "type"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "type": {
+                          "type": "string"
+                        },
+                        "pattern": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "owners": {
+                      "type": "array",
+                      "items": {
+                        "required": [
+                          "name",
+                          "type"
+                        ],
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "name": {
+                            "type": "string"
+                          },
+                          "id": {
+                            "type": "string"
+                          }
+                        },
+                        "description": "Owner as it appears in the API response (after identifier->name rename)."
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "nullable": true
           },
           "raw": {
             "type": "string"
@@ -35532,7 +36497,24 @@
             "type": "boolean"
           },
           "team": {
-            "$ref": "#/components/schemas/ProjectSummaryTeam"
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "teams": {
             "type": "array",
@@ -35572,7 +36554,16 @@
             }
           },
           "latestRelease": {
-            "$ref": "#/components/schemas/ProjectSummaryLatestRelease"
+            "required": [
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -36128,7 +37119,24 @@
             "nullable": true
           },
           "createdBy": {
-            "$ref": "#/components/schemas/RuleCreatedBy"
+            "required": [
+              "email",
+              "id",
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "environment": {
             "type": "string",
@@ -36922,7 +37930,52 @@
             "$ref": "#/components/schemas/SizeAnalysisResponseAppInfo"
           },
           "gitInfo": {
-            "$ref": "#/components/schemas/SizeAnalysisResponseGitInfo"
+            "required": [
+              "baseRef",
+              "baseRepoName",
+              "baseSha",
+              "headRef",
+              "headRepoName",
+              "headSha",
+              "prNumber",
+              "provider"
+            ],
+            "type": "object",
+            "properties": {
+              "headSha": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseSha": {
+                "type": "string",
+                "nullable": true
+              },
+              "provider": {
+                "type": "string",
+                "nullable": true
+              },
+              "headRepoName": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseRepoName": {
+                "type": "string",
+                "nullable": true
+              },
+              "headRef": {
+                "type": "string",
+                "nullable": true
+              },
+              "baseRef": {
+                "type": "string",
+                "nullable": true
+              },
+              "prNumber": {
+                "type": "integer",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "errorCode": {
             "type": "string",
@@ -36954,7 +38007,47 @@
             "nullable": true
           },
           "baseAppInfo": {
-            "$ref": "#/components/schemas/SizeAnalysisResponseBaseAppInfo"
+            "required": [
+              "appId",
+              "artifactType",
+              "buildNumber",
+              "dateAdded",
+              "dateBuilt",
+              "name",
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "appId": {
+                "type": "string",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "version": {
+                "type": "string",
+                "nullable": true
+              },
+              "buildNumber": {
+                "type": "integer",
+                "nullable": true
+              },
+              "artifactType": {
+                "type": "string",
+                "nullable": true
+              },
+              "dateAdded": {
+                "type": "string",
+                "nullable": true
+              },
+              "dateBuilt": {
+                "type": "string",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "insights": {
             "type": "object",
@@ -38227,7 +39320,35 @@
             "format": "date-time"
           },
           "triggers": {
-            "$ref": "#/components/schemas/WorkflowTriggers"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "organizationId": {
+                "type": "string"
+              },
+              "logicType": {
+                "type": "string"
+              },
+              "conditions": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/UnionBranch"
+                  }
+                ]
+              },
+              "actions": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/UnionBranch"
+                  }
+                ]
+              }
+            },
+            "nullable": true
           },
           "actionFilters": {
             "type": "array",
@@ -38475,7 +39596,300 @@
             "format": "date-time"
           },
           "pullRequest": {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemPullRequest"
+            "required": [
+              "author",
+              "dateCreated",
+              "externalUrl",
+              "id",
+              "message",
+              "repository",
+              "title"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string",
+                "nullable": true
+              },
+              "message": {
+                "type": "string",
+                "nullable": true
+              },
+              "dateCreated": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "repository": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "provider": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "string"
+                    }
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "dateCreated": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "integrationId": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "externalSlug": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "externalId": {
+                    "type": "string",
+                    "nullable": true
+                  },
+                  "settings": {
+                    "required": [
+                      "codeReviewTriggers",
+                      "enabledCodeReview"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "enabledCodeReview": {
+                        "type": "boolean"
+                      },
+                      "codeReviewTriggers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "nullable": true
+                  }
+                }
+              },
+              "author": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "required": [
+                      "avatarUrl",
+                      "dateJoined",
+                      "email",
+                      "emails",
+                      "experiments",
+                      "has2fa",
+                      "hasPasswordAuth",
+                      "id",
+                      "isActive",
+                      "isManaged",
+                      "isStaff",
+                      "isSuperuser",
+                      "lastActive",
+                      "lastLogin",
+                      "name",
+                      "username"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "identities": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "dateSynced",
+                            "dateVerified",
+                            "id",
+                            "name",
+                            "organization",
+                            "provider"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "organization": {
+                              "required": [
+                                "name",
+                                "slug"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "slug": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "provider": {
+                              "required": [
+                                "id",
+                                "name"
+                              ],
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string"
+                                },
+                                "name": {
+                                  "type": "string"
+                                }
+                              }
+                            },
+                            "dateVerified": {
+                              "type": "string",
+                              "format": "date-time"
+                            },
+                            "dateSynced": {
+                              "type": "string",
+                              "format": "date-time"
+                            }
+                          }
+                        }
+                      },
+                      "avatar": {
+                        "type": "object",
+                        "properties": {
+                          "avatarType": {
+                            "type": "string"
+                          },
+                          "avatarUuid": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "avatarUrl": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        }
+                      },
+                      "authenticators": {
+                        "type": "array",
+                        "items": {
+                          "type": "object"
+                        }
+                      },
+                      "canReset2fa": {
+                        "type": "boolean"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "username": {
+                        "type": "string"
+                      },
+                      "email": {
+                        "type": "string"
+                      },
+                      "avatarUrl": {
+                        "type": "string"
+                      },
+                      "isActive": {
+                        "type": "boolean"
+                      },
+                      "hasPasswordAuth": {
+                        "type": "boolean"
+                      },
+                      "isManaged": {
+                        "type": "boolean"
+                      },
+                      "dateJoined": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "lastLogin": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                      },
+                      "has2fa": {
+                        "type": "boolean"
+                      },
+                      "lastActive": {
+                        "type": "string",
+                        "format": "date-time",
+                        "nullable": true
+                      },
+                      "isSuperuser": {
+                        "type": "boolean"
+                      },
+                      "isStaff": {
+                        "type": "boolean"
+                      },
+                      "experiments": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "object"
+                        }
+                      },
+                      "emails": {
+                        "type": "array",
+                        "items": {
+                          "required": [
+                            "email",
+                            "id",
+                            "is_verified"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "email": {
+                              "type": "string"
+                            },
+                            "is_verified": {
+                              "type": "boolean"
+                            }
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "required": [
+                      "email",
+                      "name"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "email": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                ]
+              },
+              "externalUrl": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "suspectCommitType": {
             "type": "string"
@@ -38547,7 +39961,23 @@
             }
           },
           "permissions": {
-            "$ref": "#/components/schemas/DashboardListResponseItemPermissions"
+            "required": [
+              "isEditableByEveryone",
+              "teamsWithEditAccess"
+            ],
+            "type": "object",
+            "properties": {
+              "isEditableByEveryone": {
+                "type": "boolean"
+              },
+              "teamsWithEditAccess": {
+                "type": "array",
+                "items": {
+                  "type": "integer"
+                }
+              }
+            },
+            "nullable": true
           },
           "isFavorited": {
             "type": "boolean"
@@ -38734,7 +40164,44 @@
             "nullable": true
           },
           "user": {
-            "$ref": "#/components/schemas/GroupEventsResponseDictItemUser"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "username": {
+                "type": "string",
+                "nullable": true
+              },
+              "ip_address": {
+                "type": "string",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "geo": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "data": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "tags": {
             "type": "array",
@@ -38847,7 +40314,20 @@
             "type": "boolean"
           },
           "rateLimit": {
-            "$ref": "#/components/schemas/ListClientKeysResponseItemRateLimit"
+            "required": [
+              "count",
+              "window"
+            ],
+            "type": "object",
+            "properties": {
+              "window": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              }
+            },
+            "nullable": true
           },
           "dsn": {
             "$ref": "#/components/schemas/ListClientKeysResponseItemDsn"
@@ -39026,7 +40506,32 @@
         "type": "object",
         "properties": {
           "owner": {
-            "$ref": "#/components/schemas/ListDetectorSerializerResponseItemOwner"
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "createdBy": {
             "type": "string",
@@ -39748,7 +41253,20 @@
             "type": "boolean"
           },
           "rateLimit": {
-            "$ref": "#/components/schemas/ListOrganizationClientKeysResponseItemRateLimit"
+            "required": [
+              "count",
+              "window"
+            ],
+            "type": "object",
+            "properties": {
+              "window": {
+                "type": "integer"
+              },
+              "count": {
+                "type": "integer"
+              }
+            },
+            "nullable": true
           },
           "dsn": {
             "$ref": "#/components/schemas/ListOrganizationClientKeysResponseItemDsn"
@@ -40219,7 +41737,24 @@
             "nullable": true
           },
           "createdBy": {
-            "$ref": "#/components/schemas/ListRulesItemCreatedBy"
+            "required": [
+              "email",
+              "id",
+              "name"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "environment": {
             "type": "string",
@@ -40494,7 +42029,24 @@
             "type": "boolean"
           },
           "team": {
-            "$ref": "#/components/schemas/ListTeamProjectResponseItemTeam"
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "teams": {
             "type": "array",
@@ -40534,7 +42086,16 @@
             }
           },
           "latestRelease": {
-            "$ref": "#/components/schemas/ListTeamProjectResponseItemLatestRelease"
+            "required": [
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -40579,7 +42140,35 @@
             "format": "date-time"
           },
           "triggers": {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggers"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "organizationId": {
+                "type": "string"
+              },
+              "logicType": {
+                "type": "string"
+              },
+              "conditions": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/UnionBranch"
+                  }
+                ]
+              },
+              "actions": {
+                "type": "object",
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/UnionBranch"
+                  }
+                ]
+              }
+            },
+            "nullable": true
           },
           "actionFilters": {
             "type": "array",
@@ -40865,7 +42454,16 @@
             "type": "boolean"
           },
           "subscriptionDetails": {
-            "$ref": "#/components/schemas/OrganizationGroupIndexGetResponseItemSubscriptionDetails"
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "hasSeen": {
             "type": "boolean"
@@ -40920,7 +42518,39 @@
             }
           },
           "filtered": {
-            "$ref": "#/components/schemas/OrganizationGroupIndexGetResponseItemFiltered"
+            "required": [
+              "count",
+              "firstSeen",
+              "lastSeen",
+              "stats",
+              "userCount"
+            ],
+            "type": "object",
+            "properties": {
+              "count": {
+                "type": "string"
+              },
+              "userCount": {
+                "type": "integer"
+              },
+              "firstSeen": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "lastSeen": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              },
+              "stats": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                }
+              }
+            },
+            "nullable": true
           },
           "sessionCount": {
             "type": "integer"
@@ -41149,7 +42779,24 @@
             "type": "boolean"
           },
           "team": {
-            "$ref": "#/components/schemas/OrganizationProjectResponseDictItemTeam"
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "teams": {
             "type": "array",
@@ -41189,7 +42836,16 @@
             }
           },
           "latestRelease": {
-            "$ref": "#/components/schemas/OrganizationProjectResponseDictItemLatestRelease"
+            "required": [
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -41403,7 +43059,44 @@
             "nullable": true
           },
           "user": {
-            "$ref": "#/components/schemas/ProjectEventsResponseDictItemUser"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "username": {
+                "type": "string",
+                "nullable": true
+              },
+              "ip_address": {
+                "type": "string",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "geo": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "data": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "tags": {
             "type": "array",
@@ -41458,7 +43151,12 @@
             "type": "string"
           },
           "active": {
-            "$ref": "#/components/schemas/ProjectFilterResponseItemActive"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ]
           }
         }
       },
@@ -41747,177 +43445,6 @@
         "description": "Permissions that restrict users from editing dashboards",
         "nullable": true
       },
-      "DashboardDetailsModelCreatedBy": {
-        "required": [
-          "avatarUrl",
-          "dateJoined",
-          "email",
-          "emails",
-          "experiments",
-          "has2fa",
-          "hasPasswordAuth",
-          "id",
-          "isActive",
-          "isManaged",
-          "isStaff",
-          "isSuperuser",
-          "lastActive",
-          "lastLogin",
-          "name",
-          "username"
-        ],
-        "type": "object",
-        "properties": {
-          "identities": {
-            "type": "array",
-            "items": {
-              "required": [
-                "dateSynced",
-                "dateVerified",
-                "id",
-                "name",
-                "organization",
-                "provider"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "organization": {
-                  "required": [
-                    "name",
-                    "slug"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "slug": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "provider": {
-                  "required": [
-                    "id",
-                    "name"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "dateVerified": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "dateSynced": {
-                  "type": "string",
-                  "format": "date-time"
-                }
-              }
-            }
-          },
-          "avatar": {
-            "$ref": "#/components/schemas/DashboardDetailsModelCreatedByAvatar"
-          },
-          "authenticators": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "canReset2fa": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          },
-          "avatarUrl": {
-            "type": "string"
-          },
-          "isActive": {
-            "type": "boolean"
-          },
-          "hasPasswordAuth": {
-            "type": "boolean"
-          },
-          "isManaged": {
-            "type": "boolean"
-          },
-          "dateJoined": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "lastLogin": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "has2fa": {
-            "type": "boolean"
-          },
-          "lastActive": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "isSuperuser": {
-            "type": "boolean"
-          },
-          "isStaff": {
-            "type": "boolean"
-          },
-          "experiments": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
-          },
-          "emails": {
-            "type": "array",
-            "items": {
-              "required": [
-                "email",
-                "id",
-                "is_verified"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "email": {
-                  "type": "string"
-                },
-                "is_verified": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        },
-        "nullable": true
-      },
       "DashboardDetailsModelFilters": {
         "type": "object",
         "properties": {
@@ -41943,25 +43470,6 @@
             }
           }
         }
-      },
-      "DashboardDetailsModelPermissions": {
-        "required": [
-          "isEditableByEveryone",
-          "teamsWithEditAccess"
-        ],
-        "type": "object",
-        "properties": {
-          "isEditableByEveryone": {
-            "type": "boolean"
-          },
-          "teamsWithEditAccess": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          }
-        },
-        "nullable": true
       },
       "DashboardWidgetLayout": {
         "allOf": [
@@ -42067,18 +43575,6 @@
             "type": "string"
           }
         }
-      },
-      "DetailedProjectLatestRelease": {
-        "required": [
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "DetailedProjectOptions": {
         "type": "object",
@@ -42230,34 +43726,6 @@
             "type": "boolean"
           }
         }
-      },
-      "DetectorOwner": {
-        "required": [
-          "id",
-          "name",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "user",
-              "team"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "DetectorConfig": {
         "type": "object",
@@ -42494,7 +43962,44 @@
             "nullable": true
           },
           "user": {
-            "$ref": "#/components/schemas/EventIdLookupResponseEventUser"
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "nullable": true
+              },
+              "email": {
+                "type": "string",
+                "nullable": true
+              },
+              "username": {
+                "type": "string",
+                "nullable": true
+              },
+              "ip_address": {
+                "type": "string",
+                "nullable": true
+              },
+              "name": {
+                "type": "string",
+                "nullable": true
+              },
+              "geo": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                },
+                "nullable": true
+              },
+              "data": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "object"
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "tags": {
             "type": "array",
@@ -42938,94 +44443,6 @@
           }
         }
       },
-      "InstallInfoResponseGitInfo": {
-        "required": [
-          "baseRef",
-          "baseRepoName",
-          "baseSha",
-          "headRef",
-          "headRepoName",
-          "headSha",
-          "prNumber",
-          "provider"
-        ],
-        "type": "object",
-        "properties": {
-          "headSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "provider": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "prNumber": {
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "ip_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "geo": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
       "IssueEventDetailsResponseSdk": {
         "type": "object",
         "additionalProperties": {
@@ -43043,276 +44460,6 @@
         "additionalProperties": {
           "type": "object"
         }
-      },
-      "IssueEventDetailsResponseRelease": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "commitCount": {
-            "type": "integer"
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
-          },
-          "dateCreated": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "dateReleased": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "deployCount": {
-            "type": "integer"
-          },
-          "ref": {
-            "type": "string",
-            "nullable": true
-          },
-          "lastCommit": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "nullable": true
-          },
-          "lastDeploy": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseReleaseLastDeploy"
-          },
-          "status": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "nullable": true
-          },
-          "userAgent": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "string",
-            "nullable": true
-          },
-          "versionInfo": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseReleaseVersionInfo"
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseUserReport": {
-        "required": [
-          "comments",
-          "dateCreated",
-          "email",
-          "event",
-          "eventID",
-          "id",
-          "name",
-          "user"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "eventID": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "comments": {
-            "type": "string"
-          },
-          "dateCreated": {
-            "type": "string"
-          },
-          "user": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseUserReportUser"
-          },
-          "event": {
-            "$ref": "#/components/schemas/IssueEventDetailsResponseUserReportEvent"
-          }
-        },
-        "nullable": true
-      },
-      "LatestInstallableBuildResponseLatestArtifact": {
-        "required": [
-          "appInfo",
-          "buildConfiguration",
-          "buildId",
-          "codesigningType",
-          "downloadCount",
-          "gitInfo",
-          "installGroups",
-          "installUrl",
-          "isCodeSignatureValid",
-          "isInstallable",
-          "platform",
-          "profileName",
-          "projectId",
-          "projectSlug",
-          "releaseNotes",
-          "state"
-        ],
-        "type": "object",
-        "properties": {
-          "buildId": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string"
-          },
-          "appInfo": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseLatestArtifactAppInfo"
-          },
-          "gitInfo": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseLatestArtifactGitInfo"
-          },
-          "platform": {
-            "type": "string",
-            "nullable": true
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "projectSlug": {
-            "type": "string"
-          },
-          "buildConfiguration": {
-            "type": "string",
-            "nullable": true
-          },
-          "isInstallable": {
-            "type": "boolean"
-          },
-          "installUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "downloadCount": {
-            "type": "integer"
-          },
-          "releaseNotes": {
-            "type": "string",
-            "nullable": true
-          },
-          "installGroups": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "isCodeSignatureValid": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "profileName": {
-            "type": "string",
-            "nullable": true
-          },
-          "codesigningType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "LatestInstallableBuildResponseCurrentArtifact": {
-        "required": [
-          "appInfo",
-          "buildConfiguration",
-          "buildId",
-          "codesigningType",
-          "downloadCount",
-          "gitInfo",
-          "installGroups",
-          "installUrl",
-          "isCodeSignatureValid",
-          "isInstallable",
-          "platform",
-          "profileName",
-          "projectId",
-          "projectSlug",
-          "releaseNotes",
-          "state"
-        ],
-        "type": "object",
-        "properties": {
-          "buildId": {
-            "type": "string"
-          },
-          "state": {
-            "type": "string"
-          },
-          "appInfo": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseCurrentArtifactAppInfo"
-          },
-          "gitInfo": {
-            "$ref": "#/components/schemas/LatestInstallableBuildResponseCurrentArtifactGitInfo"
-          },
-          "platform": {
-            "type": "string",
-            "nullable": true
-          },
-          "projectId": {
-            "type": "string"
-          },
-          "projectSlug": {
-            "type": "string"
-          },
-          "buildConfiguration": {
-            "type": "string",
-            "nullable": true
-          },
-          "isInstallable": {
-            "type": "boolean"
-          },
-          "installUrl": {
-            "type": "string",
-            "nullable": true
-          },
-          "downloadCount": {
-            "type": "integer"
-          },
-          "releaseNotes": {
-            "type": "string",
-            "nullable": true
-          },
-          "installGroups": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "isCodeSignatureValid": {
-            "type": "boolean",
-            "nullable": true
-          },
-          "profileName": {
-            "type": "string",
-            "nullable": true
-          },
-          "codesigningType": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
       },
       "MonitorAlertRule": {
         "required": [
@@ -43366,7 +44513,12 @@
             "additionalProperties": false
           },
           "schedule": {
-            "$ref": "#/components/schemas/MonitorConfigSchedule"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ]
           },
           "checkin_margin": {
             "type": "integer",
@@ -43607,7 +44759,41 @@
             "format": "date-time"
           },
           "activeIncident": {
-            "$ref": "#/components/schemas/MonitorEnvironmentsActiveIncident"
+            "required": [
+              "brokenNotice",
+              "resolvingTimestamp",
+              "startingTimestamp"
+            ],
+            "type": "object",
+            "properties": {
+              "startingTimestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "resolvingTimestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "brokenNotice": {
+                "required": [
+                  "environmentMutedTimestamp",
+                  "userNotifiedTimestamp"
+                ],
+                "type": "object",
+                "properties": {
+                  "userNotifiedTimestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "environmentMutedTimestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -44298,66 +45484,6 @@
         ],
         "description": "The configuration for the monitor."
       },
-      "OrgReleaseResponseLastDeploy": {
-        "required": [
-          "dateFinished",
-          "environment",
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "dateStarted": {
-            "type": "string",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "environment": {
-            "type": "string"
-          },
-          "dateFinished": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "OrgReleaseResponseVersionInfo": {
-        "required": [
-          "buildHash",
-          "package",
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "package": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
-          },
-          "buildHash": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
       "OrgReleaseResponseData": {
         "type": "object",
         "additionalProperties": {
@@ -45044,22 +46170,6 @@
         },
         "description": "\"A JSON mapping of context types to lists of strings for their keys.\nE.g. `{'user': ['id', 'email']}`\""
       },
-      "ProjectKeyRateLimit": {
-        "required": [
-          "count",
-          "window"
-        ],
-        "type": "object",
-        "properties": {
-          "window": {
-            "type": "integer"
-          },
-          "count": {
-            "type": "integer"
-          }
-        },
-        "nullable": true
-      },
       "ProjectKeyDsn": {
         "required": [
           "cdn",
@@ -45180,105 +46290,11 @@
         },
         "description": "\"Applies a rate limit to cap the number of errors accepted during a given time window. To\ndisable entirely set `rateLimit` to null.\n```json\n{\n    \\\"rateLimit\\\": {\n        \\\"window\\\": 7200, // time in seconds\n        \\\"count\\\": 1000 // error cap\n    }\n}\n```\""
       },
-      "ProjectOwnershipSchema": {
-        "required": [
-          "$version",
-          "rules"
-        ],
-        "type": "object",
-        "properties": {
-          "$version": {
-            "type": "integer"
-          },
-          "rules": {
-            "type": "array",
-            "items": {
-              "required": [
-                "matcher",
-                "owners"
-              ],
-              "type": "object",
-              "properties": {
-                "matcher": {
-                  "required": [
-                    "pattern",
-                    "type"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "type": {
-                      "type": "string"
-                    },
-                    "pattern": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "owners": {
-                  "type": "array",
-                  "items": {
-                    "required": [
-                      "name",
-                      "type"
-                    ],
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      }
-                    },
-                    "description": "Owner as it appears in the API response (after identifier->name rename)."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "nullable": true
-      },
       "ProjectSummaryOptions": {
         "type": "object",
         "additionalProperties": {
           "type": "object"
         }
-      },
-      "ProjectSummaryTeam": {
-        "required": [
-          "id",
-          "name",
-          "slug"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "ProjectSummaryLatestRelease": {
-        "required": [
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "ProjectWithTeamAvatar": {
         "type": "object",
@@ -45366,26 +46382,6 @@
           }
         },
         "description": "Serializer for pagination information"
-      },
-      "RuleCreatedBy": {
-        "required": [
-          "email",
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "SCIMTeamPatchOperationValue": {
         "type": "object",
@@ -45560,7 +46556,16 @@
             "type": "boolean"
           },
           "subscriptionDetails": {
-            "$ref": "#/components/schemas/ShortIdLookupResponseGroupSubscriptionDetails"
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "hasSeen": {
             "type": "boolean"
@@ -45626,97 +46631,6 @@
             "nullable": true
           }
         }
-      },
-      "SizeAnalysisResponseGitInfo": {
-        "required": [
-          "baseRef",
-          "baseRepoName",
-          "baseSha",
-          "headRef",
-          "headRepoName",
-          "headSha",
-          "prNumber",
-          "provider"
-        ],
-        "type": "object",
-        "properties": {
-          "headSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "provider": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "prNumber": {
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "SizeAnalysisResponseBaseAppInfo": {
-        "required": [
-          "appId",
-          "artifactType",
-          "buildNumber",
-          "dateAdded",
-          "dateBuilt",
-          "name",
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "appId": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "string",
-            "nullable": true
-          },
-          "buildNumber": {
-            "type": "integer",
-            "nullable": true
-          },
-          "artifactType": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateAdded": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateBuilt": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
       },
       "SourceLayout": {
         "required": [
@@ -46031,27 +46945,6 @@
         },
         "description": "\"Configures multiple options for the Javascript Loader Script.\n- `Performance Monitoring`\n- `Debug Bundles & Logging`\n- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.\n- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.\n- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK >= 10.0.0.\n```json\n{\n    \\\"dynamicSdkLoaderOptions\\\": {\n        \\\"hasReplay\\\": true,\n        \\\"hasPerformance\\\": true,\n        \\\"hasDebug\\\": true,\n        \\\"hasFeedback\\\": true,\n        \\\"hasLogsAndMetrics\\\": true\n    }\n}\n```\""
       },
-      "WorkflowTriggers": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "organizationId": {
-            "type": "string"
-          },
-          "logicType": {
-            "type": "string"
-          },
-          "conditions": {
-            "$ref": "#/components/schemas/WorkflowTriggersConditions"
-          },
-          "actions": {
-            "$ref": "#/components/schemas/WorkflowTriggersActions"
-          }
-        },
-        "nullable": true
-      },
       "WorkflowConfig": {
         "type": "object",
         "additionalProperties": {
@@ -46122,7 +47015,12 @@
             "additionalProperties": false
           },
           "schedule": {
-            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ]
           },
           "checkin_margin": {
             "type": "integer",
@@ -46149,45 +47047,6 @@
             "nullable": true
           }
         }
-      },
-      "CommitSerializerResponseItemPullRequest": {
-        "required": [
-          "author",
-          "dateCreated",
-          "externalUrl",
-          "id",
-          "message",
-          "repository",
-          "title"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "title": {
-            "type": "string",
-            "nullable": true
-          },
-          "message": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateCreated": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "repository": {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemPullRequestRepository"
-          },
-          "author": {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemPullRequestAuthor"
-          },
-          "externalUrl": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "CommitSerializerResponseItemRepository": {
         "type": "object",
@@ -46228,7 +47087,23 @@
             "nullable": true
           },
           "settings": {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemRepositorySettings"
+            "required": [
+              "codeReviewTriggers",
+              "enabledCodeReview"
+            ],
+            "type": "object",
+            "properties": {
+              "enabledCodeReview": {
+                "type": "boolean"
+              },
+              "codeReviewTriggers": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -46644,25 +47519,6 @@
           }
         }
       },
-      "DashboardListResponseItemPermissions": {
-        "required": [
-          "isEditableByEveryone",
-          "teamsWithEditAccess"
-        ],
-        "type": "object",
-        "properties": {
-          "isEditableByEveryone": {
-            "type": "boolean"
-          },
-          "teamsWithEditAccess": {
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          }
-        },
-        "nullable": true
-      },
       "DiscoverSavedQueryListResponseItemExploreQuery": {
         "type": "object",
         "additionalProperties": {
@@ -46839,62 +47695,6 @@
           }
         }
       },
-      "GroupEventsResponseDictItemUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "ip_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "geo": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "ListClientKeysResponseItemRateLimit": {
-        "required": [
-          "count",
-          "window"
-        ],
-        "type": "object",
-        "properties": {
-          "window": {
-            "type": "integer"
-          },
-          "count": {
-            "type": "integer"
-          }
-        },
-        "nullable": true
-      },
       "ListClientKeysResponseItemDsn": {
         "required": [
           "cdn",
@@ -47003,34 +47803,6 @@
         "additionalProperties": {
           "type": "string"
         }
-      },
-      "ListDetectorSerializerResponseItemOwner": {
-        "required": [
-          "id",
-          "name",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "user",
-              "team"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "nullable": true
       },
       "ListDetectorSerializerResponseItemConfig": {
         "type": "object",
@@ -47583,22 +48355,6 @@
           }
         }
       },
-      "ListOrganizationClientKeysResponseItemRateLimit": {
-        "required": [
-          "count",
-          "window"
-        ],
-        "type": "object",
-        "properties": {
-          "window": {
-            "type": "integer"
-          },
-          "count": {
-            "type": "integer"
-          }
-        },
-        "nullable": true
-      },
       "ListOrganizationClientKeysResponseItemDsn": {
         "required": [
           "cdn",
@@ -48095,84 +48851,11 @@
           }
         }
       },
-      "ListRulesItemCreatedBy": {
-        "required": [
-          "email",
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "ListTeamProjectResponseItemOptions": {
         "type": "object",
         "additionalProperties": {
           "type": "object"
         }
-      },
-      "ListTeamProjectResponseItemTeam": {
-        "required": [
-          "id",
-          "name",
-          "slug"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "ListTeamProjectResponseItemLatestRelease": {
-        "required": [
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "ListWorkflowItemTriggers": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "organizationId": {
-            "type": "string"
-          },
-          "logicType": {
-            "type": "string"
-          },
-          "conditions": {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersConditions"
-          },
-          "actions": {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersActions"
-          }
-        },
-        "nullable": true
       },
       "ListWorkflowItemConfig": {
         "type": "object",
@@ -48232,7 +48915,12 @@
             "additionalProperties": false
           },
           "schedule": {
-            "$ref": "#/components/schemas/MonitorListItemConfigSchedule"
+            "type": "object",
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/UnionBranch"
+              }
+            ]
           },
           "checkin_margin": {
             "type": "integer",
@@ -48473,7 +49161,41 @@
             "format": "date-time"
           },
           "activeIncident": {
-            "$ref": "#/components/schemas/MonitorListItemEnvironmentsActiveIncident"
+            "required": [
+              "brokenNotice",
+              "resolvingTimestamp",
+              "startingTimestamp"
+            ],
+            "type": "object",
+            "properties": {
+              "startingTimestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "resolvingTimestamp": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "brokenNotice": {
+                "required": [
+                  "environmentMutedTimestamp",
+                  "userNotifiedTimestamp"
+                ],
+                "type": "object",
+                "properties": {
+                  "userNotifiedTimestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "environmentMutedTimestamp": {
+                    "type": "string",
+                    "format": "date-time"
+                  }
+                },
+                "nullable": true
+              }
+            },
+            "nullable": true
           }
         }
       },
@@ -48603,18 +49325,6 @@
           }
         }
       },
-      "OrganizationGroupIndexGetResponseItemSubscriptionDetails": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean"
-          },
-          "reason": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "OrganizationGroupIndexGetResponseItemStats": {
         "type": "object",
         "additionalProperties": {
@@ -48626,41 +49336,6 @@
         "additionalProperties": {
           "type": "object"
         }
-      },
-      "OrganizationGroupIndexGetResponseItemFiltered": {
-        "required": [
-          "count",
-          "firstSeen",
-          "lastSeen",
-          "stats",
-          "userCount"
-        ],
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "string"
-          },
-          "userCount": {
-            "type": "integer"
-          },
-          "firstSeen": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "lastSeen": {
-            "type": "string",
-            "format": "date-time",
-            "nullable": true
-          },
-          "stats": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
-          }
-        },
-        "nullable": true
       },
       "OrganizationGroupIndexGetResponseItemInbox": {
         "required": [
@@ -48674,7 +49349,37 @@
             "type": "integer"
           },
           "reason_details": {
-            "$ref": "#/components/schemas/OrganizationGroupIndexGetResponseItemInboxReasonDetails"
+            "required": [
+              "count",
+              "until",
+              "user_count",
+              "user_window",
+              "window"
+            ],
+            "type": "object",
+            "properties": {
+              "until": {
+                "type": "string",
+                "nullable": true
+              },
+              "count": {
+                "type": "integer",
+                "nullable": true
+              },
+              "window": {
+                "type": "integer",
+                "nullable": true
+              },
+              "user_count": {
+                "type": "integer",
+                "nullable": true
+              },
+              "user_window": {
+                "type": "integer",
+                "nullable": true
+              }
+            },
+            "nullable": true
           },
           "date_added": {
             "type": "string",
@@ -48708,38 +49413,6 @@
           "type": "object"
         }
       },
-      "OrganizationProjectResponseDictItemTeam": {
-        "required": [
-          "id",
-          "name",
-          "slug"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "slug": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "OrganizationProjectResponseDictItemLatestRelease": {
-        "required": [
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "version": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "OrganizationSentryAppDetailsResponseItemOwner": {
         "required": [
           "id",
@@ -48752,73 +49425,6 @@
           },
           "slug": {
             "type": "string"
-          }
-        }
-      },
-      "ProjectEventsResponseDictItemUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "ip_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "geo": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "ProjectFilterResponseItemActive": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ProjectFilterResponseItemActive_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/ProjectFilterResponseItemActive_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ProjectFilterResponseItemActive_1": "#/components/schemas/ProjectFilterResponseItemActive_Branch1",
-            "ProjectFilterResponseItemActive_2": "#/components/schemas/ProjectFilterResponseItemActive_Branch2"
           }
         }
       },
@@ -48842,28 +49448,6 @@
             "type": "string",
             "nullable": true
           }
-        }
-      },
-      "DashboardDetailsModelCreatedByAvatar": {
-        "type": "object",
-        "properties": {
-          "avatarType": {
-            "type": "string"
-          },
-          "avatarUuid": {
-            "type": "string",
-            "nullable": true
-          },
-          "avatarUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "DashboardDetailsModelCreatedByExperiments": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "object"
         }
       },
       "DetailedProjectHighlightPresetContext": {
@@ -48952,46 +49536,6 @@
           "type": "object"
         }
       },
-      "EventIdLookupResponseEventUser": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "ip_address": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "geo": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            },
-            "nullable": true
-          },
-          "data": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            },
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
       "EventIdLookupResponseEventSdk": {
         "type": "object",
         "additionalProperties": {
@@ -49031,331 +49575,6 @@
           }
         }
       },
-      "IssueEventDetailsResponseReleaseData": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "object"
-        }
-      },
-      "IssueEventDetailsResponseReleaseLastDeploy": {
-        "required": [
-          "dateFinished",
-          "environment",
-          "id",
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "dateStarted": {
-            "type": "string",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string"
-          },
-          "environment": {
-            "type": "string"
-          },
-          "dateFinished": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseReleaseVersionInfo": {
-        "required": [
-          "buildHash",
-          "package",
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "description": {
-            "type": "string"
-          },
-          "package": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "object"
-            }
-          },
-          "buildHash": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseUserReportUser": {
-        "required": [
-          "avatarUrl",
-          "email",
-          "id",
-          "ipAddress",
-          "name",
-          "username"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "username": {
-            "type": "string",
-            "nullable": true
-          },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "ipAddress": {
-            "type": "string",
-            "nullable": true
-          },
-          "avatarUrl": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseUserReportEvent": {
-        "required": [
-          "eventID",
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "eventID": {
-            "type": "string"
-          }
-        }
-      },
-      "LatestInstallableBuildResponseLatestArtifactAppInfo": {
-        "required": [
-          "appId",
-          "artifactType",
-          "buildNumber",
-          "dateAdded",
-          "dateBuilt",
-          "name",
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "appId": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "string",
-            "nullable": true
-          },
-          "buildNumber": {
-            "type": "integer",
-            "nullable": true
-          },
-          "artifactType": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateAdded": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateBuilt": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "LatestInstallableBuildResponseLatestArtifactGitInfo": {
-        "required": [
-          "baseRef",
-          "baseRepoName",
-          "baseSha",
-          "headRef",
-          "headRepoName",
-          "headSha",
-          "prNumber",
-          "provider"
-        ],
-        "type": "object",
-        "properties": {
-          "headSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "provider": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "prNumber": {
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "LatestInstallableBuildResponseCurrentArtifactAppInfo": {
-        "required": [
-          "appId",
-          "artifactType",
-          "buildNumber",
-          "dateAdded",
-          "dateBuilt",
-          "name",
-          "version"
-        ],
-        "type": "object",
-        "properties": {
-          "appId": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          },
-          "version": {
-            "type": "string",
-            "nullable": true
-          },
-          "buildNumber": {
-            "type": "integer",
-            "nullable": true
-          },
-          "artifactType": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateAdded": {
-            "type": "string",
-            "nullable": true
-          },
-          "dateBuilt": {
-            "type": "string",
-            "nullable": true
-          }
-        }
-      },
-      "LatestInstallableBuildResponseCurrentArtifactGitInfo": {
-        "required": [
-          "baseRef",
-          "baseRepoName",
-          "baseSha",
-          "headRef",
-          "headRepoName",
-          "headSha",
-          "prNumber",
-          "provider"
-        ],
-        "type": "object",
-        "properties": {
-          "headSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseSha": {
-            "type": "string",
-            "nullable": true
-          },
-          "provider": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRepoName": {
-            "type": "string",
-            "nullable": true
-          },
-          "headRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "baseRef": {
-            "type": "string",
-            "nullable": true
-          },
-          "prNumber": {
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "MonitorConfigSchedule": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/MonitorConfigSchedule_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/MonitorConfigSchedule_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "MonitorConfigSchedule_1": "#/components/schemas/MonitorConfigSchedule_Branch1",
-            "MonitorConfigSchedule_2": "#/components/schemas/MonitorConfigSchedule_Branch2"
-          }
-        }
-      },
       "MonitorProjectAvatar": {
         "type": "object",
         "properties": {
@@ -49370,34 +49589,6 @@
             "type": "string",
             "nullable": true
           }
-        }
-      },
-      "MonitorEnvironmentsActiveIncident": {
-        "required": [
-          "brokenNotice",
-          "resolvingTimestamp",
-          "startingTimestamp"
-        ],
-        "type": "object",
-        "properties": {
-          "startingTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "resolvingTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "brokenNotice": {
-            "$ref": "#/components/schemas/MonitorEnvironmentsActiveIncidentBrokenNotice"
-          }
-        },
-        "nullable": true
-      },
-      "OrgReleaseResponseVersionInfoVersion": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "object"
         }
       },
       "OrganizationEventsResponseDictMetaFields": {
@@ -49564,18 +49755,6 @@
           }
         }
       },
-      "ShortIdLookupResponseGroupSubscriptionDetails": {
-        "type": "object",
-        "properties": {
-          "disabled": {
-            "type": "boolean"
-          },
-          "reason": {
-            "type": "string"
-          }
-        },
-        "nullable": true
-      },
       "TeamOrganizationExtraOptions": {
         "type": "object",
         "additionalProperties": {
@@ -49631,370 +49810,11 @@
           }
         }
       },
-      "WorkflowTriggersConditions": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/WorkflowTriggersConditions_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/WorkflowTriggersConditions_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "WorkflowTriggersConditions_1": "#/components/schemas/WorkflowTriggersConditions_Branch1",
-            "WorkflowTriggersConditions_2": "#/components/schemas/WorkflowTriggersConditions_Branch2"
-          }
-        }
-      },
-      "WorkflowTriggersActions": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/WorkflowTriggersActions_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/WorkflowTriggersActions_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "WorkflowTriggersActions_1": "#/components/schemas/WorkflowTriggersActions_Branch1",
-            "WorkflowTriggersActions_2": "#/components/schemas/WorkflowTriggersActions_Branch2"
-          }
-        }
-      },
-      "CheckInListItemMonitorConfigSchedule": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CheckInListItemMonitorConfigSchedule_1": "#/components/schemas/CheckInListItemMonitorConfigSchedule_Branch1",
-            "CheckInListItemMonitorConfigSchedule_2": "#/components/schemas/CheckInListItemMonitorConfigSchedule_Branch2"
-          }
-        }
-      },
-      "CommitSerializerResponseItemPullRequestRepository": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "url": {
-            "type": "string",
-            "nullable": true
-          },
-          "provider": {
-            "type": "object",
-            "additionalProperties": {
-              "type": "string"
-            }
-          },
-          "status": {
-            "type": "string"
-          },
-          "dateCreated": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "integrationId": {
-            "type": "string",
-            "nullable": true
-          },
-          "externalSlug": {
-            "type": "string",
-            "nullable": true
-          },
-          "externalId": {
-            "type": "string",
-            "nullable": true
-          },
-          "settings": {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemPullRequestRepositorySettings"
-          }
-        }
-      },
-      "CommitSerializerResponseItemPullRequestAuthor": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "required": [
-              "avatarUrl",
-              "dateJoined",
-              "email",
-              "emails",
-              "experiments",
-              "has2fa",
-              "hasPasswordAuth",
-              "id",
-              "isActive",
-              "isManaged",
-              "isStaff",
-              "isSuperuser",
-              "lastActive",
-              "lastLogin",
-              "name",
-              "username"
-            ],
-            "type": "object",
-            "properties": {
-              "identities": {
-                "type": "array",
-                "items": {
-                  "required": [
-                    "dateSynced",
-                    "dateVerified",
-                    "id",
-                    "name",
-                    "organization",
-                    "provider"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "name": {
-                      "type": "string"
-                    },
-                    "organization": {
-                      "required": [
-                        "name",
-                        "slug"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "slug": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "provider": {
-                      "required": [
-                        "id",
-                        "name"
-                      ],
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "name": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "dateVerified": {
-                      "type": "string",
-                      "format": "date-time"
-                    },
-                    "dateSynced": {
-                      "type": "string",
-                      "format": "date-time"
-                    }
-                  }
-                }
-              },
-              "avatar": {
-                "type": "object",
-                "properties": {
-                  "avatarType": {
-                    "type": "string"
-                  },
-                  "avatarUuid": {
-                    "type": "string",
-                    "nullable": true
-                  },
-                  "avatarUrl": {
-                    "type": "string",
-                    "nullable": true
-                  }
-                }
-              },
-              "authenticators": {
-                "type": "array",
-                "items": {
-                  "type": "object"
-                }
-              },
-              "canReset2fa": {
-                "type": "boolean"
-              },
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "username": {
-                "type": "string"
-              },
-              "email": {
-                "type": "string"
-              },
-              "avatarUrl": {
-                "type": "string"
-              },
-              "isActive": {
-                "type": "boolean"
-              },
-              "hasPasswordAuth": {
-                "type": "boolean"
-              },
-              "isManaged": {
-                "type": "boolean"
-              },
-              "dateJoined": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "lastLogin": {
-                "type": "string",
-                "format": "date-time",
-                "nullable": true
-              },
-              "has2fa": {
-                "type": "boolean"
-              },
-              "lastActive": {
-                "type": "string",
-                "format": "date-time",
-                "nullable": true
-              },
-              "isSuperuser": {
-                "type": "boolean"
-              },
-              "isStaff": {
-                "type": "boolean"
-              },
-              "experiments": {
-                "type": "object",
-                "additionalProperties": {
-                  "type": "object"
-                }
-              },
-              "emails": {
-                "type": "array",
-                "items": {
-                  "required": [
-                    "email",
-                    "id",
-                    "is_verified"
-                  ],
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "email": {
-                      "type": "string"
-                    },
-                    "is_verified": {
-                      "type": "boolean"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          {
-            "required": [
-              "email",
-              "name"
-            ],
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string",
-                "nullable": true
-              },
-              "email": {
-                "type": "string"
-              }
-            }
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type"
-        }
-      },
       "CommitSerializerResponseItemRepositoryProvider": {
         "type": "object",
         "additionalProperties": {
           "type": "string"
         }
-      },
-      "CommitSerializerResponseItemRepositorySettings": {
-        "required": [
-          "codeReviewTriggers",
-          "enabledCodeReview"
-        ],
-        "type": "object",
-        "properties": {
-          "enabledCodeReview": {
-            "type": "boolean"
-          },
-          "codeReviewTriggers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "nullable": true
       },
       "DashboardListResponseItemCreatedByAvatar": {
         "type": "object",
@@ -50182,87 +50002,6 @@
           }
         }
       },
-      "ListWorkflowItemTriggersConditions": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersConditions_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersConditions_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ListWorkflowItemTriggersConditions_1": "#/components/schemas/ListWorkflowItemTriggersConditions_Branch1",
-            "ListWorkflowItemTriggersConditions_2": "#/components/schemas/ListWorkflowItemTriggersConditions_Branch2"
-          }
-        }
-      },
-      "ListWorkflowItemTriggersActions": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersActions_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersActions_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ListWorkflowItemTriggersActions_1": "#/components/schemas/ListWorkflowItemTriggersActions_Branch1",
-            "ListWorkflowItemTriggersActions_2": "#/components/schemas/ListWorkflowItemTriggersActions_Branch2"
-          }
-        }
-      },
-      "MonitorListItemConfigSchedule": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/MonitorListItemConfigSchedule_Branch1"
-          },
-          {
-            "$ref": "#/components/schemas/MonitorListItemConfigSchedule_Branch2"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "MonitorListItemConfigSchedule_1": "#/components/schemas/MonitorListItemConfigSchedule_Branch1",
-            "MonitorListItemConfigSchedule_2": "#/components/schemas/MonitorListItemConfigSchedule_Branch2"
-          }
-        }
-      },
       "MonitorListItemProjectAvatar": {
         "type": "object",
         "properties": {
@@ -50278,28 +50017,6 @@
             "nullable": true
           }
         }
-      },
-      "MonitorListItemEnvironmentsActiveIncident": {
-        "required": [
-          "brokenNotice",
-          "resolvingTimestamp",
-          "startingTimestamp"
-        ],
-        "type": "object",
-        "properties": {
-          "startingTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "resolvingTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "brokenNotice": {
-            "$ref": "#/components/schemas/MonitorListItemEnvironmentsActiveIncidentBrokenNotice"
-          }
-        },
-        "nullable": true
       },
       "OrganizationGroupIndexGetResponseItemStatusDetailsActor": {
         "required": [
@@ -50471,69 +50188,6 @@
           }
         }
       },
-      "OrganizationGroupIndexGetResponseItemFilteredStats": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "object"
-        }
-      },
-      "OrganizationGroupIndexGetResponseItemInboxReasonDetails": {
-        "required": [
-          "count",
-          "until",
-          "user_count",
-          "user_window",
-          "window"
-        ],
-        "type": "object",
-        "properties": {
-          "until": {
-            "type": "string",
-            "nullable": true
-          },
-          "count": {
-            "type": "integer",
-            "nullable": true
-          },
-          "window": {
-            "type": "integer",
-            "nullable": true
-          },
-          "user_count": {
-            "type": "integer",
-            "nullable": true
-          },
-          "user_window": {
-            "type": "integer",
-            "nullable": true
-          }
-        },
-        "nullable": true
-      },
-      "IssueEventDetailsResponseReleaseVersionInfoVersion": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "object"
-        }
-      },
-      "MonitorEnvironmentsActiveIncidentBrokenNotice": {
-        "required": [
-          "environmentMutedTimestamp",
-          "userNotifiedTimestamp"
-        ],
-        "type": "object",
-        "properties": {
-          "userNotifiedTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "environmentMutedTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "nullable": true
-      },
       "ShortIdLookupResponseGroupStatusDetailsActor": {
         "required": [
           "avatarUrl",
@@ -50703,49 +50357,6 @@
             }
           }
         }
-      },
-      "CommitSerializerResponseItemPullRequestRepositoryProvider": {
-        "type": "object",
-        "additionalProperties": {
-          "type": "string"
-        }
-      },
-      "CommitSerializerResponseItemPullRequestRepositorySettings": {
-        "required": [
-          "codeReviewTriggers",
-          "enabledCodeReview"
-        ],
-        "type": "object",
-        "properties": {
-          "enabledCodeReview": {
-            "type": "boolean"
-          },
-          "codeReviewTriggers": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        },
-        "nullable": true
-      },
-      "MonitorListItemEnvironmentsActiveIncidentBrokenNotice": {
-        "required": [
-          "environmentMutedTimestamp",
-          "userNotifiedTimestamp"
-        ],
-        "type": "object",
-        "properties": {
-          "userNotifiedTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "environmentMutedTimestamp": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "nullable": true
       },
       "OrganizationGroupIndexGetResponseItemStatusDetailsActorAvatar": {
         "type": "object",
@@ -88247,328 +87858,6 @@
             "type": "array",
             "items": {
               "type": "object"
-            }
-          }
-        }
-      },
-      "ProjectFilterResponseItemActive_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "boolean"
-          }
-        }
-      },
-      "ProjectFilterResponseItemActive_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          }
-        }
-      },
-      "MonitorConfigSchedule_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "MonitorConfigSchedule_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "maxLength": 2,
-            "minLength": 2,
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          }
-        }
-      },
-      "WorkflowTriggersConditions_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "required": [
-                "comparison",
-                "conditionResult",
-                "id",
-                "type"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "comparison": {
-                  "type": "object",
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/UnionBranch"
-                    }
-                  ]
-                },
-                "conditionResult": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        }
-      },
-      "WorkflowTriggersConditions_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "WorkflowTriggersActions_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "integrationId": {
-                  "type": "string",
-                  "nullable": true
-                },
-                "data": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
-                },
-                "config": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object"
-                  }
-                },
-                "status": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "WorkflowTriggersActions_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "CheckInListItemMonitorConfigSchedule_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CheckInListItemMonitorConfigSchedule_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "maxLength": 2,
-            "minLength": 2,
-            "type": "array",
-            "items": {
-              "type": "integer"
-            }
-          }
-        }
-      },
-      "ListWorkflowItemTriggersConditions_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "required": [
-                "comparison",
-                "conditionResult",
-                "id",
-                "type"
-              ],
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "comparison": {
-                  "type": "object",
-                  "anyOf": [
-                    {
-                      "$ref": "#/components/schemas/UnionBranch"
-                    }
-                  ]
-                },
-                "conditionResult": {
-                  "type": "boolean"
-                }
-              }
-            }
-          }
-        }
-      },
-      "ListWorkflowItemTriggersConditions_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "ListWorkflowItemTriggersActions_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "integrationId": {
-                  "type": "string",
-                  "nullable": true
-                },
-                "data": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "string"
-                  }
-                },
-                "config": {
-                  "type": "object",
-                  "additionalProperties": {
-                    "type": "object"
-                  }
-                },
-                "status": {
-                  "type": "string"
-                }
-              }
-            }
-          }
-        }
-      },
-      "ListWorkflowItemTriggersActions_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          }
-        }
-      },
-      "MonitorListItemConfigSchedule_Branch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "MonitorListItemConfigSchedule_Branch2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "maxLength": 2,
-            "minLength": 2,
-            "type": "array",
-            "items": {
-              "type": "integer"
             }
           }
         }
