@@ -2,7 +2,7 @@
   "descriptionHash": "AC765DB46BB7C9ACE0C4B2C5967565A66080F40816DC8949692AE66249C47F86F8F5C4D2F8871CBE5A8581680B0E8720C719186706E6F5921E8CF9A387AC0CC0",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "SentryOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Sentry.OpenApiClient",
