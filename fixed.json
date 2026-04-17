@@ -35019,7 +35019,7 @@
             "type": "string"
           },
           "defaultCodingAgentIntegrationId": {
-            "type": "integer",
+            "type": "string",
             "nullable": true
           },
           "defaultAutomatedRunStoppingPoint": {
@@ -51369,7 +51369,7 @@
             "type": "string"
           },
           "defaultCodingAgentIntegrationId": {
-            "type": "integer",
+            "type": "string",
             "nullable": true
           },
           "defaultAutomatedRunStoppingPoint": {

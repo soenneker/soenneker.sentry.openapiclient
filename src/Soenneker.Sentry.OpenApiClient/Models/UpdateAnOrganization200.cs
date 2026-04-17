@@ -105,7 +105,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DefaultCodingAgent { get; set; }
 #endif
         /// <summary>The defaultCodingAgentIntegrationId property</summary>
-        public int? DefaultCodingAgentIntegrationId { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultCodingAgentIntegrationId { get; set; }
+#nullable restore
+#else
+        public string DefaultCodingAgentIntegrationId { get; set; }
+#endif
         /// <summary>The defaultRole property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -370,7 +376,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "defaultAutomatedRunStoppingPoint", n => { DefaultAutomatedRunStoppingPoint = n.GetStringValue(); } },
                 { "defaultCodeReviewTriggers", n => { DefaultCodeReviewTriggers = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "defaultCodingAgent", n => { DefaultCodingAgent = n.GetStringValue(); } },
-                { "defaultCodingAgentIntegrationId", n => { DefaultCodingAgentIntegrationId = n.GetIntValue(); } },
+                { "defaultCodingAgentIntegrationId", n => { DefaultCodingAgentIntegrationId = n.GetStringValue(); } },
                 { "defaultRole", n => { DefaultRole = n.GetStringValue(); } },
                 { "defaultSeerScannerAutomation", n => { DefaultSeerScannerAutomation = n.GetBoolValue(); } },
                 { "desiredSampleRate", n => { DesiredSampleRate = n.GetDoubleValue(); } },
@@ -447,7 +453,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("defaultAutomatedRunStoppingPoint", DefaultAutomatedRunStoppingPoint);
             writer.WriteCollectionOfPrimitiveValues<string>("defaultCodeReviewTriggers", DefaultCodeReviewTriggers);
             writer.WriteStringValue("defaultCodingAgent", DefaultCodingAgent);
-            writer.WriteIntValue("defaultCodingAgentIntegrationId", DefaultCodingAgentIntegrationId);
+            writer.WriteStringValue("defaultCodingAgentIntegrationId", DefaultCodingAgentIntegrationId);
             writer.WriteStringValue("defaultRole", DefaultRole);
             writer.WriteBoolValue("defaultSeerScannerAutomation", DefaultSeerScannerAutomation);
             writer.WriteDoubleValue("desiredSampleRate", DesiredSampleRate);
