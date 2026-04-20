@@ -10023,7 +10023,6 @@
                             "features": [
                               "alert-filters",
                               "custom-inbound-filters",
-                              "data-forwarding",
                               "discard-groups",
                               "minidump",
                               "rate-limits",
@@ -13676,7 +13675,6 @@
                             "features": [
                               "alert-filters",
                               "custom-inbound-filters",
-                              "data-forwarding",
                               "discard-groups",
                               "minidump",
                               "rate-limits",
@@ -13740,7 +13738,6 @@
                             "features": [
                               "alert-filters",
                               "custom-inbound-filters",
-                              "data-forwarding",
                               "discard-groups",
                               "minidump",
                               "rate-limits",
@@ -13997,7 +13994,6 @@
                             "features": [
                               "alert-filters",
                               "custom-inbound-filters",
-                              "data-forwarding",
                               "discard-groups",
                               "minidump",
                               "rate-limits",
@@ -14061,7 +14057,6 @@
                             "features": [
                               "alert-filters",
                               "custom-inbound-filters",
-                              "data-forwarding",
                               "discard-groups",
                               "minidump",
                               "rate-limits",
@@ -15239,7 +15234,6 @@
                       "features": [
                         "alert-filters",
                         "custom-inbound-filters",
-                        "data-forwarding",
                         "discard-groups",
                         "minidump",
                         "rate-limits",
@@ -15595,7 +15589,6 @@
                       "features": [
                         "alert-filters",
                         "custom-inbound-filters",
-                        "data-forwarding",
                         "discard-groups",
                         "minidump",
                         "rate-limits",
@@ -19767,7 +19760,6 @@
                       "features": [
                         "alert-filters",
                         "custom-inbound-filters",
-                        "data-forwarding",
                         "discard-groups",
                         "minidump",
                         "rate-limits",
@@ -19915,7 +19907,6 @@
                       "features": [
                         "alert-filters",
                         "custom-inbound-filters",
-                        "data-forwarding",
                         "discard-groups",
                         "minidump",
                         "rate-limits",
@@ -20951,7 +20942,6 @@
                         "features": [
                           "alert-filters",
                           "custom-inbound-filters",
-                          "data-forwarding",
                           "discard-groups",
                           "minidump",
                           "rate-limits",
@@ -21093,7 +21083,6 @@
                       "features": [
                         "alert-filters",
                         "custom-inbound-filters",
-                        "data-forwarding",
                         "discard-groups",
                         "minidump",
                         "rate-limits",
