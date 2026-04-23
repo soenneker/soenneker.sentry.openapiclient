@@ -88,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
             /// <summary>&quot;Filter by data category. Each category represents a different type of data:- `error`: Error events (includes `default` and `security` categories)- `transaction`: Transaction events- `attachment`: File attachments (note: cannot be combined with other categories since quantity represents bytes)- `replay`: Session replay events- `profile`: Performance profiles- `profile_duration`: Profile duration data (note: cannot be combined with other categories since quantity represents milliseconds)- `profile_duration_ui`: Profile duration (UI) data (note: cannot be combined with other categories since quantity represents milliseconds)- `profile_chunk`: Profile chunk data- `profile_chunk_ui`: Profile chunk (UI) data- `monitor`: Cron monitor events* `error`* `transaction`* `attachment`* `replay`* `profile`* `profile_duration`* `profile_duration_ui`* `profile_chunk`* `profile_chunk_ui`* `monitor`&quot;</summary>
             [QueryParameter("category")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetCategoryQueryParameterType? Category { get; set; }
-            /// <summary>This defines the inclusive end of the time series range as an explicit datetime, either in UTC ISO8601 or epoch seconds.Use along with `start` instead of `statsPeriod`.</summary>
+            /// <summary>This defines the inclusive end of the time series range as an explicit datetime, either in UTC ISO8601 or epoch seconds. Use along with `start` instead of `statsPeriod`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
             /// <summary>the `sum(quantity)` field is bytes for attachments, and all others the &apos;event&apos; count for those types of events.`sum(times_seen)` sums the number of times an event has been seen. For &apos;normal&apos; event types, this will be equal to `sum(quantity)` for now. For sessions, quantity will sum the total number of events seen in a session, while `times_seen` will be the unique number of sessions. and for attachments, `times_seen` will be the total number of attachments, while quantity will be the total sum of attachment bytes.* `sum(quantity)`* `sum(times_seen)`</summary>
@@ -137,10 +137,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
             [QueryParameter("reason")]
             public string Reason { get; set; }
 #endif
-            /// <summary>This defines the start of the time series range as an explicit datetime, either in UTC ISO8601 or epoch seconds.Use along with `end` instead of `statsPeriod`.</summary>
+            /// <summary>This defines the start of the time series range as an explicit datetime, either in UTC ISO8601 or epoch seconds. Use along with `end` instead of `statsPeriod`.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }
-            /// <summary>This defines the range of the time series, relative to now. The range is given in a `&lt;number&gt;&lt;unit&gt;` format. For example `1d` for a one day range. Possible units are `m` for minutes, `h` for hours, `d` for days and `w` for weeks.You must either provide a `statsPeriod`, or a `start` and `end`.</summary>
+            /// <summary>This defines the range of the time series, relative to now. The range is given in a `&lt;number&gt;&lt;unit&gt;` format. For example `1d` for a one day range. Possible units are `m` for minutes, `h` for hours, `d` for days and `w` for weeks. You must either provide a `statsPeriod`, or a `start` and `end`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("statsPeriod")]
