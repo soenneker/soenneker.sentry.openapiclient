@@ -332,6 +332,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string SecurityTokenHeader { get; set; }
 #endif
+        /// <summary>The seerNightshiftTweaks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_seerNightshiftTweaks? SeerNightshiftTweaks { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_seerNightshiftTweaks SeerNightshiftTweaks { get; set; }
+#endif
         /// <summary>The seerScannerAutomation property</summary>
         public bool? SeerScannerAutomation { get; set; }
         /// <summary>The sensitiveFields property</summary>
@@ -522,6 +530,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "secondaryGroupingExpiry", n => { SecondaryGroupingExpiry = n.GetIntValue(); } },
                 { "securityToken", n => { SecurityToken = n.GetStringValue(); } },
                 { "securityTokenHeader", n => { SecurityTokenHeader = n.GetStringValue(); } },
+                { "seerNightshiftTweaks", n => { SeerNightshiftTweaks = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_seerNightshiftTweaks>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_seerNightshiftTweaks.CreateFromDiscriminatorValue); } },
                 { "seerScannerAutomation", n => { SeerScannerAutomation = n.GetBoolValue(); } },
                 { "sensitiveFields", n => { SensitiveFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_sessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_sessionStats.CreateFromDiscriminatorValue); } },
@@ -615,6 +624,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("secondaryGroupingExpiry", SecondaryGroupingExpiry);
             writer.WriteStringValue("securityToken", SecurityToken);
             writer.WriteStringValue("securityTokenHeader", SecurityTokenHeader);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_seerNightshiftTweaks>("seerNightshiftTweaks", SeerNightshiftTweaks);
             writer.WriteBoolValue("seerScannerAutomation", SeerScannerAutomation);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveFields", SensitiveFields);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAProject200_sessionStats>("sessionStats", SessionStats);

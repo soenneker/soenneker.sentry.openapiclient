@@ -15508,6 +15508,7 @@
                       "isDynamicallySampled": true,
                       "autofixAutomationTuning": "off",
                       "seerScannerAutomation": true,
+                      "seerNightshiftTweaks": null,
                       "highlightTags": [ ],
                       "highlightContext": { },
                       "highlightPreset": {
@@ -15863,6 +15864,7 @@
                       "isDynamicallySampled": true,
                       "autofixAutomationTuning": "off",
                       "seerScannerAutomation": true,
+                      "seerNightshiftTweaks": null,
                       "highlightTags": [ ],
                       "highlightContext": { },
                       "highlightPreset": {
@@ -29931,6 +29933,7 @@
           "secondaryGroupingExpiry",
           "securityToken",
           "securityTokenHeader",
+          "seerNightshiftTweaks",
           "seerScannerAutomation",
           "sensitiveFields",
           "slug",
@@ -30402,6 +30405,9 @@
           },
           "seerScannerAutomation": {
             "type": "boolean"
+          },
+          "seerNightshiftTweaks": {
+            "type": "object"
           },
           "scmSourceContextEnabled": {
             "type": "boolean"
@@ -72424,6 +72430,7 @@
           "secondaryGroupingExpiry",
           "securityToken",
           "securityTokenHeader",
+          "seerNightshiftTweaks",
           "seerScannerAutomation",
           "sensitiveFields",
           "slug",
@@ -73094,6 +73101,9 @@
           },
           "seerScannerAutomation": {
             "type": "boolean"
+          },
+          "seerNightshiftTweaks": {
+            "type": "object"
           },
           "scmSourceContextEnabled": {
             "type": "boolean"
@@ -73233,6 +73243,7 @@
           "secondaryGroupingExpiry",
           "securityToken",
           "securityTokenHeader",
+          "seerNightshiftTweaks",
           "seerScannerAutomation",
           "sensitiveFields",
           "slug",
@@ -73903,6 +73914,9 @@
           },
           "seerScannerAutomation": {
             "type": "boolean"
+          },
+          "seerNightshiftTweaks": {
+            "type": "object"
           },
           "scmSourceContextEnabled": {
             "type": "boolean"
