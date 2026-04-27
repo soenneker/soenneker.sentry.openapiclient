@@ -5773,13 +5773,14 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), and 'Date Added' (`inbox`).",
+            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).",
             "schema": {
               "enum": [
                 "date",
                 "freq",
                 "inbox",
                 "new",
+                "recommended",
                 "trends",
                 "user"
               ],
@@ -6118,13 +6119,14 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), and 'Date Added' (`inbox`).",
+            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).",
             "schema": {
               "enum": [
                 "date",
                 "freq",
                 "inbox",
                 "new",
+                "recommended",
                 "trends",
                 "user"
               ],
@@ -6290,13 +6292,14 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), and 'Date Added' (`inbox`).",
+            "description": "The sort order of the view. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), 'Date Added' (`inbox`), and 'Recommended' (`recommended`).",
             "schema": {
               "enum": [
                 "date",
                 "freq",
                 "inbox",
                 "new",
+                "recommended",
                 "trends",
                 "user"
               ],

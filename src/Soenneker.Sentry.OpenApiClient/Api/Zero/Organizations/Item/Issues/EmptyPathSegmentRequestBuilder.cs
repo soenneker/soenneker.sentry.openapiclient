@@ -207,7 +207,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Date Added&apos; (`inbox`).</summary>
+            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), &apos;Date Added&apos; (`inbox`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.DeleteSortQueryParameterType? Sort { get; set; }
             /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
@@ -299,7 +299,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             /// <summary>If this is set to `1` then the query will be parsed for issue short IDs. These may ignore other filters (e.g. projects), which is why it is an opt-in.</summary>
             [QueryParameter("shortIdLookup")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.GetShortIdLookupQueryParameterType? ShortIdLookup { get; set; }
-            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Date Added&apos; (`inbox`).</summary>
+            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), &apos;Date Added&apos; (`inbox`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.GetSortQueryParameterType? Sort { get; set; }
             /// <summary>The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
@@ -375,7 +375,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Date Added&apos; (`inbox`).</summary>
+            /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), &apos;Date Added&apos; (`inbox`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.PutSortQueryParameterType? Sort { get; set; }
             /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>

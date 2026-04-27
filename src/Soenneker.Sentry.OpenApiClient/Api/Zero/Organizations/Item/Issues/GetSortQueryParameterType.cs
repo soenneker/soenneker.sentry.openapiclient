@@ -24,6 +24,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         #pragma warning disable CS1591
         New,
         #pragma warning restore CS1591
+        [EnumMember(Value = "recommended")]
+        #pragma warning disable CS1591
+        Recommended,
+        #pragma warning restore CS1591
         [EnumMember(Value = "trends")]
         #pragma warning disable CS1591
         Trends,
