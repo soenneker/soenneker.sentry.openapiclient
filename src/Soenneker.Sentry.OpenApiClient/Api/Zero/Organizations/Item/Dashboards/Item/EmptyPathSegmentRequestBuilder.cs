@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.
         {
         }
         /// <summary>
-        /// Delete an organization&apos;s custom dashboard, or tombstonea pre-built dashboard which effectively deletes it.
+        /// Delete an organization&apos;s custom dashboard.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.EditAnOrganizationSCustomDashboard200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.EditAnOrganizationSCustomDashboard200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete an organization&apos;s custom dashboard, or tombstonea pre-built dashboard which effectively deletes it.
+        /// Delete an organization&apos;s custom dashboard.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

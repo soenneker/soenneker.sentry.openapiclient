@@ -520,7 +520,6 @@
                       ],
                       "defaultSeerScannerAutomation": true,
                       "enableSeerCoding": true,
-                      "enableSeerEnhancedAlerts": true,
                       "autoOpenPrs": false,
                       "defaultCodingAgent": "seer",
                       "defaultCodingAgentIntegrationId": null,
@@ -2491,7 +2490,7 @@
         "tags": [
           "Dashboards"
         ],
-        "description": "Delete an organization's custom dashboard, or tombstone\na pre-built dashboard which effectively deletes it.",
+        "description": "Delete an organization's custom dashboard.",
         "operationId": "Delete-an-Organization-s-Custom-Dashboard",
         "parameters": [
           {
@@ -13074,6 +13073,25 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "collapse",
+            "in": "query",
+            "description": "Fields to remove from the response to improve query performance.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "base",
+                  "filtered",
+                  "lifetime",
+                  "stats",
+                  "unhandled"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              }
             }
           }
         ],
@@ -23906,6 +23924,25 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "collapse",
+            "in": "query",
+            "description": "Fields to remove from the response to improve query performance.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "stats",
+                  "lifetime",
+                  "base",
+                  "unhandled",
+                  "filtered"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              }
+            }
           }
         ],
         "responses": {
@@ -34615,7 +34652,6 @@
           "defaultRole",
           "defaultSeerScannerAutomation",
           "enableSeerCoding",
-          "enableSeerEnhancedAlerts",
           "enhancedPrivacy",
           "eventsMemberAdmin",
           "experiments",
@@ -35004,9 +35040,6 @@
             "type": "string"
           },
           "defaultSeerScannerAutomation": {
-            "type": "boolean"
-          },
-          "enableSeerEnhancedAlerts": {
             "type": "boolean"
           },
           "enableSeerCoding": {
@@ -50928,7 +50961,6 @@
           "defaultRole",
           "defaultSeerScannerAutomation",
           "enableSeerCoding",
-          "enableSeerEnhancedAlerts",
           "enhancedPrivacy",
           "eventsMemberAdmin",
           "experiments",
@@ -51354,9 +51386,6 @@
             "type": "string"
           },
           "defaultSeerScannerAutomation": {
-            "type": "boolean"
-          },
-          "enableSeerEnhancedAlerts": {
             "type": "boolean"
           },
           "enableSeerCoding": {

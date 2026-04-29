@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/{?collapse*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/shortids/{issue_id}/{?collapse*}", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ResolveAShortID200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ResolveAShortID200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ResolveAShortID200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ResolveAShortID200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -58,11 +58,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,6 +78,23 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.It
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.EmptyPathSegmentRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Resolve a short ID to the project slug and group details.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 
+        {
+            /// <summary>Fields to remove from the response to improve query performance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("collapse")]
+            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.GetCollapseQueryParameterType[]? Collapse { get; set; }
+#nullable restore
+#else
+            [QueryParameter("collapse")]
+            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.Item.GetCollapseQueryParameterType[] Collapse { get; set; }
+#endif
         }
     }
 }

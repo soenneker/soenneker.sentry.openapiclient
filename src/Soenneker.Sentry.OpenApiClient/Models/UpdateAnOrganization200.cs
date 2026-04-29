@@ -126,8 +126,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? DesiredSampleRate { get; set; }
         /// <summary>The enableSeerCoding property</summary>
         public bool? EnableSeerCoding { get; set; }
-        /// <summary>The enableSeerEnhancedAlerts property</summary>
-        public bool? EnableSeerEnhancedAlerts { get; set; }
         /// <summary>The enhancedPrivacy property</summary>
         public bool? EnhancedPrivacy { get; set; }
         /// <summary>The eventsMemberAdmin property</summary>
@@ -381,7 +379,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "defaultSeerScannerAutomation", n => { DefaultSeerScannerAutomation = n.GetBoolValue(); } },
                 { "desiredSampleRate", n => { DesiredSampleRate = n.GetDoubleValue(); } },
                 { "enableSeerCoding", n => { EnableSeerCoding = n.GetBoolValue(); } },
-                { "enableSeerEnhancedAlerts", n => { EnableSeerEnhancedAlerts = n.GetBoolValue(); } },
                 { "enhancedPrivacy", n => { EnhancedPrivacy = n.GetBoolValue(); } },
                 { "eventsMemberAdmin", n => { EventsMemberAdmin = n.GetBoolValue(); } },
                 { "experiments", n => { Experiments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments.CreateFromDiscriminatorValue); } },
@@ -458,7 +455,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("defaultSeerScannerAutomation", DefaultSeerScannerAutomation);
             writer.WriteDoubleValue("desiredSampleRate", DesiredSampleRate);
             writer.WriteBoolValue("enableSeerCoding", EnableSeerCoding);
-            writer.WriteBoolValue("enableSeerEnhancedAlerts", EnableSeerEnhancedAlerts);
             writer.WriteBoolValue("enhancedPrivacy", EnhancedPrivacy);
             writer.WriteBoolValue("eventsMemberAdmin", EventsMemberAdmin);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments>("experiments", Experiments);
