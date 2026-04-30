@@ -48,12 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? EnhancedPrivacy { get; set; }
         /// <summary>Specify `true` to allow members to delete events (including the delete &amp; discard action) by granting them the `event:admin` scope.</summary>
         public bool? EventsMemberAdmin { get; set; }
-        /// <summary>Specify `true` to allow Sentry to detect users committing to your GitHub repositories that are not part of your Sentry organization. Requires a GitHub integration.</summary>
-        public bool? GithubNudgeInvite { get; set; }
-        /// <summary>Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitHub integration.</summary>
-        public bool? GithubPRBot { get; set; }
-        /// <summary>Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitLab integration.</summary>
-        public bool? GitlabPRBot { get; set; }
         /// <summary>Specify `true` to enable granular replay permissions, allowing per-member access control for replay data.</summary>
         public bool? HasGranularReplayPermissions { get; set; }
         /// <summary>Specify `true` to hide AI features from the organization.</summary>
@@ -169,9 +163,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "defaultRole", n => { DefaultRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization_defaultRole>(); } },
                 { "enhancedPrivacy", n => { EnhancedPrivacy = n.GetBoolValue(); } },
                 { "eventsMemberAdmin", n => { EventsMemberAdmin = n.GetBoolValue(); } },
-                { "githubNudgeInvite", n => { GithubNudgeInvite = n.GetBoolValue(); } },
-                { "githubPRBot", n => { GithubPRBot = n.GetBoolValue(); } },
-                { "gitlabPRBot", n => { GitlabPRBot = n.GetBoolValue(); } },
                 { "hasGranularReplayPermissions", n => { HasGranularReplayPermissions = n.GetBoolValue(); } },
                 { "hideAiFeatures", n => { HideAiFeatures = n.GetBoolValue(); } },
                 { "isEarlyAdopter", n => { IsEarlyAdopter = n.GetBoolValue(); } },
@@ -212,9 +203,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization_defaultRole>("defaultRole", DefaultRole);
             writer.WriteBoolValue("enhancedPrivacy", EnhancedPrivacy);
             writer.WriteBoolValue("eventsMemberAdmin", EventsMemberAdmin);
-            writer.WriteBoolValue("githubNudgeInvite", GithubNudgeInvite);
-            writer.WriteBoolValue("githubPRBot", GithubPRBot);
-            writer.WriteBoolValue("gitlabPRBot", GitlabPRBot);
             writer.WriteBoolValue("hasGranularReplayPermissions", HasGranularReplayPermissions);
             writer.WriteBoolValue("hideAiFeatures", HideAiFeatures);
             writer.WriteBoolValue("isEarlyAdopter", IsEarlyAdopter);

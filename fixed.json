@@ -8293,6 +8293,7 @@
                       "buildConfiguration": "release",
                       "isInstallable": true,
                       "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                      "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                       "downloadCount": 5,
                       "releaseNotes": "Bug fixes and performance improvements.",
                       "installGroups": [
@@ -8324,6 +8325,7 @@
                       "buildConfiguration": null,
                       "isInstallable": false,
                       "installUrl": null,
+                      "installUrlExpiresAt": null,
                       "downloadCount": 0,
                       "releaseNotes": null,
                       "installGroups": null,
@@ -8362,6 +8364,7 @@
                       "buildConfiguration": "release",
                       "isInstallable": true,
                       "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=plist",
+                      "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                       "downloadCount": 3,
                       "releaseNotes": null,
                       "installGroups": null,
@@ -17886,6 +17889,7 @@
                         "buildConfiguration": "release",
                         "isInstallable": true,
                         "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                        "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                         "downloadCount": 5,
                         "releaseNotes": "Bug fixes and performance improvements.",
                         "installGroups": [
@@ -17929,6 +17933,7 @@
                         "buildConfiguration": "release",
                         "isInstallable": true,
                         "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                        "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                         "downloadCount": 5,
                         "releaseNotes": "Bug fixes and performance improvements.",
                         "installGroups": [
@@ -17966,6 +17971,7 @@
                         "buildConfiguration": "release",
                         "isInstallable": true,
                         "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                        "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                         "downloadCount": 5,
                         "releaseNotes": "Bug fixes and performance improvements.",
                         "installGroups": [
@@ -18008,6 +18014,7 @@
                         "buildConfiguration": "release",
                         "isInstallable": true,
                         "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                        "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                         "downloadCount": 5,
                         "releaseNotes": "Bug fixes and performance improvements.",
                         "installGroups": [
@@ -18045,6 +18052,7 @@
                         "buildConfiguration": "release",
                         "isInstallable": true,
                         "installUrl": "https://sentry.io/api/0/projects/org/project/files/installablepreprodartifact/abc123/?response_format=apk",
+                        "installUrlExpiresAt": "2025-01-15T22:30:00+00:00",
                         "downloadCount": 5,
                         "releaseNotes": "Bug fixes and performance improvements.",
                         "installGroups": [
@@ -31338,6 +31346,7 @@
           "gitInfo",
           "installGroups",
           "installUrl",
+          "installUrlExpiresAt",
           "isCodeSignatureValid",
           "isInstallable",
           "platform",
@@ -31424,6 +31433,10 @@
             "type": "boolean"
           },
           "installUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "installUrlExpiresAt": {
             "type": "string",
             "nullable": true
           },
@@ -31924,6 +31937,7 @@
               "gitInfo",
               "installGroups",
               "installUrl",
+              "installUrlExpiresAt",
               "isCodeSignatureValid",
               "isInstallable",
               "platform",
@@ -32049,6 +32063,10 @@
                 "type": "boolean"
               },
               "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "installUrlExpiresAt": {
                 "type": "string",
                 "nullable": true
               },
@@ -32091,6 +32109,7 @@
               "gitInfo",
               "installGroups",
               "installUrl",
+              "installUrlExpiresAt",
               "isCodeSignatureValid",
               "isInstallable",
               "platform",
@@ -32216,6 +32235,10 @@
                 "type": "boolean"
               },
               "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "installUrlExpiresAt": {
                 "type": "string",
                 "nullable": true
               },
@@ -33555,18 +33578,6 @@
               }
             },
             "description": "\"A list of local Relays (the name, public key, and description as a JSON) registered for the organization. This feature is only available for organizations on the Business and Enterprise plans. Read more about Relay [here](/product/relay/).\n\n                                          Below is an example of a list containing a single local Relay registered for the organization:\n                                          ```json\n                                          {\n                                            trustedRelays: [\n                                                {\n                                                    name: \\\"my-relay\\\",\n                                                    publicKey: \\\"eiwr9fdruw4erfh892qy4493reyf89ur34wefd90h\\\",\n                                                    description: \\\"Configuration for my-relay.\\\"\n                                                }\n                                            ]\n                                          }\n                                          ```\n                                          \""
-          },
-          "githubPRBot": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitHub integration."
-          },
-          "githubNudgeInvite": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to detect users committing to your GitHub repositories that are not part of your Sentry organization. Requires a GitHub integration."
-          },
-          "gitlabPRBot": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitLab integration."
           },
           "issueAlertsThreadFlag": {
             "type": "boolean",
@@ -50909,18 +50920,6 @@
             },
             "description": "\"A list of local Relays (the name, public key, and description as a JSON) registered for the organization. This feature is only available for organizations on the Business and Enterprise plans. Read more about Relay [here](/product/relay/).\n\n                                          Below is an example of a list containing a single local Relay registered for the organization:\n                                          ```json\n                                          {\n                                            trustedRelays: [\n                                                {\n                                                    name: \\\"my-relay\\\",\n                                                    publicKey: \\\"eiwr9fdruw4erfh892qy4493reyf89ur34wefd90h\\\",\n                                                    description: \\\"Configuration for my-relay.\\\"\n                                                }\n                                            ]\n                                          }\n                                          ```\n                                          \""
           },
-          "githubPRBot": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitHub integration."
-          },
-          "githubNudgeInvite": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to detect users committing to your GitHub repositories that are not part of your Sentry organization. Requires a GitHub integration."
-          },
-          "gitlabPRBot": {
-            "type": "boolean",
-            "description": "Specify `true` to allow Sentry to comment on recent pull requests suspected of causing issues. Requires a GitLab integration."
-          },
           "issueAlertsThreadFlag": {
             "type": "boolean",
             "description": "Specify `true` to allow the Sentry Slack integration to post replies in threads for an Issue Alert notification. Requires a Slack integration."
@@ -64742,6 +64741,7 @@
           "gitInfo",
           "installGroups",
           "installUrl",
+          "installUrlExpiresAt",
           "isCodeSignatureValid",
           "isInstallable",
           "platform",
@@ -64867,6 +64867,10 @@
             "type": "boolean"
           },
           "installUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "installUrlExpiresAt": {
             "type": "string",
             "nullable": true
           },
@@ -77250,6 +77254,7 @@
               "gitInfo",
               "installGroups",
               "installUrl",
+              "installUrlExpiresAt",
               "isCodeSignatureValid",
               "isInstallable",
               "platform",
@@ -77375,6 +77380,10 @@
                 "type": "boolean"
               },
               "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "installUrlExpiresAt": {
                 "type": "string",
                 "nullable": true
               },
@@ -77417,6 +77426,7 @@
               "gitInfo",
               "installGroups",
               "installUrl",
+              "installUrlExpiresAt",
               "isCodeSignatureValid",
               "isInstallable",
               "platform",
@@ -77542,6 +77552,10 @@
                 "type": "boolean"
               },
               "installUrl": {
+                "type": "string",
+                "nullable": true
+              },
+              "installUrlExpiresAt": {
                 "type": "string",
                 "nullable": true
               },

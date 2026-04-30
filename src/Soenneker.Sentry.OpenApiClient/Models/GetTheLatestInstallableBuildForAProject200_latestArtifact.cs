@@ -72,6 +72,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string InstallUrl { get; set; }
 #endif
+        /// <summary>The installUrlExpiresAt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InstallUrlExpiresAt { get; set; }
+#nullable restore
+#else
+        public string InstallUrlExpiresAt { get; set; }
+#endif
         /// <summary>The isCodeSignatureValid property</summary>
         public bool? IsCodeSignatureValid { get; set; }
         /// <summary>The isInstallable property</summary>
@@ -157,6 +165,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "gitInfo", n => { GitInfo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200_latestArtifact_gitInfo>(global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200_latestArtifact_gitInfo.CreateFromDiscriminatorValue); } },
                 { "installGroups", n => { InstallGroups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "installUrl", n => { InstallUrl = n.GetStringValue(); } },
+                { "installUrlExpiresAt", n => { InstallUrlExpiresAt = n.GetStringValue(); } },
                 { "isCodeSignatureValid", n => { IsCodeSignatureValid = n.GetBoolValue(); } },
                 { "isInstallable", n => { IsInstallable = n.GetBoolValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
@@ -182,6 +191,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200_latestArtifact_gitInfo>("gitInfo", GitInfo);
             writer.WriteCollectionOfPrimitiveValues<string>("installGroups", InstallGroups);
             writer.WriteStringValue("installUrl", InstallUrl);
+            writer.WriteStringValue("installUrlExpiresAt", InstallUrlExpiresAt);
             writer.WriteBoolValue("isCodeSignatureValid", IsCodeSignatureValid);
             writer.WriteBoolValue("isInstallable", IsInstallable);
             writer.WriteStringValue("platform", Platform);
