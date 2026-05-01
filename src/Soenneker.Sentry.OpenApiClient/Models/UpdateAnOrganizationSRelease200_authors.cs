@@ -76,6 +76,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? IsStaff { get; set; }
         /// <summary>The isSuperuser property</summary>
         public bool? IsSuperuser { get; set; }
+        /// <summary>The isSuspended property</summary>
+        public bool? IsSuspended { get; set; }
         /// <summary>The lastActive property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,6 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "isManaged", n => { IsManaged = n.GetBoolValue(); } },
                 { "isStaff", n => { IsStaff = n.GetBoolValue(); } },
                 { "isSuperuser", n => { IsSuperuser = n.GetBoolValue(); } },
+                { "isSuspended", n => { IsSuspended = n.GetBoolValue(); } },
                 { "lastActive", n => { LastActive = n.GetStringValue(); } },
                 { "lastLogin", n => { LastLogin = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -172,6 +175,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("isManaged", IsManaged);
             writer.WriteBoolValue("isStaff", IsStaff);
             writer.WriteBoolValue("isSuperuser", IsSuperuser);
+            writer.WriteBoolValue("isSuspended", IsSuspended);
             writer.WriteStringValue("lastActive", LastActive);
             writer.WriteStringValue("lastLogin", LastLogin);
             writer.WriteStringValue("name", Name);

@@ -1075,15 +1075,6 @@
                     "hideAiFeatures": {
                       "type": "boolean"
                     },
-                    "githubPRBot": {
-                      "type": "boolean"
-                    },
-                    "githubNudgeInvite": {
-                      "type": "boolean"
-                    },
-                    "gitlabPRBot": {
-                      "type": "boolean"
-                    },
                     "aggregatedDataConsent": {
                       "type": "boolean"
                     },
@@ -1844,9 +1835,6 @@
                     "enhancedPrivacy",
                     "eventsMemberAdmin",
                     "experiments",
-                    "githubNudgeInvite",
-                    "githubPRBot",
-                    "gitlabPRBot",
                     "hasAuthProvider",
                     "hideAiFeatures",
                     "id",
@@ -2140,9 +2128,6 @@
                       "relayPiiConfig": null,
                       "codecovAccess": false,
                       "hideAiFeatures": false,
-                      "githubPRBot": false,
-                      "githubNudgeInvite": true,
-                      "gitlabPRBot": false,
                       "aggregatedDataConsent": false,
                       "defaultAutofixAutomationTuning": "off",
                       "autoEnableCodeReview": true,
@@ -4389,6 +4374,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -4458,6 +4446,7 @@
                           "isManaged",
                           "isStaff",
                           "isSuperuser",
+                          "isSuspended",
                           "lastActive",
                           "lastLogin",
                           "name",
@@ -4590,6 +4579,7 @@
                           "email": "admin@sentry.io",
                           "avatarUrl": "www.example.com",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -4643,6 +4633,7 @@
                           "email": "admin@sentry.io",
                           "avatarUrl": "www.example.com",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -5183,6 +5174,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -5252,6 +5246,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -5610,6 +5605,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -5907,6 +5903,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -5976,6 +5975,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -6334,6 +6334,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -6938,6 +6939,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -7007,6 +7011,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -7365,6 +7370,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -9364,6 +9370,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -9433,6 +9442,7 @@
                           "isManaged",
                           "isStaff",
                           "isSuperuser",
+                          "isSuspended",
                           "lastActive",
                           "lastLogin",
                           "name",
@@ -9487,6 +9497,7 @@
                           "email": "admin@sentry.io",
                           "avatarUrl": "www.example.com",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -9543,6 +9554,7 @@
                           "email": "admin@sentry.io",
                           "avatarUrl": "www.example.com",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -9924,6 +9936,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -9993,6 +10008,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -10048,6 +10064,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -10334,6 +10351,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -10403,6 +10423,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -10458,6 +10479,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -10844,6 +10866,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -10913,6 +10938,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -10968,6 +10994,7 @@
                         "email": "admin@sentry.io",
                         "avatarUrl": "www.example.com",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-10-25T17:07:33.190596Z",
@@ -14206,6 +14233,9 @@
                               "isActive": {
                                 "type": "boolean"
                               },
+                              "isSuspended": {
+                                "type": "boolean"
+                              },
                               "hasPasswordAuth": {
                                 "type": "boolean"
                               },
@@ -14275,6 +14305,7 @@
                               "isManaged",
                               "isStaff",
                               "isSuperuser",
+                              "isSuspended",
                               "lastActive",
                               "lastLogin",
                               "name",
@@ -15635,6 +15666,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -15704,6 +15738,7 @@
                           "isManaged",
                           "isStaff",
                           "isSuperuser",
+                          "isSuspended",
                           "lastActive",
                           "lastLogin",
                           "name",
@@ -15790,6 +15825,7 @@
                           "email": "sirpenguin@antarcticarocks.com",
                           "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -16098,6 +16134,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -16167,6 +16206,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -16251,6 +16291,7 @@
                         "email": "sirpenguin@antarcticarocks.com",
                         "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -16504,6 +16545,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -16573,6 +16617,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -16802,6 +16847,7 @@
                         "email": "sirpenguin@antarcticarocks.com",
                         "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -17288,6 +17334,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -17357,6 +17406,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -17586,6 +17636,7 @@
                         "email": "sirpenguin@antarcticarocks.com",
                         "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                         "isActive": true,
+                        "isSuspended": false,
                         "hasPasswordAuth": true,
                         "isManaged": false,
                         "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -26425,6 +26476,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -26443,6 +26497,7 @@
                           "id",
                           "isActive",
                           "isManaged",
+                          "isSuspended",
                           "name",
                           "username"
                         ]
@@ -26652,6 +26707,7 @@
                             "username": "rajraspberry",
                             "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                             "isActive": true,
+                            "isSuspended": false,
                             "hasPasswordAuth": false,
                             "isManaged": false,
                             "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -26697,6 +26753,7 @@
                           "username": "rajraspberry",
                           "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": false,
                           "isManaged": false,
                           "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -26771,6 +26828,7 @@
                           "email": "raj@raspberries",
                           "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": false,
                           "isManaged": false,
                           "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -27302,6 +27360,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -27320,6 +27381,7 @@
                           "id",
                           "isActive",
                           "isManaged",
+                          "isSuspended",
                           "name",
                           "username"
                         ]
@@ -27529,6 +27591,7 @@
                             "username": "rajraspberry",
                             "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                             "isActive": true,
+                            "isSuspended": false,
                             "hasPasswordAuth": false,
                             "isManaged": false,
                             "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -27574,6 +27637,7 @@
                           "username": "rajraspberry",
                           "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": false,
                           "isManaged": false,
                           "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -27648,6 +27712,7 @@
                           "email": "raj@raspberries",
                           "avatarUrl": "https://gravatar.com/avatar/bf99685de539465db9208ab3a888843ba0e5e85b1f156084484c7c6c31312be5?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": false,
                           "isManaged": false,
                           "dateJoined": "2023-08-07T12:32:09.091427Z",
@@ -29765,6 +29830,9 @@
                                   "isActive": {
                                     "type": "boolean"
                                   },
+                                  "isSuspended": {
+                                    "type": "boolean"
+                                  },
                                   "hasPasswordAuth": {
                                     "type": "boolean"
                                   },
@@ -29834,6 +29902,7 @@
                                   "isManaged",
                                   "isStaff",
                                   "isSuperuser",
+                                  "isSuspended",
                                   "lastActive",
                                   "lastLogin",
                                   "name",
@@ -30041,6 +30110,9 @@
                               "isActive": {
                                 "type": "boolean"
                               },
+                              "isSuspended": {
+                                "type": "boolean"
+                              },
                               "hasPasswordAuth": {
                                 "type": "boolean"
                               },
@@ -30110,6 +30182,7 @@
                               "isManaged",
                               "isStaff",
                               "isSuperuser",
+                              "isSuspended",
                               "lastActive",
                               "lastLogin",
                               "name",
@@ -32276,6 +32349,9 @@
                                 "isActive": {
                                   "type": "boolean"
                                 },
+                                "isSuspended": {
+                                  "type": "boolean"
+                                },
                                 "hasPasswordAuth": {
                                   "type": "boolean"
                                 },
@@ -32345,6 +32421,7 @@
                                 "isManaged",
                                 "isStaff",
                                 "isSuperuser",
+                                "isSuspended",
                                 "lastActive",
                                 "lastLogin",
                                 "name",
@@ -42424,6 +42501,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -42493,6 +42573,7 @@
                           "isManaged",
                           "isStaff",
                           "isSuperuser",
+                          "isSuspended",
                           "lastActive",
                           "lastLogin",
                           "name",
@@ -42579,6 +42660,7 @@
                           "email": "sirpenguin@antarcticarocks.com",
                           "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -45019,6 +45101,232 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod/size-analysis/status-check-rules/": {
+      "get": {
+        "operationId": "Retrieve Size Analysis status check rules for a project",
+        "description": "Retrieve the current Size Analysis status check rules configured for a project.\n\nUse this endpoint after receiving a `size_analysis.completed` webhook when you\nwant external CI to evaluate the same Size Analysis status check thresholds that\nSentry uses. The endpoint returns the current project configuration, not a\nhistorical snapshot from when the webhook was emitted.\n\nThe response includes whether status check enforcement is enabled and the\nnormalized rule list Sentry uses when evaluating Size Analysis thresholds.\n\nThis endpoint requires a bearer token with `project:read` access. Project\ndistribution tokens are not supported.\n\nResponse notes:\n\n- `enabled: false` means status-check enforcement is disabled for the project.\n- `rules: []` means there are no configured thresholds to evaluate.\n- `value` is returned as a string. For `absolute` and `absolute_diff`\n  measurements it is a byte value; for `relative_diff` it is a percentage.\n- `filterQuery` is the original configured filter string.\n- `filters` is the machine-readable version of `filterQuery`.\n- `filters: []` means the rule has no filters and applies to all builds.\n- `filters: null` means the saved filter query could not be parsed; Sentry's\n  status check trigger treats that rule as non-matching.\n\nRule evaluation semantics:\n\n- Threshold comparisons are strict: a rule triggers only when the computed value\n  is greater than the configured threshold, not greater than or equal to it.\n- `absolute_diff` and `relative_diff` require a matching base metric/build.\n- `relative_diff` does not trigger when the base size is zero.\n- `artifactType` identifies the artifact scope the rule evaluates.\n  `main_artifact`, `watch_artifact`, `android_dynamic_feature_artifact`,\n  and `app_clip_artifact` target their matching artifact metric.\n  `all_artifacts` evaluates all available artifact metrics.\n- Rule filters support the keys `app_id`, `git_head_ref`,\n  `build_configuration_name`, and `platform_name`.\n- Filter objects are combined with AND. Multiple `conditions` inside one\n  filter object are combined with OR.\n- Each condition uses `values`; single-value operators still return a\n  one-item array.\n- Values in `filters` are decoded literal values for exact/simple operators,\n  not query syntax. For example, `app_id:\\*com` in `filterQuery` becomes\n  `values: [\"*com\"]` with `operator: \"equals\"`.\n- The same key can appear in more than one filter object when positive and\n  negative conditions both exist; those filter objects are still combined with\n  AND.\n- Supported filter operators are `equals`, `notEquals`, `in`, `notIn`,\n  `contains`, `notContains`, `startsWith`, `notStartsWith`, `endsWith`,\n  `notEndsWith`, `matches`, and `notMatches`.\n- `matches` and `notMatches` values use Sentry wildcard pattern syntax, not\n  regular expressions. `*` matches zero or more characters, escaped `\\*`\n  matches a literal asterisk, and a pattern without `*` is an exact match.\n- `in` and `notIn` are evaluated as one condition against all values, matching\n  Sentry's status check trigger behavior.\n- A rule applies only when the build metadata matches all filters. If a\n  referenced metadata key is missing, the filter does not match, even for\n  negated operators.",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "project_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the project the resource belongs to.",
+            "required": true
+          }
+        ],
+        "tags": [
+          "Mobile Builds"
+        ],
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "enabled": {
+                      "type": "boolean"
+                    },
+                    "rules": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string"
+                          },
+                          "metric": {
+                            "enum": [
+                              "install_size",
+                              "download_size"
+                            ],
+                            "type": "string"
+                          },
+                          "measurement": {
+                            "enum": [
+                              "absolute",
+                              "absolute_diff",
+                              "relative_diff"
+                            ],
+                            "type": "string"
+                          },
+                          "value": {
+                            "type": "string"
+                          },
+                          "filterQuery": {
+                            "type": "string"
+                          },
+                          "filters": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "key": {
+                                  "enum": [
+                                    "app_id",
+                                    "build_configuration_name",
+                                    "git_head_ref",
+                                    "platform_name"
+                                  ],
+                                  "type": "string"
+                                },
+                                "conditions": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "object",
+                                    "properties": {
+                                      "operator": {
+                                        "enum": [
+                                          "contains",
+                                          "endsWith",
+                                          "equals",
+                                          "in",
+                                          "matches",
+                                          "notContains",
+                                          "notEndsWith",
+                                          "notEquals",
+                                          "notIn",
+                                          "notMatches",
+                                          "notStartsWith",
+                                          "startsWith"
+                                        ],
+                                        "type": "string"
+                                      },
+                                      "values": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "string"
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "operator",
+                                      "values"
+                                    ]
+                                  }
+                                }
+                              },
+                              "required": [
+                                "conditions",
+                                "key"
+                              ]
+                            },
+                            "nullable": true
+                          },
+                          "artifactType": {
+                            "enum": [
+                              "main_artifact",
+                              "watch_artifact",
+                              "android_dynamic_feature_artifact",
+                              "app_clip_artifact",
+                              "all_artifacts"
+                            ],
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "artifactType",
+                          "filterQuery",
+                          "filters",
+                          "id",
+                          "measurement",
+                          "metric",
+                          "value"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "enabled",
+                    "rules"
+                  ]
+                },
+                "examples": {
+                  "ConfiguredSizeAnalysisStatusCheckRules": {
+                    "value": {
+                      "enabled": true,
+                      "rules": [
+                        {
+                          "id": "rule-1",
+                          "metric": "install_size",
+                          "measurement": "absolute_diff",
+                          "value": "5000000",
+                          "filterQuery": "app_id:com.example.app platform_name:apple build_configuration_name:Release",
+                          "filters": [
+                            {
+                              "key": "app_id",
+                              "conditions": [
+                                {
+                                  "operator": "equals",
+                                  "values": [
+                                    "com.example.app"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "key": "platform_name",
+                              "conditions": [
+                                {
+                                  "operator": "equals",
+                                  "values": [
+                                    "apple"
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "key": "build_configuration_name",
+                              "conditions": [
+                                {
+                                  "operator": "equals",
+                                  "values": [
+                                    "Release"
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "artifactType": "main_artifact"
+                        }
+                      ]
+                    },
+                    "summary": "Configured Size Analysis Status Check Rules"
+                  }
+                }
+              }
+            },
+            "description": ""
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
           }
         }
       }
@@ -53234,6 +53542,9 @@
                           "isActive": {
                             "type": "boolean"
                           },
+                          "isSuspended": {
+                            "type": "boolean"
+                          },
                           "hasPasswordAuth": {
                             "type": "boolean"
                           },
@@ -53303,6 +53614,7 @@
                           "isManaged",
                           "isStaff",
                           "isSuperuser",
+                          "isSuspended",
                           "lastActive",
                           "lastLogin",
                           "name",
@@ -53399,6 +53711,7 @@
                           "email": "sirpenguin@antarcticarocks.com",
                           "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32&d=mm",
                           "isActive": true,
+                          "isSuspended": false,
                           "hasPasswordAuth": true,
                           "isManaged": false,
                           "dateJoined": "2021-07-06T21:13:58.375239Z",
@@ -65754,6 +66067,9 @@
                         "isActive": {
                           "type": "boolean"
                         },
+                        "isSuspended": {
+                          "type": "boolean"
+                        },
                         "hasPasswordAuth": {
                           "type": "boolean"
                         },
@@ -65823,6 +66139,7 @@
                         "isManaged",
                         "isStaff",
                         "isSuperuser",
+                        "isSuspended",
                         "lastActive",
                         "lastLogin",
                         "name",
@@ -66030,6 +66347,9 @@
                     "isActive": {
                       "type": "boolean"
                     },
+                    "isSuspended": {
+                      "type": "boolean"
+                    },
                     "hasPasswordAuth": {
                       "type": "boolean"
                     },
@@ -66099,6 +66419,7 @@
                     "isManaged",
                     "isStaff",
                     "isSuperuser",
+                    "isSuspended",
                     "lastActive",
                     "lastLogin",
                     "name",
@@ -67604,6 +67925,9 @@
               "isActive": {
                 "type": "boolean"
               },
+              "isSuspended": {
+                "type": "boolean"
+              },
               "hasPasswordAuth": {
                 "type": "boolean"
               },
@@ -67673,6 +67997,7 @@
               "isManaged",
               "isStaff",
               "isSuperuser",
+              "isSuspended",
               "lastActive",
               "lastLogin",
               "name",
@@ -68136,6 +68461,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -68205,6 +68533,7 @@
                 "isManaged",
                 "isStaff",
                 "isSuperuser",
+                "isSuspended",
                 "lastActive",
                 "lastLogin",
                 "name",
@@ -70066,6 +70395,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -70135,6 +70467,7 @@
                 "isManaged",
                 "isStaff",
                 "isSuperuser",
+                "isSuspended",
                 "lastActive",
                 "lastLogin",
                 "name",
@@ -70360,6 +70693,9 @@
               "isActive": {
                 "type": "boolean"
               },
+              "isSuspended": {
+                "type": "boolean"
+              },
               "hasPasswordAuth": {
                 "type": "boolean"
               },
@@ -70429,6 +70765,7 @@
               "isManaged",
               "isStaff",
               "isSuperuser",
+              "isSuspended",
               "lastActive",
               "lastLogin",
               "name",
@@ -73131,6 +73468,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -73200,6 +73540,7 @@
                 "isManaged",
                 "isStaff",
                 "isSuperuser",
+                "isSuspended",
                 "lastActive",
                 "lastLogin",
                 "name",
@@ -73557,6 +73898,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -73626,6 +73970,7 @@
                 "isManaged",
                 "isStaff",
                 "isSuperuser",
+                "isSuspended",
                 "lastActive",
                 "lastLogin",
                 "name",
@@ -74541,6 +74886,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -74610,6 +74958,7 @@
                 "isManaged",
                 "isStaff",
                 "isSuperuser",
+                "isSuspended",
                 "lastActive",
                 "lastLogin",
                 "name",
@@ -77718,6 +78067,9 @@
                 "isActive": {
                   "type": "boolean"
                 },
+                "isSuspended": {
+                  "type": "boolean"
+                },
                 "hasPasswordAuth": {
                   "type": "boolean"
                 },
@@ -77736,6 +78088,7 @@
                 "id",
                 "isActive",
                 "isManaged",
+                "isSuspended",
                 "name",
                 "username"
               ]
@@ -78698,6 +79051,9 @@
                     "isActive": {
                       "type": "boolean"
                     },
+                    "isSuspended": {
+                      "type": "boolean"
+                    },
                     "hasPasswordAuth": {
                       "type": "boolean"
                     },
@@ -78767,6 +79123,7 @@
                     "isManaged",
                     "isStaff",
                     "isSuperuser",
+                    "isSuspended",
                     "lastActive",
                     "lastLogin",
                     "name",
@@ -79494,6 +79851,9 @@
               "isActive": {
                 "type": "boolean"
               },
+              "isSuspended": {
+                "type": "boolean"
+              },
               "hasPasswordAuth": {
                 "type": "boolean"
               },
@@ -79563,6 +79923,7 @@
               "isManaged",
               "isStaff",
               "isSuperuser",
+              "isSuspended",
               "lastActive",
               "lastLogin",
               "name",
@@ -79950,6 +80311,9 @@
               "isActive": {
                 "type": "boolean"
               },
+              "isSuspended": {
+                "type": "boolean"
+              },
               "hasPasswordAuth": {
                 "type": "boolean"
               },
@@ -80019,6 +80383,7 @@
               "isManaged",
               "isStaff",
               "isSuperuser",
+              "isSuspended",
               "lastActive",
               "lastLogin",
               "name",
@@ -81309,15 +81674,6 @@
           "hideAiFeatures": {
             "type": "boolean"
           },
-          "githubPRBot": {
-            "type": "boolean"
-          },
-          "githubNudgeInvite": {
-            "type": "boolean"
-          },
-          "gitlabPRBot": {
-            "type": "boolean"
-          },
           "aggregatedDataConsent": {
             "type": "boolean"
           },
@@ -82078,9 +82434,6 @@
           "enhancedPrivacy",
           "eventsMemberAdmin",
           "experiments",
-          "githubNudgeInvite",
-          "githubPRBot",
-          "gitlabPRBot",
           "hasAuthProvider",
           "hideAiFeatures",
           "id",
@@ -82914,6 +83267,126 @@
           "conditions",
           "frequency",
           "name"
+        ]
+      },
+      "ProjectSizeStatusCheckRulesResponse": {
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "metric": {
+                  "enum": [
+                    "install_size",
+                    "download_size"
+                  ],
+                  "type": "string"
+                },
+                "measurement": {
+                  "enum": [
+                    "absolute",
+                    "absolute_diff",
+                    "relative_diff"
+                  ],
+                  "type": "string"
+                },
+                "value": {
+                  "type": "string"
+                },
+                "filterQuery": {
+                  "type": "string"
+                },
+                "filters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "enum": [
+                          "app_id",
+                          "build_configuration_name",
+                          "git_head_ref",
+                          "platform_name"
+                        ],
+                        "type": "string"
+                      },
+                      "conditions": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "operator": {
+                              "enum": [
+                                "contains",
+                                "endsWith",
+                                "equals",
+                                "in",
+                                "matches",
+                                "notContains",
+                                "notEndsWith",
+                                "notEquals",
+                                "notIn",
+                                "notMatches",
+                                "notStartsWith",
+                                "startsWith"
+                              ],
+                              "type": "string"
+                            },
+                            "values": {
+                              "type": "array",
+                              "items": {
+                                "type": "string"
+                              }
+                            }
+                          },
+                          "required": [
+                            "operator",
+                            "values"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "conditions",
+                      "key"
+                    ]
+                  },
+                  "nullable": true
+                },
+                "artifactType": {
+                  "enum": [
+                    "main_artifact",
+                    "watch_artifact",
+                    "android_dynamic_feature_artifact",
+                    "app_clip_artifact",
+                    "all_artifacts"
+                  ],
+                  "type": "string"
+                }
+              },
+              "required": [
+                "artifactType",
+                "filterQuery",
+                "filters",
+                "id",
+                "measurement",
+                "metric",
+                "value"
+              ]
+            }
+          }
+        },
+        "required": [
+          "enabled",
+          "rules"
         ]
       },
       "ProjectSummary": {
@@ -84809,6 +85282,9 @@
                       "isActive": {
                         "type": "boolean"
                       },
+                      "isSuspended": {
+                        "type": "boolean"
+                      },
                       "hasPasswordAuth": {
                         "type": "boolean"
                       },
@@ -84878,6 +85354,7 @@
                       "isManaged",
                       "isStaff",
                       "isSuperuser",
+                      "isSuspended",
                       "lastActive",
                       "lastLogin",
                       "name",

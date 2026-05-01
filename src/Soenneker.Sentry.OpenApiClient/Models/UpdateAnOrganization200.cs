@@ -154,12 +154,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Features { get; set; }
 #endif
-        /// <summary>The githubNudgeInvite property</summary>
-        public bool? GithubNudgeInvite { get; set; }
-        /// <summary>The githubPRBot property</summary>
-        public bool? GithubPRBot { get; set; }
-        /// <summary>The gitlabPRBot property</summary>
-        public bool? GitlabPRBot { get; set; }
         /// <summary>The hasAuthProvider property</summary>
         public bool? HasAuthProvider { get; set; }
         /// <summary>The hideAiFeatures property</summary>
@@ -384,9 +378,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "experiments", n => { Experiments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments.CreateFromDiscriminatorValue); } },
                 { "extraOptions", n => { ExtraOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_extraOptions>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_extraOptions.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "githubNudgeInvite", n => { GithubNudgeInvite = n.GetBoolValue(); } },
-                { "githubPRBot", n => { GithubPRBot = n.GetBoolValue(); } },
-                { "gitlabPRBot", n => { GitlabPRBot = n.GetBoolValue(); } },
                 { "hasAuthProvider", n => { HasAuthProvider = n.GetBoolValue(); } },
                 { "hideAiFeatures", n => { HideAiFeatures = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -460,9 +451,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_experiments>("experiments", Experiments);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganization200_extraOptions>("extraOptions", ExtraOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
-            writer.WriteBoolValue("githubNudgeInvite", GithubNudgeInvite);
-            writer.WriteBoolValue("githubPRBot", GithubPRBot);
-            writer.WriteBoolValue("gitlabPRBot", GitlabPRBot);
             writer.WriteBoolValue("hasAuthProvider", HasAuthProvider);
             writer.WriteBoolValue("hideAiFeatures", HideAiFeatures);
             writer.WriteStringValue("id", Id);

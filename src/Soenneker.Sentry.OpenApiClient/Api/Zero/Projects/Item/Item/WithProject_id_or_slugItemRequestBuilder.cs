@@ -12,6 +12,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Keys;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Members;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Ownership;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays;
@@ -88,6 +89,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Ownership.OwnershipRequestBuilder Ownership
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Ownership.OwnershipRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The preprod property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.PreprodRequestBuilder Preprod
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.PreprodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preprodartifacts property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.PreprodartifactsRequestBuilder Preprodartifacts
