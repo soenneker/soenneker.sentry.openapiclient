@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events/?dataset={dataset}&field={field}{&end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events/?dataset={dataset}&field={field}{&cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events/?dataset={dataset}&field={field}{&end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events/?dataset={dataset}&field={field}{&cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,6 +85,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 
         {
+            /// <summary>A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
             /// <summary>Which dataset to query, changing datasets changes the available fields that can be queried</summary>
             [QueryParameter("dataset")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.GetDatasetQueryParameterType? Dataset { get; set; }

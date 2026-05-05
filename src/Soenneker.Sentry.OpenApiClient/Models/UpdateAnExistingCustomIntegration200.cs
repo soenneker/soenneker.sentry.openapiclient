@@ -74,6 +74,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The isAlertable property</summary>
         public bool? IsAlertable { get; set; }
+        /// <summary>The isDisabled property</summary>
+        public bool? IsDisabled { get; set; }
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -200,6 +202,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "featureData", n => { FeatureData = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isAlertable", n => { IsAlertable = n.GetBoolValue(); } },
+                { "isDisabled", n => { IsDisabled = n.GetBoolValue(); } },
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "overview", n => { Overview = n.GetStringValue(); } },
@@ -231,6 +234,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
             writer.WriteCollectionOfPrimitiveValues<string>("featureData", FeatureData);
             writer.WriteBoolValue("isAlertable", IsAlertable);
+            writer.WriteBoolValue("isDisabled", IsDisabled);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("overview", Overview);

@@ -8,6 +8,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
     public enum GetDatasetQueryParameterType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "discover")]
+        #pragma warning disable CS1591
+        Discover,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "errors")]
+        #pragma warning disable CS1591
+        Errors,
+        #pragma warning restore CS1591
         [EnumMember(Value = "logs")]
         #pragma warning disable CS1591
         Logs,
@@ -19,6 +27,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         [EnumMember(Value = "spans")]
         #pragma warning disable CS1591
         Spans,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "transactions")]
+        #pragma warning disable CS1591
+        Transactions,
         #pragma warning restore CS1591
         [EnumMember(Value = "uptime_results")]
         #pragma warning disable CS1591
