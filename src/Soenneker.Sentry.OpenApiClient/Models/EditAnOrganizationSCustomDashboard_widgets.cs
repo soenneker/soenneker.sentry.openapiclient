@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>* `line`* `area`* `stacked_area`* `bar`* `table`* `big_number`* `top_n`* `details`* `categorical_bar`* `wheel`* `rage_and_dead_clicks`* `server_tree`* `text`* `agents_traces_table`</summary>
+        /// <summary>* `line`* `area`* `bar`* `table`* `big_number`* `details`* `categorical_bar`* `wheel`* `rage_and_dead_clicks`* `server_tree`* `text`* `agents_traces_table`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.EditAnOrganizationSCustomDashboard_widgets_display_type? DisplayType { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

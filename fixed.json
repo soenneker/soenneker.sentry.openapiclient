@@ -28399,11 +28399,9 @@
                   "enum": [
                     "line",
                     "area",
-                    "stacked_area",
                     "bar",
                     "table",
                     "big_number",
-                    "top_n",
                     "details",
                     "categorical_bar",
                     "wheel",
@@ -28414,7 +28412,7 @@
                   ],
                   "type": "string",
                   "additionalProperties": false,
-                  "description": "* `line`\n* `area`\n* `stacked_area`\n* `bar`\n* `table`\n* `big_number`\n* `top_n`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
+                  "description": "* `line`\n* `area`\n* `bar`\n* `table`\n* `big_number`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
                 },
                 "interval": {
                   "maxLength": 10,
@@ -28695,11 +28693,9 @@
                   "enum": [
                     "line",
                     "area",
-                    "stacked_area",
                     "bar",
                     "table",
                     "big_number",
-                    "top_n",
                     "details",
                     "categorical_bar",
                     "wheel",
@@ -28710,7 +28706,7 @@
                   ],
                   "type": "string",
                   "additionalProperties": false,
-                  "description": "* `line`\n* `area`\n* `stacked_area`\n* `bar`\n* `table`\n* `big_number`\n* `top_n`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
+                  "description": "* `line`\n* `area`\n* `bar`\n* `table`\n* `big_number`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
                 },
                 "interval": {
                   "maxLength": 10,
@@ -29534,11 +29530,9 @@
             "enum": [
               "line",
               "area",
-              "stacked_area",
               "bar",
               "table",
               "big_number",
-              "top_n",
               "details",
               "categorical_bar",
               "wheel",
@@ -29549,7 +29543,7 @@
             ],
             "type": "string",
             "additionalProperties": false,
-            "description": "* `line`\n* `area`\n* `stacked_area`\n* `bar`\n* `table`\n* `big_number`\n* `top_n`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
+            "description": "* `line`\n* `area`\n* `bar`\n* `table`\n* `big_number`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
           },
           "interval": {
             "maxLength": 10,
@@ -53533,11 +53527,9 @@
                   "enum": [
                     "line",
                     "area",
-                    "stacked_area",
                     "bar",
                     "table",
                     "big_number",
-                    "top_n",
                     "details",
                     "categorical_bar",
                     "wheel",
@@ -53548,7 +53540,7 @@
                   ],
                   "type": "string",
                   "additionalProperties": false,
-                  "description": "* `line`\n* `area`\n* `stacked_area`\n* `bar`\n* `table`\n* `big_number`\n* `top_n`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
+                  "description": "* `line`\n* `area`\n* `bar`\n* `table`\n* `big_number`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
                 },
                 "interval": {
                   "maxLength": 10,
@@ -54970,11 +54962,9 @@
                   "enum": [
                     "line",
                     "area",
-                    "stacked_area",
                     "bar",
                     "table",
                     "big_number",
-                    "top_n",
                     "details",
                     "categorical_bar",
                     "wheel",
@@ -54985,7 +54975,7 @@
                   ],
                   "type": "string",
                   "additionalProperties": false,
-                  "description": "* `line`\n* `area`\n* `stacked_area`\n* `bar`\n* `table`\n* `big_number`\n* `top_n`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
+                  "description": "* `line`\n* `area`\n* `bar`\n* `table`\n* `big_number`\n* `details`\n* `categorical_bar`\n* `wheel`\n* `rage_and_dead_clicks`\n* `server_tree`\n* `text`\n* `agents_traces_table`"
                 },
                 "interval": {
                   "maxLength": 10,
