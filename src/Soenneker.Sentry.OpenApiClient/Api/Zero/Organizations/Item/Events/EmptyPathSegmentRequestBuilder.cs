@@ -95,7 +95,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>Which dataset to query, changing datasets changes the available fields that can be queried</summary>
+            /// <summary>Which dataset to query. The chosen dataset determines which fields are queryable.- `errors` - Error events.- `logs` - Structured log events.- `profile_functions` - Function-level Profiling data.- `spans` - Distributed tracing span events.- `tracemetrics` - Application Metrics.- `uptime_results` - Uptime monitoring check results.</summary>
             [QueryParameter("dataset")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.GetDatasetQueryParameterType? Dataset { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>

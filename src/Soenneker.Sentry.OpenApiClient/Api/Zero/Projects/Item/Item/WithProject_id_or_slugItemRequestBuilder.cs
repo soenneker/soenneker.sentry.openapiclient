@@ -16,7 +16,6 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays;
-using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Tags;
@@ -109,11 +108,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.ReplaysRequestBuilder Replays
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.ReplaysRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The rules property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.RulesRequestBuilder Rules
-        {
-            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Rules.RulesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats.StatsRequestBuilder Stats

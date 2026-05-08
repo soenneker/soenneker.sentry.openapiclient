@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AlertRules;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors;
@@ -52,11 +51,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithOrganization_id_or_slugItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The alertRules property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AlertRules.AlertRulesRequestBuilder AlertRules
-        {
-            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AlertRules.AlertRulesRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The config property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config.ConfigRequestBuilder Config
         {
