@@ -2085,7 +2085,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nList an Organization's Monitors",
+        "description": "List an Organization's Monitors",
         "operationId": "Fetch-an-Organization-s-Monitors",
         "parameters": [
           {
@@ -2363,7 +2363,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nBulk enable or disable an Organization's Monitors",
+        "description": "Bulk enable or disable an Organization's Monitors",
         "operationId": "Mutate-an-Organization-s-Monitors",
         "parameters": [
           {
@@ -2642,7 +2642,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nBulk delete Monitors for a given organization",
+        "description": "Bulk delete Monitors for a given organization",
         "operationId": "Bulk-Delete-Monitors",
         "parameters": [
           {
@@ -2724,7 +2724,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nReturn details on an individual monitor",
+        "description": "Return details on an individual monitor",
         "operationId": "Fetch-a-Monitor",
         "parameters": [
           {
@@ -2872,7 +2872,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nUpdate an existing monitor",
+        "description": "Update an existing monitor",
         "operationId": "Update-a-Monitor-by-ID",
         "parameters": [
           {
@@ -3029,7 +3029,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nDelete a monitor",
+        "description": "Delete a monitor",
         "operationId": "Delete-a-Monitor",
         "parameters": [
           {
@@ -9225,7 +9225,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nCreate a Monitor for a project",
+        "description": "Create a Monitor for a project",
         "operationId": "Create-a-Monitor-for-a-Project",
         "parameters": [
           {
@@ -13730,7 +13730,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nReturns a list of alerts for a given organization",
+        "description": "Returns a list of alerts for a given organization",
         "operationId": "Fetch-Alerts",
         "parameters": [
           {
@@ -13992,7 +13992,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nCreates an alert for an organization",
+        "description": "Creates an alert for an organization",
         "operationId": "Create-an-Alert-for-an-Organization",
         "parameters": [
           {
@@ -14126,7 +14126,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nBulk enable or disable alerts for a given Organization",
+        "description": "Bulk enable or disable alerts for a given Organization",
         "operationId": "Mutate-an-Organization-s-Alerts",
         "parameters": [
           {
@@ -14388,7 +14388,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nBulk delete alerts for a given organization",
+        "description": "Bulk delete alerts for a given organization",
         "operationId": "Bulk-Delete-Alerts",
         "parameters": [
           {
@@ -14461,7 +14461,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nReturns an alert.",
+        "description": "Returns an alert.",
         "operationId": "Fetch-an-Alert",
         "parameters": [
           {
@@ -14594,7 +14594,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nUpdates an alert.",
+        "description": "Updates an alert.",
         "operationId": "Update-an-Alert-by-ID",
         "parameters": [
           {
@@ -14735,7 +14735,7 @@
         "tags": [
           "Monitors"
         ],
-        "description": "⚠️ This endpoint is currently in **beta** and may be subject to change. It is supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.\n\nDeletes an alert.",
+        "description": "Deletes an alert.",
         "operationId": "Delete-an-Alert",
         "parameters": [
           {
