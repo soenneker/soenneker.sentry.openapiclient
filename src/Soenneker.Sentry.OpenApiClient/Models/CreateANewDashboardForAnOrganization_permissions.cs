@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.
+    /// Permissions that restrict users from editing dashboards
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateANewDashboardForAnOrganization_permissions : IAdditionalDataHolder, IParsable

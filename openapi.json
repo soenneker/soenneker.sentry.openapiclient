@@ -20904,7 +20904,7 @@
           }
         ],
         "tags": [
-          "Alerts"
+          "Spike Protection"
         ],
         "security": [
           {
@@ -20967,7 +20967,7 @@
           }
         ],
         "tags": [
-          "Alerts"
+          "Spike Protection"
         ],
         "requestBody": {
           "content": {
@@ -21085,7 +21085,7 @@
           }
         ],
         "tags": [
-          "Alerts"
+          "Spike Protection"
         ],
         "security": [
           {
@@ -21151,7 +21151,7 @@
           }
         ],
         "tags": [
-          "Alerts"
+          "Spike Protection"
         ],
         "requestBody": {
           "content": {
@@ -21264,7 +21264,7 @@
           }
         ],
         "tags": [
-          "Alerts"
+          "Spike Protection"
         ],
         "security": [
           {
@@ -60985,7 +60985,7 @@
                             ]
                           },
                           "options": {
-                            "auto_run_source": "issue_summary_on_alert_fixability"
+                            "auto_run_source": "issue_summary_on_post_process_fixability"
                           }
                         },
                         "updated_at": "2025-09-23T21:02:18.160885",
@@ -61181,6 +61181,10 @@
                     ],
                     "type": "string",
                     "description": "Where the issue fix process should stop. If not provided, will run to root cause.\n\n* `root_cause`\n* `solution`\n* `code_changes`\n* `open_pr`"
+                  },
+                  "referrer": {
+                    "type": "string",
+                    "description": "Referrer identifying where the issue fix was triggered from."
                   }
                 }
               }
@@ -62914,6 +62918,10 @@
             ],
             "type": "string",
             "description": "Where the issue fix process should stop. If not provided, will run to root cause.\n\n* `root_cause`\n* `solution`\n* `code_changes`\n* `open_pr`"
+          },
+          "referrer": {
+            "type": "string",
+            "description": "Referrer identifying where the issue fix was triggered from."
           }
         }
       },
@@ -84627,9 +84635,9 @@
       }
     },
     {
-      "name": "Alerts",
-      "x-sidebar-name": "Alerts & Notifications",
-      "description": "Endpoints for Alerts and Notifications",
+      "name": "Spike Protection",
+      "x-sidebar-name": "Spike Protection Notifications",
+      "description": "Endpoints for Spike Protection Notifications",
       "x-display-description": false,
       "externalDocs": {
         "description": "Found an error? Let us know.",
@@ -84639,8 +84647,8 @@
     {
       "name": "Monitors",
       "x-sidebar-name": "Monitors & Alerts",
-      "description": "⚠️ These endpoints are currently in **beta** and may be subject to change. They are supported by [New Monitors and Alerts](/product/new-monitors-and-alerts/) and may not be viewable in the UI today.",
-      "x-display-description": true,
+      "description": "Endpoints for Monitors and Alerts",
+      "x-display-description": false,
       "externalDocs": {
         "description": "Found an error? Let us know.",
         "url": "https://github.com/getsentry/sentry-docs/issues/new/?title=API%20Documentation%20Error:%20/monitors/&template=api_error_template.md"

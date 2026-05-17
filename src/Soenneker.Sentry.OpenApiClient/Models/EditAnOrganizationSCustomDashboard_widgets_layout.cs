@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>
-    /// &quot;Widget grid layout position and dimensions.The dashboard uses a 6-column grid. Required keys: x, y, w, h, minH.Constraints: x (0-5), y (&gt;= 0), w (1-6), h (&gt;= 1), minH (&gt;= 1), and x + w &lt;= 6.&quot;
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class EditAnOrganizationSCustomDashboard_widgets_layout : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

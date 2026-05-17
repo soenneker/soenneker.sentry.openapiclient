@@ -15,6 +15,34 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Ignore the issue until it has occurred this many times in `ignoreWindow` minutes.</summary>
+        public int? IgnoreCount { get; set; }
+        /// <summary>Ignore the issue until for this many minutes.</summary>
+        public int? IgnoreDuration { get; set; }
+        /// <summary>Ignore the issue until it has affected this many users in `ignoreUserWindow` minutes.</summary>
+        public int? IgnoreUserCount { get; set; }
+        /// <summary>&quot;Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)&quot;</summary>
+        public int? IgnoreUserWindow { get; set; }
+        /// <summary>&quot;Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)&quot;</summary>
+        public int? IgnoreWindow { get; set; }
+        /// <summary>The commit data that the issue should use for resolution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails_inCommit? InCommit { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails_inCommit InCommit { get; set; }
+#endif
+        /// <summary>If true, marks the issue as resolved in the next release.</summary>
+        public bool? InNextRelease { get; set; }
+        /// <summary>The version of the release that the issue should be resolved in.If set to `latest`, the latest release will be used.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InRelease { get; set; }
+#nullable restore
+#else
+        public string InRelease { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails"/> and sets the default values.
         /// </summary>
@@ -40,6 +68,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreDuration", n => { IgnoreDuration = n.GetIntValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
+                { "inCommit", n => { InCommit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails_inCommit>(global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails_inCommit.CreateFromDiscriminatorValue); } },
+                { "inNextRelease", n => { InNextRelease = n.GetBoolValue(); } },
+                { "inRelease", n => { InRelease = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +85,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteIntValue("ignoreDuration", IgnoreDuration);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAnOrganizationSIssues_statusDetails_inCommit>("inCommit", InCommit);
+            writer.WriteBoolValue("inNextRelease", InNextRelease);
+            writer.WriteStringValue("inRelease", InRelease);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

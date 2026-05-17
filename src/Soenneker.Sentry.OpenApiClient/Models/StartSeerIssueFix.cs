@@ -39,6 +39,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string PrToCommentOnUrl { get; set; }
 #endif
+        /// <summary>Referrer identifying where the issue fix was triggered from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Referrer { get; set; }
+#nullable restore
+#else
+        public string Referrer { get; set; }
+#endif
         /// <summary>Where the issue fix process should stop. If not provided, will run to root cause.* `root_cause`* `solution`* `code_changes`* `open_pr`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point? StoppingPoint { get; set; }
         /// <summary>
@@ -69,6 +77,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "event_id", n => { EventId = n.GetStringValue(); } },
                 { "instruction", n => { Instruction = n.GetStringValue(); } },
                 { "pr_to_comment_on_url", n => { PrToCommentOnUrl = n.GetStringValue(); } },
+                { "referrer", n => { Referrer = n.GetStringValue(); } },
                 { "stopping_point", n => { StoppingPoint = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point>(); } },
             };
         }
@@ -82,6 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("event_id", EventId);
             writer.WriteStringValue("instruction", Instruction);
             writer.WriteStringValue("pr_to_comment_on_url", PrToCommentOnUrl);
+            writer.WriteStringValue("referrer", Referrer);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point>("stopping_point", StoppingPoint);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -15,6 +15,24 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The conditions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_conditions>? Conditions { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_conditions> Conditions { get; set; }
+#endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>* `any`* `any-short`* `all`* `none`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_logic_type? LogicType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group"/> and sets the default values.
         /// </summary>
@@ -40,6 +58,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_conditions>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_conditions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "logic_type", n => { LogicType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_logic_type>(); } },
             };
         }
         /// <summary>
@@ -49,6 +70,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_conditions>("conditions", Conditions);
+            writer.WriteStringValue("id", Id);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAMonitorByID_condition_group_logic_type>("logic_type", LogicType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
