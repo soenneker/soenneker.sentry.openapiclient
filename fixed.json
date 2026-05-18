@@ -23528,6 +23528,70 @@
         ]
       }
     },
+    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod/snapshots/status-check-rules": {
+      "get": {
+        "tags": [
+          "Snapshots"
+        ],
+        "description": "\"Retrieve the current Snapshot status check rules configured for a project.\n\nUse this endpoint when external CI needs to evaluate the same Snapshot\nchange-type rules that Sentry uses. The endpoint returns the current\nproject configuration, not a historical snapshot from when a build was\nprocessed.\n\nThe response includes whether status check enforcement is enabled and the\nSnapshot change types that fail the status check.\n\nThis endpoint requires a bearer token with `project:read` access. Project\ndistribution tokens are not supported.\n\nResponse notes:\n\n- `enabled: false` means status-check enforcement is disabled for the project.\n- `rules` contains one boolean per Snapshot change type.\n- `failOnAdded`, `failOnRemoved`, `failOnChanged`, and `failOnRenamed`\n  indicate which unapproved change types fail the status check.\"",
+        "operationId": "Retrieve-Snapshot-status-check-rules-for-a-project",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveSnapshotStatusCheckRulesForAProject200"
+                },
+                "examples": {
+                  "ConfiguredSnapshotStatusCheckRules": {
+                    "summary": "Configured Snapshot Status Check Rules",
+                    "value": {
+                      "enabled": true,
+                      "rules": {
+                        "failOnAdded": false,
+                        "failOnRemoved": true,
+                        "failOnChanged": true,
+                        "failOnRenamed": false
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprodartifacts/build-distribution/latest": {
       "get": {
         "tags": [
@@ -43943,6 +44007,21 @@
           }
         }
       },
+      "ProjectSnapshotStatusCheckRulesResponse": {
+        "required": [
+          "enabled",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "rules": {
+            "$ref": "#/components/schemas/ProjectSnapshotStatusCheckRulesResponseRules"
+          }
+        }
+      },
       "ProjectSummary": {
         "required": [
           "access",
@@ -53490,6 +53569,29 @@
           }
         },
         "description": "\"Applies a rate limit to cap the number of errors accepted during a given time window. To\ndisable entirely set `rateLimit` to null.\n```json\n{\n    \\\"rateLimit\\\": {\n        \\\"window\\\": 7200, // time in seconds\n        \\\"count\\\": 1000 // error cap\n    }\n}\n```\""
+      },
+      "ProjectSnapshotStatusCheckRulesResponseRules": {
+        "required": [
+          "failOnAdded",
+          "failOnChanged",
+          "failOnRemoved",
+          "failOnRenamed"
+        ],
+        "type": "object",
+        "properties": {
+          "failOnAdded": {
+            "type": "boolean"
+          },
+          "failOnRemoved": {
+            "type": "boolean"
+          },
+          "failOnChanged": {
+            "type": "boolean"
+          },
+          "failOnRenamed": {
+            "type": "boolean"
+          }
+        }
       },
       "ProjectSummaryOptions": {
         "type": "object",
@@ -83823,6 +83925,41 @@
           }
         }
       },
+      "RetrieveSnapshotStatusCheckRulesForAProject200": {
+        "required": [
+          "enabled",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "enabled": {
+            "type": "boolean"
+          },
+          "rules": {
+            "required": [
+              "failOnAdded",
+              "failOnChanged",
+              "failOnRemoved",
+              "failOnRenamed"
+            ],
+            "type": "object",
+            "properties": {
+              "failOnAdded": {
+                "type": "boolean"
+              },
+              "failOnRemoved": {
+                "type": "boolean"
+              },
+              "failOnChanged": {
+                "type": "boolean"
+              },
+              "failOnRenamed": {
+                "type": "boolean"
+              }
+            }
+          }
+        }
+      },
       "GetTheLatestInstallableBuildForAProject200": {
         "required": [
           "currentArtifact",
@@ -94004,6 +94141,15 @@
       "externalDocs": {
         "description": "Found an error? Let us know.",
         "url": "https://github.com/getsentry/sentry-docs/issues/new/?title=API%20Documentation%20Error:%20/api/organizations/preprodartifacts/size-analysis/&template=api_error_template.md"
+      },
+      "x-display-description": false
+    },
+    {
+      "name": "Snapshots",
+      "description": "Endpoints for snapshot testing",
+      "externalDocs": {
+        "description": "Found an error? Let us know.",
+        "url": "https://github.com/getsentry/sentry-docs/issues/new/?title=API%20Documentation%20Error:%20/api/snapshots/&template=api_error_template.md"
       },
       "x-display-description": false
     }

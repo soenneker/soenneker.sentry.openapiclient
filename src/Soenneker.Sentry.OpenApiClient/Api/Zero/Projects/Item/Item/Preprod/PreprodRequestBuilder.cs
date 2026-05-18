@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.SizeAnalysis;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.SizeAnalysis.SizeAnalysisRequestBuilder SizeAnalysis
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.SizeAnalysis.SizeAnalysisRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The snapshots property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.SnapshotsRequestBuilder Snapshots
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.SnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.PreprodRequestBuilder"/> and sets the default values.
