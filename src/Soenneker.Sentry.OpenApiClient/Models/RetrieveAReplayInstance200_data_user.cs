@@ -9,7 +9,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RetrieveAReplayInstance200_user : IAdditionalDataHolder, IParsable
+    public partial class RetrieveAReplayInstance200_data_user : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,10 +33,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The geo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user_geo? Geo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user_geo? Geo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user_geo Geo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user_geo Geo { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,21 +63,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Username { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user"/> and sets the default values.
         /// </summary>
-        public RetrieveAReplayInstance200_user()
+        public RetrieveAReplayInstance200_data_user()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user_geo>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user_geo.CreateFromDiscriminatorValue); } },
+                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user_geo>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user_geo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip", n => { Ip = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -104,7 +104,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_user_geo>("geo", Geo);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAReplayInstance200_data_user_geo>("geo", Geo);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip", Ip);
             writer.WriteStringValue("username", Username);
