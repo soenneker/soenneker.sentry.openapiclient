@@ -6684,7 +6684,8 @@
                         "type": "string"
                       },
                       "shareId": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "shortId": {
                         "type": "string"
@@ -7037,7 +7038,8 @@
                           "email": {
                             "type": "string"
                           }
-                        }
+                        },
+                        "nullable": true
                       },
                       "isBookmarked": {
                         "type": "boolean"
@@ -49551,7 +49553,8 @@
             "type": "string"
           },
           "shareId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "shortId": {
             "type": "string"
@@ -49636,7 +49639,32 @@
             "type": "integer"
           },
           "assignedTo": {
-            "$ref": "#/components/schemas/OrganizationGroupIndexGetResponseItemAssignedTo"
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "isBookmarked": {
             "type": "boolean"
@@ -53641,7 +53669,8 @@
             "type": "string"
           },
           "shareId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "shortId": {
             "type": "string"
@@ -53726,7 +53755,32 @@
             "type": "integer"
           },
           "assignedTo": {
-            "$ref": "#/components/schemas/ShortIdLookupResponseGroupAssignedTo"
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
           },
           "isBookmarked": {
             "type": "boolean"
@@ -56478,33 +56532,6 @@
           "type": "object"
         }
       },
-      "OrganizationGroupIndexGetResponseItemAssignedTo": {
-        "required": [
-          "id",
-          "name",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "user",
-              "team"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
-        }
-      },
       "OrganizationGroupIndexGetResponseItemStats": {
         "type": "object",
         "additionalProperties": {
@@ -57022,33 +57049,6 @@
         "type": "object",
         "additionalProperties": {
           "type": "object"
-        }
-      },
-      "ShortIdLookupResponseGroupAssignedTo": {
-        "required": [
-          "id",
-          "name",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "enum": [
-              "user",
-              "team"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "id": {
-            "type": "string"
-          },
-          "name": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string"
-          }
         }
       },
       "TeamOrganizationExtraOptions": {
@@ -65386,7 +65386,8 @@
               "type": "string"
             },
             "shareId": {
-              "type": "string"
+              "type": "string",
+              "nullable": true
             },
             "shortId": {
               "type": "string"
@@ -65739,7 +65740,8 @@
                 "email": {
                   "type": "string"
                 }
-              }
+              },
+              "nullable": true
             },
             "isBookmarked": {
               "type": "boolean"
@@ -76223,7 +76225,8 @@
                 "type": "string"
               },
               "shareId": {
-                "type": "string"
+                "type": "string",
+                "nullable": true
               },
               "shortId": {
                 "type": "string"
@@ -76576,7 +76579,8 @@
                   "email": {
                     "type": "string"
                   }
-                }
+                },
+                "nullable": true
               },
               "isBookmarked": {
                 "type": "boolean"
