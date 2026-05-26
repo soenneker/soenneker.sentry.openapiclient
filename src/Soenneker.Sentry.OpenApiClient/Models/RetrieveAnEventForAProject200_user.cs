@@ -30,6 +30,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Email { get; set; }
 #endif
+        /// <summary>The geo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_geo? Geo { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_geo Geo { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,6 +97,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_data>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_data.CreateFromDiscriminatorValue); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_geo>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_geo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ip_address", n => { IpAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -104,6 +113,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_data>("data", Data);
             writer.WriteStringValue("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_geo>("geo", Geo);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ip_address", IpAddress);
             writer.WriteStringValue("name", Name);

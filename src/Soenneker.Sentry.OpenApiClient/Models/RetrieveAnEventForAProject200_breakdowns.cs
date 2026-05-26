@@ -9,27 +9,27 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RetrieveAnEventForAProject200_release_authors : IAdditionalDataHolder, IParsable
+    public partial class RetrieveAnEventForAProject200_breakdowns : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release_authors"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns"/> and sets the default values.
         /// </summary>
-        public RetrieveAnEventForAProject200_release_authors()
+        public RetrieveAnEventForAProject200_breakdowns()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release_authors"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release_authors CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release_authors();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns();
         }
         /// <summary>
         /// The deserialization information for the current model

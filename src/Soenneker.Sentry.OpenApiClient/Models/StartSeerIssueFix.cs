@@ -8,36 +8,24 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.
+    /// Serializer for the agent-based autofix requests.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartSeerIssueFix : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Run issue fix on a specific event. If not provided, the recommended event for the issue will be used.</summary>
+        /// <summary>Block index to insert at. When provided, truncates blocks after this point for retry-from-step.</summary>
+        public int? InsertIndex { get; set; }
+        /// <summary>Coding agent integration ID. Required for coding_agent_handoff step (unless provider is specified).</summary>
+        public int? IntegrationId { get; set; }
+        /// <summary>Coding agent provider (e.g., &apos;github_copilot&apos;). Alternative to integration_id for user-authenticated providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? Provider { get; set; }
 #nullable restore
 #else
-        public string EventId { get; set; }
-#endif
-        /// <summary>Optional custom instruction to guide the issue fix process.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Instruction { get; set; }
-#nullable restore
-#else
-        public string Instruction { get; set; }
-#endif
-        /// <summary>URL of a pull request where the issue fix should add comments.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PrToCommentOnUrl { get; set; }
-#nullable restore
-#else
-        public string PrToCommentOnUrl { get; set; }
+        public string Provider { get; set; }
 #endif
         /// <summary>Referrer identifying where the issue fix was triggered from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,14 +35,35 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Referrer { get; set; }
 #endif
+        /// <summary>Optional repository name for which to create the pull request. Do not pass a repository name to create pull requests in all relevant repositories.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RepoName { get; set; }
+#nullable restore
+#else
+        public string RepoName { get; set; }
+#endif
+        /// <summary>Existing run ID to continue. If not provided, starts a new run.</summary>
+        public int? RunId { get; set; }
+        /// <summary>Which autofix step to run.* `root_cause`* `solution`* `code_changes`* `open_pr`* `coding_agent_handoff`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_step? Step { get; set; }
         /// <summary>Where the issue fix process should stop. If not provided, will run to root cause.* `root_cause`* `solution`* `code_changes`* `open_pr`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point? StoppingPoint { get; set; }
+        /// <summary>Optional user context to append to the step prompt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserContext { get; set; }
+#nullable restore
+#else
+        public string UserContext { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix"/> and sets the default values.
         /// </summary>
         public StartSeerIssueFix()
         {
             AdditionalData = new Dictionary<string, object>();
+            Step = global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_step.Root_cause;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -74,11 +83,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "instruction", n => { Instruction = n.GetStringValue(); } },
-                { "pr_to_comment_on_url", n => { PrToCommentOnUrl = n.GetStringValue(); } },
+                { "insert_index", n => { InsertIndex = n.GetIntValue(); } },
+                { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
                 { "referrer", n => { Referrer = n.GetStringValue(); } },
+                { "repo_name", n => { RepoName = n.GetStringValue(); } },
+                { "run_id", n => { RunId = n.GetIntValue(); } },
+                { "step", n => { Step = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_step>(); } },
                 { "stopping_point", n => { StoppingPoint = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point>(); } },
+                { "user_context", n => { UserContext = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,11 +101,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("event_id", EventId);
-            writer.WriteStringValue("instruction", Instruction);
-            writer.WriteStringValue("pr_to_comment_on_url", PrToCommentOnUrl);
+            writer.WriteIntValue("insert_index", InsertIndex);
+            writer.WriteIntValue("integration_id", IntegrationId);
+            writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("referrer", Referrer);
+            writer.WriteStringValue("repo_name", RepoName);
+            writer.WriteIntValue("run_id", RunId);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_step>("step", Step);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix_stopping_point>("stopping_point", StoppingPoint);
+            writer.WriteStringValue("user_context", UserContext);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

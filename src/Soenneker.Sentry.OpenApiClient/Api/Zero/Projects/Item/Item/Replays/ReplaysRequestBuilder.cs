@@ -22,9 +22,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Jobs.JobsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.replays.item collection</summary>
-        /// <param name="position">The ID of the replay you&apos;d like to retrieve.</param>
+        /// <param name="position">The ID of the replay you&apos;d like to retrieve. It is a 32-character hexadecimal string.</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder this[Guid position]
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder this[string position]
         {
             get
             {

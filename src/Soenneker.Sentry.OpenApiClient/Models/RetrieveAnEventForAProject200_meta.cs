@@ -14,70 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The context property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Context { get; set; }
-#nullable restore
-#else
-        public string Context { get; set; }
-#endif
-        /// <summary>The contexts property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Contexts { get; set; }
-#nullable restore
-#else
-        public string Contexts { get; set; }
-#endif
-        /// <summary>The entries property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_entries? Entries { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_entries Entries { get; set; }
-#endif
-        /// <summary>The message property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Message { get; set; }
-#nullable restore
-#else
-        public string Message { get; set; }
-#endif
-        /// <summary>The packages property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Packages { get; set; }
-#nullable restore
-#else
-        public string Packages { get; set; }
-#endif
-        /// <summary>The sdk property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Sdk { get; set; }
-#nullable restore
-#else
-        public string Sdk { get; set; }
-#endif
-        /// <summary>The tags property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_tags? Tags { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_tags Tags { get; set; }
-#endif
-        /// <summary>The user property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? User { get; set; }
-#nullable restore
-#else
-        public string User { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta"/> and sets the default values.
         /// </summary>
@@ -103,14 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetStringValue(); } },
-                { "contexts", n => { Contexts = n.GetStringValue(); } },
-                { "entries", n => { Entries = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_entries>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_entries.CreateFromDiscriminatorValue); } },
-                { "message", n => { Message = n.GetStringValue(); } },
-                { "packages", n => { Packages = n.GetStringValue(); } },
-                { "sdk", n => { Sdk = n.GetStringValue(); } },
-                { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_tags>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_tags.CreateFromDiscriminatorValue); } },
-                { "user", n => { User = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -120,14 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("context", Context);
-            writer.WriteStringValue("contexts", Contexts);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_entries>("entries", Entries);
-            writer.WriteStringValue("message", Message);
-            writer.WriteStringValue("packages", Packages);
-            writer.WriteStringValue("sdk", Sdk);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta_tags>("tags", Tags);
-            writer.WriteStringValue("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

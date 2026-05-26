@@ -14,6 +14,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The breakdowns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns? Breakdowns { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns Breakdowns { get; set; }
+#endif
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -30,22 +38,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts Contexts { get; set; }
 #endif
+        /// <summary>The crashFile property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CrashFile { get; set; }
+#nullable restore
+#else
+        public string CrashFile { get; set; }
+#endif
+        /// <summary>The culprit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Culprit { get; set; }
+#nullable restore
+#else
+        public string Culprit { get; set; }
+#endif
         /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get; set; }
-#nullable restore
-#else
-        public string DateCreated { get; set; }
-#endif
+        public DateTimeOffset? DateCreated { get; set; }
         /// <summary>The dateReceived property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateReceived { get; set; }
-#nullable restore
-#else
-        public string DateReceived { get; set; }
-#endif
+        public DateTimeOffset? DateReceived { get; set; }
         /// <summary>The dist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,13 +66,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Dist { get; set; }
 #endif
+        /// <summary>The endTimestamp property</summary>
+        public DateTimeOffset? EndTimestamp { get; set; }
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries>? Entries { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entries>? Entries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries> Entries { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entries> Entries { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,6 +108,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string GroupID { get; set; }
 #endif
+        /// <summary>The groupingConfig property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_groupingConfig? GroupingConfig { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_groupingConfig GroupingConfig { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +123,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The location property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Location { get; set; }
+#nullable restore
+#else
+        public string Location { get; set; }
+#endif
+        /// <summary>The measurements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_measurements? Measurements { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_measurements Measurements { get; set; }
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,10 +159,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata? Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadata Metadata { get; set; }
 #endif
         /// <summary>The nextEventID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -133,6 +171,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string NextEventID { get; set; }
+#endif
+        /// <summary>The occurrence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_occurrence? Occurrence { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_occurrence Occurrence { get; set; }
 #endif
         /// <summary>The packages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -158,6 +204,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string PreviousEventID { get; set; }
 #endif
+        /// <summary>The projectID property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectID { get; set; }
+#nullable restore
+#else
+        public string ProjectID { get; set; }
+#endif
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -165,6 +219,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release Release { get; set; }
+#endif
+        /// <summary>The resolvedWith property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ResolvedWith { get; set; }
+#nullable restore
+#else
+        public List<string> ResolvedWith { get; set; }
 #endif
         /// <summary>The sdk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,8 +236,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdk Sdk { get; set; }
 #endif
+        /// <summary>The sdkUpdates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdkUpdates>? SdkUpdates { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdkUpdates> SdkUpdates { get; set; }
+#endif
         /// <summary>The size property</summary>
         public int? Size { get; set; }
+        /// <summary>The startTimestamp property</summary>
+        public DateTimeOffset? StartTimestamp { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -241,27 +313,39 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "breakdowns", n => { Breakdowns = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns.CreateFromDiscriminatorValue); } },
                 { "context", n => { Context = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context.CreateFromDiscriminatorValue); } },
                 { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts.CreateFromDiscriminatorValue); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
-                { "dateReceived", n => { DateReceived = n.GetStringValue(); } },
+                { "crashFile", n => { CrashFile = n.GetStringValue(); } },
+                { "culprit", n => { Culprit = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "dateReceived", n => { DateReceived = n.GetDateTimeOffsetValue(); } },
                 { "dist", n => { Dist = n.GetStringValue(); } },
-                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "endTimestamp", n => { EndTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entries>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entries.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_errors>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_errors.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "fingerprints", n => { Fingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "groupID", n => { GroupID = n.GetStringValue(); } },
+                { "groupingConfig", n => { GroupingConfig = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_groupingConfig>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_groupingConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "location", n => { Location = n.GetStringValue(); } },
+                { "measurements", n => { Measurements = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_measurements>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_measurements.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "_meta", n => { Meta = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta.CreateFromDiscriminatorValue); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadata>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadata.CreateFromDiscriminatorValue); } },
                 { "nextEventID", n => { NextEventID = n.GetStringValue(); } },
+                { "occurrence", n => { Occurrence = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_occurrence>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_occurrence.CreateFromDiscriminatorValue); } },
                 { "packages", n => { Packages = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_packages>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_packages.CreateFromDiscriminatorValue); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "previousEventID", n => { PreviousEventID = n.GetStringValue(); } },
+                { "projectID", n => { ProjectID = n.GetStringValue(); } },
                 { "release", n => { Release = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release.CreateFromDiscriminatorValue); } },
+                { "resolvedWith", n => { ResolvedWith = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sdk", n => { Sdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdk>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdk.CreateFromDiscriminatorValue); } },
+                { "sdkUpdates", n => { SdkUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdkUpdates>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdkUpdates.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
+                { "startTimestamp", n => { StartTimestamp = n.GetDateTimeOffsetValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_tags>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_tags.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -276,183 +360,45 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_breakdowns>("breakdowns", Breakdowns);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context>("context", Context);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts>("contexts", Contexts);
-            writer.WriteStringValue("dateCreated", DateCreated);
-            writer.WriteStringValue("dateReceived", DateReceived);
+            writer.WriteStringValue("crashFile", CrashFile);
+            writer.WriteStringValue("culprit", Culprit);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateReceived", DateReceived);
             writer.WriteStringValue("dist", Dist);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries>("entries", Entries);
+            writer.WriteDateTimeOffsetValue("endTimestamp", EndTimestamp);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entries>("entries", Entries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_errors>("errors", Errors);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteCollectionOfPrimitiveValues<string>("fingerprints", Fingerprints);
             writer.WriteStringValue("groupID", GroupID);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_groupingConfig>("groupingConfig", GroupingConfig);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("location", Location);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_measurements>("measurements", Measurements);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_meta>("_meta", Meta);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadata>("metadata", Metadata);
             writer.WriteStringValue("nextEventID", NextEventID);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_occurrence>("occurrence", Occurrence);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_packages>("packages", Packages);
             writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("previousEventID", PreviousEventID);
+            writer.WriteStringValue("projectID", ProjectID);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_release>("release", Release);
+            writer.WriteCollectionOfPrimitiveValues<string>("resolvedWith", ResolvedWith);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdk>("sdk", Sdk);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_sdkUpdates>("sdkUpdates", SdkUpdates);
             writer.WriteIntValue("size", Size);
+            writer.WriteDateTimeOffsetValue("startTimestamp", StartTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_tags>("tags", Tags);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user>("user", User);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_userReport>("userReport", UserReport);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember3"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember4"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveAnEventForAProject200_entries : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1? RetrieveAnEventForAProject200EntriesMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1 RetrieveAnEventForAProject200EntriesMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember2? RetrieveAnEventForAProject200EntriesMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember2 RetrieveAnEventForAProject200EntriesMember2 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember3? RetrieveAnEventForAProject200EntriesMember3 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember3 RetrieveAnEventForAProject200EntriesMember3 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember4"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember4? RetrieveAnEventForAProject200EntriesMember4 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember4 RetrieveAnEventForAProject200EntriesMember4 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_entries();
-                result.RetrieveAnEventForAProject200EntriesMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1();
-                result.RetrieveAnEventForAProject200EntriesMember2 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember2();
-                result.RetrieveAnEventForAProject200EntriesMember3 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember3();
-                result.RetrieveAnEventForAProject200EntriesMember4 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember4();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveAnEventForAProject200EntriesMember1 != null || RetrieveAnEventForAProject200EntriesMember2 != null || RetrieveAnEventForAProject200EntriesMember3 != null || RetrieveAnEventForAProject200EntriesMember4 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(RetrieveAnEventForAProject200EntriesMember1, RetrieveAnEventForAProject200EntriesMember2, RetrieveAnEventForAProject200EntriesMember3, RetrieveAnEventForAProject200EntriesMember4);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_entriesMember1>(null, RetrieveAnEventForAProject200EntriesMember1, RetrieveAnEventForAProject200EntriesMember2, RetrieveAnEventForAProject200EntriesMember3, RetrieveAnEventForAProject200EntriesMember4);
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveAnEventForAProject200_metadata : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1? RetrieveAnEventForAProject200MetadataMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1 RetrieveAnEventForAProject200MetadataMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2? RetrieveAnEventForAProject200MetadataMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2 RetrieveAnEventForAProject200MetadataMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200.RetrieveAnEventForAProject200_metadata();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RetrieveAnEventForAProject200MetadataMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RetrieveAnEventForAProject200MetadataMember2 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveAnEventForAProject200MetadataMember1 != null)
-                {
-                    return RetrieveAnEventForAProject200MetadataMember1.GetFieldDeserializers();
-                }
-                else if(RetrieveAnEventForAProject200MetadataMember2 != null)
-                {
-                    return RetrieveAnEventForAProject200MetadataMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(RetrieveAnEventForAProject200MetadataMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember1>(null, RetrieveAnEventForAProject200MetadataMember1);
-                }
-                else if(RetrieveAnEventForAProject200MetadataMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_metadataMember2>(null, RetrieveAnEventForAProject200MetadataMember2);
-                }
-            }
         }
     }
 }

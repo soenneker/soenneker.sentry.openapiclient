@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// Trigger a Seer Issue Fix run for a specific issue.The issue fix process can:- Identify the root cause of the issue- Propose a solution- Generate code changes- Create a pull request with the fixThe process runs asynchronously, and you can get the state using the GET endpoint.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StartSeerIssueFix202"/></returns>
-        /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
+        /// <param name="body">Serializer for the agent-based autofix requests.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// Trigger a Seer Issue Fix run for a specific issue.The issue fix process can:- Identify the root cause of the issue- Propose a solution- Generate code changes- Create a pull request with the fixThe process runs asynchronously, and you can get the state using the GET endpoint.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
+        /// <param name="body">Serializer for the agent-based autofix requests.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

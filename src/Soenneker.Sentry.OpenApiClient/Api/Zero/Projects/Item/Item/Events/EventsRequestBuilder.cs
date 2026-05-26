@@ -18,7 +18,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.events.item collection</summary>
-        /// <param name="position">The ID of the event to retrieve. It is the hexadecimal ID as reported by the client.</param>
+        /// <param name="position">The ID of the event. It is a 32-character hexadecimal string as reported by the client.</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.WithEvent_ItemRequestBuilder"/></returns>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.WithEvent_ItemRequestBuilder this[string position]
         {

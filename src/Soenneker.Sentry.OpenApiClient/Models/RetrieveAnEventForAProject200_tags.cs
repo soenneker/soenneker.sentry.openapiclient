@@ -22,13 +22,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Key { get; set; }
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>The query property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Meta { get; set; }
+        public string? Query { get; set; }
 #nullable restore
 #else
-        public string Meta { get; set; }
+        public string Query { get; set; }
 #endif
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "_meta", n => { Meta = n.GetStringValue(); } },
+                { "query", n => { Query = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -76,7 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("_meta", Meta);
+            writer.WriteStringValue("query", Query);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

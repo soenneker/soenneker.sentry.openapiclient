@@ -14,32 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The resp property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_resp? Resp { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_resp Resp { get; set; }
-#endif
-        /// <summary>The session property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_session? Session { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_session Session { get; set; }
-#endif
-        /// <summary>The unauthorized property</summary>
-        public bool? Unauthorized { get; set; }
-        /// <summary>The url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context"/> and sets the default values.
         /// </summary>
@@ -65,10 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "resp", n => { Resp = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_resp>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_resp.CreateFromDiscriminatorValue); } },
-                { "session", n => { Session = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_session>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_session.CreateFromDiscriminatorValue); } },
-                { "unauthorized", n => { Unauthorized = n.GetBoolValue(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_resp>("resp", Resp);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_context_session>("session", Session);
-            writer.WriteBoolValue("unauthorized", Unauthorized);
-            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

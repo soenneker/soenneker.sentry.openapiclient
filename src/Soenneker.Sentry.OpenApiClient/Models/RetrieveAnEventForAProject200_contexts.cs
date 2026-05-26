@@ -14,46 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The browser property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_browser? Browser { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_browser Browser { get; set; }
-#endif
-        /// <summary>The ForbiddenError property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_ForbiddenError? ForbiddenError { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_ForbiddenError ForbiddenError { get; set; }
-#endif
-        /// <summary>The organization property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_organization? Organization { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_organization Organization { get; set; }
-#endif
-        /// <summary>The os property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_os? Os { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_os Os { get; set; }
-#endif
-        /// <summary>The trace property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_trace? Trace { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_trace Trace { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts"/> and sets the default values.
         /// </summary>
@@ -79,11 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "browser", n => { Browser = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_browser>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_browser.CreateFromDiscriminatorValue); } },
-                { "ForbiddenError", n => { ForbiddenError = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_ForbiddenError>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_ForbiddenError.CreateFromDiscriminatorValue); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_organization>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_organization.CreateFromDiscriminatorValue); } },
-                { "os", n => { Os = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_os>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_os.CreateFromDiscriminatorValue); } },
-                { "trace", n => { Trace = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_trace>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_trace.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_browser>("browser", Browser);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_ForbiddenError>("ForbiddenError", ForbiddenError);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_organization>("organization", Organization);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_os>("os", Os);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_contexts_trace>("trace", Trace);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

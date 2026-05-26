@@ -14,8 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The isStaff property</summary>
-        public bool? IsStaff { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnEventForAProject200_user_data"/> and sets the default values.
         /// </summary>
@@ -41,7 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "isStaff", n => { IsStaff = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -51,7 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("isStaff", IsStaff);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
