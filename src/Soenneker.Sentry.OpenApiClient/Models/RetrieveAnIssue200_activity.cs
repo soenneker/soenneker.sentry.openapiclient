@@ -14,46 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_data? Data { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_data Data { get; set; }
-#endif
-        /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get; set; }
-#nullable restore
-#else
-        public string DateCreated { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
-        /// <summary>The user property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_user? User { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_user User { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity"/> and sets the default values.
         /// </summary>
@@ -79,11 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_data>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_data.CreateFromDiscriminatorValue); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_user>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_user.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_data>("data", Data);
-            writer.WriteStringValue("dateCreated", DateCreated);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_activity_user>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum UpdateAnIssue200_status
-    #pragma warning restore CS1591
+    public enum UpdateAnIssue_status
     {
         [EnumMember(Value = "resolved")]
         #pragma warning disable CS1591
@@ -19,6 +18,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "ignored")]
         #pragma warning disable CS1591
         Ignored,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "resolvedInNextRelease")]
+        #pragma warning disable CS1591
+        ResolvedInNextRelease,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "muted")]
+        #pragma warning disable CS1591
+        Muted,
         #pragma warning restore CS1591
     }
 }

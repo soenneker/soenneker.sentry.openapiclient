@@ -63,12 +63,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease FirstRelease { get; set; }
 #endif
         /// <summary>The firstSeen property</summary>
+        public DateTimeOffset? FirstSeen { get; set; }
+        /// <summary>The forecast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstSeen { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_forecast? Forecast { get; set; }
 #nullable restore
 #else
-        public string FirstSeen { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_forecast Forecast { get; set; }
 #endif
         /// <summary>The hasSeen property</summary>
         public bool? HasSeen { get; set; }
@@ -80,12 +82,46 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The inbox property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_inbox? Inbox { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_inbox Inbox { get; set; }
+#endif
+        /// <summary>The integrationIssues property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_integrationIssues>? IntegrationIssues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_integrationIssues> IntegrationIssues { get; set; }
+#endif
         /// <summary>The isBookmarked property</summary>
         public bool? IsBookmarked { get; set; }
         /// <summary>The isPublic property</summary>
         public bool? IsPublic { get; set; }
         /// <summary>The isSubscribed property</summary>
         public bool? IsSubscribed { get; set; }
+        /// <summary>The issueCategory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssueCategory { get; set; }
+#nullable restore
+#else
+        public string IssueCategory { get; set; }
+#endif
+        /// <summary>The issueType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IssueType { get; set; }
+#nullable restore
+#else
+        public string IssueType { get; set; }
+#endif
+        /// <summary>The isUnhandled property</summary>
+        public bool? IsUnhandled { get; set; }
         /// <summary>The lastRelease property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,13 +131,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_lastRelease LastRelease { get; set; }
 #endif
         /// <summary>The lastSeen property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastSeen { get; set; }
-#nullable restore
-#else
-        public string LastSeen { get; set; }
-#endif
+        public DateTimeOffset? LastSeen { get; set; }
+        /// <summary>The latestEventHasAttachments property</summary>
+        public bool? LatestEventHasAttachments { get; set; }
         /// <summary>The level property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -121,13 +153,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata? Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadata Metadata { get; set; }
 #endif
         /// <summary>The numComments property</summary>
         public int? NumComments { get; set; }
+        /// <summary>The owners property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_owners>? Owners { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_owners> Owners { get; set; }
+#endif
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,21 +184,29 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Permalink { get; set; }
 #endif
+        /// <summary>The platform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Platform { get; set; }
+#nullable restore
+#else
+        public string Platform { get; set; }
+#endif
         /// <summary>The pluginActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? PluginActions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginActions>? PluginActions { get; set; }
 #nullable restore
 #else
-        public UntypedNode PluginActions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginActions> PluginActions { get; set; }
 #endif
         /// <summary>The pluginContexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PluginContexts { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginContexts>? PluginContexts { get; set; }
 #nullable restore
 #else
-        public List<string> PluginContexts { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginContexts> PluginContexts { get; set; }
 #endif
         /// <summary>The pluginIssues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -168,6 +216,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginIssues> PluginIssues { get; set; }
 #endif
+        /// <summary>The priority property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Priority { get; set; }
+#nullable restore
+#else
+        public string Priority { get; set; }
+#endif
+        /// <summary>The priorityLockedAt property</summary>
+        public DateTimeOffset? PriorityLockedAt { get; set; }
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -183,6 +241,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_seenBy> SeenBy { get; set; }
+#endif
+        /// <summary>The seerAutofixLastTriggered property</summary>
+        public DateTimeOffset? SeerAutofixLastTriggered { get; set; }
+        /// <summary>The seerExplorerAutofixLastTriggered property</summary>
+        public DateTimeOffset? SeerExplorerAutofixLastTriggered { get; set; }
+        /// <summary>The seerFixabilityScore property</summary>
+        public double? SeerFixabilityScore { get; set; }
+        /// <summary>The sentryAppIssues property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_sentryAppIssues>? SentryAppIssues { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_sentryAppIssues> SentryAppIssues { get; set; }
 #endif
         /// <summary>The shareId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -209,7 +281,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_stats Stats { get; set; }
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_status? Status { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
+#endif
         /// <summary>The statusDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -225,6 +303,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_subscriptionDetails SubscriptionDetails { get; set; }
+#endif
+        /// <summary>The substatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Substatus { get; set; }
+#nullable restore
+#else
+        public string Substatus { get; set; }
 #endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -285,31 +371,47 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
                 { "firstRelease", n => { FirstRelease = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease.CreateFromDiscriminatorValue); } },
-                { "firstSeen", n => { FirstSeen = n.GetStringValue(); } },
+                { "firstSeen", n => { FirstSeen = n.GetDateTimeOffsetValue(); } },
+                { "forecast", n => { Forecast = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_forecast>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_forecast.CreateFromDiscriminatorValue); } },
                 { "hasSeen", n => { HasSeen = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "inbox", n => { Inbox = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_inbox>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_inbox.CreateFromDiscriminatorValue); } },
+                { "integrationIssues", n => { IntegrationIssues = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_integrationIssues>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_integrationIssues.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "isPublic", n => { IsPublic = n.GetBoolValue(); } },
                 { "isSubscribed", n => { IsSubscribed = n.GetBoolValue(); } },
+                { "isUnhandled", n => { IsUnhandled = n.GetBoolValue(); } },
+                { "issueCategory", n => { IssueCategory = n.GetStringValue(); } },
+                { "issueType", n => { IssueType = n.GetStringValue(); } },
                 { "lastRelease", n => { LastRelease = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_lastRelease>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_lastRelease.CreateFromDiscriminatorValue); } },
-                { "lastSeen", n => { LastSeen = n.GetStringValue(); } },
+                { "lastSeen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
+                { "latestEventHasAttachments", n => { LatestEventHasAttachments = n.GetBoolValue(); } },
                 { "level", n => { Level = n.GetStringValue(); } },
                 { "logger", n => { Logger = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadata>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadata.CreateFromDiscriminatorValue); } },
                 { "numComments", n => { NumComments = n.GetIntValue(); } },
+                { "owners", n => { Owners = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_owners>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_owners.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "participants", n => { Participants = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_participants>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_participants.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "permalink", n => { Permalink = n.GetStringValue(); } },
-                { "pluginActions", n => { PluginActions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "pluginContexts", n => { PluginContexts = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
+                { "pluginActions", n => { PluginActions = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginActions>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginActions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "pluginContexts", n => { PluginContexts = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginContexts>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginContexts.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "pluginIssues", n => { PluginIssues = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginIssues>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginIssues.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "priority", n => { Priority = n.GetStringValue(); } },
+                { "priorityLockedAt", n => { PriorityLockedAt = n.GetDateTimeOffsetValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_project>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_project.CreateFromDiscriminatorValue); } },
                 { "seenBy", n => { SeenBy = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_seenBy>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_seenBy.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "seerAutofixLastTriggered", n => { SeerAutofixLastTriggered = n.GetDateTimeOffsetValue(); } },
+                { "seerExplorerAutofixLastTriggered", n => { SeerExplorerAutofixLastTriggered = n.GetDateTimeOffsetValue(); } },
+                { "seerFixabilityScore", n => { SeerFixabilityScore = n.GetDoubleValue(); } },
+                { "sentryAppIssues", n => { SentryAppIssues = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_sentryAppIssues>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_sentryAppIssues.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "shareId", n => { ShareId = n.GetStringValue(); } },
                 { "shortId", n => { ShortId = n.GetStringValue(); } },
                 { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_stats>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_stats.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_status>(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_statusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_statusDetails.CreateFromDiscriminatorValue); } },
                 { "subscriptionDetails", n => { SubscriptionDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_subscriptionDetails>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_subscriptionDetails.CreateFromDiscriminatorValue); } },
+                { "substatus", n => { Substatus = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_tags>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_tags.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -330,112 +432,53 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("culprit", Culprit);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease>("firstRelease", FirstRelease);
-            writer.WriteStringValue("firstSeen", FirstSeen);
+            writer.WriteDateTimeOffsetValue("firstSeen", FirstSeen);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_forecast>("forecast", Forecast);
             writer.WriteBoolValue("hasSeen", HasSeen);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_inbox>("inbox", Inbox);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_integrationIssues>("integrationIssues", IntegrationIssues);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
             writer.WriteBoolValue("isPublic", IsPublic);
             writer.WriteBoolValue("isSubscribed", IsSubscribed);
+            writer.WriteStringValue("issueCategory", IssueCategory);
+            writer.WriteStringValue("issueType", IssueType);
+            writer.WriteBoolValue("isUnhandled", IsUnhandled);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_lastRelease>("lastRelease", LastRelease);
-            writer.WriteStringValue("lastSeen", LastSeen);
+            writer.WriteDateTimeOffsetValue("lastSeen", LastSeen);
+            writer.WriteBoolValue("latestEventHasAttachments", LatestEventHasAttachments);
             writer.WriteStringValue("level", Level);
             writer.WriteStringValue("logger", Logger);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadata>("metadata", Metadata);
             writer.WriteIntValue("numComments", NumComments);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_owners>("owners", Owners);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_participants>("participants", Participants);
             writer.WriteStringValue("permalink", Permalink);
-            writer.WriteObjectValue<UntypedNode>("pluginActions", PluginActions);
-            writer.WriteCollectionOfPrimitiveValues<string>("pluginContexts", PluginContexts);
+            writer.WriteStringValue("platform", Platform);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginActions>("pluginActions", PluginActions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginContexts>("pluginContexts", PluginContexts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_pluginIssues>("pluginIssues", PluginIssues);
+            writer.WriteStringValue("priority", Priority);
+            writer.WriteDateTimeOffsetValue("priorityLockedAt", PriorityLockedAt);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_project>("project", Project);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_seenBy>("seenBy", SeenBy);
+            writer.WriteDateTimeOffsetValue("seerAutofixLastTriggered", SeerAutofixLastTriggered);
+            writer.WriteDateTimeOffsetValue("seerExplorerAutofixLastTriggered", SeerExplorerAutofixLastTriggered);
+            writer.WriteDoubleValue("seerFixabilityScore", SeerFixabilityScore);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_sentryAppIssues>("sentryAppIssues", SentryAppIssues);
             writer.WriteStringValue("shareId", ShareId);
             writer.WriteStringValue("shortId", ShortId);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_stats>("stats", Stats);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_status>("status", Status);
+            writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_statusDetails>("statusDetails", StatusDetails);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_subscriptionDetails>("subscriptionDetails", SubscriptionDetails);
+            writer.WriteStringValue("substatus", Substatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_tags>("tags", Tags);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("userCount", UserCount);
             writer.WriteIntValue("userReportCount", UserReportCount);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RetrieveAnIssue200_metadata : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1? RetrieveAnIssue200MetadataMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1 RetrieveAnIssue200MetadataMember1 { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2? RetrieveAnIssue200MetadataMember2 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2 RetrieveAnIssue200MetadataMember2 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-                var result = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.RetrieveAnIssue200_metadata();
-                if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RetrieveAnIssue200MetadataMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1();
-                }
-                else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.RetrieveAnIssue200MetadataMember2 = new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(RetrieveAnIssue200MetadataMember1 != null)
-                {
-                    return RetrieveAnIssue200MetadataMember1.GetFieldDeserializers();
-                }
-                else if(RetrieveAnIssue200MetadataMember2 != null)
-                {
-                    return RetrieveAnIssue200MetadataMember2.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(RetrieveAnIssue200MetadataMember1 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember1>(null, RetrieveAnIssue200MetadataMember1);
-                }
-                else if(RetrieveAnIssue200MetadataMember2 != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_metadataMember2>(null, RetrieveAnIssue200MetadataMember2);
-                }
-            }
         }
     }
 }

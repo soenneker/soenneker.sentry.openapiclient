@@ -12,8 +12,56 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public partial class UpdateAnIssue200_statusDetails : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The actor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor? Actor { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor Actor { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The autoResolved property</summary>
+        public bool? AutoResolved { get; set; }
+        /// <summary>The ignoreCount property</summary>
+        public int? IgnoreCount { get; set; }
+        /// <summary>The ignoreUntil property</summary>
+        public DateTimeOffset? IgnoreUntil { get; set; }
+        /// <summary>The ignoreUserCount property</summary>
+        public int? IgnoreUserCount { get; set; }
+        /// <summary>The ignoreUserWindow property</summary>
+        public int? IgnoreUserWindow { get; set; }
+        /// <summary>The ignoreWindow property</summary>
+        public int? IgnoreWindow { get; set; }
+        /// <summary>The inCommit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InCommit { get; set; }
+#nullable restore
+#else
+        public string InCommit { get; set; }
+#endif
+        /// <summary>The info property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_info? Info { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_info Info { get; set; }
+#endif
+        /// <summary>The inNextRelease property</summary>
+        public bool? InNextRelease { get; set; }
+        /// <summary>The inRelease property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InRelease { get; set; }
+#nullable restore
+#else
+        public string InRelease { get; set; }
+#endif
+        /// <summary>The pendingEvents property</summary>
+        public int? PendingEvents { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails"/> and sets the default values.
         /// </summary>
@@ -39,6 +87,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor.CreateFromDiscriminatorValue); } },
+                { "autoResolved", n => { AutoResolved = n.GetBoolValue(); } },
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreUntil", n => { IgnoreUntil = n.GetDateTimeOffsetValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
+                { "inCommit", n => { InCommit = n.GetStringValue(); } },
+                { "inNextRelease", n => { InNextRelease = n.GetBoolValue(); } },
+                { "inRelease", n => { InRelease = n.GetStringValue(); } },
+                { "info", n => { Info = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_info>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_info.CreateFromDiscriminatorValue); } },
+                { "pendingEvents", n => { PendingEvents = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +108,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor>("actor", Actor);
+            writer.WriteBoolValue("autoResolved", AutoResolved);
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteDateTimeOffsetValue("ignoreUntil", IgnoreUntil);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
+            writer.WriteStringValue("inCommit", InCommit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_info>("info", Info);
+            writer.WriteBoolValue("inNextRelease", InNextRelease);
+            writer.WriteStringValue("inRelease", InRelease);
+            writer.WriteIntValue("pendingEvents", PendingEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

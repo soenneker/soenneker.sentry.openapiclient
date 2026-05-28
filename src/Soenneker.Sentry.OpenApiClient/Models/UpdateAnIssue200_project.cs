@@ -30,6 +30,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
+        /// <summary>The platform property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Platform { get; set; }
+#nullable restore
+#else
+        public string Platform { get; set; }
+#endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
@@ -77,6 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -8,24 +8,34 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional details about the resolution. Supported values are `&quot;inRelease&quot;`, `&quot;inNextRelease&quot;`, `&quot;inCommit&quot;`, `&quot;ignoreDuration&quot;`, `&quot;ignoreCount&quot;`, `&quot;ignoreWindow&quot;`, `&quot;ignoreUserCount&quot;`, and `&quot;ignoreUserWindow&quot;`.
+    /// Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateAnIssue_statusDetails : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The commit hash in which the issue is resolved.</summary>
+        /// <summary>Ignore the issue until it has occurred this many times in `ignoreWindow` minutes.</summary>
+        public int? IgnoreCount { get; set; }
+        /// <summary>Ignore the issue until for this many minutes.</summary>
+        public int? IgnoreDuration { get; set; }
+        /// <summary>Ignore the issue until it has affected this many users in `ignoreUserWindow` minutes.</summary>
+        public int? IgnoreUserCount { get; set; }
+        /// <summary>&quot;Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)&quot;</summary>
+        public int? IgnoreUserWindow { get; set; }
+        /// <summary>&quot;Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)&quot;</summary>
+        public int? IgnoreWindow { get; set; }
+        /// <summary>The commit data that the issue should use for resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails_inCommit? InCommit { get; set; }
 #nullable restore
 #else
-        public string InCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails_inCommit InCommit { get; set; }
 #endif
-        /// <summary>Indicates if the issue is resolved in the next release based on the last seen release of that issue.</summary>
+        /// <summary>If true, marks the issue as resolved in the next release.</summary>
         public bool? InNextRelease { get; set; }
-        /// <summary>The version of the release in which the issue is resolved.</summary>
+        /// <summary>The version of the release that the issue should be resolved in.If set to `latest`, the latest release will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InRelease { get; set; }
@@ -58,7 +68,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "inCommit", n => { InCommit = n.GetStringValue(); } },
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreDuration", n => { IgnoreDuration = n.GetIntValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
+                { "inCommit", n => { InCommit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails_inCommit>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails_inCommit.CreateFromDiscriminatorValue); } },
                 { "inNextRelease", n => { InNextRelease = n.GetBoolValue(); } },
                 { "inRelease", n => { InRelease = n.GetStringValue(); } },
             };
@@ -70,7 +85,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("inCommit", InCommit);
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteIntValue("ignoreDuration", IgnoreDuration);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails_inCommit>("inCommit", InCommit);
             writer.WriteBoolValue("inNextRelease", InNextRelease);
             writer.WriteStringValue("inRelease", InRelease);
             writer.WriteAdditionalData(AdditionalData);

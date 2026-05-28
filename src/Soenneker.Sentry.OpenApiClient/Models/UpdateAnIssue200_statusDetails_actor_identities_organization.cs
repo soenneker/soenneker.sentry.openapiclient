@@ -9,7 +9,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class RetrieveAnIssue200_firstRelease_projects : IAdditionalDataHolder, IParsable
+    public partial class UpdateAnIssue200_statusDetails_actor_identities_organization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,21 +31,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease_projects"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor_identities_organization"/> and sets the default values.
         /// </summary>
-        public RetrieveAnIssue200_firstRelease_projects()
+        public UpdateAnIssue200_statusDetails_actor_identities_organization()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease_projects"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor_identities_organization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease_projects CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor_identities_organization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_firstRelease_projects();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_statusDetails_actor_identities_organization();
         }
         /// <summary>
         /// The deserialization information for the current model

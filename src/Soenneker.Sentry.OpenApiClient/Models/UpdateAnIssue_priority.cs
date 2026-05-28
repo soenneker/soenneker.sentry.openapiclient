@@ -3,22 +3,21 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The priority that should be set for the issues* `low`* `medium`* `high`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum RetrieveAnIssue200_status
-    #pragma warning restore CS1591
+    public enum UpdateAnIssue_priority
     {
-        [EnumMember(Value = "resolved")]
+        [EnumMember(Value = "low")]
         #pragma warning disable CS1591
-        Resolved,
+        Low,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unresolved")]
+        [EnumMember(Value = "medium")]
         #pragma warning disable CS1591
-        Unresolved,
+        Medium,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ignored")]
+        [EnumMember(Value = "high")]
         #pragma warning disable CS1591
-        Ignored,
+        High,
         #pragma warning restore CS1591
     }
 }

@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIssue_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}{?collapse*}", pathParameters)
+        public WithIssue_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}{?collapse*,environment*,expand*}", pathParameters)
         {
         }
         /// <summary>
@@ -60,11 +60,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithIssue_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}{?collapse*}", rawUrl)
+        public WithIssue_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}{?collapse*,environment*,expand*}", rawUrl)
         {
         }
         /// <summary>
-        /// Removes an individual issue.
+        /// Asynchronously queue an individual issue for deletion.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return details on an individual issue. This returns the basic stats for the issue (title, last seen, first seen), some overall numbers (number of comments, user reports) as well as the summarized event data.
+        /// Return details on an individual issue, including its basic stats, commentand user-report counts, and a summary of the latest event.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates an individual issue&apos;s attributes.  Only the attributes submitted are modified.
+        /// Update an individual issue&apos;s attributes. Only the attributes submittedare modified.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200"/></returns>
         /// <param name="body">The request body</param>
@@ -119,7 +119,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes an individual issue.
+        /// Asynchronously queue an individual issue for deletion.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +138,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return requestInfo;
         }
         /// <summary>
-        /// Return details on an individual issue. This returns the basic stats for the issue (title, last seen, first seen), some overall numbers (number of comments, user reports) as well as the summarized event data.
+        /// Return details on an individual issue, including its basic stats, commentand user-report counts, and a summary of the latest event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates an individual issue&apos;s attributes.  Only the attributes submitted are modified.
+        /// Update an individual issue&apos;s attributes. Only the attributes submittedare modified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -188,7 +188,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.WithIssue_ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return details on an individual issue. This returns the basic stats for the issue (title, last seen, first seen), some overall numbers (number of comments, user reports) as well as the summarized event data.
+        /// Return details on an individual issue, including its basic stats, commentand user-report counts, and a summary of the latest event.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIssue_ItemRequestBuilderGetQueryParameters 
@@ -202,6 +202,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #else
             [QueryParameter("collapse")]
             public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.GetCollapseQueryParameterType[] Collapse { get; set; }
+#endif
+            /// <summary>The name of environments to filter by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environment")]
+            public string[]? Environment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environment")]
+            public string[] Environment { get; set; }
+#endif
+            /// <summary>Additional data to include in the response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expand")]
+            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.GetExpandQueryParameterType[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expand")]
+            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.GetExpandQueryParameterType[] Expand { get; set; }
 #endif
         }
     }

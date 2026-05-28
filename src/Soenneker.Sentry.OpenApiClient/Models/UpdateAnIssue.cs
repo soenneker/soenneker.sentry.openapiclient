@@ -14,7 +14,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The actor id (or username) of the user or team that should be assigned to this issue.</summary>
+        /// <summary>The user or team that should be assigned to the issues. Values take the form of `&lt;user_id&gt;`, `user:&lt;user_id&gt;`, `&lt;username&gt;`, `&lt;user_primary_email&gt;`, or `team:&lt;team_id&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo { get; set; }
@@ -22,23 +22,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string AssignedTo { get; set; }
 #endif
-        /// <summary>In case this API call is invoked with a user context this allows changing of the flag that indicates if the user has seen the event.</summary>
+        /// <summary>If true, discards the issues instead of updating them.</summary>
+        public bool? Discard { get; set; }
+        /// <summary>If true, marks the issue as seen by the requestor.</summary>
         public bool? HasSeen { get; set; }
-        /// <summary>In case this API call is invoked with a user context this allows changing of the bookmark flag.</summary>
+        /// <summary>If true, marks the issue as reviewed by the requestor.</summary>
+        public bool? Inbox { get; set; }
+        /// <summary>If true, bookmarks the issue for the requestor.</summary>
         public bool? IsBookmarked { get; set; }
-        /// <summary>Sets the issue to public or private.</summary>
+        /// <summary>If true, publishes the issue.</summary>
         public bool? IsPublic { get; set; }
-        /// <summary>In case this API call is invoked with a user context this allows the user to subscribe to workflow notications for this issue.</summary>
+        /// <summary>If true, subscribes the requestor to the issue.</summary>
         public bool? IsSubscribed { get; set; }
-        /// <summary>The new status for the issues. Valid values are `&quot;resolved&quot;`, `&quot;resolvedInNextRelease&quot;`, `&quot;unresolved&quot;`, and `&quot;ignored&quot;`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get; set; }
-#nullable restore
-#else
-        public string Status { get; set; }
-#endif
-        /// <summary>Additional details about the resolution. Supported values are `&quot;inRelease&quot;`, `&quot;inNextRelease&quot;`, `&quot;inCommit&quot;`, `&quot;ignoreDuration&quot;`, `&quot;ignoreCount&quot;`, `&quot;ignoreWindow&quot;`, `&quot;ignoreUserCount&quot;`, and `&quot;ignoreUserWindow&quot;`.</summary>
+        /// <summary>If true, merges the issues together.</summary>
+        public bool? Merge { get; set; }
+        /// <summary>The priority that should be set for the issues* `low`* `medium`* `high`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_priority? Priority { get; set; }
+        /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_status? Status { get; set; }
+        /// <summary>Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails? StatusDetails { get; set; }
@@ -46,6 +48,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails StatusDetails { get; set; }
 #endif
+        /// <summary>The new substatus of the issue.* `archived_until_escalating`* `archived_until_condition_met`* `archived_forever`* `escalating`* `ongoing`* `regressed`* `new`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_substatus? Substatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue"/> and sets the default values.
         /// </summary>
@@ -72,12 +76,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
+                { "discard", n => { Discard = n.GetBoolValue(); } },
                 { "hasSeen", n => { HasSeen = n.GetBoolValue(); } },
+                { "inbox", n => { Inbox = n.GetBoolValue(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "isPublic", n => { IsPublic = n.GetBoolValue(); } },
                 { "isSubscribed", n => { IsSubscribed = n.GetBoolValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "merge", n => { Merge = n.GetBoolValue(); } },
+                { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_priority>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_status>(); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails.CreateFromDiscriminatorValue); } },
+                { "substatus", n => { Substatus = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_substatus>(); } },
             };
         }
         /// <summary>
@@ -88,12 +97,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedTo", AssignedTo);
+            writer.WriteBoolValue("discard", Discard);
             writer.WriteBoolValue("hasSeen", HasSeen);
+            writer.WriteBoolValue("inbox", Inbox);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
             writer.WriteBoolValue("isPublic", IsPublic);
             writer.WriteBoolValue("isSubscribed", IsSubscribed);
-            writer.WriteStringValue("status", Status);
+            writer.WriteBoolValue("merge", Merge);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_priority>("priority", Priority);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_statusDetails>("statusDetails", StatusDetails);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue_substatus>("substatus", Substatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

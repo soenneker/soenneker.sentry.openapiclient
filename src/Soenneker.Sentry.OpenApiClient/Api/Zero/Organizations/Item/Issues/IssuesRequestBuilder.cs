@@ -19,9 +19,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
     public partial class IssuesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.issues.item collection</summary>
-        /// <param name="position">The ID of the issue to retrieve.</param>
+        /// <param name="position">The ID of the issue you&apos;d like to query.</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.WithIssue_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.WithIssue_ItemRequestBuilder this[string position]
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.WithIssue_ItemRequestBuilder this[int position]
         {
             get
             {

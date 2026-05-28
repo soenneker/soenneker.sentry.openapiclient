@@ -14,22 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ThreeZerod property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? ThreeZerod { get; set; }
-#nullable restore
-#else
-        public UntypedNode ThreeZerod { get; set; }
-#endif
-        /// <summary>The TwoFourh property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? TwoFourh { get; set; }
-#nullable restore
-#else
-        public UntypedNode TwoFourh { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIssue200_stats"/> and sets the default values.
         /// </summary>
@@ -55,8 +39,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "30d", n => { ThreeZerod = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "24h", n => { TwoFourh = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +48,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("30d", ThreeZerod);
-            writer.WriteObjectValue<UntypedNode>("24h", TwoFourh);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

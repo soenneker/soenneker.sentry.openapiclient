@@ -9,28 +9,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateAnIssue200_assignedTo : IAdditionalDataHolder, IParsable
+    public partial class CreateAProjectForAnOrganization : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The name property</summary>
+        /// <summary>Defaults to true where the behavior is to alert the user on every newissue. Setting this to false will turn this off and the user must createtheir own alerts to be notified of new issues.        </summary>
+        public bool? DefaultRules { get; set; }
+        /// <summary>The name for the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -38,24 +24,38 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo_type? Type { get; set; }
+        /// <summary>The platform for the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Platform { get; set; }
+#nullable restore
+#else
+        public string Platform { get; set; }
+#endif
+        /// <summary>Uniquely identifies a project and is used for the interface.        If not provided, it is automatically generated from the name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Slug { get; set; }
+#nullable restore
+#else
+        public string Slug { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateAProjectForAnOrganization"/> and sets the default values.
         /// </summary>
-        public UpdateAnIssue200_assignedTo()
+        public CreateAProjectForAnOrganization()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateAProjectForAnOrganization"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.CreateAProjectForAnOrganization CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateAProjectForAnOrganization();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "default_rules", n => { DefaultRules = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo_type>(); } },
+                { "platform", n => { Platform = n.GetStringValue(); } },
+                { "slug", n => { Slug = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -78,10 +78,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("default_rules", DefaultRules);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnIssue200_assignedTo_type>("type", Type);
+            writer.WriteStringValue("platform", Platform);
+            writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

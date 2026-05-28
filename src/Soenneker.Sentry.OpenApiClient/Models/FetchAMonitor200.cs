@@ -84,8 +84,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The openIssues property</summary>
-        public int? OpenIssues { get; set; }
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -154,7 +152,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "latestGroup", n => { LatestGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_latestGroup>(global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_latestGroup.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "openIssues", n => { OpenIssues = n.GetIntValue(); } },
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_owner>(global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_owner.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -179,7 +176,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_latestGroup>("latestGroup", LatestGroup);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("openIssues", OpenIssues);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.FetchAMonitor200_owner>("owner", Owner);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("type", Type);

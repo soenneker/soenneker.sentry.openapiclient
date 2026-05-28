@@ -2604,7 +2604,6 @@
                       "enabled",
                       "id",
                       "name",
-                      "openIssues",
                       "projectId",
                       "type",
                       "workflowIds"
@@ -2706,9 +2705,6 @@
                       },
                       "enabled": {
                         "type": "boolean"
-                      },
-                      "openIssues": {
-                        "type": "integer"
                       }
                     }
                   }
@@ -2765,8 +2761,7 @@
                           "numComments": 0,
                           "firstSeen": "2026-01-08T21:00:59.737468Z",
                           "lastSeen": "2026-01-08T21:23:45.723716Z"
-                        },
-                        "openIssues": 100
+                        }
                       },
                       {
                         "id": "234567891",
@@ -2836,8 +2831,7 @@
                           "recoveryThreshold": 1
                         },
                         "enabled": true,
-                        "latestGroup": null,
-                        "openIssues": 0
+                        "latestGroup": null
                       },
                       {
                         "id": "1234567",
@@ -2907,8 +2901,7 @@
                           "comparisonDelta": null
                         },
                         "enabled": true,
-                        "latestGroup": null,
-                        "openIssues": 0
+                        "latestGroup": null
                       }
                     ]
                   }
@@ -3001,7 +2994,6 @@
                       "enabled",
                       "id",
                       "name",
-                      "openIssues",
                       "projectId",
                       "type",
                       "workflowIds"
@@ -3103,9 +3095,6 @@
                       },
                       "enabled": {
                         "type": "boolean"
-                      },
-                      "openIssues": {
-                        "type": "integer"
                       }
                     }
                   }
@@ -3162,8 +3151,7 @@
                           "numComments": 0,
                           "firstSeen": "2026-01-08T21:00:59.737468Z",
                           "lastSeen": "2026-01-08T21:23:45.723716Z"
-                        },
-                        "openIssues": 100
+                        }
                       },
                       {
                         "id": "234567891",
@@ -3233,8 +3221,7 @@
                           "recoveryThreshold": 1
                         },
                         "enabled": true,
-                        "latestGroup": null,
-                        "openIssues": 0
+                        "latestGroup": null
                       },
                       {
                         "id": "1234567",
@@ -3304,8 +3291,7 @@
                           "comparisonDelta": null
                         },
                         "enabled": true,
-                        "latestGroup": null,
-                        "openIssues": 0
+                        "latestGroup": null
                       }
                     ]
                   }
@@ -3535,8 +3521,7 @@
                         "numComments": 0,
                         "firstSeen": "2025-07-21T14:46:07.845207Z",
                         "lastSeen": "2026-01-12T16:16:26.355334Z"
-                      },
-                      "openIssues": 0
+                      }
                     }
                   }
                 }
@@ -3692,8 +3677,7 @@
                         "numComments": 0,
                         "firstSeen": "2026-01-09T18:48:15.250134Z",
                         "lastSeen": "2026-01-09T18:48:15.250134Z"
-                      },
-                      "openIssues": 0
+                      }
                     }
                   }
                 }
@@ -12834,6 +12818,137 @@
             ]
           }
         ]
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "Create a new project for an organization. A personal team (`team-{username}`) is automatically created for the caller with Team Admin role, and the project is bound to it. If the org has member project creation disabled (`disable_member_project_creation`), `org:write` scope is required.",
+        "operationId": "Create-a-Project-for-an-Organization",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateAProjectForAnOrganization"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAProjectForAnOrganization201"
+                },
+                "examples": {
+                  "ProjectSuccessfullyCreated": {
+                    "summary": "Project successfully created",
+                    "value": {
+                      "team": {
+                        "id": "2349234102",
+                        "name": "Prime Mover",
+                        "slug": "prime-mover"
+                      },
+                      "teams": [
+                        {
+                          "id": "2349234102",
+                          "name": "Prime Mover",
+                          "slug": "prime-mover"
+                        },
+                        {
+                          "id": "47584447",
+                          "name": "Powerful Abolitionist",
+                          "slug": "powerful-abolitionist"
+                        }
+                      ],
+                      "id": "6758470122493650",
+                      "slug": "the-spoiled-yoghurt",
+                      "name": "The Spoiled Yoghurt",
+                      "isBookmarked": false,
+                      "isMember": true,
+                      "access": [
+                        "project:read",
+                        "event:read",
+                        "team:read",
+                        "alerts:read",
+                        "org:read",
+                        "event:write",
+                        "project:releases",
+                        "member:read"
+                      ],
+                      "hasAccess": true,
+                      "dateCreated": "2023-03-29T15:25:21.344565Z",
+                      "environments": [
+                        "production"
+                      ],
+                      "features": [
+                        "alert-filters",
+                        "custom-inbound-filters",
+                        "discard-groups",
+                        "minidump",
+                        "rate-limits",
+                        "servicehooks",
+                        "similarity-indexing",
+                        "similarity-indexing-v2",
+                        "similarity-view",
+                        "similarity-view-v2"
+                      ],
+                      "firstEvent": null,
+                      "firstTransactionEvent": true,
+                      "hasSessions": false,
+                      "hasProfiles": false,
+                      "hasReplays": false,
+                      "hasFlags": false,
+                      "hasMonitors": false,
+                      "hasFeedbacks": false,
+                      "hasNewFeedbacks": false,
+                      "hasMinifiedStackTrace": false,
+                      "hasInsightsHttp": true,
+                      "hasInsightsDb": false,
+                      "hasInsightsAssets": false,
+                      "hasInsightsAppStart": false,
+                      "hasInsightsScreenLoad": false,
+                      "hasInsightsVitals": false,
+                      "hasInsightsCaches": true,
+                      "hasInsightsQueues": true,
+                      "hasInsightsAgentMonitoring": false,
+                      "hasInsightsMCP": false,
+                      "hasLogs": false,
+                      "hasTraceMetrics": false,
+                      "platform": "node-express",
+                      "platforms": [ ],
+                      "latestRelease": null,
+                      "hasUserReports": false,
+                      "latestDeploys": null
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
       }
     },
     "/api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors": {
@@ -12949,8 +13064,7 @@
                         "detectionType": "static"
                       },
                       "enabled": true,
-                      "latestGroup": null,
-                      "openIssues": 0
+                      "latestGroup": null
                     }
                   }
                 }
@@ -32010,516 +32124,6 @@
         ]
       }
     },
-    "/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}": {
-      "get": {
-        "tags": [
-          "Events"
-        ],
-        "description": "Return details on an individual issue. This returns the basic stats for the issue (title, last seen, first seen), some overall numbers (number of comments, user reports) as well as the summarized event data.",
-        "operationId": "Retrieve-an-Issue",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the issue belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "issue_id",
-            "in": "path",
-            "description": "The ID of the issue to retrieve.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "collapse",
-            "in": "query",
-            "description": "Fields to remove from the response to improve query performance.",
-            "schema": {
-              "type": "array",
-              "items": {
-                "enum": [
-                  "stats",
-                  "lifetime",
-                  "base",
-                  "unhandled",
-                  "filtered"
-                ],
-                "type": "string",
-                "additionalProperties": false
-              }
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RetrieveAnIssue200"
-                },
-                "example": {
-                  "activity": [
-                    {
-                      "data": { },
-                      "dateCreated": "2018-11-06T21:19:55Z",
-                      "id": "0",
-                      "type": "first_seen",
-                      "user": null
-                    }
-                  ],
-                  "annotations": [ ],
-                  "assignedTo": null,
-                  "count": "1",
-                  "culprit": "raven.scripts.runner in main",
-                  "firstRelease": {
-                    "authors": [ ],
-                    "commitCount": 0,
-                    "data": { },
-                    "dateCreated": "2018-11-06T21:19:55.146Z",
-                    "dateReleased": null,
-                    "deployCount": 0,
-                    "firstEvent": "2018-11-06T21:19:55.271Z",
-                    "lastCommit": null,
-                    "lastDeploy": null,
-                    "lastEvent": "2018-11-06T21:19:55.271Z",
-                    "newGroups": 0,
-                    "owner": null,
-                    "projects": [
-                      {
-                        "name": "Pump Station",
-                        "slug": "pump-station"
-                      }
-                    ],
-                    "ref": null,
-                    "shortVersion": "1764232",
-                    "url": null,
-                    "version": "17642328ead24b51867165985996d04b29310337"
-                  },
-                  "firstSeen": "2018-11-06T21:19:55Z",
-                  "hasSeen": false,
-                  "id": "1",
-                  "isBookmarked": false,
-                  "isPublic": false,
-                  "isSubscribed": true,
-                  "lastRelease": null,
-                  "lastSeen": "2018-11-06T21:19:55Z",
-                  "level": "error",
-                  "logger": null,
-                  "metadata": {
-                    "title": "This is an example Python exception"
-                  },
-                  "numComments": 0,
-                  "participants": [ ],
-                  "permalink": "https://sentry.io/the-interstellar-jurisdiction/pump-station/issues/1/",
-                  "pluginActions": [ ],
-                  "pluginContexts": [ ],
-                  "pluginIssues": [ ],
-                  "project": {
-                    "id": "2",
-                    "name": "Pump Station",
-                    "slug": "pump-station"
-                  },
-                  "seenBy": [ ],
-                  "shareId": null,
-                  "shortId": "PUMP-STATION-1",
-                  "stats": {
-                    "24h": [
-                      [
-                        1541451600,
-                        557
-                      ],
-                      [
-                        1541455200,
-                        473
-                      ],
-                      [
-                        1541458800,
-                        914
-                      ],
-                      [
-                        1541462400,
-                        991
-                      ],
-                      [
-                        1541466000,
-                        925
-                      ],
-                      [
-                        1541469600,
-                        881
-                      ],
-                      [
-                        1541473200,
-                        182
-                      ],
-                      [
-                        1541476800,
-                        490
-                      ],
-                      [
-                        1541480400,
-                        820
-                      ],
-                      [
-                        1541484000,
-                        322
-                      ],
-                      [
-                        1541487600,
-                        836
-                      ],
-                      [
-                        1541491200,
-                        565
-                      ],
-                      [
-                        1541494800,
-                        758
-                      ],
-                      [
-                        1541498400,
-                        880
-                      ],
-                      [
-                        1541502000,
-                        677
-                      ],
-                      [
-                        1541505600,
-                        381
-                      ],
-                      [
-                        1541509200,
-                        814
-                      ],
-                      [
-                        1541512800,
-                        329
-                      ],
-                      [
-                        1541516400,
-                        446
-                      ],
-                      [
-                        1541520000,
-                        731
-                      ],
-                      [
-                        1541523600,
-                        111
-                      ],
-                      [
-                        1541527200,
-                        926
-                      ],
-                      [
-                        1541530800,
-                        772
-                      ],
-                      [
-                        1541534400,
-                        400
-                      ],
-                      [
-                        1541538000,
-                        943
-                      ]
-                    ],
-                    "30d": [
-                      [
-                        1538870400,
-                        565
-                      ],
-                      [
-                        1538956800,
-                        12862
-                      ],
-                      [
-                        1539043200,
-                        15617
-                      ],
-                      [
-                        1539129600,
-                        10809
-                      ],
-                      [
-                        1539216000,
-                        15065
-                      ],
-                      [
-                        1539302400,
-                        12927
-                      ],
-                      [
-                        1539388800,
-                        12994
-                      ],
-                      [
-                        1539475200,
-                        13139
-                      ],
-                      [
-                        1539561600,
-                        11838
-                      ],
-                      [
-                        1539648000,
-                        12088
-                      ],
-                      [
-                        1539734400,
-                        12338
-                      ],
-                      [
-                        1539820800,
-                        12768
-                      ],
-                      [
-                        1539907200,
-                        12816
-                      ],
-                      [
-                        1539993600,
-                        15356
-                      ],
-                      [
-                        1540080000,
-                        10910
-                      ],
-                      [
-                        1540166400,
-                        12306
-                      ],
-                      [
-                        1540252800,
-                        12912
-                      ],
-                      [
-                        1540339200,
-                        14700
-                      ],
-                      [
-                        1540425600,
-                        11890
-                      ],
-                      [
-                        1540512000,
-                        11684
-                      ],
-                      [
-                        1540598400,
-                        13510
-                      ],
-                      [
-                        1540684800,
-                        12625
-                      ],
-                      [
-                        1540771200,
-                        12811
-                      ],
-                      [
-                        1540857600,
-                        13180
-                      ],
-                      [
-                        1540944000,
-                        14651
-                      ],
-                      [
-                        1541030400,
-                        14161
-                      ],
-                      [
-                        1541116800,
-                        12612
-                      ],
-                      [
-                        1541203200,
-                        14316
-                      ],
-                      [
-                        1541289600,
-                        14742
-                      ],
-                      [
-                        1541376000,
-                        12505
-                      ],
-                      [
-                        1541462400,
-                        14180
-                      ]
-                    ]
-                  },
-                  "status": "unresolved",
-                  "statusDetails": { },
-                  "subscriptionDetails": null,
-                  "tags": [ ],
-                  "title": "This is an example Python exception",
-                  "type": "default",
-                  "userCount": 0,
-                  "userReportCount": 0
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "event:read"
-            ]
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Events"
-        ],
-        "description": "Updates an individual issue's attributes.  Only the attributes submitted are modified.",
-        "operationId": "Update-an-Issue",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the issue belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "issue_id",
-            "in": "path",
-            "description": "The ID of the group to retrieve.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/UpdateAnIssue"
-              },
-              "example": {
-                "status": "unresolved"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/UpdateAnIssue200"
-                },
-                "example": {
-                  "annotations": [ ],
-                  "assignedTo": null,
-                  "count": "1",
-                  "culprit": "raven.scripts.runner in main",
-                  "firstSeen": "2018-11-06T21:19:55Z",
-                  "hasSeen": false,
-                  "id": "1",
-                  "isBookmarked": false,
-                  "isPublic": false,
-                  "isSubscribed": true,
-                  "lastSeen": "2018-11-06T21:19:55Z",
-                  "level": "error",
-                  "logger": null,
-                  "metadata": {
-                    "title": "This is an example Python exception"
-                  },
-                  "numComments": 0,
-                  "permalink": "https://sentry.io/the-interstellar-jurisdiction/pump-station/issues/1/",
-                  "project": {
-                    "id": "2",
-                    "name": "Pump Station",
-                    "slug": "pump-station"
-                  },
-                  "shareId": null,
-                  "shortId": "PUMP-STATION-1",
-                  "status": "unresolved",
-                  "statusDetails": { },
-                  "subscriptionDetails": null,
-                  "title": "This is an example Python exception",
-                  "type": "default",
-                  "userCount": 0
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "event:write"
-            ]
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Events"
-        ],
-        "description": "Removes an individual issue.",
-        "operationId": "Remove-an-Issue",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the issue belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "issue_id",
-            "in": "path",
-            "description": "The ID of the issue to delete.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "event:admin"
-            ]
-          }
-        ]
-      }
-    },
     "/api/0/organizations/{organization_id_or_slug}/releases": {
       "get": {
         "tags": [
@@ -34248,6 +33852,319 @@
               "project:read",
               "project:write",
               "project:admin"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Return details on an individual issue, including its basic stats, comment\nand user-report counts, and a summary of the latest event.",
+        "operationId": "Retrieve-an-Issue",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "issue_id",
+            "in": "path",
+            "description": "The ID of the issue you'd like to query.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "Additional data to include in the response.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "forecast",
+                  "inbox",
+                  "integrationIssues",
+                  "latestEventHasAttachments",
+                  "owners",
+                  "sentryAppIssues"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              }
+            }
+          },
+          {
+            "name": "collapse",
+            "in": "query",
+            "description": "Fields to remove from the response to improve query performance.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "enum": [
+                  "release",
+                  "stats",
+                  "tags"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveAnIssue200"
+                },
+                "examples": {
+                  "ReturnAnIssue": {
+                    "summary": "Return an issue",
+                    "value": {
+                      "id": "1",
+                      "shareId": "123def456abc",
+                      "shortId": "PUMP-STATION-1",
+                      "title": "This is an example Python exception",
+                      "culprit": "raven.scripts.runner in main",
+                      "permalink": "https://sentry.io/the-interstellar-jurisdiction/pump-station/issues/1/",
+                      "logger": null,
+                      "level": "error",
+                      "status": "unresolved",
+                      "statusDetails": { },
+                      "substatus": "ongoing",
+                      "isPublic": false,
+                      "platform": "python",
+                      "priority": "medium",
+                      "priorityLockedAt": null,
+                      "seerFixabilityScore": null,
+                      "seerAutofixLastTriggered": null,
+                      "seerExplorerAutofixLastTriggered": null,
+                      "project": {
+                        "id": "2",
+                        "name": "Pump Station",
+                        "slug": "pump-station",
+                        "platform": "python"
+                      },
+                      "type": "default",
+                      "issueType": "error",
+                      "issueCategory": "error",
+                      "metadata": {
+                        "title": "This is an example Python exception"
+                      },
+                      "numComments": 0,
+                      "assignedTo": {
+                        "type": "user",
+                        "id": "1",
+                        "name": "John Doe",
+                        "email": "john.doe@example.com"
+                      },
+                      "isBookmarked": false,
+                      "isSubscribed": true,
+                      "subscriptionDetails": null,
+                      "hasSeen": false,
+                      "annotations": [ ],
+                      "count": "150",
+                      "userCount": 12,
+                      "firstSeen": "2018-11-06T21:19:55Z",
+                      "lastSeen": "2018-12-06T21:19:55Z",
+                      "activity": [
+                        {
+                          "data": { },
+                          "dateCreated": "2018-11-06T21:19:55Z",
+                          "id": "0",
+                          "type": "first_seen",
+                          "user": null
+                        }
+                      ],
+                      "seenBy": [ ],
+                      "pluginActions": [ ],
+                      "pluginIssues": [ ],
+                      "pluginContexts": [ ],
+                      "userReportCount": 0,
+                      "participants": [ ],
+                      "firstRelease": {
+                        "version": "17642328ead24b51867165985996d04b29310337",
+                        "shortVersion": "1764232",
+                        "dateCreated": "2018-11-06T21:19:55.146Z",
+                        "dateReleased": null,
+                        "ref": null,
+                        "url": null
+                      },
+                      "lastRelease": null,
+                      "tags": [
+                        {
+                          "key": "browser",
+                          "name": "Browser",
+                          "totalValues": 150
+                        },
+                        {
+                          "key": "level",
+                          "name": "Level",
+                          "totalValues": 150
+                        }
+                      ],
+                      "stats": {
+                        "24h": [
+                          [
+                            1541451600,
+                            557
+                          ],
+                          [
+                            1541455200,
+                            473
+                          ]
+                        ],
+                        "30d": [
+                          [
+                            1538870400,
+                            565
+                          ],
+                          [
+                            1538956800,
+                            12862
+                          ]
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "event:admin",
+              "event:read",
+              "event:write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Update an individual issue's attributes. Only the attributes submitted\nare modified.",
+        "operationId": "Update-an-Issue",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "issue_id",
+            "in": "path",
+            "description": "The ID of the issue you'd like to query.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateAnIssue"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateAnIssue200"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "event:admin",
+              "event:write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Events"
+        ],
+        "description": "Asynchronously queue an individual issue for deletion.",
+        "operationId": "Remove-an-Issue",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "issue_id",
+            "in": "path",
+            "description": "The ID of the issue you'd like to query.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "title": "DefaultResponse",
+                  "type": "object",
+                  "description": "Default response schema"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "event:admin"
             ]
           }
         ]
@@ -38913,7 +38830,6 @@
           "enabled",
           "id",
           "name",
-          "openIssues",
           "projectId",
           "type",
           "workflowIds"
@@ -39015,9 +38931,6 @@
           },
           "enabled": {
             "type": "boolean"
-          },
-          "openIssues": {
-            "type": "integer"
           }
         }
       },
@@ -39592,6 +39505,359 @@
           }
         }
       },
+      "GroupDetailsResponse": {
+        "required": [
+          "activity",
+          "annotations",
+          "assignedTo",
+          "culprit",
+          "hasSeen",
+          "id",
+          "isBookmarked",
+          "isPublic",
+          "isSubscribed",
+          "issueCategory",
+          "issueType",
+          "level",
+          "logger",
+          "metadata",
+          "numComments",
+          "participants",
+          "permalink",
+          "platform",
+          "pluginActions",
+          "pluginContexts",
+          "pluginIssues",
+          "priority",
+          "priorityLockedAt",
+          "project",
+          "seenBy",
+          "seerAutofixLastTriggered",
+          "seerExplorerAutofixLastTriggered",
+          "seerFixabilityScore",
+          "shareId",
+          "shortId",
+          "status",
+          "statusDetails",
+          "subscriptionDetails",
+          "substatus",
+          "title",
+          "type",
+          "userReportCount"
+        ],
+        "type": "object",
+        "properties": {
+          "isUnhandled": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "string"
+          },
+          "userCount": {
+            "type": "integer"
+          },
+          "firstSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "shareId": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "culprit": {
+            "type": "string",
+            "nullable": true
+          },
+          "permalink": {
+            "type": "string"
+          },
+          "logger": {
+            "type": "string",
+            "nullable": true
+          },
+          "level": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "statusDetails": {
+            "$ref": "#/components/schemas/GroupDetailsResponseStatusDetails"
+          },
+          "substatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "priorityLockedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerFixabilityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "seerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerExplorerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "project": {
+            "$ref": "#/components/schemas/GroupDetailsResponseProject"
+          },
+          "type": {
+            "type": "string"
+          },
+          "issueType": {
+            "type": "string"
+          },
+          "issueCategory": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "numComments": {
+            "type": "integer"
+          },
+          "assignedTo": {
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "isBookmarked": {
+            "type": "boolean"
+          },
+          "isSubscribed": {
+            "type": "boolean"
+          },
+          "subscriptionDetails": {
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "hasSeen": {
+            "type": "boolean"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "displayName",
+                "url"
+              ],
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "firstRelease": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "lastRelease": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "inbox": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            },
+            "nullable": true
+          },
+          "forecast": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "integrationIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "sentryAppIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "latestEventHasAttachments": {
+            "type": "boolean"
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "seenBy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "pluginActions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "pluginIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "pluginContexts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "userReportCount": {
+            "type": "integer"
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
       "GroupEventsResponseDict": {
         "type": "array",
         "items": {
@@ -39602,6 +39868,218 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/GroupExternalIssueResponseItem"
+        }
+      },
+      "GroupUpdateResponse": {
+        "required": [
+          "annotations",
+          "assignedTo",
+          "culprit",
+          "hasSeen",
+          "id",
+          "isBookmarked",
+          "isPublic",
+          "isSubscribed",
+          "issueCategory",
+          "issueType",
+          "level",
+          "logger",
+          "metadata",
+          "numComments",
+          "permalink",
+          "platform",
+          "priority",
+          "priorityLockedAt",
+          "project",
+          "seerAutofixLastTriggered",
+          "seerExplorerAutofixLastTriggered",
+          "seerFixabilityScore",
+          "shareId",
+          "shortId",
+          "status",
+          "statusDetails",
+          "subscriptionDetails",
+          "substatus",
+          "title",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "isUnhandled": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "string"
+          },
+          "userCount": {
+            "type": "integer"
+          },
+          "firstSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "shareId": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "culprit": {
+            "type": "string",
+            "nullable": true
+          },
+          "permalink": {
+            "type": "string"
+          },
+          "logger": {
+            "type": "string",
+            "nullable": true
+          },
+          "level": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "statusDetails": {
+            "$ref": "#/components/schemas/GroupUpdateResponseStatusDetails"
+          },
+          "substatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "priorityLockedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerFixabilityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "seerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerExplorerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "project": {
+            "$ref": "#/components/schemas/GroupUpdateResponseProject"
+          },
+          "type": {
+            "type": "string"
+          },
+          "issueType": {
+            "type": "string"
+          },
+          "issueCategory": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "numComments": {
+            "type": "integer"
+          },
+          "assignedTo": {
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "isBookmarked": {
+            "type": "boolean"
+          },
+          "isSubscribed": {
+            "type": "boolean"
+          },
+          "subscriptionDetails": {
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "hasSeen": {
+            "type": "boolean"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "displayName",
+                "url"
+              ],
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
         }
       },
       "GroupValidator": {
@@ -49635,7 +50113,6 @@
           "enabled",
           "id",
           "name",
-          "openIssues",
           "projectId",
           "type",
           "workflowIds"
@@ -49737,9 +50214,6 @@
           },
           "enabled": {
             "type": "boolean"
-          },
-          "openIssues": {
-            "type": "integer"
           }
         }
       },
@@ -53199,6 +53673,169 @@
               }
             }
           }
+        }
+      },
+      "GroupDetailsResponseStatusDetails": {
+        "type": "object",
+        "properties": {
+          "autoResolved": {
+            "type": "boolean"
+          },
+          "ignoreCount": {
+            "type": "integer"
+          },
+          "ignoreUntil": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ignoreUserCount": {
+            "type": "integer"
+          },
+          "ignoreUserWindow": {
+            "type": "integer"
+          },
+          "ignoreWindow": {
+            "type": "integer"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/GroupDetailsResponseStatusDetailsActor"
+          },
+          "inNextRelease": {
+            "type": "boolean"
+          },
+          "inRelease": {
+            "type": "string"
+          },
+          "inCommit": {
+            "type": "string"
+          },
+          "pendingEvents": {
+            "type": "integer"
+          },
+          "info": {
+            "type": "object"
+          }
+        }
+      },
+      "GroupDetailsResponseProject": {
+        "required": [
+          "id",
+          "name",
+          "platform",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GroupDetailsResponseMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
+      },
+      "GroupDetailsResponseStats": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "format": "double"
+            }
+          }
+        }
+      },
+      "GroupDetailsResponseForecast": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
+      },
+      "GroupUpdateResponseStatusDetails": {
+        "type": "object",
+        "properties": {
+          "autoResolved": {
+            "type": "boolean"
+          },
+          "ignoreCount": {
+            "type": "integer"
+          },
+          "ignoreUntil": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ignoreUserCount": {
+            "type": "integer"
+          },
+          "ignoreUserWindow": {
+            "type": "integer"
+          },
+          "ignoreWindow": {
+            "type": "integer"
+          },
+          "actor": {
+            "$ref": "#/components/schemas/GroupUpdateResponseStatusDetailsActor"
+          },
+          "inNextRelease": {
+            "type": "boolean"
+          },
+          "inRelease": {
+            "type": "string"
+          },
+          "inCommit": {
+            "type": "string"
+          },
+          "pendingEvents": {
+            "type": "integer"
+          },
+          "info": {
+            "type": "object"
+          }
+        }
+      },
+      "GroupUpdateResponseProject": {
+        "required": [
+          "id",
+          "name",
+          "platform",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GroupUpdateResponseMetadata": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
         }
       },
       "GroupValidatorStatusDetails": {
@@ -58664,6 +59301,354 @@
           }
         }
       },
+      "GroupDetailsResponseStatusDetailsActor": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "required": [
+                "dateSynced",
+                "dateVerified",
+                "id",
+                "name",
+                "organization",
+                "provider"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "organization": {
+                  "required": [
+                    "name",
+                    "slug"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "provider": {
+                  "required": [
+                    "id",
+                    "name"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "dateVerified": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "dateSynced": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/GroupDetailsResponseStatusDetailsActorAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "required": [
+                "email",
+                "id",
+                "is_verified"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "is_verified": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
+      "GroupUpdateResponseStatusDetailsActor": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "required": [
+                "dateSynced",
+                "dateVerified",
+                "id",
+                "name",
+                "organization",
+                "provider"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "organization": {
+                  "required": [
+                    "name",
+                    "slug"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "slug": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "provider": {
+                  "required": [
+                    "id",
+                    "name"
+                  ],
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "name": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "dateVerified": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "dateSynced": {
+                  "type": "string",
+                  "format": "date-time"
+                }
+              }
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/GroupUpdateResponseStatusDetailsActorAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "required": [
+                "email",
+                "id",
+                "is_verified"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "is_verified": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        }
+      },
       "MonitorProjectAvatar": {
         "type": "object",
         "properties": {
@@ -59273,6 +60258,50 @@
             "type": "string",
             "nullable": true
           }
+        }
+      },
+      "GroupDetailsResponseStatusDetailsActorAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GroupDetailsResponseStatusDetailsActorExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
+        }
+      },
+      "GroupUpdateResponseStatusDetailsActorAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GroupUpdateResponseStatusDetailsActorExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
         }
       },
       "ShortIdLookupResponseGroupStatusDetailsActor": {
@@ -63812,7 +64841,6 @@
             "enabled",
             "id",
             "name",
-            "openIssues",
             "projectId",
             "type",
             "workflowIds"
@@ -63914,9 +64942,6 @@
             },
             "enabled": {
               "type": "boolean"
-            },
-            "openIssues": {
-              "type": "integer"
             }
           }
         }
@@ -63945,7 +64970,6 @@
             "enabled",
             "id",
             "name",
-            "openIssues",
             "projectId",
             "type",
             "workflowIds"
@@ -64047,9 +65071,6 @@
             },
             "enabled": {
               "type": "boolean"
-            },
-            "openIssues": {
-              "type": "integer"
             }
           }
         }
@@ -64064,7 +65085,6 @@
           "enabled",
           "id",
           "name",
-          "openIssues",
           "projectId",
           "type",
           "workflowIds"
@@ -64166,9 +65186,6 @@
           },
           "enabled": {
             "type": "boolean"
-          },
-          "openIssues": {
-            "type": "integer"
           }
         }
       },
@@ -64265,7 +65282,6 @@
           "enabled",
           "id",
           "name",
-          "openIssues",
           "projectId",
           "type",
           "workflowIds"
@@ -64367,9 +65383,6 @@
           },
           "enabled": {
             "type": "boolean"
-          },
-          "openIssues": {
-            "type": "integer"
           }
         }
       },
@@ -75248,6 +76261,280 @@
           }
         }
       },
+      "CreateAProjectForAnOrganization": {
+        "required": [
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "maxLength": 50,
+            "type": "string",
+            "description": "The name for the project."
+          },
+          "slug": {
+            "maxLength": 100,
+            "pattern": "^(?![0-9]+$)[a-z0-9_\\-]+$",
+            "type": "string",
+            "description": "Uniquely identifies a project and is used for the interface.\n        If not provided, it is automatically generated from the name.",
+            "nullable": true
+          },
+          "platform": {
+            "type": "string",
+            "description": "The platform for the project.",
+            "nullable": true
+          },
+          "default_rules": {
+            "type": "boolean",
+            "description": "\nDefaults to true where the behavior is to alert the user on every new\nissue. Setting this to false will turn this off and the user must create\ntheir own alerts to be notified of new issues.\n        "
+          }
+        }
+      },
+      "CreateAProjectForAnOrganization201": {
+        "required": [
+          "access",
+          "dateCreated",
+          "environments",
+          "features",
+          "firstEvent",
+          "firstTransactionEvent",
+          "hasAccess",
+          "hasFeedbacks",
+          "hasFlags",
+          "hasInsightsAgentMonitoring",
+          "hasInsightsAppStart",
+          "hasInsightsAssets",
+          "hasInsightsCaches",
+          "hasInsightsDb",
+          "hasInsightsHttp",
+          "hasInsightsMCP",
+          "hasInsightsQueues",
+          "hasInsightsScreenLoad",
+          "hasInsightsVitals",
+          "hasLogs",
+          "hasMinifiedStackTrace",
+          "hasMonitors",
+          "hasNewFeedbacks",
+          "hasProfiles",
+          "hasReplays",
+          "hasSessions",
+          "hasTraceMetrics",
+          "hasUserReports",
+          "id",
+          "isBookmarked",
+          "isMember",
+          "latestRelease",
+          "name",
+          "platform",
+          "platforms",
+          "slug",
+          "team",
+          "teams"
+        ],
+        "type": "object",
+        "properties": {
+          "latestDeploys": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "options": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "stats": {
+            "type": "object"
+          },
+          "transactionStats": {
+            "type": "object"
+          },
+          "sessionStats": {
+            "type": "object"
+          },
+          "id": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "isBookmarked": {
+            "type": "boolean"
+          },
+          "isMember": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "firstEvent": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "firstTransactionEvent": {
+            "type": "boolean"
+          },
+          "access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hasAccess": {
+            "type": "boolean"
+          },
+          "hasFeedbacks": {
+            "type": "boolean"
+          },
+          "hasFlags": {
+            "type": "boolean"
+          },
+          "hasMinifiedStackTrace": {
+            "type": "boolean"
+          },
+          "hasMonitors": {
+            "type": "boolean"
+          },
+          "hasNewFeedbacks": {
+            "type": "boolean"
+          },
+          "hasProfiles": {
+            "type": "boolean"
+          },
+          "hasReplays": {
+            "type": "boolean"
+          },
+          "hasSessions": {
+            "type": "boolean"
+          },
+          "hasInsightsHttp": {
+            "type": "boolean"
+          },
+          "hasInsightsDb": {
+            "type": "boolean"
+          },
+          "hasInsightsAssets": {
+            "type": "boolean"
+          },
+          "hasInsightsAppStart": {
+            "type": "boolean"
+          },
+          "hasInsightsScreenLoad": {
+            "type": "boolean"
+          },
+          "hasInsightsVitals": {
+            "type": "boolean"
+          },
+          "hasInsightsCaches": {
+            "type": "boolean"
+          },
+          "hasInsightsQueues": {
+            "type": "boolean"
+          },
+          "hasInsightsAgentMonitoring": {
+            "type": "boolean"
+          },
+          "hasInsightsMCP": {
+            "type": "boolean"
+          },
+          "hasLogs": {
+            "type": "boolean"
+          },
+          "hasTraceMetrics": {
+            "type": "boolean"
+          },
+          "team": {
+            "required": [
+              "id",
+              "name",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "slug"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "hasUserReports": {
+            "type": "boolean"
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "latestRelease": {
+            "required": [
+              "version"
+            ],
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          }
+        }
+      },
       "CreateAMonitorForAProject": {
         "required": [
           "name",
@@ -75341,7 +76628,6 @@
           "enabled",
           "id",
           "name",
-          "openIssues",
           "projectId",
           "type",
           "workflowIds"
@@ -75443,9 +76729,6 @@
           },
           "enabled": {
             "type": "boolean"
-          },
-          "openIssues": {
-            "type": "integer"
           }
         }
       },
@@ -93592,569 +94875,6 @@
           }
         }
       },
-      "RetrieveAnIssue200": {
-        "required": [
-          "activity",
-          "annotations",
-          "assignedTo",
-          "count",
-          "culprit",
-          "firstRelease",
-          "firstSeen",
-          "hasSeen",
-          "id",
-          "isBookmarked",
-          "isPublic",
-          "isSubscribed",
-          "lastRelease",
-          "lastSeen",
-          "level",
-          "logger",
-          "metadata",
-          "numComments",
-          "participants",
-          "permalink",
-          "pluginActions",
-          "pluginContexts",
-          "pluginIssues",
-          "project",
-          "seenBy",
-          "shareId",
-          "shortId",
-          "stats",
-          "status",
-          "statusDetails",
-          "subscriptionDetails",
-          "tags",
-          "title",
-          "type",
-          "userCount",
-          "userReportCount"
-        ],
-        "type": "object",
-        "properties": {
-          "activity": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "data": {
-                  "type": "object"
-                },
-                "dateCreated": {
-                  "type": "string"
-                },
-                "id": {
-                  "type": "string"
-                },
-                "type": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "object",
-                  "nullable": true
-                }
-              }
-            }
-          },
-          "annotations": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "properties": {
-                "displayName": {
-                  "type": "string"
-                },
-                "url": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "assignedTo": {
-            "type": "object",
-            "nullable": true
-          },
-          "count": {
-            "type": "string"
-          },
-          "culprit": {
-            "type": "string"
-          },
-          "firstRelease": {
-            "type": "object",
-            "properties": {
-              "authors": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "commitCount": {
-                "type": "integer"
-              },
-              "data": {
-                "type": "object",
-                "nullable": true
-              },
-              "dateCreated": {
-                "type": "string"
-              },
-              "dateReleased": {
-                "type": "string",
-                "nullable": true
-              },
-              "deployCount": {
-                "type": "integer"
-              },
-              "firstEvent": {
-                "type": "string"
-              },
-              "lastCommit": {
-                "type": "string",
-                "nullable": true
-              },
-              "lastDeploy": {
-                "type": "string",
-                "nullable": true
-              },
-              "lastEvent": {
-                "type": "string"
-              },
-              "newGroups": {
-                "type": "integer"
-              },
-              "owner": {
-                "type": "string",
-                "nullable": true
-              },
-              "projects": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "properties": {
-                    "name": {
-                      "type": "string"
-                    },
-                    "slug": {
-                      "type": "string"
-                    }
-                  }
-                }
-              },
-              "ref": {
-                "type": "string",
-                "nullable": true
-              },
-              "shortVersion": {
-                "type": "string"
-              },
-              "url": {
-                "type": "string",
-                "nullable": true
-              },
-              "version": {
-                "type": "string"
-              }
-            },
-            "nullable": true
-          },
-          "firstSeen": {
-            "type": "string"
-          },
-          "hasSeen": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "isBookmarked": {
-            "type": "boolean"
-          },
-          "isPublic": {
-            "type": "boolean"
-          },
-          "isSubscribed": {
-            "type": "boolean"
-          },
-          "lastRelease": {
-            "type": "object",
-            "nullable": true
-          },
-          "lastSeen": {
-            "type": "string"
-          },
-          "level": {
-            "type": "string"
-          },
-          "logger": {
-            "type": "string",
-            "nullable": true
-          },
-          "metadata": {
-            "type": "object",
-            "oneOf": [
-              {
-                "required": [
-                  "filename",
-                  "type",
-                  "value"
-                ],
-                "type": "object",
-                "properties": {
-                  "filename": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string"
-                  },
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              },
-              {
-                "required": [
-                  "title"
-                ],
-                "type": "object",
-                "properties": {
-                  "title": {
-                    "type": "string"
-                  }
-                }
-              }
-            ]
-          },
-          "numComments": {
-            "type": "integer"
-          },
-          "participants": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "permalink": {
-            "type": "string"
-          },
-          "pluginActions": {
-            "type": "array",
-            "items": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          },
-          "pluginContexts": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "pluginIssues": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "project": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "string"
-              }
-            }
-          },
-          "seenBy": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "shareId": {
-            "type": "string",
-            "nullable": true
-          },
-          "shortId": {
-            "type": "string"
-          },
-          "stats": {
-            "type": "object",
-            "properties": {
-              "24h": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": "number"
-                  }
-                }
-              },
-              "30d": {
-                "type": "array",
-                "items": {
-                  "type": "array",
-                  "items": {
-                    "type": "number"
-                  }
-                }
-              }
-            }
-          },
-          "status": {
-            "enum": [
-              "resolved",
-              "unresolved",
-              "ignored"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "statusDetails": {
-            "type": "object"
-          },
-          "subscriptionDetails": {
-            "type": "object",
-            "nullable": true
-          },
-          "tags": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
-          },
-          "title": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "userCount": {
-            "type": "integer"
-          },
-          "userReportCount": {
-            "type": "integer"
-          }
-        }
-      },
-      "UpdateAnIssue": {
-        "type": "object",
-        "properties": {
-          "status": {
-            "type": "string",
-            "description": "The new status for the issues. Valid values are `\"resolved\"`, `\"resolvedInNextRelease\"`, `\"unresolved\"`, and `\"ignored\"`."
-          },
-          "statusDetails": {
-            "type": "object",
-            "properties": {
-              "inNextRelease": {
-                "type": "boolean",
-                "description": "Indicates if the issue is resolved in the next release based on the last seen release of that issue."
-              },
-              "inRelease": {
-                "type": "string",
-                "description": "The version of the release in which the issue is resolved."
-              },
-              "inCommit": {
-                "type": "string",
-                "description": "The commit hash in which the issue is resolved."
-              }
-            },
-            "description": "Additional details about the resolution. Supported values are `\"inRelease\"`, `\"inNextRelease\"`, `\"inCommit\"`, `\"ignoreDuration\"`, `\"ignoreCount\"`, `\"ignoreWindow\"`, `\"ignoreUserCount\"`, and `\"ignoreUserWindow\"`."
-          },
-          "assignedTo": {
-            "type": "string",
-            "description": "The actor id (or username) of the user or team that should be assigned to this issue."
-          },
-          "hasSeen": {
-            "type": "boolean",
-            "description": "In case this API call is invoked with a user context this allows changing of the flag that indicates if the user has seen the event."
-          },
-          "isBookmarked": {
-            "type": "boolean",
-            "description": "In case this API call is invoked with a user context this allows changing of the bookmark flag."
-          },
-          "isSubscribed": {
-            "type": "boolean",
-            "description": "In case this API call is invoked with a user context this allows the user to subscribe to workflow notications for this issue."
-          },
-          "isPublic": {
-            "type": "boolean",
-            "description": "Sets the issue to public or private."
-          }
-        }
-      },
-      "UpdateAnIssue200": {
-        "required": [
-          "lastSeen",
-          "numComments",
-          "userCount",
-          "culprit",
-          "title",
-          "id",
-          "assignedTo",
-          "logger",
-          "type",
-          "annotations",
-          "metadata",
-          "status",
-          "subscriptionDetails",
-          "isPublic",
-          "hasSeen",
-          "shortId",
-          "shareId",
-          "firstSeen",
-          "count",
-          "permalink",
-          "level",
-          "isSubscribed",
-          "isBookmarked",
-          "project",
-          "statusDetails"
-        ],
-        "type": "object",
-        "properties": {
-          "annotations": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "assignedTo": {
-            "type": "object",
-            "nullable": true
-          },
-          "count": {
-            "type": "string"
-          },
-          "culprit": {
-            "type": "string"
-          },
-          "firstSeen": {
-            "type": "string"
-          },
-          "hasSeen": {
-            "type": "boolean"
-          },
-          "id": {
-            "type": "string"
-          },
-          "isBookmarked": {
-            "type": "boolean"
-          },
-          "isPublic": {
-            "type": "boolean"
-          },
-          "isSubscribed": {
-            "type": "boolean"
-          },
-          "lastSeen": {
-            "type": "string"
-          },
-          "level": {
-            "type": "string"
-          },
-          "logger": {
-            "type": "string",
-            "nullable": true
-          },
-          "metadata": {
-            "type": "object",
-            "oneOf": [
-              {
-                "required": [
-                  "filename",
-                  "type",
-                  "value"
-                ],
-                "type": "object",
-                "properties": {
-                  "filename": {
-                    "type": "string"
-                  },
-                  "type": {
-                    "type": "string"
-                  },
-                  "value": {
-                    "type": "string"
-                  }
-                }
-              },
-              {
-                "required": [
-                  "title"
-                ],
-                "type": "object",
-                "properties": {
-                  "title": {
-                    "type": "string"
-                  }
-                }
-              }
-            ]
-          },
-          "numComments": {
-            "type": "integer"
-          },
-          "permalink": {
-            "type": "string"
-          },
-          "project": {
-            "type": "object",
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "name": {
-                "type": "string"
-              },
-              "slug": {
-                "type": "string"
-              }
-            }
-          },
-          "shareId": {
-            "type": "string",
-            "nullable": true
-          },
-          "shortId": {
-            "type": "string"
-          },
-          "status": {
-            "enum": [
-              "resolved",
-              "unresolved",
-              "ignored"
-            ],
-            "type": "string",
-            "additionalProperties": false
-          },
-          "statusDetails": {
-            "type": "object"
-          },
-          "subscriptionDetails": {
-            "type": "object",
-            "nullable": true
-          },
-          "title": {
-            "type": "string"
-          },
-          "type": {
-            "type": "string"
-          },
-          "userCount": {
-            "type": "integer"
-          }
-        }
-      },
       "ListAnOrganizationSReleases200": {
         "type": "array",
         "items": {
@@ -95170,6 +95890,1210 @@
           }
         },
         "description": "Django Rest Framework serializer for incoming Spike Protection API payloads"
+      },
+      "RetrieveAnIssue200": {
+        "required": [
+          "activity",
+          "annotations",
+          "assignedTo",
+          "culprit",
+          "hasSeen",
+          "id",
+          "isBookmarked",
+          "isPublic",
+          "isSubscribed",
+          "issueCategory",
+          "issueType",
+          "level",
+          "logger",
+          "metadata",
+          "numComments",
+          "participants",
+          "permalink",
+          "platform",
+          "pluginActions",
+          "pluginContexts",
+          "pluginIssues",
+          "priority",
+          "priorityLockedAt",
+          "project",
+          "seenBy",
+          "seerAutofixLastTriggered",
+          "seerExplorerAutofixLastTriggered",
+          "seerFixabilityScore",
+          "shareId",
+          "shortId",
+          "status",
+          "statusDetails",
+          "subscriptionDetails",
+          "substatus",
+          "title",
+          "type",
+          "userReportCount"
+        ],
+        "type": "object",
+        "properties": {
+          "isUnhandled": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "string"
+          },
+          "userCount": {
+            "type": "integer"
+          },
+          "firstSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "shareId": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "culprit": {
+            "type": "string",
+            "nullable": true
+          },
+          "permalink": {
+            "type": "string"
+          },
+          "logger": {
+            "type": "string",
+            "nullable": true
+          },
+          "level": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "statusDetails": {
+            "type": "object",
+            "properties": {
+              "autoResolved": {
+                "type": "boolean"
+              },
+              "ignoreCount": {
+                "type": "integer"
+              },
+              "ignoreUntil": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "ignoreUserCount": {
+                "type": "integer"
+              },
+              "ignoreUserWindow": {
+                "type": "integer"
+              },
+              "ignoreWindow": {
+                "type": "integer"
+              },
+              "actor": {
+                "required": [
+                  "avatarUrl",
+                  "dateJoined",
+                  "email",
+                  "emails",
+                  "experiments",
+                  "has2fa",
+                  "hasPasswordAuth",
+                  "id",
+                  "isActive",
+                  "isManaged",
+                  "isStaff",
+                  "isSuperuser",
+                  "isSuspended",
+                  "lastActive",
+                  "lastLogin",
+                  "name",
+                  "username"
+                ],
+                "type": "object",
+                "properties": {
+                  "identities": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "dateSynced",
+                        "dateVerified",
+                        "id",
+                        "name",
+                        "organization",
+                        "provider"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "organization": {
+                          "required": [
+                            "name",
+                            "slug"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "slug": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "provider": {
+                          "required": [
+                            "id",
+                            "name"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "dateVerified": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "dateSynced": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  },
+                  "avatar": {
+                    "type": "object",
+                    "properties": {
+                      "avatarType": {
+                        "type": "string"
+                      },
+                      "avatarUuid": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "avatarUrl": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  },
+                  "authenticators": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "canReset2fa": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "avatarUrl": {
+                    "type": "string"
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "isSuspended": {
+                    "type": "boolean"
+                  },
+                  "hasPasswordAuth": {
+                    "type": "boolean"
+                  },
+                  "isManaged": {
+                    "type": "boolean"
+                  },
+                  "dateJoined": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "lastLogin": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "has2fa": {
+                    "type": "boolean"
+                  },
+                  "lastActive": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "isSuperuser": {
+                    "type": "boolean"
+                  },
+                  "isStaff": {
+                    "type": "boolean"
+                  },
+                  "experiments": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  },
+                  "emails": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "email",
+                        "id",
+                        "is_verified"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "is_verified": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "inNextRelease": {
+                "type": "boolean"
+              },
+              "inRelease": {
+                "type": "string"
+              },
+              "inCommit": {
+                "type": "string"
+              },
+              "pendingEvents": {
+                "type": "integer"
+              },
+              "info": {
+                "type": "object"
+              }
+            }
+          },
+          "substatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "priorityLockedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerFixabilityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "seerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerExplorerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "project": {
+            "required": [
+              "id",
+              "name",
+              "platform",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "issueType": {
+            "type": "string"
+          },
+          "issueCategory": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "numComments": {
+            "type": "integer"
+          },
+          "assignedTo": {
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "isBookmarked": {
+            "type": "boolean"
+          },
+          "isSubscribed": {
+            "type": "boolean"
+          },
+          "subscriptionDetails": {
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "hasSeen": {
+            "type": "boolean"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "displayName",
+                "url"
+              ],
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "firstRelease": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "lastRelease": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "stats": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "format": "double"
+                }
+              }
+            }
+          },
+          "inbox": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            },
+            "nullable": true
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            },
+            "nullable": true
+          },
+          "forecast": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "integrationIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "sentryAppIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "latestEventHasAttachments": {
+            "type": "boolean"
+          },
+          "activity": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "seenBy": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "pluginActions": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "pluginIssues": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "pluginContexts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          },
+          "userReportCount": {
+            "type": "integer"
+          },
+          "participants": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
+      "UpdateAnIssue": {
+        "required": [
+          "assignedTo",
+          "discard",
+          "hasSeen",
+          "inbox",
+          "isBookmarked",
+          "isPublic",
+          "isSubscribed",
+          "merge",
+          "priority",
+          "status",
+          "statusDetails",
+          "substatus"
+        ],
+        "type": "object",
+        "properties": {
+          "inbox": {
+            "type": "boolean",
+            "description": "If true, marks the issue as reviewed by the requestor."
+          },
+          "status": {
+            "enum": [
+              "resolved",
+              "unresolved",
+              "ignored",
+              "resolvedInNextRelease",
+              "muted"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "Limit mutations to only issues with the given status.\n\n* `resolved`\n* `unresolved`\n* `ignored`\n* `resolvedInNextRelease`\n* `muted`"
+          },
+          "statusDetails": {
+            "required": [
+              "ignoreCount",
+              "ignoreDuration",
+              "ignoreUserCount",
+              "ignoreUserWindow",
+              "ignoreWindow",
+              "inNextRelease",
+              "inRelease"
+            ],
+            "type": "object",
+            "properties": {
+              "inNextRelease": {
+                "type": "boolean",
+                "description": "If true, marks the issue as resolved in the next release."
+              },
+              "inRelease": {
+                "type": "string",
+                "description": "The version of the release that the issue should be resolved in.If set to `latest`, the latest release will be used."
+              },
+              "inCommit": {
+                "required": [
+                  "commit",
+                  "repository"
+                ],
+                "type": "object",
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                    "description": "The SHA of the resolving commit."
+                  },
+                  "repository": {
+                    "type": "string",
+                    "description": "The name of the repository (as it appears in Sentry)."
+                  }
+                },
+                "description": "The commit data that the issue should use for resolution."
+              },
+              "ignoreDuration": {
+                "type": "integer",
+                "description": "Ignore the issue until for this many minutes."
+              },
+              "ignoreCount": {
+                "type": "integer",
+                "description": "Ignore the issue until it has occurred this many times in `ignoreWindow` minutes."
+              },
+              "ignoreWindow": {
+                "maximum": 10080,
+                "type": "integer",
+                "description": "\"Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)\""
+              },
+              "ignoreUserCount": {
+                "type": "integer",
+                "description": "Ignore the issue until it has affected this many users in `ignoreUserWindow` minutes."
+              },
+              "ignoreUserWindow": {
+                "maximum": 10080,
+                "type": "integer",
+                "description": "\"Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)\""
+              }
+            },
+            "description": "Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project."
+          },
+          "substatus": {
+            "enum": [
+              "archived_until_escalating",
+              "archived_until_condition_met",
+              "archived_forever",
+              "escalating",
+              "ongoing",
+              "regressed",
+              "new"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "The new substatus of the issue.\n\n* `archived_until_escalating`\n* `archived_until_condition_met`\n* `archived_forever`\n* `escalating`\n* `ongoing`\n* `regressed`\n* `new`",
+            "nullable": true
+          },
+          "hasSeen": {
+            "type": "boolean",
+            "description": "If true, marks the issue as seen by the requestor."
+          },
+          "isBookmarked": {
+            "type": "boolean",
+            "description": "If true, bookmarks the issue for the requestor."
+          },
+          "isPublic": {
+            "type": "boolean",
+            "description": "If true, publishes the issue."
+          },
+          "isSubscribed": {
+            "type": "boolean",
+            "description": "If true, subscribes the requestor to the issue."
+          },
+          "merge": {
+            "type": "boolean",
+            "description": "If true, merges the issues together."
+          },
+          "discard": {
+            "type": "boolean",
+            "description": "If true, discards the issues instead of updating them."
+          },
+          "assignedTo": {
+            "type": "string",
+            "description": "The user or team that should be assigned to the issues. Values take the form of `<user_id>`, `user:<user_id>`, `<username>`, `<user_primary_email>`, or `team:<team_id>`."
+          },
+          "priority": {
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ],
+            "type": "string",
+            "additionalProperties": false,
+            "description": "The priority that should be set for the issues\n\n* `low`\n* `medium`\n* `high`"
+          }
+        }
+      },
+      "UpdateAnIssue200": {
+        "required": [
+          "annotations",
+          "assignedTo",
+          "culprit",
+          "hasSeen",
+          "id",
+          "isBookmarked",
+          "isPublic",
+          "isSubscribed",
+          "issueCategory",
+          "issueType",
+          "level",
+          "logger",
+          "metadata",
+          "numComments",
+          "permalink",
+          "platform",
+          "priority",
+          "priorityLockedAt",
+          "project",
+          "seerAutofixLastTriggered",
+          "seerExplorerAutofixLastTriggered",
+          "seerFixabilityScore",
+          "shareId",
+          "shortId",
+          "status",
+          "statusDetails",
+          "subscriptionDetails",
+          "substatus",
+          "title",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "isUnhandled": {
+            "type": "boolean"
+          },
+          "count": {
+            "type": "string"
+          },
+          "userCount": {
+            "type": "integer"
+          },
+          "firstSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "lastSeen": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "id": {
+            "type": "string"
+          },
+          "shareId": {
+            "type": "string",
+            "nullable": true
+          },
+          "shortId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "culprit": {
+            "type": "string",
+            "nullable": true
+          },
+          "permalink": {
+            "type": "string"
+          },
+          "logger": {
+            "type": "string",
+            "nullable": true
+          },
+          "level": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "statusDetails": {
+            "type": "object",
+            "properties": {
+              "autoResolved": {
+                "type": "boolean"
+              },
+              "ignoreCount": {
+                "type": "integer"
+              },
+              "ignoreUntil": {
+                "type": "string",
+                "format": "date-time"
+              },
+              "ignoreUserCount": {
+                "type": "integer"
+              },
+              "ignoreUserWindow": {
+                "type": "integer"
+              },
+              "ignoreWindow": {
+                "type": "integer"
+              },
+              "actor": {
+                "required": [
+                  "avatarUrl",
+                  "dateJoined",
+                  "email",
+                  "emails",
+                  "experiments",
+                  "has2fa",
+                  "hasPasswordAuth",
+                  "id",
+                  "isActive",
+                  "isManaged",
+                  "isStaff",
+                  "isSuperuser",
+                  "isSuspended",
+                  "lastActive",
+                  "lastLogin",
+                  "name",
+                  "username"
+                ],
+                "type": "object",
+                "properties": {
+                  "identities": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "dateSynced",
+                        "dateVerified",
+                        "id",
+                        "name",
+                        "organization",
+                        "provider"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "organization": {
+                          "required": [
+                            "name",
+                            "slug"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "slug": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "provider": {
+                          "required": [
+                            "id",
+                            "name"
+                          ],
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "dateVerified": {
+                          "type": "string",
+                          "format": "date-time"
+                        },
+                        "dateSynced": {
+                          "type": "string",
+                          "format": "date-time"
+                        }
+                      }
+                    }
+                  },
+                  "avatar": {
+                    "type": "object",
+                    "properties": {
+                      "avatarType": {
+                        "type": "string"
+                      },
+                      "avatarUuid": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "avatarUrl": {
+                        "type": "string",
+                        "nullable": true
+                      }
+                    }
+                  },
+                  "authenticators": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "canReset2fa": {
+                    "type": "boolean"
+                  },
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "username": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "avatarUrl": {
+                    "type": "string"
+                  },
+                  "isActive": {
+                    "type": "boolean"
+                  },
+                  "isSuspended": {
+                    "type": "boolean"
+                  },
+                  "hasPasswordAuth": {
+                    "type": "boolean"
+                  },
+                  "isManaged": {
+                    "type": "boolean"
+                  },
+                  "dateJoined": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "lastLogin": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "has2fa": {
+                    "type": "boolean"
+                  },
+                  "lastActive": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  },
+                  "isSuperuser": {
+                    "type": "boolean"
+                  },
+                  "isStaff": {
+                    "type": "boolean"
+                  },
+                  "experiments": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object"
+                    }
+                  },
+                  "emails": {
+                    "type": "array",
+                    "items": {
+                      "required": [
+                        "email",
+                        "id",
+                        "is_verified"
+                      ],
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "email": {
+                          "type": "string"
+                        },
+                        "is_verified": {
+                          "type": "boolean"
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "inNextRelease": {
+                "type": "boolean"
+              },
+              "inRelease": {
+                "type": "string"
+              },
+              "inCommit": {
+                "type": "string"
+              },
+              "pendingEvents": {
+                "type": "integer"
+              },
+              "info": {
+                "type": "object"
+              }
+            }
+          },
+          "substatus": {
+            "type": "string",
+            "nullable": true
+          },
+          "isPublic": {
+            "type": "boolean"
+          },
+          "platform": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "priorityLockedAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerFixabilityScore": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "seerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "seerExplorerAutofixLastTriggered": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "project": {
+            "required": [
+              "id",
+              "name",
+              "platform",
+              "slug"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "string"
+              },
+              "platform": {
+                "type": "string",
+                "nullable": true
+              }
+            }
+          },
+          "type": {
+            "type": "string"
+          },
+          "issueType": {
+            "type": "string"
+          },
+          "issueCategory": {
+            "type": "string"
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
+          },
+          "numComments": {
+            "type": "integer"
+          },
+          "assignedTo": {
+            "required": [
+              "id",
+              "name",
+              "type"
+            ],
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "user",
+                  "team"
+                ],
+                "type": "string",
+                "additionalProperties": false
+              },
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "isBookmarked": {
+            "type": "boolean"
+          },
+          "isSubscribed": {
+            "type": "boolean"
+          },
+          "subscriptionDetails": {
+            "type": "object",
+            "properties": {
+              "disabled": {
+                "type": "boolean"
+              },
+              "reason": {
+                "type": "string"
+              }
+            },
+            "nullable": true
+          },
+          "hasSeen": {
+            "type": "boolean"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "required": [
+                "displayName",
+                "url"
+              ],
+              "type": "object",
+              "properties": {
+                "displayName": {
+                  "type": "string"
+                },
+                "url": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
       },
       "RetrieveSeerIssueFixState200": {
         "required": [
