@@ -22741,6 +22741,213 @@
         ]
       }
     },
+    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/files/dsyms": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "Retrieve a list of debug information files for a given project.",
+        "operationId": "List-a-Project-s-Debug-Information-Files",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Substring filter matched against object name, debug ID, code ID, CPU name, and file headers.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "debug_id",
+            "in": "query",
+            "description": "Filter results to debug information files matching the given debug ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code_id",
+            "in": "query",
+            "description": "Filter results to debug information files matching the given code ID.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "file_formats",
+            "in": "query",
+            "description": "Restrict results to one or more file formats.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "required": [
+                      "codeId",
+                      "cpuName",
+                      "data",
+                      "dateCreated",
+                      "debugId",
+                      "headers",
+                      "id",
+                      "objectName",
+                      "sha1",
+                      "size",
+                      "symbolType",
+                      "uuid"
+                    ],
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "uuid": {
+                        "type": "string"
+                      },
+                      "debugId": {
+                        "type": "string"
+                      },
+                      "codeId": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "cpuName": {
+                        "type": "string"
+                      },
+                      "objectName": {
+                        "type": "string"
+                      },
+                      "symbolType": {
+                        "type": "string"
+                      },
+                      "headers": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "string"
+                        }
+                      },
+                      "size": {
+                        "type": "integer"
+                      },
+                      "sha1": {
+                        "type": "string"
+                      },
+                      "dateCreated": {
+                        "type": "string",
+                        "format": "date-time"
+                      },
+                      "data": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "ReturnAListOfDebugInformationFilesForAProject": {
+                    "summary": "Return a list of debug information files for a project",
+                    "value": [
+                      {
+                        "id": "1066716922",
+                        "uuid": "d8f92f82-3dbc-4fbb-ae68-69e881a9becc",
+                        "debugId": "d8f92f82-3dbc-4fbb-ae68-69e881a9becc",
+                        "codeId": null,
+                        "cpuName": "any",
+                        "objectName": "proguard-mapping",
+                        "symbolType": "proguard",
+                        "headers": {
+                          "Content-Type": "text/x-proguard+plain"
+                        },
+                        "size": 12868987,
+                        "sha1": "c31bcca43ff75e8c94c336e647d518fb05dcf658",
+                        "dateCreated": "2026-03-24T23:31:18.583107Z",
+                        "data": {
+                          "features": [
+                            "mapping"
+                          ]
+                        }
+                      },
+                      {
+                        "id": "1066716918",
+                        "uuid": "d50e6bca-81a4-662b-8461-e1c5e27f157b",
+                        "debugId": "d50e6bca-81a4-662b-8461-e1c5e27f157b",
+                        "codeId": "ca6b0ed5a4812b668461e1c5e27f157b8422d5bd",
+                        "cpuName": "arm64",
+                        "objectName": "libxamarin-app.dbg.so",
+                        "symbolType": "elf",
+                        "headers": {
+                          "Content-Type": "application/x-elf-binary"
+                        },
+                        "size": 41584,
+                        "sha1": "ac40db6f7fff550f82c63242f618e2d3987cc3c7",
+                        "dateCreated": "2026-03-24T23:31:18.465820Z",
+                        "data": {
+                          "type": "dbg",
+                          "features": [
+                            "symtab"
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:read",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/filters": {
       "get": {
         "tags": [
@@ -25969,6 +26176,64 @@
         ]
       }
     },
+    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/repo": {
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "Link a repository to a project. The repository must already exist\nin the organization (connected via a VCS integration). Idempotent:\nreturns 200 if the link already exists, 201 if created.",
+        "operationId": "Link-a-Repository-to-a-Project",
+        "parameters": [
+          {
+            "name": "organization_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project_id_or_slug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LinkARepositoryToAProject"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkARepositoryToAProject201"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/symbol-sources": {
       "get": {
         "tags": [
@@ -28989,179 +29254,6 @@
           {
             "auth_token": [
               "org: read"
-            ]
-          }
-        ]
-      }
-    },
-    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/files/dsyms": {
-      "get": {
-        "tags": [
-          "Projects"
-        ],
-        "description": "Retrieve a list of debug information files for a given project.",
-        "operationId": "List-a-Project-s-Debug-Information-Files",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the file belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "project_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the project to list the DIFs of.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "project:read"
-            ]
-          }
-        ]
-      },
-      "post": {
-        "tags": [
-          "Projects"
-        ],
-        "description": "Upload a new debug information file for the given release.\n\nUnlike other API requests, files must be uploaded using the\ntraditional multipart/form-data content-type.\n\nRequests to this endpoint should use the region-specific domain eg. `us.sentry.io` or `de.sentry.io`.\n\nThe file uploaded is a zip archive of an Apple .dSYM folder which\ncontains the individual debug images.  Uploading through this endpoint\nwill create different files for the contained images.",
-        "operationId": "Upload-a-New-File",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the project belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "project_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the project to upload a file to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "$ref": "#/components/schemas/UploadANewFile"
-              },
-              "example": {
-                "file": "debug.zip"
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "project:write"
-            ]
-          }
-        ],
-        "servers": [
-          {
-            "url": "https://{region}.sentry.io"
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Projects"
-        ],
-        "description": "Delete a debug information file for a given project.",
-        "operationId": "Delete-a-Specific-Project-s-Debug-Information-File",
-        "parameters": [
-          {
-            "name": "organization_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the organization the file belongs to.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "project_id_or_slug",
-            "in": "path",
-            "description": "The ID or slug of the project to delete the DIF.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "name": "id",
-            "in": "query",
-            "description": "The ID of the DIF to delete.",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "Default",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "title": "DefaultResponse",
-                  "type": "object",
-                  "description": "Default response schema"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "auth_token": [
-              "project:admin",
-              "project:releases"
             ]
           }
         ]
@@ -41300,6 +41392,12 @@
           "$ref": "#/components/schemas/ListOrganizationsItem"
         }
       },
+      "ListProjectDebugFilesResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectDebugFilesResponseItem"
+        }
+      },
       "ListProjectEnvironments": {
         "type": "array",
         "items": {
@@ -45331,6 +45429,45 @@
           "default_rules": {
             "type": "boolean",
             "description": "\nDefaults to true where the behavior is to alert the user on every new\nissue. Setting this to false will turn this off and the user must create\ntheir own alerts to be notified of new issues.\n        "
+          }
+        }
+      },
+      "ProjectRepoLinkRequest": {
+        "required": [
+          "repositoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "repositoryId": {
+            "type": "integer",
+            "description": "The ID of the repository to link."
+          }
+        }
+      },
+      "ProjectRepoLinkResponse": {
+        "required": [
+          "created",
+          "id",
+          "projectId",
+          "repositoryId",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "created": {
+            "type": "boolean"
           }
         }
       },
@@ -51049,6 +51186,69 @@
           },
           "allowSuperuserAccess": {
             "type": "boolean"
+          }
+        }
+      },
+      "ListProjectDebugFilesResponseItem": {
+        "required": [
+          "codeId",
+          "cpuName",
+          "data",
+          "dateCreated",
+          "debugId",
+          "headers",
+          "id",
+          "objectName",
+          "sha1",
+          "size",
+          "symbolType",
+          "uuid"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "debugId": {
+            "type": "string"
+          },
+          "codeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpuName": {
+            "type": "string"
+          },
+          "objectName": {
+            "type": "string"
+          },
+          "symbolType": {
+            "type": "string"
+          },
+          "headers": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "size": {
+            "type": "integer"
+          },
+          "sha1": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object"
+            }
           }
         }
       },
@@ -58349,6 +58549,18 @@
           "regionUrl": {
             "type": "string"
           }
+        }
+      },
+      "ListProjectDebugFilesResponseItemHeaders": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ListProjectDebugFilesResponseItemData": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "object"
         }
       },
       "ListReplaysItemTags": {
@@ -84984,6 +85196,72 @@
           }
         }
       },
+      "ListAProjectSDebugInformationFiles200": {
+        "type": "array",
+        "items": {
+          "required": [
+            "codeId",
+            "cpuName",
+            "data",
+            "dateCreated",
+            "debugId",
+            "headers",
+            "id",
+            "objectName",
+            "sha1",
+            "size",
+            "symbolType",
+            "uuid"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "uuid": {
+              "type": "string"
+            },
+            "debugId": {
+              "type": "string"
+            },
+            "codeId": {
+              "type": "string",
+              "nullable": true
+            },
+            "cpuName": {
+              "type": "string"
+            },
+            "objectName": {
+              "type": "string"
+            },
+            "symbolType": {
+              "type": "string"
+            },
+            "headers": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "size": {
+              "type": "integer"
+            },
+            "sha1": {
+              "type": "string"
+            },
+            "dateCreated": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "data": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "object"
+              }
+            }
+          }
+        }
+      },
       "ListAProjectSDataFilters200": {
         "type": "array",
         "items": {
@@ -88825,6 +89103,45 @@
                 "type": "integer"
               }
             }
+          }
+        }
+      },
+      "LinkARepositoryToAProject": {
+        "required": [
+          "repositoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "repositoryId": {
+            "type": "integer",
+            "description": "The ID of the repository to link."
+          }
+        }
+      },
+      "LinkARepositoryToAProject201": {
+        "required": [
+          "created",
+          "id",
+          "projectId",
+          "repositoryId",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "created": {
+            "type": "boolean"
           }
         }
       },
@@ -93433,19 +93750,6 @@
             "name": {
               "type": "string"
             }
-          }
-        }
-      },
-      "UploadANewFile": {
-        "required": [
-          "file"
-        ],
-        "type": "object",
-        "properties": {
-          "file": {
-            "type": "string",
-            "description": "The multipart encoded file.",
-            "format": "binary"
           }
         }
       },
