@@ -9,27 +9,27 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateAnOrganizationSRelease200_authors_emails : IAdditionalDataHolder, IParsable
+    public partial class RetrieveAnOrganizationSRelease200_authorsMember1_authenticators : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200_authors_emails"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200_authorsMember1_authenticators"/> and sets the default values.
         /// </summary>
-        public UpdateAnOrganizationSRelease200_authors_emails()
+        public RetrieveAnOrganizationSRelease200_authorsMember1_authenticators()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200_authors_emails"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200_authorsMember1_authenticators"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200_authors_emails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200_authorsMember1_authenticators CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200_authors_emails();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200_authorsMember1_authenticators();
         }
         /// <summary>
         /// The deserialization information for the current model
