@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\replays
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\replays
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplaysRequestBuilder : BaseRequestBuilder
@@ -23,14 +23,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays
         }
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.replays.item collection</summary>
         /// <param name="position">The ID of the replay you&apos;d like to retrieve. It is a 32-character hexadecimal string.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplayItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplayItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("replay_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplay_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("replayId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.WithReplayItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/replays", pathParameters)
+        public ReplaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/replays", rawUrl)
+        public ReplaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays", rawUrl)
         {
         }
     }

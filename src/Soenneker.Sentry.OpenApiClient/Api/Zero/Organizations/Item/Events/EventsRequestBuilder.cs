@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\events
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events?dataset={dataset}&field={field}{&cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events?dataset={dataset}&field={field}{&cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTableFormat200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTableFormat200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTableFormat200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTableFormat200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTableFormat200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested&quot;
@@ -85,6 +85,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
         {
+            /// <summary>If false, aggregate conditions in the query string are disallowed. Defaults to true.</summary>
+            [QueryParameter("allowAggregateConditions")]
+            public bool? AllowAggregateConditions { get; set; }
             /// <summary>A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
 #endif
             /// <summary>Which dataset to query. The chosen dataset determines which fields are queryable.- `errors` - Error events.- `logs` - Structured log events.- `profile_functions` - Function-level Profiling data.- `spans` - Distributed tracing span events.- `tracemetrics` - Application Metrics.- `uptime_results` - Uptime monitoring check results.</summary>
             [QueryParameter("dataset")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.GetDatasetQueryParameterType? Dataset { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDatasetParameter? Dataset { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
@@ -124,15 +127,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>The IDs of projects to filter by. `-1` means all available projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=-1`</summary>
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
             /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

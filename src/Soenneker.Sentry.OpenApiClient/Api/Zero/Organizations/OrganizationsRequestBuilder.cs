@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,14 +20,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item collection</summary>
         /// <param name="position">The ID or slug of the organization the resource belongs to.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganization_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganization_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganizationIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganizationIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("organization_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganization_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("organizationIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.WithOrganizationIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations{?cursor*,owner*,query*,sortBy*}", pathParameters)
+        public OrganizationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations{?cursor*,owner*,per_page*,query*,sortBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +43,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations{?cursor*,owner*,query*,sortBy*}", rawUrl)
+        public OrganizationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations{?cursor*,owner*,per_page*,query*,sortBy*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of organizations available to the authenticated session in a region.This is particularly useful for requests with a user bound context. For API key-based requests this will only return the organization that belongs to the key.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Organizations&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Organizations>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Organizations>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.OrganizationsRequestBuilder.OrganizationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Organizations>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Organizations.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -111,6 +112,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
             /// <summary>Specify `true` to restrict results to organizations in which you are an owner.</summary>
             [QueryParameter("owner")]
             public bool? Owner { get; set; }
+            /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Valid query fields include:- `id`: The organization ID- `slug`: The organization slug- `status`: The organization&apos;s current status (one of `active`, `pending_deletion`, or `deletion_in_progress`)- `email` or `member_id`: Filter your organizations by the emails or [organization member IDs](/api/organizations/list-an-organizations-members/) of specific members included- `query`: Filter your organizations by name, slug, and members that contain this substringExample: `query=(slug:foo AND status:active) OR (email:[thing-one@example.com,thing-two@example.com] AND query:bar)`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

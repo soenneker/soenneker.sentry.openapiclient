@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\teams\{organization_id_or_slug}\{team_id_or_slug}\projects
+    /// Builds and executes requests for operations under \api\0\teams\{organizationIdOrSlug}\{teamIdOrSlug}\projects
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects{?cursor*}", pathParameters)
+        public ProjectsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/projects{?cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,47 +30,47 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/projects{?cursor*}", rawUrl)
+        public ProjectsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/projects{?cursor*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of projects bound to a team.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.Projects&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.Projects>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.Projects>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.ProjectsRequestBuilder.ProjectsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.Projects>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects.Projects.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// &quot;Create a new project bound to a team.        Note: If your organization has disabled member project creation, the `org:write` or `team:admin` scope is required.        &quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of projects bound to a team.
@@ -99,11 +99,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProjectRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

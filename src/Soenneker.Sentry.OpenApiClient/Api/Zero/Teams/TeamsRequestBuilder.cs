@@ -17,14 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.teams.item collection</summary>
         /// <param name="position">The ID or slug of the organization the resource belongs to.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganization_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganization_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganizationIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganizationIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("organization_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganization_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("organizationIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.WithOrganizationIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

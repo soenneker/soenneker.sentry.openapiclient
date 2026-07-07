@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\stats-summary
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\stats-summary
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatsSummaryRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummar
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/stats-summary?field={field}{&category*,download*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", pathParameters)
+        public StatsSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats-summary?field={field}{&category*,download*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummar
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/stats-summary?field={field}{&category*,download*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", rawUrl)
+        public StatsSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats-summary?field={field}{&category*,download*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Query summarized event counts by project for your Organization. Also see https://docs.sentry.io/api/organizations/retrieve-event-counts-for-an-organization-v2/ for reference.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSEventsCountByProject200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummary200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSEventsCountByProject200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.StatsSummaryRequestBuilder.StatsSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummary200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.StatsSummaryRequestBuilder.StatsSummaryRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSEventsCountByProject200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.StatsSummaryRequestBuilder.StatsSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummary200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.StatsSummaryRequestBuilder.StatsSummaryRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSEventsCountByProject200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSEventsCountByProject200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummary200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummary200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query summarized event counts by project for your Organization. Also see https://docs.sentry.io/api/organizations/retrieve-event-counts-for-an-organization-v2/ for reference.
@@ -87,7 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummar
         {
             /// <summary>If filtering by attachments, you cannot filter by any other category due to quantity values becoming nonsensical (combining bytes and event counts).If filtering by `error`, it will automatically add `default` and `security` as we currently roll those two categories into `error` for displaying.* `error`* `transaction`* `attachment`* `replays`* `profiles`</summary>
             [QueryParameter("category")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.GetCategoryQueryParameterType? Category { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummaryCategoryParameter? Category { get; set; }
             /// <summary>Download the API response in as a csv file</summary>
             [QueryParameter("download")]
             public bool? Download { get; set; }
@@ -96,7 +96,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummar
             public DateTimeOffset? End { get; set; }
             /// <summary>the `sum(quantity)` field is bytes for attachments, and all others the &apos;event&apos; count for those types of events.`sum(times_seen)` sums the number of times an event has been seen. For &apos;normal&apos; event types, this will be equal to `sum(quantity)` for now. For sessions, quantity will sum the total number of events seen in a session, while `times_seen` will be the unique number of sessions. and for attachments, `times_seen` will be the total number of attachments, while quantity will be the total sum of attachment bytes.* `sum(quantity)`* `sum(times_seen)`</summary>
             [QueryParameter("field")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.GetFieldQueryParameterType? Field { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummaryFieldParameter? Field { get; set; }
             /// <summary>This is the resolution of the time series, given in the same format as `statsPeriod`. The default resolution is `1h` and the minimum resolution is currently restricted to `1h` as well. Intervals larger than `1d` are not supported, and the interval has to cleanly divide one day.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummar
 #endif
             /// <summary>See https://docs.sentry.io/product/stats/ for more information on outcome statuses.* `accepted`* `filtered`* `rate_limited`* `invalid`* `abuse`* `client_discard`* `cardinality_limited`</summary>
             [QueryParameter("outcome")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary.GetOutcomeQueryParameterType? Outcome { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationStatsSummaryOutcomeParameter? Outcome { get; set; }
             /// <summary>The ID of the projects to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

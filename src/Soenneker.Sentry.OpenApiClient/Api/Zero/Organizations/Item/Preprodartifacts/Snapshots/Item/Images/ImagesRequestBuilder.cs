@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\preprodartifacts\snapshots\{snapshot_id}\images
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\preprodartifacts\snapshots\{snapshotId}\images
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ImagesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.preprodartifacts.snapshots.item.images.item collection</summary>
         /// <param name="position">The image filename or content hash.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImage_identifierItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImage_identifierItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImageIdentifierItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImageIdentifierItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("image_identifier", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImage_identifierItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("imageIdentifier", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images.Item.WithImageIdentifierItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/images", pathParameters)
+        public ImagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/images", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/{snapshot_id}/images", rawUrl)
+        public ImagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/images", rawUrl)
         {
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\events-timeseries
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\events-timeseries
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsTimeseriesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsTimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events-timeseries?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", pathParameters)
+        public EventsTimeseriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,29 +30,29 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsTimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/events-timeseries?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", rawUrl)
+        public EventsTimeseriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed
+        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTimeseriesFormat200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTimeseriesFormat200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder.EventsTimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder.EventsTimeseriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTimeseriesFormat200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder.EventsTimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder.EventsTimeseriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTimeseriesFormat200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.QueryExploreEventsInTimeseriesFormat200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed
+        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed
+        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsTimeseriesRequestBuilderGetQueryParameters 
@@ -90,10 +90,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             public int? ComparisonDelta { get; set; }
             /// <summary>Which dataset to query. The chosen dataset determines which fields are queryable.- `errors` - Error events.- `logs` - Structured log events.- `profile_functions` - Function-level Profiling data.- `spans` - Distributed tracing span events.- `tracemetrics` - Application Metrics.- `uptime_results` - Uptime monitoring check results.</summary>
             [QueryParameter("dataset")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.GetDatasetQueryParameterType? Dataset { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseriesDatasetParameter? Dataset { get; set; }
             /// <summary>Whether to disable the use of extrapolation and return the sampled values, due to sampling thenumber returned may be less than the actual values sent to Sentry</summary>
             [QueryParameter("disableAggregateExtrapolation")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.GetDisableAggregateExtrapolationQueryParameterType? DisableAggregateExtrapolation { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseriesDisableAggregateExtrapolationParameter? DisableAggregateExtrapolation { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
@@ -109,7 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
 #endif
             /// <summary>Only applicable with TopEvents, whether to include the &apos;other&apos; timeseries which represents all theevents that aren&apos;t in the top groups.</summary>
             [QueryParameter("excludeOther")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.GetExcludeOtherQueryParameterType? ExcludeOther { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseriesExcludeOtherParameter? ExcludeOther { get; set; }
             /// <summary>List of fields to group by, *Required* for topEvents queries as this and sort determine what thetop events are</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -125,16 +125,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             public int? Interval { get; set; }
             /// <summary>Whether to throw an error when aggregates are passed in the query or groupBy</summary>
             [QueryParameter("preventMetricAggregates")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.GetPreventMetricAggregatesQueryParameterType? PreventMetricAggregates { get; set; }
-            /// <summary>The IDs of projects to filter by. `-1` means all available projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=-1`</summary>
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseriesPreventMetricAggregatesParameter? PreventMetricAggregates { get; set; }
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
             /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -172,7 +172,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             /// <summary>The number of top event results to return, must be between 1 and 10.When TopEvents is passed, both sort and groupBy are required parameters</summary>
             [QueryParameter("topEvents")]
             public int? TopEvents { get; set; }
-            /// <summary>The aggregate field to create the timeseries for, defaults to `count()` when not included</summary>
+            /// <summary>&quot;The aggregate field to create the timeseries for, defaults to `count()` when        not included.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("yAxis")]

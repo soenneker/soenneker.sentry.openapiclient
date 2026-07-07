@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\teams\{organization_id_or_slug}\{team_id_or_slug}\external-teams
+    /// Builds and executes requests for operations under \api\0\teams\{organizationIdOrSlug}\{teamIdOrSlug}\external-teams
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExternalTeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.teams.item.item.externalTeams.item collection</summary>
         /// <param name="position">The ID of the external team object. This is returned when creating an external team.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternal_team_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternal_team_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternalTeamItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternalTeamItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("external_team_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternal_team_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("externalTeamId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams.Item.WithExternalTeamItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalTeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams", pathParameters)
+        public ExternalTeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams", pathParameters)
         {
         }
         /// <summary>
@@ -43,28 +43,28 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalTeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/external-teams", rawUrl)
+        public ExternalTeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams", rawUrl)
         {
         }
         /// <summary>
         /// Link a team from an external provider to a Sentry team.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeam200Response"/></returns>
         /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam200?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeam200Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam200> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeam200Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeam200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeam200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Link a team from an external provider to a Sentry team.
@@ -74,11 +74,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.ExternalTeams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalTeam body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

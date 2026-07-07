@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\release-threshold-statuses
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\release-threshold-statuses
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleaseThresholdStatusesRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReleaseThresholdStatusesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/release-threshold-statuses?end={end}&start={start}{&environment*,projectSlug*,release*}", pathParameters)
+        public ReleaseThresholdStatusesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/release-threshold-statuses?end={end}&start={start}{&environment*,project*,projectSlug*,release*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReleaseThresholdStatusesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/release-threshold-statuses?end={end}&start={start}{&environment*,projectSlug*,release*}", rawUrl)
+        public ReleaseThresholdStatusesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/release-threshold-statuses?end={end}&start={start}{&environment*,project*,projectSlug*,release*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;**`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesRequestBuilder.ReleaseThresholdStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesRequestBuilder.ReleaseThresholdStatusesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesRequestBuilder.ReleaseThresholdStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesRequestBuilder.ReleaseThresholdStatusesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesGetResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseResponseJson>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;**`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.&quot;
@@ -96,6 +97,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
 #else
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
+#endif
+            /// <summary>A list of project IDs or slugs to filter your results by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string[]? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string[] Project { get; set; }
 #endif
             /// <summary>A list of project slugs to filter your results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

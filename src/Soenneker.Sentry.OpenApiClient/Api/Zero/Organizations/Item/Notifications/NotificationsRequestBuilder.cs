@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\notifications
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\notifications
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotificationsRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/notifications", pathParameters)
+        public NotificationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/notifications", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/notifications", rawUrl)
+        public NotificationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/notifications", rawUrl)
         {
         }
     }

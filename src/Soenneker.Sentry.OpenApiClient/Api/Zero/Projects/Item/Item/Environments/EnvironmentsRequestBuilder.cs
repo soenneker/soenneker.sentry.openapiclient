@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Item;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\environments
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\environments
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EnvironmentsRequestBuilder : BaseRequestBuilder
@@ -34,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environment
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/environments{?visibility*}", pathParameters)
+        public EnvironmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments{?visibility*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,26 +43,47 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environment
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/environments{?visibility*}", rawUrl)
+        public EnvironmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments{?visibility*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists a project&apos;s environments.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Environments&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironments200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Environments>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder.EnvironmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironments200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder.EnvironmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Environments>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder.EnvironmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironments200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder.EnvironmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Environments>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.Environments.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironments200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironments200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
+        }
+        /// <summary>
+        /// Bulk update the visibility for a project&apos;s environments.
+        /// </summary>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironments200ResponseResponseJsonItem&gt;</returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironments200ResponseResponseJsonItem>?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironmentsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironments200ResponseResponseJsonItem>> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironmentsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironments200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironments200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -84,6 +106,28 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environment
             return requestInfo;
         }
         /// <summary>
+        /// Bulk update the visibility for a project&apos;s environments.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironmentsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironmentsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder"/></returns>
@@ -100,7 +144,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environment
         {
             /// <summary>The visibility of the environments to filter by. Defaults to `visible`.</summary>
             [QueryParameter("visibility")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.GetVisibilityQueryParameterType? Visibility { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEnvironmentsVisibilityParameter? Visibility { get; set; }
         }
     }
 }

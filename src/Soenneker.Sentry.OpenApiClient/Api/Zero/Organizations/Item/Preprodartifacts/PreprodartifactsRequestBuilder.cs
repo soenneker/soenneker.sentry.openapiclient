@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\preprodartifacts
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\preprodartifacts
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreprodartifactsRequestBuilder : BaseRequestBuilder
@@ -23,14 +23,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         }
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.preprodartifacts.item collection</summary>
         /// <param name="position">The ID of the build artifact.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifact_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifact_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifactItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifactItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("artifact_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifact_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("artifactId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.WithArtifactItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreprodartifactsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts", pathParameters)
+        public PreprodartifactsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreprodartifactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts", rawUrl)
+        public PreprodartifactsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts", rawUrl)
         {
         }
     }

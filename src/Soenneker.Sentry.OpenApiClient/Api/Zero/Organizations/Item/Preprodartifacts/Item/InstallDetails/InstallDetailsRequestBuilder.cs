@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.InstallDetails
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\preprodartifacts\{artifact_id}\install-details
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\preprodartifacts\{artifactId}\install-details
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class InstallDetailsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallDetailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/install-details", pathParameters)
+        public InstallDetailsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/install-details", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public InstallDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/{artifact_id}/install-details", rawUrl)
+        public InstallDetailsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/install-details", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve install info for a given artifact.Returns distribution and installation details for a specific preprod artifact,including whether the artifact is installable, the install URL, download count,and iOS-specific code signing information.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveInstallInfoForAGivenArtifact200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveInstallInfoForAGivenArtifact200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveInstallInfoForAGivenArtifact200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveInstallInfoForAGivenArtifact200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveInstallInfoForAGivenArtifact200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve install info for a given artifact.Returns distribution and installation details for a specific preprod artifact,including whether the artifact is installable, the install URL, download count,and iOS-specific code signing information.

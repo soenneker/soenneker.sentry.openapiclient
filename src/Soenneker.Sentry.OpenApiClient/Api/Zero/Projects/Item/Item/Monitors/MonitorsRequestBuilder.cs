@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\monitors
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\monitors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.monitors.item collection</summary>
         /// <param name="position">The ID or slug of the monitor.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("monitor_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("monitorIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonitorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors", pathParameters)
+        public MonitorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Monitors
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonitorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/monitors", rawUrl)
+        public MonitorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors", rawUrl)
         {
         }
     }

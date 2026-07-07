@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\teams\{organization_id_or_slug}\{team_id_or_slug}\members
+    /// Builds and executes requests for operations under \api\0\teams\{organizationIdOrSlug}\{teamIdOrSlug}\members
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/members{?cursor*}", pathParameters)
+        public MembersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/members{?cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organization_id_or_slug}/{team_id_or_slug}/members{?cursor*}", rawUrl)
+        public MembersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/members{?cursor*}", rawUrl)
         {
         }
         /// <summary>
         /// List all members on a team.The response will not include members with pending invites.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.Members&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.Members>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.Members>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.MembersRequestBuilder.MembersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.Members>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Members.Members.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

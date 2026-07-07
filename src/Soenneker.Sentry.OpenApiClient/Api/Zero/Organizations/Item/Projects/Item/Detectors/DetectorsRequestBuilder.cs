@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Projects.Item.Detectors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\projects\{project_id_or_slug}\detectors
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\projects\{projectIdOrSlug}\detectors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DetectorsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Projects.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors", pathParameters)
+        public DetectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/projects/{projectIdOrSlug}/detectors", pathParameters)
         {
         }
         /// <summary>
@@ -30,28 +30,28 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Projects.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/projects/{project_id_or_slug}/detectors", rawUrl)
+        public DetectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/projects/{projectIdOrSlug}/detectors", rawUrl)
         {
         }
         /// <summary>
         /// Create a Monitor for a project
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response"/></returns>
         /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a Monitor for a project
@@ -61,11 +61,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Projects.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitorForAProject body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetectorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

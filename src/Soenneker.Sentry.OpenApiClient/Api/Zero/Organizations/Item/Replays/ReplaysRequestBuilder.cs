@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,21 +13,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\replays
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\replays
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplaysRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.replays.item collection</summary>
         /// <param name="position">The ID of the replay you&apos;d like to retrieve. It is a 32-character hexadecimal string.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplay_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplay_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplayItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplayItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("replay_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplay_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("replayId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Item.WithReplayItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replays{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
+        public ReplaysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,27 +43,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replays{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
+        public ReplaysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of replays belonging to an organization.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Replays&gt;</returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Replays>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.ReplaysRequestBuilder.ReplaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.ReplaysRequestBuilder.ReplaysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Replays>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.ReplaysRequestBuilder.ReplaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.ReplaysRequestBuilder.ReplaysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Replays>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Replays.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
-            return collectionResult?.AsList();
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of replays belonging to an organization.
@@ -125,11 +125,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("field")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.GetFieldQueryParameterType[]? Field { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaysFieldParameterItem[]? Field { get; set; }
 #nullable restore
 #else
             [QueryParameter("field")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.GetFieldQueryParameterType[] Field { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaysFieldParameterItem[] Field { get; set; }
 #endif
             /// <summary>The field to sort the output by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -144,15 +144,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays
             /// <summary>Limit the number of rows to return in the result.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>The ID of the projects to filter by.</summary>
+            /// <summary>A list of project IDs or slugs to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
             /// <summary>A list of project slugs to filter your results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

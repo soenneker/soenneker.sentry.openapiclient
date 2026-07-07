@@ -10,21 +10,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\members\{member_id}\teams
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\members\{memberId}\teams
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.members.item.teams.item collection</summary>
         /// <param name="position">The ID or slug of the team the resource belongs to.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeam_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeam_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeamIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeamIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("team_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeam_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("teamIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Item.Teams.Item.WithTeamIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -32,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams", pathParameters)
+        public TeamsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/members/{memberId}/teams", pathParameters)
         {
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/members/{member_id}/teams", rawUrl)
+        public TeamsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/members/{memberId}/teams", rawUrl)
         {
         }
     }

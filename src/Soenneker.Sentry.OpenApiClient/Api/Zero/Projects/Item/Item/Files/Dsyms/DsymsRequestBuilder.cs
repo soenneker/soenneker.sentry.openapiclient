@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\files\dsyms
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\files\dsyms
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DsymsRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DsymsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/files/dsyms{?code_id*,cursor*,debug_id*,file_formats*,query*}", pathParameters)
+        public DsymsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms{?code_id*,cursor*,debug_id*,file_formats*,query*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DsymsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/files/dsyms{?code_id*,cursor*,debug_id*,file_formats*,query*}", rawUrl)
+        public DsymsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms{?code_id*,cursor*,debug_id*,file_formats*,query*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve a list of debug information files for a given project.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.Dsyms&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.Dsyms>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder.DsymsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder.DsymsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.Dsyms>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder.DsymsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder.DsymsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.Dsyms>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.Dsyms.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>

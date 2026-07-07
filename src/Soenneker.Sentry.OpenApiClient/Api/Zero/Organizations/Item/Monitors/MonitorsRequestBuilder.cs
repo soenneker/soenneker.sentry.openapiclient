@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\monitors
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\monitors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MonitorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.monitors.item collection</summary>
         /// <param name="position">The ID or slug of the monitor.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("monitor_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitor_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("monitorIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Item.WithMonitorIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonitorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/monitors{?cursor*,environment*,owner*,project*}", pathParameters)
+        public MonitorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/monitors{?cursor*,environment*,owner*,project*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,47 +43,47 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MonitorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/monitors{?cursor*,environment*,owner*,project*}", rawUrl)
+        public MonitorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/monitors{?cursor*,environment*,owner*,project*}", rawUrl)
         {
         }
         /// <summary>
         /// Lists monitors, including nested monitor environments. May be filtered to a project or environment.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Monitors&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Monitors>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.MonitorsRequestBuilder.MonitorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.MonitorsRequestBuilder.MonitorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Monitors>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.MonitorsRequestBuilder.MonitorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.MonitorsRequestBuilder.MonitorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Monitors>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors.Monitors.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
         /// Create a new monitor.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201Response"/></returns>
         /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Lists monitors, including nested monitor environments. May be filtered to a project or environment.
@@ -112,11 +112,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateAMonitor body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -171,15 +171,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors
             [QueryParameter("owner")]
             public string Owner { get; set; }
 #endif
-            /// <summary>The IDs of projects to filter by. `-1` means all available projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=-1`</summary>
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
         }
     }

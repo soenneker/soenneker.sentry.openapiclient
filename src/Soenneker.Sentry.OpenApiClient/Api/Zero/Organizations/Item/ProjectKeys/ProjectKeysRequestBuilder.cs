@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\project-keys
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\project-keys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ProjectKeysRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/project-keys{?cursor*,status*,team*}", pathParameters)
+        public ProjectKeysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/project-keys{?cursor*,status*,team*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ProjectKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/project-keys{?cursor*,status*,team*}", rawUrl)
+        public ProjectKeysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/project-keys{?cursor*,status*,team*}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status&quot;
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeys&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeys>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeysRequestBuilder.ProjectKeysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeysRequestBuilder.ProjectKeysRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeys>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeysRequestBuilder.ProjectKeysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeysRequestBuilder.ProjectKeysRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeys>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeys.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -97,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
 #endif
             /// <summary>Filter keys by status. Options are &apos;active&apos; or &apos;inactive&apos;.* `active`* `inactive`</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeysStatusParameter? Status { get; set; }
             /// <summary>Filter keys by team slug or ID. If provided, only keys for projects belonging to this team will be returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\preprod
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\preprod
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreprodRequestBuilder : BaseRequestBuilder
@@ -31,7 +31,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreprodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod", pathParameters)
+        public PreprodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod", pathParameters)
         {
         }
         /// <summary>
@@ -39,7 +39,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreprodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod", rawUrl)
+        public PreprodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod", rawUrl)
         {
         }
     }

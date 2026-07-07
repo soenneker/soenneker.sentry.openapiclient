@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\stats
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\stats
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatsRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/stats{?resolution*,since*,stat*,until*}", pathParameters)
+        public StatsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats{?resolution*,since*,stat*,until*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,11 +30,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/stats{?resolution*,since*,stat*,until*}", rawUrl)
+        public StatsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats{?resolution*,since*,stat*,until*}", rawUrl)
         {
         }
         /// <summary>
-        /// Return a set of points representing a normalized timestamp and thenumber of events seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.
+        /// Return a set of points representing a normalized timestamp and the number ofevents seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.This endpoint may change in the future without notice.
         /// </summary>
         /// <returns>A <see cref="UntypedNode"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats
             return await RequestAdapter.SendAsync<UntypedNode>(requestInfo, UntypedNode.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return a set of points representing a normalized timestamp and thenumber of events seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.
+        /// Return a set of points representing a normalized timestamp and the number ofevents seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.This endpoint may change in the future without notice.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,23 +80,23 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats.StatsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return a set of points representing a normalized timestamp and thenumber of events seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.
+        /// Return a set of points representing a normalized timestamp and the number ofevents seen in the period.Query ranges are limited to Sentry&apos;s configured time-series resolutions.This endpoint may change in the future without notice.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StatsRequestBuilderGetQueryParameters 
         {
-            /// <summary>An explicit resolution to search for (one of `10s`, `1h`, and `1d`).</summary>
+            /// <summary>An explicit time series resolution.</summary>
             [QueryParameter("resolution")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats.GetResolutionQueryParameterType? Resolution { get; set; }
-            /// <summary>A timestamp to set the start of the query in seconds since UNIX epoch.</summary>
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectStatsResolutionParameter? Resolution { get; set; }
+            /// <summary>A UNIX timestamp (in seconds) that sets the start of the query range.</summary>
             [QueryParameter("since")]
-            public DateTimeOffset? Since { get; set; }
-            /// <summary>The name of the stat to query `(&quot;received&quot;, &quot;rejected&quot;, &quot;blacklisted&quot;, &quot;generated&quot;)`.</summary>
+            public double? Since { get; set; }
+            /// <summary>The name of the stat to query. Defaults to `received`.</summary>
             [QueryParameter("stat")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats.GetStatQueryParameterType? Stat { get; set; }
-            /// <summary>A timestamp to set the end of the query in seconds since UNIX epoch.</summary>
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectStatsStatParameter? Stat { get; set; }
+            /// <summary>A UNIX timestamp (in seconds) that sets the end of the query range.</summary>
             [QueryParameter("until")]
-            public DateTimeOffset? Until { get; set; }
+            public double? Until { get; set; }
         }
     }
 }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\replay-count
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\replay-count
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplayCountRequestBuilder : BaseRequestBuilder
@@ -21,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replay-count{?end*,environment*,project_id_or_slug*,query*,start*,statsPeriod*}", pathParameters)
+        public ReplayCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count{?data_source*,end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -29,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replay-count{?end*,environment*,project_id_or_slug*,query*,start*,statsPeriod*}", rawUrl)
+        public ReplayCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count{?data_source*,end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a count of replays for a list of issue or transaction IDs.The `query` parameter is required. It is a search query that includes exactly one of `issue.id`, `transaction`, or `replay_id` (string or list of strings).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCount200ResponseResponseJson"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountRequestBuilder.ReplayCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCount200ResponseResponseJson?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountRequestBuilder.ReplayCountRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountRequestBuilder.ReplayCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCount200ResponseResponseJson> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountRequestBuilder.ReplayCountRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountGetResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount.ReplayCountGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCount200ResponseResponseJson>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCount200ResponseResponseJson.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a count of replays for a list of issue or transaction IDs.The `query` parameter is required. It is a search query that includes exactly one of `issue.id`, `transaction`, or `replay_id` (string or list of strings).
@@ -84,6 +85,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReplayCountRequestBuilderGetQueryParameters 
         {
+            /// <summary>The data source to query replays from. Defaults to &apos;discover&apos;.</summary>
+            [QueryParameter("data_source")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCountDataSourceParameter? DataSource { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
@@ -97,7 +101,17 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>The project slugs to filter by. Use `$all` to include all available projects. For example, the following are valid parameters:- `/?projectSlug=$all`- `/?projectSlug=android&amp;projectSlug=javascript-react`</summary>
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string[]? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string[] Project { get; set; }
+#endif
+            /// <summary>The legacy project slug filter. Prefer `project`, which accepts project IDs or slugs. Use `$all` to include all available projects. For example, the following are valid parameters:- `/?projectSlug=$all`- `/?projectSlug=android&amp;projectSlug=javascript-react`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project_id_or_slug")]
@@ -117,6 +131,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
+            /// <summary>If true, return issue IDs rather than counts.</summary>
+            [QueryParameter("returnIds")]
+            public bool? ReturnIds { get; set; }
             /// <summary>The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("start")]
             public DateTimeOffset? Start { get; set; }

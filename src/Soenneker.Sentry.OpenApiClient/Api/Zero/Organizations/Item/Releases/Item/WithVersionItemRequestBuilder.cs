@@ -16,7 +16,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\releases\{version}
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\releases\{version}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithVersionItemRequestBuilder : BaseRequestBuilder
@@ -46,7 +46,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/releases/{version}{?adoptionStages*,health*,healthStatsPeriod*,project_id*,query*,sort*,status*,summaryStatsPeriod*}", pathParameters)
+        public WithVersionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/releases/{version}{?adoptionStages*,health*,healthStatsPeriod*,project*,project_id*,query*,sort*,status*,summaryStatsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -54,7 +54,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/releases/{version}{?adoptionStages*,health*,healthStatsPeriod*,project_id*,query*,sort*,status*,summaryStatsPeriod*}", rawUrl)
+        public WithVersionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/releases/{version}{?adoptionStages*,health*,healthStatsPeriod*,project*,project_id*,query*,sort*,status*,summaryStatsPeriod*}", rawUrl)
         {
         }
         /// <summary>
@@ -77,40 +77,40 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
         /// <summary>
         /// Return details on an individual release.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.WithVersionItemRequestBuilder.WithVersionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.WithVersionItemRequestBuilder.WithVersionItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.WithVersionItemRequestBuilder.WithVersionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.WithVersionItemRequestBuilder.WithVersionItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnOrganizationSRelease200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a release. This can change some metadata associated withthe release (the ref, url, and dates).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRelease200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRelease200Response?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRelease200Response> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRelease200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRelease200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Permanently remove a release and all of its files.
@@ -158,11 +158,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateAnOrganizationSRelease body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -195,8 +195,12 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
             public bool? Health { get; set; }
             /// <summary>The period of time used to query health stats for the release. By default, this is 24h if health is enabled.</summary>
             [QueryParameter("healthStatsPeriod")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.GetHealthStatsPeriodQueryParameterType? HealthStatsPeriod { get; set; }
-            /// <summary>The project ID to filter by.</summary>
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseHealthStatsPeriodParameter? HealthStatsPeriod { get; set; }
+            /// <summary>The project ID or slug to filter by. Overrides project_id when both are sent.</summary>
+            [QueryParameter("project")]
+            public int? Project { get; set; }
+            /// <summary>Deprecated. Use project instead.</summary>
+            [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project_id")]
@@ -218,13 +222,13 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
 #endif
             /// <summary>The field used to sort results by. By default, this is `date`.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.GetSortQueryParameterType? Sort { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseSortParameter? Sort { get; set; }
             /// <summary>Release statuses that you can filter by.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseStatusParameter? Status { get; set; }
             /// <summary>The period of time used to query summary stats for the release. By default, this is 14d.</summary>
             [QueryParameter("summaryStatsPeriod")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.GetSummaryStatsPeriodQueryParameterType? SummaryStatsPeriod { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseSummaryStatsPeriodParameter? SummaryStatsPeriod { get; set; }
         }
     }
 }

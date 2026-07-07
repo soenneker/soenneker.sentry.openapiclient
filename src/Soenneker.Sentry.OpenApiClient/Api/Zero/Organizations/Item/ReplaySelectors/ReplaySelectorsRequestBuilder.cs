@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\replay-selectors
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\replay-selectors
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplaySelectorsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaySelectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replay-selectors{?cursor*,end*,environment*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
+        public ReplaySelectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-selectors{?cursor*,end*,environment*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplaySelectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/replay-selectors{?cursor*,end*,environment*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
+        public ReplaySelectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-selectors{?cursor*,end*,environment*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of selectors for a given organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSSelectors200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSSelectors200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors.ReplaySelectorsRequestBuilder.ReplaySelectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors.ReplaySelectorsRequestBuilder.ReplaySelectorsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSSelectors200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors.ReplaySelectorsRequestBuilder.ReplaySelectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors.ReplaySelectorsRequestBuilder.ReplaySelectorsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSSelectors200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSSelectors200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of selectors for a given organization.
@@ -121,15 +121,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelec
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>The ID of the projects to filter by.</summary>
+            /// <summary>A list of project IDs or slugs to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
             /// <summary>A list of project slugs to filter your results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

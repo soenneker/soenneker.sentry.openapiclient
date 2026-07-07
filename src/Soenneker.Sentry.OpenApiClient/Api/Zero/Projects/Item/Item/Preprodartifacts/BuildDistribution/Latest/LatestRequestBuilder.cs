@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.BuildDistribution.Latest
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\preprodartifacts\build-distribution\latest
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\preprodartifacts\build-distribution\latest
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LatestRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprodartifacts/build-distribution/latest?appId={appId}&platform={platform}{&buildConfiguration*,buildNumber*,buildVersion*,codesigningType*,installGroups*,mainBinaryIdentifier*}", pathParameters)
+        public LatestRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/build-distribution/latest?appId={appId}&platform={platform}{&buildConfiguration*,buildNumber*,buildVersion*,codesigningType*,installGroups*,mainBinaryIdentifier*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprodartifacts/build-distribution/latest?appId={appId}&platform={platform}{&buildConfiguration*,buildNumber*,buildVersion*,codesigningType*,installGroups*,mainBinaryIdentifier*}", rawUrl)
+        public LatestRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/build-distribution/latest?appId={appId}&platform={platform}{&buildConfiguration*,buildNumber*,buildVersion*,codesigningType*,installGroups*,mainBinaryIdentifier*}", rawUrl)
         {
         }
         /// <summary>
         /// Get the latest installable build for a project.Returns the latest installable build matching filter criteria.When buildVersion is provided, also returns the current build andwhether an update is available.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.BuildDistribution.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.BuildDistribution.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.BuildDistribution.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodartifacts.BuildDistribution.Latest.LatestRequestBuilder.LatestRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetTheLatestInstallableBuildForAProject200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the latest installable build for a project.Returns the latest installable build matching filter criteria.When buildVersion is provided, also returns the current build andwhether an update is available.

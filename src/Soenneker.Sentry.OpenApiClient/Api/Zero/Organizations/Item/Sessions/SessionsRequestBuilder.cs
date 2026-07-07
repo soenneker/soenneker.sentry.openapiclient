@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\sessions
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\sessions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SessionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", pathParameters)
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", rawUrl)
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a time series of release health session statistics for projects bound to an organization.The interval and date range are subject to certain restrictions and rounding rules.The date range is rounded to align with the interval, and is rounded to at least onehour. The interval can at most be one day and at least one hour currently. It has to cleanlydivide one day, for rounding reasons.Because of technical limitations, this endpoint returnsat most 10000 data points. For example, if you select a 90 day window grouped by releases,you will see at most `floor(10k / (90 + 1)) = 109` releases. To get more results, reduce the`statsPeriod`.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.SessionsRequestBuilder.SessionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveReleaseHealthSessionStatistics200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a time series of release health session statistics for projects bound to an organization.The interval and date range are subject to certain restrictions and rounding rules.The date range is rounded to align with the interval, and is rounded to at least onehour. The interval can at most be one day and at least one hour currently. It has to cleanlydivide one day, for rounding reasons.Because of technical limitations, this endpoint returnsat most 10000 data points. For example, if you select a 90 day window grouped by releases,you will see at most `floor(10k / (90 + 1)) = 109` releases. To get more results, reduce the`statsPeriod`.
@@ -147,15 +147,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
             /// <summary>The number of groups to return per request.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>The IDs of projects to filter by. `-1` means all available projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=-1`</summary>
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
             /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusCheckRules
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\preprod\snapshots\status-check-rules
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\preprod\snapshots\status-check-rules
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StatusCheckRulesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Sna
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatusCheckRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod/snapshots/status-check-rules", pathParameters)
+        public StatusCheckRulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Sna
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public StatusCheckRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/preprod/snapshots/status-check-rules", rawUrl)
+        public StatusCheckRulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Retrieve the current Snapshot status check rules configured for a project.Use this endpoint when external CI needs to evaluate the same Snapshotchange-type rules that Sentry uses. The endpoint returns the currentproject configuration, not a historical snapshot from when a build wasprocessed.The response includes whether status check enforcement is enabled and theSnapshot change types that fail the status check.This endpoint requires a bearer token with `project:read` access. Projectdistribution tokens are not supported.Response notes:- `enabled: false` means status-check enforcement is disabled for the project.- `rules` contains one boolean per Snapshot change type.- `failOnAdded`, `failOnRemoved`, `failOnChanged`, and `failOnRenamed`  indicate which unapproved change types fail the status check.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSnapshotStatusCheckRulesForAProject200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSnapshotStatusCheckRulesForAProject200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSnapshotStatusCheckRulesForAProject200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSnapshotStatusCheckRulesForAProject200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveSnapshotStatusCheckRulesForAProject200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Retrieve the current Snapshot status check rules configured for a project.Use this endpoint when external CI needs to evaluate the same Snapshotchange-type rules that Sentry uses. The endpoint returns the currentproject configuration, not a historical snapshot from when a build wasprocessed.The response includes whether status check enforcement is enabled and theSnapshot change types that fail the status check.This endpoint requires a bearer token with `project:read` access. Projectdistribution tokens are not supported.Response notes:- `enabled: false` means status-check enforcement is disabled for the project.- `rules` contains one boolean per Snapshot change type.- `failOnAdded`, `failOnRemoved`, `failOnChanged`, and `failOnRenamed`  indicate which unapproved change types fail the status check.&quot;

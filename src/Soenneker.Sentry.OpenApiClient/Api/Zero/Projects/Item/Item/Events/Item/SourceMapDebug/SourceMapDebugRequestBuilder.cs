@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\events\{event_id}\source-map-debug
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\events\{eventId}\source-map-debug
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourceMapDebugRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SourceMapDebugRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/source-map-debug?exception_idx={exception_idx}&frame_idx={frame_idx}", pathParameters)
+        public SourceMapDebugRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/source-map-debug", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SourceMapDebugRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/events/{event_id}/source-map-debug?exception_idx={exception_idx}&frame_idx={frame_idx}", rawUrl)
+        public SourceMapDebugRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/source-map-debug", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of source map errors for a given event.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DebugIssuesRelatedToSourceMapsForAGivenEvent200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DebugIssuesRelatedToSourceMapsForAGivenEvent200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder.SourceMapDebugRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DebugIssuesRelatedToSourceMapsForAGivenEvent200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder.SourceMapDebugRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DebugIssuesRelatedToSourceMapsForAGivenEvent200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DebugIssuesRelatedToSourceMapsForAGivenEvent200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of source map errors for a given event.
@@ -58,11 +58,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder.SourceMapDebugRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder.SourceMapDebugRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -78,19 +78,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item.SourceMapDebug.SourceMapDebugRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Return a list of source map errors for a given event.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SourceMapDebugRequestBuilderGetQueryParameters 
-        {
-            /// <summary>Index of the exception that should be used for source map resolution.</summary>
-            [QueryParameter("exception_idx")]
-            public int? ExceptionIdx { get; set; }
-            /// <summary>Index of the frame that should be used for source map resolution.</summary>
-            [QueryParameter("frame_idx")]
-            public int? FrameIdx { get; set; }
         }
     }
 }

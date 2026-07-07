@@ -12,21 +12,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\replays\{replay_id}\recording-segments
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\replays\{replayId}\recording-segments
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RecordingSegmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.replays.item.recordingSegments.item collection</summary>
         /// <param name="position">The ID of the segment you&apos;d like to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegment_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegment_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegmentItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegmentItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("segment_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegment_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("segmentId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Item.RecordingSegments.Item.WithSegmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingSegmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/replays/{replay_id}/recording-segments{?cursor*,per_page*}", pathParameters)
+        public RecordingSegmentsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments{?cursor*,per_page*}", pathParameters)
         {
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RecordingSegmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/replays/{replay_id}/recording-segments{?cursor*,per_page*}", rawUrl)
+        public RecordingSegmentsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments{?cursor*,per_page*}", rawUrl)
         {
         }
         /// <summary>

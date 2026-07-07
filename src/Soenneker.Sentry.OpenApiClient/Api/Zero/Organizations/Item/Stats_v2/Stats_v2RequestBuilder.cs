@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\stats_v2
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\stats_v2
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Stats_v2RequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Stats_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", pathParameters)
+        public Stats_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Stats_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", rawUrl)
+        public Stats_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
         /// Query event counts for your Organization.Select a field, define a date range, and group or filter by columns.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveEventCountsForAnOrganizationV2200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveEventCountsForAnOrganizationV2200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.Stats_v2RequestBuilder.Stats_v2RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.Stats_v2RequestBuilder.Stats_v2RequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveEventCountsForAnOrganizationV2200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.Stats_v2RequestBuilder.Stats_v2RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.Stats_v2RequestBuilder.Stats_v2RequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveEventCountsForAnOrganizationV2200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveEventCountsForAnOrganizationV2200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query event counts for your Organization.Select a field, define a date range, and group or filter by columns.
@@ -87,22 +87,22 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
         {
             /// <summary>&quot;Filter by data category. Each category represents a different type of data:- `error`: Error events (includes `default` and `security` categories)- `transaction`: Transaction events- `attachment`: File attachments (note: cannot be combined with other categories since quantity represents bytes)- `replay`: Session replay events- `profile`: Performance profiles- `profile_duration`: Profile duration data (note: cannot be combined with other categories since quantity represents milliseconds)- `profile_duration_ui`: Profile duration (UI) data (note: cannot be combined with other categories since quantity represents milliseconds)- `profile_chunk`: Profile chunk data- `profile_chunk_ui`: Profile chunk (UI) data- `monitor`: Cron monitor events* `error`* `transaction`* `attachment`* `replay`* `profile`* `profile_duration`* `profile_duration_ui`* `profile_chunk`* `profile_chunk_ui`* `monitor`&quot;</summary>
             [QueryParameter("category")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetCategoryQueryParameterType? Category { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2CategoryParameter? Category { get; set; }
             /// <summary>This defines the inclusive end of the time series range as an explicit datetime, either in UTC ISO8601 or epoch seconds. Use along with `start` instead of `statsPeriod`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
             /// <summary>the `sum(quantity)` field is bytes for attachments, and all others the &apos;event&apos; count for those types of events.`sum(times_seen)` sums the number of times an event has been seen. For &apos;normal&apos; event types, this will be equal to `sum(quantity)` for now. For sessions, quantity will sum the total number of events seen in a session, while `times_seen` will be the unique number of sessions. and for attachments, `times_seen` will be the total number of attachments, while quantity will be the total sum of attachment bytes.* `sum(quantity)`* `sum(times_seen)`</summary>
             [QueryParameter("field")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetFieldQueryParameterType? Field { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2FieldParameter? Field { get; set; }
             /// <summary>can pass multiple groupBy parameters to group by multiple, e.g. `groupBy=project&amp;groupBy=outcome` to group by multiple dimensions. Note that grouping by project can cause missing rows if the number of projects / interval is large. If you have a large number of projects, we recommend filtering and querying by them individually.Also note that grouping by projects does not currently support timeseries interval responses and will instead be a sum of the projectover the entire period specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("groupBy")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetGroupByQueryParameterType[]? GroupBy { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2GroupByParameterItem[]? GroupBy { get; set; }
 #nullable restore
 #else
             [QueryParameter("groupBy")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetGroupByQueryParameterType[] GroupBy { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2GroupByParameterItem[] GroupBy { get; set; }
 #endif
             /// <summary>This is the resolution of the time series, given in the same format as `statsPeriod`. The default resolution is `1h` and the minimum resolution is currently restricted to `1h` as well. Intervals larger than `1d` are not supported, and the interval has to cleanly divide one day.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
 #endif
             /// <summary>See https://docs.sentry.io/product/stats/ for more information on outcome statuses.* `accepted`* `filtered`* `rate_limited`* `invalid`* `abuse`* `client_discard`* `cardinality_limited`</summary>
             [QueryParameter("outcome")]
-            public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.GetOutcomeQueryParameterType? Outcome { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2OutcomeParameter? Outcome { get; set; }
             /// <summary>The ID of the projects to filter by.Use `-1` to include all accessible projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

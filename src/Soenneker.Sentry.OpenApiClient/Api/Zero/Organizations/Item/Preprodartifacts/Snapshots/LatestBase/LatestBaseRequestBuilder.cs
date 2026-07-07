@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.LatestBase
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\preprodartifacts\snapshots\latest-base
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\preprodartifacts\snapshots\latest-base
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LatestBaseRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/latest-base?app_id={app_id}{&branch*,compact_metadata*,project*}", pathParameters)
+        public LatestBaseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/latest-base?app_id={app_id}{&branch*,compact_metadata*,project*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,26 +30,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LatestBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/preprodartifacts/snapshots/latest-base?app_id={app_id}{&branch*,compact_metadata*,project*}", rawUrl)
+        public LatestBaseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/latest-base?app_id={app_id}{&branch*,compact_metadata*,project*}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieve the most recent base snapshot for a given app.A base snapshot is one uploaded without a `base_sha` (i.e., a snapshotfrom a base branch like `main`). Use the optional `branch` and `project`parameters to narrow the search.The response includes the full image list with download URLs. Use`compact_metadata=1` to reduce image metadata.This endpoint requires a bearer token with `project:read` access.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveLatestBaseSnapshot200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveLatestBaseSnapshot200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.LatestBase.LatestBaseRequestBuilder.LatestBaseRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.LatestBase.LatestBaseRequestBuilder.LatestBaseRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveLatestBaseSnapshot200> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.LatestBase.LatestBaseRequestBuilder.LatestBaseRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.LatestBase.LatestBaseRequestBuilder.LatestBaseRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveLatestBaseSnapshot200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveLatestBaseSnapshot200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the most recent base snapshot for a given app.A base snapshot is one uploaded without a `base_sha` (i.e., a snapshotfrom a base branch like `main`). Use the optional `branch` and `project`parameters to narrow the search.The response includes the full image list with download URLs. Use`compact_metadata=1` to reduce image metadata.This endpoint requires a bearer token with `project:read` access.
@@ -115,7 +115,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
             [QueryParameter("compact_metadata")]
             public string CompactMetadata { get; set; }
 #endif
-            /// <summary>Project ID to scope the lookup.</summary>
+            /// <summary>Project ID or slug to scope the lookup.</summary>
             [QueryParameter("project")]
             public int? Project { get; set; }
         }

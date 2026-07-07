@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\notifications\actions
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\notifications\actions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.notifications.actions.item collection</summary>
         /// <param name="position">ID of the notification action to retrieve</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithAction_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithAction_ItemRequestBuilder this[int position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithActionItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithActionItemRequestBuilder this[int position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("action_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithAction_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("actionId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.Item.WithActionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/notifications/actions{?project*,project_id_or_slug*,triggerType*}", pathParameters)
+        public ActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/notifications/actions{?project*,project_id_or_slug*,triggerType*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,49 +43,49 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/notifications/actions{?project*,project_id_or_slug*,triggerType*}", rawUrl)
+        public ActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/notifications/actions{?project*,project_id_or_slug*,triggerType*}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use either the `project` or `projectSlug` query parameter to filter for certain projects. Note that if both are present, `projectSlug` takes priority.
+        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use the `project` query parameter with project IDs or slugs to filter for certain projects.A legacy project slug query parameter is also supported and takes priority if both are present.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsRequestBuilder.ActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsRequestBuilder.ActionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsRequestBuilder.ActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsRequestBuilder.ActionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsGetResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Notification Action for Spike Protection.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response"/></returns>
         /// <param name="body">Django Rest Framework serializer for incoming NotificationAction API payloads</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsPostResponse?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateASpikeProtectionNotificationAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsPostResponse> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateASpikeProtectionNotificationAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsPostResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use either the `project` or `projectSlug` query parameter to filter for certain projects. Note that if both are present, `projectSlug` takes priority.
+        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use the `project` query parameter with project IDs or slugs to filter for certain projects.A legacy project slug query parameter is also supported and takes priority if both are present.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -111,11 +111,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateASpikeProtectionNotificationAction body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateASpikeProtectionNotificationAction body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -135,22 +135,22 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.Actions.ActionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use either the `project` or `projectSlug` query parameter to filter for certain projects. Note that if both are present, `projectSlug` takes priority.
+        /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use the `project` query parameter with project IDs or slugs to filter for certain projects.A legacy project slug query parameter is also supported and takes priority if both are present.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ActionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The IDs of projects to filter by. `-1` means all available projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=-1`</summary>
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public int?[]? Project { get; set; }
+            public string[]? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public int?[] Project { get; set; }
+            public string[] Project { get; set; }
 #endif
-            /// <summary>The project slugs to filter by. Use `$all` to include all available projects. For example, the following are valid parameters:- `/?projectSlug=$all`- `/?projectSlug=android&amp;projectSlug=javascript-react`</summary>
+            /// <summary>The legacy project slug filter. Prefer `project`, which accepts project IDs or slugs. Use `$all` to include all available projects. For example, the following are valid parameters:- `/?projectSlug=$all`- `/?projectSlug=android&amp;projectSlug=javascript-react`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project_id_or_slug")]

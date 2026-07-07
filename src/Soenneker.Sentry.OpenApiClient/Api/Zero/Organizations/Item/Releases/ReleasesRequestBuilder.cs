@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\releases
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\releases
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleasesRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReleasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/releases{?cursor*,query*}", pathParameters)
+        public ReleasesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/releases{?cursor*,environment*,per_page*,project*,query*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,50 +43,50 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReleasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/releases{?cursor*,query*}", rawUrl)
+        public ReleasesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/releases{?cursor*,environment*,per_page*,project*,query*}", rawUrl)
         {
         }
         /// <summary>
-        /// Return a list of releases for a given organization.
+        /// Return a list of releases for a given organization, sorted by most recent.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Releases&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Releases>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.ReleasesRequestBuilder.ReleasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.ReleasesRequestBuilder.ReleasesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Releases>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.ReleasesRequestBuilder.ReleasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.ReleasesRequestBuilder.ReleasesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Releases>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Releases.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Create a new release for the given organization.  Releases are used bySentry to improve its error reporting abilities by correlatingfirst seen events with the release that might have introduced theproblem.Releases are also necessary for source maps and other debug featuresthat require manual upload for functioning well.
+        /// Create a new release for the given organization. Releases are used by Sentry toimprove error reporting by correlating first-seen events with the release that mayhave introduced them, and are required for source maps and other debug features.Release versions that are the same across multiple projects within an organizationare treated as the same release in Sentry.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization201?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization201> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return a list of releases for a given organization.
+        /// Return a list of releases for a given organization, sorted by most recent.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,18 +105,18 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
             return requestInfo;
         }
         /// <summary>
-        /// Create a new release for the given organization.  Releases are used bySentry to improve its error reporting abilities by correlatingfirst seen events with the release that might have introduced theproblem.Releases are also necessary for source maps and other debug featuresthat require manual upload for functioning well.
+        /// Create a new release for the given organization. Releases are used by Sentry toimprove error reporting by correlating first-seen events with the release that mayhave introduced them, and are required for source maps and other debug features.Release versions that are the same across multiple projects within an organizationare treated as the same release in Sentry.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateANewReleaseForAnOrganization body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -136,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.ReleasesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return a list of releases for a given organization.
+        /// Return a list of releases for a given organization, sorted by most recent.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReleasesRequestBuilderGetQueryParameters 
@@ -151,7 +151,30 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
-            /// <summary>This parameter can be used to create a &quot;starts with&quot; filter for the version.</summary>
+            /// <summary>The name of environments to filter by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environment")]
+            public string[]? Environment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environment")]
+            public string[] Environment { get; set; }
+#endif
+            /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string[]? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string[] Project { get; set; }
+#endif
+            /// <summary>Case-insensitive substring match against the release version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

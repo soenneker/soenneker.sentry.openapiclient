@@ -17,14 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.sentryApps.item collection</summary>
         /// <param name="position">The ID or slug of the custom integration.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentry_app_id_or_slugItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentry_app_id_or_slugItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentryAppIdOrSlugItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentryAppIdOrSlugItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("sentry_app_id_or_slug", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentry_app_id_or_slugItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sentryAppIdOrSlug", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps.Item.WithSentryAppIdOrSlugItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\releases\{version}\files
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\releases\{version}\files
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.releases.item.files.item collection</summary>
-        /// <param name="position">The ID of the file to retrieve.</param>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFile_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFile_ItemRequestBuilder this[string position]
+        /// <param name="position">The ID of the release file.</param>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFileItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFileItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("file_id", position);
-                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFile_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("fileId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Item.WithFileItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.It
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/releases/{version}/files{?cursor*}", pathParameters)
+        public FilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files{?checksum*,cursor*,query*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,50 +43,50 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.It
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/releases/{version}/files{?cursor*}", rawUrl)
+        public FilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files{?checksum*,cursor*,query*}", rawUrl)
         {
         }
         /// <summary>
-        /// Return a list of files for a given release.
+        /// Retrieve a list of files for a given release.
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Files&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseFiles200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Files>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseFiles200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Files>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseFiles200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.FilesRequestBuilder.FilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Files>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.Files.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseFiles200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseFiles200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Upload a new file for the given release.Unlike other API requests, files must be uploaded using the traditional multipart/form-data content-type.Requests to this endpoint should use the region-specific domain eg. `us.sentry.io` or `de.sentry.io`The optional &apos;name&apos; attribute should reflect the absolute path that this file will be referenced as. For example, in the case of JavaScript you might specify the full web URI.
+        /// Upload a new file for the given release.Files must be uploaded using the `multipart/form-data` content type, against theregion-specific domain (e.g. `us.sentry.io` or `de.sentry.io`).
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UploadANewProjectReleaseFile201"/></returns>
-        /// <param name="body">The request body</param>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectReleaseFile201Response"/></returns>
+        /// <param name="body">Documents the multipart/form-data body of the release file upload endpoints.The endpoints read the upload directly off ``request.data``; this serializerexists to describe the request body in the OpenAPI schema.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadANewProjectReleaseFile201?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectReleaseFile201Response?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadANewProjectReleaseFile201> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectReleaseFile201Response> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UploadANewProjectReleaseFile201>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UploadANewProjectReleaseFile201.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectReleaseFile201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectReleaseFile201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Return a list of files for a given release.
+        /// Retrieve a list of files for a given release.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,10 +105,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.It
             return requestInfo;
         }
         /// <summary>
-        /// Upload a new file for the given release.Unlike other API requests, files must be uploaded using the traditional multipart/form-data content-type.Requests to this endpoint should use the region-specific domain eg. `us.sentry.io` or `de.sentry.io`The optional &apos;name&apos; attribute should reflect the absolute path that this file will be referenced as. For example, in the case of JavaScript you might specify the full web URI.
+        /// Upload a new file for the given release.Files must be uploaded using the `multipart/form-data` content type, against theregion-specific domain (e.g. `us.sentry.io` or `de.sentry.io`).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Documents the multipart/form-data body of the release file upload endpoints.The endpoints read the upload directly off ``request.data``; this serializerexists to describe the request body in the OpenAPI schema.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -136,11 +136,21 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.It
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.Files.FilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return a list of files for a given release.
+        /// Retrieve a list of files for a given release.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FilesRequestBuilderGetQueryParameters 
         {
+            /// <summary>If set, only files with these exact checksums will be returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("checksum")]
+            public string[]? Checksum { get; set; }
+#nullable restore
+#else
+            [QueryParameter("checksum")]
+            public string[] Checksum { get; set; }
+#endif
             /// <summary>A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,6 +160,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.It
 #else
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
+#endif
+            /// <summary>If set, only files with these partial names will be returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query")]
+            public string[]? Query { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query")]
+            public string[] Query { get; set; }
 #endif
         }
     }

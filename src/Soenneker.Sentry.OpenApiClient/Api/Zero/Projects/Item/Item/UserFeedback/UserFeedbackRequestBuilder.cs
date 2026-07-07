@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\projects\{organization_id_or_slug}\{project_id_or_slug}\user-feedback
+    /// Builds and executes requests for operations under \api\0\projects\{organizationIdOrSlug}\{projectIdOrSlug}\user-feedback
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserFeedbackRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedbac
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserFeedbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback{?cursor*}", pathParameters)
+        public UserFeedbackRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/user-feedback{?cursor*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,47 +30,27 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedbac
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public UserFeedbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback{?cursor*}", rawUrl)
+        public UserFeedbackRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/user-feedback{?cursor*}", rawUrl)
         {
         }
         /// <summary>
         /// Return a list of user feedback items within this project.*This list does not include submissions from the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget). This is because it is based on an older format called User Reports - read more [here](https://develop.sentry.dev/application/feedback-architecture/#user-reports). To return a list of user feedback items from the widget, please use the [issue API](https://docs.sentry.io/api/events/list-a-projects-issues/) with the filter `issue.category:feedback`.*
         /// </summary>
-        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedback&gt;</returns>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseResponseJsonItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedback>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedbackRequestBuilder.UserFeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseResponseJsonItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedbackRequestBuilder.UserFeedbackRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedback>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedbackRequestBuilder.UserFeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseResponseJsonItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedbackRequestBuilder.UserFeedbackRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedback>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedback.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseResponseJsonItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseResponseJsonItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
-        }
-        /// <summary>
-        /// &quot;*This endpoint is DEPRECATED. We document it here for older SDKs and users who are still migrating to the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget) or [API](https://docs.sentry.io/platforms/javascript/user-feedback/#user-feedback-api)(multi-platform). If you are a new user, do not use this endpoint - unless you don&apos;t have a JS frontend, and your platform&apos;s SDK does not offer a feedback API.*Feedback must be received by the server no more than 30 minutes after the event was saved.Additionally, within 5 minutes of submitting feedback it may also be overwritten. This is useful in situations where you may need to retry sending a request due to network failures.If feedback is rejected due to a mutability threshold, a 409 status code will be returned.Note: Feedback may be submitted with DSN authentication (see auth documentation).&quot;
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of user feedback items within this project.*This list does not include submissions from the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget). This is because it is based on an older format called User Reports - read more [here](https://develop.sentry.dev/application/feedback-architecture/#user-reports). To return a list of user feedback items from the widget, please use the [issue API](https://docs.sentry.io/api/events/list-a-projects-issues/) with the filter `issue.category:feedback`.*
@@ -89,28 +69,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedbac
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// &quot;*This endpoint is DEPRECATED. We document it here for older SDKs and users who are still migrating to the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget) or [API](https://docs.sentry.io/platforms/javascript/user-feedback/#user-feedback-api)(multi-platform). If you are a new user, do not use this endpoint - unless you don&apos;t have a JS frontend, and your platform&apos;s SDK does not offer a feedback API.*Feedback must be received by the server no more than 30 minutes after the event was saved.Additionally, within 5 minutes of submitting feedback it may also be overwritten. This is useful in situations where you may need to retry sending a request due to network failures.If feedback is rejected due to a mutability threshold, a 409 status code will be returned.Note: Feedback may be submitted with DSN authentication (see auth documentation).&quot;
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections
 {
     /// <summary>
-    /// Builds and executes requests for operations under \api\0\organizations\{organization_id_or_slug}\spike-protections
+    /// Builds and executes requests for operations under \api\0\organizations\{organizationIdOrSlug}\spike-protections
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SpikeProtectionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpikeProtectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/spike-protections", pathParameters)
+        public SpikeProtectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/spike-protections", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SpikeProtectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organization_id_or_slug}/spike-protections", rawUrl)
+        public SpikeProtectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/spike-protections", rawUrl)
         {
         }
         /// <summary>
@@ -41,11 +41,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task DeleteAsync(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -55,22 +55,22 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// <summary>
         /// Enables Spike Protection feature for some of the projects within the organization.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.DefaultResponseResponseJson34"/></returns>
         /// <param name="body">Django Rest Framework serializer for incoming Spike Protection API payloads</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsPostResponse?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DefaultResponseResponseJson34?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsPostResponse> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.DefaultResponseResponseJson34> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsPostResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsPostResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DefaultResponseResponseJson34>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DefaultResponseResponseJson34.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Disables Spike Protection feature for some of the projects within the organization.
@@ -80,11 +80,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.DisableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -102,11 +102,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtec
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtection body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.EnableSpikeProtectionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
