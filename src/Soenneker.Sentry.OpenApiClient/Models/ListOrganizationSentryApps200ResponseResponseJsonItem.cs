@@ -160,6 +160,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The verifyInstall property</summary>
         public bool? VerifyInstall { get; set; }
+        /// <summary>The webhookEvents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? WebhookEvents { get; set; }
+#nullable restore
+#else
+        public List<string> WebhookEvents { get; set; }
+#endif
         /// <summary>The webhookHeaders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -223,6 +231,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
                 { "verifyInstall", n => { VerifyInstall = n.GetBoolValue(); } },
+                { "webhookEvents", n => { WebhookEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webhookHeaders", n => { WebhookHeaders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webhookUrl", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -256,6 +265,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("uuid", Uuid);
             writer.WriteBoolValue("verifyInstall", VerifyInstall);
+            writer.WriteCollectionOfPrimitiveValues<string>("webhookEvents", WebhookEvents);
             writer.WriteCollectionOfPrimitiveValues<string>("webhookHeaders", WebhookHeaders);
             writer.WriteStringValue("webhookUrl", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

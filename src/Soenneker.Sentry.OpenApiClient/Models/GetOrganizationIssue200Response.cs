@@ -281,13 +281,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseType? Type { get; set; }
         /// <summary>The userCount property</summary>
         public int? UserCount { get; set; }
         /// <summary>The userReportCount property</summary>
@@ -363,7 +357,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "substatus", n => { Substatus = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseSubstatus>(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseTagsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseType>(); } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
                 { "userReportCount", n => { UserReportCount = n.GetIntValue(); } },
             };
@@ -421,7 +415,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseSubstatus>("substatus", Substatus);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseTagsItem>("tags", Tags);
             writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseType>("type", Type);
             writer.WriteIntValue("userCount", UserCount);
             writer.WriteIntValue("userReportCount", UserReportCount);
             writer.WriteAdditionalData(AdditionalData);

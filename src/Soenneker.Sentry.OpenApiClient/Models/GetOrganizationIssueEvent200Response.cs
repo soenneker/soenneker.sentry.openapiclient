@@ -67,7 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Dist { get; set; }
 #endif
         /// <summary>The endTimestamp property</summary>
-        public DateTimeOffset? EndTimestamp { get; set; }
+        public double? EndTimestamp { get; set; }
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,7 +247,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The size property</summary>
         public int? Size { get; set; }
         /// <summary>The startTimestamp property</summary>
-        public DateTimeOffset? StartTimestamp { get; set; }
+        public double? StartTimestamp { get; set; }
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -265,13 +265,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseType? Type { get; set; }
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -321,7 +315,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dateReceived", n => { DateReceived = n.GetDateTimeOffsetValue(); } },
                 { "dist", n => { Dist = n.GetStringValue(); } },
-                { "endTimestamp", n => { EndTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "endTimestamp", n => { EndTimestamp = n.GetDoubleValue(); } },
                 { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseEntriesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseEntriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
@@ -345,10 +339,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "sdk", n => { Sdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdk>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdk.CreateFromDiscriminatorValue); } },
                 { "sdkUpdates", n => { SdkUpdates = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdkUpdatesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdkUpdatesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "size", n => { Size = n.GetIntValue(); } },
-                { "startTimestamp", n => { StartTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "startTimestamp", n => { StartTimestamp = n.GetDoubleValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseTagsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseType>(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUser>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUser.CreateFromDiscriminatorValue); } },
                 { "userReport", n => { UserReport = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUserReport>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUserReport.CreateFromDiscriminatorValue); } },
             };
@@ -368,7 +362,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("dateReceived", DateReceived);
             writer.WriteStringValue("dist", Dist);
-            writer.WriteDateTimeOffsetValue("endTimestamp", EndTimestamp);
+            writer.WriteDoubleValue("endTimestamp", EndTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseEntriesItem>("entries", Entries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem>("errors", Errors);
             writer.WriteStringValue("eventID", EventID);
@@ -392,10 +386,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdk>("sdk", Sdk);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseSdkUpdatesItem>("sdkUpdates", SdkUpdates);
             writer.WriteIntValue("size", Size);
-            writer.WriteDateTimeOffsetValue("startTimestamp", StartTimestamp);
+            writer.WriteDoubleValue("startTimestamp", StartTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseTagsItem>("tags", Tags);
             writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUser>("user", User);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseUserReport>("userReport", UserReport);
             writer.WriteAdditionalData(AdditionalData);
