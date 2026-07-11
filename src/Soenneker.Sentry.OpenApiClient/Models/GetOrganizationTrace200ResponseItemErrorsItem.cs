@@ -41,13 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string EventId { get; set; }
 #endif
         /// <summary>The event_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventType { get; set; }
-#nullable restore
-#else
-        public string EventType { get; set; }
-#endif
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItemEventType? EventType { get; set; }
         /// <summary>The issue_id property</summary>
         public int? IssueId { get; set; }
         /// <summary>The issue_type property</summary>
@@ -117,7 +111,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "end_timestamp", n => { EndTimestamp = n.GetDoubleValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetStringValue(); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItemEventType>(); } },
                 { "issue_id", n => { IssueId = n.GetIntValue(); } },
                 { "issue_type", n => { IssueType = n.GetIntValue(); } },
                 { "level", n => { Level = n.GetStringValue(); } },
@@ -139,7 +133,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("end_timestamp", EndTimestamp);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteStringValue("event_type", EventType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItemEventType>("event_type", EventType);
             writer.WriteIntValue("issue_id", IssueId);
             writer.WriteIntValue("issue_type", IssueType);
             writer.WriteStringValue("level", Level);

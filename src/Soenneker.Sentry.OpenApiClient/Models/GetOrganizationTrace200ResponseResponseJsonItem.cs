@@ -57,7 +57,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The duration property</summary>
         public double? Duration { get; set; }
         /// <summary>The end_timestamp property</summary>
-        public DateTimeOffset? EndTimestamp { get; set; }
+        public double? EndTimestamp { get; set; }
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,13 +75,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string EventId { get; set; }
 #endif
         /// <summary>The event_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventType { get; set; }
-#nullable restore
-#else
-        public string EventType { get; set; }
-#endif
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType? EventType { get; set; }
         /// <summary>The issue_id property</summary>
         public int? IssueId { get; set; }
         /// <summary>The issue_type property</summary>
@@ -195,7 +189,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ShortId { get; set; }
 #endif
         /// <summary>The start_timestamp property</summary>
-        public DateTimeOffset? StartTimestamp { get; set; }
+        public double? StartTimestamp { get; set; }
         /// <summary>The transaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,10 +237,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "end_timestamp", n => { EndTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "end_timestamp", n => { EndTimestamp = n.GetDoubleValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetStringValue(); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType>(); } },
                 { "is_transaction", n => { IsTransaction = n.GetBoolValue(); } },
                 { "issue_id", n => { IssueId = n.GetIntValue(); } },
                 { "issue_type", n => { IssueType = n.GetIntValue(); } },
@@ -264,7 +258,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "region_name", n => { RegionName = n.GetStringValue(); } },
                 { "sdk_name", n => { SdkName = n.GetStringValue(); } },
                 { "short_id", n => { ShortId = n.GetStringValue(); } },
-                { "start_timestamp", n => { StartTimestamp = n.GetDateTimeOffsetValue(); } },
+                { "start_timestamp", n => { StartTimestamp = n.GetDoubleValue(); } },
                 { "transaction", n => { Transaction = n.GetStringValue(); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
             };
@@ -282,10 +276,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("culprit", Culprit);
             writer.WriteStringValue("description", Description);
             writer.WriteDoubleValue("duration", Duration);
-            writer.WriteDateTimeOffsetValue("end_timestamp", EndTimestamp);
+            writer.WriteDoubleValue("end_timestamp", EndTimestamp);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem>("errors", Errors);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteStringValue("event_type", EventType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType>("event_type", EventType);
             writer.WriteIntValue("issue_id", IssueId);
             writer.WriteIntValue("issue_type", IssueType);
             writer.WriteBoolValue("is_transaction", IsTransaction);
@@ -303,7 +297,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("region_name", RegionName);
             writer.WriteStringValue("sdk_name", SdkName);
             writer.WriteStringValue("short_id", ShortId);
-            writer.WriteDateTimeOffsetValue("start_timestamp", StartTimestamp);
+            writer.WriteDoubleValue("start_timestamp", StartTimestamp);
             writer.WriteStringValue("transaction", Transaction);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteAdditionalData(AdditionalData);

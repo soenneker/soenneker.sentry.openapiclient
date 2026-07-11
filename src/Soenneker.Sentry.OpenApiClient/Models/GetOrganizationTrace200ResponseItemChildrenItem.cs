@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Fields shared by every item in a trace. Entries in `children` are fullspans at runtime; only the shared fields are documented here.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationTrace200ResponseItemChildrenItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -29,14 +30,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string EventId { get; set; }
-#endif
-        /// <summary>The event_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventType { get; set; }
-#nullable restore
-#else
-        public string EventType { get; set; }
 #endif
         /// <summary>The project_id property</summary>
         public int? ProjectId { get; set; }
@@ -83,7 +76,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetIntValue(); } },
                 { "project_slug", n => { ProjectSlug = n.GetStringValue(); } },
                 { "transaction", n => { Transaction = n.GetStringValue(); } },
@@ -98,7 +90,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("event_id", EventId);
-            writer.WriteStringValue("event_type", EventType);
             writer.WriteIntValue("project_id", ProjectId);
             writer.WriteStringValue("project_slug", ProjectSlug);
             writer.WriteStringValue("transaction", Transaction);
