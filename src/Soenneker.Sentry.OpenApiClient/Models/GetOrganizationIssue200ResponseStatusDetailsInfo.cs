@@ -14,6 +14,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The dateCreated property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DateCreated { get; set; }
+#nullable restore
+#else
+        public string DateCreated { get; set; }
+#endif
+        /// <summary>The syncCount property</summary>
+        public int? SyncCount { get; set; }
+        /// <summary>The totalEvents property</summary>
+        public int? TotalEvents { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo"/> and sets the default values.
         /// </summary>
@@ -39,6 +51,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
+                { "syncCount", n => { SyncCount = n.GetIntValue(); } },
+                { "totalEvents", n => { TotalEvents = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +63,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("dateCreated", DateCreated);
+            writer.WriteIntValue("syncCount", SyncCount);
+            writer.WriteIntValue("totalEvents", TotalEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

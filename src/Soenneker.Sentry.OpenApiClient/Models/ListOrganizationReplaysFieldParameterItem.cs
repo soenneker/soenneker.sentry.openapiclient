@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>* `activity`* `browser`* `count_dead_clicks`* `count_errors`* `count_rage_clicks`* `count_segments`* `count_urls`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `id`* `is_archived`* `os`* `platform`* `project_id`* `releases`* `sdk`* `started_at`* `tags`* `trace_ids`* `urls`* `user`* `clicks`* `info_ids`* `warning_ids`* `count_warnings`* `count_infos`* `has_viewed`</summary>
+    /// <summary>* `activity`* `browser`* `count_dead_clicks`* `count_errors`* `count_rage_clicks`* `count_segments`* `count_urls`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `id`* `is_archived`* `os`* `platform`* `project_id`* `releases`* `sdk`* `started_at`* `tags`* `trace_ids`* `segment_names`* `urls`* `user`* `clicks`* `info_ids`* `warning_ids`* `count_warnings`* `count_infos`* `has_viewed`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ListOrganizationReplaysFieldParameterItem
     {
@@ -98,6 +98,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "trace_ids")]
         #pragma warning disable CS1591
         TraceIds,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "segment_names")]
+        #pragma warning disable CS1591
+        SegmentNames,
         #pragma warning restore CS1591
         [EnumMember(Value = "urls")]
         #pragma warning disable CS1591

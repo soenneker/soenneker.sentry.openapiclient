@@ -156,6 +156,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemSdk Sdk { get; set; }
 #endif
+        /// <summary>The segment_names property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SegmentNames { get; set; }
+#nullable restore
+#else
+        public List<string> SegmentNames { get; set; }
+#endif
         /// <summary>The started_at property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,6 +255,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "releases", n => { Releases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "replay_type", n => { ReplayType = n.GetStringValue(); } },
                 { "sdk", n => { Sdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemSdk>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemSdk.CreateFromDiscriminatorValue); } },
+                { "segment_names", n => { SegmentNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "started_at", n => { StartedAt = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTags>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTags.CreateFromDiscriminatorValue); } },
                 { "trace_ids", n => { TraceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -287,6 +296,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("releases", Releases);
             writer.WriteStringValue("replay_type", ReplayType);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemSdk>("sdk", Sdk);
+            writer.WriteCollectionOfPrimitiveValues<string>("segment_names", SegmentNames);
             writer.WriteStringValue("started_at", StartedAt);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTags>("tags", Tags);
             writer.WriteCollectionOfPrimitiveValues<string>("trace_ids", TraceIds);
