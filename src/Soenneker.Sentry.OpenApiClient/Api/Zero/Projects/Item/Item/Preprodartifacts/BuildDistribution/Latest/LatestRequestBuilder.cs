@@ -105,7 +105,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
             [QueryParameter("buildConfiguration")]
             public string BuildConfiguration { get; set; }
 #endif
-            /// <summary>Current build number. Either this or mainBinaryIdentifier must be provided when buildVersion is set.</summary>
+            /// <summary>Current build number. Accepts a plain integer (e.g. 42) or a version string of two to three period-separated integers (e.g. 1.2.3), each up to 6 digits — the format used by build identifiers such as Apple&apos;s CFBundleVersion. Either this or mainBinaryIdentifier must be provided when buildVersion is set.</summary>
             [QueryParameter("buildNumber")]
             public int? BuildNumber { get; set; }
             /// <summary>Current build version. When provided, enables check-for-updates mode.</summary>
