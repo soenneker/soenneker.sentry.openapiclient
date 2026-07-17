@@ -54,6 +54,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Culprit { get; set; }
 #endif
+        /// <summary>The derivedData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseDerivedData? DerivedData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseDerivedData DerivedData { get; set; }
+#endif
         /// <summary>The firstRelease property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -316,6 +324,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseAssignedTo.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
+                { "derivedData", n => { DerivedData = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseDerivedData>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseDerivedData.CreateFromDiscriminatorValue); } },
                 { "firstRelease", n => { FirstRelease = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseFirstRelease>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseFirstRelease.CreateFromDiscriminatorValue); } },
                 { "firstSeen", n => { FirstSeen = n.GetDateTimeOffsetValue(); } },
                 { "forecast", n => { Forecast = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseForecast>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseForecast.CreateFromDiscriminatorValue); } },
@@ -374,6 +383,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseAssignedTo>("assignedTo", AssignedTo);
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("culprit", Culprit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseDerivedData>("derivedData", DerivedData);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseFirstRelease>("firstRelease", FirstRelease);
             writer.WriteDateTimeOffsetValue("firstSeen", FirstSeen);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseForecast>("forecast", Forecast);

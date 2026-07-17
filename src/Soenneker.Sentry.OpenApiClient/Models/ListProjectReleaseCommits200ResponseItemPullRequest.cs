@@ -40,6 +40,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The mergedAt property</summary>
+        public DateTimeOffset? MergedAt { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +58,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestRepository Repository { get; set; }
 #endif
+        /// <summary>The status property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestStatus? Status { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,8 +97,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "mergedAt", n => { MergedAt = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestRepository>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestRepository.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestStatus>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -109,8 +115,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteStringValue("id", Id);
+            writer.WriteDateTimeOffsetValue("mergedAt", MergedAt);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestRepository>("repository", Repository);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleaseCommits200ResponseItemPullRequestStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

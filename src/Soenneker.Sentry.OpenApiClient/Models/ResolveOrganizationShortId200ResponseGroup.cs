@@ -46,6 +46,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Culprit { get; set; }
 #endif
+        /// <summary>The derivedData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupDerivedData? DerivedData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupDerivedData DerivedData { get; set; }
+#endif
         /// <summary>The firstSeen property</summary>
         public DateTimeOffset? FirstSeen { get; set; }
         /// <summary>The hasSeen property</summary>
@@ -215,6 +223,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupAssignedTo.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
+                { "derivedData", n => { DerivedData = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupDerivedData>(global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupDerivedData.CreateFromDiscriminatorValue); } },
                 { "firstSeen", n => { FirstSeen = n.GetDateTimeOffsetValue(); } },
                 { "hasSeen", n => { HasSeen = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -259,6 +268,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupAssignedTo>("assignedTo", AssignedTo);
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("culprit", Culprit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupDerivedData>("derivedData", DerivedData);
             writer.WriteDateTimeOffsetValue("firstSeen", FirstSeen);
             writer.WriteBoolValue("hasSeen", HasSeen);
             writer.WriteStringValue("id", Id);

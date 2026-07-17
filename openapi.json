@@ -13621,6 +13621,43 @@
                         "format": "date-time",
                         "nullable": true
                       },
+                      "derivedData": {
+                        "type": "object",
+                        "properties": {
+                          "progress": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "type": "string"
+                          },
+                          "viewCount": {
+                            "type": "integer"
+                          },
+                          "hasOpenFixPr": {
+                            "type": "boolean"
+                          },
+                          "isAssigned": {
+                            "type": "boolean"
+                          },
+                          "hasRootCause": {
+                            "type": "boolean"
+                          },
+                          "lastProgressedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "hasOpenFixPr",
+                          "hasRootCause",
+                          "isAssigned",
+                          "lastProgressedAt",
+                          "progress",
+                          "status",
+                          "viewCount"
+                        ]
+                      },
                       "stats": {
                         "type": "object",
                         "additionalProperties": {}
@@ -13766,6 +13803,7 @@
                       "assignedTo",
                       "count",
                       "culprit",
+                      "derivedData",
                       "filtered",
                       "firstSeen",
                       "hasSeen",
@@ -13984,7 +14022,16 @@
                         "sessionCount": 0,
                         "latestEventHasAttachments": false,
                         "matchingEventId": null,
-                        "matchingEventEnvironment": null
+                        "matchingEventEnvironment": null,
+                        "derivedData": {
+                          "progress": "fix_applied",
+                          "status": "open",
+                          "viewCount": 42,
+                          "hasOpenFixPr": false,
+                          "isAssigned": true,
+                          "hasRootCause": true,
+                          "lastProgressedAt": "2018-12-06T21:19:55Z"
+                        }
                       }
                     ],
                     "summary": "Return a list of issues for an organization"
@@ -14886,7 +14933,8 @@
                           "lastLogin",
                           "name",
                           "username"
-                        ]
+                        ],
+                        "nullable": true
                       },
                       "orgRole": {
                         "type": "string"
@@ -14950,7 +14998,8 @@
                       "inviterName",
                       "name",
                       "orgRole",
-                      "pending"
+                      "pending",
+                      "user"
                     ]
                   }
                 },
@@ -15010,6 +15059,7 @@
                         "id": "57377908165",
                         "email": "rockhopper@antarcticarocks.com",
                         "name": "Rockhopper",
+                        "user": null,
                         "orgRole": "member",
                         "pending": true,
                         "expired": false,
@@ -15355,7 +15405,8 @@
                         "lastLogin",
                         "name",
                         "username"
-                      ]
+                      ],
+                      "nullable": true
                     },
                     "orgRole": {
                       "type": "string"
@@ -15419,7 +15470,8 @@
                     "inviterName",
                     "name",
                     "orgRole",
-                    "pending"
+                    "pending",
+                    "user"
                   ]
                 },
                 "examples": {
@@ -15767,7 +15819,8 @@
                         "lastLogin",
                         "name",
                         "username"
-                      ]
+                      ],
+                      "nullable": true
                     },
                     "orgRole": {
                       "type": "string"
@@ -15976,7 +16029,8 @@
                     "pending",
                     "teamRoleList",
                     "teamRoles",
-                    "teams"
+                    "teams",
+                    "user"
                   ]
                 },
                 "examples": {
@@ -16557,7 +16611,8 @@
                         "lastLogin",
                         "name",
                         "username"
-                      ]
+                      ],
+                      "nullable": true
                     },
                     "orgRole": {
                       "type": "string"
@@ -16766,7 +16821,8 @@
                     "pending",
                     "teamRoleList",
                     "teamRoles",
-                    "teams"
+                    "teams",
+                    "user"
                   ]
                 },
                 "examples": {
@@ -29983,6 +30039,23 @@
                             "type": "string",
                             "format": "date-time"
                           },
+                          "mergedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true
+                          },
+                          "status": {
+                            "enum": [
+                              "merged",
+                              "open",
+                              "closed",
+                              "draft",
+                              "unknown",
+                              null
+                            ],
+                            "type": "string",
+                            "nullable": true
+                          },
                           "repository": {
                             "type": "object",
                             "properties": {
@@ -30259,8 +30332,10 @@
                           "dateCreated",
                           "externalUrl",
                           "id",
+                          "mergedAt",
                           "message",
                           "repository",
+                          "status",
                           "title"
                         ],
                         "nullable": true
@@ -33238,6 +33313,23 @@
                             "type": "string",
                             "format": "date-time"
                           },
+                          "mergedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true
+                          },
+                          "status": {
+                            "enum": [
+                              "merged",
+                              "open",
+                              "closed",
+                              "draft",
+                              "unknown",
+                              null
+                            ],
+                            "type": "string",
+                            "nullable": true
+                          },
                           "repository": {
                             "type": "object",
                             "properties": {
@@ -33514,8 +33606,10 @@
                           "dateCreated",
                           "externalUrl",
                           "id",
+                          "mergedAt",
                           "message",
                           "repository",
+                          "status",
                           "title"
                         ],
                         "nullable": true
@@ -35834,6 +35928,43 @@
                           "type": "string",
                           "format": "date-time",
                           "nullable": true
+                        },
+                        "derivedData": {
+                          "type": "object",
+                          "properties": {
+                            "progress": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "string"
+                            },
+                            "viewCount": {
+                              "type": "integer"
+                            },
+                            "hasOpenFixPr": {
+                              "type": "boolean"
+                            },
+                            "isAssigned": {
+                              "type": "boolean"
+                            },
+                            "hasRootCause": {
+                              "type": "boolean"
+                            },
+                            "lastProgressedAt": {
+                              "type": "string",
+                              "format": "date-time",
+                              "nullable": true
+                            }
+                          },
+                          "required": [
+                            "hasOpenFixPr",
+                            "hasRootCause",
+                            "isAssigned",
+                            "lastProgressedAt",
+                            "progress",
+                            "status",
+                            "viewCount"
+                          ]
                         },
                         "id": {
                           "type": "string"
@@ -49916,7 +50047,8 @@
                           "lastLogin",
                           "name",
                           "username"
-                        ]
+                        ],
+                        "nullable": true
                       },
                       "orgRole": {
                         "type": "string"
@@ -49980,7 +50112,8 @@
                       "inviterName",
                       "name",
                       "orgRole",
-                      "pending"
+                      "pending",
+                      "user"
                     ]
                   }
                 },
@@ -50040,6 +50173,7 @@
                         "id": "57377908165",
                         "email": "rockhopper@antarcticarocks.com",
                         "name": "Rockhopper",
+                        "user": null,
                         "orgRole": "member",
                         "pending": true,
                         "expired": false,
@@ -54485,6 +54619,23 @@
                             "type": "string",
                             "format": "date-time"
                           },
+                          "mergedAt": {
+                            "type": "string",
+                            "format": "date-time",
+                            "nullable": true
+                          },
+                          "status": {
+                            "enum": [
+                              "merged",
+                              "open",
+                              "closed",
+                              "draft",
+                              "unknown",
+                              null
+                            ],
+                            "type": "string",
+                            "nullable": true
+                          },
                           "repository": {
                             "type": "object",
                             "properties": {
@@ -54761,8 +54912,10 @@
                           "dateCreated",
                           "externalUrl",
                           "id",
+                          "mergedAt",
                           "message",
                           "repository",
+                          "status",
                           "title"
                         ],
                         "nullable": true
@@ -65978,6 +66131,43 @@
                       "format": "date-time",
                       "nullable": true
                     },
+                    "derivedData": {
+                      "type": "object",
+                      "properties": {
+                        "progress": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "viewCount": {
+                          "type": "integer"
+                        },
+                        "hasOpenFixPr": {
+                          "type": "boolean"
+                        },
+                        "isAssigned": {
+                          "type": "boolean"
+                        },
+                        "hasRootCause": {
+                          "type": "boolean"
+                        },
+                        "lastProgressedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true
+                        }
+                      },
+                      "required": [
+                        "hasOpenFixPr",
+                        "hasRootCause",
+                        "isAssigned",
+                        "lastProgressedAt",
+                        "progress",
+                        "status",
+                        "viewCount"
+                      ]
+                    },
                     "id": {
                       "type": "string"
                     },
@@ -66991,6 +67181,43 @@
                       "type": "string",
                       "format": "date-time",
                       "nullable": true
+                    },
+                    "derivedData": {
+                      "type": "object",
+                      "properties": {
+                        "progress": {
+                          "type": "string"
+                        },
+                        "status": {
+                          "type": "string"
+                        },
+                        "viewCount": {
+                          "type": "integer"
+                        },
+                        "hasOpenFixPr": {
+                          "type": "boolean"
+                        },
+                        "isAssigned": {
+                          "type": "boolean"
+                        },
+                        "hasRootCause": {
+                          "type": "boolean"
+                        },
+                        "lastProgressedAt": {
+                          "type": "string",
+                          "format": "date-time",
+                          "nullable": true
+                        }
+                      },
+                      "required": [
+                        "hasOpenFixPr",
+                        "hasRootCause",
+                        "isAssigned",
+                        "lastProgressedAt",
+                        "progress",
+                        "status",
+                        "viewCount"
+                      ]
                     },
                     "id": {
                       "type": "string"
@@ -71752,6 +71979,23 @@
                   "type": "string",
                   "format": "date-time"
                 },
+                "mergedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "status": {
+                  "enum": [
+                    "merged",
+                    "open",
+                    "closed",
+                    "draft",
+                    "unknown",
+                    null
+                  ],
+                  "type": "string",
+                  "nullable": true
+                },
                 "repository": {
                   "type": "object",
                   "properties": {
@@ -72028,8 +72272,10 @@
                 "dateCreated",
                 "externalUrl",
                 "id",
+                "mergedAt",
                 "message",
                 "repository",
+                "status",
                 "title"
               ],
               "nullable": true
@@ -78204,6 +78450,43 @@
             "format": "date-time",
             "nullable": true
           },
+          "derivedData": {
+            "type": "object",
+            "properties": {
+              "progress": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "viewCount": {
+                "type": "integer"
+              },
+              "hasOpenFixPr": {
+                "type": "boolean"
+              },
+              "isAssigned": {
+                "type": "boolean"
+              },
+              "hasRootCause": {
+                "type": "boolean"
+              },
+              "lastProgressedAt": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              }
+            },
+            "required": [
+              "hasOpenFixPr",
+              "hasRootCause",
+              "isAssigned",
+              "lastProgressedAt",
+              "progress",
+              "status",
+              "viewCount"
+            ]
+          },
           "id": {
             "type": "string"
           },
@@ -79605,6 +79888,43 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "derivedData": {
+            "type": "object",
+            "properties": {
+              "progress": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string"
+              },
+              "viewCount": {
+                "type": "integer"
+              },
+              "hasOpenFixPr": {
+                "type": "boolean"
+              },
+              "isAssigned": {
+                "type": "boolean"
+              },
+              "hasRootCause": {
+                "type": "boolean"
+              },
+              "lastProgressedAt": {
+                "type": "string",
+                "format": "date-time",
+                "nullable": true
+              }
+            },
+            "required": [
+              "hasOpenFixPr",
+              "hasRootCause",
+              "isAssigned",
+              "lastProgressedAt",
+              "progress",
+              "status",
+              "viewCount"
+            ]
           },
           "id": {
             "type": "string"
@@ -82693,7 +83013,8 @@
                 "lastLogin",
                 "name",
                 "username"
-              ]
+              ],
+              "nullable": true
             },
             "orgRole": {
               "type": "string"
@@ -82757,7 +83078,8 @@
             "inviterName",
             "name",
             "orgRole",
-            "pending"
+            "pending",
+            "user"
           ]
         }
       },
@@ -83686,7 +84008,8 @@
                 "lastLogin",
                 "name",
                 "username"
-              ]
+              ],
+              "nullable": true
             },
             "orgRole": {
               "type": "string"
@@ -83750,7 +84073,8 @@
             "inviterName",
             "name",
             "orgRole",
-            "pending"
+            "pending",
+            "user"
           ]
         }
       },
@@ -83787,6 +84111,23 @@
                 "dateCreated": {
                   "type": "string",
                   "format": "date-time"
+                },
+                "mergedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "status": {
+                  "enum": [
+                    "merged",
+                    "open",
+                    "closed",
+                    "draft",
+                    "unknown",
+                    null
+                  ],
+                  "type": "string",
+                  "nullable": true
                 },
                 "repository": {
                   "type": "object",
@@ -84064,8 +84405,10 @@
                 "dateCreated",
                 "externalUrl",
                 "id",
+                "mergedAt",
                 "message",
                 "repository",
+                "status",
                 "title"
               ],
               "nullable": true
@@ -85305,6 +85648,23 @@
                   "type": "string",
                   "format": "date-time"
                 },
+                "mergedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                },
+                "status": {
+                  "enum": [
+                    "merged",
+                    "open",
+                    "closed",
+                    "draft",
+                    "unknown",
+                    null
+                  ],
+                  "type": "string",
+                  "nullable": true
+                },
                 "repository": {
                   "type": "object",
                   "properties": {
@@ -85581,8 +85941,10 @@
                 "dateCreated",
                 "externalUrl",
                 "id",
+                "mergedAt",
                 "message",
                 "repository",
+                "status",
                 "title"
               ],
               "nullable": true
@@ -90542,6 +90904,43 @@
               "format": "date-time",
               "nullable": true
             },
+            "derivedData": {
+              "type": "object",
+              "properties": {
+                "progress": {
+                  "type": "string"
+                },
+                "status": {
+                  "type": "string"
+                },
+                "viewCount": {
+                  "type": "integer"
+                },
+                "hasOpenFixPr": {
+                  "type": "boolean"
+                },
+                "isAssigned": {
+                  "type": "boolean"
+                },
+                "hasRootCause": {
+                  "type": "boolean"
+                },
+                "lastProgressedAt": {
+                  "type": "string",
+                  "format": "date-time",
+                  "nullable": true
+                }
+              },
+              "required": [
+                "hasOpenFixPr",
+                "hasRootCause",
+                "isAssigned",
+                "lastProgressedAt",
+                "progress",
+                "status",
+                "viewCount"
+              ]
+            },
             "stats": {
               "type": "object",
               "additionalProperties": {}
@@ -90687,6 +91086,7 @@
             "assignedTo",
             "count",
             "culprit",
+            "derivedData",
             "filtered",
             "firstSeen",
             "hasSeen",
@@ -91161,7 +91561,8 @@
               "lastLogin",
               "name",
               "username"
-            ]
+            ],
+            "nullable": true
           },
           "orgRole": {
             "type": "string"
@@ -91225,7 +91626,8 @@
           "inviterName",
           "name",
           "orgRole",
-          "pending"
+          "pending",
+          "user"
         ]
       },
       "OrganizationMemberRequest": {
@@ -91621,7 +92023,8 @@
               "lastLogin",
               "name",
               "username"
-            ]
+            ],
+            "nullable": true
           },
           "orgRole": {
             "type": "string"
@@ -91830,7 +92233,8 @@
           "pending",
           "teamRoleList",
           "teamRoles",
-          "teams"
+          "teams",
+          "user"
         ]
       },
       "OrganizationProfilingChunksResponse": {
@@ -97569,6 +97973,43 @@
                 "type": "string",
                 "format": "date-time",
                 "nullable": true
+              },
+              "derivedData": {
+                "type": "object",
+                "properties": {
+                  "progress": {
+                    "type": "string"
+                  },
+                  "status": {
+                    "type": "string"
+                  },
+                  "viewCount": {
+                    "type": "integer"
+                  },
+                  "hasOpenFixPr": {
+                    "type": "boolean"
+                  },
+                  "isAssigned": {
+                    "type": "boolean"
+                  },
+                  "hasRootCause": {
+                    "type": "boolean"
+                  },
+                  "lastProgressedAt": {
+                    "type": "string",
+                    "format": "date-time",
+                    "nullable": true
+                  }
+                },
+                "required": [
+                  "hasOpenFixPr",
+                  "hasRootCause",
+                  "isAssigned",
+                  "lastProgressedAt",
+                  "progress",
+                  "status",
+                  "viewCount"
+                ]
               },
               "id": {
                 "type": "string"

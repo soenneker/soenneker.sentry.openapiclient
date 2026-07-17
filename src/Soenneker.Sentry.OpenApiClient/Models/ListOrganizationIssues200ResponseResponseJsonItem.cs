@@ -46,6 +46,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Culprit { get; set; }
 #endif
+        /// <summary>The derivedData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemDerivedData? DerivedData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemDerivedData DerivedData { get; set; }
+#endif
         /// <summary>The filtered property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -291,6 +299,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemAssignedTo.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
+                { "derivedData", n => { DerivedData = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemDerivedData>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemDerivedData.CreateFromDiscriminatorValue); } },
                 { "filtered", n => { Filtered = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFiltered>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFiltered.CreateFromDiscriminatorValue); } },
                 { "firstSeen", n => { FirstSeen = n.GetDateTimeOffsetValue(); } },
                 { "hasSeen", n => { HasSeen = n.GetBoolValue(); } },
@@ -346,6 +355,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemAssignedTo>("assignedTo", AssignedTo);
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("culprit", Culprit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemDerivedData>("derivedData", DerivedData);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFiltered>("filtered", Filtered);
             writer.WriteDateTimeOffsetValue("firstSeen", FirstSeen);
             writer.WriteBoolValue("hasSeen", HasSeen);
