@@ -104,6 +104,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem> DynamicSamplingBiases { get; set; }
 #endif
+        /// <summary>The enableAutoReleaseCreation property</summary>
+        public bool? EnableAutoReleaseCreation { get; set; }
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -468,6 +470,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "digestsMaxDelay", n => { DigestsMaxDelay = n.GetIntValue(); } },
                 { "digestsMinDelay", n => { DigestsMinDelay = n.GetIntValue(); } },
                 { "dynamicSamplingBiases", n => { DynamicSamplingBiases = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "enableAutoReleaseCreation", n => { EnableAutoReleaseCreation = n.GetBoolValue(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fingerprintingRules", n => { FingerprintingRules = n.GetStringValue(); } },
                 { "firstEvent", n => { FirstEvent = n.GetDateTimeOffsetValue(); } },
@@ -561,6 +564,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("digestsMaxDelay", DigestsMaxDelay);
             writer.WriteIntValue("digestsMinDelay", DigestsMinDelay);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem>("dynamicSamplingBiases", DynamicSamplingBiases);
+            writer.WriteBoolValue("enableAutoReleaseCreation", EnableAutoReleaseCreation);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
             writer.WriteStringValue("fingerprintingRules", FingerprintingRules);
             writer.WriteDateTimeOffsetValue("firstEvent", FirstEvent);

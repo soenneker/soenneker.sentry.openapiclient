@@ -14,6 +14,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI).</summary>
+        public bool? EnableAutoReleaseCreation { get; set; }
         /// <summary>&quot;A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -101,6 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enableAutoReleaseCreation", n => { EnableAutoReleaseCreation = n.GetBoolValue(); } },
                 { "highlightContext", n => { HighlightContext = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext.CreateFromDiscriminatorValue); } },
                 { "highlightTags", n => { HighlightTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
@@ -120,6 +123,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enableAutoReleaseCreation", EnableAutoReleaseCreation);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext>("highlightContext", HighlightContext);
             writer.WriteCollectionOfPrimitiveValues<string>("highlightTags", HighlightTags);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
