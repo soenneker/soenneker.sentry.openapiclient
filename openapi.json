@@ -13624,6 +13624,9 @@
                       "derivedData": {
                         "type": "object",
                         "properties": {
+                          "blocker": {
+                            "type": "string"
+                          },
                           "progress": {
                             "type": "string"
                           },
@@ -13642,6 +13645,9 @@
                           "hasRootCause": {
                             "type": "boolean"
                           },
+                          "lastCompletedAutofixStep": {
+                            "type": "string"
+                          },
                           "lastProgressedAt": {
                             "type": "string",
                             "format": "date-time",
@@ -13649,9 +13655,11 @@
                           }
                         },
                         "required": [
+                          "blocker",
                           "hasOpenFixPr",
                           "hasRootCause",
                           "isAssigned",
+                          "lastCompletedAutofixStep",
                           "lastProgressedAt",
                           "progress",
                           "status",
@@ -14024,12 +14032,14 @@
                         "matchingEventId": null,
                         "matchingEventEnvironment": null,
                         "derivedData": {
+                          "blocker": "none",
                           "progress": "fix_applied",
                           "status": "open",
                           "viewCount": 42,
                           "hasOpenFixPr": false,
                           "isAssigned": true,
                           "hasRootCause": true,
+                          "lastCompletedAutofixStep": "pr_created",
                           "lastProgressedAt": "2018-12-06T21:19:55Z"
                         }
                       }
@@ -26334,7 +26344,7 @@
                         "id": {
                           "type": "string"
                         },
-                        "date": {
+                        "date_added": {
                           "type": "string",
                           "format": "date-time"
                         },
@@ -26351,9 +26361,22 @@
                           "type": "string"
                         },
                         "threshold_type": {
-                          "type": "integer"
+                          "enum": [
+                            "total_error_count",
+                            "new_issue_count",
+                            "unhandled_issue_count",
+                            "regressed_issue_count",
+                            "failure_rate",
+                            "crash_free_session_rate",
+                            "crash_free_user_rate"
+                          ],
+                          "type": "string"
                         },
                         "trigger_type": {
+                          "enum": [
+                            "over",
+                            "under"
+                          ],
                           "type": "string"
                         },
                         "value": {
@@ -26489,7 +26512,7 @@
                             "color": "#3f70bf",
                             "status": "active"
                           },
-                          "threshold_type": 0,
+                          "threshold_type": "total_error_count",
                           "trigger_type": "over",
                           "value": 100,
                           "window_in_seconds": 600,
@@ -35932,6 +35955,9 @@
                         "derivedData": {
                           "type": "object",
                           "properties": {
+                            "blocker": {
+                              "type": "string"
+                            },
                             "progress": {
                               "type": "string"
                             },
@@ -35950,6 +35976,9 @@
                             "hasRootCause": {
                               "type": "boolean"
                             },
+                            "lastCompletedAutofixStep": {
+                              "type": "string"
+                            },
                             "lastProgressedAt": {
                               "type": "string",
                               "format": "date-time",
@@ -35957,9 +35986,11 @@
                             }
                           },
                           "required": [
+                            "blocker",
                             "hasOpenFixPr",
                             "hasRootCause",
                             "isAssigned",
+                            "lastCompletedAutofixStep",
                             "lastProgressedAt",
                             "progress",
                             "status",
@@ -44213,7 +44244,7 @@
       },
       "put": {
         "operationId": "updateProject",
-        "description": "Update various attributes and configurable settings for the given project.\n\nNote that solely having the **`project:read`** scope restricts updatable settings to\n`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,\n`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,\n`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,\n`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,\nand `preprodDistributionPrCommentsEnabledByCustomer`.",
+        "description": "Update various attributes and configurable settings for the given project.\n\nNote that solely having the **`project:read`** scope restricts updatable settings to\n`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,\n`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,\n`preprodSizePrCommentsEnabled`, `preprodSizePrCommentsRules`,\n`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,\n`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,\nand `preprodDistributionPrCommentsEnabledByCustomer`.",
         "summary": "Update a Project",
         "parameters": [
           {
@@ -66148,6 +66179,9 @@
                     "derivedData": {
                       "type": "object",
                       "properties": {
+                        "blocker": {
+                          "type": "string"
+                        },
                         "progress": {
                           "type": "string"
                         },
@@ -66166,6 +66200,9 @@
                         "hasRootCause": {
                           "type": "boolean"
                         },
+                        "lastCompletedAutofixStep": {
+                          "type": "string"
+                        },
                         "lastProgressedAt": {
                           "type": "string",
                           "format": "date-time",
@@ -66173,9 +66210,11 @@
                         }
                       },
                       "required": [
+                        "blocker",
                         "hasOpenFixPr",
                         "hasRootCause",
                         "isAssigned",
+                        "lastCompletedAutofixStep",
                         "lastProgressedAt",
                         "progress",
                         "status",
@@ -67199,6 +67238,9 @@
                     "derivedData": {
                       "type": "object",
                       "properties": {
+                        "blocker": {
+                          "type": "string"
+                        },
                         "progress": {
                           "type": "string"
                         },
@@ -67217,6 +67259,9 @@
                         "hasRootCause": {
                           "type": "boolean"
                         },
+                        "lastCompletedAutofixStep": {
+                          "type": "string"
+                        },
                         "lastProgressedAt": {
                           "type": "string",
                           "format": "date-time",
@@ -67224,9 +67269,11 @@
                         }
                       },
                       "required": [
+                        "blocker",
                         "hasOpenFixPr",
                         "hasRootCause",
                         "isAssigned",
+                        "lastCompletedAutofixStep",
                         "lastProgressedAt",
                         "progress",
                         "status",
@@ -78471,6 +78518,9 @@
           "derivedData": {
             "type": "object",
             "properties": {
+              "blocker": {
+                "type": "string"
+              },
               "progress": {
                 "type": "string"
               },
@@ -78489,6 +78539,9 @@
               "hasRootCause": {
                 "type": "boolean"
               },
+              "lastCompletedAutofixStep": {
+                "type": "string"
+              },
               "lastProgressedAt": {
                 "type": "string",
                 "format": "date-time",
@@ -78496,9 +78549,11 @@
               }
             },
             "required": [
+              "blocker",
               "hasOpenFixPr",
               "hasRootCause",
               "isAssigned",
+              "lastCompletedAutofixStep",
               "lastProgressedAt",
               "progress",
               "status",
@@ -79910,6 +79965,9 @@
           "derivedData": {
             "type": "object",
             "properties": {
+              "blocker": {
+                "type": "string"
+              },
               "progress": {
                 "type": "string"
               },
@@ -79928,6 +79986,9 @@
               "hasRootCause": {
                 "type": "boolean"
               },
+              "lastCompletedAutofixStep": {
+                "type": "string"
+              },
               "lastProgressedAt": {
                 "type": "string",
                 "format": "date-time",
@@ -79935,9 +79996,11 @@
               }
             },
             "required": [
+              "blocker",
               "hasOpenFixPr",
               "hasRootCause",
               "isAssigned",
+              "lastCompletedAutofixStep",
               "lastProgressedAt",
               "progress",
               "status",
@@ -90925,6 +90988,9 @@
             "derivedData": {
               "type": "object",
               "properties": {
+                "blocker": {
+                  "type": "string"
+                },
                 "progress": {
                   "type": "string"
                 },
@@ -90943,6 +91009,9 @@
                 "hasRootCause": {
                   "type": "boolean"
                 },
+                "lastCompletedAutofixStep": {
+                  "type": "string"
+                },
                 "lastProgressedAt": {
                   "type": "string",
                   "format": "date-time",
@@ -90950,9 +91019,11 @@
                 }
               },
               "required": [
+                "blocker",
                 "hasOpenFixPr",
                 "hasRootCause",
                 "isAssigned",
+                "lastCompletedAutofixStep",
                 "lastProgressedAt",
                 "progress",
                 "status",
@@ -97151,7 +97222,7 @@
               "id": {
                 "type": "string"
               },
-              "date": {
+              "date_added": {
                 "type": "string",
                 "format": "date-time"
               },
@@ -97168,9 +97239,22 @@
                 "type": "string"
               },
               "threshold_type": {
-                "type": "integer"
+                "enum": [
+                  "total_error_count",
+                  "new_issue_count",
+                  "unhandled_issue_count",
+                  "regressed_issue_count",
+                  "failure_rate",
+                  "crash_free_session_rate",
+                  "crash_free_user_rate"
+                ],
+                "type": "string"
               },
               "trigger_type": {
+                "enum": [
+                  "over",
+                  "under"
+                ],
                 "type": "string"
               },
               "value": {
@@ -97999,6 +98083,9 @@
               "derivedData": {
                 "type": "object",
                 "properties": {
+                  "blocker": {
+                    "type": "string"
+                  },
                   "progress": {
                     "type": "string"
                   },
@@ -98017,6 +98104,9 @@
                   "hasRootCause": {
                     "type": "boolean"
                   },
+                  "lastCompletedAutofixStep": {
+                    "type": "string"
+                  },
                   "lastProgressedAt": {
                     "type": "string",
                     "format": "date-time",
@@ -98024,9 +98114,11 @@
                   }
                 },
                 "required": [
+                  "blocker",
                   "hasOpenFixPr",
                   "hasRootCause",
                   "isAssigned",
+                  "lastCompletedAutofixStep",
                   "lastProgressedAt",
                   "progress",
                   "status",

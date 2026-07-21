@@ -201,7 +201,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProject200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProject200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update various attributes and configurable settings for the given project.Note that solely having the **`project:read`** scope restricts updatable settings to`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,and `preprodDistributionPrCommentsEnabledByCustomer`.
+        /// Update various attributes and configurable settings for the given project.Note that solely having the **`project:read`** scope restricts updatable settings to`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,`preprodSizePrCommentsEnabled`, `preprodSizePrCommentsRules`,`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,and `preprodDistributionPrCommentsEnabledByCustomer`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -259,7 +259,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update various attributes and configurable settings for the given project.Note that solely having the **`project:read`** scope restricts updatable settings to`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,and `preprodDistributionPrCommentsEnabledByCustomer`.
+        /// Update various attributes and configurable settings for the given project.Note that solely having the **`project:read`** scope restricts updatable settings to`isBookmarked`, `autofixAutomationTuning`, `seerScannerAutomation`,`preprodSizeStatusChecksEnabled`, `preprodSizeStatusChecksRules`,`preprodSizePrCommentsEnabled`, `preprodSizePrCommentsRules`,`preprodSizeEnabledQuery`, `preprodDistributionEnabledQuery`,`preprodSizeEnabledByCustomer`, `preprodDistributionEnabledByCustomer`,and `preprodDistributionPrCommentsEnabledByCustomer`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

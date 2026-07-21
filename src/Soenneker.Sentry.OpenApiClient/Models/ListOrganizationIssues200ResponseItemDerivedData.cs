@@ -14,12 +14,28 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The blocker property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Blocker { get; set; }
+#nullable restore
+#else
+        public string Blocker { get; set; }
+#endif
         /// <summary>The hasOpenFixPr property</summary>
         public bool? HasOpenFixPr { get; set; }
         /// <summary>The hasRootCause property</summary>
         public bool? HasRootCause { get; set; }
         /// <summary>The isAssigned property</summary>
         public bool? IsAssigned { get; set; }
+        /// <summary>The lastCompletedAutofixStep property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastCompletedAutofixStep { get; set; }
+#nullable restore
+#else
+        public string LastCompletedAutofixStep { get; set; }
+#endif
         /// <summary>The lastProgressedAt property</summary>
         public DateTimeOffset? LastProgressedAt { get; set; }
         /// <summary>The progress property</summary>
@@ -65,9 +81,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "blocker", n => { Blocker = n.GetStringValue(); } },
                 { "hasOpenFixPr", n => { HasOpenFixPr = n.GetBoolValue(); } },
                 { "hasRootCause", n => { HasRootCause = n.GetBoolValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                { "lastCompletedAutofixStep", n => { LastCompletedAutofixStep = n.GetStringValue(); } },
                 { "lastProgressedAt", n => { LastProgressedAt = n.GetDateTimeOffsetValue(); } },
                 { "progress", n => { Progress = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -81,9 +99,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("blocker", Blocker);
             writer.WriteBoolValue("hasOpenFixPr", HasOpenFixPr);
             writer.WriteBoolValue("hasRootCause", HasRootCause);
             writer.WriteBoolValue("isAssigned", IsAssigned);
+            writer.WriteStringValue("lastCompletedAutofixStep", LastCompletedAutofixStep);
             writer.WriteDateTimeOffsetValue("lastProgressedAt", LastProgressedAt);
             writer.WriteStringValue("progress", Progress);
             writer.WriteStringValue("status", Status);
