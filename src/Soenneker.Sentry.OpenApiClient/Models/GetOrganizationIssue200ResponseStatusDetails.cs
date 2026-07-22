@@ -22,8 +22,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autoResolved property</summary>
-        public bool? AutoResolved { get; set; }
         /// <summary>The ignoreCount property</summary>
         public int? IgnoreCount { get; set; }
         /// <summary>The ignoreUntil property</summary>
@@ -88,7 +86,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor.CreateFromDiscriminatorValue); } },
-                { "autoResolved", n => { AutoResolved = n.GetBoolValue(); } },
                 { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
                 { "ignoreUntil", n => { IgnoreUntil = n.GetDateTimeOffsetValue(); } },
                 { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
@@ -109,7 +106,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor>("actor", Actor);
-            writer.WriteBoolValue("autoResolved", AutoResolved);
             writer.WriteIntValue("ignoreCount", IgnoreCount);
             writer.WriteDateTimeOffsetValue("ignoreUntil", IgnoreUntil);
             writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);

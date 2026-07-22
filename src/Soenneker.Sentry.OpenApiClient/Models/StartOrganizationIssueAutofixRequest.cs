@@ -15,6 +15,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Override bash mode tools.</summary>
+        public bool? EnableBashTools { get; set; }
         /// <summary>Block index to insert at. When provided, truncates blocks after this point for retry-from-step.</summary>
         public int? InsertIndex { get; set; }
         /// <summary>Coding agent integration ID. Required for coding_agent_handoff step (unless provider is specified).</summary>
@@ -65,6 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public StartOrganizationIssueAutofixRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableBashTools = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "enable_bash_tools", n => { EnableBashTools = n.GetBoolValue(); } },
                 { "insert_index", n => { InsertIndex = n.GetIntValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
@@ -103,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("enable_bash_tools", EnableBashTools);
             writer.WriteIntValue("insert_index", InsertIndex);
             writer.WriteIntValue("integration_id", IntegrationId);
             writer.WriteStringValue("provider", Provider);

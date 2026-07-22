@@ -13197,9 +13197,6 @@
                       "statusDetails": {
                         "type": "object",
                         "properties": {
-                          "autoResolved": {
-                            "type": "boolean"
-                          },
                           "ignoreCount": {
                             "type": "integer"
                           },
@@ -36047,9 +36044,6 @@
                         "statusDetails": {
                           "type": "object",
                           "properties": {
-                            "autoResolved": {
-                              "type": "boolean"
-                            },
                             "ignoreCount": {
                               "type": "integer"
                             },
@@ -66271,9 +66265,6 @@
                     "statusDetails": {
                       "type": "object",
                       "properties": {
-                        "autoResolved": {
-                          "type": "boolean"
-                        },
                         "ignoreCount": {
                           "type": "integer"
                         },
@@ -67330,9 +67321,6 @@
                     "statusDetails": {
                       "type": "object",
                       "properties": {
-                        "autoResolved": {
-                          "type": "boolean"
-                        },
                         "ignoreCount": {
                           "type": "integer"
                         },
@@ -68169,6 +68157,11 @@
                   "referrer": {
                     "type": "string",
                     "description": "Referrer identifying where the issue fix was triggered from."
+                  },
+                  "enable_bash_tools": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Override bash mode tools."
                   }
                 }
               }
@@ -77926,6 +77919,11 @@
           "referrer": {
             "type": "string",
             "description": "Referrer identifying where the issue fix was triggered from."
+          },
+          "enable_bash_tools": {
+            "type": "boolean",
+            "default": false,
+            "description": "Override bash mode tools."
           }
         }
       },
@@ -78610,9 +78608,6 @@
           "statusDetails": {
             "type": "object",
             "properties": {
-              "autoResolved": {
-                "type": "boolean"
-              },
               "ignoreCount": {
                 "type": "integer"
               },
@@ -80057,9 +80052,6 @@
           "statusDetails": {
             "type": "object",
             "properties": {
-              "autoResolved": {
-                "type": "boolean"
-              },
               "ignoreCount": {
                 "type": "integer"
               },
@@ -90561,9 +90553,6 @@
             "statusDetails": {
               "type": "object",
               "properties": {
-                "autoResolved": {
-                  "type": "boolean"
-                },
                 "ignoreCount": {
                   "type": "integer"
                 },
@@ -98175,9 +98164,6 @@
               "statusDetails": {
                 "type": "object",
                 "properties": {
-                  "autoResolved": {
-                    "type": "boolean"
-                  },
                   "ignoreCount": {
                     "type": "integer"
                   },
