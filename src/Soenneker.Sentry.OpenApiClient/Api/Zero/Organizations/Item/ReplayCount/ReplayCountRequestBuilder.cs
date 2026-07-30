@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count{?data_source*,end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", pathParameters)
+        public ReplayCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count?data_source={data_source}{&end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count{?data_source*,end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", rawUrl)
+        public ReplayCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replay-count?data_source={data_source}{&end*,environment*,project*,project_id_or_slug*,query*,returnIds*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReplayCountRequestBuilderGetQueryParameters 
         {
-            /// <summary>The data source to query replays from. Defaults to &apos;discover&apos;.</summary>
+            /// <summary>The data source to query replays from.</summary>
             [QueryParameter("data_source")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCountDataSourceParameter? DataSource { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>

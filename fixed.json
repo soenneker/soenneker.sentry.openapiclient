@@ -11539,6 +11539,15 @@
             }
           },
           {
+            "name": "data_source",
+            "in": "query",
+            "description": "The data source to query replays from.",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/GetOrganizationReplayCountDataSourceParameter"
+            }
+          },
+          {
             "name": "environment",
             "in": "query",
             "description": "The name of environments to filter by.",
@@ -11611,14 +11620,6 @@
             "description": "\u0022Filters results by using [query syntax](/product/sentry-basics/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\u0022",
             "schema": {
               "type": "string"
-            }
-          },
-          {
-            "name": "data_source",
-            "in": "query",
-            "description": "The data source to query replays from. Defaults to \u0027discover\u0027.",
-            "schema": {
-              "$ref": "#/components/schemas/GetOrganizationReplayCountDataSourceParameter"
             }
           },
           {
@@ -136840,10 +136841,9 @@
       },
       "GetOrganizationReplayCountDataSourceParameter": {
         "enum": [
-          "discover",
           "events",
           "search_issues",
-          "transactions"
+          "spans"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -136851,10 +136851,6 @@
           "name": "GetOrganizationReplayCountDataSourceParameter",
           "modelAsString": false,
           "values": [
-            {
-              "value": "discover",
-              "name": "Discover"
-            },
             {
               "value": "events",
               "name": "Events"
@@ -136864,8 +136860,8 @@
               "name": "SearchIssues"
             },
             {
-              "value": "transactions",
-              "name": "Transactions"
+              "value": "spans",
+              "name": "Spans"
             }
           ]
         }
