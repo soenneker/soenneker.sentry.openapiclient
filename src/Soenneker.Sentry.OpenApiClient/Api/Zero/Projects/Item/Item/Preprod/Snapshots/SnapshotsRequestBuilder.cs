@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusCheckRules;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusChecks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Sna
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusCheckRules.StatusCheckRulesRequestBuilder StatusCheckRules
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusCheckRules.StatusCheckRulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The statusChecks property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusChecks.StatusChecksRequestBuilder StatusChecks
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.StatusChecks.StatusChecksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprod.Snapshots.SnapshotsRequestBuilder"/> and sets the default values.

@@ -20133,6 +20133,67 @@
         ]
       }
     },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-checks/skip": {
+      "post": {
+        "tags": [
+          "Mobile Builds"
+        ],
+        "summary": "Create a skipped Size Analysis status check",
+        "description": "Create a neutral status check for a commit that intentionally skips an artifact upload.\n\nThe repository must be connected to the project\u0027s organization through an active repository\nintegration.\nThe same Sentry auth token configured for build uploads can also be used for this endpoint.",
+        "operationId": "CreateProjectPreprodSizeAnalysisSkippedStatusCheck",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectPreprodSizeAnalysisSkippedStatusCheckRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules": {
       "get": {
         "tags": [
@@ -20192,6 +20253,67 @@
             "auth_token": [
               "project:admin",
               "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-checks/skip": {
+      "post": {
+        "tags": [
+          "Snapshots"
+        ],
+        "summary": "Create a skipped Snapshot status check",
+        "description": "Create a neutral status check for a commit that intentionally skips an artifact upload.\n\nThe repository must be connected to the project\u0027s organization through an active repository\nintegration.\nThe same Sentry auth token configured for build uploads can also be used for this endpoint.",
+        "operationId": "CreateProjectPreprodSnapshotSkippedStatusCheck",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectPreprodSnapshotSkippedStatusCheckRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Default",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:releases",
               "project:write"
             ]
           }
@@ -21368,7 +21490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
                 }
               }
             }
@@ -21428,7 +21550,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
                 }
               }
             }
@@ -22632,7 +22754,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
                 }
               }
             }
@@ -23412,7 +23534,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
                 }
               }
             }
@@ -23679,7 +23801,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
                 }
               }
             }
@@ -23911,7 +24033,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
                 }
               }
             }
@@ -24803,7 +24925,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
                 }
               }
             }
@@ -24939,7 +25061,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
                 }
               }
             }
@@ -25105,7 +25227,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
                 }
               }
             }
@@ -25276,7 +25398,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
                 }
               }
             }
@@ -25324,7 +25446,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
                 }
               }
             }
@@ -25372,7 +25494,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
                 }
               }
             }
@@ -25670,7 +25792,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
                 }
               }
             }
@@ -27508,7 +27630,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
                 }
               }
             }
@@ -34005,6 +34127,30 @@
               "$ref": "#/components/schemas/SizeAnalysisResponseComparisonsItem"
             },
             "nullable": true
+          }
+        }
+      },
+      "SkipStatusCheck": {
+        "required": [
+          "provider",
+          "repository",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "sha": {
+            "maxLength": 40,
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string",
+            "description": "The full 40-character lowercase commit SHA."
+          },
+          "repository": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "The repository name in \u0060owner/name\u0060 format."
+          },
+          "provider": {
+            "$ref": "#/components/schemas/SkipStatusCheckProvider"
           }
         }
       },
@@ -67054,6 +67200,30 @@
           }
         }
       },
+      "CreateProjectPreprodSizeAnalysisSkippedStatusCheckRequest": {
+        "required": [
+          "provider",
+          "repository",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "sha": {
+            "maxLength": 40,
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string",
+            "description": "The full 40-character lowercase commit SHA."
+          },
+          "repository": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "The repository name in \u0060owner/name\u0060 format."
+          },
+          "provider": {
+            "$ref": "#/components/schemas/CreateProjectPreprodSizeAnalysisSkippedStatusCheckRequestProvider"
+          }
+        }
+      },
       "GetProjectPreprodSnapshotStatusCheckRules200Response": {
         "required": [
           "enabled",
@@ -67066,6 +67236,30 @@
           },
           "rules": {
             "$ref": "#/components/schemas/GetProjectPreprodSnapshotStatusCheckRules200ResponseRules"
+          }
+        }
+      },
+      "CreateProjectPreprodSnapshotSkippedStatusCheckRequest": {
+        "required": [
+          "provider",
+          "repository",
+          "sha"
+        ],
+        "type": "object",
+        "properties": {
+          "sha": {
+            "maxLength": 40,
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string",
+            "description": "The full 40-character lowercase commit SHA."
+          },
+          "repository": {
+            "maxLength": 255,
+            "type": "string",
+            "description": "The repository name in \u0060owner/name\u0060 format."
+          },
+          "provider": {
+            "$ref": "#/components/schemas/CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider"
           }
         }
       },
@@ -70732,6 +70926,16 @@
           "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseResponseJsonItem"
         }
       },
+      "DefaultResponseResponseJson24": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson25": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
       "GetProjectProfilingProfile200ResponseResponseJson": {
         "type": "object",
         "additionalProperties": {
@@ -70756,12 +70960,12 @@
           "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson24": {
+      "DefaultResponseResponseJson26": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson25": {
+      "DefaultResponseResponseJson27": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70795,7 +70999,7 @@
           "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson26": {
+      "DefaultResponseResponseJson28": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70812,17 +71016,17 @@
           "$ref": "#/components/schemas/ListProjectUsers200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson27": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "DefaultResponseResponseJson28": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "DefaultResponseResponseJson29": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson30": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson31": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70857,12 +71061,12 @@
           "$ref": "#/components/schemas/ListAProjectSServiceHooks200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson30": {
+      "DefaultResponseResponseJson32": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson31": {
+      "DefaultResponseResponseJson33": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70873,7 +71077,7 @@
           "$ref": "#/components/schemas/ListOrganizationIssueTagValues200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson32": {
+      "DefaultResponseResponseJson34": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70884,22 +71088,22 @@
           "$ref": "#/components/schemas/ListAnOrganizationSIntegrationPlatformInstallations200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson33": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
-      "DefaultResponseResponseJson34": {
-        "title": "DefaultResponse",
-        "type": "object",
-        "description": "Default response schema"
-      },
       "DefaultResponseResponseJson35": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
       "DefaultResponseResponseJson36": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson37": {
+        "title": "DefaultResponse",
+        "type": "object",
+        "description": "Default response schema"
+      },
+      "DefaultResponseResponseJson38": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -70922,7 +71126,7 @@
           "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseResponseJsonItem"
         }
       },
-      "DefaultResponseResponseJson37": {
+      "DefaultResponseResponseJson39": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -114829,6 +115033,29 @@
           ]
         }
       },
+      "SkipStatusCheckProvider": {
+        "enum": [
+          "github",
+          "github_enterprise"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The repository integration provider.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060",
+        "x-ms-enum": {
+          "name": "SkipStatusCheckProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github_enterprise",
+              "name": "GithubEnterprise"
+            }
+          ]
+        }
+      },
       "SourceType": {
         "enum": [
           "http",
@@ -121738,6 +121965,52 @@
             {
               "value": "disabled",
               "name": "Disabled"
+            }
+          ]
+        }
+      },
+      "CreateProjectPreprodSizeAnalysisSkippedStatusCheckRequestProvider": {
+        "enum": [
+          "github",
+          "github_enterprise"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The repository integration provider.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060",
+        "x-ms-enum": {
+          "name": "CreateProjectPreprodSizeAnalysisSkippedStatusCheckRequestProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github_enterprise",
+              "name": "GithubEnterprise"
+            }
+          ]
+        }
+      },
+      "CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider": {
+        "enum": [
+          "github",
+          "github_enterprise"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The repository integration provider.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060",
+        "x-ms-enum": {
+          "name": "CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "github",
+              "name": "Github"
+            },
+            {
+              "value": "github_enterprise",
+              "name": "GithubEnterprise"
             }
           ]
         }
