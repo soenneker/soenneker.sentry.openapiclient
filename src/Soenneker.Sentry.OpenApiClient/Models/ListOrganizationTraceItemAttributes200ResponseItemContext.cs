@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Additional, mostly-static metadata about an attribute.When ``expand=context`` is requested, context is attached to everyattribute. Today the metadata is sourced from the sentry conventions(``sentry_conventions.attributes.ATTRIBUTE_METADATA``), matched by attributename (and type when known) regardless of the attribute&apos;s source, so anyattribute that maps to a known convention carries that metadata (only thefields actually present are included) while the rest get an empty context.Serving context for custom attributes is planned (gated behind the``data-browsing-attribute-context`` feature), at which point the emptycontexts will start to be populated.
+    /// Additional, mostly-static metadata about an attribute.When ``expand=context`` is requested, context is attached to every attribute.Metadata comes from the sentry conventions, Sentry&apos;s own column definitions,or user-authored context (gated behind ``data-browsing-attribute-context``),in that precedence order. Only the fields available are included, so anattribute with no metadata gets an empty context.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationTraceItemAttributes200ResponseItemContext : IAdditionalDataHolder, IParsable
@@ -41,6 +41,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The isConvention property</summary>
         public bool? IsConvention { get; set; }
+        /// <summary>The isCustom property</summary>
+        public bool? IsCustom { get; set; }
         /// <summary>The isDeprecated property</summary>
         public bool? IsDeprecated { get; set; }
         /// <summary>The replacementAttribute property</summary>
@@ -80,6 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "details", n => { Details = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "examples", n => { Examples = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "isConvention", n => { IsConvention = n.GetBoolValue(); } },
+                { "isCustom", n => { IsCustom = n.GetBoolValue(); } },
                 { "isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
                 { "replacementAttribute", n => { ReplacementAttribute = n.GetStringValue(); } },
             };
@@ -95,6 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("details", Details);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem>("examples", Examples);
             writer.WriteBoolValue("isConvention", IsConvention);
+            writer.WriteBoolValue("isCustom", IsCustom);
             writer.WriteBoolValue("isDeprecated", IsDeprecated);
             writer.WriteStringValue("replacementAttribute", ReplacementAttribute);
             writer.WriteAdditionalData(AdditionalData);

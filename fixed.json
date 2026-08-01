@@ -100,7 +100,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizations200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizations200ResponseSchema"
                 },
                 "examples": {
                   "ListYourOrganizations": {
@@ -1343,7 +1343,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseSchema"
                 },
                 "examples": {
                   "QueryDashboards": {
@@ -2003,7 +2003,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponse"
+                  "$ref": "#/components/schemas/DeleteOrganizationDashboard204Response"
                 }
               }
             }
@@ -2091,7 +2091,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseSchema"
                 },
                 "examples": {
                   "ListAllMonitorsInAnOrganization": {
@@ -2376,7 +2376,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseSchema"
                 },
                 "examples": {
                   "ListAllMonitorsInAnOrganization": {
@@ -2660,7 +2660,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson"
+                  "$ref": "#/components/schemas/DeleteOrganizationDetectors204Response"
                 }
               }
             }
@@ -3017,7 +3017,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson2"
+                  "$ref": "#/components/schemas/DeleteOrganizationDetector204Response"
                 }
               }
             }
@@ -3093,7 +3093,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseSchema"
                 },
                 "examples": {
                   "GetDiscoverSavedQueries": {
@@ -3604,7 +3604,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson3"
+                  "$ref": "#/components/schemas/DeleteOrganizationDiscoverSavedQuery204Response"
                 }
               }
             }
@@ -3654,7 +3654,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationEnvironments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationEnvironments200ResponseSchema"
                 },
                 "examples": {
                   "ListAnOrganization\u0027sEnvironments": {
@@ -4535,7 +4535,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson4"
+                  "$ref": "#/components/schemas/DeleteOrganizationExternalUser204Response"
                 }
               }
             }
@@ -4576,7 +4576,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationForwarding200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationForwarding200ResponseSchema"
                 },
                 "examples": {
                   "ListAllDataForwardersForAnOrganization": {
@@ -4881,7 +4881,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson5"
+                  "$ref": "#/components/schemas/DeleteOrganizationForwarding204Response"
                 }
               }
             }
@@ -4957,7 +4957,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseSchema"
                 },
                 "examples": {
                   "ListAllAvailableIntegrationsForAlphabetSoupFactory": {
@@ -5157,7 +5157,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson6"
+                  "$ref": "#/components/schemas/DeleteOrganizationIntegration204Response"
                 }
               }
             }
@@ -5335,7 +5335,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIssues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIssues200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfIssuesForAnOrganization": {
@@ -5811,7 +5811,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson7"
+                  "$ref": "#/components/schemas/DeleteOrganizationIssues204Response"
                 }
               }
             }
@@ -5860,7 +5860,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationMembers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationMembers200ResponseSchema"
                 },
                 "examples": {
                   "ListOrganizationMembers": {
@@ -6713,7 +6713,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson8"
+                  "$ref": "#/components/schemas/DeleteOrganizationMember204Response"
                 }
               }
             }
@@ -7070,7 +7070,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseSchema"
                 }
               }
             }
@@ -7303,7 +7303,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson9"
+                  "$ref": "#/components/schemas/DeleteOrganizationMonitor204Response"
                 }
               }
             }
@@ -7363,7 +7363,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseSchema"
                 }
               }
             }
@@ -7728,7 +7728,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson10"
+                  "$ref": "#/components/schemas/DeleteOrganizationNotificationsAction204Response"
                 }
               }
             }
@@ -8367,7 +8367,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson11"
+                  "$ref": "#/components/schemas/DeleteOrganizationPreprodArtifactSnapshot204Response"
                 }
               }
             }
@@ -8695,7 +8695,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationProfilingChunks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationProfilingChunks200ResponseSchema"
                 },
                 "examples": {
                   "ReturnContinuous-profileChunksForAProfiler": {
@@ -8884,7 +8884,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetOrganizationProfilingFlamegraph200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetOrganizationProfilingFlamegraph200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAFlamegraphForTheOrganization": {
@@ -9088,7 +9088,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationProjectKeys200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationProjectKeys200ResponseSchema"
                 },
                 "examples": {
                   "ListClientKeysForAllProjectsInAnOrganization": {
@@ -9257,7 +9257,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationProjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationProjects200ResponseSchema"
                 },
                 "examples": {
                   "ListAnOrganization\u0027sProjects": {
@@ -9625,7 +9625,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationRelayUsage200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationRelayUsage200ResponseSchema"
                 },
                 "examples": {
                   "ListAnOrganization\u0027sTrustedRelays": {
@@ -9753,7 +9753,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationReleaseThresholdStatuses200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationReleaseThresholdStatuses200ResponseSchema"
                 },
                 "examples": {
                   "ClientKeyWithRateLimiting": {
@@ -9947,7 +9947,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationReleases200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationReleases200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfReleasesForAnOrganization": {
@@ -10959,7 +10959,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson12"
+                  "$ref": "#/components/schemas/DeleteOrganizationRelease204Response"
                 }
               }
             }
@@ -11018,7 +11018,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfCommitsForARelease": {
@@ -11104,7 +11104,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationReleaseDeploys200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationReleaseDeploys200ResponseSchema"
                 }
               }
             }
@@ -11247,7 +11247,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationReleaseFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationReleaseFiles200ResponseSchema"
                 }
               }
             }
@@ -11504,7 +11504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson13"
+                  "$ref": "#/components/schemas/DeleteOrganizationReleaseFile204Response"
                 }
               }
             }
@@ -11637,7 +11637,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetOrganizationReplayCount200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetOrganizationReplayCount200ResponseSchema"
                 },
                 "examples": {
                   "QueryReplayCountByIssueOrTransactionId": {
@@ -12418,7 +12418,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationRepos200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationRepos200ResponseSchema"
                 },
                 "examples": {
                   "OrganizationRepositories": {
@@ -12492,7 +12492,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseSchema"
                 },
                 "examples": {
                   "RepositoryCommits": {
@@ -12803,7 +12803,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson14"
+                  "$ref": "#/components/schemas/UpdateOrganizationScimV2Group200Response"
                 }
               }
             }
@@ -12851,7 +12851,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson15"
+                  "$ref": "#/components/schemas/DeleteOrganizationScimV2Group204Response"
                 }
               }
             }
@@ -13182,7 +13182,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson16"
+                  "$ref": "#/components/schemas/UpdateOrganizationScimV2User200Response"
                 }
               }
             }
@@ -13230,7 +13230,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson17"
+                  "$ref": "#/components/schemas/DeleteOrganizationScimV2User204Response"
                 }
               }
             }
@@ -13270,7 +13270,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationSentryApps200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationSentryApps200ResponseSchema"
                 },
                 "examples": {
                   "RetrieveTheCustomIntegrationsCreatedByTheGivenOrganization": {
@@ -14166,7 +14166,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationTags200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationTags200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfTagKeysForAnOrganization": {
@@ -14278,7 +14278,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationTeams200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationTeams200ResponseSchema"
                 },
                 "examples": {
                   "GetListOfOrganization\u0027sTeams": {
@@ -14683,7 +14683,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfTraceItemAttributeKeys": {
@@ -15115,7 +15115,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetOrganizationTrace200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetOrganizationTrace200ResponseSchema"
                 },
                 "examples": {
                   "ReturnTheSpans,Errors,AndOccurrencesOfATrace": {
@@ -15203,7 +15203,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationUserTeams200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationUserTeams200ResponseSchema"
                 },
                 "examples": {
                   "GetListOfOrganization\u0027sTeams": {
@@ -15485,7 +15485,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseSchema"
                 },
                 "examples": {
                   "ListAllWorkflowsInAnOrganization": {
@@ -15892,7 +15892,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseResponseJson"
+                  "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseSchema"
                 },
                 "examples": {
                   "ListAllWorkflowsInAnOrganization": {
@@ -16154,7 +16154,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson18"
+                  "$ref": "#/components/schemas/DeleteOrganizationWorkflows204Response"
                 }
               }
             }
@@ -16481,7 +16481,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson19"
+                  "$ref": "#/components/schemas/DeleteOrganizationWorkflow204Response"
                 }
               }
             }
@@ -17135,7 +17135,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson20"
+                  "$ref": "#/components/schemas/DeleteProject204Response"
                 }
               }
             }
@@ -17192,7 +17192,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectEnvironments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectEnvironments200ResponseSchema"
                 },
                 "examples": {
                   "ListAProject\u0027sEnvironments": {
@@ -17266,7 +17266,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/BulkUpdateProjectEnvironments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/BulkUpdateProjectEnvironments200ResponseSchema"
                 },
                 "examples": {
                   "ListAProject\u0027sEnvironments": {
@@ -17532,7 +17532,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectEvents200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfErrorEventsBoundToAProject": {
@@ -18289,7 +18289,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectEventAttachments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectEventAttachments200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfAttachmentsForAnEvent": {
@@ -18624,7 +18624,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectDebugFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectDebugFiles200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfDebugInformationFilesForAProject": {
@@ -18725,7 +18725,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectFilters200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectFilters200ResponseSchema"
                 },
                 "examples": {
                   "ListAProject\u0027sFilters": {
@@ -18830,7 +18830,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson21"
+                  "$ref": "#/components/schemas/UpdateProjectFilter200Response"
                 }
               }
             }
@@ -18897,7 +18897,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectKeys200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectKeys200ResponseSchema"
                 },
                 "examples": {
                   "ListClientKeysForAProject": {
@@ -19402,7 +19402,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson22"
+                  "$ref": "#/components/schemas/DeleteProjectKey204Response"
                 }
               }
             }
@@ -19451,7 +19451,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectMembers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectMembers200ResponseSchema"
                 },
                 "examples": {
                   "ListOrganizationMembers": {
@@ -19725,7 +19725,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson23"
+                  "$ref": "#/components/schemas/DeleteProjectMonitor204Response"
                 }
               }
             }
@@ -19785,7 +19785,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseSchema"
                 }
               }
             }
@@ -20176,7 +20176,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson24"
+                  "$ref": "#/components/schemas/CreateProjectPreprodSizeAnalysisSkippedStatusCheck201Response"
                 }
               }
             }
@@ -20302,7 +20302,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson25"
+                  "$ref": "#/components/schemas/CreateProjectPreprodSnapshotSkippedStatusCheck201Response"
                 }
               }
             }
@@ -20763,7 +20763,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/GetProjectProfilingProfile200ResponseResponseJson"
+                  "$ref": "#/components/schemas/GetProjectProfilingProfile200ResponseSchema"
                 },
                 "examples": {
                   "ReturnASingleProfileByID": {
@@ -20953,7 +20953,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectReleases200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectReleases200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfReleasesForAProject": {
@@ -21080,7 +21080,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfCommitsForARelease": {
@@ -21197,7 +21197,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseSchema"
                 }
               }
             }
@@ -21490,7 +21490,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson26"
+                  "$ref": "#/components/schemas/DeleteProjectReleaseFile204Response"
                 }
               }
             }
@@ -21550,7 +21550,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson27"
+                  "$ref": "#/components/schemas/DeleteProjectReplay204Response"
                 }
               }
             }
@@ -21737,7 +21737,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectReplayRecordingSegments200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectReplayRecordingSegments200ResponseSchema"
                 },
                 "examples": {
                   "RetrieveACollectionOfReplaySegments": {
@@ -22342,7 +22342,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectStats200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectStats200ResponseSchema"
                 },
                 "examples": {
                   "ProjectEventCounts": {
@@ -22504,7 +22504,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseSchema"
                 },
                 "examples": {
                   "ListCustomSymbolSourcesConfiguredForAProject.": {
@@ -22754,7 +22754,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson28"
+                  "$ref": "#/components/schemas/DeleteProjectSymbolSource204Response"
                 }
               }
             }
@@ -22812,7 +22812,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectTeams200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectTeams200ResponseSchema"
                 },
                 "examples": {
                   "ListAProject\u0027sTeams": {
@@ -23238,7 +23238,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListProjectUsers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListProjectUsers200ResponseSchema"
                 },
                 "examples": {
                   "ProjectUsers": {
@@ -23534,7 +23534,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson29"
+                  "$ref": "#/components/schemas/DeleteSentryApp204Response"
                 }
               }
             }
@@ -23801,7 +23801,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson30"
+                  "$ref": "#/components/schemas/DeleteTeam204Response"
                 }
               }
             }
@@ -24033,7 +24033,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson31"
+                  "$ref": "#/components/schemas/DeleteTeamExternalTeam204Response"
                 }
               }
             }
@@ -24091,7 +24091,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListTeamMembers200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListTeamMembers200ResponseSchema"
                 },
                 "examples": {
                   "ListTeamMembers": {
@@ -24209,7 +24209,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListTeamProjects200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListTeamProjects200ResponseSchema"
                 },
                 "examples": {
                   "GetListOfTeam\u0027sProjects": {
@@ -24501,7 +24501,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListATagSValues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListATagSValues200ResponseSchema"
                 },
                 "example": [
                   {
@@ -24562,7 +24562,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAProjectSUserFeedback200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAProjectSUserFeedback200ResponseSchema"
                 },
                 "example": [
                   {
@@ -24634,7 +24634,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAProjectSServiceHooks200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAProjectSServiceHooks200ResponseSchema"
                 },
                 "example": [
                   {
@@ -24925,7 +24925,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson32"
+                  "$ref": "#/components/schemas/RemoveAServiceHook204Response"
                 }
               }
             }
@@ -25061,7 +25061,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson33"
+                  "$ref": "#/components/schemas/BulkRemoveAListOfIssues204Response"
                 }
               }
             }
@@ -25138,7 +25138,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIssueTagValues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIssueTagValues200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAllTagValuesForASpecificTag": {
@@ -25227,7 +25227,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson34"
+                  "$ref": "#/components/schemas/RetrieveFilesChangedInAReleaseSCommits200Response"
                 }
               }
             }
@@ -25274,7 +25274,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListAnOrganizationSIntegrationPlatformInstallations200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchema"
                 },
                 "example": [
                   {
@@ -25398,7 +25398,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson35"
+                  "$ref": "#/components/schemas/DeleteAnExternalIssue204Response"
                 }
               }
             }
@@ -25446,7 +25446,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson36"
+                  "$ref": "#/components/schemas/EnableSpikeProtection201Response"
                 }
               }
             }
@@ -25494,7 +25494,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson37"
+                  "$ref": "#/components/schemas/DisableSpikeProtection204Response"
                 }
               }
             }
@@ -25792,7 +25792,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson38"
+                  "$ref": "#/components/schemas/DeleteOrganizationIssue204Response"
                 }
               }
             }
@@ -26210,7 +26210,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIssueEvents200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIssueEvents200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAListOfErrorEventsBoundToAnIssue": {
@@ -26939,7 +26939,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIssueExternalIssues200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIssueExternalIssues200ResponseSchema"
                 },
                 "examples": {
                   "RetrieveTheCustomIntegrationsAssociatedWithAnIssueId": {
@@ -27022,7 +27022,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseResponseJson"
+                  "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseSchema"
                 },
                 "examples": {
                   "ReturnAnIssue\u0027sHashes": {
@@ -27630,7 +27630,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/DefaultResponseResponseJson39"
+                  "$ref": "#/components/schemas/UnlinkAnExternalIssueFromAnIssue204Response"
                 }
               }
             }
@@ -50461,6 +50461,9 @@
           "isConvention": {
             "type": "boolean"
           },
+          "isCustom": {
+            "type": "boolean"
+          },
           "brief": {
             "type": "string"
           },
@@ -50483,7 +50486,7 @@
             "type": "string"
           }
         },
-        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every\nattribute. Today the metadata is sourced from the sentry conventions\n(\u0060\u0060sentry_conventions.attributes.ATTRIBUTE_METADATA\u0060\u0060), matched by attribute\nname (and type when known) regardless of the attribute\u0027s source, so any\nattribute that maps to a known convention carries that metadata (only the\nfields actually present are included) while the rest get an empty context.\nServing context for custom attributes is planned (gated behind the\n\u0060\u0060data-browsing-attribute-context\u0060\u0060 feature), at which point the empty\ncontexts will start to be populated."
+        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
       },
       "ListWorkflowItemTriggers": {
         "type": "object",
@@ -70482,169 +70485,169 @@
           }
         }
       },
-      "ListOrganizations200ResponseResponseJson": {
+      "ListOrganizations200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizations200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizations200ResponseSchemaItem"
         }
       },
-      "ListOrganizationDashboards200ResponseResponseJson": {
+      "ListOrganizationDashboards200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseSchemaItem"
         }
       },
-      "DefaultResponse": {
+      "DeleteOrganizationDashboard204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationDetectors200ResponseResponseJson": {
+      "ListOrganizationDetectors200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseSchemaItem"
         }
       },
-      "UpdateOrganizationDetectors200ResponseResponseJson": {
+      "UpdateOrganizationDetectors200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson": {
+      "DeleteOrganizationDetectors204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson2": {
+      "DeleteOrganizationDetector204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationDiscoverSavedQueries200ResponseResponseJson": {
+      "ListOrganizationDiscoverSavedQueries200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson3": {
+      "DeleteOrganizationDiscoverSavedQuery204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationEnvironments200ResponseResponseJson": {
+      "ListOrganizationEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationEnvironments200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationEnvironments200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson4": {
+      "DeleteOrganizationExternalUser204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationForwarding200ResponseResponseJson": {
+      "ListOrganizationForwarding200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationForwarding200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationForwarding200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson5": {
+      "DeleteOrganizationForwarding204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationIntegrations200ResponseResponseJson": {
+      "ListOrganizationIntegrations200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson6": {
+      "DeleteOrganizationIntegration204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationIssues200ResponseResponseJson": {
+      "ListOrganizationIssues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIssues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIssues200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson7": {
+      "DeleteOrganizationIssues204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationMembers200ResponseResponseJson": {
+      "ListOrganizationMembers200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationMembers200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationMembers200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson8": {
+      "DeleteOrganizationMember204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationMonitors200ResponseResponseJson": {
+      "ListOrganizationMonitors200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson9": {
+      "DeleteOrganizationMonitor204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationMonitorCheckins200ResponseResponseJson": {
+      "ListOrganizationMonitorCheckins200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson10": {
+      "DeleteOrganizationNotificationsAction204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson11": {
+      "DeleteOrganizationPreprodArtifactSnapshot204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationProfilingChunks200ResponseResponseJson": {
+      "ListOrganizationProfilingChunks200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/ListOrganizationProfilingChunks200ResponseResponseJsonAdditionalProperties"
+          "$ref": "#/components/schemas/ListOrganizationProfilingChunks200ResponseSchemaAdditionalProperties"
         }
       },
-      "GetOrganizationProfilingFlamegraph200ResponseResponseJson": {
+      "GetOrganizationProfilingFlamegraph200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/GetOrganizationProfilingFlamegraph200ResponseResponseJsonAdditionalProperties"
+          "$ref": "#/components/schemas/GetOrganizationProfilingFlamegraph200ResponseSchemaAdditionalProperties"
         }
       },
-      "ListOrganizationProjectKeys200ResponseResponseJson": {
+      "ListOrganizationProjectKeys200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationProjectKeys200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationProjectKeys200ResponseSchemaItem"
         }
       },
-      "ListOrganizationProjects200ResponseResponseJson": {
+      "ListOrganizationProjects200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationProjects200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationProjects200ResponseSchemaItem"
         }
       },
-      "ListOrganizationRelayUsage200ResponseResponseJson": {
+      "ListOrganizationRelayUsage200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationRelayUsage200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationRelayUsage200ResponseSchemaItem"
         }
       },
-      "ListOrganizationReleaseThresholdStatuses200ResponseResponseJson": {
+      "ListOrganizationReleaseThresholdStatuses200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
           "type": "array",
@@ -70722,255 +70725,255 @@
           }
         }
       },
-      "ListOrganizationReleases200ResponseResponseJson": {
+      "ListOrganizationReleases200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationReleases200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationReleases200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson12": {
+      "DeleteOrganizationRelease204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationReleaseCommits200ResponseResponseJson": {
+      "ListOrganizationReleaseCommits200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseSchemaItem"
         }
       },
-      "ListOrganizationReleaseDeploys200ResponseResponseJson": {
+      "ListOrganizationReleaseDeploys200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationReleaseDeploys200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationReleaseDeploys200ResponseSchemaItem"
         }
       },
-      "ListOrganizationReleaseFiles200ResponseResponseJson": {
+      "ListOrganizationReleaseFiles200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationReleaseFiles200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationReleaseFiles200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson13": {
+      "DeleteOrganizationReleaseFile204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GetOrganizationReplayCount200ResponseResponseJson": {
+      "GetOrganizationReplayCount200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
           "type": "integer"
         }
       },
-      "ListOrganizationRepos200ResponseResponseJson": {
+      "ListOrganizationRepos200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationRepos200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationRepos200ResponseSchemaItem"
         }
       },
-      "ListOrganizationRepoCommits200ResponseResponseJson": {
+      "ListOrganizationRepoCommits200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson14": {
+      "UpdateOrganizationScimV2Group200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson15": {
+      "DeleteOrganizationScimV2Group204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson16": {
+      "UpdateOrganizationScimV2User200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson17": {
+      "DeleteOrganizationScimV2User204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationSentryApps200ResponseResponseJson": {
+      "ListOrganizationSentryApps200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationSentryApps200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationSentryApps200ResponseSchemaItem"
         }
       },
-      "ListOrganizationTags200ResponseResponseJson": {
+      "ListOrganizationTags200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationTags200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationTags200ResponseSchemaItem"
         }
       },
-      "ListOrganizationTeams200ResponseResponseJson": {
+      "ListOrganizationTeams200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationTeams200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationTeams200ResponseSchemaItem"
         }
       },
-      "ListOrganizationTraceItemAttributes200ResponseResponseJson": {
+      "ListOrganizationTraceItemAttributes200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseSchemaItem"
         }
       },
-      "GetOrganizationTrace200ResponseResponseJson": {
+      "GetOrganizationTrace200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GetOrganizationTrace200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/GetOrganizationTrace200ResponseSchemaItem"
         }
       },
-      "ListOrganizationUserTeams200ResponseResponseJson": {
+      "ListOrganizationUserTeams200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationUserTeams200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationUserTeams200ResponseSchemaItem"
         }
       },
-      "ListOrganizationWorkflows200ResponseResponseJson": {
+      "ListOrganizationWorkflows200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseSchemaItem"
         }
       },
-      "UpdateOrganizationWorkflows200ResponseResponseJson": {
+      "UpdateOrganizationWorkflows200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson18": {
+      "DeleteOrganizationWorkflows204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson19": {
+      "DeleteOrganizationWorkflow204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson20": {
+      "DeleteProject204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectEnvironments200ResponseResponseJson": {
+      "ListProjectEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectEnvironments200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectEnvironments200ResponseSchemaItem"
         }
       },
-      "BulkUpdateProjectEnvironments200ResponseResponseJson": {
+      "BulkUpdateProjectEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/BulkUpdateProjectEnvironments200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/BulkUpdateProjectEnvironments200ResponseSchemaItem"
         }
       },
-      "ListProjectEvents200ResponseResponseJson": {
+      "ListProjectEvents200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectEvents200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectEvents200ResponseSchemaItem"
         }
       },
-      "ListProjectEventAttachments200ResponseResponseJson": {
+      "ListProjectEventAttachments200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectEventAttachments200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectEventAttachments200ResponseSchemaItem"
         }
       },
-      "ListProjectDebugFiles200ResponseResponseJson": {
+      "ListProjectDebugFiles200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectDebugFiles200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectDebugFiles200ResponseSchemaItem"
         }
       },
-      "ListProjectFilters200ResponseResponseJson": {
+      "ListProjectFilters200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectFilters200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectFilters200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson21": {
+      "UpdateProjectFilter200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectKeys200ResponseResponseJson": {
+      "ListProjectKeys200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectKeys200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectKeys200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson22": {
+      "DeleteProjectKey204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectMembers200ResponseResponseJson": {
+      "ListProjectMembers200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectMembers200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectMembers200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson23": {
+      "DeleteProjectMonitor204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectMonitorCheckins200ResponseResponseJson": {
+      "ListProjectMonitorCheckins200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson24": {
+      "CreateProjectPreprodSizeAnalysisSkippedStatusCheck201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson25": {
+      "CreateProjectPreprodSnapshotSkippedStatusCheck201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "GetProjectProfilingProfile200ResponseResponseJson": {
+      "GetProjectProfilingProfile200ResponseSchema": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/GetProjectProfilingProfile200ResponseResponseJsonAdditionalProperties"
+          "$ref": "#/components/schemas/GetProjectProfilingProfile200ResponseSchemaAdditionalProperties"
         }
       },
-      "ListProjectReleases200ResponseResponseJson": {
+      "ListProjectReleases200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectReleases200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectReleases200ResponseSchemaItem"
         }
       },
-      "ListProjectReleaseCommits200ResponseResponseJson": {
+      "ListProjectReleaseCommits200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseSchemaItem"
         }
       },
-      "ListProjectReleaseFiles200ResponseResponseJson": {
+      "ListProjectReleaseFiles200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson26": {
+      "DeleteProjectReleaseFile204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson27": {
+      "DeleteProjectReplay204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectReplayRecordingSegments200ResponseResponseJson": {
+      "ListProjectReplayRecordingSegments200ResponseSchema": {
         "type": "array",
         "items": {
           "type": "array",
@@ -70982,7 +70985,7 @@
           }
         }
       },
-      "ListProjectStats200ResponseResponseJson": {
+      "ListProjectStats200ResponseSchema": {
         "type": "array",
         "items": {
           "maxLength": 2,
@@ -70993,140 +70996,140 @@
           }
         }
       },
-      "ListProjectSymbolSources200ResponseResponseJson": {
+      "ListProjectSymbolSources200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson28": {
+      "DeleteProjectSymbolSource204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListProjectTeams200ResponseResponseJson": {
+      "ListProjectTeams200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectTeams200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectTeams200ResponseSchemaItem"
         }
       },
-      "ListProjectUsers200ResponseResponseJson": {
+      "ListProjectUsers200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectUsers200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListProjectUsers200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson29": {
+      "DeleteSentryApp204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson30": {
+      "DeleteTeam204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson31": {
+      "DeleteTeamExternalTeam204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListTeamMembers200ResponseResponseJson": {
+      "ListTeamMembers200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListTeamMembers200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListTeamMembers200ResponseSchemaItem"
         }
       },
-      "ListTeamProjects200ResponseResponseJson": {
+      "ListTeamProjects200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListTeamProjects200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListTeamProjects200ResponseSchemaItem"
         }
       },
-      "ListATagSValues200ResponseResponseJson": {
+      "ListATagSValues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListATagSValues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListATagSValues200ResponseSchemaItem"
         }
       },
-      "ListAProjectSUserFeedback200ResponseResponseJson": {
+      "ListAProjectSUserFeedback200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListAProjectSUserFeedback200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListAProjectSUserFeedback200ResponseSchemaItem"
         }
       },
-      "ListAProjectSServiceHooks200ResponseResponseJson": {
+      "ListAProjectSServiceHooks200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListAProjectSServiceHooks200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListAProjectSServiceHooks200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson32": {
+      "RemoveAServiceHook204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson33": {
+      "BulkRemoveAListOfIssues204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationIssueTagValues200ResponseResponseJson": {
+      "ListOrganizationIssueTagValues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIssueTagValues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIssueTagValues200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson34": {
+      "RetrieveFilesChangedInAReleaseSCommits200Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListAnOrganizationSIntegrationPlatformInstallations200ResponseResponseJson": {
+      "ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListAnOrganizationSIntegrationPlatformInstallations200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson35": {
+      "DeleteAnExternalIssue204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson36": {
+      "EnableSpikeProtection201Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson37": {
+      "DisableSpikeProtection204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "DefaultResponseResponseJson38": {
+      "DeleteOrganizationIssue204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
       },
-      "ListOrganizationIssueEvents200ResponseResponseJson": {
+      "ListOrganizationIssueEvents200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIssueEvents200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIssueEvents200ResponseSchemaItem"
         }
       },
-      "ListOrganizationIssueExternalIssues200ResponseResponseJson": {
+      "ListOrganizationIssueExternalIssues200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIssueExternalIssues200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIssueExternalIssues200ResponseSchemaItem"
         }
       },
-      "ListOrganizationIssueHashes200ResponseResponseJson": {
+      "ListOrganizationIssueHashes200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseResponseJsonItem"
+          "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseSchemaItem"
         }
       },
-      "DefaultResponseResponseJson39": {
+      "UnlinkAnExternalIssueFromAnIssue204Response": {
         "title": "DefaultResponse",
         "type": "object",
         "description": "Default response schema"
@@ -90307,7 +90310,7 @@
       "GetOrganizationReplay200ResponseDataTagsBranch2ValueItem": {
         "type": "object"
       },
-      "ListOrganizations200ResponseResponseJsonItem": {
+      "ListOrganizations200ResponseSchemaItem": {
         "required": [
           "allowMemberInvite",
           "allowMemberProjectCreation",
@@ -90388,7 +90391,7 @@
           }
         }
       },
-      "ListOrganizationDashboards200ResponseResponseJsonItem": {
+      "ListOrganizationDashboards200ResponseSchemaItem": {
         "required": [
           "createdBy",
           "dateCreated",
@@ -90461,7 +90464,7 @@
           }
         }
       },
-      "ListOrganizationDetectors200ResponseResponseJsonItem": {
+      "ListOrganizationDetectors200ResponseSchemaItem": {
         "required": [
           "conditionGroup",
           "config",
@@ -90536,7 +90539,7 @@
           }
         }
       },
-      "UpdateOrganizationDetectors200ResponseResponseJsonItem": {
+      "UpdateOrganizationDetectors200ResponseSchemaItem": {
         "required": [
           "conditionGroup",
           "config",
@@ -90611,7 +90614,7 @@
           }
         }
       },
-      "ListOrganizationDiscoverSavedQueries200ResponseResponseJsonItem": {
+      "ListOrganizationDiscoverSavedQueries200ResponseSchemaItem": {
         "required": [
           "createdBy",
           "datasetSource",
@@ -90727,7 +90730,7 @@
           }
         }
       },
-      "ListOrganizationEnvironments200ResponseResponseJsonItem": {
+      "ListOrganizationEnvironments200ResponseSchemaItem": {
         "required": [
           "id",
           "name"
@@ -90742,7 +90745,7 @@
           }
         }
       },
-      "ListOrganizationForwarding200ResponseResponseJsonItem": {
+      "ListOrganizationForwarding200ResponseSchemaItem": {
         "required": [
           "config",
           "dateAdded",
@@ -90797,7 +90800,7 @@
           }
         }
       },
-      "ListOrganizationIntegrations200ResponseResponseJsonItem": {
+      "ListOrganizationIntegrations200ResponseSchemaItem": {
         "required": [
           "accountType",
           "configData",
@@ -90873,7 +90876,7 @@
           }
         }
       },
-      "ListOrganizationIssues200ResponseResponseJsonItem": {
+      "ListOrganizationIssues200ResponseSchemaItem": {
         "required": [
           "annotations",
           "assignedTo",
@@ -91095,7 +91098,7 @@
           }
         }
       },
-      "ListOrganizationMembers200ResponseResponseJsonItem": {
+      "ListOrganizationMembers200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "email",
@@ -91154,7 +91157,7 @@
           }
         }
       },
-      "ListOrganizationMonitors200ResponseResponseJsonItem": {
+      "ListOrganizationMonitors200ResponseSchemaItem": {
         "required": [
           "config",
           "dateCreated",
@@ -91209,7 +91212,7 @@
           }
         }
       },
-      "ListOrganizationMonitorCheckins200ResponseResponseJsonItem": {
+      "ListOrganizationMonitorCheckins200ResponseSchemaItem": {
         "required": [
           "dateAdded",
           "dateClock",
@@ -91274,13 +91277,13 @@
           }
         }
       },
-      "ListOrganizationProfilingChunks200ResponseResponseJsonAdditionalProperties": {
+      "ListOrganizationProfilingChunks200ResponseSchemaAdditionalProperties": {
         "type": "object"
       },
-      "GetOrganizationProfilingFlamegraph200ResponseResponseJsonAdditionalProperties": {
+      "GetOrganizationProfilingFlamegraph200ResponseSchemaAdditionalProperties": {
         "type": "object"
       },
-      "ListOrganizationProjectKeys200ResponseResponseJsonItem": {
+      "ListOrganizationProjectKeys200ResponseSchemaItem": {
         "required": [
           "browserSdk",
           "browserSdkVersion",
@@ -91347,7 +91350,7 @@
         },
         "description": "This represents a Sentry Project Client Key."
       },
-      "ListOrganizationProjects200ResponseResponseJsonItem": {
+      "ListOrganizationProjects200ResponseSchemaItem": {
         "required": [
           "access",
           "dateCreated",
@@ -91540,7 +91543,7 @@
           }
         }
       },
-      "ListOrganizationRelayUsage200ResponseResponseJsonItem": {
+      "ListOrganizationRelayUsage200ResponseSchemaItem": {
         "required": [
           "firstSeen",
           "lastSeen",
@@ -91570,7 +91573,7 @@
           }
         }
       },
-      "ListOrganizationReleases200ResponseResponseJsonItem": {
+      "ListOrganizationReleases200ResponseSchemaItem": {
         "required": [
           "authors",
           "commitCount",
@@ -91679,7 +91682,7 @@
           }
         }
       },
-      "ListOrganizationReleaseCommits200ResponseResponseJsonItem": {
+      "ListOrganizationReleaseCommits200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "id",
@@ -91721,7 +91724,7 @@
           }
         }
       },
-      "ListOrganizationReleaseDeploys200ResponseResponseJsonItem": {
+      "ListOrganizationReleaseDeploys200ResponseSchemaItem": {
         "required": [
           "dateFinished",
           "dateStarted",
@@ -91765,7 +91768,7 @@
         },
         "description": "Serializer for Deploy response objects"
       },
-      "ListOrganizationReleaseFiles200ResponseResponseJsonItem": {
+      "ListOrganizationReleaseFiles200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "dist",
@@ -91802,7 +91805,7 @@
           }
         }
       },
-      "ListOrganizationRepos200ResponseResponseJsonItem": {
+      "ListOrganizationRepos200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "id",
@@ -91847,7 +91850,7 @@
           }
         }
       },
-      "ListOrganizationRepoCommits200ResponseResponseJsonItem": {
+      "ListOrganizationRepoCommits200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "id",
@@ -91882,7 +91885,7 @@
           }
         }
       },
-      "ListOrganizationSentryApps200ResponseResponseJsonItem": {
+      "ListOrganizationSentryApps200ResponseSchemaItem": {
         "required": [
           "allowedOrigins",
           "avatars",
@@ -92007,7 +92010,7 @@
           }
         }
       },
-      "ListOrganizationTags200ResponseResponseJsonItem": {
+      "ListOrganizationTags200ResponseSchemaItem": {
         "required": [
           "key",
           "name"
@@ -92037,7 +92040,7 @@
           }
         }
       },
-      "ListOrganizationTeams200ResponseResponseJsonItem": {
+      "ListOrganizationTeams200ResponseSchemaItem": {
         "required": [
           "access",
           "avatar",
@@ -92113,7 +92116,7 @@
           }
         }
       },
-      "ListOrganizationTraceItemAttributes200ResponseResponseJsonItem": {
+      "ListOrganizationTraceItemAttributes200ResponseSchemaItem": {
         "required": [
           "attributeSource",
           "attributeType",
@@ -92145,7 +92148,7 @@
           }
         }
       },
-      "GetOrganizationTrace200ResponseResponseJsonItem": {
+      "GetOrganizationTrace200ResponseSchemaItem": {
         "required": [
           "description",
           "event_id",
@@ -92264,7 +92267,7 @@
           }
         }
       },
-      "ListOrganizationUserTeams200ResponseResponseJsonItem": {
+      "ListOrganizationUserTeams200ResponseSchemaItem": {
         "required": [
           "access",
           "avatar",
@@ -92340,7 +92343,7 @@
           }
         }
       },
-      "ListOrganizationWorkflows200ResponseResponseJsonItem": {
+      "ListOrganizationWorkflows200ResponseSchemaItem": {
         "required": [
           "actionFilters",
           "config",
@@ -92418,7 +92421,7 @@
           }
         }
       },
-      "UpdateOrganizationWorkflows200ResponseResponseJsonItem": {
+      "UpdateOrganizationWorkflows200ResponseSchemaItem": {
         "required": [
           "actionFilters",
           "config",
@@ -92496,7 +92499,7 @@
           }
         }
       },
-      "ListProjectEnvironments200ResponseResponseJsonItem": {
+      "ListProjectEnvironments200ResponseSchemaItem": {
         "required": [
           "id",
           "isHidden",
@@ -92515,7 +92518,7 @@
           }
         }
       },
-      "BulkUpdateProjectEnvironments200ResponseResponseJsonItem": {
+      "BulkUpdateProjectEnvironments200ResponseSchemaItem": {
         "required": [
           "id",
           "isHidden",
@@ -92534,7 +92537,7 @@
           }
         }
       },
-      "ListProjectEvents200ResponseResponseJsonItem": {
+      "ListProjectEvents200ResponseSchemaItem": {
         "required": [
           "crashFile",
           "culprit",
@@ -92610,7 +92613,7 @@
           }
         }
       },
-      "ListProjectEventAttachments200ResponseResponseJsonItem": {
+      "ListProjectEventAttachments200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "event_id",
@@ -92656,7 +92659,7 @@
           }
         }
       },
-      "ListProjectDebugFiles200ResponseResponseJsonItem": {
+      "ListProjectDebugFiles200ResponseSchemaItem": {
         "required": [
           "codeId",
           "cpuName",
@@ -92713,7 +92716,7 @@
           }
         }
       },
-      "ListProjectFilters200ResponseResponseJsonItem": {
+      "ListProjectFilters200ResponseSchemaItem": {
         "required": [
           "active",
           "id"
@@ -92728,7 +92731,7 @@
           }
         }
       },
-      "ListProjectKeys200ResponseResponseJsonItem": {
+      "ListProjectKeys200ResponseSchemaItem": {
         "required": [
           "browserSdk",
           "browserSdkVersion",
@@ -92795,7 +92798,7 @@
         },
         "description": "This represents a Sentry Project Client Key."
       },
-      "ListProjectMembers200ResponseResponseJsonItem": {
+      "ListProjectMembers200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "email",
@@ -92854,7 +92857,7 @@
           }
         }
       },
-      "ListProjectMonitorCheckins200ResponseResponseJsonItem": {
+      "ListProjectMonitorCheckins200ResponseSchemaItem": {
         "required": [
           "dateAdded",
           "dateClock",
@@ -92919,10 +92922,10 @@
           }
         }
       },
-      "GetProjectProfilingProfile200ResponseResponseJsonAdditionalProperties": {
+      "GetProjectProfilingProfile200ResponseSchemaAdditionalProperties": {
         "type": "object"
       },
-      "ListProjectReleases200ResponseResponseJsonItem": {
+      "ListProjectReleases200ResponseSchemaItem": {
         "required": [
           "authors",
           "commitCount",
@@ -93031,7 +93034,7 @@
           }
         }
       },
-      "ListProjectReleaseCommits200ResponseResponseJsonItem": {
+      "ListProjectReleaseCommits200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "id",
@@ -93073,7 +93076,7 @@
           }
         }
       },
-      "ListProjectReleaseFiles200ResponseResponseJsonItem": {
+      "ListProjectReleaseFiles200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "dist",
@@ -93110,7 +93113,7 @@
           }
         }
       },
-      "ListProjectSymbolSources200ResponseResponseJsonItem": {
+      "ListProjectSymbolSources200ResponseSchemaItem": {
         "required": [
           "type",
           "id"
@@ -93203,7 +93206,7 @@
           }
         }
       },
-      "ListProjectTeams200ResponseResponseJsonItem": {
+      "ListProjectTeams200ResponseSchemaItem": {
         "required": [
           "access",
           "avatar",
@@ -93264,7 +93267,7 @@
           }
         }
       },
-      "ListProjectUsers200ResponseResponseJsonItem": {
+      "ListProjectUsers200ResponseSchemaItem": {
         "required": [
           "avatarUrl",
           "dateCreated",
@@ -93314,7 +93317,7 @@
           }
         }
       },
-      "ListTeamMembers200ResponseResponseJsonItem": {
+      "ListTeamMembers200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "email",
@@ -93388,7 +93391,7 @@
           }
         }
       },
-      "ListTeamProjects200ResponseResponseJsonItem": {
+      "ListTeamProjects200ResponseSchemaItem": {
         "required": [
           "access",
           "dateCreated",
@@ -93581,7 +93584,7 @@
           }
         }
       },
-      "ListATagSValues200ResponseResponseJsonItem": {
+      "ListATagSValues200ResponseSchemaItem": {
         "required": [
           "name"
         ],
@@ -93592,7 +93595,7 @@
           }
         }
       },
-      "ListAProjectSUserFeedback200ResponseResponseJsonItem": {
+      "ListAProjectSUserFeedback200ResponseSchemaItem": {
         "required": [
           "comments",
           "dateCreated",
@@ -93635,7 +93638,7 @@
           }
         }
       },
-      "ListAProjectSServiceHooks200ResponseResponseJsonItem": {
+      "ListAProjectSServiceHooks200ResponseSchemaItem": {
         "required": [
           "dateCreated",
           "events",
@@ -93669,7 +93672,7 @@
           }
         }
       },
-      "ListOrganizationIssueTagValues200ResponseResponseJsonItem": {
+      "ListOrganizationIssueTagValues200ResponseSchemaItem": {
         "required": [
           "count",
           "firstSeen",
@@ -93708,7 +93711,7 @@
           }
         }
       },
-      "ListAnOrganizationSIntegrationPlatformInstallations200ResponseResponseJsonItem": {
+      "ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem": {
         "required": [
           "app",
           "organization",
@@ -93731,7 +93734,7 @@
           }
         }
       },
-      "ListOrganizationIssueEvents200ResponseResponseJsonItem": {
+      "ListOrganizationIssueEvents200ResponseSchemaItem": {
         "required": [
           "crashFile",
           "culprit",
@@ -93807,7 +93810,7 @@
           }
         }
       },
-      "ListOrganizationIssueExternalIssues200ResponseResponseJsonItem": {
+      "ListOrganizationIssueExternalIssues200ResponseSchemaItem": {
         "required": [
           "displayName",
           "id",
@@ -93834,7 +93837,7 @@
           }
         }
       },
-      "ListOrganizationIssueHashes200ResponseResponseJsonItem": {
+      "ListOrganizationIssueHashes200ResponseSchemaItem": {
         "required": [
           "id",
           "latestEvent",
@@ -101967,6 +101970,9 @@
           "isConvention": {
             "type": "boolean"
           },
+          "isCustom": {
+            "type": "boolean"
+          },
           "brief": {
             "type": "string"
           },
@@ -101989,7 +101995,7 @@
             "type": "string"
           }
         },
-        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every\nattribute. Today the metadata is sourced from the sentry conventions\n(\u0060\u0060sentry_conventions.attributes.ATTRIBUTE_METADATA\u0060\u0060), matched by attribute\nname (and type when known) regardless of the attribute\u0027s source, so any\nattribute that maps to a known convention carries that metadata (only the\nfields actually present are included) while the rest get an empty context.\nServing context for custom attributes is planned (gated behind the\n\u0060\u0060data-browsing-attribute-context\u0060\u0060 feature), at which point the empty\ncontexts will start to be populated."
+        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
       },
       "RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions": {
         "required": [
