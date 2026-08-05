@@ -8,6 +8,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum ListOrganizationTraceItemAttributesAttributeTypeParameterItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "array")]
+        #pragma warning disable CS1591
+        Array,
+        #pragma warning restore CS1591
         [EnumMember(Value = "boolean")]
         #pragma warning disable CS1591
         Boolean,

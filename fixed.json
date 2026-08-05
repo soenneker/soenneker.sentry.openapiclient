@@ -115403,7 +115403,8 @@
         "enum": [
           "string",
           "number",
-          "boolean"
+          "boolean",
+          "array"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -115422,6 +115423,10 @@
             {
               "value": "boolean",
               "name": "Boolean"
+            },
+            {
+              "value": "array",
+              "name": "Array"
             }
           ]
         }
@@ -130908,7 +130913,8 @@
         "enum": [
           "string",
           "number",
-          "boolean"
+          "boolean",
+          "array"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130927,6 +130933,10 @@
             {
               "value": "boolean",
               "name": "Boolean"
+            },
+            {
+              "value": "array",
+              "name": "Array"
             }
           ]
         }
@@ -137978,6 +137988,7 @@
       },
       "ListOrganizationTraceItemAttributesAttributeTypeParameterItem": {
         "enum": [
+          "array",
           "boolean",
           "number",
           "string"
@@ -137988,6 +137999,10 @@
           "name": "ListOrganizationTraceItemAttributesAttributeTypeParameterItem",
           "modelAsString": false,
           "values": [
+            {
+              "value": "array",
+              "name": "Array"
+            },
             {
               "value": "boolean",
               "name": "Boolean"

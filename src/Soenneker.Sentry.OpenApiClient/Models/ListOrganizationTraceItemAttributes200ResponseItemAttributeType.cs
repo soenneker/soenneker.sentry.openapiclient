@@ -20,5 +20,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Boolean,
         #pragma warning restore CS1591
+        [EnumMember(Value = "array")]
+        #pragma warning disable CS1591
+        Array,
+        #pragma warning restore CS1591
     }
 }
