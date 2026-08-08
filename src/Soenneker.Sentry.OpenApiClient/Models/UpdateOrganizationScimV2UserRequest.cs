@@ -14,7 +14,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A list of operations to perform. Currently, the only valid operation is settinga member&apos;s `active` attribute to false, after which the member will be permanently deleted.```json{    \&quot;Operations\&quot;: [{        \&quot;op\&quot;: \&quot;replace\&quot;,        \&quot;path\&quot;: \&quot;active\&quot;,        \&quot;value\&quot;: false    }]}```&quot;</summary>
+        /// <summary>&quot;A list of operations to perform. Currently, the only valid operation is settinga member&apos;s `active` attribute to false, after which the member will be permanently deleted.```json{    \&quot;Operations\&quot;: [{        \&quot;op\&quot;: \&quot;replace\&quot;,        \&quot;path\&quot;: \&quot;active\&quot;,        \&quot;value\&quot;: False    }]}```&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2UserRequestOperationsItem>? Operations { get; set; }

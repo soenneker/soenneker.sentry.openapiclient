@@ -29179,7 +29179,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -33712,7 +33713,7 @@
             "items": {
               "$ref": "#/components/schemas/ScimPatchRequestOperationsItem"
             },
-            "description": "\u0022A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \\\u0022Operations\\\u0022: [{\n        \\\u0022op\\\u0022: \\\u0022replace\\\u0022,\n        \\\u0022path\\\u0022: \\\u0022active\\\u0022,\n        \\\u0022value\\\u0022: false\n    }]\n}\n\u0060\u0060\u0060\n\u0022"
+            "description": "\u0022A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \\\u0022Operations\\\u0022: [{\n        \\\u0022op\\\u0022: \\\u0022replace\\\u0022,\n        \\\u0022path\\\u0022: \\\u0022active\\\u0022,\n        \\\u0022value\\\u0022: False\n    }]\n}\n\u0060\u0060\u0060\n\u0022"
           }
         }
       },
@@ -35518,7 +35519,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -60564,7 +60566,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -60692,7 +60695,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -63615,7 +63619,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -64769,7 +64774,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateOrganizationScimV2UserRequestOperationsItem"
             },
-            "description": "\u0022A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \\\u0022Operations\\\u0022: [{\n        \\\u0022op\\\u0022: \\\u0022replace\\\u0022,\n        \\\u0022path\\\u0022: \\\u0022active\\\u0022,\n        \\\u0022value\\\u0022: false\n    }]\n}\n\u0060\u0060\u0060\n\u0022"
+            "description": "\u0022A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \\\u0022Operations\\\u0022: [{\n        \\\u0022op\\\u0022: \\\u0022replace\\\u0022,\n        \\\u0022path\\\u0022: \\\u0022active\\\u0022,\n        \\\u0022value\\\u0022: False\n    }]\n}\n\u0060\u0060\u0060\n\u0022"
           }
         }
       },
@@ -76813,7 +76818,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -76888,7 +76894,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -90498,7 +90505,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
@@ -90573,7 +90581,8 @@
             "type": "string"
           },
           "projectId": {
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "name": {
             "type": "string"
