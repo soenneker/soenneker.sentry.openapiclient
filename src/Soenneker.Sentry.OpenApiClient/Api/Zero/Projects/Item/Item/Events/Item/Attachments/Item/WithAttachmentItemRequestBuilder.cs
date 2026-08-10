@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithAttachmentItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>If this parameter is present, the response will be a binary file download instead of JSON metadata. The value does not matter — any value (including empty) triggers the download.</summary>
+            /// <summary>If this parameter is present, the response will be a binary file download instead of JSON metadata. The value does not matter — any value (including empty) triggers the download. Depending on where the attachment is stored, the response may be a redirect to the storage service, so clients must follow redirects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("download")]

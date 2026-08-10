@@ -18388,7 +18388,7 @@
           {
             "name": "download",
             "in": "query",
-            "description": "If this parameter is present, the response will be a binary file download instead of JSON metadata. The value does not matter \u2014 any value (including empty) triggers the download.",
+            "description": "If this parameter is present, the response will be a binary file download instead of JSON metadata. The value does not matter \u2014 any value (including empty) triggers the download. Depending on where the attachment is stored, the response may be a redirect to the storage service, so clients must follow redirects.",
             "schema": {
               "type": "string"
             }
