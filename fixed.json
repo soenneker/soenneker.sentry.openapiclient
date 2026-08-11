@@ -36858,9 +36858,6 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemAttributeType"
-          },
-          "context": {
-            "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemContext"
           }
         }
       },
@@ -50456,39 +50453,6 @@
             "type": "boolean"
           }
         }
-      },
-      "ListTraceItemAttributesResponseItemContext": {
-        "type": "object",
-        "properties": {
-          "isConvention": {
-            "type": "boolean"
-          },
-          "isCustom": {
-            "type": "boolean"
-          },
-          "brief": {
-            "type": "string"
-          },
-          "isDeprecated": {
-            "type": "boolean"
-          },
-          "details": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "examples": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemContextExamplesItem"
-            }
-          },
-          "replacementAttribute": {
-            "type": "string"
-          }
-        },
-        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
       },
       "ListWorkflowItemTriggers": {
         "type": "object",
@@ -74550,9 +74514,6 @@
       "ListTeamProjectResponseItemOptionsAdditionalProperties": {
         "type": "object"
       },
-      "ListTraceItemAttributesResponseItemContextExamplesItem": {
-        "type": "object"
-      },
       "ListWorkflowItemConfigAdditionalProperties": {
         "type": "object"
       },
@@ -84064,9 +84025,6 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemAttributeType"
-          },
-          "context": {
-            "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContext"
           }
         }
       },
@@ -92151,9 +92109,6 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemAttributeType"
-          },
-          "context": {
-            "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContext"
           }
         }
       },
@@ -101973,39 +101928,6 @@
           }
         }
       },
-      "ListOrganizationTraceItemAttributes200ResponseItemContext": {
-        "type": "object",
-        "properties": {
-          "isConvention": {
-            "type": "boolean"
-          },
-          "isCustom": {
-            "type": "boolean"
-          },
-          "brief": {
-            "type": "string"
-          },
-          "isDeprecated": {
-            "type": "boolean"
-          },
-          "details": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "examples": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem"
-            }
-          },
-          "replacementAttribute": {
-            "type": "string"
-          }
-        },
-        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
-      },
       "RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions": {
         "required": [
           "data"
@@ -108105,9 +108027,6 @@
         }
       },
       "CreateOrganizationTeam201ResponseOrganizationOnboardingTasksItemData": {
-        "type": "object"
-      },
-      "ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem": {
         "type": "object"
       },
       "RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributionsData": {

@@ -24,14 +24,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The attributeType property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType? AttributeType { get; set; }
-        /// <summary>Additional, mostly-static metadata about an attribute.When ``expand=context`` is requested, context is attached to every attribute.Metadata comes from the sentry conventions, Sentry&apos;s own column definitions,or user-authored context (gated behind ``data-browsing-attribute-context``),in that precedence order. Only the fields available are included, so anattribute with no metadata gets an empty context.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContext? Context { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContext Context { get; set; }
-#endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,7 +75,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "attributeSource", n => { AttributeSource = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSource>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSource.CreateFromDiscriminatorValue); } },
                 { "attributeType", n => { AttributeType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType>(); } },
-                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContext>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContext.CreateFromDiscriminatorValue); } },
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "secondaryAliases", n => { SecondaryAliases = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -98,7 +89,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSource>("attributeSource", AttributeSource);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType>("attributeType", AttributeType);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContext>("context", Context);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryAliases", SecondaryAliases);
