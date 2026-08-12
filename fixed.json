@@ -25833,6 +25833,14 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "llmFormat",
+            "in": "query",
+            "description": "If set, adds a \u0060formatted\u0060 field to the response with the autofix rendered as the requested format for LLM consumption.",
+            "schema": {
+              "$ref": "#/components/schemas/GetOrganizationIssueAutofixStateLlmFormatParameter"
+            }
           }
         ],
         "responses": {
@@ -26332,6 +26340,14 @@
               "items": {
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "llmFormat",
+            "in": "query",
+            "description": "If set, adds a \u0060formatted\u0060 field to the response with the event rendered as the requested format for LLM consumption.",
+            "schema": {
+              "$ref": "#/components/schemas/GetOrganizationIssueEventLlmFormatParameter"
             }
           }
         ],
@@ -27771,6 +27787,9 @@
         ],
         "type": "object",
         "properties": {
+          "formatted": {
+            "$ref": "#/components/schemas/AutofixStateResponseFormatted"
+          },
           "autofix": {
             "$ref": "#/components/schemas/AutofixStateResponseAutofix"
           }
@@ -30625,6 +30644,9 @@
           "previousEventID": {
             "type": "string",
             "nullable": true
+          },
+          "formatted": {
+            "$ref": "#/components/schemas/IssueEventDetailsResponseFormatted"
           }
         }
       },
@@ -41050,6 +41072,22 @@
           }
         }
       },
+      "AutofixStateResponseFormatted": {
+        "required": [
+          "content",
+          "format"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "$ref": "#/components/schemas/AutofixStateResponseFormattedFormat"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+      },
       "AutofixStateResponseAutofix": {
         "type": "object",
         "additionalProperties": {
@@ -43467,6 +43505,22 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/IssueEventDetailsResponseSdkUpdatesItemAdditionalProperties"
         }
+      },
+      "IssueEventDetailsResponseFormatted": {
+        "required": [
+          "content",
+          "format"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "$ref": "#/components/schemas/IssueEventDetailsResponseFormattedFormat"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
       },
       "LatestBaseSnapshotResponseImagesItem": {
         "type": "object",
@@ -69853,6 +69907,9 @@
         ],
         "type": "object",
         "properties": {
+          "formatted": {
+            "$ref": "#/components/schemas/GetOrganizationIssueAutofixState200ResponseFormatted"
+          },
           "autofix": {
             "$ref": "#/components/schemas/GetOrganizationIssueAutofixState200ResponseAutofix"
           }
@@ -70112,6 +70169,9 @@
           "previousEventID": {
             "type": "string",
             "nullable": true
+          },
+          "formatted": {
+            "$ref": "#/components/schemas/GetOrganizationIssueEvent200ResponseFormatted"
           }
         }
       },
@@ -89705,6 +89765,22 @@
           }
         }
       },
+      "GetOrganizationIssueAutofixState200ResponseFormatted": {
+        "required": [
+          "content",
+          "format"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "$ref": "#/components/schemas/GetOrganizationIssueAutofixState200ResponseFormattedFormat"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+      },
       "GetOrganizationIssueAutofixState200ResponseAutofix": {
         "type": "object",
         "additionalProperties": {
@@ -90121,6 +90197,22 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/GetOrganizationIssueEvent200ResponseSdkUpdatesItemAdditionalProperties"
         }
+      },
+      "GetOrganizationIssueEvent200ResponseFormatted": {
+        "required": [
+          "content",
+          "format"
+        ],
+        "type": "object",
+        "properties": {
+          "format": {
+            "$ref": "#/components/schemas/GetOrganizationIssueEvent200ResponseFormattedFormat"
+          },
+          "content": {
+            "type": "string"
+          }
+        },
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
       },
       "ListOrganizationIssueExternalIssues200ResponseItem": {
         "required": [
@@ -118916,6 +119008,28 @@
           ]
         }
       },
+      "AutofixStateResponseFormattedFormat": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "AutofixStateResponseFormattedFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
+            }
+          ]
+        }
+      },
       "DashboardWidgetsItemDisplayType": {
         "enum": [
           "line",
@@ -119433,6 +119547,28 @@
             {
               "value": "team",
               "name": "Team"
+            }
+          ]
+        }
+      },
+      "IssueEventDetailsResponseFormattedFormat": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "IssueEventDetailsResponseFormattedFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
             }
           ]
         }
@@ -134505,6 +134641,50 @@
           ]
         }
       },
+      "GetOrganizationIssueAutofixState200ResponseFormattedFormat": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetOrganizationIssueAutofixState200ResponseFormattedFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
+            }
+          ]
+        }
+      },
+      "GetOrganizationIssueEvent200ResponseFormattedFormat": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetOrganizationIssueEvent200ResponseFormattedFormat",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
+            }
+          ]
+        }
+      },
       "AddProjectSymbolSource201ResponseOneOf1LayoutType": {
         "enum": [
           "native",
@@ -138216,6 +138396,28 @@
           ]
         }
       },
+      "GetOrganizationIssueAutofixStateLlmFormatParameter": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetOrganizationIssueAutofixStateLlmFormatParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
+            }
+          ]
+        }
+      },
       "GetOrganizationIssueEventEventIdParameter": {
         "enum": [
           "latest",
@@ -138239,6 +138441,28 @@
             {
               "value": "recommended",
               "name": "Recommended"
+            }
+          ]
+        }
+      },
+      "GetOrganizationIssueEventLlmFormatParameter": {
+        "enum": [
+          "markdown",
+          "xml"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetOrganizationIssueEventLlmFormatParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "markdown",
+              "name": "Markdown"
+            },
+            {
+              "value": "xml",
+              "name": "Xml"
             }
           ]
         }

@@ -100,6 +100,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Fingerprints { get; set; }
 #endif
+        /// <summary>The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted? Formatted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted Formatted { get; set; }
+#endif
         /// <summary>The groupID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -320,6 +328,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "fingerprints", n => { Fingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "formatted", n => { Formatted = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted.CreateFromDiscriminatorValue); } },
                 { "groupID", n => { GroupID = n.GetStringValue(); } },
                 { "groupingConfig", n => { GroupingConfig = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseGroupingConfig>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseGroupingConfig.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -367,6 +376,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItem>("errors", Errors);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteCollectionOfPrimitiveValues<string>("fingerprints", Fingerprints);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted>("formatted", Formatted);
             writer.WriteStringValue("groupID", GroupID);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseGroupingConfig>("groupingConfig", GroupingConfig);
             writer.WriteStringValue("id", Id);
