@@ -2045,7 +2045,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -2329,7 +2328,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -2614,7 +2612,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -3947,7 +3944,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -4130,7 +4126,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -5209,7 +5204,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -5576,7 +5570,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -5747,7 +5740,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -7023,7 +7015,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -7407,7 +7398,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -8547,7 +8537,6 @@
             "in": "query",
             "description": "Project ID or slug to scope the lookup.",
             "schema": {
-              "type": "object",
               "anyOf": [
                 {
                   "type": "integer"
@@ -8793,7 +8782,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -9734,7 +9722,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -9892,7 +9879,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -10167,7 +10153,6 @@
             "in": "query",
             "description": "The project ID or slug to filter by. Overrides project_id when both are sent.",
             "schema": {
-              "type": "object",
               "anyOf": [
                 {
                   "type": "integer"
@@ -11591,7 +11576,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -11729,7 +11713,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -11920,7 +11903,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -12172,7 +12154,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -13456,7 +13437,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -14086,7 +14066,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -14759,7 +14738,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -15466,7 +15444,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -15864,7 +15841,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -16135,7 +16111,6 @@
             "schema": {
               "type": "array",
               "items": {
-                "type": "object",
                 "anyOf": [
                   {
                     "type": "integer"
@@ -20376,10 +20351,9 @@
           {
             "name": "buildNumber",
             "in": "query",
-            "description": "Current build number. Accepts a plain integer (e.g. 42) or a version string of two to three period-separated integers (e.g. 1.2.3), each up to 6 digits \u2014 the format used by build identifiers such as Apple\u0027s CFBundleVersion. Either this or mainBinaryIdentifier must be provided when buildVersion is set.",
+            "description": "Current build number. Accepts a plain integer (e.g. 42) or a version string of two or more period-separated integers (e.g. 1.2.3), each up to 6 digits. Groups beyond the third are dropped. Either this or mainBinaryIdentifier must be provided when buildVersion is set.",
             "schema": {
-              "type": "object",
-              "oneOf": [
+              "anyOf": [
                 {
                   "type": "integer"
                 },
@@ -38011,17 +37985,6 @@
           }
         }
       },
-      "DetailedProjectDynamicSamplingBiasesItemAdditionalProperties": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
       "GetReplayDataTags": {
         "required": [
           "type"
@@ -41011,50 +40974,6 @@
         },
         "description": "The commit data that the issue should use for resolution."
       },
-      "WorkflowTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "WorkflowActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "ListWorkflowItemTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "ListWorkflowItemActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
       "GroupValidatorStatusDetailsAllOf1InCommitAllOf1": {
         "required": [
           "commit",
@@ -42040,7 +41959,14 @@
       "DetailedProjectDynamicSamplingBiasesItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/DetailedProjectDynamicSamplingBiasesItemAdditionalProperties"
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "DetectorOwner": {
@@ -51802,7 +51728,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/WorkflowTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -51849,7 +51782,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/WorkflowActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -52772,7 +52712,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/ListWorkflowItemTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -52819,7 +52766,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -71659,28 +71613,6 @@
           }
         ]
       },
-      "GetProject200ResponseDynamicSamplingBiasesItemAdditionalProperties": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
-      "UpdateProject200ResponseDynamicSamplingBiasesItemAdditionalProperties": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string"
-          },
-          {
-            "type": "boolean"
-          }
-        ]
-      },
       "GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile": {
         "type": "object",
         "anyOf": [
@@ -73042,116 +72974,6 @@
           }
         }
       },
-      "ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "ListOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "CreateOrganizationWorkflow201ResponseActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "UpdateOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "UpdateOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "GetOrganizationWorkflow200ResponseTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "GetOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "UpdateOrganizationWorkflow200ResponseTriggersConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
-      "UpdateOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1ItemComparison": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "boolean"
-          },
-          {
-            "type": "integer"
-          }
-        ]
-      },
       "BaseDataConditionGroupValidatorConditionsItem": {
         "type": "object"
       },
@@ -73226,7 +73048,14 @@
       "DetailedProjectDynamicSamplingBiasesItemProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/DetailedProjectDynamicSamplingBiasesItemAdditionalProperties"
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "DetailedProjectSeerNightshiftTweaks": {
@@ -84861,7 +84690,14 @@
       "GetProject200ResponseDynamicSamplingBiasesItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/GetProject200ResponseDynamicSamplingBiasesItemAdditionalProperties"
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "GetProject200ResponseSeerNightshiftTweaks": {
@@ -85063,7 +84899,14 @@
       "UpdateProject200ResponseDynamicSamplingBiasesItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UpdateProject200ResponseDynamicSamplingBiasesItemAdditionalProperties"
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
         }
       },
       "UpdateProject200ResponseSeerNightshiftTweaks": {
@@ -94364,7 +94207,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94411,7 +94261,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94458,7 +94315,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94505,7 +94369,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94552,7 +94423,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94599,7 +94477,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94646,7 +94531,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94693,7 +94585,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94740,7 +94639,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseTriggersConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -94787,7 +94693,14 @@
             "type": "string"
           },
           "comparison": {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1ItemComparison"
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "integer"
+              }
+            ]
           },
           "conditionResult": {
             "type": "boolean"
@@ -113474,7 +113387,8 @@
           "spans",
           "logs",
           "tracemetrics",
-          "preprod-app-size"
+          "preprod-app-size",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -113526,7 +113440,8 @@
       "DashboardWidgetAxisRange": {
         "enum": [
           "auto",
-          "dataMin"
+          "dataMin",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -113550,7 +113465,8 @@
       "DashboardWidgetLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114009,7 +113925,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114053,7 +113970,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114236,7 +114154,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114280,7 +114199,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -114412,7 +114332,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -115548,7 +115469,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -115592,7 +115514,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119118,7 +119041,8 @@
           "spans",
           "logs",
           "tracemetrics",
-          "preprod-app-size"
+          "preprod-app-size",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119170,7 +119094,8 @@
       "DashboardWidgetsItemAxisRange": {
         "enum": [
           "auto",
-          "dataMin"
+          "dataMin",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119194,7 +119119,8 @@
       "DashboardWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119303,7 +119229,8 @@
           "spans",
           "logs",
           "tracemetrics",
-          "preprod-app-size"
+          "preprod-app-size",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119355,7 +119282,8 @@
       "DashboardDetailsWidgetsItemAxisRange": {
         "enum": [
           "auto",
-          "dataMin"
+          "dataMin",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119379,7 +119307,8 @@
       "DashboardDetailsWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119403,7 +119332,8 @@
       "DashboardDetailsModelWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119576,7 +119506,8 @@
       "LatestBaseSnapshotResponseImagesItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119845,7 +119776,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119889,7 +119821,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -119978,7 +119911,8 @@
       "SnapshotDetailsResponseImagesItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120001,7 +119935,8 @@
       "SnapshotDetailsResponseAddedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120024,7 +119959,8 @@
       "SnapshotDetailsResponseRemovedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120047,7 +119983,8 @@
       "SnapshotDetailsResponseUnchangedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120070,7 +120007,8 @@
       "SnapshotDetailsResponseSkippedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120115,7 +120053,8 @@
       "SnapshotImageDetailResponseHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120138,7 +120077,8 @@
       "SnapshotImageDetailResponseBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120355,7 +120295,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120415,7 +120356,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120453,7 +120395,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120664,7 +120607,8 @@
       "OrganizationEventsTimeseriesResponseTimeSeriesItemValuesItemConfidence": {
         "enum": [
           "low",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120763,7 +120707,8 @@
       "SnapshotDetailsResponseRenamedItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120786,7 +120731,8 @@
       "SnapshotDetailsResponseRenamedItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120809,7 +120755,8 @@
       "SnapshotDetailsResponseChangedItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120832,7 +120779,8 @@
       "SnapshotDetailsResponseChangedItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120855,7 +120803,8 @@
       "SnapshotDetailsResponseErroredItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -120878,7 +120827,8 @@
       "SnapshotDetailsResponseErroredItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -121435,7 +121385,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -122622,7 +122573,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -122666,7 +122618,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -122798,7 +122751,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -122964,7 +122918,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123008,7 +122963,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123714,7 +123670,8 @@
           "spans",
           "logs",
           "tracemetrics",
-          "preprod-app-size"
+          "preprod-app-size",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123766,7 +123723,8 @@
       "CreateOrganizationDashboardRequestWidgetsItemAxisRange": {
         "enum": [
           "auto",
-          "dataMin"
+          "dataMin",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123790,7 +123748,8 @@
       "CreateOrganizationDashboardRequestWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123814,7 +123773,8 @@
       "CreateOrganizationDashboard201ResponseWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123837,7 +123797,8 @@
       "GetOrganizationDashboard200ResponseWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123945,7 +123906,8 @@
           "spans",
           "logs",
           "tracemetrics",
-          "preprod-app-size"
+          "preprod-app-size",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -123997,7 +123959,8 @@
       "UpdateOrganizationDashboardRequestWidgetsItemAxisRange": {
         "enum": [
           "auto",
-          "dataMin"
+          "dataMin",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124021,7 +123984,8 @@
       "UpdateOrganizationDashboardRequestWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124045,7 +124009,8 @@
       "UpdateOrganizationDashboard200ResponseWidgetsItemLegendType": {
         "enum": [
           "default",
-          "breakdown"
+          "breakdown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124301,7 +124266,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -124345,7 +124311,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130488,7 +130455,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseImagesItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130511,7 +130479,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130534,7 +130503,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130557,7 +130527,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130580,7 +130551,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130625,7 +130597,8 @@
       "GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130648,7 +130621,8 @@
       "GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130671,7 +130645,8 @@
       "GetOrganizationPreprodArtifactSnapshotLatestBase200ResponseImagesItemCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130843,7 +130818,8 @@
           "escalating",
           "ongoing",
           "regressed",
-          "new"
+          "new",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -130887,7 +130863,8 @@
         "enum": [
           "low",
           "medium",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135728,7 +135705,8 @@
       "ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence": {
         "enum": [
           "low",
-          "high"
+          "high",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135861,7 +135839,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135884,7 +135863,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135907,7 +135887,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135930,7 +135911,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135953,7 +135935,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseErroredItemBaseImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -135976,7 +135959,8 @@
       "GetOrganizationPreprodArtifactSnapshot200ResponseErroredItemHeadImageCanvasTheme": {
         "enum": [
           "light",
-          "dark"
+          "dark",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -136002,7 +135986,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -136040,7 +136025,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
@@ -136220,7 +136206,8 @@
           "open",
           "closed",
           "draft",
-          "unknown"
+          "unknown",
+          null
         ],
         "type": "string",
         "additionalProperties": false,
