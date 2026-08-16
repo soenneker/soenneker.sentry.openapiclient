@@ -115,7 +115,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Valid query fields include:- `id`: The organization ID- `slug`: The organization slug- `status`: The organization&apos;s current status (one of `active`, `pending_deletion`, or `deletion_in_progress`)- `email` or `member_id`: Filter your organizations by the emails or [organization member IDs](/api/organizations/list-an-organizations-members/) of specific members included- `query`: Filter your organizations by name, slug, and members that contain this substringExample: `query=(slug:foo AND status:active) OR (email:[thing-one@example.com,thing-two@example.com] AND query:bar)`&quot;</summary>
+            /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).Valid query fields include:- `id`: The organization ID- `slug`: The organization slug- `status`: The organization&apos;s current status (one of `active`, `pending_deletion`, or `deletion_in_progress`)- `email` or `member_id`: Filter your organizations by the emails or [organization member IDs](/api/organizations/list-an-organizations-members/) of specific members included- `query`: Filter your organizations by name, slug, and members that contain this substringExample: `query=(slug:foo AND status:active) OR (email:[thing-one@example.com,thing-two@example.com] AND query:bar)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -125,7 +125,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-            /// <summary>&quot;The field to sort results by, in descending order. If not specified the results are sorted by the date they were created.Valid fields include:- `members`: By number of members- `events`: By number of events in the past 24 hours&quot;</summary>
+            /// <summary>The field to sort results by, in descending order. If not specified the results are sorted by the date they were created.Valid fields include:- `members`: By number of members- `events`: By number of events in the past 24 hours</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("sortBy")]

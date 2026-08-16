@@ -105,11 +105,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling.F
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expand")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationProfilingFlamegraphExpandParameterItem[]? Expand { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.MetricsItem[]? Expand { get; set; }
 #nullable restore
 #else
             [QueryParameter("expand")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationProfilingFlamegraphExpandParameterItem[] Expand { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.MetricsItem[] Expand { get; set; }
 #endif
             /// <summary>A UInt32 function fingerprint. Only valid when `dataSource=functions`.</summary>
             [QueryParameter("fingerprint")]

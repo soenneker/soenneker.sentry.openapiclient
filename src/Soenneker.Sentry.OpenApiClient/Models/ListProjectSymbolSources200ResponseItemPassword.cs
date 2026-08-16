@@ -22,7 +22,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public ListProjectSymbolSources200ResponseItemPassword()
         {
             AdditionalData = new Dictionary<string, object>();
-            HiddenSecret = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

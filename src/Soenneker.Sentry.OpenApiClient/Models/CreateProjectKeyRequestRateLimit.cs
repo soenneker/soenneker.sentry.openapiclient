@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    \&quot;rateLimit\&quot;: {        \&quot;window\&quot;: 7200, // time in seconds        \&quot;count\&quot;: 1000 // error cap    }}```&quot;
+    /// Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    &quot;rateLimit&quot;: {        &quot;window&quot;: 7200, // time in seconds        &quot;count&quot;: 1000 // error cap    }}```
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateProjectKeyRequestRateLimit : IAdditionalDataHolder, IParsable

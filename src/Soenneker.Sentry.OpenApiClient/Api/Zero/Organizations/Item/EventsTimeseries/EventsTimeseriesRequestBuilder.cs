@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         {
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
+        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
+        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.&quot;
+        /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsTimeseriesRequestBuilderGetQueryParameters 
@@ -136,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
+            /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -172,7 +172,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             /// <summary>The number of top event results to return, must be between 1 and 10.When TopEvents is passed, both sort and groupBy are required parameters</summary>
             [QueryParameter("topEvents")]
             public int? TopEvents { get; set; }
-            /// <summary>&quot;The aggregate field to create the timeseries for, defaults to `count()` when        not included.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.&quot;</summary>
+            /// <summary>The aggregate field to create the timeseries for, defaults to `count()` when        not included.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("yAxis")]

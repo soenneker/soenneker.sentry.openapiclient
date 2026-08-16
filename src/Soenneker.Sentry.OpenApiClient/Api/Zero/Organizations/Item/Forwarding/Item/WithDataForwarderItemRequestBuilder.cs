@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
             await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.&quot;
+        /// Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -86,11 +86,10 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.&quot;
+        /// Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

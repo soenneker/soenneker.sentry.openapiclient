@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
         }
         /// <summary>
-        /// &quot;Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.&quot;
+        /// Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.&quot;
+        /// Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Item.SizeAnalysis.SizeAnalysisRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.&quot;
+        /// Retrieve size analysis results for a given artifact.Returns size metrics including download size, install size, and optional insights.When a base artifact exists (either from commit comparison or via the `baseArtifactId` parameter),comparison data showing size differences is included.The response `state` field indicates the analysis status:- `PENDING`: Analysis has not started yet.- `PROCESSING`: Analysis is currently running.- `FAILED` / `NOT_RAN`: Analysis did not complete; `errorCode` and `errorMessage` are included.- `COMPLETED`: Analysis finished successfully with full size data.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SizeAnalysisRequestBuilderGetQueryParameters 

@@ -15,7 +15,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2Status? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.NotAttemptedStatus? Status { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.NotAttemptedStatus>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.NotAttemptedStatus>("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

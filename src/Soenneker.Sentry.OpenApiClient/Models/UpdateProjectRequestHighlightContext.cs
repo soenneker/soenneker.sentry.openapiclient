@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`&quot;
+    /// A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectRequestHighlightContext : IAdditionalDataHolder, IParsable

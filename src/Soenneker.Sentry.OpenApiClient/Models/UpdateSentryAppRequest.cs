@@ -84,7 +84,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Whether or not an installation of the custom integration should be verified.</summary>
         public bool? VerifyInstall { get; set; }
-        /// <summary>&quot;Custom headers sent with every webhook request. Each entry is a single &apos;Header-Name: value&apos; pair.&quot;</summary>
+        /// <summary>Custom headers sent with every webhook request. Each entry is a single &apos;Header-Name: value&apos; pair.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WebhookHeaders { get; set; }

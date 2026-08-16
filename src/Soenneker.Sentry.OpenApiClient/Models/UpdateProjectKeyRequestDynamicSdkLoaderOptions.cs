@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Configures multiple options for the Javascript Loader Script.- `Performance Monitoring`- `Debug Bundles &amp; Logging`- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK &gt;= 10.0.0.```json{    \&quot;dynamicSdkLoaderOptions\&quot;: {        \&quot;hasReplay\&quot;: true,        \&quot;hasPerformance\&quot;: true,        \&quot;hasDebug\&quot;: true,        \&quot;hasFeedback\&quot;: true,        \&quot;hasLogsAndMetrics\&quot;: true    }}```&quot;
+    /// Configures multiple options for the Javascript Loader Script.- `Performance Monitoring`- `Debug Bundles &amp; Logging`- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK &gt;= 10.0.0.```json{    &quot;dynamicSdkLoaderOptions&quot;: {        &quot;hasReplay&quot;: true,        &quot;hasPerformance&quot;: true,        &quot;hasDebug&quot;: true,        &quot;hasFeedback&quot;: true,        &quot;hasLogsAndMetrics&quot;: true    }}```
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectKeyRequestDynamicSdkLoaderOptions : IAdditionalDataHolder, IParsable

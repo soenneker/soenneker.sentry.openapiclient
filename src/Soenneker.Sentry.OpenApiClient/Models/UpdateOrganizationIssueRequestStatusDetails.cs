@@ -21,9 +21,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? IgnoreDuration { get; set; }
         /// <summary>Ignore the issue until it has affected this many users in `ignoreUserWindow` minutes.</summary>
         public int? IgnoreUserCount { get; set; }
-        /// <summary>&quot;Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)&quot;</summary>
+        /// <summary>Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)</summary>
         public int? IgnoreUserWindow { get; set; }
-        /// <summary>&quot;Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)&quot;</summary>
+        /// <summary>Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)</summary>
         public int? IgnoreWindow { get; set; }
         /// <summary>The commit data that the issue should use for resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

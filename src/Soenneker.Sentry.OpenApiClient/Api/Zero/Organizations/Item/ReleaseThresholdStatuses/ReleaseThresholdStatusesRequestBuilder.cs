@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
         {
         }
         /// <summary>
-        /// &quot;**`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.&quot;
+        /// **`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;**`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.&quot;
+        /// **`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThresholdStatuses.ReleaseThresholdStatusesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;**`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.&quot;
+        /// **`[WARNING]`**: This API is an experimental Alpha feature and is subject to change!List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReleaseThresholdStatusesRequestBuilderGetQueryParameters 

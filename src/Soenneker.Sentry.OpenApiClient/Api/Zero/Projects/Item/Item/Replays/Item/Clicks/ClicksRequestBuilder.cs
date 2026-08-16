@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays.Ite
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
-            /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
+            /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

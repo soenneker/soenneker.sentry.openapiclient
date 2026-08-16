@@ -32,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Environment { get; set; }
 #endif
-        /// <summary>&quot;The fields, functions, or equations that can be requested for the query. At most 20 fields can be selected per request. Each field can be one of the following types:- A built-in key field. See possible fields in the [properties table](/product/sentry-basics/search/searchable-properties/#properties-table), under any field that is an event property.    - example: `field=transaction`- A tag. Tags should use the `tag[]` formatting to avoid ambiguity with any fields    - example: `field=tag[isEnterprise]`- A function which will be in the format of `function_name(parameters,...)`. See possible functions in the [query builder documentation](/product/discover-queries/query-builder/#stacking-functions).    - when a function is included, Discover will group by any tags or fields    - example: `field=count_if(transaction.duration,greater,300)`- An equation when prefixed with `equation|`. Read more about [equations here](/product/discover-queries/query-builder/query-equations/).    - example: `field=equation|count_if(transaction.duration,greater,300) / count() * 100`&quot;</summary>
+        /// <summary>The fields, functions, or equations that can be requested for the query. At most 20 fields can be selected per request. Each field can be one of the following types:- A built-in key field. See possible fields in the [properties table](/product/sentry-basics/search/searchable-properties/#properties-table), under any field that is an event property.    - example: `field=transaction`- A tag. Tags should use the `tag[]` formatting to avoid ambiguity with any fields    - example: `field=tag[isEnterprise]`- A function which will be in the format of `function_name(parameters,...)`. See possible functions in the [query builder documentation](/product/discover-queries/query-builder/#stacking-functions).    - when a function is included, Discover will group by any tags or fields    - example: `field=count_if(transaction.duration,greater,300)`- An equation when prefixed with `equation|`. Read more about [equations here](/product/discover-queries/query-builder/query-equations/).    - example: `field=equation|count_if(transaction.duration,greater,300) / count() * 100`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Fields { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Query { get; set; }
 #endif
-        /// <summary>&quot;The dataset you would like to query. Note: `discover` is a **deprecated** value. The allowed values are: `error-events`, `transaction-like`* `discover`* `error-events`* `transaction-like`&quot;</summary>
+        /// <summary>The dataset you would like to query. Note: `discover` is a **deprecated** value. The allowed values are: `error-events`, `transaction-like`* `discover`* `error-events`* `transaction-like`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQueryRequestQueryDataset? QueryDataset { get; set; }
         /// <summary>The saved time range period for this saved query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

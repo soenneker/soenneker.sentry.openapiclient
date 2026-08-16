@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Create a new project bound to a team.        Note: If your organization has disabled member project creation, the `org:write` or `team:admin` scope is required.        &quot;
+        /// Create a new project bound to a team.        Note: If your organization has disabled member project creation, the `org:write` or `team:admin` scope is required.        
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamProject201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -92,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.Item.Item.Projects
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Create a new project bound to a team.        Note: If your organization has disabled member project creation, the `org:write` or `team:admin` scope is required.        &quot;
+        /// Create a new project bound to a team.        Note: If your organization has disabled member project creation, the `org:write` or `team:admin` scope is required.        
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

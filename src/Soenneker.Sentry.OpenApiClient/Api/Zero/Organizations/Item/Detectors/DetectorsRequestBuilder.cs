@@ -119,7 +119,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -198,7 +197,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>&quot;An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        &quot;</summary>
+            /// <summary>An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -245,7 +244,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>&quot;An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        &quot;</summary>
+            /// <summary>An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -292,7 +291,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>&quot;An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        &quot;</summary>
+            /// <summary>An optional search query for filtering monitors.Available fields are:- `name`- `type`: e.g. `error`, `metric_issue`, `issue_stream`- `assignee`: email, username, #team, me, none        </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

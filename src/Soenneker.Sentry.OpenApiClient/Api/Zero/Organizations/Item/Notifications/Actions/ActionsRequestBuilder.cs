@@ -160,7 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
             [QueryParameter("project_id_or_slug")]
             public string[] ProjectIdOrSlug { get; set; }
 #endif
-            /// <summary>&quot;Type of the trigger that causes the notification. The only supported value right now is: `spike-protection`&quot;</summary>
+            /// <summary>Type of the trigger that causes the notification. The only supported value right now is: `spike-protection`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("triggerType")]

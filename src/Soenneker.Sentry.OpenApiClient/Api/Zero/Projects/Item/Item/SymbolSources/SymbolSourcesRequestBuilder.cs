@@ -125,7 +125,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/symbol-sources?id={id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

@@ -16,7 +16,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Sentry Javascript SDK version to use. The currently supported options are:* `latest` - Most recent version* `7.x` - Version 7 releases</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion? BrowserSdkVersion { get; set; }
-        /// <summary>&quot;Configures multiple options for the Javascript Loader Script.- `Performance Monitoring`- `Debug Bundles &amp; Logging`- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK &gt;= 10.0.0.```json{    \&quot;dynamicSdkLoaderOptions\&quot;: {        \&quot;hasReplay\&quot;: true,        \&quot;hasPerformance\&quot;: true,        \&quot;hasDebug\&quot;: true,        \&quot;hasFeedback\&quot;: true,        \&quot;hasLogsAndMetrics\&quot;: true    }}```&quot;</summary>
+        /// <summary>Configures multiple options for the Javascript Loader Script.- `Performance Monitoring`- `Debug Bundles &amp; Logging`- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK &gt;= 10.0.0.```json{    &quot;dynamicSdkLoaderOptions&quot;: {        &quot;hasReplay&quot;: true,        &quot;hasPerformance&quot;: true,        &quot;hasDebug&quot;: true,        &quot;hasFeedback&quot;: true,        &quot;hasLogsAndMetrics&quot;: true    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get; set; }
@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    \&quot;rateLimit\&quot;: {        \&quot;window\&quot;: 7200, // time in seconds        \&quot;count\&quot;: 1000 // error cap    }}```&quot;</summary>
+        /// <summary>Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    &quot;rateLimit&quot;: {        &quot;window&quot;: 7200, // time in seconds        &quot;count&quot;: 1000 // error cap    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit? RateLimit { get; set; }

@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string TargetIdentifier { get; set; }
 #endif
-        /// <summary>&quot;Type of the trigger that causes the notification. The only supported trigger right now is: `spike-protection`.&quot;</summary>
+        /// <summary>Type of the trigger that causes the notification. The only supported trigger right now is: `spike-protection`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get; set; }

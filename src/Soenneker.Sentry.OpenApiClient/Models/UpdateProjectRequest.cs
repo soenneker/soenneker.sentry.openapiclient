@@ -16,7 +16,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI).</summary>
         public bool? EnableAutoReleaseCreation { get; set; }
-        /// <summary>&quot;A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`&quot;</summary>
+        /// <summary>A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext? HighlightContext { get; set; }

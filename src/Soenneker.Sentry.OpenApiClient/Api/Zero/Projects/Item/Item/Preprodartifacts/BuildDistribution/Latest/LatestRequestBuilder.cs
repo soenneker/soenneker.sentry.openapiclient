@@ -148,7 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
             [QueryParameter("mainBinaryIdentifier")]
             public string MainBinaryIdentifier { get; set; }
 #endif
-            /// <summary>&quot;Platform: \&quot;apple\&quot; or \&quot;android\&quot;.&quot;</summary>
+            /// <summary>Platform: &quot;apple&quot; or &quot;android&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("platform")]

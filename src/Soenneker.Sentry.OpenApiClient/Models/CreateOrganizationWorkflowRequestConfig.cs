@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;        Typically the frequency at which the alert will fire, in minutes.        - `0`: 0 minutes        - `5`: 5 minutes        - `10`: 10 minutes        - `30`: 30 minutes        - `60`: 1 hour        - `180`: 3 hours        - `720`: 12 hours        - `1440`: 24 hours        ```json            {                \&quot;frequency\&quot;:3600            }        ```        &quot;
+    ///         Typically the frequency at which the alert will fire, in minutes.        - `0`: 0 minutes        - `5`: 5 minutes        - `10`: 10 minutes        - `30`: 30 minutes        - `60`: 1 hour        - `180`: 3 hours        - `720`: 12 hours        - `1440`: 24 hours        ```json            {                &quot;frequency&quot;:3600            }        ```        
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationWorkflowRequestConfig : IAdditionalDataHolder, IParsable

@@ -148,11 +148,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("statsType")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatisticsStatsTypeParameterItem[]? StatsType { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.AttributeDistributionsItem[]? StatsType { get; set; }
 #nullable restore
 #else
             [QueryParameter("statsType")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatisticsStatsTypeParameterItem[] StatsType { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.AttributeDistributionsItem[] StatsType { get; set; }
 #endif
             /// <summary>Restrict results to attribute names containing this substring (case-sensitive).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

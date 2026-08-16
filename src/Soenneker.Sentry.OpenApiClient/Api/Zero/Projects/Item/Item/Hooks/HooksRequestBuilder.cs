@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Hooks
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Register a new service hook on a project.Events include:- event.alert: An alert is generated for an event (via rules).- event.created: A new event has been processed.This endpoint requires the &apos;servicehooks&apos; feature to be enabled for your project.&quot;
+        /// Register a new service hook on a project.Events include:- event.alert: An alert is generated for an event (via rules).- event.created: A new event has been processed.This endpoint requires the &apos;servicehooks&apos; feature to be enabled for your project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RegisterANewServiceHook201Response"/></returns>
         /// <param name="body">The request body</param>
@@ -105,7 +105,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Hooks
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Register a new service hook on a project.Events include:- event.alert: An alert is generated for an event (via rules).- event.created: A new event has been processed.This endpoint requires the &apos;servicehooks&apos; feature to be enabled for your project.&quot;
+        /// Register a new service hook on a project.Events include:- event.alert: An alert is generated for an event (via rules).- event.created: A new event has been processed.This endpoint requires the &apos;servicehooks&apos; feature to be enabled for your project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
         {
         }
         /// <summary>
-        /// &quot;Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status&quot;
+        /// Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// &quot;Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status&quot;
+        /// Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys.ProjectKeysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status&quot;
+        /// Return a list of client keys (DSNs) for all projects in an organization.This paginated endpoint lists client keys across all projects in an organization. Each key includes the project IDto identify which project it belongs to.Query Parameters:- team: Filter by team slug or ID to get keys only for that team&apos;s projects- status: Filter by &apos;active&apos; or &apos;inactive&apos; to get keys with specific status
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ProjectKeysRequestBuilderGetQueryParameters 

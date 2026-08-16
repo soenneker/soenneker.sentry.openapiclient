@@ -124,7 +124,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/{integrationId}?externalIssue={externalIssue}", PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

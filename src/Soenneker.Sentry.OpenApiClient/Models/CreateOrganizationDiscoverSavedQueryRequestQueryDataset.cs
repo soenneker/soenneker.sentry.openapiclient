@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>&quot;The dataset you would like to query. Note: `discover` is a **deprecated** value. The allowed values are: `error-events`, `transaction-like`* `discover`* `error-events`* `transaction-like`&quot;</summary>
+    /// <summary>The dataset you would like to query. Note: `discover` is a **deprecated** value. The allowed values are: `error-events`, `transaction-like`* `discover`* `error-events`* `transaction-like`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateOrganizationDiscoverSavedQueryRequestQueryDataset
     {

@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         {
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested&quot;
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested&quot;
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// &quot;Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested&quot;
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 
@@ -114,7 +114,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>&quot;The fields, functions, or equations to request for the query. At most 20 fields can be selected per request. Each field can be one of the following types:- A built-in key field. See possible fields in the [properties table](/concepts/search/searchable-properties/), under any field that matches the dataset passed to the dataset parameter    - example: `field=transaction`- A tag. Tags should use the `tag[{name}, {type}]` formatting to avoid ambiguity with any fields,    - example: `field=tag[isEnterprise, string]`    - example: `field=tag[numberOfBytes, number]`- A function which will be in the format of `function_name(parameters,...)`. See possible functions in the [query builder documentation](/product/discover-queries/query-builder/#stacking-functions).    - when a function is included, Discover will group by any tags or fields    - example: `field=count_if(transaction.duration,greater,300)`- An equation when prefixed with `equation|`. Read more about [equations here](/product/discover-queries/query-builder/query-equations/).    - example: `field=equation|count_if(transaction.duration,greater,300) / count() * 100`&quot;</summary>
+            /// <summary>The fields, functions, or equations to request for the query. At most 20 fields can be selected per request. Each field can be one of the following types:- A built-in key field. See possible fields in the [properties table](/concepts/search/searchable-properties/), under any field that matches the dataset passed to the dataset parameter    - example: `field=transaction`- A tag. Tags should use the `tag[{name}, {type}]` formatting to avoid ambiguity with any fields,    - example: `field=tag[isEnterprise, string]`    - example: `field=tag[numberOfBytes, number]`- A function which will be in the format of `function_name(parameters,...)`. See possible functions in the [query builder documentation](/product/discover-queries/query-builder/#stacking-functions).    - when a function is included, Discover will group by any tags or fields    - example: `field=count_if(transaction.duration,greater,300)`- An equation when prefixed with `equation|`. Read more about [equations here](/product/discover-queries/query-builder/query-equations/).    - example: `field=equation|count_if(transaction.duration,greater,300) / count() * 100`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("field")]
@@ -137,7 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>&quot;Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`&quot;</summary>
+            /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

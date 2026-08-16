@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    \&quot;rateLimit\&quot;: {        \&quot;window\&quot;: 7200, // time in seconds        \&quot;count\&quot;: 1000 // error cap    }}```&quot;</summary>
+        /// <summary>Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    &quot;rateLimit&quot;: {        &quot;window&quot;: 7200, // time in seconds        &quot;count&quot;: 1000 // error cap    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit? RateLimit { get; set; }

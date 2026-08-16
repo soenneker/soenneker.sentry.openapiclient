@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The reason property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason? Reason { get; set; }
         /// <summary>The status property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Status? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus? Status { get; set; }
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,7 +61,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "details", n => { Details = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Status>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("details", Details);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason>("reason", Reason);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Status>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus>("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
