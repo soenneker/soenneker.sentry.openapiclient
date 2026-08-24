@@ -36344,24 +36344,29 @@
             "$ref": "#/components/schemas/StatusDetailsValidatorInCommit"
           },
           "ignoreDuration": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until for this many minutes."
           },
           "ignoreCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred this many times in \u0060ignoreWindow\u0060 minutes."
           },
           "ignoreWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred \u0060ignoreCount\u0060 times in this many minutes. (Max: 1 week)"
           },
           "ignoreUserCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected this many users in \u0060ignoreUserWindow\u0060 minutes."
           },
           "ignoreUserWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected \u0060ignoreUserCount\u0060 users in this many minutes. (Max: 1 week)"
           }
@@ -39960,24 +39965,29 @@
             "$ref": "#/components/schemas/GroupValidatorStatusDetailsAllOf1InCommit"
           },
           "ignoreDuration": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until for this many minutes."
           },
           "ignoreCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred this many times in \u0060ignoreWindow\u0060 minutes."
           },
           "ignoreWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred \u0060ignoreCount\u0060 times in this many minutes. (Max: 1 week)"
           },
           "ignoreUserCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected this many users in \u0060ignoreUserWindow\u0060 minutes."
           },
           "ignoreUserWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected \u0060ignoreUserCount\u0060 users in this many minutes. (Max: 1 week)"
           }
@@ -41741,24 +41751,29 @@
             "$ref": "#/components/schemas/GroupValidatorStatusDetailsAllOf1InCommit"
           },
           "ignoreDuration": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until for this many minutes."
           },
           "ignoreCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred this many times in \u0060ignoreWindow\u0060 minutes."
           },
           "ignoreWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred \u0060ignoreCount\u0060 times in this many minutes. (Max: 1 week)"
           },
           "ignoreUserCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected this many users in \u0060ignoreUserWindow\u0060 minutes."
           },
           "ignoreUserWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected \u0060ignoreUserCount\u0060 users in this many minutes. (Max: 1 week)"
           }
@@ -81114,24 +81129,29 @@
             "$ref": "#/components/schemas/UpdateOrganizationIssuesRequestStatusDetailsInCommit"
           },
           "ignoreDuration": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until for this many minutes."
           },
           "ignoreCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred this many times in \u0060ignoreWindow\u0060 minutes."
           },
           "ignoreWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred \u0060ignoreCount\u0060 times in this many minutes. (Max: 1 week)"
           },
           "ignoreUserCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected this many users in \u0060ignoreUserWindow\u0060 minutes."
           },
           "ignoreUserWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected \u0060ignoreUserCount\u0060 users in this many minutes. (Max: 1 week)"
           }
@@ -92643,24 +92663,29 @@
             "$ref": "#/components/schemas/UpdateOrganizationIssueRequestStatusDetailsInCommit"
           },
           "ignoreDuration": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until for this many minutes."
           },
           "ignoreCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred this many times in \u0060ignoreWindow\u0060 minutes."
           },
           "ignoreWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has occurred \u0060ignoreCount\u0060 times in this many minutes. (Max: 1 week)"
           },
           "ignoreUserCount": {
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected this many users in \u0060ignoreUserWindow\u0060 minutes."
           },
           "ignoreUserWindow": {
             "maximum": 10080,
+            "minimum": 0,
             "type": "integer",
             "description": "Ignore the issue until it has affected \u0060ignoreUserCount\u0060 users in this many minutes. (Max: 1 week)"
           }
