@@ -9056,7 +9056,8 @@
             "description": "The continuous-profiler ID to fetch chunks for.",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             }
           },
           {
@@ -9152,6 +9153,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -26443,7 +26447,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "The sort order of the issues. Options include \u0027Last Seen\u0027 (\u0060date\u0060), \u0027First Seen\u0027 (\u0060new\u0060), \u0027Trends\u0027 (\u0060trends\u0060), \u0027Events\u0027 (\u0060freq\u0060), \u0027Users\u0027 (\u0060user\u0060), and \u0027Date Added\u0027 (\u0060inbox\u0060).",
+            "description": "The sort order of the issues. Options include \u0027Last Seen\u0027 (\u0060date\u0060), \u0027First Seen\u0027 (\u0060new\u0060), \u0027Trends\u0027 (\u0060trends\u0060), \u0027Events\u0027 (\u0060freq\u0060), \u0027Users\u0027 (\u0060user\u0060), and \u0027Recommended\u0027 (\u0060recommended\u0060).",
             "schema": {
               "$ref": "#/components/schemas/ListAProjectSIssuesSortParameter"
             }
@@ -140816,7 +140820,7 @@
           "trends",
           "freq",
           "user",
-          "inbox"
+          "recommended"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -140845,8 +140849,8 @@
               "name": "User"
             },
             {
-              "value": "inbox",
-              "name": "Inbox"
+              "value": "recommended",
+              "name": "Recommended"
             }
           ]
         }

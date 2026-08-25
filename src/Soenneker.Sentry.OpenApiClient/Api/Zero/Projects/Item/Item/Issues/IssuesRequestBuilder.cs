@@ -211,7 +211,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             /// <summary>If this is set to true then short IDs are looked up by this function as well. This can cause the return value of the function to return an event issue of a different project which is why this is an opt-in. Set to 1 to enable.</summary>
             [QueryParameter("shortIdLookup")]
             public bool? ShortIdLookup { get; set; }
-            /// <summary>The sort order of the issues. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Date Added&apos; (`inbox`).</summary>
+            /// <summary>The sort order of the issues. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssuesSortParameter? Sort { get; set; }
             /// <summary>An optional stat period (can be one of `&quot;24h&quot;`, `&quot;14d&quot;`, and `&quot;&quot;`), defaults to &quot;24h&quot; if not provided.</summary>

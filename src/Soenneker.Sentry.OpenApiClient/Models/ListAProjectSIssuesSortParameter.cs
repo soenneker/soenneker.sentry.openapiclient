@@ -28,9 +28,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         User,
         #pragma warning restore CS1591
-        [EnumMember(Value = "inbox")]
+        [EnumMember(Value = "recommended")]
         #pragma warning disable CS1591
-        Inbox,
+        Recommended,
         #pragma warning restore CS1591
     }
 }

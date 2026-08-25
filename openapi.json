@@ -24267,7 +24267,8 @@
             "in": "query",
             "name": "profiler_id",
             "schema": {
-              "type": "string"
+              "type": "string",
+              "format": "uuid"
             },
             "description": "The continuous-profiler ID to fetch chunks for.",
             "required": true
@@ -24378,6 +24379,9 @@
               }
             },
             "description": ""
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -65016,7 +65020,7 @@
           {
             "name": "sort",
             "in": "query",
-            "description": "The sort order of the issues. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), and 'Date Added' (`inbox`).",
+            "description": "The sort order of the issues. Options include 'Last Seen' (`date`), 'First Seen' (`new`), 'Trends' (`trends`), 'Events' (`freq`), 'Users' (`user`), and 'Recommended' (`recommended`).",
             "schema": {
               "type": "string",
               "default": "date",
@@ -65026,7 +65030,7 @@
                 "trends",
                 "freq",
                 "user",
-                "inbox"
+                "recommended"
               ]
             }
           },

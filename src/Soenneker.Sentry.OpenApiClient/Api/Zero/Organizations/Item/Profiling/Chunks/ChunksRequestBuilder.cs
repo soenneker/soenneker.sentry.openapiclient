@@ -89,15 +89,8 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling.C
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
             /// <summary>The continuous-profiler ID to fetch chunks for.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
             [QueryParameter("profiler_id")]
-            public string? ProfilerId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("profiler_id")]
-            public string ProfilerId { get; set; }
-#endif
+            public Guid? ProfilerId { get; set; }
             /// <summary>The ID or slug of the project to fetch chunks for. Exactly one project must be specified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
