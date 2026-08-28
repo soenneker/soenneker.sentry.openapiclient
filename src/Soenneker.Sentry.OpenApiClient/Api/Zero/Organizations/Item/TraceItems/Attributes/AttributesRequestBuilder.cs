@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttributesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,itemType*,query*,start*,statsPeriod*,substringMatch*}", pathParameters)
+        public AttributesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttributesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,itemType*,query*,start*,statsPeriod*,substringMatch*}", rawUrl)
+        public AttributesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", rawUrl)
         {
         }
         /// <summary>
@@ -112,10 +112,30 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
+            /// <summary>The name of environments to filter by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("environment")]
+            public string[]? Environment { get; set; }
+#nullable restore
+#else
+            [QueryParameter("environment")]
+            public string[] Environment { get; set; }
+#endif
             /// <summary>Deprecated alias of `dataset`. Use `dataset` instead.</summary>
             [Obsolete("")]
             [QueryParameter("itemType")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributesItemTypeParameter? ItemType { get; set; }
+            /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("project")]
+            public string[]? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string[] Project { get; set; }
+#endif
             /// <summary>Sentry [search syntax](https://docs.sentry.io/concepts/search/) to filter trace items before computing attributes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

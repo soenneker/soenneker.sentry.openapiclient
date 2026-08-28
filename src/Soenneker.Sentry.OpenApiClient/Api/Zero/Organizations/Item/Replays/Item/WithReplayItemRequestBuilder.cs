@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Ite
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReplayItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
+        public WithReplayItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,queryReferrer*,sort*,sortBy*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Ite
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithReplayItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
+        public WithReplayItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}{?cursor*,end*,environment*,field*,orderBy*,per_page*,project*,projectSlug*,query*,queryReferrer*,sort*,sortBy*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
@@ -98,15 +98,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Ite
             /// <summary>This defines the inclusive end of the time series range as an explicit datetime, either inUTC ISO8601 or epoch seconds. Use along with `start` instead of `statsPeriod`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
-            /// <summary>The environment to filter by.</summary>
+            /// <summary>The environments to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("environment")]
-            public string? Environment { get; set; }
+            public string[]? Environment { get; set; }
 #nullable restore
 #else
             [QueryParameter("environment")]
-            public string Environment { get; set; }
+            public string[] Environment { get; set; }
 #endif
             /// <summary>Specifies a field that should be marshaled in the output. Invalid fields will be rejected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,6 +160,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays.Ite
 #else
             [QueryParameter("query")]
             public string Query { get; set; }
+#endif
+            /// <summary>Internal referrer identifier used for query tracing.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("queryReferrer")]
+            public string? QueryReferrer { get; set; }
+#nullable restore
+#else
+            [QueryParameter("queryReferrer")]
+            public string QueryReferrer { get; set; }
 #endif
             /// <summary>The field to sort the output by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

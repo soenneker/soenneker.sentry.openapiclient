@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DashboardsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/dashboards{?cursor*,per_page*}", pathParameters)
+        public DashboardsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/dashboards{?cursor*,filter*,per_page*,pin*,query*,sort*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DashboardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/dashboards{?cursor*,per_page*}", rawUrl)
+        public DashboardsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/dashboards{?cursor*,filter*,per_page*,pin*,query*,sort*}", rawUrl)
         {
         }
         /// <summary>
@@ -151,9 +151,42 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Filter the dashboards returned. Repeat this parameter to apply multiple filters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboardsFilterParameterItem[]? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboardsFilterParameterItem[] Filter { get; set; }
+#endif
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Pin favorited dashboards to the top of the results.</summary>
+            [QueryParameter("pin")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.FavoritesPin? Pin { get; set; }
+            /// <summary>Filter dashboards by title.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query")]
+            public string? Query { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query")]
+            public string Query { get; set; }
+#endif
+            /// <summary>The property to sort results by. Prefix the value with `-` to sort in descending order.Available fields are:- `title`- `dateCreated`- `mostPopular`- `recentlyViewed`- `mydashboards`- `myDashboardsAndRecentlyViewed`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("sort")]
+            public string? Sort { get; set; }
+#nullable restore
+#else
+            [QueryParameter("sort")]
+            public string Sort { get; set; }
+#endif
         }
     }
 }

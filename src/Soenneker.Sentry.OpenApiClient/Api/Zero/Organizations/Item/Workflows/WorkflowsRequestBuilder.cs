@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows{?id*,project*,query*,sortBy*}", pathParameters)
+        public WorkflowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows{?id*,project*,query*,sortBy*}", rawUrl)
+        public WorkflowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*}", rawUrl)
         {
         }
         /// <summary>
@@ -256,6 +256,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WorkflowsRequestBuilderGetQueryParameters 
         {
+            /// <summary>A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("cursor")]
+            public string? Cursor { get; set; }
+#nullable restore
+#else
+            [QueryParameter("cursor")]
+            public string Cursor { get; set; }
+#endif
+            /// <summary>The IDs of monitors connected to the alerts you&apos;d like to query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("detector")]
+            public int?[]? Detector { get; set; }
+#nullable restore
+#else
+            [QueryParameter("detector")]
+            public int?[] Detector { get; set; }
+#endif
             /// <summary>The ID of the alert you&apos;d like to query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -266,6 +286,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
             [QueryParameter("id")]
             public int?[] Id { get; set; }
 #endif
+            /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

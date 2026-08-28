@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,referrer*,sort*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,sort*,start*,statsPeriod*}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events?dataset={dataset}&field={field}{&allowAggregateConditions*,cursor*,end*,environment*,per_page*,project*,query*,referrer*,sort*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
 #else
             [QueryParameter("query")]
             public string Query { get; set; }
+#endif
+            /// <summary>Internal referrer identifier used for query tracing. Most clients can omit this.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("referrer")]
+            public string? Referrer { get; set; }
+#nullable restore
+#else
+            [QueryParameter("referrer")]
+            public string Referrer { get; set; }
 #endif
             /// <summary>What to order the results of the query by. Must be something in the `field` list, excluding equations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

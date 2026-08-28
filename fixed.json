@@ -1359,6 +1359,41 @@
             }
           },
           {
+            "name": "filter",
+            "in": "query",
+            "description": "Filter the dashboards returned. Repeat this parameter to apply multiple filters.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListOrganizationDashboardsFilterParameterItem"
+              }
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Filter dashboards by title.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The property to sort results by. Prefix the value with \u0060-\u0060 to sort in descending order.\n\nAvailable fields are:\n- \u0060title\u0060\n- \u0060dateCreated\u0060\n- \u0060mostPopular\u0060\n- \u0060recentlyViewed\u0060\n- \u0060mydashboards\u0060\n- \u0060myDashboardsAndRecentlyViewed\u0060\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "pin",
+            "in": "query",
+            "description": "Pin favorited dashboards to the top of the results.",
+            "schema": {
+              "$ref": "#/components/schemas/FavoritesPin"
+            }
+          },
+          {
             "name": "per_page",
             "in": "query",
             "description": "Limit the number of rows to return in the result. Default and maximum allowed is 100.",
@@ -2156,6 +2191,23 @@
               "items": {
                 "type": "integer"
               }
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Limit the number of rows to return in the result. Default and maximum allowed is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
             }
           }
         ],
@@ -4110,6 +4162,14 @@
               "items": {
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "referrer",
+            "in": "query",
+            "description": "Internal referrer identifier used for query tracing. Most clients can omit this.",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -12527,10 +12587,12 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "The environment to filter by.",
+            "description": "The environments to filter by.",
             "schema": {
-              "minLength": 1,
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           {
@@ -12564,6 +12626,15 @@
             "name": "query",
             "in": "query",
             "description": "A structured query string to filter the output by.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryReferrer",
+            "in": "query",
+            "description": "Internal referrer identifier used for query tracing.",
             "schema": {
               "minLength": 1,
               "type": "string"
@@ -12784,10 +12855,12 @@
           {
             "name": "environment",
             "in": "query",
-            "description": "The environment to filter by.",
+            "description": "The environments to filter by.",
             "schema": {
-              "minLength": 1,
-              "type": "string"
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
             }
           },
           {
@@ -12821,6 +12894,15 @@
             "name": "query",
             "in": "query",
             "description": "A structured query string to filter the output by.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "queryReferrer",
+            "in": "query",
+            "description": "Internal referrer identifier used for query tracing.",
             "schema": {
               "minLength": 1,
               "type": "string"
@@ -15358,6 +15440,35 @@
             }
           },
           {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
             "name": "dataset",
             "in": "query",
             "description": "The trace item dataset to list attributes for. One of \u0060itemType\u0060 or \u0060dataset\u0060 is required.",
@@ -16235,6 +16346,17 @@
             }
           },
           {
+            "name": "detector",
+            "in": "query",
+            "description": "The IDs of monitors connected to the alerts you\u0027d like to query.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              }
+            }
+          },
+          {
             "name": "project",
             "in": "query",
             "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
@@ -16250,6 +16372,23 @@
                   }
                 ]
               }
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Limit the number of rows to return in the result. Default and maximum allowed is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
             }
           }
         ],
@@ -29608,6 +29747,34 @@
   },
   "components": {
     "schemas": {
+      "ActionFilterValidator": {
+        "required": [
+          "actions",
+          "logic_type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "logic_type": {
+            "$ref": "#/components/schemas/ActionFilterValidatorLogicType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActionFilterValidatorConditionsItem"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActionFilterValidatorActionsItemProperty"
+            }
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "AutofixPostResponse": {
         "required": [
           "run_id",
@@ -30150,6 +30317,90 @@
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardCreateWidget": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "maxLength": 255,
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "thresholds": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetThresholdsProperty"
+          },
+          "display_type": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetDisplayType"
+          },
+          "interval": {
+            "maxLength": 10,
+            "type": "string"
+          },
+          "queries": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardCreateWidgetQueriesItem"
+            }
+          },
+          "widget_type": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetWidgetType"
+          },
+          "limit": {
+            "minimum": 1,
+            "type": "integer",
+            "nullable": true
+          },
+          "layout": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetLayoutComposed"
+          },
+          "axis_range": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetAxisRange"
+          },
+          "legend_type": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetLegendType"
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardCreateWidgetLayout": {
+        "required": [
+          "h",
+          "w",
+          "x",
+          "y"
+        ],
+        "type": "object",
+        "properties": {
+          "x": {
+            "maximum": 5,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Column position (0-indexed)."
+          },
+          "y": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Row position (0-indexed)."
+          },
+          "w": {
+            "maximum": 6,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Width in grid columns (1-6)."
+          },
+          "h": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Height in grid rows."
+          }
+        },
+        "description": "Widget grid layout position and dimensions for dashboard creation.\n\nThe dashboard uses a 6-column grid. Required keys: x, y, w, h.\nConstraints: x (0-5), y (\u003E= 0), w (1-6), h (\u003E= 1), and x \u002B w \u003C= 6."
       },
       "DashboardDetails": {
         "type": "object",
@@ -36770,7 +37021,7 @@
           "action_filters": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemProperty"
+              "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItem"
             },
             "description": "The filters to run before the action will fire and the action(s) to fire.\n\n        \u0060logicType\u0060 can be one of \u0060any-short\u0060, \u0060all\u0060, or \u0060none\u0060.\n\n        Below is a basic example. See below for all other options.\n\n        \u0060\u0060\u0060json\n            \u0022actionFilters\u0022: [\n                {\n                    \u0022logicType\u0022: \u0022any\u0022,\n                    \u0022conditions\u0022: [\n                        {\n                            \u0022type\u0022: \u0022level\u0022,\n                            \u0022comparison\u0022: {\n                                \u0022level\u0022: 50,\n                                \u0022match\u0022: \u0022eq\u0022\n                            },\n                            \u0022conditionResult\u0022: true\n                        }\n                    ],\n                    \u0022actions\u0022: [\n                        {\n                            \u0022id\u0022: \u0022123\u0022,\n                            \u0022type\u0022: \u0022email\u0022,\n                            \u0022integrationId\u0022: null,\n                            \u0022data\u0022: {},\n                            \u0022config\u0022: {\n                                \u0022targetType\u0022: \u0022user\u0022,\n                                \u0022targetDisplay\u0022: null,\n                                \u0022targetIdentifier\u0022: \u002256789\u0022\n                            },\n                            \u0022status\u0022: \u0022active\u0022\n                        }\n                    ]\n                }\n            ]\n        \u0060\u0060\u0060\n\n        ## Conditions\n\n        **Issue Age**\n        - \u0060time\u0060: One of \u0060minute\u0060, \u0060hour\u0060, \u0060day\u0060, or \u0060week\u0060.\n        - \u0060value\u0060: A positive integer.\n        - \u0060comparisonType\u0060: One of \u0060older\u0060 or \u0060newer\u0060.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022age_comparison\u0022,\n                \u0022comparison\u0022: {\n                    \u0022time\u0022: \u0022minute\u0022,\n                    \u0022value\u0022: 10,\n                    \u0022comparisonType\u0022: \u0022older\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n\n        \u0060\u0060\u0060\n\n        **Issue Assignment**\n        - \u0060targetType\u0060: Who the issue is assigned to\n            - \u0060Unassigned\u0060: Unassigned\n            - \u0060Member\u0060: Assigned to a user\n            - \u0060Team\u0060: Assigned to a team\n        - \u0060targetIdentifier\u0060: The ID of the user or team from the \u0060targetType\u0060. Enter \u0022\u0022 if \u0060targetType\u0060 is \u0060Unassigned\u0060.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022assigned_to\u0022,\n                \u0022comparison\u0022: {\n                    \u0022targetType\u0022: \u0022Member\u0022,\n                    \u0022targetIdentifier\u0022: 123456\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Issue Category**\n        - \u0060value\u0060: The issue category to filter to.\n            - \u00601\u0060: Error issues\n            - \u00606\u0060: Feedback issues\n            - \u006010\u0060: Outage issues\n            - \u006011\u0060: Metric issues\n            - \u006012\u0060: DB Query issues\n            - \u006013\u0060: HTTP Client issues\n            - \u006014\u0060: Front end issues\n            - \u006015\u0060: Mobile issues\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022issue_category\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 1\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Issue Frequency**\n        - \u0060value\u0060: A positive integer representing how many times the issue has to happen before the alert will fire.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022issue_occurrences\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 10\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **De-escalation**\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022issue_priority_deescalating\u0022,\n                \u0022comparison\u0022: true,\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Issue Priority**\n        - \u0060comparison\u0060: The priority the issue must be for the alert to fire.\n            - \u006075\u0060: High priority\n            - \u006050\u0060: Medium priority\n            - \u006025\u0060: Low priority\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022issue_priority_greater_or_equal\u0022,\n                \u0022comparison\u0022: 75,\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Number of Users Affected**\n        - \u0060value\u0060: A positive integer representing the number of users that must be affected before the alert will fire.\n        - \u0060filters\u0060: A list of additional sub-filters to evaluate before the alert will fire.\n        - \u0060interval\u0060: The time period in which to evaluate the value. e.g. Number of users affected by an issue is more than \u0060value\u0060 in \u0060interval\u0060.\n            - \u00601min\u0060: 1 minute\n            - \u00605min\u0060: 5 minutes\n            - \u006015min\u0060: 15 minutes\n            - \u00601hr\u0060: 1 hour\n            - \u00601d\u0060: 1 day\n            - \u00601w\u0060: 1 week\n            - \u006030d\u0060: 30 days\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022event_unique_user_frequency_count\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 100,\n                    \u0022filters\u0022: [{\u0022key\u0022: \u0022foo\u0022, \u0022match\u0022: \u0022eq\u0022, \u0022value\u0022: \u0022bar\u0022}],\n                    \u0022interval\u0022: \u00221h\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Number of Events**\n        - \u0060value\u0060: A positive integer representing the number of events in an issue that must come in before the alert will fire\n        - \u0060interval\u0060: The time period in which to evaluate the value. e.g. Number of events in an issue is more than \u0060value\u0060 in \u0060interval\u0060.\n            - \u00601min\u0060: 1 minute\n            - \u00605min\u0060: 5 minutes\n            - \u006015min\u0060: 15 minutes\n            - \u00601hr\u0060: 1 hour\n            - \u00601d\u0060: 1 day\n            - \u00601w\u0060: 1 week\n            - \u006030d\u0060: 30 days\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022event_frequency_count\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 100,\n                    \u0022interval\u0022: \u00221h\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Percent of Events**\n        - \u0060value\u0060: A positive integer representing the number of events in an issue that must come in before the alert will fire\n        - \u0060interval\u0060: The time period in which to evaluate the value. e.g. Number of events in an issue is \u0060comparisonInterval\u0060 percent higher \u0060value\u0060 compared to \u0060interval\u0060.\n            - \u00601min\u0060: 1 minute\n            - \u00605min\u0060: 5 minutes\n            - \u006015min\u0060: 15 minutes\n            - \u00601hr\u0060: 1 hour\n            - \u00601d\u0060: 1 day\n            - \u00601w\u0060: 1 week\n            - \u006030d\u0060: 30 days\n        - \u0060comparisonInterval\u0060: The time period to compare against. See \u0060interval\u0060 for options.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022event_frequency_percent\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 100,\n                    \u0022interval\u0022: \u00221h\u0022,\n                    \u0022comparisonInterval\u0022: \u00221w\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n\n        \u0060\u0060\u0060\n\n        **Percentage of Sessions Affected Count**\n        - \u0060value\u0060: A positive integer representing the number of events in an issue that must come in before the alert will fire\n        - \u0060interval\u0060: The time period in which to evaluate the value. e.g. Percentage of sessions affected by an issue is more than \u0060value\u0060 in \u0060interval\u0060.\n            - \u00601min\u0060: 1 minute\n            - \u00605min\u0060: 5 minutes\n            - \u006015min\u0060: 15 minutes\n            - \u00601hr\u0060: 1 hour\n            - \u00601d\u0060: 1 day\n            - \u00601w\u0060: 1 week\n            - \u006030d\u0060: 30 days\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022percent_sessions_count\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 10,\n                    \u0022interval\u0022: \u00221h\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Percentage of Sessions Affected Percent**\n        - \u0060value\u0060: A positive integer representing the number of events in an issue that must come in before the alert will fire\n        - \u0060interval\u0060: The time period in which to evaluate the value. e.g. Percentage of sessions affected by an issue is \u0060comparisonInterval\u0060 percent higher \u0060value\u0060 compared to \u0060interval\u0060.\n            - \u00601min\u0060: 1 minute\n            - \u00605min\u0060: 5 minutes\n            - \u006015min\u0060: 15 minutes\n            - \u00601hr\u0060: 1 hour\n            - \u00601d\u0060: 1 day\n            - \u00601w\u0060: 1 week\n            - \u006030d\u0060: 30 days\n        - \u0060comparisonInterval\u0060: The time period to compare against. See \u0060interval\u0060 for options.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022percent_sessions_percent\u0022,\n                \u0022comparison\u0022: {\n                    \u0022value\u0022: 10,\n                    \u0022interval\u0022: \u00221h\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Event Attribute**\n        The event\u0027s \u0060attribute\u0060 value \u0060match\u0060 \u0060value\u0060\n\n        - \u0060attribute\u0060: The event attribute to match on. Valid values are: \u0060message\u0060, \u0060platform\u0060, \u0060environment\u0060, \u0060type\u0060, \u0060error.handled\u0060, \u0060error.unhandled\u0060, \u0060error.main_thread\u0060, \u0060exception.type\u0060, \u0060exception.value\u0060, \u0060user.id\u0060, \u0060user.email\u0060, \u0060user.username\u0060, \u0060user.ip_address\u0060, \u0060http.method\u0060, \u0060http.url\u0060, \u0060http.status_code\u0060, \u0060sdk.name\u0060, \u0060stacktrace.code\u0060, \u0060stacktrace.module\u0060, \u0060stacktrace.filename\u0060, \u0060stacktrace.abs_path\u0060, \u0060stacktrace.package\u0060, \u0060unreal.crash_type\u0060, \u0060app.in_foreground\u0060.\n        - \u0060match\u0060: The comparison operator\n            - \u0060co\u0060: Contains\n            - \u0060nc\u0060: Does not contain\n            - \u0060eq\u0060: Equals\n            - \u0060ne\u0060: Does not equal\n            - \u0060sw\u0060: Starts with\n            - \u0060ew\u0060: Ends with\n            - \u0060is\u0060: Is set\n            - \u0060ns\u0060: Is not set\n        - \u0060value\u0060: A string. Not required when match is \u0060is\u0060 or \u0060ns\u0060.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022event_attribute\u0022,\n                \u0022comparison\u0022: {\n                    \u0022match\u0022: \u0022co\u0022,\n                    \u0022value\u0022: \u0022bar\u0022,\n                    \u0022attribute\u0022: \u0022message\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Tagged Event**\n        The event\u0027s tags \u0060key\u0060 match \u0060value\u0060\n        - \u0060key\u0060: The tag value\n        - \u0060match\u0060: The comparison operator\n            - \u0060co\u0060: Contains\n            - \u0060nc\u0060: Does not contain\n            - \u0060eq\u0060: Equals\n            - \u0060ne\u0060: Does not equal\n            - \u0060sw\u0060: Starts with\n            - \u0060ew\u0060: Ends with\n            - \u0060is\u0060: Is set\n            - \u0060ns\u0060: Is not set\n        - \u0060value\u0060: A string. Not required when match is \u0060is\u0060 or \u0060ns\u0060.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022tagged_event\u0022,\n                \u0022comparison\u0022: {\n                    \u0022key\u0022: \u0022level\u0022,\n                    \u0022match\u0022: \u0022eq\u0022,\n                    \u0022value\u0022: \u0022error\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Latest Release**\n        The event is from the latest release\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022latest_release\u0022,\n                \u0022comparison\u0022: true,\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Release Age**\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022latest_adopted_release\u0022,\n                \u0022comparison\u0022: {\n                    \u0022environment\u0022: \u0022production\u0022,\n                    \u0022ageComparison\u0022: \u0022older\u0022,\n                    \u0022releaseAgeType\u0022: \u0022oldest\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        **Event Level**\n        The event\u0027s level is \u0060match\u0060 \u0060level\u0060\n        - \u0060match\u0060: The comparison operator\n            - \u0060eq\u0060: Equal\n            - \u0060gte\u0060: Greater than or equal\n            - \u0060lte\u0060: Less than or equal\n        - \u0060level\u0060: The event level\n            - \u006050\u0060: Fatal\n            - \u006040\u0060: Error\n            - \u006030\u0060: Warning\n            - \u006020\u0060: Info\n            - \u006010\u0060: Debug\n            - \u00600\u0060: Sample\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022: \u0022level\u0022,\n                \u0022comparison\u0022: {\n                    \u0022level\u0022: 50,\n                    \u0022match\u0022: \u0022eq\u0022\n                },\n                \u0022conditionResult\u0022: true\n            }\n        \u0060\u0060\u0060\n\n        ## Actions\n        A list of actions that take place when all required conditions and filters for the alert are met. See below for a list of possible actions.\n\n\n        **Notify on Preferred Channel**\n        - \u0060data\u0060: A dictionary with the fallthrough type option when choosing to notify Suggested Assignees. Leave empty if notifying a user or team.\n            - \u0060fallthroughType\u0060\n                - \u0060ActiveMembers\u0060\n                - \u0060AllMembers\u0060\n                - \u0060NoOne\u0060\n        - \u0060config\u0060: A dictionary with the configuration options for notification.\n            - \u0060targetType\u0060: The type of recipient to notify\n                - \u0060user\u0060: User\n                - \u0060team\u0060: Team\n                - \u0060issue_owners\u0060: Suggested Assignees\n            - \u0060targetDisplay\u0060: null\n            - \u0060targetIdentifier\u0060: The id of the user or team to notify. Leave null for Suggested Assignees.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022email\u0022,\n                \u0022integrationId\u0022:null,\n                \u0022data\u0022:{},\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022user\u0022,\n                    \u0022targetDisplay\u0022:null,\n                    \u0022targetIdentifier\u0022:\u0022232692\u0022\n                },\n                \u0022status\u0022:\u0022active\u0022\n            },\n            {\n                \u0022type\u0022:\u0022email\u0022,\n                \u0022integrationId\u0022:null,\n                \u0022data\u0022:{\n                    \u0022fallthroughType\u0022:\u0022ActiveMembers\u0022\n                },\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022issue_owners\u0022,\n                    \u0022targetDisplay\u0022:null,\n                    \u0022targetIdentifier\u0022:\u0022\u0022}\n                ,\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n        **Notify on Slack**\n        - \u0060targetDisplay\u0060: The name of the channel to notify in.\n        \u0060integrationId\u0060: The stringified ID of the integration.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022slack\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022\u0022,\n                    \u0022targetDisplay\u0022:\u0022notify-errors\u0022\n                },\n                \u0022integrationId\u0022:\u00221\u0022,\n                \u0022data\u0022:{},\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Notify on PagerDuty**\n        - \u0060targetDisplay\u0060: The name of the service to create the ticket in.\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data[\u0022priority\u0022]\u0060: The severity level for the notification.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022pagerduty\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022123456\u0022,\n                    \u0022targetDisplay\u0022:\u0022Error Service\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{\n                    \u0022priority\u0022:\u0022default\u0022\n                },\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Notify on Discord**\n        - \u0060targetDisplay\u0060: The name of the service to create the ticket in.\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data[\u0022tags\u0022]\u0060: Comma separated list of tags to add to the notification.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022discord\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u002212345\u0022,\n                    \u0022targetDisplay\u0022:\u0022\u0022,\n                    },\n                \u0022integrationId\u0022:\u00221234\u0022,\n                \u0022data\u0022:{\n                    \u0022tags\u0022:\u0022transaction,environment\u0022\n                },\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Notify on MSTeams**\n        - \u0060targetIdentifier\u0060 - The integration ID associated with the Microsoft Teams team.\n        - \u0060targetDisplay\u0060 - The name of the channel to send the notification to.\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022msteams\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u002219:a4b3kghaghgkjah357y6847@thread.skype\u0022,\n                    \u0022targetDisplay\u0022:\u0022notify-errors\u0022\n                },\n                \u0022integrationId\u0022:\u00221\u0022,\n                \u0022data\u0022:{},\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Notify on OpsGenie**\n        - \u0060targetDisplay\u0060: The name of the Opsgenie team.\n        - \u0060targetIdentifier\u0060: The ID of the Opsgenie team to send the notification to.\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data[\u0022priority\u0022]\u0060: The priority level for the notification.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022opsgenie\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022123456-Error-Service\u0022,\n                    \u0022targetDisplay\u0022:\u0022Error Service\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{\n                    \u0022priority\u0022:\u0022P3\u0022\n                },\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Notify on Azure DevOps**\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data\u0060 - A list of any fields you want to include in the ticket as objects.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022vsts\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022,\n                    \u0022targetDisplay\u0022:\u0022\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{...},\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Create a Jira ticket**\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data\u0060 - A list of any fields you want to include in the ticket as objects.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022jira\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022,\n                    \u0022targetDisplay\u0022:\u0022\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{...},\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Create a Jira Server ticket**\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data\u0060 - A list of any fields you want to include in the ticket as objects.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022jira_server\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022,\n                    \u0022targetDisplay\u0022:\u0022\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{...},\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n\n        **Create a GitHub issue**\n        - \u0060integrationId\u0060: The stringified ID of the integration.\n        - \u0060data\u0060 - A list of any fields you want to include in the ticket as objects.\n\n        \u0060\u0060\u0060json\n            {\n                \u0022type\u0022:\u0022github\u0022,\n                \u0022config\u0022:{\n                    \u0022targetType\u0022:\u0022specific\u0022,\n                    \u0022targetIdentifier\u0022:\u0022,\n                    \u0022targetDisplay\u0022:\u0022\u0022\n                    },\n                \u0022integrationId\u0022:\u00222345\u0022,\n                \u0022data\u0022:{\n                  \u0022additional_fields\u0022: {\n                      \u0022assignee\u0022: \u0022\u0022,\n                      \u0022integration\u0022: \u00222345\u0022,\n                      \u0022labels\u0022: [],\n                      \u0022repo\u0022: \u0022example-repo\u0022,\n                  },\n                  \u0022dynamic_form_fields\u0022: [\n                      {\n                        \u0022choices\u0022: [[\u0022YourOrg/example-repo\u0022, \u0022example-repo\u0022]],\n                        \u0022default\u0022: \u0022YourOrg/example-repo\u0022,\n                        \u0022label\u0022: \u0022GitHub Repository\u0022,\n                        \u0022name\u0022: \u0022repo\u0022,\n                        \u0022required\u0022: true\n                        \u0022type\u0022: \u0022select\u0022,\n                        \u0022updatesForm\u0022: true,\n                        \u0022url\u0022: \u0022/extensions/github/search/example-repo/1234567/\u0022,\n                      },\n                  ],\n                },\n                \u0022status\u0022:\u0022active\u0022\n            }\n        \u0060\u0060\u0060\n        "
           },
@@ -39752,7 +40003,6 @@
       "DashboardWidgetsItemLayout": {
         "required": [
           "h",
-          "min_h",
           "w",
           "x",
           "y"
@@ -39780,11 +40030,6 @@
             "minimum": 1,
             "type": "integer",
             "description": "Height in grid rows."
-          },
-          "min_h": {
-            "minimum": 1,
-            "type": "integer",
-            "description": "Minimum height in grid rows."
           }
         }
       },
@@ -39807,6 +40052,39 @@
           }
         },
         "description": "Permissions that restrict users from editing dashboards"
+      },
+      "DashboardCreateWidgetLayoutComposed": {
+        "required": [
+          "h",
+          "w",
+          "x",
+          "y"
+        ],
+        "type": "object",
+        "properties": {
+          "x": {
+            "maximum": 5,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Column position (0-indexed)."
+          },
+          "y": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Row position (0-indexed)."
+          },
+          "w": {
+            "maximum": 6,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Width in grid columns (1-6)."
+          },
+          "h": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Height in grid rows."
+          }
+        }
       },
       "DashboardDetailsWidgetsItemLayout": {
         "required": [
@@ -41574,7 +41852,6 @@
       "DashboardWidgetsItemLayoutAllOf1": {
         "required": [
           "h",
-          "min_h",
           "w",
           "x",
           "y"
@@ -41602,14 +41879,9 @@
             "minimum": 1,
             "type": "integer",
             "description": "Height in grid rows."
-          },
-          "min_h": {
-            "minimum": 1,
-            "type": "integer",
-            "description": "Minimum height in grid rows."
           }
         },
-        "description": "Widget grid layout position and dimensions.\n\nThe dashboard uses a 6-column grid. Required keys: x, y, w, h, minH.\nConstraints: x (0-5), y (\u003E= 0), w (1-6), h (\u003E= 1), minH (\u003E= 1), and x \u002B w \u003C= 6."
+        "description": "Widget grid layout position and dimensions for dashboard creation.\n\nThe dashboard uses a 6-column grid. Required keys: x, y, w, h.\nConstraints: x (0-5), y (\u003E= 0), w (1-6), h (\u003E= 1), and x \u002B w \u003C= 6."
       },
       "DashboardPermissionsComposedAllOf1": {
         "required": [
@@ -41630,6 +41902,40 @@
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardCreateWidgetLayoutComposedAllOf1": {
+        "required": [
+          "h",
+          "w",
+          "x",
+          "y"
+        ],
+        "type": "object",
+        "properties": {
+          "x": {
+            "maximum": 5,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Column position (0-indexed)."
+          },
+          "y": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Row position (0-indexed)."
+          },
+          "w": {
+            "maximum": 6,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Width in grid columns (1-6)."
+          },
+          "h": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Height in grid rows."
+          }
+        },
+        "description": "Widget grid layout position and dimensions for dashboard creation.\n\nThe dashboard uses a 6-column grid. Required keys: x, y, w, h.\nConstraints: x (0-5), y (\u003E= 0), w (1-6), h (\u003E= 1), and x \u002B w \u003C= 6."
       },
       "DashboardDetailsWidgetsItemLayoutAllOf1": {
         "required": [
@@ -43600,6 +43906,12 @@
           }
         }
       },
+      "ActionFilterValidatorActionsItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ActionFilterValidatorActionsItemAdditionalProperties"
+        }
+      },
       "AutofixStateResponseFormatted": {
         "required": [
           "content",
@@ -43920,6 +44232,78 @@
           "$ref": "#/components/schemas/DashboardFiltersAdditionalProperties"
         },
         "description": "The saved filters for this dashboard."
+      },
+      "DashboardCreateWidgetThresholds": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DashboardCreateWidgetThresholdsAdditionalProperties"
+        },
+        "nullable": true
+      },
+      "DashboardCreateWidgetQueriesItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aggregates": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "field_aliases": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "name": {
+            "type": "string"
+          },
+          "conditions": {
+            "type": "string"
+          },
+          "orderby": {
+            "type": "string"
+          },
+          "is_hidden": {
+            "type": "boolean"
+          },
+          "on_demand_extraction": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetQueriesItemOnDemandExtraction"
+          },
+          "on_demand_extraction_disabled": {
+            "type": "boolean"
+          },
+          "selected_aggregate": {
+            "type": "integer",
+            "nullable": true
+          },
+          "linked_dashboards": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/DashboardCreateWidgetQueriesItemLinkedDashboardsItem"
+            },
+            "nullable": true
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "DashboardDetailsWidgetsItem": {
         "type": "object",
@@ -50621,10 +51005,32 @@
         "description": "\n        Typically the frequency at which the alert will fire, in minutes.\n\n        - \u00600\u0060: 0 minutes\n        - \u00605\u0060: 5 minutes\n        - \u006010\u0060: 10 minutes\n        - \u006030\u0060: 30 minutes\n        - \u006060\u0060: 1 hour\n        - \u0060180\u0060: 3 hours\n        - \u0060720\u0060: 12 hours\n        - \u00601440\u0060: 24 hours\n\n        \u0060\u0060\u0060json\n            {\n                \u0022frequency\u0022:3600\n            }\n        \u0060\u0060\u0060\n        "
       },
       "WorkflowValidatorActionFiltersItem": {
+        "required": [
+          "actions",
+          "logic_type"
+        ],
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemAdditionalProperties"
-        }
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "logic_type": {
+            "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemLogicType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemConditionsItem"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemActionsItemProperty"
+            }
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "CheckInListItemMonitorConfig": {
         "required": [
@@ -55569,6 +55975,34 @@
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
+      "DashboardCreateWidgetQueriesItemOnDemandExtraction": {
+        "type": "object",
+        "properties": {
+          "extraction_state": {
+            "type": "string"
+          },
+          "enabled": {
+            "type": "boolean"
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardCreateWidgetQueriesItemLinkedDashboardsItem": {
+        "required": [
+          "dashboard_id",
+          "field"
+        ],
+        "type": "object",
+        "properties": {
+          "field": {
+            "type": "string"
+          },
+          "dashboard_id": {
+            "type": "string"
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "DashboardDetailsWidgetsItemThresholds": {
         "type": "object",
         "additionalProperties": {
@@ -59007,6 +59441,12 @@
           "data": {
             "$ref": "#/components/schemas/TraceItemStatsResponseDataItemAttributeDistributionsDataProperty"
           }
+        }
+      },
+      "WorkflowValidatorActionFiltersItemActionsItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemActionsItemAdditionalProperties"
         }
       },
       "CommitSerializerResponseItemPullRequestRepository": {
@@ -75545,6 +75985,15 @@
           }
         }
       },
+      "ActionFilterValidatorConditionsItem": {
+        "type": "object"
+      },
+      "ActionFilterValidatorActionsItemProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ActionFilterValidatorActionsItemPropertyAdditionalProperties"
+        }
+      },
       "AutofixStateResponseAutofixProperty": {
         "type": "object",
         "additionalProperties": {
@@ -75610,6 +76059,12 @@
           "$ref": "#/components/schemas/DashboardFiltersPropertyAdditionalProperties"
         },
         "description": "The saved filters for this dashboard."
+      },
+      "DashboardCreateWidgetThresholdsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/DashboardCreateWidgetThresholdsPropertyAdditionalProperties"
+        }
       },
       "DashboardDetailsFiltersProperty": {
         "type": "object",
@@ -76091,12 +76546,6 @@
         },
         "description": "\n        Typically the frequency at which the alert will fire, in minutes.\n\n        - \u00600\u0060: 0 minutes\n        - \u00605\u0060: 5 minutes\n        - \u006010\u0060: 10 minutes\n        - \u006030\u0060: 30 minutes\n        - \u006060\u0060: 1 hour\n        - \u0060180\u0060: 3 hours\n        - \u0060720\u0060: 12 hours\n        - \u00601440\u0060: 24 hours\n\n        \u0060\u0060\u0060json\n            {\n                \u0022frequency\u0022:3600\n            }\n        \u0060\u0060\u0060\n        "
       },
-      "WorkflowValidatorActionFiltersItemProperty": {
-        "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemPropertyAdditionalProperties"
-        }
-      },
       "DashboardListResponseItemWidgetPreviewItemProperty": {
         "type": "object",
         "additionalProperties": {
@@ -76535,6 +76984,9 @@
           "$ref": "#/components/schemas/ListProjectReleasesResponseItemAuthorsItemAnyOf1ExperimentsPropertyAdditionalProperties"
         }
       },
+      "ActionFilterValidatorActionsItemAdditionalProperties": {
+        "type": "object"
+      },
       "AutofixStateResponseAutofixAdditionalProperties": {
         "type": "object"
       },
@@ -76572,6 +77024,9 @@
         }
       },
       "DashboardFiltersAdditionalProperties": {
+        "type": "object"
+      },
+      "DashboardCreateWidgetThresholdsAdditionalProperties": {
         "type": "object"
       },
       "DashboardDetailsWidgetsItemThresholdsProperty": {
@@ -77143,8 +77598,14 @@
       "WorkflowValidatorConfigAdditionalProperties": {
         "type": "object"
       },
-      "WorkflowValidatorActionFiltersItemAdditionalProperties": {
+      "WorkflowValidatorActionFiltersItemConditionsItem": {
         "type": "object"
+      },
+      "WorkflowValidatorActionFiltersItemActionsItemProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/WorkflowValidatorActionFiltersItemActionsItemPropertyAdditionalProperties"
+        }
       },
       "CommitSerializerResponseItemRepositoryProviderProperty": {
         "type": "object",
@@ -77812,6 +78273,9 @@
             }
           }
         }
+      },
+      "WorkflowValidatorActionFiltersItemActionsItemAdditionalProperties": {
+        "type": "object"
       },
       "CommitSerializerResponseItemPullRequestRepositoryProviderProperty": {
         "type": "object",
@@ -87234,10 +87698,32 @@
         "description": "The conditions on which the alert will trigger. See available options below.\n        \u0060\u0060\u0060json\n            \u0022triggers\u0022: {\n                \u0022organizationId\u0022: \u00221\u0022,\n                \u0022logicType\u0022: \u0022any-short\u0022,\n                \u0022conditions\u0022: [\n                    {\n                        \u0022type\u0022: \u0022first_seen_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022issue_resolved_trigger\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022reappeared_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022regression_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022seer_activity_trigger\u0022,\n                        \u0022comparison\u0022: [\n                            \u0022rca_completed\u0022,\n                            \u0022solution_completed\u0022,\n                            \u0022coding_completed\u0022,\n                            \u0022pr_created\u0022\n                        ],\n                        \u0022conditionResult\u0022: true\n                    }\n                ],\n                \u0022actions\u0022: []\n            }\n        \u0060\u0060\u0060\n        "
       },
       "CreateOrganizationWorkflowRequestActionFiltersItem": {
+        "required": [
+          "actions",
+          "logic_type"
+        ],
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/CreateOrganizationWorkflowRequestActionFiltersItemAdditionalProperties"
-        }
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "logic_type": {
+            "$ref": "#/components/schemas/CreateOrganizationWorkflowRequestActionFiltersItemLogicType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationWorkflowRequestActionFiltersItemConditionsItem"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationWorkflowRequestActionFiltersItemActionsItem"
+            }
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "CreateOrganizationWorkflow201ResponseTriggers": {
         "type": "object",
@@ -87440,10 +87926,32 @@
         "description": "The conditions on which the alert will trigger. See available options below.\n        \u0060\u0060\u0060json\n            \u0022triggers\u0022: {\n                \u0022organizationId\u0022: \u00221\u0022,\n                \u0022logicType\u0022: \u0022any-short\u0022,\n                \u0022conditions\u0022: [\n                    {\n                        \u0022type\u0022: \u0022first_seen_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022issue_resolved_trigger\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022reappeared_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022regression_event\u0022,\n                        \u0022comparison\u0022: true,\n                        \u0022conditionResult\u0022: true\n                    },\n                    {\n                        \u0022type\u0022: \u0022seer_activity_trigger\u0022,\n                        \u0022comparison\u0022: [\n                            \u0022rca_completed\u0022,\n                            \u0022solution_completed\u0022,\n                            \u0022coding_completed\u0022,\n                            \u0022pr_created\u0022\n                        ],\n                        \u0022conditionResult\u0022: true\n                    }\n                ],\n                \u0022actions\u0022: []\n            }\n        \u0060\u0060\u0060\n        "
       },
       "UpdateOrganizationWorkflowRequestActionFiltersItem": {
+        "required": [
+          "actions",
+          "logic_type"
+        ],
         "type": "object",
-        "additionalProperties": {
-          "$ref": "#/components/schemas/UpdateOrganizationWorkflowRequestActionFiltersItemAdditionalProperties"
-        }
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "logic_type": {
+            "$ref": "#/components/schemas/UpdateOrganizationWorkflowRequestActionFiltersItemLogicType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem"
+            }
+          },
+          "actions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateOrganizationWorkflowRequestActionFiltersItemActionsItem"
+            }
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "UpdateOrganizationWorkflow200ResponseTriggers": {
         "type": "object",
@@ -98187,6 +98695,9 @@
           "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2MetadataAdditionalProperties"
         }
       },
+      "ActionFilterValidatorActionsItemPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "AutofixStateResponseAutofixPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -98212,6 +98723,9 @@
         "type": "object"
       },
       "DashboardFiltersPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "DashboardCreateWidgetThresholdsPropertyAdditionalProperties": {
         "type": "object"
       },
       "DashboardDetailsFiltersPropertyAdditionalProperties": {
@@ -98398,9 +98912,6 @@
         "type": "object"
       },
       "WorkflowValidatorConfigPropertyAdditionalProperties": {
-        "type": "object"
-      },
-      "WorkflowValidatorActionFiltersItemPropertyAdditionalProperties": {
         "type": "object"
       },
       "DiscoverSavedQueryListResponseItemExploreQueryPropertyAdditionalProperties": {
@@ -98705,6 +99216,9 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/TeamOrganizationExtraOptionsPropertyAdditionalPropertiesAdditionalProperties"
         }
+      },
+      "WorkflowValidatorActionFiltersItemActionsItemPropertyAdditionalProperties": {
+        "type": "object"
       },
       "DashboardListResponseItemCreatedByExperimentsPropertyAdditionalProperties": {
         "type": "object"
@@ -99542,7 +100056,6 @@
       "CreateOrganizationDashboardRequestWidgetsItemLayout": {
         "required": [
           "h",
-          "min_h",
           "w",
           "x",
           "y"
@@ -99570,11 +100083,6 @@
             "minimum": 1,
             "type": "integer",
             "description": "Height in grid rows."
-          },
-          "min_h": {
-            "minimum": 1,
-            "type": "integer",
-            "description": "Minimum height in grid rows."
           }
         }
       },
@@ -105763,8 +106271,14 @@
       "CreateOrganizationWorkflowRequestTriggersConditionsItem": {
         "type": "object"
       },
-      "CreateOrganizationWorkflowRequestActionFiltersItemAdditionalProperties": {
+      "CreateOrganizationWorkflowRequestActionFiltersItemConditionsItem": {
         "type": "object"
+      },
+      "CreateOrganizationWorkflowRequestActionFiltersItemActionsItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CreateOrganizationWorkflowRequestActionFiltersItemActionsItemAdditionalProperties"
+        }
       },
       "CreateOrganizationWorkflow201ResponseConfigAdditionalProperties": {
         "type": "object"
@@ -105825,8 +106339,14 @@
       "UpdateOrganizationWorkflowRequestTriggersConditionsItem": {
         "type": "object"
       },
-      "UpdateOrganizationWorkflowRequestActionFiltersItemAdditionalProperties": {
+      "UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem": {
         "type": "object"
+      },
+      "UpdateOrganizationWorkflowRequestActionFiltersItemActionsItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateOrganizationWorkflowRequestActionFiltersItemActionsItemAdditionalProperties"
+        }
       },
       "UpdateOrganizationWorkflow200ResponseConfigAdditionalProperties": {
         "type": "object"
@@ -111498,7 +112018,13 @@
       "ListOrganizationWorkflows200ResponseItemConfigAdditionalProperties": {
         "type": "object"
       },
+      "CreateOrganizationWorkflowRequestActionFiltersItemActionsItemAdditionalProperties": {
+        "type": "object"
+      },
       "UpdateOrganizationWorkflows200ResponseItemConfigAdditionalProperties": {
+        "type": "object"
+      },
+      "UpdateOrganizationWorkflowRequestActionFiltersItemActionsItemAdditionalProperties": {
         "type": "object"
       },
       "GetProject200ResponseOrganizationExtraOptionsAdditionalProperties": {
@@ -113640,6 +114166,39 @@
       },
       "ListProjectReleaseCommits200ResponseItemPullRequestAuthorExperimentsAdditionalProperties": {
         "type": "object"
+      },
+      "ActionFilterValidatorLogicType": {
+        "enum": [
+          "any",
+          "any-short",
+          "all",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060any\u0060\n* \u0060any-short\u0060\n* \u0060all\u0060\n* \u0060none\u0060",
+        "x-ms-enum": {
+          "name": "ActionFilterValidatorLogicType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "any",
+              "name": "Any"
+            },
+            {
+              "value": "any-short",
+              "name": "AnyShort"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
       },
       "BaseDataConditionGroupValidatorLogicType": {
         "enum": [
@@ -116621,6 +117180,194 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            }
+          ]
+        }
+      },
+      "DashboardCreateWidgetDisplayType": {
+        "enum": [
+          "line",
+          "area",
+          "bar",
+          "table",
+          "big_number",
+          "details",
+          "categorical_bar",
+          "wheel",
+          "rage_and_dead_clicks",
+          "server_tree",
+          "text",
+          "agents_traces_table",
+          "heatmap"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060line\u0060\n* \u0060area\u0060\n* \u0060bar\u0060\n* \u0060table\u0060\n* \u0060big_number\u0060\n* \u0060details\u0060\n* \u0060categorical_bar\u0060\n* \u0060wheel\u0060\n* \u0060rage_and_dead_clicks\u0060\n* \u0060server_tree\u0060\n* \u0060text\u0060\n* \u0060agents_traces_table\u0060\n* \u0060heatmap\u0060",
+        "x-ms-enum": {
+          "name": "DashboardCreateWidgetDisplayType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "line",
+              "name": "Line"
+            },
+            {
+              "value": "area",
+              "name": "Area"
+            },
+            {
+              "value": "bar",
+              "name": "Bar"
+            },
+            {
+              "value": "table",
+              "name": "Table"
+            },
+            {
+              "value": "big_number",
+              "name": "BigNumber"
+            },
+            {
+              "value": "details",
+              "name": "Details"
+            },
+            {
+              "value": "categorical_bar",
+              "name": "CategoricalBar"
+            },
+            {
+              "value": "wheel",
+              "name": "Wheel"
+            },
+            {
+              "value": "rage_and_dead_clicks",
+              "name": "RageAndDeadClicks"
+            },
+            {
+              "value": "server_tree",
+              "name": "ServerTree"
+            },
+            {
+              "value": "text",
+              "name": "Text"
+            },
+            {
+              "value": "agents_traces_table",
+              "name": "AgentsTracesTable"
+            },
+            {
+              "value": "heatmap",
+              "name": "Heatmap"
+            }
+          ]
+        }
+      },
+      "DashboardCreateWidgetWidgetType": {
+        "enum": [
+          "discover",
+          "issue",
+          "metrics",
+          "error-events",
+          "transaction-like",
+          "spans",
+          "logs",
+          "tracemetrics",
+          "preprod-app-size",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060discover\u0060\n* \u0060issue\u0060\n* \u0060metrics\u0060\n* \u0060error-events\u0060\n* \u0060transaction-like\u0060\n* \u0060spans\u0060\n* \u0060logs\u0060\n* \u0060tracemetrics\u0060\n* \u0060preprod-app-size\u0060",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "DashboardCreateWidgetWidgetType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "discover",
+              "name": "Discover"
+            },
+            {
+              "value": "issue",
+              "name": "Issue"
+            },
+            {
+              "value": "metrics",
+              "name": "Metrics"
+            },
+            {
+              "value": "error-events",
+              "name": "ErrorEvents"
+            },
+            {
+              "value": "transaction-like",
+              "name": "TransactionLike"
+            },
+            {
+              "value": "spans",
+              "name": "Spans"
+            },
+            {
+              "value": "logs",
+              "name": "Logs"
+            },
+            {
+              "value": "tracemetrics",
+              "name": "Tracemetrics"
+            },
+            {
+              "value": "preprod-app-size",
+              "name": "PreprodAppSize"
+            }
+          ]
+        }
+      },
+      "DashboardCreateWidgetAxisRange": {
+        "enum": [
+          "auto",
+          "dataMin",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060auto\u0060\n* \u0060dataMin\u0060",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "DashboardCreateWidgetAxisRange",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "auto",
+              "name": "Auto"
+            },
+            {
+              "value": "dataMin",
+              "name": "DataMin"
+            }
+          ]
+        }
+      },
+      "DashboardCreateWidgetLegendType": {
+        "enum": [
+          "default",
+          "breakdown",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060default\u0060\n* \u0060breakdown\u0060",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "DashboardCreateWidgetLegendType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "default",
+              "name": "DefaultValue"
+            },
+            {
+              "value": "breakdown",
+              "name": "Breakdown"
             }
           ]
         }
@@ -123539,6 +124286,39 @@
             {
               "value": "dartsymbolmap",
               "name": "Dartsymbolmap"
+            }
+          ]
+        }
+      },
+      "WorkflowValidatorActionFiltersItemLogicType": {
+        "enum": [
+          "any",
+          "any-short",
+          "all",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060any\u0060\n* \u0060any-short\u0060\n* \u0060all\u0060\n* \u0060none\u0060",
+        "x-ms-enum": {
+          "name": "WorkflowValidatorActionFiltersItemLogicType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "any",
+              "name": "Any"
+            },
+            {
+              "value": "any-short",
+              "name": "AnyShort"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
             }
           ]
         }
@@ -134151,6 +134931,39 @@
           ]
         }
       },
+      "CreateOrganizationWorkflowRequestActionFiltersItemLogicType": {
+        "enum": [
+          "any",
+          "any-short",
+          "all",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060any\u0060\n* \u0060any-short\u0060\n* \u0060all\u0060\n* \u0060none\u0060",
+        "x-ms-enum": {
+          "name": "CreateOrganizationWorkflowRequestActionFiltersItemLogicType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "any",
+              "name": "Any"
+            },
+            {
+              "value": "any-short",
+              "name": "AnyShort"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
+      },
       "UpdateOrganizationWorkflowRequestTriggersLogicType": {
         "enum": [
           "any",
@@ -134163,6 +134976,39 @@
         "description": "* \u0060any\u0060\n* \u0060any-short\u0060\n* \u0060all\u0060\n* \u0060none\u0060",
         "x-ms-enum": {
           "name": "UpdateOrganizationWorkflowRequestTriggersLogicType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "any",
+              "name": "Any"
+            },
+            {
+              "value": "any-short",
+              "name": "AnyShort"
+            },
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "none",
+              "name": "None"
+            }
+          ]
+        }
+      },
+      "UpdateOrganizationWorkflowRequestActionFiltersItemLogicType": {
+        "enum": [
+          "any",
+          "any-short",
+          "all",
+          "none"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060any\u0060\n* \u0060any-short\u0060\n* \u0060all\u0060\n* \u0060none\u0060",
+        "x-ms-enum": {
+          "name": "UpdateOrganizationWorkflowRequestActionFiltersItemLogicType",
           "modelAsString": false,
           "values": [
             {
@@ -139058,6 +139904,70 @@
             {
               "value": "startsWith",
               "name": "StartsWith"
+            }
+          ]
+        }
+      },
+      "ListOrganizationDashboardsFilterParameterItem": {
+        "enum": [
+          "excludeFavorites",
+          "excludePrebuilt",
+          "onlyFavorites",
+          "onlyPrebuilt",
+          "owned",
+          "shared",
+          "showHidden"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationDashboardsFilterParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "excludeFavorites",
+              "name": "ExcludeFavorites"
+            },
+            {
+              "value": "excludePrebuilt",
+              "name": "ExcludePrebuilt"
+            },
+            {
+              "value": "onlyFavorites",
+              "name": "OnlyFavorites"
+            },
+            {
+              "value": "onlyPrebuilt",
+              "name": "OnlyPrebuilt"
+            },
+            {
+              "value": "owned",
+              "name": "Owned"
+            },
+            {
+              "value": "shared",
+              "name": "Shared"
+            },
+            {
+              "value": "showHidden",
+              "name": "ShowHidden"
+            }
+          ]
+        }
+      },
+      "FavoritesPin": {
+        "enum": [
+          "favorites"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "FavoritesPin",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "favorites",
+              "name": "Favorites"
             }
           ]
         }
