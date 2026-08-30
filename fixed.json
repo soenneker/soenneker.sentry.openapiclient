@@ -14577,9 +14577,7 @@
             "description": "The ID of the projects to filter by.",
             "schema": {
               "type": "array",
-              "items": {
-                "type": "object"
-              }
+              "items": {}
             }
           },
           {
@@ -14775,9 +14773,7 @@
             "description": "The ID of the projects to filter by.\n\nUse \u0060-1\u0060 to include all accessible projects.",
             "schema": {
               "type": "array",
-              "items": {
-                "type": "object"
-              }
+              "items": {}
             }
           },
           {

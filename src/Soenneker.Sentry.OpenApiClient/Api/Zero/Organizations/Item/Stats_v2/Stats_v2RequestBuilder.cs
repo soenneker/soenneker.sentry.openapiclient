@@ -121,11 +121,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("project")]
-            public string[]? Project { get; set; }
+            public string? Project { get; set; }
 #nullable restore
 #else
             [QueryParameter("project")]
-            public string[] Project { get; set; }
+            public string Project { get; set; }
 #endif
             /// <summary>The reason field will contain why an event was filtered/dropped.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
