@@ -5161,6 +5161,160 @@
         ]
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/group-search-views": {
+      "get": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "List Issue Views",
+        "description": "List the current organization member\u0027s custom views\n\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\u0060\n\nRetrieve a list of custom views for the current organization member.",
+        "operationId": "ListOrganizationIssueViews",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "createdBy",
+            "in": "query",
+            "description": "Whether to return issue views created by the current user or other members.\n\n* \u0060me\u0060\n* \u0060others\u0060",
+            "schema": {
+              "$ref": "#/components/schemas/ListOrganizationIssueViewsCreatedByParameter"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The fields used to sort issue views, in order of precedence.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListOrganizationIssueViewsSortParameterItem"
+              },
+              "default": [
+                "-visited"
+              ]
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "A case-insensitive search against issue view names and queries.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Events"
+        ],
+        "summary": "Create an Issue View",
+        "description": "Create a new custom view for the current organization member.",
+        "operationId": "CreateOrganizationIssueView",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrganizationIssueViewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationIssueView201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/integrations": {
       "get": {
         "tags": [
@@ -32170,6 +32324,75 @@
           "$ref": "#/components/schemas/GroupHashesResponseItem"
         }
       },
+      "GroupSearchViewPostValidator": {
+        "required": [
+          "environments",
+          "name",
+          "projects",
+          "query",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the issue view."
+          },
+          "query": {
+            "type": "string",
+            "description": "The issue search query."
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "The project IDs included in the view. Use \u0060-1\u0060 to include all projects."
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The environment names included in the view. An empty list includes all environments."
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/GroupSearchViewPostValidatorTimeFilters"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/GroupSearchViewPostValidatorQuerySort"
+          },
+          "starred": {
+            "type": "boolean",
+            "description": "Whether to star the issue view for the current user."
+          }
+        }
+      },
+      "GroupSearchViewTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "The start of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "description": "The end of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "description": "The relative time period, such as \u006014d\u0060.",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "description": "Whether to interpret the time range as UTC.",
+            "nullable": true
+          }
+        }
+      },
       "GroupUpdateResponse": {
         "required": [
           "annotations",
@@ -33628,6 +33851,78 @@
             "type": "string",
             "nullable": true
           }
+        }
+      },
+      "OrganizationIssueView": {
+        "required": [
+          "createdBy",
+          "dateCreated",
+          "dateUpdated",
+          "environments",
+          "id",
+          "lastVisited",
+          "name",
+          "projects",
+          "query",
+          "querySort",
+          "starred",
+          "stars",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdBy": {
+            "$ref": "#/components/schemas/OrganizationIssueViewCreatedBy"
+          },
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/OrganizationIssueViewQuerySort"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/OrganizationIssueViewTimeFilters"
+          },
+          "lastVisited": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "stars": {
+            "type": "integer"
+          }
+        }
+      },
+      "OrganizationIssueViewList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OrganizationIssueViewListItem"
         }
       },
       "OrganizationMember": {
@@ -39357,6 +39652,72 @@
           }
         }
       },
+      "OrganizationIssueViewListItem": {
+        "required": [
+          "createdBy",
+          "dateCreated",
+          "dateUpdated",
+          "environments",
+          "id",
+          "lastVisited",
+          "name",
+          "projects",
+          "query",
+          "querySort",
+          "starred",
+          "stars",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdBy": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedBy"
+          },
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemQuerySort"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemTimeFilters"
+          },
+          "lastVisited": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "stars": {
+            "type": "integer"
+          }
+        }
+      },
       "OrganizationProjectResponseDictItem": {
         "required": [
           "access",
@@ -40226,6 +40587,32 @@
             }
           }
         }
+      },
+      "GroupSearchViewPostValidatorTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "The start of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "description": "The end of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "description": "The relative time period, such as \u006014d\u0060.",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "description": "Whether to interpret the time range as UTC.",
+            "nullable": true
+          }
+        },
+        "description": "The time range for the view."
       },
       "GroupValidatorStatusDetails": {
         "required": [
@@ -42040,6 +42427,31 @@
           }
         },
         "description": "Widget grid layout position and dimensions.\n\nThe dashboard uses a 6-column grid. Required keys: x, y, w, h, minH.\nConstraints: x (0-5), y (\u003E= 0), w (1-6), h (\u003E= 1), minH (\u003E= 1), and x \u002B w \u003C= 6."
+      },
+      "GroupSearchViewPostValidatorTimeFiltersAllOf1": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "The start of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "description": "The end of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "description": "The relative time period, such as \u006014d\u0060.",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "description": "Whether to interpret the time range as UTC.",
+            "nullable": true
+          }
+        }
       },
       "GroupValidatorStatusDetailsAllOf1": {
         "required": [
@@ -47565,6 +47977,129 @@
           },
           "reason": {
             "type": "string"
+          }
+        }
+      },
+      "OrganizationIssueViewCreatedBy": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewCreatedByIdentitiesItem"
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/OrganizationIssueViewCreatedByAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewCreatedByAuthenticatorsItem"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "$ref": "#/components/schemas/OrganizationIssueViewCreatedByExperimentsProperty"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewCreatedByEmailsItem"
+            }
+          }
+        },
+        "nullable": true
+      },
+      "OrganizationIssueViewTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "nullable": true
           }
         }
       },
@@ -54062,6 +54597,129 @@
           "$ref": "#/components/schemas/OrganizationGroupIndexGetResponseItemSentryAppIssuesItemAdditionalProperties"
         }
       },
+      "OrganizationIssueViewListItemCreatedBy": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByIdentitiesItem"
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByAuthenticatorsItem"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByExperimentsProperty"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByEmailsItem"
+            }
+          }
+        },
+        "nullable": true
+      },
+      "OrganizationIssueViewListItemTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
       "OrganizationProjectResponseDictItemLatestDeploys": {
         "type": "object",
         "additionalProperties": {
@@ -57928,6 +58586,80 @@
           }
         }
       },
+      "OrganizationIssueViewCreatedByIdentitiesItem": {
+        "required": [
+          "dateSynced",
+          "dateVerified",
+          "id",
+          "name",
+          "organization",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/OrganizationIssueViewCreatedByIdentitiesItemOrganization"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/OrganizationIssueViewCreatedByIdentitiesItemProvider"
+          },
+          "dateVerified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OrganizationIssueViewCreatedByAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "OrganizationIssueViewCreatedByExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationIssueViewCreatedByExperimentsAdditionalProperties"
+        }
+      },
+      "OrganizationIssueViewCreatedByEmailsItem": {
+        "required": [
+          "email",
+          "id",
+          "is_verified"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "is_verified": {
+            "type": "boolean"
+          }
+        }
+      },
       "OrganizationMemberUserIdentitiesItem": {
         "required": [
           "dateSynced",
@@ -60577,6 +61309,80 @@
         },
         "nullable": true
       },
+      "OrganizationIssueViewListItemCreatedByIdentitiesItem": {
+        "required": [
+          "dateSynced",
+          "dateVerified",
+          "id",
+          "name",
+          "organization",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByIdentitiesItemOrganization"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByIdentitiesItemProvider"
+          },
+          "dateVerified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OrganizationIssueViewListItemCreatedByAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "OrganizationIssueViewListItemCreatedByExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByExperimentsAdditionalProperties"
+        }
+      },
+      "OrganizationIssueViewListItemCreatedByEmailsItem": {
+        "required": [
+          "email",
+          "id",
+          "is_verified"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "is_verified": {
+            "type": "boolean"
+          }
+        }
+      },
       "OrganizationProjectResponseDictItemLatestDeploysAdditionalProperties": {
         "type": "object",
         "additionalProperties": {
@@ -61512,6 +62318,36 @@
           "$ref": "#/components/schemas/OrgReleaseResponseProjectsItemHealthDataStatsAdditionalProperties"
         }
       },
+      "OrganizationIssueViewCreatedByIdentitiesItemOrganization": {
+        "required": [
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "OrganizationIssueViewCreatedByIdentitiesItemProvider": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
       "OrganizationMemberUserIdentitiesItemOrganization": {
         "required": [
           "name",
@@ -62389,6 +63225,36 @@
           },
           "is_verified": {
             "type": "boolean"
+          }
+        }
+      },
+      "OrganizationIssueViewListItemCreatedByIdentitiesItemOrganization": {
+        "required": [
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "OrganizationIssueViewListItemCreatedByIdentitiesItemProvider": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
           }
         }
       },
@@ -64723,6 +65589,122 @@
           "dateUpdated": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ListOrganizationIssueViews200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItem"
+        }
+      },
+      "CreateOrganizationIssueViewRequest": {
+        "required": [
+          "environments",
+          "name",
+          "projects",
+          "query",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the issue view."
+          },
+          "query": {
+            "type": "string",
+            "description": "The issue search query."
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "The project IDs included in the view. Use \u0060-1\u0060 to include all projects."
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The environment names included in the view. An empty list includes all environments."
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueViewRequestTimeFilters"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueViewRequestQuerySort"
+          },
+          "starred": {
+            "type": "boolean",
+            "description": "Whether to star the issue view for the current user."
+          }
+        }
+      },
+      "CreateOrganizationIssueView201Response": {
+        "required": [
+          "createdBy",
+          "dateCreated",
+          "dateUpdated",
+          "environments",
+          "id",
+          "lastVisited",
+          "name",
+          "projects",
+          "query",
+          "querySort",
+          "starred",
+          "stars",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdBy": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedBy"
+          },
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseQuerySort"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseTimeFilters"
+          },
+          "lastVisited": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "stars": {
+            "type": "integer"
           }
         }
       },
@@ -73767,6 +74749,12 @@
           "$ref": "#/components/schemas/ListOrganizationForwarding200ResponseSchemaItem"
         }
       },
+      "ListOrganizationIssueViews200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseSchemaItem"
+        }
+      },
       "ListOrganizationIntegrations200ResponseSchema": {
         "type": "array",
         "items": {
@@ -77352,6 +78340,15 @@
       "OrganizationEventsResponseDictMetaDebugInfo": {
         "type": "object"
       },
+      "OrganizationIssueViewCreatedByAuthenticatorsItem": {
+        "type": "object"
+      },
+      "OrganizationIssueViewCreatedByExperimentsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationIssueViewCreatedByExperimentsPropertyAdditionalProperties"
+        }
+      },
       "OrganizationMemberUserAuthenticatorsItem": {
         "type": "object"
       },
@@ -77839,6 +78836,15 @@
       "OrganizationGroupIndexGetResponseItemSentryAppIssuesItemAdditionalProperties": {
         "type": "object"
       },
+      "OrganizationIssueViewListItemCreatedByAuthenticatorsItem": {
+        "type": "object"
+      },
+      "OrganizationIssueViewListItemCreatedByExperimentsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationIssueViewListItemCreatedByExperimentsPropertyAdditionalProperties"
+        }
+      },
       "OrganizationProjectResponseDictItemLatestDeploysAdditionalPropertiesProperty": {
         "type": "object",
         "additionalProperties": {
@@ -78166,6 +79172,9 @@
           "$ref": "#/components/schemas/OrgReleaseResponseProjectsItemHealthDataStatsPropertyAdditionalProperties"
         }
       },
+      "OrganizationIssueViewCreatedByExperimentsAdditionalProperties": {
+        "type": "object"
+      },
       "OrganizationMemberUserExperimentsAdditionalProperties": {
         "type": "object"
       },
@@ -78360,6 +79369,9 @@
         }
       },
       "OrganizationGroupIndexGetResponseItemFilteredStatsAdditionalProperties": {
+        "type": "object"
+      },
+      "OrganizationIssueViewListItemCreatedByExperimentsAdditionalProperties": {
         "type": "object"
       },
       "ProjectEventsResponseDictItemUserDataAdditionalProperties": {
@@ -81267,6 +82279,221 @@
           "dateUpdated": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItem": {
+        "required": [
+          "createdBy",
+          "dateCreated",
+          "dateUpdated",
+          "environments",
+          "id",
+          "lastVisited",
+          "name",
+          "projects",
+          "query",
+          "querySort",
+          "starred",
+          "stars",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdBy": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedBy"
+          },
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemQuerySort"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemTimeFilters"
+          },
+          "lastVisited": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "stars": {
+            "type": "integer"
+          }
+        }
+      },
+      "CreateOrganizationIssueViewRequestTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "description": "The start of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "description": "The end of the time range in ISO-8601 format.",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "description": "The relative time period, such as \u006014d\u0060.",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "description": "Whether to interpret the time range as UTC.",
+            "nullable": true
+          }
+        },
+        "description": "The time range for the view."
+      },
+      "CreateOrganizationIssueView201ResponseCreatedBy": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByIdentitiesItem"
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByAuthenticatorsItem"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByExperiments"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByEmailsItem"
+            }
+          }
+        },
+        "nullable": true
+      },
+      "CreateOrganizationIssueView201ResponseTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "nullable": true
           }
         }
       },
@@ -94466,6 +95693,72 @@
           }
         }
       },
+      "ListOrganizationIssueViews200ResponseSchemaItem": {
+        "required": [
+          "createdBy",
+          "dateCreated",
+          "dateUpdated",
+          "environments",
+          "id",
+          "lastVisited",
+          "name",
+          "projects",
+          "query",
+          "querySort",
+          "starred",
+          "stars",
+          "timeFilters"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "createdBy": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedBy"
+          },
+          "name": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "querySort": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemQuerySort"
+          },
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          },
+          "environments": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "timeFilters": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemTimeFilters"
+          },
+          "lastVisited": {
+            "type": "string",
+            "nullable": true
+          },
+          "dateCreated": {
+            "type": "string"
+          },
+          "dateUpdated": {
+            "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "stars": {
+            "type": "integer"
+          }
+        }
+      },
       "ListOrganizationIntegrations200ResponseSchemaItem": {
         "required": [
           "accountType",
@@ -99158,6 +100451,9 @@
       "OrgReleaseResponseVersionInfoVersionPropertyAdditionalProperties": {
         "type": "object"
       },
+      "OrganizationIssueViewCreatedByExperimentsPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "OrganizationMemberUserExperimentsPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -99261,6 +100557,9 @@
         "type": "object"
       },
       "OrganizationGroupIndexGetResponseItemFilteredStatsPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "OrganizationIssueViewListItemCreatedByExperimentsPropertyAdditionalProperties": {
         "type": "object"
       },
       "ProjectEventsResponseDictItemUserDataPropertyAdditionalProperties": {
@@ -101807,6 +103106,206 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedBy": {
+        "required": [
+          "avatarUrl",
+          "dateJoined",
+          "email",
+          "emails",
+          "experiments",
+          "has2fa",
+          "hasPasswordAuth",
+          "id",
+          "isActive",
+          "isManaged",
+          "isStaff",
+          "isSuperuser",
+          "isSuspended",
+          "lastActive",
+          "lastLogin",
+          "name",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "identities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItem"
+            }
+          },
+          "avatar": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByAvatar"
+          },
+          "authenticators": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByAuthenticatorsItem"
+            }
+          },
+          "canReset2fa": {
+            "type": "boolean"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "avatarUrl": {
+            "type": "string"
+          },
+          "isActive": {
+            "type": "boolean"
+          },
+          "isSuspended": {
+            "type": "boolean"
+          },
+          "hasPasswordAuth": {
+            "type": "boolean"
+          },
+          "isManaged": {
+            "type": "boolean"
+          },
+          "dateJoined": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "lastLogin": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "has2fa": {
+            "type": "boolean"
+          },
+          "lastActive": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "isSuperuser": {
+            "type": "boolean"
+          },
+          "isStaff": {
+            "type": "boolean"
+          },
+          "experiments": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByExperiments"
+          },
+          "emails": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByEmailsItem"
+            }
+          }
+        },
+        "nullable": true
+      },
+      "ListOrganizationIssueViews200ResponseItemTimeFilters": {
+        "type": "object",
+        "properties": {
+          "start": {
+            "type": "string",
+            "nullable": true
+          },
+          "end": {
+            "type": "string",
+            "nullable": true
+          },
+          "period": {
+            "type": "string",
+            "nullable": true
+          },
+          "utc": {
+            "type": "boolean",
+            "nullable": true
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByIdentitiesItem": {
+        "required": [
+          "dateSynced",
+          "dateVerified",
+          "id",
+          "name",
+          "organization",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByIdentitiesItemOrganization"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByIdentitiesItemProvider"
+          },
+          "dateVerified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByAuthenticatorsItem": {
+        "type": "object"
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CreateOrganizationIssueView201ResponseCreatedByExperimentsAdditionalProperties"
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByEmailsItem": {
+        "required": [
+          "email",
+          "id",
+          "is_verified"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "is_verified": {
+            "type": "boolean"
+          }
         }
       },
       "ListOrganizationIntegrations200ResponseItemProvider": {
@@ -110396,6 +111895,116 @@
           "type": "string"
         }
       },
+      "ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItem": {
+        "required": [
+          "dateSynced",
+          "dateVerified",
+          "id",
+          "name",
+          "organization",
+          "provider"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "organization": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItemOrganization"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItemProvider"
+          },
+          "dateVerified": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByAvatar": {
+        "type": "object",
+        "properties": {
+          "avatarType": {
+            "type": "string"
+          },
+          "avatarUuid": {
+            "type": "string",
+            "nullable": true
+          },
+          "avatarUrl": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByAuthenticatorsItem": {
+        "type": "object"
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByExperiments": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationIssueViews200ResponseItemCreatedByExperimentsAdditionalProperties"
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByEmailsItem": {
+        "required": [
+          "email",
+          "id",
+          "is_verified"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "is_verified": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByIdentitiesItemOrganization": {
+        "required": [
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByIdentitiesItemProvider": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateOrganizationIssueView201ResponseCreatedByExperimentsAdditionalProperties": {
+        "type": "object"
+      },
       "ListOrganizationIssues200ResponseItemStatusDetailsActor": {
         "required": [
           "avatarUrl",
@@ -113200,6 +114809,39 @@
             "nullable": true
           }
         }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItemOrganization": {
+        "required": [
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByIdentitiesItemProvider": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          }
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemCreatedByExperimentsAdditionalProperties": {
+        "type": "object"
       },
       "ListOrganizationIssues200ResponseItemStatusDetailsActorIdentitiesItem": {
         "required": [
@@ -118134,6 +119776,54 @@
           ]
         }
       },
+      "GroupSearchViewPostValidatorQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to sort issues in the view.\n\n* \u0060date\u0060 - Last Seen\n* \u0060new\u0060 - First Seen\n* \u0060trends\u0060 - Trends\n* \u0060freq\u0060 - Events\n* \u0060user\u0060 - Users\n* \u0060inbox\u0060 - Date Added\n* \u0060recommended\u0060 - Recommended",
+        "x-ms-enum": {
+          "name": "GroupSearchViewPostValidatorQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
+            }
+          ]
+        }
+      },
       "GroupUpdateResponseLevel": {
         "enum": [
           "sample",
@@ -118776,6 +120466,53 @@
         "type": "integer",
         "additionalProperties": false,
         "description": "How many native crash reports (such as Minidumps for improved processing and download in issue details) to store per issue.\n\n* \u00600\u0060 - Disabled\n* \u00601\u0060 - 1 per issue\n* \u00605\u0060 - 5 per issue\n* \u006010\u0060 - 10 per issue\n* \u006020\u0060 - 20 per issue\n* \u006050\u0060 - 50 per issue\n* \u0060100\u0060 - 100 per issue\n* \u0060-1\u0060 - Unlimited"
+      },
+      "OrganizationIssueViewQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "OrganizationIssueViewQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
+            }
+          ]
+        }
       },
       "OrganizationMemberRequestOrgRole": {
         "enum": [
@@ -119674,6 +121411,53 @@
             {
               "value": "feedback",
               "name": "Feedback"
+            }
+          ]
+        }
+      },
+      "OrganizationIssueViewListItemQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "OrganizationIssueViewListItemQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
             }
           ]
         }
@@ -125399,6 +127183,101 @@
           ]
         }
       },
+      "CreateOrganizationIssueViewRequestQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How to sort issues in the view.\n\n* \u0060date\u0060 - Last Seen\n* \u0060new\u0060 - First Seen\n* \u0060trends\u0060 - Trends\n* \u0060freq\u0060 - Events\n* \u0060user\u0060 - Users\n* \u0060inbox\u0060 - Date Added\n* \u0060recommended\u0060 - Recommended",
+        "x-ms-enum": {
+          "name": "CreateOrganizationIssueViewRequestQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
+            }
+          ]
+        }
+      },
+      "CreateOrganizationIssueView201ResponseQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "CreateOrganizationIssueView201ResponseQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
+            }
+          ]
+        }
+      },
       "UpdateOrganizationIssuesRequestStatus": {
         "enum": [
           "resolved",
@@ -128051,6 +129930,53 @@
             {
               "value": "feedback",
               "name": "Feedback"
+            }
+          ]
+        }
+      },
+      "ListOrganizationIssueViews200ResponseItemQuerySort": {
+        "enum": [
+          "date",
+          "new",
+          "trends",
+          "freq",
+          "user",
+          "inbox",
+          "recommended"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationIssueViews200ResponseItemQuerySort",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "date",
+              "name": "Date"
+            },
+            {
+              "value": "new",
+              "name": "NewValue"
+            },
+            {
+              "value": "trends",
+              "name": "Trends"
+            },
+            {
+              "value": "freq",
+              "name": "Freq"
+            },
+            {
+              "value": "user",
+              "name": "User"
+            },
+            {
+              "value": "inbox",
+              "name": "Inbox"
+            },
+            {
+              "value": "recommended",
+              "name": "Recommended"
             }
           ]
         }
@@ -140149,6 +142075,82 @@
             {
               "value": "1",
               "name": "Value1"
+            }
+          ]
+        }
+      },
+      "ListOrganizationIssueViewsCreatedByParameter": {
+        "minLength": 1,
+        "enum": [
+          "me",
+          "others"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationIssueViewsCreatedByParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "me",
+              "name": "Me"
+            },
+            {
+              "value": "others",
+              "name": "Others"
+            }
+          ]
+        }
+      },
+      "ListOrganizationIssueViewsSortParameterItem": {
+        "enum": [
+          "popularity",
+          "-popularity",
+          "visited",
+          "-visited",
+          "name",
+          "-name",
+          "created",
+          "-created"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060popularity\u0060\n* \u0060-popularity\u0060\n* \u0060visited\u0060\n* \u0060-visited\u0060\n* \u0060name\u0060\n* \u0060-name\u0060\n* \u0060created\u0060\n* \u0060-created\u0060",
+        "x-ms-enum": {
+          "name": "ListOrganizationIssueViewsSortParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "popularity",
+              "name": "Popularity"
+            },
+            {
+              "value": "-popularity",
+              "name": "Popularity1"
+            },
+            {
+              "value": "visited",
+              "name": "Visited"
+            },
+            {
+              "value": "-visited",
+              "name": "Visited1"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            },
+            {
+              "value": "-name",
+              "name": "Name1"
+            },
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "-created",
+              "name": "Created1"
             }
           ]
         }

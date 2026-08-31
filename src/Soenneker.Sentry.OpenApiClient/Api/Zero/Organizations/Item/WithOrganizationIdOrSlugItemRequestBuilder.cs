@@ -13,6 +13,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ExternalUsers;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearchViews;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members;
@@ -107,6 +108,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.ForwardingRequestBuilder Forwarding
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.ForwardingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The groupSearchViews property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearchViews.GroupSearchViewsRequestBuilder GroupSearchViews
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearchViews.GroupSearchViewsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The integrations property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.IntegrationsRequestBuilder Integrations
