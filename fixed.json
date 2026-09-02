@@ -714,6 +714,275 @@
         ]
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/agents/conversations": {
+      "get": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "List an Organization\u0027s AI Conversations",
+        "description": "Return AI conversations ordered by latest span time.\n\n**Experimental:** This API is under active development and may change.\n\n\u0060query\u0060 uses Sentry search syntax against spans. A conversation matches when\nany span matches. Summary values then include all conversation spans inside\nselected project, environment, and time filters.",
+        "operationId": "ListOrganizationAiConversations",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Sentry search syntax matched against spans. A conversation is returned when any span in it matches. Summary fields include all spans in selected projects and time range, not only matching spans.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Number of conversations to return per page. Defaults to 10; maximum is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}": {
+      "get": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "Retrieve an Organization\u0027s AI Conversation",
+        "description": "Return spans recorded for one AI conversation in start-time order.\n\n**Experimental:** This API is under active development and may change.\n\nMessage, tool, and response attributes contain their recorded string values.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
+        "operationId": "RetrieveOrganizationAiConversation",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "conversationId",
+            "in": "path",
+            "description": "Conversation ID recorded in \u0060gen_ai.conversation.id\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Number of spans to return per page. Defaults to 100; maximum is 1,000.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveOrganizationAiConversation200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/config/integrations": {
       "get": {
         "tags": [
@@ -3290,6 +3559,7 @@
                         "expired": false,
                         "dateCreated": "2024-07-25T19:35:38.422859Z",
                         "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                        "lastVisited": "2024-07-25T19:35:38.422874Z",
                         "environment": [],
                         "query": "",
                         "fields": [
@@ -3344,6 +3614,7 @@
                         "expired": false,
                         "dateCreated": "2024-07-25T19:35:38.422859Z",
                         "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                        "lastVisited": "2024-07-25T19:35:38.422874Z",
                         "environment": [],
                         "query": "transaction:/api/foo",
                         "fields": [
@@ -3466,6 +3737,7 @@
                       "expired": false,
                       "dateCreated": "2024-07-25T19:35:38.422859Z",
                       "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                      "lastVisited": "2024-07-25T19:35:38.422874Z",
                       "environment": [],
                       "query": "transaction:/api/foo",
                       "fields": [
@@ -3588,6 +3860,7 @@
                       "expired": false,
                       "dateCreated": "2024-07-25T19:35:38.422859Z",
                       "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                      "lastVisited": "2024-07-25T19:35:38.422874Z",
                       "environment": [],
                       "query": "transaction:/api/foo",
                       "fields": [
@@ -3715,6 +3988,7 @@
                       "expired": false,
                       "dateCreated": "2024-07-25T19:35:38.422859Z",
                       "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                      "lastVisited": "2024-07-25T19:35:38.422874Z",
                       "environment": [],
                       "query": "transaction:/api/foo",
                       "fields": [
@@ -16912,6 +17186,7 @@
             "auth_token": [
               "alerts:write",
               "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -17280,6 +17555,7 @@
             "auth_token": [
               "alerts:write",
               "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -17637,6 +17913,7 @@
             "auth_token": [
               "alerts:write",
               "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -31671,6 +31948,9 @@
           "exploreQuery": {
             "$ref": "#/components/schemas/DiscoverSavedQueryModelExploreQueryProperty"
           },
+          "lastVisited": {
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -33109,6 +33389,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListOrgTeamResponseItem"
+        }
+      },
+      "ListOrganizationAiConversationsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationAiConversationsResponseItem"
         }
       },
       "ListOrganizationClientKeysResponse": {
@@ -36017,6 +36303,30 @@
           }
         }
       },
+      "RetrieveOrganizationAiConversationResponse": {
+        "required": [
+          "conversationId",
+          "spans",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "spans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveOrganizationAiConversationResponseSpansItemProperty"
+            }
+          }
+        },
+        "description": "Span page plus conversation-level metadata."
+      },
       "ScimListResponseEnvelopeScimMemberIndexResponse": {
         "required": [
           "Resources",
@@ -37621,6 +37931,9 @@
           "exploreQuery": {
             "$ref": "#/components/schemas/DiscoverSavedQueryListResponseItemExploreQueryProperty"
           },
+          "lastVisited": {
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -38234,6 +38547,112 @@
             "items": {
               "$ref": "#/components/schemas/ListOrgTeamResponseItemProjectsItem"
             }
+          }
+        }
+      },
+      "ListOrganizationAiConversationsResponseItem": {
+        "required": [
+          "conversationId",
+          "endTimestamp",
+          "errors",
+          "firstInput",
+          "flow",
+          "generationDuration",
+          "inputTokens",
+          "lastOutput",
+          "llmCalls",
+          "outputTokens",
+          "projectId",
+          "startTimestamp",
+          "title",
+          "toolCalls",
+          "toolErrors",
+          "toolNames",
+          "totalCost",
+          "totalTokens",
+          "traceCount",
+          "traceIds",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "flow": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "llmCalls": {
+            "type": "integer"
+          },
+          "toolCalls": {
+            "type": "integer"
+          },
+          "totalTokens": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          },
+          "totalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "generationDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "startTimestamp": {
+            "type": "integer"
+          },
+          "endTimestamp": {
+            "type": "integer"
+          },
+          "traceCount": {
+            "type": "integer"
+          },
+          "traceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "firstInput": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastOutput": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/ListOrganizationAiConversationsResponseItemUser"
+          },
+          "toolNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "toolErrors": {
+            "type": "integer"
           }
         }
       },
@@ -50077,6 +50496,12 @@
           }
         }
       },
+      "RetrieveOrganizationAiConversationResponseSpansItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveOrganizationAiConversationResponseSpansItemAdditionalProperties"
+        }
+      },
       "ScimListResponseEnvelopeScimMemberIndexResponseResourcesItem": {
         "required": [
           "emails",
@@ -52902,6 +53327,34 @@
             "type": "string"
           }
         }
+      },
+      "ListOrganizationAiConversationsResponseItemUser": {
+        "required": [
+          "email",
+          "id",
+          "ip_address",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_address": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "nullable": true
       },
       "ListOrganizationClientKeysResponseItemRateLimit": {
         "required": [
@@ -64012,6 +64465,36 @@
           }
         }
       },
+      "ListOrganizationAiConversations200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseItem"
+        }
+      },
+      "RetrieveOrganizationAiConversation200Response": {
+        "required": [
+          "conversationId",
+          "spans",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "spans": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveOrganizationAiConversation200ResponseSpansItem"
+            }
+          }
+        },
+        "description": "Span page plus conversation-level metadata."
+      },
       "GetOrganizationConfigIntegrations200Response": {
         "required": [
           "providers"
@@ -64806,6 +65289,9 @@
           "exploreQuery": {
             "$ref": "#/components/schemas/CreateOrganizationDiscoverSavedQuery201ResponseExploreQuery"
           },
+          "lastVisited": {
+            "type": "string"
+          },
           "id": {
             "type": "string"
           },
@@ -64921,6 +65407,9 @@
           },
           "exploreQuery": {
             "$ref": "#/components/schemas/GetOrganizationDiscoverSavedQuery200ResponseExploreQuery"
+          },
+          "lastVisited": {
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -65128,6 +65617,9 @@
           },
           "exploreQuery": {
             "$ref": "#/components/schemas/UpdateOrganizationDiscoverSavedQuery200ResponseExploreQuery"
+          },
+          "lastVisited": {
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -74713,6 +75205,12 @@
           "$ref": "#/components/schemas/ListOrganizations200ResponseSchemaItem"
         }
       },
+      "ListOrganizationAiConversations200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseSchemaItem"
+        }
+      },
       "ListOrganizationDashboards200ResponseSchema": {
         "type": "array",
         "items": {
@@ -77491,6 +77989,12 @@
       "ReleaseSerializerWithProjectsProjectsItem": {
         "type": "object"
       },
+      "RetrieveOrganizationAiConversationResponseSpansItemProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveOrganizationAiConversationResponseSpansItemPropertyAdditionalProperties"
+        }
+      },
       "ScimPatchOperationValue": {
         "type": "object"
       },
@@ -78515,6 +79019,9 @@
         "type": "object"
       },
       "ReleaseFileResponseHeadersAdditionalProperties": {
+        "type": "object"
+      },
+      "RetrieveOrganizationAiConversationResponseSpansItemAdditionalProperties": {
         "type": "object"
       },
       "ScimPatchRequestOperationsItemValue": {
@@ -80130,6 +80637,118 @@
           }
         }
       },
+      "ListOrganizationAiConversations200ResponseItem": {
+        "required": [
+          "conversationId",
+          "endTimestamp",
+          "errors",
+          "firstInput",
+          "flow",
+          "generationDuration",
+          "inputTokens",
+          "lastOutput",
+          "llmCalls",
+          "outputTokens",
+          "projectId",
+          "startTimestamp",
+          "title",
+          "toolCalls",
+          "toolErrors",
+          "toolNames",
+          "totalCost",
+          "totalTokens",
+          "traceCount",
+          "traceIds",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "flow": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "llmCalls": {
+            "type": "integer"
+          },
+          "toolCalls": {
+            "type": "integer"
+          },
+          "totalTokens": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          },
+          "totalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "generationDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "startTimestamp": {
+            "type": "integer"
+          },
+          "endTimestamp": {
+            "type": "integer"
+          },
+          "traceCount": {
+            "type": "integer"
+          },
+          "traceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "firstInput": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastOutput": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseItemUser"
+          },
+          "toolNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "toolErrors": {
+            "type": "integer"
+          }
+        }
+      },
+      "RetrieveOrganizationAiConversation200ResponseSpansItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveOrganizationAiConversation200ResponseSpansItemAdditionalProperties"
+        }
+      },
       "GetOrganizationConfigIntegrations200ResponseProvidersItem": {
         "required": [
           "canAdd",
@@ -81461,6 +82080,9 @@
           },
           "exploreQuery": {
             "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery"
+          },
+          "lastVisited": {
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -95282,6 +95904,112 @@
           }
         }
       },
+      "ListOrganizationAiConversations200ResponseSchemaItem": {
+        "required": [
+          "conversationId",
+          "endTimestamp",
+          "errors",
+          "firstInput",
+          "flow",
+          "generationDuration",
+          "inputTokens",
+          "lastOutput",
+          "llmCalls",
+          "outputTokens",
+          "projectId",
+          "startTimestamp",
+          "title",
+          "toolCalls",
+          "toolErrors",
+          "toolNames",
+          "totalCost",
+          "totalTokens",
+          "traceCount",
+          "traceIds",
+          "user"
+        ],
+        "type": "object",
+        "properties": {
+          "conversationId": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "projectId": {
+            "type": "integer",
+            "nullable": true
+          },
+          "flow": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "llmCalls": {
+            "type": "integer"
+          },
+          "toolCalls": {
+            "type": "integer"
+          },
+          "totalTokens": {
+            "type": "integer"
+          },
+          "inputTokens": {
+            "type": "integer"
+          },
+          "outputTokens": {
+            "type": "integer"
+          },
+          "totalCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "generationDuration": {
+            "type": "number",
+            "format": "double"
+          },
+          "startTimestamp": {
+            "type": "integer"
+          },
+          "endTimestamp": {
+            "type": "integer"
+          },
+          "traceCount": {
+            "type": "integer"
+          },
+          "traceIds": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "firstInput": {
+            "type": "string",
+            "nullable": true
+          },
+          "lastOutput": {
+            "type": "string",
+            "nullable": true
+          },
+          "user": {
+            "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseItemUser"
+          },
+          "toolNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "toolErrors": {
+            "type": "integer"
+          }
+        }
+      },
       "ListOrganizationDashboards200ResponseSchemaItem": {
         "required": [
           "createdBy",
@@ -95587,6 +96315,9 @@
           },
           "exploreQuery": {
             "$ref": "#/components/schemas/ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery"
+          },
+          "lastVisited": {
+            "type": "string"
           },
           "id": {
             "type": "string"
@@ -100190,6 +100921,9 @@
       "ReleaseFileResponseHeadersPropertyAdditionalProperties": {
         "type": "object"
       },
+      "RetrieveOrganizationAiConversationResponseSpansItemPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "ScimTeamPatchOperationValuePropertyAdditionalProperties": {
         "type": "object"
       },
@@ -101131,6 +101865,37 @@
           }
         },
         "nullable": true
+      },
+      "ListOrganizationAiConversations200ResponseItemUser": {
+        "required": [
+          "email",
+          "id",
+          "ip_address",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "ip_address": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "nullable": true
+      },
+      "RetrieveOrganizationAiConversation200ResponseSpansItemAdditionalProperties": {
+        "type": "object"
       },
       "GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata": {
         "type": "object"

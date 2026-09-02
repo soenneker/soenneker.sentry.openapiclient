@@ -120,6 +120,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Interval { get; set; }
 #endif
+        /// <summary>The lastVisited property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastVisited { get; set; }
+#nullable restore
+#else
+        public string LastVisited { get; set; }
+#endif
         /// <summary>The limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -243,6 +251,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
+                { "lastVisited", n => { LastVisited = n.GetStringValue(); } },
                 { "limit", n => { Limit = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
@@ -278,6 +287,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interval", Interval);
+            writer.WriteStringValue("lastVisited", LastVisited);
             writer.WriteStringValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderby", Orderby);
