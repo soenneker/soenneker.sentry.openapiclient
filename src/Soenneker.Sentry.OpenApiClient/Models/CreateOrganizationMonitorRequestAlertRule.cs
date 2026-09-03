@@ -8,39 +8,45 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.``content`` is text for the text formats and a serialized JSON object for ``json``, so theresponse shape is the same whichever format a caller asks for.
+    /// Alert rule configuration created alongside the monitor.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetOrganizationIssueAutofixState200ResponseFormatted : IAdditionalDataHolder, IParsable
+    public partial class CreateOrganizationMonitorRequestAlertRule : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content property</summary>
+        /// <summary>Name of the environment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? Environment { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string Environment { get; set; }
 #endif
-        /// <summary>The format property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat? Format { get; set; }
+        /// <summary>Array of dictionaries with information of the user or team to be notified</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRuleTargetsItem>? Targets { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRuleTargetsItem> Targets { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule"/> and sets the default values.
         /// </summary>
-        public GetOrganizationIssueAutofixState200ResponseFormatted()
+        public CreateOrganizationMonitorRequestAlertRule()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +56,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat>(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRuleTargetsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRuleTargetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,8 +67,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat>("format", Format);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRuleTargetsItem>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

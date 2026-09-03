@@ -14,6 +14,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Aggregate functions to apply, each as a `[function, column, alias]` triple.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Aggregations { get; set; }
+#nullable restore
+#else
+        public UntypedNode Aggregations { get; set; }
+#endif
+        /// <summary>Filter conditions, each as a `[column, operator, value]` triple.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Conditions { get; set; }
+#nullable restore
+#else
+        public UntypedNode Conditions { get; set; }
+#endif
         /// <summary>Visualization type for saved query chart. Allowed values are:- default- previous- top5- daily- dailytop5- bar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,6 +56,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Fields { get; set; }
 #endif
+        /// <summary>Columns to group results by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Groupby { get; set; }
+#nullable restore
+#else
+        public List<string> Groupby { get; set; }
+#endif
         /// <summary>Resolution of the time series.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,6 +72,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Interval { get; set; }
 #endif
+        /// <summary>Maximum number of rows to return, from `0` to `1000`.</summary>
+        public int? Limit { get; set; }
         /// <summary>The user-defined saved query name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -90,10 +116,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Range { get; set; }
 #endif
+        /// <summary>Time-bucket granularity in seconds for the saved query.</summary>
+        public int? Rollup { get; set; }
         /// <summary>The saved start time for this saved query.</summary>
         public DateTimeOffset? Start { get; set; }
         /// <summary>Number of top events&apos; timeseries to be visualized.</summary>
         public int? TopEvents { get; set; }
+        /// <summary>Saved query schema version. `1` for the legacy shape, `2` for the current one.</summary>
+        public int? Version { get; set; }
+        /// <summary>Rendered column widths, in the same order as the query&apos;s fields.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Widths { get; set; }
+#nullable restore
+#else
+        public List<string> Widths { get; set; }
+#endif
         /// <summary>Aggregate functions to be plotted on the chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,19 +165,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "aggregations", n => { Aggregations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "display", n => { Display = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "groupby", n => { Groupby = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
+                { "limit", n => { Limit = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryDataset", n => { QueryDataset = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequestQueryDataset>(); } },
                 { "range", n => { Range = n.GetStringValue(); } },
+                { "rollup", n => { Rollup = n.GetIntValue(); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
                 { "topEvents", n => { TopEvents = n.GetIntValue(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
+                { "widths", n => { Widths = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "yAxis", n => { YAxis = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -150,19 +195,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<UntypedNode>("aggregations", Aggregations);
+            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
             writer.WriteStringValue("display", Display);
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
+            writer.WriteCollectionOfPrimitiveValues<string>("groupby", Groupby);
             writer.WriteStringValue("interval", Interval);
+            writer.WriteIntValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderby", Orderby);
             writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
             writer.WriteStringValue("query", Query);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequestQueryDataset>("queryDataset", QueryDataset);
             writer.WriteStringValue("range", Range);
+            writer.WriteIntValue("rollup", Rollup);
             writer.WriteDateTimeOffsetValue("start", Start);
             writer.WriteIntValue("topEvents", TopEvents);
+            writer.WriteIntValue("version", Version);
+            writer.WriteCollectionOfPrimitiveValues<string>("widths", Widths);
             writer.WriteCollectionOfPrimitiveValues<string>("yAxis", YAxis);
             writer.WriteAdditionalData(AdditionalData);
         }

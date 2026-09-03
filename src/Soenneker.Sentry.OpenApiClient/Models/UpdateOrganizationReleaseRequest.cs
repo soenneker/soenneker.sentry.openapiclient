@@ -24,6 +24,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>An optional date that indicates when the release went live.  If not provided the current time is used.</summary>
         public DateTimeOffset? DateReleased { get; set; }
+        /// <summary>Deprecated, use `commits`. Head commits to associate with the release.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>? HeadCommits { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem> HeadCommits { get; set; }
+#endif
         /// <summary>An optional commit reference. This is useful if a tagged version has been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,6 +47,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem> Refs { get; set; }
+#endif
+        /// <summary>The status of the release. Can be `open` or `archived`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Status { get; set; }
+#nullable restore
+#else
+        public string Status { get; set; }
 #endif
         /// <summary>A URL that points to the release. For instance, this can be the path to an online interface to the source code, such as a GitHub URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,8 +91,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "commits", n => { Commits = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dateReleased", n => { DateReleased = n.GetDateTimeOffsetValue(); } },
+                { "headCommits", n => { HeadCommits = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "refs", n => { Refs = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -89,8 +107,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem>("commits", Commits);
             writer.WriteDateTimeOffsetValue("dateReleased", DateReleased);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>("headCommits", HeadCommits);
             writer.WriteStringValue("ref", Ref);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>("refs", Refs);
+            writer.WriteStringValue("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

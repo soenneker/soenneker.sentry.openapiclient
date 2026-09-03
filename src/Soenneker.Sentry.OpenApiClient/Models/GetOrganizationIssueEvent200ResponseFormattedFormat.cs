@@ -16,5 +16,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Xml,
         #pragma warning restore CS1591
+        [EnumMember(Value = "json")]
+        #pragma warning disable CS1591
+        Json,
+        #pragma warning restore CS1591
     }
 }

@@ -820,6 +820,47 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseSchema"
+                },
+                "examples": {
+                  "ReturnAListOfAIConversations": {
+                    "summary": "Return a list of AI conversations",
+                    "value": [
+                      {
+                        "conversationId": "01JQZ4W8X7J2Q9B4R5M6N7P8T9",
+                        "title": "Weather assistant",
+                        "projectId": 1,
+                        "flow": [
+                          "Weather Assistant"
+                        ],
+                        "errors": 0,
+                        "llmCalls": 2,
+                        "toolCalls": 1,
+                        "totalTokens": 485,
+                        "inputTokens": 320,
+                        "outputTokens": 165,
+                        "totalCost": 0.0042,
+                        "generationDuration": 1250.5,
+                        "startTimestamp": 1743465600000,
+                        "endTimestamp": 1743465602500,
+                        "traceCount": 1,
+                        "traceIds": [
+                          "4c79f60c11214eb38604f4ae0781bfb2"
+                        ],
+                        "firstInput": "What is the weather in San Francisco?",
+                        "lastOutput": "It is currently 18\u00B0C and sunny in San Francisco.",
+                        "user": {
+                          "id": "123",
+                          "email": "user@example.com",
+                          "username": "example-user",
+                          "ip_address": "192.0.2.1"
+                        },
+                        "toolNames": [
+                          "get_weather"
+                        ],
+                        "toolErrors": 0
+                      }
+                    ]
+                  }
                 }
               }
             }
@@ -17470,6 +17511,7 @@
             "auth_token": [
               "alerts:write",
               "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -17859,6 +17901,7 @@
             "auth_token": [
               "alerts:write",
               "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -18258,7 +18301,8 @@
                 "$ref": "#/components/schemas/UpdateProjectRequest"
               }
             }
-          }
+          },
+          "required": true
         },
         "responses": {
           "200": {
@@ -31821,6 +31865,55 @@
             "description": "How to order the query results. Must be something in the \u0060field\u0060 list, excluding equations.",
             "nullable": true
           },
+          "rollup": {
+            "type": "integer",
+            "description": "Time-bucket granularity in seconds for the saved query.",
+            "nullable": true
+          },
+          "aggregations": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Aggregate functions to apply, each as a \u0060[function, column, alias]\u0060 triple.",
+            "nullable": true
+          },
+          "groupby": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Columns to group results by.",
+            "nullable": true
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Filter conditions, each as a \u0060[column, operator, value]\u0060 triple.",
+            "nullable": true
+          },
+          "limit": {
+            "maximum": 1000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Maximum number of rows to return, from \u00600\u0060 to \u00601000\u0060.",
+            "nullable": true
+          },
+          "version": {
+            "maximum": 2,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Saved query schema version. \u00601\u0060 for the legacy shape, \u00602\u0060 for the current one.",
+            "nullable": true
+          },
           "environment": {
             "type": "array",
             "items": {
@@ -31832,6 +31925,14 @@
           "query": {
             "type": "string",
             "description": "Filters results by using [query syntax](/product/sentry-basics/search/).",
+            "nullable": true
+          },
+          "widths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Rendered column widths, in the same order as the query\u0027s fields.",
             "nullable": true
           },
           "yAxis": {
@@ -31983,6 +32084,21 @@
           },
           "createdBy": {
             "$ref": "#/components/schemas/DiscoverSavedQueryModelCreatedBy"
+          }
+        }
+      },
+      "DynamicSamplingBias": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/DynamicSamplingBiasId"
+          },
+          "active": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -32225,10 +32341,15 @@
         "required": [
           "external_name",
           "integration_id",
-          "provider"
+          "provider",
+          "team_id"
         ],
         "type": "object",
         "properties": {
+          "team_id": {
+            "type": "integer",
+            "description": "ID of the Sentry team to link to the external team."
+          },
           "external_name": {
             "type": "string",
             "description": "The associated name for the provider."
@@ -32842,12 +32963,18 @@
           "assignedTo",
           "discard",
           "hasSeen",
+          "ignoreCount",
+          "ignoreDuration",
+          "ignoreUserCount",
+          "ignoreUserWindow",
+          "ignoreWindow",
           "inbox",
           "isBookmarked",
           "isPublic",
           "isSubscribed",
           "merge",
           "priority",
+          "snoozeDuration",
           "status",
           "statusDetails",
           "substatus"
@@ -32897,6 +33024,39 @@
           },
           "priority": {
             "$ref": "#/components/schemas/GroupValidatorPriority"
+          },
+          "ignoreDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue for this many minutes."
+          },
+          "ignoreCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it is seen this many more times."
+          },
+          "ignoreWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreCount\u0060 is measured. Maximum is 7 days."
+          },
+          "ignoreUserCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it affects this many more users."
+          },
+          "ignoreUserWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreUserCount\u0060 is measured. Maximum is 7 days."
+          },
+          "snoozeDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Snooze the issue for this many minutes.",
+            "nullable": true
           }
         }
       },
@@ -33622,6 +33782,44 @@
           }
         }
       },
+      "MonitorAlertRuleTargetValidator": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
+          }
+        }
+      },
+      "MonitorAlertRuleValidator": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MonitorAlertRuleValidatorTargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        }
+      },
       "MonitorList": {
         "type": "array",
         "items": {
@@ -33665,6 +33863,9 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
+          },
+          "alert_rule": {
+            "$ref": "#/components/schemas/MonitorValidatorAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -33702,6 +33903,15 @@
               "type": "string"
             },
             "description": "List of project IDs or slugs that the Notification Action is created for."
+          },
+          "sentry_app_id": {
+            "type": "integer",
+            "description": "ID of the custom integration to notify, when the target is a Sentry app."
+          },
+          "target_type": {
+            "type": "string",
+            "description": "How the notification target is addressed.",
+            "default": "specific"
           }
         },
         "description": "Django Rest Framework serializer for incoming NotificationAction API payloads"
@@ -33966,6 +34176,10 @@
           "cancelDeletion": {
             "type": "boolean",
             "description": "Specify \u0060true\u0060 to restore an organization that is pending deletion."
+          },
+          "apdexThreshold": {
+            "type": "integer",
+            "description": "Deprecated. Response-time threshold in milliseconds previously used to compute Apdex."
           }
         }
       },
@@ -34282,8 +34496,19 @@
             "description": "The email address to send the invitation to.",
             "format": "email"
           },
+          "role": {
+            "$ref": "#/components/schemas/OrganizationMemberRequestRole"
+          },
           "orgRole": {
             "$ref": "#/components/schemas/OrganizationMemberRequestOrgRole"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationMemberRequestTeamsItem"
+            },
+            "description": "Deprecated, use \u0060teamRoles\u0060. Slugs of teams to add the member to.",
+            "deprecated": true
           },
           "teamRoles": {
             "type": "array",
@@ -34302,6 +34527,10 @@
           "reinvite": {
             "type": "boolean",
             "description": "Whether or not to re-invite a user who has already been invited to the organization. Defaults to True."
+          },
+          "regenerate": {
+            "type": "boolean",
+            "description": "Reissue the invite token, invalidating any previously sent invite link."
           }
         }
       },
@@ -34526,6 +34755,17 @@
               "$ref": "#/components/schemas/OrganizationReleaseCommitsItem"
             },
             "description": "An optional list of commit data to be associated."
+          },
+          "status": {
+            "type": "string",
+            "description": "The status of the release. Can be \u0060open\u0060 or \u0060archived\u0060."
+          },
+          "headCommits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationReleaseHeadCommitsItem"
+            },
+            "description": "Deprecated, use \u0060commits\u0060. Head commits to associate with the release."
           },
           "refs": {
             "type": "array",
@@ -35074,11 +35314,132 @@
         }
       },
       "ProjectAdmin": {
+        "required": [
+          "digestsMaxDelay",
+          "digestsMinDelay",
+          "securityToken",
+          "securityTokenHeader"
+        ],
         "type": "object",
         "properties": {
+          "digestsMinDelay": {
+            "maximum": 3600,
+            "minimum": 60,
+            "type": "integer",
+            "description": "Minimum time in seconds to wait before sending an issue digest email."
+          },
+          "digestsMaxDelay": {
+            "maximum": 3600,
+            "minimum": 60,
+            "type": "integer",
+            "description": "Maximum time in seconds to wait before sending an issue digest email."
+          },
+          "securityToken": {
+            "maxLength": 255,
+            "pattern": "^[-a-zA-Z0-9\u002B/=\\s]\u002B$",
+            "type": "string",
+            "description": "Token sent with security reports (CSP, Expect-CT, HPKP) so Sentry can verify their origin."
+          },
+          "securityTokenHeader": {
+            "maxLength": 64,
+            "pattern": "^[a-zA-Z0-9_\\-]\u002B$",
+            "type": "string",
+            "description": "Name of the header carrying the security token on inbound security reports."
+          },
           "isBookmarked": {
             "type": "boolean",
             "description": "Enables starring the project within the projects tab. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "autofixAutomationTuning": {
+            "$ref": "#/components/schemas/ProjectAdminAutofixAutomationTuning"
+          },
+          "seerScannerAutomation": {
+            "type": "boolean",
+            "description": "Let Seer scan new issues automatically. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizeStatusChecksEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod size status checks. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizeStatusChecksRules": {
+            "$ref": "#/components/schemas/ProjectAdminPreprodSizeStatusChecksRulesProperty"
+          },
+          "preprodSizePrCommentsEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod size PR comments. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizePrCommentsRules": {
+            "$ref": "#/components/schemas/ProjectAdminPreprodSizePrCommentsRulesProperty"
+          },
+          "preprodSnapshotStatusChecksEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod snapshot status checks."
+          },
+          "preprodSnapshotStatusChecksFailOnAdded": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are added."
+          },
+          "preprodSnapshotStatusChecksFailOnRemoved": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are removed."
+          },
+          "preprodSnapshotStatusChecksFailOnChanged": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots change."
+          },
+          "preprodSnapshotStatusChecksFailOnRenamed": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are renamed."
+          },
+          "preprodSizeEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Enable preprod size analysis. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Enable preprod build distribution. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionPrCommentsEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Post preprod distribution updates as PR comments. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsEnabled": {
+            "type": "boolean",
+            "description": "Post preprod snapshot changes as PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnAdded": {
+            "type": "boolean",
+            "description": "Include added snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnRemoved": {
+            "type": "boolean",
+            "description": "Include removed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnChanged": {
+            "type": "boolean",
+            "description": "Include changed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnRenamed": {
+            "type": "boolean",
+            "description": "Include renamed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSizeEnabledQuery": {
+            "type": "string",
+            "description": "Query selecting which preprod builds are size-analyzed. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionEnabledQuery": {
+            "type": "string",
+            "description": "Query selecting which preprod builds are distributed. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
           },
           "name": {
             "maxLength": 200,
@@ -35121,13 +35482,134 @@
             },
             "description": "A list of strings with tag keys to highlight on this project\u0027s issues.\nE.g. \u0060[\u0027release\u0027, \u0027environment\u0027]\u0060"
           },
+          "verifySSL": {
+            "type": "boolean",
+            "description": "Verify SSL certificates when delivering outbound webhooks and service hooks."
+          },
+          "defaultEnvironment": {
+            "type": "string",
+            "description": "Environment selected by default when viewing this project.",
+            "nullable": true
+          },
+          "dataScrubber": {
+            "type": "boolean",
+            "description": "Remove known sensitive values from events before storing them."
+          },
+          "dataScrubberDefaults": {
+            "type": "boolean",
+            "description": "Also scrub Sentry\u0027s built-in list of sensitive field names."
+          },
+          "sensitiveFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Additional field names to scrub from events, beyond the defaults."
+          },
+          "safeFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Field names to exempt from scrubbing, including the built-in defaults."
+          },
+          "storeCrashReports": {
+            "maximum": 100,
+            "minimum": -1,
+            "type": "integer",
+            "description": "Number of native crash report files to store per issue. Use \u0060-1\u0060 for unlimited or \u00600\u0060 to store none.",
+            "nullable": true
+          },
+          "relayPiiConfig": {
+            "type": "string",
+            "description": "Advanced data scrubbing rules, as a JSON string, applied before events are stored.",
+            "nullable": true
+          },
+          "builtinSymbolSources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Identifiers of Sentry-hosted symbol sources to use when symbolicating events."
+          },
+          "symbolSources": {
+            "type": "string",
+            "description": "Custom symbol sources, as a JSON string, to use when symbolicating events.",
+            "nullable": true
+          },
+          "scrubIPAddresses": {
+            "type": "boolean",
+            "description": "Discard client IP addresses rather than storing them on events."
+          },
+          "groupingConfig": {
+            "type": "string",
+            "description": "Identifier of the grouping algorithm used to assign events to issues.",
+            "nullable": true
+          },
+          "groupingEnhancements": {
+            "type": "string",
+            "description": "Grouping enhancement rules, as a newline-delimited config string, adjusting which stack frames contribute to an issue.",
+            "nullable": true
+          },
+          "fingerprintingRules": {
+            "type": "string",
+            "description": "Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues.",
+            "nullable": true
+          },
+          "secondaryGroupingConfig": {
+            "type": "string",
+            "description": "Grouping algorithm run alongside the primary one during a grouping migration.",
+            "nullable": true
+          },
+          "secondaryGroupingExpiry": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Unix timestamp after which the secondary grouping algorithm stops running.",
+            "nullable": true
+          },
+          "scrapeJavaScript": {
+            "type": "boolean",
+            "description": "Allow Sentry to fetch source files and source maps from your servers."
+          },
           "enableAutoReleaseCreation": {
             "type": "boolean",
             "description": "Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI)."
           },
+          "allowedDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Origins permitted to send events to this project. Use \u0060*\u0060 to allow any."
+          },
+          "copy_from_project": {
+            "type": "integer",
+            "description": "ID of a project whose settings, teams, and keys should be copied into this one."
+          },
+          "targetSampleRate": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number",
+            "description": "Target proportion of transactions to retain, from \u00600\u0060 to \u00601\u0060. Requires manual dynamic sampling mode.",
+            "format": "double"
+          },
+          "dynamicSamplingBiases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectAdminDynamicSamplingBiasesItem"
+            },
+            "description": "Per-bias toggles adjusting which transactions dynamic sampling favors retaining."
+          },
+          "tempestFetchScreenshots": {
+            "type": "boolean",
+            "description": "Fetch screenshots attached to console crash reports. Requires the Tempest feature."
+          },
           "scmSourceContextEnabled": {
             "type": "boolean",
             "description": "Enable on-demand source context fetching from SCM integrations for stack traces."
+          },
+          "debugFilesRole": {
+            "$ref": "#/components/schemas/ProjectAdminDebugFilesRole"
           }
         }
       },
@@ -36440,6 +36922,13 @@
               "$ref": "#/components/schemas/ScimPatchRequestOperationsItem"
             },
             "description": "A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022replace\u0022,\n        \u0022path\u0022: \u0022active\u0022,\n        \u0022value\u0022: False\n    }]\n}\n\u0060\u0060\u0060\n"
+          },
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "SCIM schema URIs identifying the request format. Must be the PatchOp schema."
           }
         }
       },
@@ -36462,10 +36951,18 @@
       },
       "ScimTeamPatchRequest": {
         "required": [
-          "Operations"
+          "Operations",
+          "schemas"
         ],
         "type": "object",
         "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "SCIM schema URIs identifying the request format. Must be the PatchOp schema."
+          },
           "Operations": {
             "type": "array",
             "items": {
@@ -36657,6 +37154,14 @@
               "type": "string"
             },
             "description": "Webhook events the custom integration is subscribed to.",
+            "nullable": true
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SentryAppParserFeaturesItem"
+            },
+            "description": "The list of features that the custom integration supports.",
             "nullable": true
           },
           "schema": {
@@ -41173,6 +41678,28 @@
         },
         "description": "The configuration for the monitor."
       },
+      "MonitorValidatorAlertRule": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        },
+        "description": "Alert rule configuration created alongside the monitor."
+      },
       "OrgReleaseResponseAuthorsItem": {
         "type": "object",
         "anyOf": [
@@ -42969,6 +43496,27 @@
           }
         }
       },
+      "MonitorValidatorAlertRuleAllOf1": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        }
+      },
       "OrgReleaseResponseAuthorsItemAnyOf1": {
         "required": [
           "avatarUrl",
@@ -44761,7 +45309,7 @@
             "type": "string"
           }
         },
-        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested.\n\n\u0060\u0060content\u0060\u0060 is text for the text formats and a serialized JSON object for \u0060\u0060json\u0060\u0060, so the\nresponse shape is the same whichever format a caller asks for."
       },
       "AutofixStateResponseAutofix": {
         "type": "object",
@@ -47274,7 +47822,7 @@
             "type": "string"
           }
         },
-        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested.\n\n\u0060\u0060content\u0060\u0060 is text for the text formats and a serialized JSON object for \u0060\u0060json\u0060\u0060, so the\nresponse shape is the same whichever format a caller asks for."
       },
       "LatestBaseSnapshotResponseImagesItem": {
         "type": "object",
@@ -48029,6 +48577,23 @@
           },
           "email": {
             "type": "string"
+          }
+        }
+      },
+      "MonitorAlertRuleValidatorTargetsItem": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
           }
         }
       },
@@ -49063,6 +49628,28 @@
           }
         }
       },
+      "OrganizationReleaseHeadCommitsItem": {
+        "required": [
+          "currentId",
+          "repository"
+        ],
+        "type": "object",
+        "properties": {
+          "currentId": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "repository": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "previousId": {
+            "maxLength": 64,
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
       "OrganizationReleaseRefsItem": {
         "required": [
           "commit",
@@ -49702,12 +50289,41 @@
           }
         }
       },
+      "ProjectAdminPreprodSizeStatusChecksRules": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectAdminPreprodSizeStatusChecksRulesAdditionalProperties"
+        },
+        "description": "Rules controlling when preprod size status checks fail. Can be updated with **\u0060project:read\u0060** permission."
+      },
+      "ProjectAdminPreprodSizePrCommentsRules": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectAdminPreprodSizePrCommentsRulesAdditionalProperties"
+        },
+        "description": "Rules controlling which preprod size changes are posted as PR comments. Can be updated with **\u0060project:read\u0060** permission."
+      },
       "ProjectAdminHighlightContext": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/ProjectAdminHighlightContextAdditionalProperties"
         },
         "description": "A JSON mapping of context types to lists of strings for their keys.\nE.g. \u0060{\u0027user\u0027: [\u0027id\u0027, \u0027email\u0027]}\u0060"
+      },
+      "ProjectAdminDynamicSamplingBiasesItem": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/ProjectAdminDynamicSamplingBiasesItemId"
+          },
+          "active": {
+            "type": "boolean",
+            "default": false
+          }
+        }
       },
       "ProjectEventDetailsResponseUser": {
         "type": "object",
@@ -55428,6 +56044,23 @@
           },
           "is_verified": {
             "type": "boolean"
+          }
+        }
+      },
+      "MonitorValidatorAlertRuleAllOf1TargetsItem": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
           }
         }
       },
@@ -64169,6 +64802,10 @@
           "cancelDeletion": {
             "type": "boolean",
             "description": "Specify \u0060true\u0060 to restore an organization that is pending deletion."
+          },
+          "apdexThreshold": {
+            "type": "integer",
+            "description": "Deprecated. Response-time threshold in milliseconds previously used to compute Apdex."
           }
         }
       },
@@ -65168,6 +65805,55 @@
             "description": "How to order the query results. Must be something in the \u0060field\u0060 list, excluding equations.",
             "nullable": true
           },
+          "rollup": {
+            "type": "integer",
+            "description": "Time-bucket granularity in seconds for the saved query.",
+            "nullable": true
+          },
+          "aggregations": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Aggregate functions to apply, each as a \u0060[function, column, alias]\u0060 triple.",
+            "nullable": true
+          },
+          "groupby": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Columns to group results by.",
+            "nullable": true
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Filter conditions, each as a \u0060[column, operator, value]\u0060 triple.",
+            "nullable": true
+          },
+          "limit": {
+            "maximum": 1000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Maximum number of rows to return, from \u00600\u0060 to \u00601000\u0060.",
+            "nullable": true
+          },
+          "version": {
+            "maximum": 2,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Saved query schema version. \u00601\u0060 for the legacy shape, \u00602\u0060 for the current one.",
+            "nullable": true
+          },
           "environment": {
             "type": "array",
             "items": {
@@ -65179,6 +65865,14 @@
           "query": {
             "type": "string",
             "description": "Filters results by using [query syntax](/product/sentry-basics/search/).",
+            "nullable": true
+          },
+          "widths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Rendered column widths, in the same order as the query\u0027s fields.",
             "nullable": true
           },
           "yAxis": {
@@ -65497,6 +66191,55 @@
             "description": "How to order the query results. Must be something in the \u0060field\u0060 list, excluding equations.",
             "nullable": true
           },
+          "rollup": {
+            "type": "integer",
+            "description": "Time-bucket granularity in seconds for the saved query.",
+            "nullable": true
+          },
+          "aggregations": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Aggregate functions to apply, each as a \u0060[function, column, alias]\u0060 triple.",
+            "nullable": true
+          },
+          "groupby": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Columns to group results by.",
+            "nullable": true
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            "description": "Filter conditions, each as a \u0060[column, operator, value]\u0060 triple.",
+            "nullable": true
+          },
+          "limit": {
+            "maximum": 1000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Maximum number of rows to return, from \u00600\u0060 to \u00601000\u0060.",
+            "nullable": true
+          },
+          "version": {
+            "maximum": 2,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Saved query schema version. \u00601\u0060 for the legacy shape, \u00602\u0060 for the current one.",
+            "nullable": true
+          },
           "environment": {
             "type": "array",
             "items": {
@@ -65508,6 +66251,14 @@
           "query": {
             "type": "string",
             "description": "Filters results by using [query syntax](/product/sentry-basics/search/).",
+            "nullable": true
+          },
+          "widths": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Rendered column widths, in the same order as the query\u0027s fields.",
             "nullable": true
           },
           "yAxis": {
@@ -66293,12 +67044,18 @@
           "assignedTo",
           "discard",
           "hasSeen",
+          "ignoreCount",
+          "ignoreDuration",
+          "ignoreUserCount",
+          "ignoreUserWindow",
+          "ignoreWindow",
           "inbox",
           "isBookmarked",
           "isPublic",
           "isSubscribed",
           "merge",
           "priority",
+          "snoozeDuration",
           "status",
           "statusDetails",
           "substatus"
@@ -66348,6 +67105,39 @@
           },
           "priority": {
             "$ref": "#/components/schemas/UpdateOrganizationIssuesRequestPriority"
+          },
+          "ignoreDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue for this many minutes."
+          },
+          "ignoreCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it is seen this many more times."
+          },
+          "ignoreWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreCount\u0060 is measured. Maximum is 7 days."
+          },
+          "ignoreUserCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it affects this many more users."
+          },
+          "ignoreUserWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreUserCount\u0060 is measured. Maximum is 7 days."
+          },
+          "snoozeDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Snooze the issue for this many minutes.",
+            "nullable": true
           }
         }
       },
@@ -66416,8 +67206,19 @@
             "description": "The email address to send the invitation to.",
             "format": "email"
           },
+          "role": {
+            "$ref": "#/components/schemas/AddOrganizationMemberRequestRole"
+          },
           "orgRole": {
             "$ref": "#/components/schemas/AddOrganizationMemberRequestOrgRole"
+          },
+          "teams": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddOrganizationMemberRequestTeamsItem"
+            },
+            "description": "Deprecated, use \u0060teamRoles\u0060. Slugs of teams to add the member to.",
+            "deprecated": true
           },
           "teamRoles": {
             "type": "array",
@@ -66436,6 +67237,10 @@
           "reinvite": {
             "type": "boolean",
             "description": "Whether or not to re-invite a user who has already been invited to the organization. Defaults to True."
+          },
+          "regenerate": {
+            "type": "boolean",
+            "description": "Reissue the invite token, invalidating any previously sent invite link."
           }
         }
       },
@@ -66906,6 +67711,9 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
+          },
+          "alert_rule": {
+            "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -67057,6 +67865,9 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
+          },
+          "alert_rule": {
+            "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -67211,6 +68022,15 @@
               "type": "string"
             },
             "description": "List of project IDs or slugs that the Notification Action is created for."
+          },
+          "sentry_app_id": {
+            "type": "integer",
+            "description": "ID of the custom integration to notify, when the target is a Sentry app."
+          },
+          "target_type": {
+            "type": "string",
+            "description": "How the notification target is addressed.",
+            "default": "specific"
           }
         },
         "description": "Django Rest Framework serializer for incoming NotificationAction API payloads"
@@ -67360,6 +68180,15 @@
               "type": "string"
             },
             "description": "List of project IDs or slugs that the Notification Action is created for."
+          },
+          "sentry_app_id": {
+            "type": "integer",
+            "description": "ID of the custom integration to notify, when the target is a Sentry app."
+          },
+          "target_type": {
+            "type": "string",
+            "description": "How the notification target is addressed.",
+            "default": "specific"
           }
         },
         "description": "Django Rest Framework serializer for incoming NotificationAction API payloads"
@@ -68564,6 +69393,17 @@
             },
             "description": "An optional list of commit data to be associated."
           },
+          "status": {
+            "type": "string",
+            "description": "The status of the release. Can be \u0060open\u0060 or \u0060archived\u0060."
+          },
+          "headCommits": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateOrganizationReleaseRequestHeadCommitsItem"
+            },
+            "description": "Deprecated, use \u0060commits\u0060. Head commits to associate with the release."
+          },
           "refs": {
             "type": "array",
             "items": {
@@ -69109,10 +69949,18 @@
       },
       "UpdateOrganizationScimV2GroupRequest": {
         "required": [
-          "Operations"
+          "Operations",
+          "schemas"
         ],
         "type": "object",
         "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "SCIM schema URIs identifying the request format. Must be the PatchOp schema."
+          },
           "Operations": {
             "type": "array",
             "items": {
@@ -69274,6 +70122,13 @@
               "$ref": "#/components/schemas/UpdateOrganizationScimV2UserRequestOperationsItem"
             },
             "description": "A list of operations to perform. Currently, the only valid operation is setting\na member\u0027s \u0060active\u0060 attribute to false, after which the member will be permanently deleted.\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022replace\u0022,\n        \u0022path\u0022: \u0022active\u0022,\n        \u0022value\u0022: False\n    }]\n}\n\u0060\u0060\u0060\n"
+          },
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "SCIM schema URIs identifying the request format. Must be the PatchOp schema."
           }
         }
       },
@@ -70328,11 +71183,132 @@
         }
       },
       "UpdateProjectRequest": {
+        "required": [
+          "digestsMaxDelay",
+          "digestsMinDelay",
+          "securityToken",
+          "securityTokenHeader"
+        ],
         "type": "object",
         "properties": {
+          "digestsMinDelay": {
+            "maximum": 3600,
+            "minimum": 60,
+            "type": "integer",
+            "description": "Minimum time in seconds to wait before sending an issue digest email."
+          },
+          "digestsMaxDelay": {
+            "maximum": 3600,
+            "minimum": 60,
+            "type": "integer",
+            "description": "Maximum time in seconds to wait before sending an issue digest email."
+          },
+          "securityToken": {
+            "maxLength": 255,
+            "pattern": "^[-a-zA-Z0-9\u002B/=\\s]\u002B$",
+            "type": "string",
+            "description": "Token sent with security reports (CSP, Expect-CT, HPKP) so Sentry can verify their origin."
+          },
+          "securityTokenHeader": {
+            "maxLength": 64,
+            "pattern": "^[a-zA-Z0-9_\\-]\u002B$",
+            "type": "string",
+            "description": "Name of the header carrying the security token on inbound security reports."
+          },
           "isBookmarked": {
             "type": "boolean",
             "description": "Enables starring the project within the projects tab. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "autofixAutomationTuning": {
+            "$ref": "#/components/schemas/UpdateProjectRequestAutofixAutomationTuning"
+          },
+          "seerScannerAutomation": {
+            "type": "boolean",
+            "description": "Let Seer scan new issues automatically. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizeStatusChecksEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod size status checks. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizeStatusChecksRules": {
+            "$ref": "#/components/schemas/UpdateProjectRequestPreprodSizeStatusChecksRules"
+          },
+          "preprodSizePrCommentsEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod size PR comments. Can be updated with **\u0060project:read\u0060** permission."
+          },
+          "preprodSizePrCommentsRules": {
+            "$ref": "#/components/schemas/UpdateProjectRequestPreprodSizePrCommentsRules"
+          },
+          "preprodSnapshotStatusChecksEnabled": {
+            "type": "boolean",
+            "description": "Enable preprod snapshot status checks."
+          },
+          "preprodSnapshotStatusChecksFailOnAdded": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are added."
+          },
+          "preprodSnapshotStatusChecksFailOnRemoved": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are removed."
+          },
+          "preprodSnapshotStatusChecksFailOnChanged": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots change."
+          },
+          "preprodSnapshotStatusChecksFailOnRenamed": {
+            "type": "boolean",
+            "description": "Fail the preprod snapshot status check when snapshots are renamed."
+          },
+          "preprodSizeEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Enable preprod size analysis. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Enable preprod build distribution. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionPrCommentsEnabledByCustomer": {
+            "type": "boolean",
+            "description": "Post preprod distribution updates as PR comments. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsEnabled": {
+            "type": "boolean",
+            "description": "Post preprod snapshot changes as PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnAdded": {
+            "type": "boolean",
+            "description": "Include added snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnRemoved": {
+            "type": "boolean",
+            "description": "Include removed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnChanged": {
+            "type": "boolean",
+            "description": "Include changed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSnapshotPrCommentsPostOnRenamed": {
+            "type": "boolean",
+            "description": "Include renamed snapshots in preprod snapshot PR comments.",
+            "nullable": true
+          },
+          "preprodSizeEnabledQuery": {
+            "type": "string",
+            "description": "Query selecting which preprod builds are size-analyzed. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
+          },
+          "preprodDistributionEnabledQuery": {
+            "type": "string",
+            "description": "Query selecting which preprod builds are distributed. Can be updated with **\u0060project:read\u0060** permission.",
+            "nullable": true
           },
           "name": {
             "maxLength": 200,
@@ -70375,13 +71351,134 @@
             },
             "description": "A list of strings with tag keys to highlight on this project\u0027s issues.\nE.g. \u0060[\u0027release\u0027, \u0027environment\u0027]\u0060"
           },
+          "verifySSL": {
+            "type": "boolean",
+            "description": "Verify SSL certificates when delivering outbound webhooks and service hooks."
+          },
+          "defaultEnvironment": {
+            "type": "string",
+            "description": "Environment selected by default when viewing this project.",
+            "nullable": true
+          },
+          "dataScrubber": {
+            "type": "boolean",
+            "description": "Remove known sensitive values from events before storing them."
+          },
+          "dataScrubberDefaults": {
+            "type": "boolean",
+            "description": "Also scrub Sentry\u0027s built-in list of sensitive field names."
+          },
+          "sensitiveFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Additional field names to scrub from events, beyond the defaults."
+          },
+          "safeFields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Field names to exempt from scrubbing, including the built-in defaults."
+          },
+          "storeCrashReports": {
+            "maximum": 100,
+            "minimum": -1,
+            "type": "integer",
+            "description": "Number of native crash report files to store per issue. Use \u0060-1\u0060 for unlimited or \u00600\u0060 to store none.",
+            "nullable": true
+          },
+          "relayPiiConfig": {
+            "type": "string",
+            "description": "Advanced data scrubbing rules, as a JSON string, applied before events are stored.",
+            "nullable": true
+          },
+          "builtinSymbolSources": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Identifiers of Sentry-hosted symbol sources to use when symbolicating events."
+          },
+          "symbolSources": {
+            "type": "string",
+            "description": "Custom symbol sources, as a JSON string, to use when symbolicating events.",
+            "nullable": true
+          },
+          "scrubIPAddresses": {
+            "type": "boolean",
+            "description": "Discard client IP addresses rather than storing them on events."
+          },
+          "groupingConfig": {
+            "type": "string",
+            "description": "Identifier of the grouping algorithm used to assign events to issues.",
+            "nullable": true
+          },
+          "groupingEnhancements": {
+            "type": "string",
+            "description": "Grouping enhancement rules, as a newline-delimited config string, adjusting which stack frames contribute to an issue.",
+            "nullable": true
+          },
+          "fingerprintingRules": {
+            "type": "string",
+            "description": "Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues.",
+            "nullable": true
+          },
+          "secondaryGroupingConfig": {
+            "type": "string",
+            "description": "Grouping algorithm run alongside the primary one during a grouping migration.",
+            "nullable": true
+          },
+          "secondaryGroupingExpiry": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Unix timestamp after which the secondary grouping algorithm stops running.",
+            "nullable": true
+          },
+          "scrapeJavaScript": {
+            "type": "boolean",
+            "description": "Allow Sentry to fetch source files and source maps from your servers."
+          },
           "enableAutoReleaseCreation": {
             "type": "boolean",
             "description": "Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI)."
           },
+          "allowedDomains": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Origins permitted to send events to this project. Use \u0060*\u0060 to allow any."
+          },
+          "copy_from_project": {
+            "type": "integer",
+            "description": "ID of a project whose settings, teams, and keys should be copied into this one."
+          },
+          "targetSampleRate": {
+            "maximum": 1,
+            "minimum": 0,
+            "type": "number",
+            "description": "Target proportion of transactions to retain, from \u00600\u0060 to \u00601\u0060. Requires manual dynamic sampling mode.",
+            "format": "double"
+          },
+          "dynamicSamplingBiases": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectRequestDynamicSamplingBiasesItem"
+            },
+            "description": "Per-bias toggles adjusting which transactions dynamic sampling favors retaining."
+          },
+          "tempestFetchScreenshots": {
+            "type": "boolean",
+            "description": "Fetch screenshots attached to console crash reports. Requires the Tempest feature."
+          },
           "scmSourceContextEnabled": {
             "type": "boolean",
             "description": "Enable on-demand source context fetching from SCM integrations for stack traces."
+          },
+          "debugFilesRole": {
+            "$ref": "#/components/schemas/UpdateProjectRequestDebugFilesRole"
           }
         }
       },
@@ -71522,6 +72619,9 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
+          },
+          "alert_rule": {
+            "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -73004,6 +74104,14 @@
             "description": "Webhook events the custom integration is subscribed to.",
             "nullable": true
           },
+          "features": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateSentryAppRequestFeaturesItem"
+            },
+            "description": "The list of features that the custom integration supports.",
+            "nullable": true
+          },
           "schema": {
             "$ref": "#/components/schemas/UpdateSentryAppRequestSchema"
           },
@@ -73358,10 +74466,15 @@
         "required": [
           "external_name",
           "integration_id",
-          "provider"
+          "provider",
+          "team_id"
         ],
         "type": "object",
         "properties": {
+          "team_id": {
+            "type": "integer",
+            "description": "ID of the Sentry team to link to the external team."
+          },
           "external_name": {
             "type": "string",
             "description": "The associated name for the provider."
@@ -73449,10 +74562,15 @@
         "required": [
           "external_name",
           "integration_id",
-          "provider"
+          "provider",
+          "team_id"
         ],
         "type": "object",
         "properties": {
+          "team_id": {
+            "type": "integer",
+            "description": "ID of the Sentry team to link to the external team."
+          },
           "external_name": {
             "type": "string",
             "description": "The associated name for the provider."
@@ -74364,12 +75482,18 @@
           "assignedTo",
           "discard",
           "hasSeen",
+          "ignoreCount",
+          "ignoreDuration",
+          "ignoreUserCount",
+          "ignoreUserWindow",
+          "ignoreWindow",
           "inbox",
           "isBookmarked",
           "isPublic",
           "isSubscribed",
           "merge",
           "priority",
+          "snoozeDuration",
           "status",
           "statusDetails",
           "substatus"
@@ -74419,6 +75543,39 @@
           },
           "priority": {
             "$ref": "#/components/schemas/UpdateOrganizationIssueRequestPriority"
+          },
+          "ignoreDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue for this many minutes."
+          },
+          "ignoreCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it is seen this many more times."
+          },
+          "ignoreWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreCount\u0060 is measured. Maximum is 7 days."
+          },
+          "ignoreUserCount": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Ignore the issue until it affects this many more users."
+          },
+          "ignoreUserWindow": {
+            "maximum": 10080,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Window in minutes over which \u0060ignoreUserCount\u0060 is measured. Maximum is 7 days."
+          },
+          "snoozeDuration": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Snooze the issue for this many minutes.",
+            "nullable": true
           }
         }
       },
@@ -77843,6 +79000,9 @@
       "OrganizationIntegrationResponseConfigData": {
         "type": "object"
       },
+      "OrganizationMemberRequestTeamsItem": {
+        "type": "object"
+      },
       "OrganizationMemberRequestTeamRolesItemProperty": {
         "type": "object",
         "additionalProperties": {
@@ -77888,6 +79048,20 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "ProjectAdminPreprodSizeStatusChecksRulesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectAdminPreprodSizeStatusChecksRulesPropertyAdditionalProperties"
+        },
+        "description": "Rules controlling when preprod size status checks fail. Can be updated with **\u0060project:read\u0060** permission."
+      },
+      "ProjectAdminPreprodSizePrCommentsRulesProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectAdminPreprodSizePrCommentsRulesPropertyAdditionalProperties"
+        },
+        "description": "Rules controlling which preprod size changes are posted as PR comments. Can be updated with **\u0060project:read\u0060** permission."
       },
       "ProjectAdminHighlightContextProperty": {
         "type": "object",
@@ -78945,6 +80119,12 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/OutcomesResponseGroupsItemSeriesPropertyAdditionalProperties"
         }
+      },
+      "ProjectAdminPreprodSizeStatusChecksRulesAdditionalProperties": {
+        "type": "object"
+      },
+      "ProjectAdminPreprodSizePrCommentsRulesAdditionalProperties": {
+        "type": "object"
       },
       "ProjectAdminHighlightContextAdditionalProperties": {
         "type": "object"
@@ -83618,6 +84798,9 @@
           }
         }
       },
+      "AddOrganizationMemberRequestTeamsItem": {
+        "type": "object"
+      },
       "AddOrganizationMemberRequestTeamRolesItem": {
         "type": "object",
         "additionalProperties": {
@@ -84504,6 +85687,28 @@
         },
         "description": "The configuration for the monitor."
       },
+      "CreateOrganizationMonitorRequestAlertRule": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRuleTargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        },
+        "description": "Alert rule configuration created alongside the monitor."
+      },
       "CreateOrganizationMonitor201ResponseAlertRule": {
         "required": [
           "environment",
@@ -85153,6 +86358,28 @@
           }
         },
         "description": "The configuration for the monitor."
+      },
+      "UpdateOrganizationMonitorRequestAlertRule": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRuleTargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        },
+        "description": "Alert rule configuration created alongside the monitor."
       },
       "UpdateOrganizationMonitor200ResponseAlertRule": {
         "required": [
@@ -87405,6 +88632,28 @@
             "items": {
               "$ref": "#/components/schemas/UpdateOrganizationReleaseRequestCommitsItemPatchSetItem"
             },
+            "nullable": true
+          }
+        }
+      },
+      "UpdateOrganizationReleaseRequestHeadCommitsItem": {
+        "required": [
+          "currentId",
+          "repository"
+        ],
+        "type": "object",
+        "properties": {
+          "currentId": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "repository": {
+            "maxLength": 64,
+            "type": "string"
+          },
+          "previousId": {
+            "maxLength": 64,
+            "type": "string",
             "nullable": true
           }
         }
@@ -90055,12 +91304,41 @@
       "GetProject200ResponseSeerNightshiftTweaks": {
         "type": "object"
       },
+      "UpdateProjectRequestPreprodSizeStatusChecksRules": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateProjectRequestPreprodSizeStatusChecksRulesAdditionalProperties"
+        },
+        "description": "Rules controlling when preprod size status checks fail. Can be updated with **\u0060project:read\u0060** permission."
+      },
+      "UpdateProjectRequestPreprodSizePrCommentsRules": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateProjectRequestPreprodSizePrCommentsRulesAdditionalProperties"
+        },
+        "description": "Rules controlling which preprod size changes are posted as PR comments. Can be updated with **\u0060project:read\u0060** permission."
+      },
       "UpdateProjectRequestHighlightContext": {
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/UpdateProjectRequestHighlightContextAdditionalProperties"
         },
         "description": "A JSON mapping of context types to lists of strings for their keys.\nE.g. \u0060{\u0027user\u0027: [\u0027id\u0027, \u0027email\u0027]}\u0060"
+      },
+      "UpdateProjectRequestDynamicSamplingBiasesItem": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UpdateProjectRequestDynamicSamplingBiasesItemId"
+          },
+          "active": {
+            "type": "boolean",
+            "default": false
+          }
+        }
       },
       "UpdateProject200ResponseStats": {
         "type": "object"
@@ -91736,6 +93014,28 @@
           }
         },
         "description": "The configuration for the monitor."
+      },
+      "UpdateProjectMonitorRequestAlertRule": {
+        "required": [
+          "targets"
+        ],
+        "type": "object",
+        "properties": {
+          "environment": {
+            "maxLength": 64,
+            "type": "string",
+            "description": "Name of the environment",
+            "nullable": true
+          },
+          "targets": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRuleTargetsItem"
+            },
+            "description": "Array of dictionaries with information of the user or team to be notified"
+          }
+        },
+        "description": "Alert rule configuration created alongside the monitor."
       },
       "UpdateProjectMonitor200ResponseAlertRule": {
         "required": [
@@ -95235,7 +96535,7 @@
             "type": "string"
           }
         },
-        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested.\n\n\u0060\u0060content\u0060\u0060 is text for the text formats and a serialized JSON object for \u0060\u0060json\u0060\u0060, so the\nresponse shape is the same whichever format a caller asks for."
       },
       "GetOrganizationIssueAutofixState200ResponseAutofix": {
         "type": "object",
@@ -95668,7 +96968,7 @@
             "type": "string"
           }
         },
-        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested."
+        "description": "The \u0060\u0060formatted\u0060\u0060 field the mixin adds to a response when \u0060\u0060?llmFormat\u0060\u0060 is requested.\n\n\u0060\u0060content\u0060\u0060 is text for the text formats and a serialized JSON object for \u0060\u0060json\u0060\u0060, so the\nresponse shape is the same whichever format a caller asks for."
       },
       "ListOrganizationIssueExternalIssues200ResponseItem": {
         "required": [
@@ -100882,6 +102182,12 @@
           "$ref": "#/components/schemas/OrganizationWithProjectsAndTeamsExtraOptionsPropertyAdditionalPropertiesAdditionalProperties"
         }
       },
+      "ProjectAdminPreprodSizeStatusChecksRulesPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "ProjectAdminPreprodSizePrCommentsRulesPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "ProjectAdminHighlightContextPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -105089,6 +106395,23 @@
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
       },
+      "CreateOrganizationMonitorRequestAlertRuleTargetsItem": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
+          }
+        }
+      },
       "CreateOrganizationMonitor201ResponseAlertRuleTargetsItem": {
         "required": [
           "targetIdentifier",
@@ -105216,6 +106539,23 @@
       "UpdateOrganizationMonitorRequestConfigSchedule": {
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
+      },
+      "UpdateOrganizationMonitorRequestAlertRuleTargetsItem": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
+          }
+        }
       },
       "UpdateOrganizationMonitor200ResponseAlertRuleTargetsItem": {
         "required": [
@@ -108717,6 +110057,12 @@
           }
         }
       },
+      "UpdateProjectRequestPreprodSizeStatusChecksRulesAdditionalProperties": {
+        "type": "object"
+      },
+      "UpdateProjectRequestPreprodSizePrCommentsRulesAdditionalProperties": {
+        "type": "object"
+      },
       "UpdateProjectRequestHighlightContextAdditionalProperties": {
         "type": "object"
       },
@@ -109469,6 +110815,23 @@
       "UpdateProjectMonitorRequestConfigSchedule": {
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
+      },
+      "UpdateProjectMonitorRequestAlertRuleTargetsItem": {
+        "required": [
+          "target_identifier",
+          "target_type"
+        ],
+        "type": "object",
+        "properties": {
+          "target_identifier": {
+            "type": "integer",
+            "description": "ID of target object"
+          },
+          "target_type": {
+            "type": "string",
+            "description": "One of [Member, Team]"
+          }
+        }
       },
       "UpdateProjectMonitor200ResponseAlertRuleTargetsItem": {
         "required": [
@@ -120027,6 +121390,59 @@
           ]
         }
       },
+      "DynamicSamplingBiasId": {
+        "enum": [
+          "boostEnvironments",
+          "boostKeyTransactions",
+          "boostLatestRelease",
+          "boostLowVolumeTransactions",
+          "boostReplayId",
+          "ignoreHealthChecks",
+          "minimumSampleRate",
+          "recalibrationRule"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060boostEnvironments\u0060\n* \u0060boostKeyTransactions\u0060\n* \u0060boostLatestRelease\u0060\n* \u0060boostLowVolumeTransactions\u0060\n* \u0060boostReplayId\u0060\n* \u0060ignoreHealthChecks\u0060\n* \u0060minimumSampleRate\u0060\n* \u0060recalibrationRule\u0060",
+        "x-ms-enum": {
+          "name": "DynamicSamplingBiasId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "boostEnvironments",
+              "name": "BoostEnvironments"
+            },
+            {
+              "value": "boostKeyTransactions",
+              "name": "BoostKeyTransactions"
+            },
+            {
+              "value": "boostLatestRelease",
+              "name": "BoostLatestRelease"
+            },
+            {
+              "value": "boostLowVolumeTransactions",
+              "name": "BoostLowVolumeTransactions"
+            },
+            {
+              "value": "boostReplayId",
+              "name": "BoostReplayId"
+            },
+            {
+              "value": "ignoreHealthChecks",
+              "name": "IgnoreHealthChecks"
+            },
+            {
+              "value": "minimumSampleRate",
+              "name": "MinimumSampleRate"
+            },
+            {
+              "value": "recalibrationRule",
+              "name": "RecalibrationRule"
+            }
+          ]
+        }
+      },
       "ExplorerAutofixRequestStep": {
         "enum": [
           "root_cause",
@@ -121279,6 +122695,40 @@
           ]
         }
       },
+      "OrganizationMemberRequestRole": {
+        "enum": [
+          "member",
+          "admin",
+          "manager",
+          "owner"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Deprecated, use \u0060orgRole\u0060. The organization-level role to assign.\n\n* \u0060member\u0060 - Member\n* \u0060admin\u0060 - Admin\n* \u0060manager\u0060 - Manager\n* \u0060owner\u0060 - Owner",
+        "deprecated": true,
+        "x-ms-enum": {
+          "name": "OrganizationMemberRequestRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "member",
+              "name": "Member"
+            },
+            {
+              "value": "admin",
+              "name": "Admin"
+            },
+            {
+              "value": "manager",
+              "name": "Manager"
+            },
+            {
+              "value": "owner",
+              "name": "Owner"
+            }
+          ]
+        }
+      },
       "OrganizationMemberRequestOrgRole": {
         "enum": [
           "billing",
@@ -121358,6 +122808,84 @@
             {
               "value": "admin",
               "name": "Admin"
+            }
+          ]
+        }
+      },
+      "ProjectAdminAutofixAutomationTuning": {
+        "enum": [
+          "off",
+          "super_low",
+          "low",
+          "medium",
+          "high",
+          "always"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How aggressively Seer runs Autofix on new issues. Can be updated with **\u0060project:read\u0060** permission.\n\n* \u0060off\u0060\n* \u0060super_low\u0060\n* \u0060low\u0060\n* \u0060medium\u0060\n* \u0060high\u0060\n* \u0060always\u0060",
+        "x-ms-enum": {
+          "name": "ProjectAdminAutofixAutomationTuning",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "super_low",
+              "name": "SuperLow"
+            },
+            {
+              "value": "low",
+              "name": "Low"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "high",
+              "name": "High"
+            },
+            {
+              "value": "always",
+              "name": "Always"
+            }
+          ]
+        }
+      },
+      "ProjectAdminDebugFilesRole": {
+        "enum": [
+          "member",
+          "admin",
+          "manager",
+          "owner",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The role required to download debug information files, ProGuard mappings and source maps. If not set, inherits from organization setting.\n\n* \u0060member\u0060 - Member\n* \u0060admin\u0060 - Admin\n* \u0060manager\u0060 - Manager\n* \u0060owner\u0060 - Owner",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ProjectAdminDebugFilesRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "member",
+              "name": "Member"
+            },
+            {
+              "value": "admin",
+              "name": "Admin"
+            },
+            {
+              "value": "manager",
+              "name": "Manager"
+            },
+            {
+              "value": "owner",
+              "name": "Owner"
             }
           ]
         }
@@ -121558,6 +123086,27 @@
             }
           ]
         }
+      },
+      "SentryAppParserFeaturesItem": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          "",
+          null
+        ],
+        "type": "integer",
+        "additionalProperties": false,
+        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay"
       },
       "SkipStatusCheckProvider": {
         "enum": [
@@ -125510,7 +127059,8 @@
       "AutofixStateResponseFormattedFormat": {
         "enum": [
           "markdown",
-          "xml"
+          "xml",
+          "json"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -125525,6 +127075,10 @@
             {
               "value": "xml",
               "name": "Xml"
+            },
+            {
+              "value": "json",
+              "name": "Json"
             }
           ]
         }
@@ -126060,7 +127614,8 @@
       "IssueEventDetailsResponseFormattedFormat": {
         "enum": [
           "markdown",
-          "xml"
+          "xml",
+          "json"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -126075,6 +127630,10 @@
             {
               "value": "xml",
               "name": "Xml"
+            },
+            {
+              "value": "json",
+              "name": "Json"
             }
           ]
         }
@@ -126165,6 +127724,59 @@
             {
               "value": "team",
               "name": "Team"
+            }
+          ]
+        }
+      },
+      "ProjectAdminDynamicSamplingBiasesItemId": {
+        "enum": [
+          "boostEnvironments",
+          "boostKeyTransactions",
+          "boostLatestRelease",
+          "boostLowVolumeTransactions",
+          "boostReplayId",
+          "ignoreHealthChecks",
+          "minimumSampleRate",
+          "recalibrationRule"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060boostEnvironments\u0060\n* \u0060boostKeyTransactions\u0060\n* \u0060boostLatestRelease\u0060\n* \u0060boostLowVolumeTransactions\u0060\n* \u0060boostReplayId\u0060\n* \u0060ignoreHealthChecks\u0060\n* \u0060minimumSampleRate\u0060\n* \u0060recalibrationRule\u0060",
+        "x-ms-enum": {
+          "name": "ProjectAdminDynamicSamplingBiasesItemId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "boostEnvironments",
+              "name": "BoostEnvironments"
+            },
+            {
+              "value": "boostKeyTransactions",
+              "name": "BoostKeyTransactions"
+            },
+            {
+              "value": "boostLatestRelease",
+              "name": "BoostLatestRelease"
+            },
+            {
+              "value": "boostLowVolumeTransactions",
+              "name": "BoostLowVolumeTransactions"
+            },
+            {
+              "value": "boostReplayId",
+              "name": "BoostReplayId"
+            },
+            {
+              "value": "ignoreHealthChecks",
+              "name": "IgnoreHealthChecks"
+            },
+            {
+              "value": "minimumSampleRate",
+              "name": "MinimumSampleRate"
+            },
+            {
+              "value": "recalibrationRule",
+              "name": "RecalibrationRule"
             }
           ]
         }
@@ -128159,6 +129771,40 @@
           ]
         }
       },
+      "AddOrganizationMemberRequestRole": {
+        "enum": [
+          "member",
+          "admin",
+          "manager",
+          "owner"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Deprecated, use \u0060orgRole\u0060. The organization-level role to assign.\n\n* \u0060member\u0060 - Member\n* \u0060admin\u0060 - Admin\n* \u0060manager\u0060 - Manager\n* \u0060owner\u0060 - Owner",
+        "deprecated": true,
+        "x-ms-enum": {
+          "name": "AddOrganizationMemberRequestRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "member",
+              "name": "Member"
+            },
+            {
+              "value": "admin",
+              "name": "Admin"
+            },
+            {
+              "value": "manager",
+              "name": "Manager"
+            },
+            {
+              "value": "owner",
+              "name": "Owner"
+            }
+          ]
+        }
+      },
       "AddOrganizationMemberRequestOrgRole": {
         "enum": [
           "billing",
@@ -128424,6 +130070,84 @@
             {
               "value": "admin",
               "name": "Admin"
+            }
+          ]
+        }
+      },
+      "UpdateProjectRequestAutofixAutomationTuning": {
+        "enum": [
+          "off",
+          "super_low",
+          "low",
+          "medium",
+          "high",
+          "always"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How aggressively Seer runs Autofix on new issues. Can be updated with **\u0060project:read\u0060** permission.\n\n* \u0060off\u0060\n* \u0060super_low\u0060\n* \u0060low\u0060\n* \u0060medium\u0060\n* \u0060high\u0060\n* \u0060always\u0060",
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestAutofixAutomationTuning",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "off",
+              "name": "Off"
+            },
+            {
+              "value": "super_low",
+              "name": "SuperLow"
+            },
+            {
+              "value": "low",
+              "name": "Low"
+            },
+            {
+              "value": "medium",
+              "name": "Medium"
+            },
+            {
+              "value": "high",
+              "name": "High"
+            },
+            {
+              "value": "always",
+              "name": "Always"
+            }
+          ]
+        }
+      },
+      "UpdateProjectRequestDebugFilesRole": {
+        "enum": [
+          "member",
+          "admin",
+          "manager",
+          "owner",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The role required to download debug information files, ProGuard mappings and source maps. If not set, inherits from organization setting.\n\n* \u0060member\u0060 - Member\n* \u0060admin\u0060 - Admin\n* \u0060manager\u0060 - Manager\n* \u0060owner\u0060 - Owner",
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestDebugFilesRole",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "member",
+              "name": "Member"
+            },
+            {
+              "value": "admin",
+              "name": "Admin"
+            },
+            {
+              "value": "manager",
+              "name": "Manager"
+            },
+            {
+              "value": "owner",
+              "name": "Owner"
             }
           ]
         }
@@ -129100,6 +130824,27 @@
             }
           ]
         }
+      },
+      "UpdateSentryAppRequestFeaturesItem": {
+        "enum": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          12,
+          "",
+          null
+        ],
+        "type": "integer",
+        "additionalProperties": false,
+        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay"
       },
       "CreateTeamExternalTeamRequestProvider": {
         "enum": [
@@ -137725,6 +139470,59 @@
           ]
         }
       },
+      "UpdateProjectRequestDynamicSamplingBiasesItemId": {
+        "enum": [
+          "boostEnvironments",
+          "boostKeyTransactions",
+          "boostLatestRelease",
+          "boostLowVolumeTransactions",
+          "boostReplayId",
+          "ignoreHealthChecks",
+          "minimumSampleRate",
+          "recalibrationRule"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "* \u0060boostEnvironments\u0060\n* \u0060boostKeyTransactions\u0060\n* \u0060boostLatestRelease\u0060\n* \u0060boostLowVolumeTransactions\u0060\n* \u0060boostReplayId\u0060\n* \u0060ignoreHealthChecks\u0060\n* \u0060minimumSampleRate\u0060\n* \u0060recalibrationRule\u0060",
+        "x-ms-enum": {
+          "name": "UpdateProjectRequestDynamicSamplingBiasesItemId",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "boostEnvironments",
+              "name": "BoostEnvironments"
+            },
+            {
+              "value": "boostKeyTransactions",
+              "name": "BoostKeyTransactions"
+            },
+            {
+              "value": "boostLatestRelease",
+              "name": "BoostLatestRelease"
+            },
+            {
+              "value": "boostLowVolumeTransactions",
+              "name": "BoostLowVolumeTransactions"
+            },
+            {
+              "value": "boostReplayId",
+              "name": "BoostReplayId"
+            },
+            {
+              "value": "ignoreHealthChecks",
+              "name": "IgnoreHealthChecks"
+            },
+            {
+              "value": "minimumSampleRate",
+              "name": "MinimumSampleRate"
+            },
+            {
+              "value": "recalibrationRule",
+              "name": "RecalibrationRule"
+            }
+          ]
+        }
+      },
       "GetProjectMonitor200ResponseConfigScheduleType": {
         "enum": [
           "crontab",
@@ -141668,7 +143466,8 @@
       "GetOrganizationIssueAutofixState200ResponseFormattedFormat": {
         "enum": [
           "markdown",
-          "xml"
+          "xml",
+          "json"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -141683,6 +143482,10 @@
             {
               "value": "xml",
               "name": "Xml"
+            },
+            {
+              "value": "json",
+              "name": "Json"
             }
           ]
         }
@@ -141690,7 +143493,8 @@
       "GetOrganizationIssueEvent200ResponseFormattedFormat": {
         "enum": [
           "markdown",
-          "xml"
+          "xml",
+          "json"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -141705,6 +143509,10 @@
             {
               "value": "xml",
               "name": "Xml"
+            },
+            {
+              "value": "json",
+              "name": "Json"
             }
           ]
         }
@@ -144639,6 +146447,7 @@
       },
       "GetOrganizationIssueAutofixStateLlmFormatParameter": {
         "enum": [
+          "json",
           "markdown",
           "xml"
         ],
@@ -144648,6 +146457,10 @@
           "name": "GetOrganizationIssueAutofixStateLlmFormatParameter",
           "modelAsString": false,
           "values": [
+            {
+              "value": "json",
+              "name": "Json"
+            },
             {
               "value": "markdown",
               "name": "Markdown"
@@ -144688,6 +146501,7 @@
       },
       "GetOrganizationIssueEventLlmFormatParameter": {
         "enum": [
+          "json",
           "markdown",
           "xml"
         ],
@@ -144697,6 +146511,10 @@
           "name": "GetOrganizationIssueEventLlmFormatParameter",
           "modelAsString": false,
           "values": [
+            {
+              "value": "json",
+              "name": "Json"
+            },
             {
               "value": "markdown",
               "name": "Markdown"

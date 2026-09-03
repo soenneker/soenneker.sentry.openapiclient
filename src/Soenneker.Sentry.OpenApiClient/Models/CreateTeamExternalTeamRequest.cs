@@ -35,6 +35,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? IntegrationId { get; set; }
         /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `msteams`* `custom_scm`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider? Provider { get; set; }
+        /// <summary>ID of the Sentry team to link to the external team.</summary>
+        public int? TeamId { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest"/> and sets the default values.
         /// </summary>
@@ -64,6 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "external_name", n => { ExternalName = n.GetStringValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
                 { "provider", n => { Provider = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider>(); } },
+                { "team_id", n => { TeamId = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -77,6 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("external_name", ExternalName);
             writer.WriteIntValue("integration_id", IntegrationId);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider>("provider", Provider);
+            writer.WriteIntValue("team_id", TeamId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

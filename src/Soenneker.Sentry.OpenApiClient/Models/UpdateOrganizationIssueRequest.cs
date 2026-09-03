@@ -26,6 +26,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? Discard { get; set; }
         /// <summary>If true, marks the issue as seen by the requestor.</summary>
         public bool? HasSeen { get; set; }
+        /// <summary>Ignore the issue until it is seen this many more times.</summary>
+        public int? IgnoreCount { get; set; }
+        /// <summary>Ignore the issue for this many minutes.</summary>
+        public int? IgnoreDuration { get; set; }
+        /// <summary>Ignore the issue until it affects this many more users.</summary>
+        public int? IgnoreUserCount { get; set; }
+        /// <summary>Window in minutes over which `ignoreUserCount` is measured. Maximum is 7 days.</summary>
+        public int? IgnoreUserWindow { get; set; }
+        /// <summary>Window in minutes over which `ignoreCount` is measured. Maximum is 7 days.</summary>
+        public int? IgnoreWindow { get; set; }
         /// <summary>If true, marks the issue as reviewed by the requestor.</summary>
         public bool? Inbox { get; set; }
         /// <summary>If true, bookmarks the issue for the requestor.</summary>
@@ -38,6 +48,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? Merge { get; set; }
         /// <summary>The priority that should be set for the issues* `low`* `medium`* `high`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestPriority? Priority { get; set; }
+        /// <summary>Snooze the issue for this many minutes.</summary>
+        public int? SnoozeDuration { get; set; }
         /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatus? Status { get; set; }
         /// <summary>Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project.</summary>
@@ -78,12 +90,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 { "discard", n => { Discard = n.GetBoolValue(); } },
                 { "hasSeen", n => { HasSeen = n.GetBoolValue(); } },
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreDuration", n => { IgnoreDuration = n.GetIntValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
                 { "inbox", n => { Inbox = n.GetBoolValue(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "isPublic", n => { IsPublic = n.GetBoolValue(); } },
                 { "isSubscribed", n => { IsSubscribed = n.GetBoolValue(); } },
                 { "merge", n => { Merge = n.GetBoolValue(); } },
                 { "priority", n => { Priority = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestPriority>(); } },
+                { "snoozeDuration", n => { SnoozeDuration = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatus>(); } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails.CreateFromDiscriminatorValue); } },
                 { "substatus", n => { Substatus = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestSubstatus>(); } },
@@ -99,12 +117,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteBoolValue("discard", Discard);
             writer.WriteBoolValue("hasSeen", HasSeen);
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteIntValue("ignoreDuration", IgnoreDuration);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
             writer.WriteBoolValue("inbox", Inbox);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
             writer.WriteBoolValue("isPublic", IsPublic);
             writer.WriteBoolValue("isSubscribed", IsSubscribed);
             writer.WriteBoolValue("merge", Merge);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestPriority>("priority", Priority);
+            writer.WriteIntValue("snoozeDuration", SnoozeDuration);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails>("statusDetails", StatusDetails);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestSubstatus>("substatus", Substatus);

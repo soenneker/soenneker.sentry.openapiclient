@@ -22,6 +22,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> Operations { get; set; }
 #endif
+        /// <summary>SCIM schema URIs identifying the request format. Must be the PatchOp schema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Schemas { get; set; }
+#nullable restore
+#else
+        public List<string> Schemas { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequest"/> and sets the default values.
         /// </summary>
@@ -48,6 +56,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "Operations", n => { Operations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "schemas", n => { Schemas = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,6 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>("Operations", Operations);
+            writer.WriteCollectionOfPrimitiveValues<string>("schemas", Schemas);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

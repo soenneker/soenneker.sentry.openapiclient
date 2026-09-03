@@ -38,6 +38,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Events { get; set; }
 #endif
+        /// <summary>The list of features that the custom integration supports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? Features { get; set; }
+#nullable restore
+#else
+        public List<int?> Features { get; set; }
+#endif
         /// <summary>Marks whether or not the custom integration can be used in an alert rule.</summary>
         public bool? IsAlertable { get; set; }
         /// <summary>Whether or not the integration is internal only. False means the integration is public.</summary>
@@ -131,6 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "features", n => { Features = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "isAlertable", n => { IsAlertable = n.GetBoolValue(); } },
                 { "isInternal", n => { IsInternal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -153,6 +162,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
             writer.WriteStringValue("author", Author);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
+            writer.WriteCollectionOfPrimitiveValues<int?>("features", Features);
             writer.WriteBoolValue("isAlertable", IsAlertable);
             writer.WriteBoolValue("isInternal", IsInternal);
             writer.WriteStringValue("name", Name);

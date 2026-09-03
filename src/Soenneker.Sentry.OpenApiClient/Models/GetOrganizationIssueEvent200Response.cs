@@ -100,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Fingerprints { get; set; }
 #endif
-        /// <summary>The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.</summary>
+        /// <summary>The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.``content`` is text for the text formats and a serialized JSON object for ``json``, so theresponse shape is the same whichever format a caller asks for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseFormatted? Formatted { get; set; }

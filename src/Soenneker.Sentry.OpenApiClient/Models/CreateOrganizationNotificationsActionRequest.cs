@@ -25,6 +25,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<string> Projects { get; set; }
 #endif
+        /// <summary>ID of the custom integration to notify, when the target is a Sentry app.</summary>
+        public int? SentryAppId { get; set; }
         /// <summary>Service that is used for sending the notification.- `email`- `slack`- `sentry_notification`- `pagerduty`- `opsgenie`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,6 +51,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string TargetIdentifier { get; set; }
 #endif
+        /// <summary>How the notification target is addressed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TargetType { get; set; }
+#nullable restore
+#else
+        public string TargetType { get; set; }
+#endif
         /// <summary>Type of the trigger that causes the notification. The only supported trigger right now is: `spike-protection`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,6 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public CreateOrganizationNotificationsActionRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            TargetType = "specific";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,9 +95,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "sentry_app_id", n => { SentryAppId = n.GetIntValue(); } },
                 { "service_type", n => { ServiceType = n.GetStringValue(); } },
                 { "target_display", n => { TargetDisplay = n.GetStringValue(); } },
                 { "target_identifier", n => { TargetIdentifier = n.GetStringValue(); } },
+                { "target_type", n => { TargetType = n.GetStringValue(); } },
                 { "trigger_type", n => { TriggerType = n.GetStringValue(); } },
             };
         }
@@ -99,9 +112,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("integration_id", IntegrationId);
             writer.WriteCollectionOfPrimitiveValues<string>("projects", Projects);
+            writer.WriteIntValue("sentry_app_id", SentryAppId);
             writer.WriteStringValue("service_type", ServiceType);
             writer.WriteStringValue("target_display", TargetDisplay);
             writer.WriteStringValue("target_identifier", TargetIdentifier);
+            writer.WriteStringValue("target_type", TargetType);
             writer.WriteStringValue("trigger_type", TriggerType);
             writer.WriteAdditionalData(AdditionalData);
         }

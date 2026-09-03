@@ -8,6 +8,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum GetOrganizationIssueEventLlmFormatParameter
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "json")]
+        #pragma warning disable CS1591
+        Json,
+        #pragma warning restore CS1591
         [EnumMember(Value = "markdown")]
         #pragma warning disable CS1591
         Markdown,

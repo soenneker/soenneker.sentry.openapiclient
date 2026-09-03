@@ -24,8 +24,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The organization-level role of the new member. Roles include:* `billing` - Can manage payment and compliance details.* `member` - Can view and act on events, as well as view most other data within the organization.* `manager` - Has full management access to all teams and projects. Can also manage        the organization&apos;s membership.* `owner` - Has unrestricted access to the organization, its data, and its        settings. Can add, modify, and delete projects and members, as well as        make billing and plan changes.* `admin` - Can edit global integrations, manage projects, and add/remove teams.        They automatically assume the Team Admin role for teams they join.        Note: This role can no longer be assigned in Business and Enterprise plans. Use `TeamRoles` instead.        </summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestOrgRole? OrgRole { get; set; }
+        /// <summary>Reissue the invite token, invalidating any previously sent invite link.</summary>
+        public bool? Regenerate { get; set; }
         /// <summary>Whether or not to re-invite a user who has already been invited to the organization. Defaults to True.</summary>
         public bool? Reinvite { get; set; }
+        /// <summary>Deprecated, use `orgRole`. The organization-level role to assign.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
+        [Obsolete("")]
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestRole? Role { get; set; }
         /// <summary>Whether or not to send an invite notification through email. Defaults to True.</summary>
         public bool? SendInvite { get; set; }
         /// <summary>The team and team-roles assigned to the member. Team roles can be either:        - `contributor` - Can view and act on issues. Depending on organization settings, they can also add team members.        - `admin` - Has full management access to their team&apos;s membership and projects.</summary>
@@ -35,6 +40,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem> TeamRoles { get; set; }
+#endif
+        /// <summary>Deprecated, use `teamRoles`. Slugs of teams to add the member to.</summary>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>? Teams { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem> Teams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequest"/> and sets the default values.
@@ -64,9 +78,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "orgRole", n => { OrgRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestOrgRole>(); } },
+                { "regenerate", n => { Regenerate = n.GetBoolValue(); } },
                 { "reinvite", n => { Reinvite = n.GetBoolValue(); } },
+                { "role", n => { Role = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestRole>(); } },
                 { "sendInvite", n => { SendInvite = n.GetBoolValue(); } },
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem>(global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -78,9 +95,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestOrgRole>("orgRole", OrgRole);
+            writer.WriteBoolValue("regenerate", Regenerate);
             writer.WriteBoolValue("reinvite", Reinvite);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestRole>("role", Role);
             writer.WriteBoolValue("sendInvite", SendInvite);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem>("teamRoles", TeamRoles);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>("teams", Teams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

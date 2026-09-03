@@ -15,6 +15,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Alert rule configuration created alongside the monitor.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule? AlertRule { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule AlertRule { get; set; }
+#endif
         /// <summary>The configuration for the monitor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alert_rule", n => { AlertRule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule.CreateFromDiscriminatorValue); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig.CreateFromDiscriminatorValue); } },
                 { "is_muted", n => { IsMuted = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -100,6 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestAlertRule>("alert_rule", AlertRule);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig>("config", Config);
             writer.WriteBoolValue("is_muted", IsMuted);
             writer.WriteStringValue("name", Name);

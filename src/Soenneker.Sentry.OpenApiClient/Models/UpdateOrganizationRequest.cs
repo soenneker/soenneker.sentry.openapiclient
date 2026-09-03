@@ -20,6 +20,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? AllowJoinRequests { get; set; }
         /// <summary>Specify `true` to allow sharing of limited details on issues to anonymous users.</summary>
         public bool? AllowSharedIssues { get; set; }
+        /// <summary>Deprecated. Response-time threshold in milliseconds previously used to compute Apdex.</summary>
+        public int? ApdexThreshold { get; set; }
         /// <summary>The role required to download event attachments, such as native crash reports or log files.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole? AttachmentsRole { get; set; }
         /// <summary>The image to upload as the organization avatar, in base64. Required if `avatarType` is `upload`.</summary>
@@ -158,6 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "alertsMemberWrite", n => { AlertsMemberWrite = n.GetBoolValue(); } },
                 { "allowJoinRequests", n => { AllowJoinRequests = n.GetBoolValue(); } },
                 { "allowSharedIssues", n => { AllowSharedIssues = n.GetBoolValue(); } },
+                { "apdexThreshold", n => { ApdexThreshold = n.GetIntValue(); } },
                 { "attachmentsRole", n => { AttachmentsRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole>(); } },
                 { "avatar", n => { Avatar = n.GetStringValue(); } },
                 { "avatarType", n => { AvatarType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAvatarType>(); } },
@@ -198,6 +201,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("alertsMemberWrite", AlertsMemberWrite);
             writer.WriteBoolValue("allowJoinRequests", AllowJoinRequests);
             writer.WriteBoolValue("allowSharedIssues", AllowSharedIssues);
+            writer.WriteIntValue("apdexThreshold", ApdexThreshold);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole>("attachmentsRole", AttachmentsRole);
             writer.WriteStringValue("avatar", Avatar);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAvatarType>("avatarType", AvatarType);

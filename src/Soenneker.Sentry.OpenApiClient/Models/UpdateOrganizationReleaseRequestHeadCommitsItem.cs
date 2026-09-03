@@ -7,40 +7,53 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>
-    /// The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.``content`` is text for the text formats and a serialized JSON object for ``json``, so theresponse shape is the same whichever format a caller asks for.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetOrganizationIssueAutofixState200ResponseFormatted : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class UpdateOrganizationReleaseRequestHeadCommitsItem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The content property</summary>
+        /// <summary>The currentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content { get; set; }
+        public string? CurrentId { get; set; }
 #nullable restore
 #else
-        public string Content { get; set; }
+        public string CurrentId { get; set; }
 #endif
-        /// <summary>The format property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat? Format { get; set; }
+        /// <summary>The previousId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviousId { get; set; }
+#nullable restore
+#else
+        public string PreviousId { get; set; }
+#endif
+        /// <summary>The repository property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Repository { get; set; }
+#nullable restore
+#else
+        public string Repository { get; set; }
+#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem"/> and sets the default values.
         /// </summary>
-        public GetOrganizationIssueAutofixState200ResponseFormatted()
+        public UpdateOrganizationReleaseRequestHeadCommitsItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -50,8 +63,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "content", n => { Content = n.GetStringValue(); } },
-                { "format", n => { Format = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat>(); } },
+                { "currentId", n => { CurrentId = n.GetStringValue(); } },
+                { "previousId", n => { PreviousId = n.GetStringValue(); } },
+                { "repository", n => { Repository = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -61,8 +75,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("content", Content);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormattedFormat>("format", Format);
+            writer.WriteStringValue("currentId", CurrentId);
+            writer.WriteStringValue("previousId", PreviousId);
+            writer.WriteStringValue("repository", Repository);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

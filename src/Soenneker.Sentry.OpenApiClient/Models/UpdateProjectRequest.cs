@@ -14,8 +14,78 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Origins permitted to send events to this project. Use `*` to allow any.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AllowedDomains { get; set; }
+#nullable restore
+#else
+        public List<string> AllowedDomains { get; set; }
+#endif
+        /// <summary>How aggressively Seer runs Autofix on new issues. Can be updated with **`project:read`** permission.* `off`* `super_low`* `low`* `medium`* `high`* `always`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning? AutofixAutomationTuning { get; set; }
+        /// <summary>Identifiers of Sentry-hosted symbol sources to use when symbolicating events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? BuiltinSymbolSources { get; set; }
+#nullable restore
+#else
+        public List<string> BuiltinSymbolSources { get; set; }
+#endif
+        /// <summary>ID of a project whose settings, teams, and keys should be copied into this one.</summary>
+        public int? CopyFromProject { get; set; }
+        /// <summary>Remove known sensitive values from events before storing them.</summary>
+        public bool? DataScrubber { get; set; }
+        /// <summary>Also scrub Sentry&apos;s built-in list of sensitive field names.</summary>
+        public bool? DataScrubberDefaults { get; set; }
+        /// <summary>The role required to download debug information files, ProGuard mappings and source maps. If not set, inherits from organization setting.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? DebugFilesRole { get; set; }
+        /// <summary>Environment selected by default when viewing this project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DefaultEnvironment { get; set; }
+#nullable restore
+#else
+        public string DefaultEnvironment { get; set; }
+#endif
+        /// <summary>Maximum time in seconds to wait before sending an issue digest email.</summary>
+        public int? DigestsMaxDelay { get; set; }
+        /// <summary>Minimum time in seconds to wait before sending an issue digest email.</summary>
+        public int? DigestsMinDelay { get; set; }
+        /// <summary>Per-bias toggles adjusting which transactions dynamic sampling favors retaining.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>? DynamicSamplingBiases { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem> DynamicSamplingBiases { get; set; }
+#endif
         /// <summary>Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI).</summary>
         public bool? EnableAutoReleaseCreation { get; set; }
+        /// <summary>Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FingerprintingRules { get; set; }
+#nullable restore
+#else
+        public string FingerprintingRules { get; set; }
+#endif
+        /// <summary>Identifier of the grouping algorithm used to assign events to issues.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupingConfig { get; set; }
+#nullable restore
+#else
+        public string GroupingConfig { get; set; }
+#endif
+        /// <summary>Grouping enhancement rules, as a newline-delimited config string, adjusting which stack frames contribute to an issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupingEnhancements { get; set; }
+#nullable restore
+#else
+        public string GroupingEnhancements { get; set; }
+#endif
         /// <summary>A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,10 +120,128 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Platform { get; set; }
 #endif
+        /// <summary>Enable preprod build distribution. Can be updated with **`project:read`** permission.</summary>
+        public bool? PreprodDistributionEnabledByCustomer { get; set; }
+        /// <summary>Query selecting which preprod builds are distributed. Can be updated with **`project:read`** permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreprodDistributionEnabledQuery { get; set; }
+#nullable restore
+#else
+        public string PreprodDistributionEnabledQuery { get; set; }
+#endif
+        /// <summary>Post preprod distribution updates as PR comments. Can be updated with **`project:read`** permission.</summary>
+        public bool? PreprodDistributionPrCommentsEnabledByCustomer { get; set; }
+        /// <summary>Enable preprod size analysis. Can be updated with **`project:read`** permission.</summary>
+        public bool? PreprodSizeEnabledByCustomer { get; set; }
+        /// <summary>Query selecting which preprod builds are size-analyzed. Can be updated with **`project:read`** permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreprodSizeEnabledQuery { get; set; }
+#nullable restore
+#else
+        public string PreprodSizeEnabledQuery { get; set; }
+#endif
+        /// <summary>Enable preprod size PR comments. Can be updated with **`project:read`** permission.</summary>
+        public bool? PreprodSizePrCommentsEnabled { get; set; }
+        /// <summary>Rules controlling which preprod size changes are posted as PR comments. Can be updated with **`project:read`** permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules? PreprodSizePrCommentsRules { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules PreprodSizePrCommentsRules { get; set; }
+#endif
+        /// <summary>Enable preprod size status checks. Can be updated with **`project:read`** permission.</summary>
+        public bool? PreprodSizeStatusChecksEnabled { get; set; }
+        /// <summary>Rules controlling when preprod size status checks fail. Can be updated with **`project:read`** permission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules? PreprodSizeStatusChecksRules { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules PreprodSizeStatusChecksRules { get; set; }
+#endif
+        /// <summary>Post preprod snapshot changes as PR comments.</summary>
+        public bool? PreprodSnapshotPrCommentsEnabled { get; set; }
+        /// <summary>Include added snapshots in preprod snapshot PR comments.</summary>
+        public bool? PreprodSnapshotPrCommentsPostOnAdded { get; set; }
+        /// <summary>Include changed snapshots in preprod snapshot PR comments.</summary>
+        public bool? PreprodSnapshotPrCommentsPostOnChanged { get; set; }
+        /// <summary>Include removed snapshots in preprod snapshot PR comments.</summary>
+        public bool? PreprodSnapshotPrCommentsPostOnRemoved { get; set; }
+        /// <summary>Include renamed snapshots in preprod snapshot PR comments.</summary>
+        public bool? PreprodSnapshotPrCommentsPostOnRenamed { get; set; }
+        /// <summary>Enable preprod snapshot status checks.</summary>
+        public bool? PreprodSnapshotStatusChecksEnabled { get; set; }
+        /// <summary>Fail the preprod snapshot status check when snapshots are added.</summary>
+        public bool? PreprodSnapshotStatusChecksFailOnAdded { get; set; }
+        /// <summary>Fail the preprod snapshot status check when snapshots change.</summary>
+        public bool? PreprodSnapshotStatusChecksFailOnChanged { get; set; }
+        /// <summary>Fail the preprod snapshot status check when snapshots are removed.</summary>
+        public bool? PreprodSnapshotStatusChecksFailOnRemoved { get; set; }
+        /// <summary>Fail the preprod snapshot status check when snapshots are renamed.</summary>
+        public bool? PreprodSnapshotStatusChecksFailOnRenamed { get; set; }
+        /// <summary>Advanced data scrubbing rules, as a JSON string, applied before events are stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RelayPiiConfig { get; set; }
+#nullable restore
+#else
+        public string RelayPiiConfig { get; set; }
+#endif
         /// <summary>Automatically resolve an issue if it hasn&apos;t been seen for this many hours. Set to `0` to disable auto-resolve.</summary>
         public int? ResolveAge { get; set; }
+        /// <summary>Field names to exempt from scrubbing, including the built-in defaults.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SafeFields { get; set; }
+#nullable restore
+#else
+        public List<string> SafeFields { get; set; }
+#endif
         /// <summary>Enable on-demand source context fetching from SCM integrations for stack traces.</summary>
         public bool? ScmSourceContextEnabled { get; set; }
+        /// <summary>Allow Sentry to fetch source files and source maps from your servers.</summary>
+        public bool? ScrapeJavaScript { get; set; }
+        /// <summary>Discard client IP addresses rather than storing them on events.</summary>
+        public bool? ScrubIPAddresses { get; set; }
+        /// <summary>Grouping algorithm run alongside the primary one during a grouping migration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecondaryGroupingConfig { get; set; }
+#nullable restore
+#else
+        public string SecondaryGroupingConfig { get; set; }
+#endif
+        /// <summary>Unix timestamp after which the secondary grouping algorithm stops running.</summary>
+        public int? SecondaryGroupingExpiry { get; set; }
+        /// <summary>Token sent with security reports (CSP, Expect-CT, HPKP) so Sentry can verify their origin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecurityToken { get; set; }
+#nullable restore
+#else
+        public string SecurityToken { get; set; }
+#endif
+        /// <summary>Name of the header carrying the security token on inbound security reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SecurityTokenHeader { get; set; }
+#nullable restore
+#else
+        public string SecurityTokenHeader { get; set; }
+#endif
+        /// <summary>Let Seer scan new issues automatically. Can be updated with **`project:read`** permission.</summary>
+        public bool? SeerScannerAutomation { get; set; }
+        /// <summary>Additional field names to scrub from events, beyond the defaults.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? SensitiveFields { get; set; }
+#nullable restore
+#else
+        public List<string> SensitiveFields { get; set; }
+#endif
         /// <summary>Uniquely identifies a project and is used for the interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -62,6 +250,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Slug { get; set; }
 #endif
+        /// <summary>Number of native crash report files to store per issue. Use `-1` for unlimited or `0` to store none.</summary>
+        public int? StoreCrashReports { get; set; }
         /// <summary>Custom prefix for emails from this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -78,6 +268,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string SubjectTemplate { get; set; }
 #endif
+        /// <summary>Custom symbol sources, as a JSON string, to use when symbolicating events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SymbolSources { get; set; }
+#nullable restore
+#else
+        public string SymbolSources { get; set; }
+#endif
+        /// <summary>Target proportion of transactions to retain, from `0` to `1`. Requires manual dynamic sampling mode.</summary>
+        public double? TargetSampleRate { get; set; }
+        /// <summary>Fetch screenshots attached to console crash reports. Requires the Tempest feature.</summary>
+        public bool? TempestFetchScreenshots { get; set; }
+        /// <summary>Verify SSL certificates when delivering outbound webhooks and service hooks.</summary>
+        public bool? VerifySSL { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequest"/> and sets the default values.
         /// </summary>
@@ -103,17 +307,65 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "allowedDomains", n => { AllowedDomains = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "autofixAutomationTuning", n => { AutofixAutomationTuning = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning>(); } },
+                { "builtinSymbolSources", n => { BuiltinSymbolSources = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "copy_from_project", n => { CopyFromProject = n.GetIntValue(); } },
+                { "dataScrubber", n => { DataScrubber = n.GetBoolValue(); } },
+                { "dataScrubberDefaults", n => { DataScrubberDefaults = n.GetBoolValue(); } },
+                { "debugFilesRole", n => { DebugFilesRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>(); } },
+                { "defaultEnvironment", n => { DefaultEnvironment = n.GetStringValue(); } },
+                { "digestsMaxDelay", n => { DigestsMaxDelay = n.GetIntValue(); } },
+                { "digestsMinDelay", n => { DigestsMinDelay = n.GetIntValue(); } },
+                { "dynamicSamplingBiases", n => { DynamicSamplingBiases = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enableAutoReleaseCreation", n => { EnableAutoReleaseCreation = n.GetBoolValue(); } },
+                { "fingerprintingRules", n => { FingerprintingRules = n.GetStringValue(); } },
+                { "groupingConfig", n => { GroupingConfig = n.GetStringValue(); } },
+                { "groupingEnhancements", n => { GroupingEnhancements = n.GetStringValue(); } },
                 { "highlightContext", n => { HighlightContext = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext.CreateFromDiscriminatorValue); } },
                 { "highlightTags", n => { HighlightTags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
+                { "preprodDistributionEnabledByCustomer", n => { PreprodDistributionEnabledByCustomer = n.GetBoolValue(); } },
+                { "preprodDistributionEnabledQuery", n => { PreprodDistributionEnabledQuery = n.GetStringValue(); } },
+                { "preprodDistributionPrCommentsEnabledByCustomer", n => { PreprodDistributionPrCommentsEnabledByCustomer = n.GetBoolValue(); } },
+                { "preprodSizeEnabledByCustomer", n => { PreprodSizeEnabledByCustomer = n.GetBoolValue(); } },
+                { "preprodSizeEnabledQuery", n => { PreprodSizeEnabledQuery = n.GetStringValue(); } },
+                { "preprodSizePrCommentsEnabled", n => { PreprodSizePrCommentsEnabled = n.GetBoolValue(); } },
+                { "preprodSizePrCommentsRules", n => { PreprodSizePrCommentsRules = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules.CreateFromDiscriminatorValue); } },
+                { "preprodSizeStatusChecksEnabled", n => { PreprodSizeStatusChecksEnabled = n.GetBoolValue(); } },
+                { "preprodSizeStatusChecksRules", n => { PreprodSizeStatusChecksRules = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules.CreateFromDiscriminatorValue); } },
+                { "preprodSnapshotPrCommentsEnabled", n => { PreprodSnapshotPrCommentsEnabled = n.GetBoolValue(); } },
+                { "preprodSnapshotPrCommentsPostOnAdded", n => { PreprodSnapshotPrCommentsPostOnAdded = n.GetBoolValue(); } },
+                { "preprodSnapshotPrCommentsPostOnChanged", n => { PreprodSnapshotPrCommentsPostOnChanged = n.GetBoolValue(); } },
+                { "preprodSnapshotPrCommentsPostOnRemoved", n => { PreprodSnapshotPrCommentsPostOnRemoved = n.GetBoolValue(); } },
+                { "preprodSnapshotPrCommentsPostOnRenamed", n => { PreprodSnapshotPrCommentsPostOnRenamed = n.GetBoolValue(); } },
+                { "preprodSnapshotStatusChecksEnabled", n => { PreprodSnapshotStatusChecksEnabled = n.GetBoolValue(); } },
+                { "preprodSnapshotStatusChecksFailOnAdded", n => { PreprodSnapshotStatusChecksFailOnAdded = n.GetBoolValue(); } },
+                { "preprodSnapshotStatusChecksFailOnChanged", n => { PreprodSnapshotStatusChecksFailOnChanged = n.GetBoolValue(); } },
+                { "preprodSnapshotStatusChecksFailOnRemoved", n => { PreprodSnapshotStatusChecksFailOnRemoved = n.GetBoolValue(); } },
+                { "preprodSnapshotStatusChecksFailOnRenamed", n => { PreprodSnapshotStatusChecksFailOnRenamed = n.GetBoolValue(); } },
+                { "relayPiiConfig", n => { RelayPiiConfig = n.GetStringValue(); } },
                 { "resolveAge", n => { ResolveAge = n.GetIntValue(); } },
+                { "safeFields", n => { SafeFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "scmSourceContextEnabled", n => { ScmSourceContextEnabled = n.GetBoolValue(); } },
+                { "scrapeJavaScript", n => { ScrapeJavaScript = n.GetBoolValue(); } },
+                { "scrubIPAddresses", n => { ScrubIPAddresses = n.GetBoolValue(); } },
+                { "secondaryGroupingConfig", n => { SecondaryGroupingConfig = n.GetStringValue(); } },
+                { "secondaryGroupingExpiry", n => { SecondaryGroupingExpiry = n.GetIntValue(); } },
+                { "securityToken", n => { SecurityToken = n.GetStringValue(); } },
+                { "securityTokenHeader", n => { SecurityTokenHeader = n.GetStringValue(); } },
+                { "seerScannerAutomation", n => { SeerScannerAutomation = n.GetBoolValue(); } },
+                { "sensitiveFields", n => { SensitiveFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
+                { "storeCrashReports", n => { StoreCrashReports = n.GetIntValue(); } },
                 { "subjectPrefix", n => { SubjectPrefix = n.GetStringValue(); } },
                 { "subjectTemplate", n => { SubjectTemplate = n.GetStringValue(); } },
+                { "symbolSources", n => { SymbolSources = n.GetStringValue(); } },
+                { "targetSampleRate", n => { TargetSampleRate = n.GetDoubleValue(); } },
+                { "tempestFetchScreenshots", n => { TempestFetchScreenshots = n.GetBoolValue(); } },
+                { "verifySSL", n => { VerifySSL = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -123,17 +375,65 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("allowedDomains", AllowedDomains);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning>("autofixAutomationTuning", AutofixAutomationTuning);
+            writer.WriteCollectionOfPrimitiveValues<string>("builtinSymbolSources", BuiltinSymbolSources);
+            writer.WriteIntValue("copy_from_project", CopyFromProject);
+            writer.WriteBoolValue("dataScrubber", DataScrubber);
+            writer.WriteBoolValue("dataScrubberDefaults", DataScrubberDefaults);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>("debugFilesRole", DebugFilesRole);
+            writer.WriteStringValue("defaultEnvironment", DefaultEnvironment);
+            writer.WriteIntValue("digestsMaxDelay", DigestsMaxDelay);
+            writer.WriteIntValue("digestsMinDelay", DigestsMinDelay);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>("dynamicSamplingBiases", DynamicSamplingBiases);
             writer.WriteBoolValue("enableAutoReleaseCreation", EnableAutoReleaseCreation);
+            writer.WriteStringValue("fingerprintingRules", FingerprintingRules);
+            writer.WriteStringValue("groupingConfig", GroupingConfig);
+            writer.WriteStringValue("groupingEnhancements", GroupingEnhancements);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext>("highlightContext", HighlightContext);
             writer.WriteCollectionOfPrimitiveValues<string>("highlightTags", HighlightTags);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("platform", Platform);
+            writer.WriteBoolValue("preprodDistributionEnabledByCustomer", PreprodDistributionEnabledByCustomer);
+            writer.WriteStringValue("preprodDistributionEnabledQuery", PreprodDistributionEnabledQuery);
+            writer.WriteBoolValue("preprodDistributionPrCommentsEnabledByCustomer", PreprodDistributionPrCommentsEnabledByCustomer);
+            writer.WriteBoolValue("preprodSizeEnabledByCustomer", PreprodSizeEnabledByCustomer);
+            writer.WriteStringValue("preprodSizeEnabledQuery", PreprodSizeEnabledQuery);
+            writer.WriteBoolValue("preprodSizePrCommentsEnabled", PreprodSizePrCommentsEnabled);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules>("preprodSizePrCommentsRules", PreprodSizePrCommentsRules);
+            writer.WriteBoolValue("preprodSizeStatusChecksEnabled", PreprodSizeStatusChecksEnabled);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules>("preprodSizeStatusChecksRules", PreprodSizeStatusChecksRules);
+            writer.WriteBoolValue("preprodSnapshotPrCommentsEnabled", PreprodSnapshotPrCommentsEnabled);
+            writer.WriteBoolValue("preprodSnapshotPrCommentsPostOnAdded", PreprodSnapshotPrCommentsPostOnAdded);
+            writer.WriteBoolValue("preprodSnapshotPrCommentsPostOnChanged", PreprodSnapshotPrCommentsPostOnChanged);
+            writer.WriteBoolValue("preprodSnapshotPrCommentsPostOnRemoved", PreprodSnapshotPrCommentsPostOnRemoved);
+            writer.WriteBoolValue("preprodSnapshotPrCommentsPostOnRenamed", PreprodSnapshotPrCommentsPostOnRenamed);
+            writer.WriteBoolValue("preprodSnapshotStatusChecksEnabled", PreprodSnapshotStatusChecksEnabled);
+            writer.WriteBoolValue("preprodSnapshotStatusChecksFailOnAdded", PreprodSnapshotStatusChecksFailOnAdded);
+            writer.WriteBoolValue("preprodSnapshotStatusChecksFailOnChanged", PreprodSnapshotStatusChecksFailOnChanged);
+            writer.WriteBoolValue("preprodSnapshotStatusChecksFailOnRemoved", PreprodSnapshotStatusChecksFailOnRemoved);
+            writer.WriteBoolValue("preprodSnapshotStatusChecksFailOnRenamed", PreprodSnapshotStatusChecksFailOnRenamed);
+            writer.WriteStringValue("relayPiiConfig", RelayPiiConfig);
             writer.WriteIntValue("resolveAge", ResolveAge);
+            writer.WriteCollectionOfPrimitiveValues<string>("safeFields", SafeFields);
             writer.WriteBoolValue("scmSourceContextEnabled", ScmSourceContextEnabled);
+            writer.WriteBoolValue("scrapeJavaScript", ScrapeJavaScript);
+            writer.WriteBoolValue("scrubIPAddresses", ScrubIPAddresses);
+            writer.WriteStringValue("secondaryGroupingConfig", SecondaryGroupingConfig);
+            writer.WriteIntValue("secondaryGroupingExpiry", SecondaryGroupingExpiry);
+            writer.WriteStringValue("securityToken", SecurityToken);
+            writer.WriteStringValue("securityTokenHeader", SecurityTokenHeader);
+            writer.WriteBoolValue("seerScannerAutomation", SeerScannerAutomation);
+            writer.WriteCollectionOfPrimitiveValues<string>("sensitiveFields", SensitiveFields);
             writer.WriteStringValue("slug", Slug);
+            writer.WriteIntValue("storeCrashReports", StoreCrashReports);
             writer.WriteStringValue("subjectPrefix", SubjectPrefix);
             writer.WriteStringValue("subjectTemplate", SubjectTemplate);
+            writer.WriteStringValue("symbolSources", SymbolSources);
+            writer.WriteDoubleValue("targetSampleRate", TargetSampleRate);
+            writer.WriteBoolValue("tempestFetchScreenshots", TempestFetchScreenshots);
+            writer.WriteBoolValue("verifySSL", VerifySSL);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
