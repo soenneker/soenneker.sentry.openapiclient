@@ -116,8 +116,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
             public string CompactMetadata { get; set; }
 #endif
             /// <summary>Project ID or slug to scope the lookup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("project")]
-            public int? Project { get; set; }
+            public string? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string Project { get; set; }
+#endif
         }
     }
 }

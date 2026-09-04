@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", pathParameters)
+        public SessionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions{?end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*,field*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions?field={field}{&end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*}", rawUrl)
+        public SessionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/sessions{?end*,environment*,groupBy*,includeSeries*,includeTotals*,interval*,orderBy*,per_page*,project*,query*,start*,statsPeriod*,field*}", rawUrl)
         {
         }
         /// <summary>

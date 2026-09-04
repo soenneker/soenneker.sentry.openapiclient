@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Stats_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", pathParameters)
+        public Stats_v2RequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*,groupBy*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Stats_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}&groupBy={groupBy}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*}", rawUrl)
+        public Stats_v2RequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/stats_v2?field={field}{&category*,end*,interval*,outcome*,project*,reason*,start*,statsPeriod*,groupBy*}", rawUrl)
         {
         }
         /// <summary>

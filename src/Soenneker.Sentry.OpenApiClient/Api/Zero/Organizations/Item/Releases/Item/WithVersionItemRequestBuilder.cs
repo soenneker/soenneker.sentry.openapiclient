@@ -196,8 +196,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
             [QueryParameter("healthStatsPeriod")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseHealthStatsPeriodParameter? HealthStatsPeriod { get; set; }
             /// <summary>The project ID or slug to filter by. Overrides project_id when both are sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("project")]
-            public int? Project { get; set; }
+            public string? Project { get; set; }
+#nullable restore
+#else
+            [QueryParameter("project")]
+            public string Project { get; set; }
+#endif
             /// <summary>Deprecated. Use project instead.</summary>
             [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

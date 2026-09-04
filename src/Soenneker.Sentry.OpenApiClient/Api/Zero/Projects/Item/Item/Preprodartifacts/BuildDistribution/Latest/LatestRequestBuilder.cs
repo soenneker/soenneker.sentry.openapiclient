@@ -106,8 +106,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
             public string BuildConfiguration { get; set; }
 #endif
             /// <summary>Current build number. Accepts a plain integer (e.g. 42) or a version string of two or more period-separated integers (e.g. 1.2.3), each up to 6 digits. Groups beyond the third are dropped. Either this or mainBinaryIdentifier must be provided when buildVersion is set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("buildNumber")]
-            public int? BuildNumber { get; set; }
+            public string? BuildNumber { get; set; }
+#nullable restore
+#else
+            [QueryParameter("buildNumber")]
+            public string BuildNumber { get; set; }
+#endif
             /// <summary>Current build version. When provided, enables check-for-updates mode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

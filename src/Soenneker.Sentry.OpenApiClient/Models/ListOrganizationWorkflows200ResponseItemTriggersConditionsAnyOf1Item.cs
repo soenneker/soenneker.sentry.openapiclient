@@ -102,6 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1Item.ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1Item_comparison CreateFromDiscriminatorValue(IParseNode parseNode)
             {
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+                var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1Item.ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1Item_comparison();
                 if(parseNode.GetBoolValue() is bool booleanValue)
                 {
