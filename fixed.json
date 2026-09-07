@@ -19072,7 +19072,7 @@
           {
             "name": "full",
             "in": "query",
-            "description": "Specify true to include the full event body, including the stacktrace, in the event payload.",
+            "description": "Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.",
             "schema": {
               "type": "boolean",
               "default": false
@@ -28592,7 +28592,7 @@
           {
             "name": "full",
             "in": "query",
-            "description": "Specify true to include the full event body, including the stacktrace, in the event payload.",
+            "description": "Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.",
             "schema": {
               "type": "boolean",
               "default": false
@@ -29461,7 +29461,7 @@
           {
             "name": "full",
             "in": "query",
-            "description": "Specify true to include the full event body, including the stacktrace, in the event payload.",
+            "description": "Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.",
             "schema": {
               "type": "boolean",
               "default": true

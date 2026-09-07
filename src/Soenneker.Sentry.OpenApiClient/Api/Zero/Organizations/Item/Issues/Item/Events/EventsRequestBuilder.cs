@@ -122,7 +122,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>Specify true to include the full event body, including the stacktrace, in the event payload.</summary>
+            /// <summary>Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.</summary>
             [QueryParameter("full")]
             public bool? Full { get; set; }
             /// <summary>Limit the number of rows to return in the result. Default and maximum allowed is 100.</summary>

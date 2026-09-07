@@ -112,7 +112,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
             [QueryParameter("end")]
             public DateTimeOffset? End { get; set; }
-            /// <summary>Specify true to include the full event body, including the stacktrace, in the event payload.</summary>
+            /// <summary>Specify true to include the full event body, including the stacktrace, in the event payload. When true, the page size is capped at 10.</summary>
             [QueryParameter("full")]
             public bool? Full { get; set; }
             /// <summary>Return events in pseudo-random order. This is deterministic so an identical query will always return the same events in the same order.</summary>
