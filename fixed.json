@@ -26280,7 +26280,7 @@
           "Projects"
         ],
         "summary": "Create a New Project",
-        "description": "Create a new project bound to a team.\n\n        Note: If your organization has disabled member project creation, the \u0060org:write\u0060 or \u0060team:admin\u0060 scope is required.\n        ",
+        "description": "Create a new project bound to a team.\n\n        Note: If your organization has disabled member project creation, the \u0060org:write\u0060 scope or the Team Admin role on the team is required.\n        ",
         "operationId": "CreateTeamProject",
         "parameters": [
           {
