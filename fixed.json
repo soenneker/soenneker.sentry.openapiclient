@@ -10423,7 +10423,6 @@
                         "production"
                       ],
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -10817,7 +10816,6 @@
                             "isBookmarked": false,
                             "isMember": true,
                             "features": [
-                              "alert-filters",
                               "custom-inbound-filters",
                               "discard-groups",
                               "minidump",
@@ -15663,7 +15661,6 @@
                             "isBookmarked": false,
                             "isMember": false,
                             "features": [
-                              "alert-filters",
                               "custom-inbound-filters",
                               "discard-groups",
                               "minidump",
@@ -15727,7 +15724,6 @@
                             "isBookmarked": false,
                             "isMember": false,
                             "features": [
-                              "alert-filters",
                               "custom-inbound-filters",
                               "discard-groups",
                               "minidump",
@@ -16667,7 +16663,6 @@
                             "isBookmarked": false,
                             "isMember": false,
                             "features": [
-                              "alert-filters",
                               "custom-inbound-filters",
                               "discard-groups",
                               "minidump",
@@ -16731,7 +16726,6 @@
                             "isBookmarked": false,
                             "isMember": false,
                             "features": [
-                              "alert-filters",
                               "custom-inbound-filters",
                               "discard-groups",
                               "minidump",
@@ -18049,7 +18043,6 @@
                       "isBookmarked": false,
                       "isMember": true,
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -18362,7 +18355,6 @@
                       "isBookmarked": false,
                       "isMember": true,
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -24849,7 +24841,6 @@
                       "isBookmarked": false,
                       "isMember": true,
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -25003,7 +24994,6 @@
                       "isBookmarked": false,
                       "isMember": true,
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -26213,7 +26203,6 @@
                           "production"
                         ],
                         "features": [
-                          "alert-filters",
                           "custom-inbound-filters",
                           "discard-groups",
                           "minidump",
@@ -26362,7 +26351,6 @@
                         "production"
                       ],
                       "features": [
-                        "alert-filters",
                         "custom-inbound-filters",
                         "discard-groups",
                         "minidump",
@@ -48891,6 +48879,12 @@
           "end": {
             "type": "number",
             "format": "double"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaAnnotationsItem"
+            }
           }
         }
       },
@@ -59609,6 +59603,45 @@
         "additionalProperties": {
           "type": "string"
         }
+      },
+      "OrganizationEventsTimeseriesResponseMetaAnnotationsItem": {
+        "required": [
+          "category",
+          "droppedCount",
+          "end",
+          "label",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SystemType"
+          },
+          "category": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "droppedCount": {
+            "type": "number",
+            "format": "double"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "description": "A system annotation explaining that data over a time range was affected by\nan external factor."
       },
       "OrganizationEventsTimeseriesResponseTimeSeriesItemValuesItem": {
         "required": [
@@ -83886,6 +83919,12 @@
           "end": {
             "type": "number",
             "format": "double"
+          },
+          "annotations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem"
+            }
           }
         }
       },
@@ -104999,6 +105038,45 @@
       },
       "ListOrganizationEvents200ResponseMetaDebugInfo": {
         "type": "object"
+      },
+      "ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem": {
+        "required": [
+          "category",
+          "droppedCount",
+          "end",
+          "label",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SystemType"
+          },
+          "category": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "droppedCount": {
+            "type": "number",
+            "format": "double"
+          },
+          "label": {
+            "type": "string"
+          }
+        },
+        "description": "A system annotation explaining that data over a time range was affected by\nan external factor."
       },
       "ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem": {
         "required": [
@@ -128859,6 +128937,23 @@
             {
               "value": "occurrence",
               "name": "Occurrence"
+            }
+          ]
+        }
+      },
+      "SystemType": {
+        "enum": [
+          "system"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "SystemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "system",
+              "name": "System"
             }
           ]
         }
