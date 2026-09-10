@@ -60,6 +60,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? OutputTokens { get; set; }
         /// <summary>The projectId property</summary>
         public int? ProjectId { get; set; }
+        /// <summary>The projects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>? Projects { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem> Projects { get; set; }
+#endif
         /// <summary>The startTimestamp property</summary>
         public int? StartTimestamp { get; set; }
         /// <summary>The title property</summary>
@@ -104,6 +112,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser User { get; set; }
 #endif
+        /// <summary>The webUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebUrl { get; set; }
+#nullable restore
+#else
+        public string WebUrl { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -140,6 +156,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "llmCalls", n => { LlmCalls = n.GetIntValue(); } },
                 { "outputTokens", n => { OutputTokens = n.GetIntValue(); } },
                 { "projectId", n => { ProjectId = n.GetIntValue(); } },
+                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startTimestamp", n => { StartTimestamp = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "toolCalls", n => { ToolCalls = n.GetIntValue(); } },
@@ -150,6 +167,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "traceCount", n => { TraceCount = n.GetIntValue(); } },
                 { "traceIds", n => { TraceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser.CreateFromDiscriminatorValue); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -170,6 +188,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("llmCalls", LlmCalls);
             writer.WriteIntValue("outputTokens", OutputTokens);
             writer.WriteIntValue("projectId", ProjectId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>("projects", Projects);
             writer.WriteIntValue("startTimestamp", StartTimestamp);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("toolCalls", ToolCalls);
@@ -180,6 +199,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("traceCount", TraceCount);
             writer.WriteCollectionOfPrimitiveValues<string>("traceIds", TraceIds);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser>("user", User);
+            writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

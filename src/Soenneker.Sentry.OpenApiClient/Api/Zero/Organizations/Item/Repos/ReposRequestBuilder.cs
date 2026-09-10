@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/repos{?cursor*,expand*,integration_id*,query*,status*}", pathParameters)
+        public ReposRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/repos{?cursor*,expand*,integration_id*,per_page*,query*,status*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/repos{?cursor*,expand*,integration_id*,query*,status*}", rawUrl)
+        public ReposRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/repos{?cursor*,expand*,integration_id*,per_page*,query*,status*}", rawUrl)
         {
         }
         /// <summary>
@@ -129,6 +129,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos
             [QueryParameter("integration_id")]
             public string IntegrationId { get; set; }
 #endif
+            /// <summary>The maximum number of repositories to return per page (1–100).</summary>
+            [QueryParameter("per_page")]
+            public int? PerPage { get; set; }
             /// <summary>Filter repositories by name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

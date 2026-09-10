@@ -23,6 +23,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
+        /// <summary>The projects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem>? Projects { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem> Projects { get; set; }
+#endif
         /// <summary>The spans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string Title { get; set; }
+#endif
+        /// <summary>The webUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? WebUrl { get; set; }
+#nullable restore
+#else
+        public string WebUrl { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response"/> and sets the default values.
@@ -65,8 +81,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
+                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "spans", n => { Spans = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +95,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversationId", ConversationId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem>("projects", Projects);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem>("spans", Spans);
             writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
