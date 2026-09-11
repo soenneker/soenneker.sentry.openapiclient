@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Attributes;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Metrics;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Stats;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +21,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Attributes.AttributesRequestBuilder Attributes
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Attributes.AttributesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The metrics property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Metrics.MetricsRequestBuilder Metrics
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Stats.StatsRequestBuilder Stats

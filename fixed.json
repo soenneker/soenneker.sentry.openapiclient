@@ -2558,6 +2558,25 @@
             }
           },
           {
+            "name": "type",
+            "in": "query",
+            "description": "Filter by monitor type(s). Can be specified multiple times.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "enabled",
+            "in": "query",
+            "description": "Filter by whether monitors are enabled.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "per_page",
             "in": "query",
             "description": "Limit the number of rows to return in the result. Default and maximum allowed is 100.",
@@ -16086,6 +16105,177 @@
                 }
               }
             }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/trace-items/metrics": {
+      "get": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "List an Organization\u0027s Trace Metrics",
+        "description": "**Experimental:** This API is under active development and may change.\n\nList trace metrics (name, type, unit, count, last seen) with optional context.",
+        "operationId": "ListOrganizationTraceMetrics",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Search query to filter metrics, using the same syntax as the metrics dataset.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Response field to sort by, prefixed with \u0060-\u0060 for descending. Defaults to metric name ascending.",
+            "schema": {
+              "$ref": "#/components/schemas/ListOrganizationTraceMetricsSortParameter"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "Optional fields to expand. Pass \u0060context\u0060 to include each metric\u0027s authored context (brief and details), which describes what the metric measures. Requires the \u0060data-browsing-attribute-context\u0060 feature; without it the \u0060context\u0060 field is omitted.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ContextItem"
+              }
+            }
+          },
+          {
+            "name": "contextOnly",
+            "in": "query",
+            "description": "Return only metrics that have authored context, and include that context in the response. Use this to discover the metrics that are described well enough to query confidently. Requires the \u0060data-browsing-attribute-context\u0060 feature; without it this is a no-op.",
+            "schema": {
+              "type": "boolean"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseSchema"
+                },
+                "examples": {
+                  "ListTheTraceMetricsForAnOrganization": {
+                    "summary": "List the trace metrics for an organization",
+                    "value": [
+                      {
+                        "name": "checkout.latency",
+                        "type": "distribution",
+                        "unit": "millisecond",
+                        "count": 1432,
+                        "lastSeen": 1735689600,
+                        "context": {
+                          "brief": "End-to-end latency of the checkout flow.",
+                          "details": [
+                            "Recorded once per completed checkout, from cart submit to receipt."
+                          ]
+                        }
+                      },
+                      {
+                        "name": "cart.items",
+                        "type": "gauge",
+                        "unit": null,
+                        "count": 87,
+                        "lastSeen": 1735686000
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -32113,6 +32303,13 @@
           "lastVisited": {
             "type": "string"
           },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
+          },
           "id": {
             "type": "string"
           },
@@ -33666,6 +33863,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListOrganizationTagsResponseItem"
+        }
+      },
+      "ListOrganizationTraceMetricsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationTraceMetricsResponseItem"
         }
       },
       "ListOrganizationsBody": {
@@ -38519,6 +38722,13 @@
           "lastVisited": {
             "type": "string"
           },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
+          },
           "id": {
             "type": "string"
           },
@@ -39677,6 +39887,40 @@
           },
           "name": {
             "type": "string"
+          }
+        }
+      },
+      "ListOrganizationTraceMetricsResponseItem": {
+        "required": [
+          "count",
+          "lastSeen",
+          "name",
+          "type",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetricsResponseItemType"
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastSeen": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetricsResponseItemContext"
           }
         }
       },
@@ -54734,6 +54978,20 @@
           }
         }
       },
+      "ListOrganizationTraceMetricsResponseItemContext": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ListOrganizationsBodyItemExtraOptions": {
         "type": "object",
         "additionalProperties": {
@@ -66171,6 +66429,13 @@
           "lastVisited": {
             "type": "string"
           },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
+          },
           "id": {
             "type": "string"
           },
@@ -66289,6 +66554,13 @@
           },
           "lastVisited": {
             "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
           },
           "id": {
             "type": "string"
@@ -66556,6 +66828,13 @@
           },
           "lastVisited": {
             "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
           },
           "id": {
             "type": "string"
@@ -70547,6 +70826,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItem"
+        }
+      },
+      "ListOrganizationTraceMetrics200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseItem"
         }
       },
       "RetrieveTraceItemStatistics200Response": {
@@ -76805,6 +77090,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseSchemaItem"
+        }
+      },
+      "ListOrganizationTraceMetrics200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseSchemaItem"
         }
       },
       "GetOrganizationTrace200ResponseSchema": {
@@ -83486,6 +83777,13 @@
           },
           "lastVisited": {
             "type": "string"
+          },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
           },
           "id": {
             "type": "string"
@@ -90703,6 +91001,40 @@
           }
         }
       },
+      "ListOrganizationTraceMetrics200ResponseItem": {
+        "required": [
+          "count",
+          "lastSeen",
+          "name",
+          "type",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseItemType"
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastSeen": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseItemContext"
+          }
+        }
+      },
       "RetrieveTraceItemStatistics200ResponseDataItem": {
         "required": [
           "attributeDistributions"
@@ -97859,6 +98191,13 @@
           "lastVisited": {
             "type": "string"
           },
+          "starred": {
+            "type": "boolean"
+          },
+          "position": {
+            "type": "integer",
+            "nullable": true
+          },
           "id": {
             "type": "string"
           },
@@ -99372,6 +99711,40 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemAttributeType"
+          }
+        }
+      },
+      "ListOrganizationTraceMetrics200ResponseSchemaItem": {
+        "required": [
+          "count",
+          "lastSeen",
+          "name",
+          "type",
+          "unit"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseItemType"
+          },
+          "unit": {
+            "type": "string",
+            "nullable": true
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          },
+          "lastSeen": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListOrganizationTraceMetrics200ResponseItemContext"
           }
         }
       },
@@ -109619,6 +109992,20 @@
           },
           "is_transformed_alias": {
             "type": "boolean"
+          }
+        }
+      },
+      "ListOrganizationTraceMetrics200ResponseItemContext": {
+        "type": "object",
+        "properties": {
+          "brief": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -123762,6 +124149,33 @@
             {
               "value": "edge_pre_79",
               "name": "EdgePre79"
+            }
+          ]
+        }
+      },
+      "ListOrganizationTraceMetricsResponseItemType": {
+        "enum": [
+          "counter",
+          "gauge",
+          "distribution"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationTraceMetricsResponseItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "counter",
+              "name": "Counter"
+            },
+            {
+              "value": "gauge",
+              "name": "Gauge"
+            },
+            {
+              "value": "distribution",
+              "name": "Distribution"
             }
           ]
         }
@@ -139621,6 +140035,33 @@
           ]
         }
       },
+      "ListOrganizationTraceMetrics200ResponseItemType": {
+        "enum": [
+          "counter",
+          "gauge",
+          "distribution"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationTraceMetrics200ResponseItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "counter",
+              "name": "Counter"
+            },
+            {
+              "value": "gauge",
+              "name": "Gauge"
+            },
+            {
+              "value": "distribution",
+              "name": "Distribution"
+            }
+          ]
+        }
+      },
       "GetOrganizationTrace200ResponseItemEventType": {
         "enum": [
           "span",
@@ -146444,6 +146885,85 @@
             {
               "value": "string",
               "name": "StringValue"
+            }
+          ]
+        }
+      },
+      "ListOrganizationTraceMetricsSortParameter": {
+        "enum": [
+          "-count",
+          "-lastSeen",
+          "-name",
+          "-type",
+          "-unit",
+          "count",
+          "lastSeen",
+          "name",
+          "type",
+          "unit"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationTraceMetricsSortParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "-count",
+              "name": "Count"
+            },
+            {
+              "value": "-lastSeen",
+              "name": "LastSeen"
+            },
+            {
+              "value": "-name",
+              "name": "Name"
+            },
+            {
+              "value": "-type",
+              "name": "Type"
+            },
+            {
+              "value": "-unit",
+              "name": "Unit"
+            },
+            {
+              "value": "count",
+              "name": "Count1"
+            },
+            {
+              "value": "lastSeen",
+              "name": "LastSeen1"
+            },
+            {
+              "value": "name",
+              "name": "Name1"
+            },
+            {
+              "value": "type",
+              "name": "Type1"
+            },
+            {
+              "value": "unit",
+              "name": "Unit1"
+            }
+          ]
+        }
+      },
+      "ContextItem": {
+        "enum": [
+          "context"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ContextItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "context",
+              "name": "Context"
             }
           ]
         }

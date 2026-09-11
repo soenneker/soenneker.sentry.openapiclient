@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/detectors{?cursor*,id*,per_page*,project*,query*,sortBy*}", pathParameters)
+        public DetectorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/detectors{?cursor*,enabled*,id*,per_page*,project*,query*,sortBy*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DetectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/detectors{?cursor*,id*,per_page*,project*,query*,sortBy*}", rawUrl)
+        public DetectorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/detectors{?cursor*,enabled*,id*,per_page*,project*,query*,sortBy*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -234,6 +234,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
             [QueryParameter("cursor")]
             public string Cursor { get; set; }
 #endif
+            /// <summary>Filter by whether monitors are enabled.</summary>
+            [QueryParameter("enabled")]
+            public bool? Enabled { get; set; }
             /// <summary>The ID of the monitor you&apos;d like to query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -276,6 +279,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors
 #else
             [QueryParameter("sortBy")]
             public string SortBy { get; set; }
+#endif
+            /// <summary>Filter by monitor type(s). Can be specified multiple times.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public string[]? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public string[] Type { get; set; }
 #endif
         }
         /// <summary>

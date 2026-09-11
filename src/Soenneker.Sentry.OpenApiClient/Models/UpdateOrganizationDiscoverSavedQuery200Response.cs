@@ -152,6 +152,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Orderby { get; set; }
 #endif
+        /// <summary>The position property</summary>
+        public int? Position { get; set; }
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -184,6 +186,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Range { get; set; }
 #endif
+        /// <summary>The starred property</summary>
+        public bool? Starred { get; set; }
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -255,10 +259,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "limit", n => { Limit = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
+                { "position", n => { Position = n.GetIntValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "queryDataset", n => { QueryDataset = n.GetStringValue(); } },
                 { "range", n => { Range = n.GetStringValue(); } },
+                { "starred", n => { Starred = n.GetBoolValue(); } },
                 { "start", n => { Start = n.GetStringValue(); } },
                 { "topEvents", n => { TopEvents = n.GetIntValue(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
@@ -291,10 +297,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderby", Orderby);
+            writer.WriteIntValue("position", Position);
             writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("queryDataset", QueryDataset);
             writer.WriteStringValue("range", Range);
+            writer.WriteBoolValue("starred", Starred);
             writer.WriteStringValue("start", Start);
             writer.WriteIntValue("topEvents", TopEvents);
             writer.WriteIntValue("version", Version);
