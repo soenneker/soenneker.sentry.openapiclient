@@ -720,7 +720,7 @@
           "Explore"
         ],
         "summary": "List an Organization\u0027s AI Conversations",
-        "description": "Return AI conversations ordered by latest span time.\n\n**Experimental:** This API is under active development and may change.\n\n\u0060query\u0060 uses Sentry search syntax against spans. A conversation matches when\nany span matches. Summary values then include all conversation spans inside\nselected project, environment, and time filters.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn AI conversations ordered by latest span time.\n\n\u0060query\u0060 uses Sentry search syntax against spans. A conversation matches when\nany span matches. Summary values then include all conversation spans inside\nselected project, environment, and time filters.",
         "operationId": "ListOrganizationAiConversations",
         "parameters": [
           {
@@ -903,7 +903,7 @@
           "Explore"
         ],
         "summary": "Retrieve an Organization\u0027s AI Conversation",
-        "description": "Return spans recorded for one AI conversation in start-time order.\n\n**Experimental:** This API is under active development and may change.\n\nMessage, tool, and response attributes contain their recorded string values.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
         "operationId": "RetrieveOrganizationAiConversation",
         "parameters": [
           {
@@ -10739,7 +10739,7 @@
           "Releases"
         ],
         "summary": "Retrieve Statuses of Release Thresholds (Alpha)",
-        "description": "**\u0060[WARNING]\u0060**: This API is an experimental Alpha feature and is subject to change!\n\nList all derived statuses of releases that fall within the provided start/end datetimes.\n\nConstructs a response key\u0027d off \\{\u0060release_version\u0060\\}-\\{\u0060project_slug\u0060\\} that lists thresholds with their status for *specified* projects.\nEach returned enriched threshold will contain the full serialized \u0060release_threshold\u0060 instance as well as it\u0027s derived health statuses.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nList all derived statuses of releases that fall within the provided start/end datetimes.\n\nConstructs a response key\u0027d off \\{\u0060release_version\u0060\\}-\\{\u0060project_slug\u0060\\} that lists thresholds with their status for *specified* projects.\nEach returned enriched threshold will contain the full serialized \u0060release_threshold\u0060 instance as well as it\u0027s derived health statuses.",
         "operationId": "ListOrganizationReleaseThresholdStatuses",
         "parameters": [
           {
@@ -28416,7 +28416,7 @@
           "Seer"
         ],
         "summary": "Retrieve Seer Issue Fix State",
-        "description": "Retrieve the current detailed state of an issue fix process for a specific issue including:\n\n- Current status\n- Steps performed and their outcomes\n- Repository information and permissions\n- Root Cause Analysis\n- Proposed Solution\n- Generated code changes\n\nThis endpoint although documented is still experimental and the payload may change in the future.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nRetrieve the current detailed state of an issue fix process for a specific issue including:\n\n- Current status\n- Steps performed and their outcomes\n- Repository information and permissions\n- Root Cause Analysis\n- Proposed Solution\n- Generated code changes",
         "operationId": "GetOrganizationIssueAutofixState",
         "parameters": [
           {

@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
         }
         /// <summary>
-        /// Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changesThis endpoint although documented is still experimental and the payload may change in the future.
+        /// **Experimental:** This API is under active development and may change.Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changes
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -72,7 +72,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changesThis endpoint although documented is still experimental and the payload may change in the future.
+        /// **Experimental:** This API is under active development and may change.Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changes
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.Autofix.AutofixRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changesThis endpoint although documented is still experimental and the payload may change in the future.
+        /// **Experimental:** This API is under active development and may change.Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changes
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AutofixRequestBuilderGetQueryParameters 

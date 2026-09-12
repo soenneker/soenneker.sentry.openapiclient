@@ -47,7 +47,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         {
         }
         /// <summary>
-        /// Return AI conversations ordered by latest span time.**Experimental:** This API is under active development and may change.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
+        /// **Experimental:** This API is under active development and may change.Return AI conversations ordered by latest span time.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Return AI conversations ordered by latest span time.**Experimental:** This API is under active development and may change.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
+        /// **Experimental:** This API is under active development and may change.Return AI conversations ordered by latest span time.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conversations.ConversationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Return AI conversations ordered by latest span time.**Experimental:** This API is under active development and may change.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
+        /// **Experimental:** This API is under active development and may change.Return AI conversations ordered by latest span time.`query` uses Sentry search syntax against spans. A conversation matches whenany span matches. Summary values then include all conversation spans insideselected project, environment, and time filters.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversationsRequestBuilderGetQueryParameters 
