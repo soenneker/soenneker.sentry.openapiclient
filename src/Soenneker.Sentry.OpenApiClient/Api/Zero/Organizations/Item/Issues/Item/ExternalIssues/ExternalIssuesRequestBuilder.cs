@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.ExternalIssues.Item;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,18 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ExternalIssuesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.issues.item.externalIssues.item collection</summary>
+        /// <param name="position">The ID of the custom integration issue link to remove.</param>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.ExternalIssues.Item.WithExternalIssueItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.ExternalIssues.Item.WithExternalIssueItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("externalIssueId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.ExternalIssues.Item.WithExternalIssueItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.ExternalIssues.ExternalIssuesRequestBuilder"/> and sets the default values.
         /// </summary>

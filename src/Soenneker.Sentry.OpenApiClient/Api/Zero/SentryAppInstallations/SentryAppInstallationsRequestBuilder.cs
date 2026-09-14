@@ -16,7 +16,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations
     public partial class SentryAppInstallationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.sentryAppInstallations.item collection</summary>
-        /// <param name="position">The uuid of the integration platform integration.</param>
+        /// <param name="position">The UUID of the Sentry App installation.</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.WithUuItemRequestBuilder"/></returns>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.WithUuItemRequestBuilder this[string position]
         {

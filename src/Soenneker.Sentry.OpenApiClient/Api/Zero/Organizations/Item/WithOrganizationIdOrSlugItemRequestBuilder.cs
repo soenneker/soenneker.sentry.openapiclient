@@ -32,6 +32,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplaySelectors
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Replays;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppComponents;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppInstallations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryApps;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions;
@@ -204,6 +205,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.ScimRequestBuilder Scim
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.ScimRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sentryAppComponents property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppComponents.SentryAppComponentsRequestBuilder SentryAppComponents
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppComponents.SentryAppComponentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sentryAppInstallations property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppInstallations.SentryAppInstallationsRequestBuilder SentryAppInstallations

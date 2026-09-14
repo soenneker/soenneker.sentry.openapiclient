@@ -9,51 +9,45 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class LinkAnExistingExternalIssueToAnIssueRequest : IAdditionalDataHolder, IParsable
+    public partial class ExecuteSentryAppInstallationExternalIssueActionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The action to perform: `link` or `create`.</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An optional comment to post to the external issue when linking, if supported by the integration.</summary>
+        /// <summary>The numeric Sentry issue ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? GroupId { get; set; }
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string GroupId { get; set; }
 #endif
-        /// <summary>The identifier or full URL of the existing external issue to link. URL support depends on the selected integration.</summary>
+        /// <summary>The relative callback URI from the app&apos;s issue-link form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalIssue { get; set; }
+        public string? Uri { get; set; }
 #nullable restore
 #else
-        public string ExternalIssue { get; set; }
-#endif
-        /// <summary>The repository containing the external issue, in owner/name format. Required by GitHub, GitHub Enterprise, and Bitbucket integrations.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Repo { get; set; }
-#nullable restore
-#else
-        public string Repo { get; set; }
+        public string Uri { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest"/> and sets the default values.
         /// </summary>
-        public LinkAnExistingExternalIssueToAnIssueRequest()
+        public ExecuteSentryAppInstallationExternalIssueActionRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +57,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "comment", n => { Comment = n.GetStringValue(); } },
-                { "externalIssue", n => { ExternalIssue = n.GetStringValue(); } },
-                { "repo", n => { Repo = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction>(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
+                { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +69,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteStringValue("externalIssue", ExternalIssue);
-            writer.WriteStringValue("repo", Repo);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction>("action", Action);
+            writer.WriteStringValue("groupId", GroupId);
+            writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

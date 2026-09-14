@@ -2,7 +2,9 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssues;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalRequests;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,10 +17,20 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithUuItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The externalIssueActions property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder ExternalIssueActions
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The externalIssues property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssues.ExternalIssuesRequestBuilder ExternalIssues
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssues.ExternalIssuesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The externalRequests property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalRequests.ExternalRequestsRequestBuilder ExternalRequests
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalRequests.ExternalRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.WithUuItemRequestBuilder"/> and sets the default values.

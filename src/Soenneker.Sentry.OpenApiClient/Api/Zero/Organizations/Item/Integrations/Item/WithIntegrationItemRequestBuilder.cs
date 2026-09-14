@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Repos;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integration
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIntegrationItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The repos property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Repos.ReposRequestBuilder Repos
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Repos.ReposRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.WithIntegrationItemRequestBuilder"/> and sets the default values.
         /// </summary>

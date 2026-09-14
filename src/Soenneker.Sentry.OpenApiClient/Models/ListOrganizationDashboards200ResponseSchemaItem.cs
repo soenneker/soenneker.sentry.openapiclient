@@ -56,6 +56,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The isFavorited property</summary>
         public bool? IsFavorited { get; set; }
+        /// <summary>The isHidden property</summary>
+        public bool? IsHidden { get; set; }
         /// <summary>The lastVisited property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -137,6 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isFavorited", n => { IsFavorited = n.GetBoolValue(); } },
+                { "isHidden", n => { IsHidden = n.GetBoolValue(); } },
                 { "lastVisited", n => { LastVisited = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions.CreateFromDiscriminatorValue); } },
                 { "prebuiltId", n => { PrebuiltId = n.GetIntValue(); } },
@@ -159,6 +162,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isFavorited", IsFavorited);
+            writer.WriteBoolValue("isHidden", IsHidden);
             writer.WriteStringValue("lastVisited", LastVisited);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions>("permissions", Permissions);
             writer.WriteIntValue("prebuiltId", PrebuiltId);

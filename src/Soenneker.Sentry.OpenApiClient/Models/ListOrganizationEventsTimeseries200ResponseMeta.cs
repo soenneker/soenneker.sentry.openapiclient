@@ -32,6 +32,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The end property</summary>
         public double? End { get; set; }
+        /// <summary>The estimatedIngestionDelaySeconds property</summary>
+        public double? EstimatedIngestionDelaySeconds { get; set; }
         /// <summary>The start property</summary>
         public double? Start { get; set; }
         /// <summary>
@@ -62,6 +64,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
+                { "estimatedIngestionDelaySeconds", n => { EstimatedIngestionDelaySeconds = n.GetDoubleValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
             };
         }
@@ -75,6 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem>("annotations", Annotations);
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteDoubleValue("end", End);
+            writer.WriteDoubleValue("estimatedIngestionDelaySeconds", EstimatedIngestionDelaySeconds);
             writer.WriteDoubleValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
