@@ -96,7 +96,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>Sort order of the resulting tag values. Prefix with &apos;-&apos; for descending order. Default is &apos;-id&apos;.</summary>
+            /// <summary>Sort order of the resulting tag values. Default is `id`.</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueTagValuesSortParameter? Sort { get; set; }
         }

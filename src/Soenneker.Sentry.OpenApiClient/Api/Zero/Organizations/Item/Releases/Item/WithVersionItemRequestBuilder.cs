@@ -228,7 +228,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
 #endif
             /// <summary>The field used to sort results by. By default, this is `date`.</summary>
             [QueryParameter("sort")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseSortParameter? Sort { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.DateSort? Sort { get; set; }
             /// <summary>Release statuses that you can filter by.</summary>
             [QueryParameter("status")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReleaseStatusParameter? Status { get; set; }
