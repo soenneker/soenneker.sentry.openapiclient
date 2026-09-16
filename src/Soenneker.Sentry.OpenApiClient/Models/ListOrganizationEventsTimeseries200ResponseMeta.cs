@@ -22,6 +22,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem> Annotations { get; set; }
 #endif
+        /// <summary>The completeThrough property</summary>
+        public double? CompleteThrough { get; set; }
         /// <summary>The dataset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,6 +36,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? End { get; set; }
         /// <summary>The estimatedIngestionDelaySeconds property</summary>
         public double? EstimatedIngestionDelaySeconds { get; set; }
+        /// <summary>The ingestionDelayStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IngestionDelayStatus { get; set; }
+#nullable restore
+#else
+        public string IngestionDelayStatus { get; set; }
+#endif
         /// <summary>The start property</summary>
         public double? Start { get; set; }
         /// <summary>
@@ -62,9 +72,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "completeThrough", n => { CompleteThrough = n.GetDoubleValue(); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
                 { "estimatedIngestionDelaySeconds", n => { EstimatedIngestionDelaySeconds = n.GetDoubleValue(); } },
+                { "ingestionDelayStatus", n => { IngestionDelayStatus = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
             };
         }
@@ -76,9 +88,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem>("annotations", Annotations);
+            writer.WriteDoubleValue("completeThrough", CompleteThrough);
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteDoubleValue("end", End);
             writer.WriteDoubleValue("estimatedIngestionDelaySeconds", EstimatedIngestionDelaySeconds);
+            writer.WriteStringValue("ingestionDelayStatus", IngestionDelayStatus);
             writer.WriteDoubleValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

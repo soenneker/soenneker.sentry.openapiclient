@@ -38,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<int?> Projects { get; set; }
 #endif
-        /// <summary>The issue search query.</summary>
+        /// <summary>The issue search query. Issue search does not support the `AND`/`OR` boolean operators or parenthesized boolean groups. To match any of several values, use the list form instead: `issue:[PROJ-AB1, PROJ-CD2]`, `issue.priority:[high, medium]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get; set; }

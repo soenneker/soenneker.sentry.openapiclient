@@ -33440,7 +33440,7 @@
           },
           "query": {
             "type": "string",
-            "description": "The issue search query."
+            "description": "The issue search query. Issue search does not support the \u0060AND\u0060/\u0060OR\u0060 boolean operators or parenthesized boolean groups. To match any of several values, use the list form instead: \u0060issue:[PROJ-AB1, PROJ-CD2]\u0060, \u0060issue.priority:[high, medium]\u0060."
           },
           "projects": {
             "type": "array",
@@ -49891,6 +49891,13 @@
           "estimatedIngestionDelaySeconds": {
             "type": "number",
             "format": "double"
+          },
+          "completeThrough": {
+            "type": "number",
+            "format": "double"
+          },
+          "ingestionDelayStatus": {
+            "type": "string"
           }
         }
       },
@@ -68160,7 +68167,7 @@
           },
           "query": {
             "type": "string",
-            "description": "The issue search query."
+            "description": "The issue search query. Issue search does not support the \u0060AND\u0060/\u0060OR\u0060 boolean operators or parenthesized boolean groups. To match any of several values, use the list form instead: \u0060issue:[PROJ-AB1, PROJ-CD2]\u0060, \u0060issue.priority:[high, medium]\u0060."
           },
           "projects": {
             "type": "array",
@@ -85413,6 +85420,13 @@
           "estimatedIngestionDelaySeconds": {
             "type": "number",
             "format": "double"
+          },
+          "completeThrough": {
+            "type": "number",
+            "format": "double"
+          },
+          "ingestionDelayStatus": {
+            "type": "string"
           }
         }
       },
