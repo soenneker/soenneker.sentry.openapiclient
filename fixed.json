@@ -23,21 +23,7 @@
           "enum": [
             "us",
             "de"
-          ],
-          "x-ms-enum": {
-            "name": "GeneratedEnum",
-            "modelAsString": false,
-            "values": [
-              {
-                "value": "us",
-                "name": "Us"
-              },
-              {
-                "value": "de",
-                "name": "De"
-              }
-            ]
-          }
+          ]
         }
       }
     }
@@ -1841,7 +1827,6 @@
                           "teamsWithEditAccess": []
                         },
                         "isFavorited": false,
-                        "isHidden": false,
                         "prebuiltId": null
                       },
                       {
@@ -1893,7 +1878,6 @@
                         "widgetPreview": [],
                         "permissions": null,
                         "isFavorited": false,
-                        "isHidden": false,
                         "prebuiltId": null
                       }
                     ]
@@ -4501,7 +4485,7 @@
           "Explore"
         ],
         "summary": "Query Explore Events in Table Format",
-        "description": "Retrieves explore data for a given organization.\n\n**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent to\nSentry.\n\nThe \u0060field\u0060 query parameter determines what fields will be selected in the \u0060data\u0060 and \u0060meta\u0060 keys of the endpoint response.\n- The \u0060data\u0060 key contains a list of results row by row that match the \u0060query\u0060 made\n- The \u0060meta\u0060 key contains information about the response, including the unit or type of the fields requested",
+        "description": "Retrieves explore data for a given organization.\n\n**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent to\nSentry.\n\nThe \u0060field\u0060 query parameter determines what fields will be selected in the \u0060data\u0060 and \u0060meta\u0060 keys of the endpoint response.\n- The \u0060data\u0060 key contains a list of results row by row that match the \u0060query\u0060 made\n- The \u0060meta\u0060 key contains information about the response, including the unit or type of the fields requested\n- EAP table results may include \u0060meta.routingHint\u0060. Pass this opaque value unchanged as\n  \u0060routing_hint\u0060 when fetching item details for a row in this response. It identifies how\n  the table query was routed and is omitted when no hint is available.",
         "operationId": "ListOrganizationEvents",
         "parameters": [
           {
@@ -32953,7 +32937,7 @@
             "description": "Coding agent provider (e.g., \u0027github_copilot\u0027). Alternative to integration_id for user-authenticated providers."
           },
           "user_context": {
-            "maxLength": 1000,
+            "maxLength": 10000,
             "type": "string",
             "description": "Optional user context to append to the step prompt."
           },
@@ -39111,7 +39095,6 @@
           "filters",
           "id",
           "isFavorited",
-          "isHidden",
           "lastVisited",
           "permissions",
           "prebuiltId",
@@ -39163,9 +39146,6 @@
             "$ref": "#/components/schemas/DashboardListResponseItemPermissions"
           },
           "isFavorited": {
-            "type": "boolean"
-          },
-          "isHidden": {
             "type": "boolean"
           },
           "projects": {
@@ -49856,6 +49836,9 @@
           },
           "bytesScanned": {
             "type": "integer"
+          },
+          "routingHint": {
+            "type": "string"
           },
           "debug_info": {
             "$ref": "#/components/schemas/OrganizationEventsResponseDictMetaDebugInfo"
@@ -77192,7 +77175,7 @@
             "description": "Coding agent provider (e.g., \u0027github_copilot\u0027). Alternative to integration_id for user-authenticated providers."
           },
           "user_context": {
-            "maxLength": 1000,
+            "maxLength": 10000,
             "type": "string",
             "description": "Optional user context to append to the step prompt."
           },
@@ -83526,7 +83509,6 @@
           "filters",
           "id",
           "isFavorited",
-          "isHidden",
           "lastVisited",
           "permissions",
           "prebuiltId",
@@ -83578,9 +83560,6 @@
             "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseItemPermissions"
           },
           "isFavorited": {
-            "type": "boolean"
-          },
-          "isHidden": {
             "type": "boolean"
           },
           "projects": {
@@ -85385,6 +85364,9 @@
           },
           "bytesScanned": {
             "type": "integer"
+          },
+          "routingHint": {
+            "type": "string"
           },
           "debug_info": {
             "$ref": "#/components/schemas/ListOrganizationEvents200ResponseMetaDebugInfo"
@@ -99060,7 +99042,6 @@
           "filters",
           "id",
           "isFavorited",
-          "isHidden",
           "lastVisited",
           "permissions",
           "prebuiltId",
@@ -99112,9 +99093,6 @@
             "$ref": "#/components/schemas/ListOrganizationDashboards200ResponseItemPermissions"
           },
           "isFavorited": {
-            "type": "boolean"
-          },
-          "isHidden": {
             "type": "boolean"
           },
           "projects": {
@@ -146640,8 +146618,7 @@
           "onlyPrebuilt",
           "owned",
           "shared",
-          "showHidden",
-          "showUserHidden"
+          "showHidden"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -146676,10 +146653,6 @@
             {
               "value": "showHidden",
               "name": "ShowHidden"
-            },
-            {
-              "value": "showUserHidden",
-              "name": "ShowUserHidden"
             }
           ]
         }

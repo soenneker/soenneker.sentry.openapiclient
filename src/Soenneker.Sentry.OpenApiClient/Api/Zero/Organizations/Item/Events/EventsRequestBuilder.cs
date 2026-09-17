@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
         {
         }
         /// <summary>
-        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested- EAP table results may include `meta.routingHint`. Pass this opaque value unchanged as  `routing_hint` when fetching item details for a row in this response. It identifies how  the table query was routed and is omitted when no hint is available.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested- EAP table results may include `meta.routingHint`. Pass this opaque value unchanged as  `routing_hint` when fetching item details for a row in this response. It identifies how  the table query was routed and is omitted when no hint is available.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested
+        /// Retrieves explore data for a given organization.**Note**: This endpoint is intended to get a table of results, and is not for doing a full export of data sent toSentry.The `field` query parameter determines what fields will be selected in the `data` and `meta` keys of the endpoint response.- The `data` key contains a list of results row by row that match the `query` made- The `meta` key contains information about the response, including the unit or type of the fields requested- EAP table results may include `meta.routingHint`. Pass this opaque value unchanged as  `routing_hint` when fetching item details for a row in this response. It identifies how  the table query was routed and is omitted when no hint is available.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EventsRequestBuilderGetQueryParameters 

@@ -36,9 +36,5 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         ShowHidden,
         #pragma warning restore CS1591
-        [EnumMember(Value = "showUserHidden")]
-        #pragma warning disable CS1591
-        ShowUserHidden,
-        #pragma warning restore CS1591
     }
 }

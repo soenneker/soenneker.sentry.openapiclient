@@ -69,6 +69,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? IsMetricsData { get; set; }
         /// <summary>The isMetricsExtractedData property</summary>
         public bool? IsMetricsExtractedData { get; set; }
+        /// <summary>The routingHint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RoutingHint { get; set; }
+#nullable restore
+#else
+        public string RoutingHint { get; set; }
+#endif
         /// <summary>The tips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +127,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields.CreateFromDiscriminatorValue); } },
                 { "isMetricsData", n => { IsMetricsData = n.GetBoolValue(); } },
                 { "isMetricsExtractedData", n => { IsMetricsExtractedData = n.GetBoolValue(); } },
+                { "routingHint", n => { RoutingHint = n.GetStringValue(); } },
                 { "tips", n => { Tips = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips.CreateFromDiscriminatorValue); } },
                 { "units", n => { Units = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits.CreateFromDiscriminatorValue); } },
             };
@@ -139,6 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>("fields", Fields);
             writer.WriteBoolValue("isMetricsData", IsMetricsData);
             writer.WriteBoolValue("isMetricsExtractedData", IsMetricsExtractedData);
+            writer.WriteStringValue("routingHint", RoutingHint);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips>("tips", Tips);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits>("units", Units);
             writer.WriteAdditionalData(AdditionalData);
