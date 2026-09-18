@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReplayCount
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ReplayCountRequestBuilderGetQueryParameters 
         {
-            /// <summary>The data source to query replays from.* `events`* `search_issues`* `spans`</summary>
+            /// <summary>The data source to query replays from.* `errors`* `search_issues`* `spans`</summary>
             [QueryParameter("data_source")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplayCountDataSourceParameter? DataSource { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>

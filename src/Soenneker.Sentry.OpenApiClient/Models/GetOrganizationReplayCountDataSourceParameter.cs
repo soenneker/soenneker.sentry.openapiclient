@@ -8,9 +8,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum GetOrganizationReplayCountDataSourceParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "events")]
+        [EnumMember(Value = "errors")]
         #pragma warning disable CS1591
-        Events,
+        Errors,
         #pragma warning restore CS1591
         [EnumMember(Value = "search_issues")]
         #pragma warning disable CS1591

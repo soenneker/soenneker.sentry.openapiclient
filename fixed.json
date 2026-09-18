@@ -12802,7 +12802,7 @@
           {
             "name": "data_source",
             "in": "query",
-            "description": "The data source to query replays from.\n\n* \u0060events\u0060\n* \u0060search_issues\u0060\n* \u0060spans\u0060",
+            "description": "The data source to query replays from.\n\n* \u0060errors\u0060\n* \u0060search_issues\u0060\n* \u0060spans\u0060",
             "required": true,
             "schema": {
               "$ref": "#/components/schemas/GetOrganizationReplayCountDataSourceParameter"
@@ -49865,10 +49865,16 @@
             "type": "number",
             "format": "double"
           },
-          "annotations": {
+          "droppedAnnotations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaAnnotationsItem"
+              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaDroppedAnnotationsItem"
+            }
+          },
+          "acceptedAnnotations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaAcceptedAnnotationsItem"
             }
           },
           "estimatedIngestionDelaySeconds": {
@@ -60761,12 +60767,12 @@
           "type": "string"
         }
       },
-      "OrganizationEventsTimeseriesResponseMetaAnnotationsItem": {
+      "OrganizationEventsTimeseriesResponseMetaDroppedAnnotationsItem": {
         "required": [
           "category",
-          "droppedCount",
           "end",
-          "label",
+          "eventCount",
+          "outcome",
           "reason",
           "start",
           "type"
@@ -60777,6 +60783,9 @@
             "$ref": "#/components/schemas/SystemType"
           },
           "category": {
+            "type": "string"
+          },
+          "outcome": {
             "type": "string"
           },
           "reason": {
@@ -60790,15 +60799,59 @@
             "type": "number",
             "format": "double"
           },
-          "droppedCount": {
+          "eventCount": {
             "type": "number",
             "format": "double"
           },
-          "label": {
-            "type": "string"
+          "byteSize": {
+            "type": "number",
+            "format": "double"
           }
         },
-        "description": "A system annotation explaining that data over a time range was affected by\nan external factor."
+        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
+      },
+      "OrganizationEventsTimeseriesResponseMetaAcceptedAnnotationsItem": {
+        "required": [
+          "category",
+          "end",
+          "eventCount",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SystemType"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "eventCount": {
+            "type": "number",
+            "format": "double"
+          },
+          "byteSize": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
       },
       "OrganizationEventsTimeseriesResponseTimeSeriesItemValuesItem": {
         "required": [
@@ -85393,10 +85446,16 @@
             "type": "number",
             "format": "double"
           },
-          "annotations": {
+          "droppedAnnotations": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem"
+              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem"
+            }
+          },
+          "acceptedAnnotations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem"
             }
           },
           "estimatedIngestionDelaySeconds": {
@@ -106846,12 +106905,12 @@
       "ListOrganizationEvents200ResponseMetaDebugInfo": {
         "type": "object"
       },
-      "ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem": {
+      "ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem": {
         "required": [
           "category",
-          "droppedCount",
           "end",
-          "label",
+          "eventCount",
+          "outcome",
           "reason",
           "start",
           "type"
@@ -106862,6 +106921,9 @@
             "$ref": "#/components/schemas/SystemType"
           },
           "category": {
+            "type": "string"
+          },
+          "outcome": {
             "type": "string"
           },
           "reason": {
@@ -106875,15 +106937,59 @@
             "type": "number",
             "format": "double"
           },
-          "droppedCount": {
+          "eventCount": {
             "type": "number",
             "format": "double"
           },
-          "label": {
-            "type": "string"
+          "byteSize": {
+            "type": "number",
+            "format": "double"
           }
         },
-        "description": "A system annotation explaining that data over a time range was affected by\nan external factor."
+        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
+      },
+      "ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem": {
+        "required": [
+          "category",
+          "end",
+          "eventCount",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/SystemType"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "eventCount": {
+            "type": "number",
+            "format": "double"
+          },
+          "byteSize": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
       },
       "ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem": {
         "required": [
@@ -147425,7 +147531,7 @@
       "GetOrganizationReplayCountDataSourceParameter": {
         "minLength": 1,
         "enum": [
-          "events",
+          "errors",
           "search_issues",
           "spans"
         ],
@@ -147436,8 +147542,8 @@
           "modelAsString": false,
           "values": [
             {
-              "value": "events",
-              "name": "Events"
+              "value": "errors",
+              "name": "Errors"
             },
             {
               "value": "search_issues",

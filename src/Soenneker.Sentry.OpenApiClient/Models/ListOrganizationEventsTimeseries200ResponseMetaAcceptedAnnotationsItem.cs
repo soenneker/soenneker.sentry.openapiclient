@@ -8,13 +8,15 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// A system annotation explaining that data over a time range was affected byan external factor.
+    /// One time bucket&apos;s volume for a system data-fidelity annotation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem : IAdditionalDataHolder, IParsable
+    public partial class ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The byteSize property</summary>
+        public double? ByteSize { get; set; }
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,17 +25,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The droppedCount property</summary>
-        public double? DroppedCount { get; set; }
         /// <summary>The end property</summary>
         public double? End { get; set; }
-        /// <summary>The label property</summary>
+        /// <summary>The eventCount property</summary>
+        public double? EventCount { get; set; }
+        /// <summary>The outcome property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label { get; set; }
+        public string? Outcome { get; set; }
 #nullable restore
 #else
-        public string Label { get; set; }
+        public string Outcome { get; set; }
 #endif
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,21 +50,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The type property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.SystemType? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem"/> and sets the default values.
         /// </summary>
-        public ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem()
+        public ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAnnotationsItem();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,10 +74,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "byteSize", n => { ByteSize = n.GetDoubleValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
-                { "droppedCount", n => { DroppedCount = n.GetDoubleValue(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
-                { "label", n => { Label = n.GetStringValue(); } },
+                { "eventCount", n => { EventCount = n.GetDoubleValue(); } },
+                { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.SystemType>(); } },
@@ -88,10 +91,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("byteSize", ByteSize);
             writer.WriteStringValue("category", Category);
-            writer.WriteDoubleValue("droppedCount", DroppedCount);
             writer.WriteDoubleValue("end", End);
-            writer.WriteStringValue("label", Label);
+            writer.WriteDoubleValue("eventCount", EventCount);
+            writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);
             writer.WriteDoubleValue("start", Start);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.SystemType>("type", Type);
