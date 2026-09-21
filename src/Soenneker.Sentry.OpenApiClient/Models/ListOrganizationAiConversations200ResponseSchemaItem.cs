@@ -23,7 +23,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ConversationId { get; set; }
 #endif
         /// <summary>The endTimestamp property</summary>
-        public int? EndTimestamp { get; set; }
+        public long? EndTimestamp { get; set; }
         /// <summary>The errors property</summary>
         public int? Errors { get; set; }
         /// <summary>The firstInput property</summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem> Projects { get; set; }
 #endif
         /// <summary>The startTimestamp property</summary>
-        public int? StartTimestamp { get; set; }
+        public long? StartTimestamp { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -146,7 +146,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
-                { "endTimestamp", n => { EndTimestamp = n.GetIntValue(); } },
+                { "endTimestamp", n => { EndTimestamp = n.GetLongValue(); } },
                 { "errors", n => { Errors = n.GetIntValue(); } },
                 { "firstInput", n => { FirstInput = n.GetStringValue(); } },
                 { "flow", n => { Flow = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -157,7 +157,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "outputTokens", n => { OutputTokens = n.GetIntValue(); } },
                 { "projectId", n => { ProjectId = n.GetIntValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "startTimestamp", n => { StartTimestamp = n.GetIntValue(); } },
+                { "startTimestamp", n => { StartTimestamp = n.GetLongValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "toolCalls", n => { ToolCalls = n.GetIntValue(); } },
                 { "toolErrors", n => { ToolErrors = n.GetIntValue(); } },
@@ -178,7 +178,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversationId", ConversationId);
-            writer.WriteIntValue("endTimestamp", EndTimestamp);
+            writer.WriteLongValue("endTimestamp", EndTimestamp);
             writer.WriteIntValue("errors", Errors);
             writer.WriteStringValue("firstInput", FirstInput);
             writer.WriteCollectionOfPrimitiveValues<string>("flow", Flow);
@@ -189,7 +189,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("outputTokens", OutputTokens);
             writer.WriteIntValue("projectId", ProjectId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>("projects", Projects);
-            writer.WriteIntValue("startTimestamp", StartTimestamp);
+            writer.WriteLongValue("startTimestamp", StartTimestamp);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("toolCalls", ToolCalls);
             writer.WriteIntValue("toolErrors", ToolErrors);

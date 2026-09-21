@@ -53,7 +53,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "query",
@@ -788,7 +789,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -880,7 +882,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}": {
@@ -972,7 +975,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -1061,7 +1065,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/config/integrations": {
@@ -1758,7 +1763,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -2577,7 +2583,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -3618,7 +3625,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "query",
@@ -4620,7 +4628,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -5591,7 +5600,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -5741,7 +5751,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -6044,7 +6055,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues": {
@@ -6199,7 +6211,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -6763,7 +6776,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -8041,7 +8055,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -8380,7 +8395,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -10161,7 +10177,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "team",
@@ -10340,7 +10357,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -11013,7 +11031,8 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases": {
@@ -11086,7 +11105,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -12198,7 +12218,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -12293,7 +12314,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -12440,7 +12462,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -13044,7 +13067,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -13708,7 +13732,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -13799,7 +13824,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -14664,7 +14690,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "filter",
@@ -14704,7 +14731,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/sentry-apps": {
@@ -15748,7 +15776,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -16211,7 +16240,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -16437,7 +16467,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/trace-items/stats": {
@@ -16563,7 +16594,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -17250,7 +17282,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -19415,7 +19448,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "full",
@@ -20208,7 +20242,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -20570,7 +20605,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -20849,7 +20885,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "status",
@@ -23031,7 +23068,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -23167,7 +23205,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -23293,7 +23332,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -23760,7 +23800,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "environment",
@@ -23879,7 +23920,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -25043,7 +25085,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -25485,7 +25528,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -25631,7 +25675,8 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-requests": {
@@ -25722,7 +25767,8 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/sentry-apps/{sentryAppIdOrSlug}": {
@@ -26535,7 +26581,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -26659,7 +26706,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -26968,7 +27016,8 @@
             "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
             "schema": {
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -27032,7 +27081,8 @@
             "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
             "schema": {
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -27201,7 +27251,8 @@
             "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
             "schema": {
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -27621,7 +27672,8 @@
             "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
             "schema": {
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -28127,7 +28179,8 @@
             "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
             "schema": {
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -28943,7 +28996,8 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       },
       "post": {
         "tags": [
@@ -29129,7 +29183,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -29899,7 +29954,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -29997,7 +30053,8 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/hashes": {
@@ -30043,7 +30100,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           }
         ],
         "responses": {
@@ -30353,7 +30411,8 @@
             "schema": {
               "minLength": 1,
               "type": "string"
-            }
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
           },
           {
             "name": "per_page",
@@ -30384,7 +30443,8 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/{integrationId}": {
@@ -69328,7 +69388,8 @@
           "projects": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "serviceType": {
@@ -69430,7 +69491,8 @@
           "projects": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "serviceType": {
@@ -69486,7 +69548,8 @@
           "projects": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "serviceType": {
@@ -69588,7 +69651,8 @@
           "projects": {
             "type": "array",
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "format": "int64"
             }
           },
           "serviceType": {
@@ -73709,7 +73773,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -73776,7 +73841,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -73865,7 +73931,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -83446,10 +83513,12 @@
             "format": "double"
           },
           "startTimestamp": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "endTimestamp": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "traceCount": {
             "type": "integer"
@@ -89171,7 +89240,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -92231,7 +92301,8 @@
             "type": "string"
           },
           "project_id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "project_slug": {
             "type": "string"
@@ -93879,7 +93950,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -99048,10 +99120,12 @@
             "format": "double"
           },
           "startTimestamp": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "endTimestamp": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "traceCount": {
             "type": "integer"
@@ -100099,7 +100173,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"
@@ -101005,7 +101080,8 @@
             "type": "string"
           },
           "project_id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "project_slug": {
             "type": "string"
@@ -101605,7 +101681,8 @@
             "nullable": true
           },
           "projectId": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
           },
           "isActive": {
             "type": "boolean"

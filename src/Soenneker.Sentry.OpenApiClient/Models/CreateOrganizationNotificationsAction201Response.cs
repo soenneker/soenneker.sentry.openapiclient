@@ -23,10 +23,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Projects { get; set; }
+        public List<long?>? Projects { get; set; }
 #nullable restore
 #else
-        public List<int?> Projects { get; set; }
+        public List<long?> Projects { get; set; }
 #endif
         /// <summary>The sentryAppId property</summary>
         public int? SentryAppId { get; set; }
@@ -98,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetIntValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetIntValue(); } },
-                { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<long?>()?.AsList(); } },
                 { "sentryAppId", n => { SentryAppId = n.GetIntValue(); } },
                 { "serviceType", n => { ServiceType = n.GetStringValue(); } },
                 { "targetDisplay", n => { TargetDisplay = n.GetStringValue(); } },
@@ -117,7 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("id", Id);
             writer.WriteIntValue("integrationId", IntegrationId);
             writer.WriteIntValue("organizationId", OrganizationId);
-            writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
+            writer.WriteCollectionOfPrimitiveValues<long?>("projects", Projects);
             writer.WriteIntValue("sentryAppId", SentryAppId);
             writer.WriteStringValue("serviceType", ServiceType);
             writer.WriteStringValue("targetDisplay", TargetDisplay);

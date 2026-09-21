@@ -76,7 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The projectId property</summary>
-        public int? ProjectId { get; set; }
+        public long? ProjectId { get; set; }
         /// <summary>The public property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,7 +143,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "projectId", n => { ProjectId = n.GetIntValue(); } },
+                { "projectId", n => { ProjectId = n.GetLongValue(); } },
                 { "public", n => { Public = n.GetStringValue(); } },
                 { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
@@ -166,7 +166,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
-            writer.WriteIntValue("projectId", ProjectId);
+            writer.WriteLongValue("projectId", ProjectId);
             writer.WriteStringValue("public", Public);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit>("rateLimit", RateLimit);
             writer.WriteStringValue("secret", Secret);

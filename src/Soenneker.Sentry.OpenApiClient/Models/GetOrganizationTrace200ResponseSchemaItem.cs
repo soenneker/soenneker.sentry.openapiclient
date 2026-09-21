@@ -155,7 +155,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProfilerId { get; set; }
 #endif
         /// <summary>The project_id property</summary>
-        public int? ProjectId { get; set; }
+        public long? ProjectId { get; set; }
         /// <summary>The project_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -253,7 +253,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "parent_span_id", n => { ParentSpanId = n.GetStringValue(); } },
                 { "profile_id", n => { ProfileId = n.GetStringValue(); } },
                 { "profiler_id", n => { ProfilerId = n.GetStringValue(); } },
-                { "project_id", n => { ProjectId = n.GetIntValue(); } },
+                { "project_id", n => { ProjectId = n.GetLongValue(); } },
                 { "project_slug", n => { ProjectSlug = n.GetStringValue(); } },
                 { "region_name", n => { RegionName = n.GetStringValue(); } },
                 { "sdk_name", n => { SdkName = n.GetStringValue(); } },
@@ -292,7 +292,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("parent_span_id", ParentSpanId);
             writer.WriteStringValue("profile_id", ProfileId);
             writer.WriteStringValue("profiler_id", ProfilerId);
-            writer.WriteIntValue("project_id", ProjectId);
+            writer.WriteLongValue("project_id", ProjectId);
             writer.WriteStringValue("project_slug", ProjectSlug);
             writer.WriteStringValue("region_name", RegionName);
             writer.WriteStringValue("sdk_name", SdkName);
