@@ -30,6 +30,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string PreferredPolarity { get; set; }
 #endif
+        /// <summary>The timeWindow property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TimeWindow { get; set; }
+#nullable restore
+#else
+        public string TimeWindow { get; set; }
+#endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "max_values", n => { MaxValues = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholdsMaxValues>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholdsMaxValues.CreateFromDiscriminatorValue); } },
                 { "preferredPolarity", n => { PreferredPolarity = n.GetStringValue(); } },
+                { "timeWindow", n => { TimeWindow = n.GetStringValue(); } },
                 { "unit", n => { Unit = n.GetStringValue(); } },
             };
         }
@@ -77,6 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholdsMaxValues>("max_values", MaxValues);
             writer.WriteStringValue("preferredPolarity", PreferredPolarity);
+            writer.WriteStringValue("timeWindow", TimeWindow);
             writer.WriteStringValue("unit", Unit);
             writer.WriteAdditionalData(AdditionalData);
         }

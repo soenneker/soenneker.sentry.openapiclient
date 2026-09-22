@@ -19046,6 +19046,533 @@
         ]
       }
     },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "List a Project\u0027s CODEOWNERS Configurations",
+        "description": "Return the CODEOWNERS configurations for a project.",
+        "operationId": "ListProjectCodeOwners",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "Optional fields to expand.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListProjectCodeOwnersExpandParameterItem"
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseSchema"
+                },
+                "examples": {
+                  "ListAProject\u0027sCODEOWNERSConfigurations": {
+                    "summary": "List a project\u0027s CODEOWNERS configurations",
+                    "value": [
+                      {
+                        "id": "42",
+                        "raw": "src/* user@example.com",
+                        "dateCreated": "2024-01-15T10:30:00Z",
+                        "dateUpdated": "2024-01-15T10:30:00Z",
+                        "dateSynced": "2024-01-15T10:30:00Z",
+                        "codeMappingId": "7",
+                        "provider": "github",
+                        "errors": {
+                          "missing_external_teams": [],
+                          "missing_external_users": [],
+                          "missing_user_emails": [],
+                          "teams_without_access": [],
+                          "users_without_access": []
+                        },
+                        "schema": {
+                          "$version": 1,
+                          "rules": [
+                            {
+                              "matcher": {
+                                "type": "codeowners",
+                                "pattern": "src/*"
+                              },
+                              "owners": [
+                                {
+                                  "type": "user",
+                                  "id": "1",
+                                  "name": "user@example.com"
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        "codeOwnersUrl": "https://github.com/example/repository/blob/main/CODEOWNERS"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Create a CODEOWNERS Configuration for a Project",
+        "description": "Create a CODEOWNERS configuration for a project.",
+        "operationId": "CreateProjectCodeOwners",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateProjectCodeOwnersRequest"
+              },
+              "examples": {
+                "CreateACODEOWNERSConfiguration": {
+                  "summary": "Create a CODEOWNERS configuration",
+                  "value": {
+                    "raw": "src/* user@example.com",
+                    "codeMappingId": "7"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectCodeOwners201Response"
+                },
+                "examples": {
+                  "CreatedCODEOWNERSConfiguration": {
+                    "summary": "Created CODEOWNERS configuration",
+                    "value": {
+                      "id": "42",
+                      "raw": "src/* user@example.com",
+                      "dateCreated": "2024-01-15T10:30:00Z",
+                      "dateUpdated": "2024-01-15T10:30:00Z",
+                      "dateSynced": "2024-01-15T10:30:00Z",
+                      "codeMappingId": "7",
+                      "provider": "github",
+                      "errors": {
+                        "missing_external_teams": [],
+                        "missing_external_users": [],
+                        "missing_user_emails": [],
+                        "teams_without_access": [],
+                        "users_without_access": []
+                      },
+                      "schema": {
+                        "$version": 1,
+                        "rules": [
+                          {
+                            "matcher": {
+                              "type": "codeowners",
+                              "pattern": "src/*"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "1",
+                                "name": "user@example.com"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "codeOwnersUrl": "https://github.com/example/repository/blob/main/CODEOWNERS",
+                      "ownershipSyntax": "codeowners:src/* user@example.com\n"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/{codeownersId}": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Retrieve a Project\u0027s CODEOWNERS Configuration",
+        "description": "Return a single CODEOWNERS configuration.",
+        "operationId": "RetrieveProjectCodeOwners",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codeownersId",
+            "in": "path",
+            "description": "The ID of the CODEOWNERS configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveProjectCodeOwners200Response"
+                },
+                "examples": {
+                  "RetrieveACODEOWNERSConfiguration": {
+                    "summary": "Retrieve a CODEOWNERS configuration",
+                    "value": {
+                      "id": "42",
+                      "raw": "src/* user@example.com",
+                      "dateCreated": "2024-01-15T10:30:00Z",
+                      "dateUpdated": "2024-01-15T10:30:00Z",
+                      "dateSynced": "2024-01-15T10:30:00Z",
+                      "codeMappingId": "7",
+                      "provider": "github",
+                      "errors": {
+                        "missing_external_teams": [],
+                        "missing_external_users": [],
+                        "missing_user_emails": [],
+                        "teams_without_access": [],
+                        "users_without_access": []
+                      },
+                      "schema": {
+                        "$version": 1,
+                        "rules": [
+                          {
+                            "matcher": {
+                              "type": "codeowners",
+                              "pattern": "src/*"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "1",
+                                "name": "user@example.com"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "codeOwnersUrl": "https://github.com/example/repository/blob/main/CODEOWNERS"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Update a Project\u0027s CODEOWNERS Configuration",
+        "description": "Update a CODEOWNERS configuration.",
+        "operationId": "UpdateProjectCodeOwners",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codeownersId",
+            "in": "path",
+            "description": "The ID of the CODEOWNERS configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateProjectCodeOwnersRequest"
+              },
+              "examples": {
+                "UpdateACODEOWNERSConfiguration": {
+                  "summary": "Update a CODEOWNERS configuration",
+                  "value": {
+                    "raw": "src/* #backend"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateProjectCodeOwners200Response"
+                },
+                "examples": {
+                  "UpdatedCODEOWNERSConfiguration": {
+                    "summary": "Updated CODEOWNERS configuration",
+                    "value": {
+                      "id": "42",
+                      "raw": "src/* user@example.com",
+                      "dateCreated": "2024-01-15T10:30:00Z",
+                      "dateUpdated": "2024-01-15T10:30:00Z",
+                      "dateSynced": "2024-01-15T10:30:00Z",
+                      "codeMappingId": "7",
+                      "provider": "github",
+                      "errors": {
+                        "missing_external_teams": [],
+                        "missing_external_users": [],
+                        "missing_user_emails": [],
+                        "teams_without_access": [],
+                        "users_without_access": []
+                      },
+                      "schema": {
+                        "$version": 1,
+                        "rules": [
+                          {
+                            "matcher": {
+                              "type": "codeowners",
+                              "pattern": "src/*"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "1",
+                                "name": "user@example.com"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "codeOwnersUrl": "https://github.com/example/repository/blob/main/CODEOWNERS",
+                      "ownershipSyntax": "codeowners:src/* user@example.com\n"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Delete a Project\u0027s CODEOWNERS Configuration",
+        "description": "Delete a CODEOWNERS configuration.",
+        "operationId": "DeleteProjectCodeOwners",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "codeownersId",
+            "in": "path",
+            "description": "The ID of the CODEOWNERS configuration.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments": {
       "get": {
         "tags": [
@@ -33013,7 +33540,7 @@
             "type": "string",
             "description": "Referrer identifying where the issue fix was triggered from."
           },
-          "enable_bash_tools": {
+          "enable_bash_mode": {
             "type": "boolean",
             "description": "Override bash mode tools.",
             "default": false
@@ -36417,6 +36944,96 @@
           },
           "debugFilesRole": {
             "$ref": "#/components/schemas/ProjectAdminDebugFilesRole"
+          }
+        }
+      },
+      "ProjectCodeOwners": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectCodeOwnersCreateRequest": {
+        "required": [
+          "codeMappingId",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "raw": {
+            "type": "string",
+            "description": "The raw contents of the CODEOWNERS file."
+          },
+          "codeMappingId": {
+            "type": "string",
+            "description": "The ID of the code mapping used to translate repository paths to stack trace paths."
+          }
+        }
+      },
+      "ProjectCodeOwnersList": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProjectCodeOwnersListItem"
+        }
+      },
+      "ProjectCodeOwnersUpdateRequest": {
+        "type": "object",
+        "properties": {
+          "raw": {
+            "type": "string",
+            "description": "The raw contents of the CODEOWNERS file."
+          },
+          "codeMappingId": {
+            "type": "string",
+            "description": "The ID of the code mapping used to translate repository paths to stack trace paths."
           }
         }
       },
@@ -41965,6 +42582,60 @@
           }
         }
       },
+      "ProjectCodeOwnersListItem": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
       "ProjectEventsResponseDictItem": {
         "required": [
           "crashFile",
@@ -42916,6 +43587,29 @@
           },
           "region_name": {
             "type": "string"
+          }
+        }
+      },
+      "ProjectCodeOwnersSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1RulesItem"
+            }
           }
         }
       },
@@ -44036,6 +44730,29 @@
           }
         ]
       },
+      "ProjectCodeOwnersListItemSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
       "ProjectFilterResponseItemActive": {
         "type": "object",
         "anyOf": [
@@ -44919,6 +45636,24 @@
           },
           "additional_attributes": {
             "$ref": "#/components/schemas/OrganizationTraceResponseItemAnyOf3AdditionalAttributesProperty"
+          }
+        }
+      },
+      "ProjectCodeOwnersSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1RulesItem"
+            }
           }
         }
       },
@@ -46276,6 +47011,24 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemActionsAnyOf1Item"
+        }
+      },
+      "ProjectCodeOwnersListItemSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1RulesItem"
+            }
+          }
         }
       },
       "SentryAppComponentsResponseItemErrorAnyOf2": {
@@ -51416,6 +52169,101 @@
           "active": {
             "type": "boolean",
             "default": false
+          }
+        }
+      },
+      "ProjectCodeOwnersCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProjectCodeOwnersErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -57112,6 +57960,101 @@
           }
         }
       },
+      "ProjectCodeOwnersListItemCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ProjectCodeOwnersListItemErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ProjectEventsResponseDictItemUser": {
         "type": "object",
         "properties": {
@@ -57722,6 +58665,24 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/OrganizationTraceResponseItemAnyOf3AdditionalAttributesAdditionalProperties"
+        }
+      },
+      "ProjectCodeOwnersSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
         }
       },
       "WorkflowTriggersConditionsAnyOf1Item": {
@@ -58816,6 +59777,24 @@
           }
         }
       },
+      "ProjectCodeOwnersListItemSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
+        }
+      },
       "SentryAppComponentsResponseItemErrorAnyOf2Context": {
         "type": "object",
         "additionalProperties": {
@@ -59160,6 +60139,9 @@
         "type": "object",
         "properties": {
           "preferredPolarity": {
+            "type": "string"
+          },
+          "timeWindow": {
             "type": "string"
           },
           "max_values": {
@@ -61661,6 +62643,45 @@
           "$ref": "#/components/schemas/OutcomesResponseGroupsItemSeriesAdditionalProperties"
         }
       },
+      "ProjectCodeOwnersCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersCodeMappingProviderAspectsProperty"
+          }
+        },
+        "nullable": true
+      },
       "ProjectEventDetailsResponseUserGeo": {
         "type": "object",
         "additionalProperties": {
@@ -63822,6 +64843,45 @@
           "type": "string"
         }
       },
+      "ProjectCodeOwnersListItemCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/ProjectCodeOwnersListItemCodeMappingProviderAspectsProperty"
+          }
+        },
+        "nullable": true
+      },
       "ProjectEventsResponseDictItemUserGeo": {
         "type": "object",
         "additionalProperties": {
@@ -63922,6 +64982,40 @@
             "type": "string"
           }
         }
+      },
+      "ProjectCodeOwnersSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectCodeOwnersSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
       },
       "WorkflowTriggersActionsAnyOf1ItemData": {
         "type": "object",
@@ -64292,6 +65386,40 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemActionsAnyOf1ItemConfigAdditionalProperties"
         }
+      },
+      "ProjectCodeOwnersListItemSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "ProjectCodeOwnersListItemSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
       },
       "CreateOrganizationReleaseResponseProjectsItemHealthDataStats": {
         "type": "object",
@@ -64971,6 +66099,12 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
+        }
+      },
+      "ProjectCodeOwnersCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectCodeOwnersCodeMappingProviderAspectsAdditionalProperties"
         }
       },
       "ProjectEventDetailsResponseBreakdownsAdditionalPropertiesAdditionalProperties": {
@@ -65716,6 +66850,12 @@
           "name": {
             "type": "string"
           }
+        }
+      },
+      "ProjectCodeOwnersListItemCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectCodeOwnersListItemCodeMappingProviderAspectsAdditionalProperties"
         }
       },
       "GroupHashesResponseItemLatestEventAnyOf1BreakdownsAdditionalPropertiesAdditionalProperties": {
@@ -73305,6 +74445,204 @@
           }
         }
       },
+      "ListProjectCodeOwners200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItem"
+        }
+      },
+      "CreateProjectCodeOwnersRequest": {
+        "required": [
+          "codeMappingId",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "raw": {
+            "type": "string",
+            "description": "The raw contents of the CODEOWNERS file."
+          },
+          "codeMappingId": {
+            "type": "string",
+            "description": "The ID of the code mapping used to translate repository paths to stack trace paths."
+          }
+        }
+      },
+      "CreateProjectCodeOwners201Response": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200Response": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateProjectCodeOwnersRequest": {
+        "type": "object",
+        "properties": {
+          "raw": {
+            "type": "string",
+            "description": "The raw contents of the CODEOWNERS file."
+          },
+          "codeMappingId": {
+            "type": "string",
+            "description": "The ID of the code mapping used to translate repository paths to stack trace paths."
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200Response": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
       "ListProjectEnvironments200Response": {
         "type": "array",
         "items": {
@@ -77311,7 +78649,7 @@
             "type": "string",
             "description": "Referrer identifying where the issue fix was triggered from."
           },
-          "enable_bash_tools": {
+          "enable_bash_mode": {
             "type": "boolean",
             "description": "Override bash mode tools.",
             "default": false
@@ -78196,6 +79534,12 @@
           "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseSchemaItem"
         }
       },
+      "ListProjectCodeOwners200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseSchemaItem"
+        }
+      },
       "ListProjectEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
@@ -79073,6 +80417,98 @@
           }
         ]
       },
+      "ListProjectCodeOwners200ResponseItemSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseSchema": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1"
+          },
+          {
+            "type": "object",
+            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
+          }
+        ],
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
       "GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile": {
         "type": "object",
         "anyOf": [
@@ -79776,6 +81212,78 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsAnyOf1Item"
+        }
+      },
+      "ListProjectCodeOwners200ResponseItemSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItem"
+            }
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseSchemaAnyOf1": {
+        "required": [
+          "$version",
+          "rules"
+        ],
+        "type": "object",
+        "properties": {
+          "$version": {
+            "type": "integer"
+          },
+          "rules": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItem"
+            }
+          }
         }
       },
       "GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1": {
@@ -82534,6 +84042,12 @@
       "OutcomesResponseGroupsItemSeriesAdditionalProperties": {
         "type": "object"
       },
+      "ProjectCodeOwnersCodeMappingProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectCodeOwnersCodeMappingProviderAspectsPropertyAdditionalProperties"
+        }
+      },
       "ProjectEventDetailsResponseUserDataAdditionalProperties": {
         "type": "object"
       },
@@ -82685,6 +84199,12 @@
       "OrganizationIssueViewListItemCreatedByExperimentsAdditionalProperties": {
         "type": "object"
       },
+      "ProjectCodeOwnersListItemCodeMappingProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ProjectCodeOwnersListItemCodeMappingProviderAspectsPropertyAdditionalProperties"
+        }
+      },
       "ProjectEventsResponseDictItemUserDataAdditionalProperties": {
         "type": "object"
       },
@@ -82748,6 +84268,9 @@
       "OrganizationWithProjectsAndTeamsTeamsItemOrganizationOnboardingTasksItemData": {
         "type": "object"
       },
+      "ProjectCodeOwnersCodeMappingProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
       "ProjectEventDetailsResponseReleaseVersionInfoVersionAdditionalProperties": {
         "type": "object"
       },
@@ -82779,6 +84302,9 @@
         "type": "object"
       },
       "OrganizationGroupIndexGetResponseItemStatusDetailsActorExperimentsAdditionalProperties": {
+        "type": "object"
+      },
+      "ProjectCodeOwnersListItemCodeMappingProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "OrganizationWithProjectsAndTeamsTeamsItemOrganizationExtraOptionsAdditionalPropertiesAdditionalProperties": {
@@ -93327,6 +94853,345 @@
       "UpdateProject200ResponseSeerNightshiftTweaks": {
         "type": "object"
       },
+      "ListProjectCodeOwners200ResponseItem": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "ListProjectEnvironments200ResponseItem": {
         "required": [
           "id",
@@ -101413,6 +103278,60 @@
           }
         }
       },
+      "ListProjectCodeOwners200ResponseSchemaItem": {
+        "required": [
+          "codeMappingId",
+          "dateCreated",
+          "dateSynced",
+          "dateUpdated",
+          "id",
+          "provider",
+          "raw"
+        ],
+        "type": "object",
+        "properties": {
+          "codeMapping": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemCodeMapping"
+          },
+          "ownershipSyntax": {
+            "type": "string"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemErrors"
+          },
+          "schema": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchema"
+          },
+          "codeOwnersUrl": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "raw": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateUpdated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "dateSynced": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "codeMappingId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          }
+        }
+      },
       "ListProjectEnvironments200ResponseSchemaItem": {
         "required": [
           "id",
@@ -103651,6 +105570,78 @@
           }
         }
       },
+      "ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItem": {
+        "required": [
+          "matcher",
+          "owners"
+        ],
+        "type": "object",
+        "properties": {
+          "matcher": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItemMatcher"
+          },
+          "owners": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItemOwnersItem"
+            }
+          }
+        }
+      },
       "ListProjectReleaseCommits200ResponseItemAuthorAnyOf1IdentitiesItem": {
         "required": [
           "dateSynced",
@@ -104663,6 +106654,9 @@
           "$ref": "#/components/schemas/OrganizationWithProjectsAndTeamsTeamsItemOrganizationExtraOptionsPropertyAdditionalPropertiesAdditionalProperties"
         }
       },
+      "ProjectCodeOwnersCodeMappingProviderAspectsPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "ProjectEventDetailsResponseReleaseVersionInfoVersionPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -104679,6 +106673,9 @@
         "type": "object"
       },
       "OrganizationGroupIndexGetResponseItemStatusDetailsActorExperimentsPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "ProjectCodeOwnersListItemCodeMappingProviderAspectsPropertyAdditionalProperties": {
         "type": "object"
       },
       "OrganizationWithProjectsAndTeamsTeamsItemOrganizationExtraOptionsAdditionalPropertiesPropertyAdditionalProperties": {
@@ -105570,6 +107567,9 @@
           "preferredPolarity": {
             "type": "string"
           },
+          "timeWindow": {
+            "type": "string"
+          },
           "max_values": {
             "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues"
           },
@@ -105785,6 +107785,9 @@
         "type": "object",
         "properties": {
           "preferredPolarity": {
+            "type": "string"
+          },
+          "timeWindow": {
             "type": "string"
           },
           "max_values": {
@@ -106116,6 +108119,9 @@
         "type": "object",
         "properties": {
           "preferredPolarity": {
+            "type": "string"
+          },
+          "timeWindow": {
             "type": "string"
           },
           "max_values": {
@@ -112316,6 +114322,218 @@
           }
         }
       },
+      "ListProjectCodeOwners200ResponseItemCodeMapping": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemCodeMappingProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ListProjectCodeOwners200ResponseItemErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseCodeMappingProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "RetrieveProjectCodeOwners200ResponseCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "UpdateProjectCodeOwners200ResponseCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseCodeMappingProviderAspects"
+          }
+        },
+        "nullable": true
+      },
       "ListProjectEvents200ResponseItemUser": {
         "type": "object",
         "properties": {
@@ -115233,6 +117451,142 @@
           "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsAnyOf1ItemConfigAdditionalProperties"
         }
       },
+      "ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "ListProjectCodeOwners200ResponseItemSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
+      },
+      "CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "CreateProjectCodeOwners201ResponseSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
+      },
+      "RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
+      },
+      "UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItemMatcher": {
+        "required": [
+          "pattern",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "pattern": {
+            "type": "string"
+          }
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseSchemaAnyOf1RulesItemOwnersItem": {
+        "required": [
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          }
+        },
+        "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
+      },
       "ListProjectReleaseCommits200ResponseItemAuthorAnyOf1IdentitiesItemOrganization": {
         "required": [
           "name",
@@ -118042,6 +120396,63 @@
       "UpdateProject200ResponseOrganizationOnboardingTasksItemData": {
         "type": "object"
       },
+      "ListProjectCodeOwners200ResponseItemCodeMappingProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemCodeMappingProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "CreateProjectCodeOwners201ResponseCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseCodeMappingProviderAspectsAdditionalProperties"
+        }
+      },
+      "RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAdditionalProperties"
+        }
+      },
+      "UpdateProjectCodeOwners200ResponseCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseCodeMappingProviderAspectsAdditionalProperties"
+        }
+      },
       "ListProjectEvents200ResponseItemUserGeo": {
         "type": "object",
         "additionalProperties": {
@@ -119729,6 +122140,21 @@
       "UpdateProject200ResponseOrganizationExtraOptionsAdditionalPropertiesAdditionalProperties": {
         "type": "object"
       },
+      "ListProjectCodeOwners200ResponseItemCodeMappingProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemCodeMappingProviderAspectsAdditionalProperties"
+        }
+      },
+      "CreateProjectCodeOwners201ResponseCodeMappingProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
+      "RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
+      "UpdateProjectCodeOwners200ResponseCodeMappingProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
       "ListProjectEvents200ResponseItemUserDataAdditionalProperties": {
         "type": "object"
       },
@@ -120168,6 +122594,9 @@
         "type": "object"
       },
       "ListOrganizationUserTeams200ResponseItemOrganizationExtraOptionsAdditionalPropertiesAdditionalProperties": {
+        "type": "object"
+      },
+      "ListProjectCodeOwners200ResponseItemCodeMappingProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "ListProjectReleases200ResponseItemProjectsItemHealthDataStatsAdditionalProperties": {
@@ -148654,6 +151083,28 @@
             {
               "value": "1",
               "name": "Value1"
+            }
+          ]
+        }
+      },
+      "ListProjectCodeOwnersExpandParameterItem": {
+        "enum": [
+          "codeMapping",
+          "ownershipSyntax"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListProjectCodeOwnersExpandParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "codeMapping",
+              "name": "CodeMapping"
+            },
+            {
+              "value": "ownershipSyntax",
+              "name": "OwnershipSyntax"
             }
           ]
         }
