@@ -78,6 +78,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
+        /// <summary>The missingFeatures property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>? MissingFeatures { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem> MissingFeatures { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,6 +163,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "gracePeriodEnd", n => { GracePeriodEnd = n.GetStringValue(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "missingFeatures", n => { MissingFeatures = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetIntValue(); } },
                 { "organizationIntegrationStatus", n => { OrganizationIntegrationStatus = n.GetStringValue(); } },
@@ -179,6 +188,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("gracePeriodEnd", GracePeriodEnd);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>("missingFeatures", MissingFeatures);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationIntegrationStatus", OrganizationIntegrationStatus);

@@ -62,6 +62,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem> LinkIssueConfig { get; set; }
 #endif
+        /// <summary>The missingFeatures property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem>? MissingFeatures { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem> MissingFeatures { get; set; }
+#endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -127,6 +135,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "linkIssueConfig", n => { LinkIssueConfig = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "missingFeatures", n => { MissingFeatures = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "outOfDate", n => { OutOfDate = n.GetBoolValue(); } },
                 { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseProvider>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseProvider.CreateFromDiscriminatorValue); } },
@@ -147,6 +156,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem>("linkIssueConfig", LinkIssueConfig);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem>("missingFeatures", MissingFeatures);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("outOfDate", OutOfDate);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseProvider>("provider", Provider);

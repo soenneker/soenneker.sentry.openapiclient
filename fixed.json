@@ -5788,6 +5788,7 @@
                           "users:read"
                         ],
                         "outOfDate": false,
+                        "missingFeatures": null,
                         "status": "active",
                         "provider": {
                           "key": "slack",
@@ -5889,6 +5890,7 @@
                         "users:read"
                       ],
                       "outOfDate": false,
+                      "missingFeatures": null,
                       "status": "active",
                       "provider": {
                         "key": "slack",
@@ -31038,6 +31040,7 @@
                       "accountType": null,
                       "scopes": null,
                       "outOfDate": null,
+                      "missingFeatures": null,
                       "status": "active",
                       "provider": {
                         "key": "jira",
@@ -31081,6 +31084,7 @@
                       "accountType": null,
                       "scopes": null,
                       "outOfDate": null,
+                      "missingFeatures": null,
                       "status": "active",
                       "provider": {
                         "key": "jira",
@@ -34440,6 +34444,7 @@
           "domainName",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "outOfDate",
           "provider",
@@ -34475,6 +34480,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationIssueConfigResponseMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -35594,6 +35606,7 @@
           "gracePeriodEnd",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "organizationId",
           "organizationIntegrationStatus",
@@ -35631,6 +35644,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationIntegrationResponseMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -40098,6 +40118,7 @@
           "externalIssues",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "outOfDate",
           "provider",
@@ -40133,6 +40154,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IssueIntegrationsResponseItemMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -40796,6 +40824,7 @@
           "gracePeriodEnd",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "organizationId",
           "organizationIntegrationStatus",
@@ -40833,6 +40862,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIntegrationResponseItemMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -49215,6 +49251,22 @@
         },
         "nullable": true
       },
+      "IntegrationIssueConfigResponseMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
+      },
       "IntegrationIssueConfigResponseProvider": {
         "required": [
           "aspects",
@@ -50810,6 +50862,22 @@
             "type": "string"
           }
         }
+      },
+      "OrganizationIntegrationResponseMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "OrganizationIssueViewCreatedBy": {
         "required": [
@@ -55024,6 +55092,22 @@
           "$ref": "#/components/schemas/GroupEventsResponseDictItemMetadataAdditionalProperties"
         }
       },
+      "IssueIntegrationsResponseItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
+      },
       "IssueIntegrationsResponseItemProvider": {
         "required": [
           "aspects",
@@ -56141,6 +56225,22 @@
             "type": "boolean"
           }
         }
+      },
+      "ListOrganizationIntegrationResponseItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "ListOrganizationMemberResponseItemExternalUsersItem": {
         "required": [
@@ -69513,6 +69613,7 @@
           "gracePeriodEnd",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "organizationId",
           "organizationIntegrationStatus",
@@ -69550,6 +69651,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetOrganizationIntegration200ResponseMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -78889,6 +78997,7 @@
           "domainName",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "outOfDate",
           "provider",
@@ -78924,6 +79033,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -87524,6 +87640,7 @@
           "gracePeriodEnd",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "organizationId",
           "organizationIntegrationStatus",
@@ -87563,6 +87680,13 @@
             "type": "boolean",
             "nullable": true
           },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseItemMissingFeaturesItem"
+            },
+            "nullable": true
+          },
           "status": {
             "type": "string"
           },
@@ -87589,6 +87713,22 @@
             "nullable": true
           }
         }
+      },
+      "GetOrganizationIntegration200ResponseMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "GetOrganizationIntegration200ResponseProvider": {
         "type": "object"
@@ -100680,6 +100820,7 @@
           "externalIssues",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "outOfDate",
           "provider",
@@ -100717,6 +100858,13 @@
             "type": "boolean",
             "nullable": true
           },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem"
+            },
+            "nullable": true
+          },
           "status": {
             "type": "string"
           },
@@ -100730,6 +100878,22 @@
             }
           }
         }
+      },
+      "RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseProvider": {
         "required": [
@@ -101529,6 +101693,7 @@
           "gracePeriodEnd",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "organizationId",
           "organizationIntegrationStatus",
@@ -101566,6 +101731,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIntegrations200ResponseItemMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -104819,6 +104991,7 @@
           "externalIssues",
           "icon",
           "id",
+          "missingFeatures",
           "name",
           "outOfDate",
           "provider",
@@ -104854,6 +105027,13 @@
           },
           "outOfDate": {
             "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem"
+            },
             "nullable": true
           },
           "status": {
@@ -109490,6 +109670,22 @@
             "type": "boolean"
           }
         }
+      },
+      "ListOrganizationIntegrations200ResponseItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "ListOrganizationIntegrations200ResponseItemProvider": {
         "type": "object"
@@ -117178,6 +117374,22 @@
       },
       "GetOrganizationIssueEvent200ResponseSdkUpdatesItemAdditionalProperties": {
         "type": "object"
+      },
+      "ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
       },
       "ListOrganizationIssueIntegrations200ResponseItemProvider": {
         "required": [
