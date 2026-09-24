@@ -22,8 +22,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completeThrough property</summary>
-        public double? CompleteThrough { get; set; }
         /// <summary>The dataset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,15 +40,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The end property</summary>
         public double? End { get; set; }
-        /// <summary>The estimatedIngestionDelaySeconds property</summary>
-        public double? EstimatedIngestionDelaySeconds { get; set; }
-        /// <summary>The ingestionDelayStatus property</summary>
+        /// <summary>Ingestion status for the data behind a response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IngestionDelayStatus { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaIngestion? Ingestion { get; set; }
 #nullable restore
 #else
-        public string IngestionDelayStatus { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaIngestion Ingestion { get; set; }
 #endif
         /// <summary>The start property</summary>
         public double? Start { get; set; }
@@ -80,12 +76,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "acceptedAnnotations", n => { AcceptedAnnotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "completeThrough", n => { CompleteThrough = n.GetDoubleValue(); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "droppedAnnotations", n => { DroppedAnnotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
-                { "estimatedIngestionDelaySeconds", n => { EstimatedIngestionDelaySeconds = n.GetDoubleValue(); } },
-                { "ingestionDelayStatus", n => { IngestionDelayStatus = n.GetStringValue(); } },
+                { "ingestion", n => { Ingestion = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaIngestion>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaIngestion.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
             };
         }
@@ -97,12 +91,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem>("acceptedAnnotations", AcceptedAnnotations);
-            writer.WriteDoubleValue("completeThrough", CompleteThrough);
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem>("droppedAnnotations", DroppedAnnotations);
             writer.WriteDoubleValue("end", End);
-            writer.WriteDoubleValue("estimatedIngestionDelaySeconds", EstimatedIngestionDelaySeconds);
-            writer.WriteStringValue("ingestionDelayStatus", IngestionDelayStatus);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseMetaIngestion>("ingestion", Ingestion);
             writer.WriteDoubleValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

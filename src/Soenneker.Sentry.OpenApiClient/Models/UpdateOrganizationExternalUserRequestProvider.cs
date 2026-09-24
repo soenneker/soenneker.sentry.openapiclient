@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `msteams`* `custom_scm`</summary>
+    /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `cursor_origin`* `msteams`* `custom_scm`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateOrganizationExternalUserRequestProvider
     {
@@ -34,6 +34,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "gitlab")]
         #pragma warning disable CS1591
         Gitlab,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "cursor_origin")]
+        #pragma warning disable CS1591
+        CursorOrigin,
         #pragma warning restore CS1591
         [EnumMember(Value = "msteams")]
         #pragma warning disable CS1591

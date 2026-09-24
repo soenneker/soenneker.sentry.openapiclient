@@ -11978,16 +11978,25 @@
                             ]
                           }
                         },
-                        "estimatedIngestionDelaySeconds": {
-                          "type": "number",
-                          "format": "double"
-                        },
-                        "completeThrough": {
-                          "type": "number",
-                          "format": "double"
-                        },
-                        "ingestionDelayStatus": {
-                          "type": "string"
+                        "ingestion": {
+                          "type": "object",
+                          "description": "Ingestion status for the data behind a response.",
+                          "properties": {
+                            "status": {
+                              "type": "string"
+                            },
+                            "delaySeconds": {
+                              "type": "number",
+                              "format": "double"
+                            },
+                            "completeThrough": {
+                              "type": "number",
+                              "format": "double"
+                            }
+                          },
+                          "required": [
+                            "status"
+                          ]
                         }
                       },
                       "required": [
@@ -12268,11 +12277,12 @@
                       "slack_staging",
                       "perforce",
                       "gitlab",
+                      "cursor_origin",
                       "msteams",
                       "custom_scm"
                     ],
                     "type": "string",
-                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
                   },
                   "integration_id": {
                     "type": "integer",
@@ -12473,11 +12483,12 @@
                       "slack_staging",
                       "perforce",
                       "gitlab",
+                      "cursor_origin",
                       "msteams",
                       "custom_scm"
                     ],
                     "type": "string",
-                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
                   },
                   "integration_id": {
                     "type": "integer",
@@ -67210,11 +67221,12 @@
                       "slack_staging",
                       "perforce",
                       "gitlab",
+                      "cursor_origin",
                       "msteams",
                       "custom_scm"
                     ],
                     "type": "string",
-                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
                   },
                   "integration_id": {
                     "type": "integer",
@@ -67420,11 +67432,12 @@
                       "slack_staging",
                       "perforce",
                       "gitlab",
+                      "cursor_origin",
                       "msteams",
                       "custom_scm"
                     ],
                     "type": "string",
-                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+                    "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
                   },
                   "integration_id": {
                     "type": "integer",
@@ -83794,11 +83807,12 @@
               "slack_staging",
               "perforce",
               "gitlab",
+              "cursor_origin",
               "msteams",
               "custom_scm"
             ],
             "type": "string",
-            "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+            "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
           },
           "integration_id": {
             "type": "integer",
@@ -83838,11 +83852,12 @@
               "slack_staging",
               "perforce",
               "gitlab",
+              "cursor_origin",
               "msteams",
               "custom_scm"
             ],
             "type": "string",
-            "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `msteams`\n* `custom_scm`"
+            "description": "The provider of the external actor.\n\n* `github`\n* `github_enterprise`\n* `jira_server`\n* `slack`\n* `slack_staging`\n* `perforce`\n* `gitlab`\n* `cursor_origin`\n* `msteams`\n* `custom_scm`"
           },
           "integration_id": {
             "type": "integer",
@@ -96960,16 +96975,25 @@
                   ]
                 }
               },
-              "estimatedIngestionDelaySeconds": {
-                "type": "number",
-                "format": "double"
-              },
-              "completeThrough": {
-                "type": "number",
-                "format": "double"
-              },
-              "ingestionDelayStatus": {
-                "type": "string"
+              "ingestion": {
+                "type": "object",
+                "description": "Ingestion status for the data behind a response.",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "delaySeconds": {
+                    "type": "number",
+                    "format": "double"
+                  },
+                  "completeThrough": {
+                    "type": "number",
+                    "format": "double"
+                  }
+                },
+                "required": [
+                  "status"
+                ]
               }
             },
             "required": [

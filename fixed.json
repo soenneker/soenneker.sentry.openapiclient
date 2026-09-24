@@ -50742,16 +50742,8 @@
               "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaAcceptedAnnotationsItem"
             }
           },
-          "estimatedIngestionDelaySeconds": {
-            "type": "number",
-            "format": "double"
-          },
-          "completeThrough": {
-            "type": "number",
-            "format": "double"
-          },
-          "ingestionDelayStatus": {
-            "type": "string"
+          "ingestion": {
+            "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaIngestion"
           }
         }
       },
@@ -61994,6 +61986,26 @@
           }
         },
         "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
+      },
+      "OrganizationEventsTimeseriesResponseMetaIngestion": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "delaySeconds": {
+            "type": "number",
+            "format": "double"
+          },
+          "completeThrough": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "description": "Ingestion status for the data behind a response."
       },
       "OrganizationEventsTimeseriesResponseTimeSeriesItemValuesItem": {
         "required": [
@@ -87169,16 +87181,8 @@
               "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem"
             }
           },
-          "estimatedIngestionDelaySeconds": {
-            "type": "number",
-            "format": "double"
-          },
-          "completeThrough": {
-            "type": "number",
-            "format": "double"
-          },
-          "ingestionDelayStatus": {
-            "type": "string"
+          "ingestion": {
+            "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaIngestion"
           }
         }
       },
@@ -109254,6 +109258,26 @@
         },
         "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
       },
+      "ListOrganizationEventsTimeseries200ResponseMetaIngestion": {
+        "required": [
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "delaySeconds": {
+            "type": "number",
+            "format": "double"
+          },
+          "completeThrough": {
+            "type": "number",
+            "format": "double"
+          }
+        },
+        "description": "Ingestion status for the data behind a response."
+      },
       "ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem": {
         "required": [
           "incomplete",
@@ -126434,12 +126458,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "ExternalTeamProvider",
           "modelAsString": false,
@@ -126473,6 +126498,10 @@
               "name": "Gitlab"
             },
             {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
+            },
+            {
               "value": "msteams",
               "name": "Msteams"
             },
@@ -126492,12 +126521,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "ExternalUserProvider",
           "modelAsString": false,
@@ -126529,6 +126559,10 @@
             {
               "value": "gitlab",
               "name": "Gitlab"
+            },
+            {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
             },
             {
               "value": "msteams",
@@ -134370,12 +134404,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "CreateOrganizationExternalUserRequestProvider",
           "modelAsString": false,
@@ -134409,6 +134444,10 @@
               "name": "Gitlab"
             },
             {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
+            },
+            {
               "value": "msteams",
               "name": "Msteams"
             },
@@ -134428,12 +134467,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "UpdateOrganizationExternalUserRequestProvider",
           "modelAsString": false,
@@ -134465,6 +134505,10 @@
             {
               "value": "gitlab",
               "name": "Gitlab"
+            },
+            {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
             },
             {
               "value": "msteams",
@@ -135851,12 +135895,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "CreateTeamExternalTeamRequestProvider",
           "modelAsString": false,
@@ -135890,6 +135935,10 @@
               "name": "Gitlab"
             },
             {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
+            },
+            {
               "value": "msteams",
               "name": "Msteams"
             },
@@ -135909,12 +135958,13 @@
           "slack_staging",
           "perforce",
           "gitlab",
+          "cursor_origin",
           "msteams",
           "custom_scm"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
+        "description": "The provider of the external actor.\n\n* \u0060github\u0060\n* \u0060github_enterprise\u0060\n* \u0060jira_server\u0060\n* \u0060slack\u0060\n* \u0060slack_staging\u0060\n* \u0060perforce\u0060\n* \u0060gitlab\u0060\n* \u0060cursor_origin\u0060\n* \u0060msteams\u0060\n* \u0060custom_scm\u0060",
         "x-ms-enum": {
           "name": "UpdateTeamExternalTeamRequestProvider",
           "modelAsString": false,
@@ -135946,6 +135996,10 @@
             {
               "value": "gitlab",
               "name": "Gitlab"
+            },
+            {
+              "value": "cursor_origin",
+              "name": "CursorOrigin"
             },
             {
               "value": "msteams",

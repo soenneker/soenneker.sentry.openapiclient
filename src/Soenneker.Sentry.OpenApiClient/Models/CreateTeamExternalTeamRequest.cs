@@ -33,7 +33,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The Integration ID.</summary>
         public int? IntegrationId { get; set; }
-        /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `msteams`* `custom_scm`</summary>
+        /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `cursor_origin`* `msteams`* `custom_scm`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider? Provider { get; set; }
         /// <summary>ID of the Sentry team to link to the external team.</summary>
         public int? TeamId { get; set; }

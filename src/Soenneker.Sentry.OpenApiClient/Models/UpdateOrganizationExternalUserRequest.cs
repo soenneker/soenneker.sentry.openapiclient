@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? Id { get; private set; }
         /// <summary>The Integration ID.</summary>
         public int? IntegrationId { get; set; }
-        /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `msteams`* `custom_scm`</summary>
+        /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `cursor_origin`* `msteams`* `custom_scm`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationExternalUserRequestProvider? Provider { get; set; }
         /// <summary>The user ID in Sentry.</summary>
         public int? UserId { get; set; }
