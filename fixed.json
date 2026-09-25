@@ -5774,6 +5774,7 @@
                         "domainName": "alphabet-soup.slack.com",
                         "accountType": null,
                         "scopes": [
+                          "app_mentions:read",
                           "channels:read",
                           "chat:write",
                           "chat:write.customize",
@@ -5788,7 +5789,7 @@
                           "users:read"
                         ],
                         "outOfDate": false,
-                        "missingFeatures": null,
+                        "missingFeatures": [],
                         "status": "active",
                         "provider": {
                           "key": "slack",
@@ -5876,6 +5877,7 @@
                       "domainName": "alphabet-soup.slack.com",
                       "accountType": null,
                       "scopes": [
+                        "app_mentions:read",
                         "channels:read",
                         "chat:write",
                         "chat:write.customize",
@@ -5890,7 +5892,7 @@
                         "users:read"
                       ],
                       "outOfDate": false,
-                      "missingFeatures": null,
+                      "missingFeatures": [],
                       "status": "active",
                       "provider": {
                         "key": "slack",
@@ -19575,6 +19577,447 @@
         ]
       }
     },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "**Experimental:** This API is under active development and may change.\n\nList the custom inbound filters configured for a project.",
+        "operationId": "ListAProjectSCustomInboundFilters",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseSchema"
+                },
+                "examples": {
+                  "ListCustomInboundFilters": {
+                    "summary": "List custom inbound filters",
+                    "value": [
+                      {
+                        "id": "42",
+                        "name": "Drop TypeErrors from the 1.x releases",
+                        "active": true,
+                        "dataType": "error",
+                        "conditions": [
+                          {
+                            "type": "error_type",
+                            "value": [
+                              "TypeError"
+                            ]
+                          },
+                          {
+                            "type": "release",
+                            "value": [
+                              "1.*"
+                            ]
+                          }
+                        ],
+                        "dateCreated": "2024-07-23T17:52:53.981206Z",
+                        "dateUpdated": "2024-07-23T17:52:53.981206Z"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "**Experimental:** This API is under active development and may change.\n\nCreate a custom inbound filter for a project.",
+        "operationId": "CreateACustomInboundFilter",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateACustomInboundFilterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateACustomInboundFilter201Response"
+                },
+                "examples": {
+                  "CustomInboundFilter": {
+                    "summary": "Custom inbound filter",
+                    "value": {
+                      "id": "42",
+                      "name": "Drop TypeErrors from the 1.x releases",
+                      "active": true,
+                      "dataType": "error",
+                      "conditions": [
+                        {
+                          "type": "error_type",
+                          "value": [
+                            "TypeError"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "value": [
+                            "1.*"
+                          ]
+                        }
+                      ],
+                      "dateCreated": "2024-07-23T17:52:53.981206Z",
+                      "dateUpdated": "2024-07-23T17:52:53.981206Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters/{filterId}": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "**Experimental:** This API is under active development and may change.\n\nRetrieve a single custom inbound filter.",
+        "operationId": "RetrieveACustomInboundFilter",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filterId",
+            "in": "path",
+            "description": "The ID of the custom inbound filter.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveACustomInboundFilter200Response"
+                },
+                "examples": {
+                  "CustomInboundFilter": {
+                    "summary": "Custom inbound filter",
+                    "value": {
+                      "id": "42",
+                      "name": "Drop TypeErrors from the 1.x releases",
+                      "active": true,
+                      "dataType": "error",
+                      "conditions": [
+                        {
+                          "type": "error_type",
+                          "value": [
+                            "TypeError"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "value": [
+                            "1.*"
+                          ]
+                        }
+                      ],
+                      "dateCreated": "2024-07-23T17:52:53.981206Z",
+                      "dateUpdated": "2024-07-23T17:52:53.981206Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      },
+      "put": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "**Experimental:** This API is under active development and may change.\n\nUpdate a custom inbound filter\u0027s name, active state, or conditions.",
+        "operationId": "UpdateACustomInboundFilter",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filterId",
+            "in": "path",
+            "description": "The ID of the custom inbound filter.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateACustomInboundFilterRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateACustomInboundFilter200Response"
+                },
+                "examples": {
+                  "CustomInboundFilter": {
+                    "summary": "Custom inbound filter",
+                    "value": {
+                      "id": "42",
+                      "name": "Drop TypeErrors from the 1.x releases",
+                      "active": true,
+                      "dataType": "error",
+                      "conditions": [
+                        {
+                          "type": "error_type",
+                          "value": [
+                            "TypeError"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "value": [
+                            "1.*"
+                          ]
+                        }
+                      ],
+                      "dateCreated": "2024-07-23T17:52:53.981206Z",
+                      "dateUpdated": "2024-07-23T17:52:53.981206Z"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      },
+      "delete": {
+        "tags": [
+          "Projects"
+        ],
+        "description": "**Experimental:** This API is under active development and may change.\n\nDelete a custom inbound filter.",
+        "operationId": "DeleteACustomInboundFilter",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "filterId",
+            "in": "path",
+            "description": "The ID of the custom inbound filter.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No response body"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      }
+    },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments": {
       "get": {
         "tags": [
@@ -24989,6 +25432,63 @@
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "List Repositories Linked to a Project",
+        "description": "List all repositories linked to a project.\n\nPass \u0060?includeMappingCount=1\u0060 to include the number of code path mappings\nper repository. Omitting it keeps the query cheaper for callers that\nonly need the list of connections.",
+        "operationId": "ListProjectRepositories",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "includeMappingCount",
+            "in": "query",
+            "description": "When set to \u00601\u0060, each row includes a \u0060mappingCount\u0060 field with the number of code path mappings for that repository. Omitted by default to keep the response lightweight.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListProjectRepositories200ResponseSchema"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      },
       "post": {
         "tags": [
           "Projects"
@@ -26150,7 +26650,7 @@
           "Integration"
         ],
         "summary": "Create or Link an External Issue Through a Sentry App",
-        "description": "**Experimental:** This API is under active development and may change.\n\nInvoke the installed app\u0027s issue-link callback and store the returned association.\nSubmit the app-specific form fields alongside \u0060groupId\u0060, \u0060action\u0060, and \u0060uri\u0060.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nInvoke the installed app\u0027s issue-link callback and store the returned association.\nSubmit the app-specific form fields alongside \u0060groupId\u0060, \u0060action\u0060, and \u0060uri\u0060.\n\nFor \u0060action=link\u0060, the optional \u0060expectedExternalIssueUrl\u0060 query parameter\nrequires an exact canonical \u0060webUrl\u0060 match. An existing matching link is\nreturned with HTTP 200 without calling the App; a different link\nreturns 409. The callback must also return this URL before a new link is\nsaved. Callback effects cannot be rolled back if its response conflicts.\nA new association returns HTTP 201. Omitting the parameter preserves the\nApp\u0027s existing replacement behavior and HTTP 200 response.",
         "operationId": "ExecuteSentryAppInstallationExternalIssueAction",
         "parameters": [
           {
@@ -26160,6 +26660,16 @@
             "required": true,
             "schema": {
               "type": "string"
+            }
+          },
+          {
+            "name": "expectedExternalIssueUrl",
+            "in": "query",
+            "description": "The exact canonical webUrl of the external issue to link. Only supported for action=link. An existing matching association is a no-op; a different association or callback URL returns 409 without replacing the link.",
+            "schema": {
+              "minLength": 1,
+              "type": "string",
+              "format": "uri"
             }
           }
         ],
@@ -26184,6 +26694,16 @@
               }
             }
           },
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueAction201Response"
+                }
+              }
+            }
+          },
           "400": {
             "description": "Bad Request"
           },
@@ -26195,6 +26715,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           }
         },
         "security": [
@@ -28858,6 +29381,9 @@
           },
           "404": {
             "description": "External issue not found"
+          },
+          "409": {
+            "description": "This issue link is being updated. Try again."
           }
         },
         "security": [
@@ -30573,6 +31099,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           }
         },
         "security": [
@@ -31227,7 +31756,7 @@
         "tags": [
           "Integration"
         ],
-        "description": "Link an issue that already exists in the external provider (such as a Jira\nticket or GitHub issue) to the given Sentry issue. Additional accepted fields\nare integration-specific; fetch them from the \u0060linkIssueConfig\u0060 returned by\nthe \u0060GET\u0060 endpoint with \u0060?action=link\u0060.",
+        "description": "Link an issue that already exists in the external provider (such as a Jira\nticket or GitHub issue) to the given Sentry issue. Additional accepted fields\nare integration-specific; fetch them from the \u0060linkIssueConfig\u0060 returned by\nthe \u0060GET\u0060 endpoint with \u0060?action=link\u0060. Linking the same issue again returns\nthe existing link with HTTP 200, without repeating provider comments. A new\nlink returns HTTP 201.",
         "operationId": "LinkAnExistingExternalIssueToAnIssue",
         "parameters": [
           {
@@ -31269,6 +31798,16 @@
           "required": true
         },
         "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue200Response"
+                }
+              }
+            }
+          },
           "201": {
             "description": "201 response",
             "content": {
@@ -31299,6 +31838,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -31314,7 +31863,7 @@
         "tags": [
           "Integration"
         ],
-        "description": "Remove the link between a Sentry issue and an external issue. If no other\nSentry issues reference the external issue, the link record is deleted\nentirely. This does not delete the issue in the external provider.",
+        "description": "Remove the link between a Sentry issue and an external issue. If no other\nSentry issues reference the external issue, the link record is deleted\nentirely. An absent link also returns 204. This does not delete the issue\nin the external provider.",
         "operationId": "UnlinkAnExternalIssueFromAnIssue",
         "parameters": [
           {
@@ -31366,6 +31915,16 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UnlinkAnExternalIssueFromAnIssue409Response"
+                }
+              }
+            }
           }
         },
         "security": [
@@ -31989,6 +32548,74 @@
         "properties": {
           "data": {
             "$ref": "#/components/schemas/CreateReplayDeletionJobData"
+          }
+        }
+      },
+      "CustomInboundFilter": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/CustomInboundFilterDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CustomInboundFilterConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "CustomInboundFilterCondition": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CustomInboundFilterConditionType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
           }
         }
       },
@@ -34716,6 +35343,18 @@
         "items": {
           "$ref": "#/components/schemas/IssueIntegrationsResponseItem"
         }
+      },
+      "IssueLinkConflict": {
+        "required": [
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "description": "DRF\u0027s standard error-body shape: \u0060{\u0022detail\u0022: str}\u0060.\n\nUse in \u0060Response[T] | Response[DetailResponse]\u0060 annotations on endpoints\nwhose inline error returns are exactly \u0060Response({\u0022detail\u0022: \u0022...\u0022}, status=4xx)\u0060.\nEndpoints whose error bodies have richer or different shapes should\ndeclare their own local TypedDicts instead."
       },
       "LatestBaseSnapshotResponse": {
         "type": "object",
@@ -37469,6 +38108,12 @@
           "created": {
             "type": "boolean"
           }
+        }
+      },
+      "ProjectRepoListResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProjectRepoListResponseItem"
         }
       },
       "ProjectSizeStatusCheckRulesResponse": {
@@ -42763,6 +43408,41 @@
           }
         }
       },
+      "ProjectRepoListResponseItem": {
+        "required": [
+          "id",
+          "projectId",
+          "providerKey",
+          "repoName",
+          "repositoryId",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "providerKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "mappingCount": {
+            "type": "integer"
+          }
+        }
+      },
       "ProjectTeamsResponseItem": {
         "required": [
           "access",
@@ -47380,6 +48060,25 @@
           },
           "countDeleted": {
             "type": "integer"
+          }
+        }
+      },
+      "CustomInboundFilterConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CustomInboundFilterConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
           }
         }
       },
@@ -74763,6 +75462,257 @@
           }
         }
       },
+      "ListAProjectSCustomInboundFilters200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItem"
+        }
+      },
+      "CreateACustomInboundFilterRequest": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilterRequestDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateACustomInboundFilterRequestConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "CreateACustomInboundFilter201Response": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "RetrieveACustomInboundFilter200Response": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "UpdateACustomInboundFilterRequest": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "UpdateACustomInboundFilter200Response": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
       "ListProjectEnvironments200Response": {
         "type": "array",
         "items": {
@@ -76080,6 +77030,12 @@
           }
         }
       },
+      "ListProjectRepositories200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectRepositories200ResponseItem"
+        }
+      },
       "LinkProjectRepositoryRequest": {
         "required": [
           "repositoryId"
@@ -76869,6 +77825,33 @@
         }
       },
       "ExecuteSentryAppInstallationExternalIssueAction200Response": {
+        "required": [
+          "displayName",
+          "id",
+          "issueId",
+          "serviceType",
+          "webUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "issueId": {
+            "type": "string"
+          },
+          "serviceType": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "webUrl": {
+            "type": "string"
+          }
+        }
+      },
+      "ExecuteSentryAppInstallationExternalIssueAction201Response": {
         "required": [
           "displayName",
           "id",
@@ -79137,6 +80120,33 @@
           }
         }
       },
+      "LinkAnExistingExternalIssueToAnIssue200Response": {
+        "required": [
+          "displayName",
+          "id",
+          "integrationId",
+          "key",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "key": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "integer"
+          },
+          "displayName": {
+            "type": "string"
+          }
+        }
+      },
       "LinkAnExistingExternalIssueToAnIssue201Response": {
         "required": [
           "displayName",
@@ -79163,6 +80173,30 @@
             "type": "string"
           }
         }
+      },
+      "LinkAnExistingExternalIssueToAnIssue409Response": {
+        "required": [
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "description": "DRF\u0027s standard error-body shape: \u0060{\u0022detail\u0022: str}\u0060.\n\nUse in \u0060Response[T] | Response[DetailResponse]\u0060 annotations on endpoints\nwhose inline error returns are exactly \u0060Response({\u0022detail\u0022: \u0022...\u0022}, status=4xx)\u0060.\nEndpoints whose error bodies have richer or different shapes should\ndeclare their own local TypedDicts instead."
+      },
+      "UnlinkAnExternalIssueFromAnIssue409Response": {
+        "required": [
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          }
+        },
+        "description": "DRF\u0027s standard error-body shape: \u0060{\u0022detail\u0022: str}\u0060.\n\nUse in \u0060Response[T] | Response[DetailResponse]\u0060 annotations on endpoints\nwhose inline error returns are exactly \u0060Response({\u0022detail\u0022: \u0022...\u0022}, status=4xx)\u0060.\nEndpoints whose error bodies have richer or different shapes should\ndeclare their own local TypedDicts instead."
       },
       "GetOrganizationIssueTag200Response": {
         "required": [
@@ -79668,6 +80702,12 @@
           "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseSchemaItem"
         }
       },
+      "ListAProjectSCustomInboundFilters200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseSchemaItem"
+        }
+      },
       "ListProjectEnvironments200ResponseSchema": {
         "type": "array",
         "items": {
@@ -79756,6 +80796,12 @@
               "type": "object"
             }
           }
+        }
+      },
+      "ListProjectRepositories200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectRepositories200ResponseSchemaItem"
         }
       },
       "ListProjectStats200ResponseSchema": {
@@ -95336,6 +96382,150 @@
           }
         }
       },
+      "ListAProjectSCustomInboundFilters200ResponseItem": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
+      "CreateACustomInboundFilterRequestConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilterRequestConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
+      },
+      "CreateACustomInboundFilter201ResponseConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
+      },
+      "RetrieveACustomInboundFilter200ResponseConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
+      },
+      "UpdateACustomInboundFilterRequestConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
+      },
+      "UpdateACustomInboundFilter200ResponseConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
+      },
       "ListProjectEnvironments200ResponseItem": {
         "required": [
           "id",
@@ -97901,6 +99091,41 @@
             "type": "string"
           },
           "countDeleted": {
+            "type": "integer"
+          }
+        }
+      },
+      "ListProjectRepositories200ResponseItem": {
+        "required": [
+          "id",
+          "projectId",
+          "providerKey",
+          "repoName",
+          "repositoryId",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "providerKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "mappingCount": {
             "type": "integer"
           }
         }
@@ -103508,6 +104733,55 @@
           }
         }
       },
+      "ListAProjectSCustomInboundFilters200ResponseSchemaItem": {
+        "required": [
+          "conditions",
+          "dataType",
+          "dateCreated",
+          "dateUpdated",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "The ID of the filter.",
+            "readOnly": true
+          },
+          "dataType": {
+            "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemDataType"
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItem"
+            },
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+          },
+          "dateCreated": {
+            "type": "string",
+            "description": "When the filter was created.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "dateUpdated": {
+            "type": "string",
+            "description": "When the filter was last changed.",
+            "format": "date-time",
+            "readOnly": true
+          },
+          "name": {
+            "maxLength": 256,
+            "type": "string",
+            "description": "A human-readable label for the filter.",
+            "nullable": true
+          },
+          "active": {
+            "type": "boolean",
+            "description": "Whether the filter drops matching data. An inactive filter is kept but ignored."
+          }
+        }
+      },
       "ListProjectEnvironments200ResponseSchemaItem": {
         "required": [
           "id",
@@ -104120,6 +105394,41 @@
           "dateCreated": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ListProjectRepositories200ResponseSchemaItem": {
+        "required": [
+          "id",
+          "projectId",
+          "providerKey",
+          "repoName",
+          "repositoryId",
+          "source"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          },
+          "providerKey": {
+            "type": "string",
+            "nullable": true
+          },
+          "mappingCount": {
+            "type": "integer"
           }
         }
       },
@@ -114753,6 +116062,25 @@
           }
         },
         "nullable": true
+      },
+      "ListAProjectSCustomInboundFilters200ResponseItemConditionsItem": {
+        "required": [
+          "type",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItemType"
+          },
+          "value": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+          }
+        }
       },
       "ListProjectEvents200ResponseItemUser": {
         "type": "object",
@@ -125888,6 +127216,87 @@
           ]
         }
       },
+      "CustomInboundFilterDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "CustomInboundFilterDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "CustomInboundFilterConditionType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "CustomInboundFilterConditionType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
       "DashboardCreateWidgetDisplayType": {
         "enum": [
           "line",
@@ -132073,6 +133482,49 @@
           ]
         }
       },
+      "CustomInboundFilterConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "CustomInboundFilterConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
       "DashboardWidgetsItemDisplayType": {
         "enum": [
           "line",
@@ -135165,6 +136617,196 @@
             {
               "value": "owner",
               "name": "Owner"
+            }
+          ]
+        }
+      },
+      "CreateACustomInboundFilterRequestDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilterRequestDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "CreateACustomInboundFilter201ResponseDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilter201ResponseDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "RetrieveACustomInboundFilter200ResponseDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "RetrieveACustomInboundFilter200ResponseDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "UpdateACustomInboundFilterRequestDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilterRequestDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "UpdateACustomInboundFilter200ResponseDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilter200ResponseDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
             }
           ]
         }
@@ -144600,6 +146242,259 @@
           ]
         }
       },
+      "ListAProjectSCustomInboundFilters200ResponseItemDataType": {
+        "enum": [
+          "all",
+          "error",
+          "log",
+          "metric",
+          "span"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The data the filter matches against. \u0060all\u0060 is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.\n\n* \u0060all\u0060\n* \u0060error\u0060\n* \u0060log\u0060\n* \u0060metric\u0060\n* \u0060span\u0060",
+        "x-ms-enum": {
+          "name": "ListAProjectSCustomInboundFilters200ResponseItemDataType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "all",
+              "name": "All"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            },
+            {
+              "value": "log",
+              "name": "Log"
+            },
+            {
+              "value": "metric",
+              "name": "Metric"
+            },
+            {
+              "value": "span",
+              "name": "Span"
+            }
+          ]
+        }
+      },
+      "CreateACustomInboundFilterRequestConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilterRequestConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
+      "CreateACustomInboundFilter201ResponseConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilter201ResponseConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
+      "RetrieveACustomInboundFilter200ResponseConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "RetrieveACustomInboundFilter200ResponseConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
+      "UpdateACustomInboundFilterRequestConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilterRequestConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
+      "UpdateACustomInboundFilter200ResponseConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilter200ResponseConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
+            }
+          ]
+        }
+      },
       "GetProjectMonitor200ResponseConfigScheduleType": {
         "enum": [
           "crontab",
@@ -149078,6 +150973,49 @@
             {
               "value": "occurrence",
               "name": "Occurrence"
+            }
+          ]
+        }
+      },
+      "ListAProjectSCustomInboundFilters200ResponseItemConditionsItemType": {
+        "enum": [
+          "error_type",
+          "error_message",
+          "log_message",
+          "metric_name",
+          "release",
+          "ip_address"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "x-ms-enum": {
+          "name": "ListAProjectSCustomInboundFilters200ResponseItemConditionsItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "error_type",
+              "name": "ErrorType"
+            },
+            {
+              "value": "error_message",
+              "name": "ErrorMessage"
+            },
+            {
+              "value": "log_message",
+              "name": "LogMessage"
+            },
+            {
+              "value": "metric_name",
+              "name": "MetricName"
+            },
+            {
+              "value": "release",
+              "name": "Release"
+            },
+            {
+              "value": "ip_address",
+              "name": "IpAddress"
             }
           ]
         }

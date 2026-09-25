@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo", pathParameters)
+        public RepoRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo{?includeMappingCount*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,8 +30,27 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RepoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo", rawUrl)
+        public RepoRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo{?includeMappingCount*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// List all repositories linked to a project.Pass `?includeMappingCount=1` to include the number of code path mappingsper repository. Omitting it keeps the query cheaper for callers thatonly need the list of connections.
+        /// </summary>
+        /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListProjectRepositories200ResponseSchemaItem&gt;</returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectRepositories200ResponseSchemaItem>?> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder.RepoRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectRepositories200ResponseSchemaItem>> GetAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder.RepoRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectRepositories200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectRepositories200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return collectionResult?.AsList();
         }
         /// <summary>
         /// Link a repository to a project. The repository must already existin the organization (connected via a VCS integration). Idempotent:returns 200 if the link already exists, 201 if created.
@@ -52,6 +71,25 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.LinkProjectRepository201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.LinkProjectRepository201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// List all repositories linked to a project.Pass `?includeMappingCount=1` to include the number of code path mappingsper repository. Omitting it keeps the query cheaper for callers thatonly need the list of connections.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder.RepoRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder.RepoRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Link a repository to a project. The repository must already existin the organization (connected via a VCS integration). Idempotent:returns 200 if the link already exists, 201 if created.
@@ -83,6 +121,23 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// List all repositories linked to a project.Pass `?includeMappingCount=1` to include the number of code path mappingsper repository. Omitting it keeps the query cheaper for callers thatonly need the list of connections.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class RepoRequestBuilderGetQueryParameters 
+        {
+            /// <summary>When set to `1`, each row includes a `mappingCount` field with the number of code path mappings for that repository. Omitted by default to keep the response lightweight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("includeMappingCount")]
+            public string? IncludeMappingCount { get; set; }
+#nullable restore
+#else
+            [QueryParameter("includeMappingCount")]
+            public string IncludeMappingCount { get; set; }
+#endif
         }
     }
 }

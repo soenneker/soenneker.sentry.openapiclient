@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalIssueActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/sentry-app-installations/{uuid}/external-issue-actions", pathParameters)
+        public ExternalIssueActionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/sentry-app-installations/{uuid}/external-issue-actions{?expectedExternalIssueUrl*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ExternalIssueActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/sentry-app-installations/{uuid}/external-issue-actions", rawUrl)
+        public ExternalIssueActionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/sentry-app-installations/{uuid}/external-issue-actions{?expectedExternalIssueUrl*}", rawUrl)
         {
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Invoke the installed app&apos;s issue-link callback and store the returned association.Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.
+        /// **Experimental:** This API is under active development and may change.Invoke the installed app&apos;s issue-link callback and store the returned association.Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.For `action=link`, the optional `expectedExternalIssueUrl` query parameterrequires an exact canonical `webUrl` match. An existing matching link isreturned with HTTP 200 without calling the App; a different linkreturns 409. The callback must also return this URL before a new link issaved. Callback effects cannot be rolled back if its response conflicts.A new association returns HTTP 201. Omitting the parameter preserves theApp&apos;s existing replacement behavior and HTTP 200 response.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -42,11 +42,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder.ExternalIssueActionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder.ExternalIssueActionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -54,18 +54,18 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueAction200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Invoke the installed app&apos;s issue-link callback and store the returned association.Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.
+        /// **Experimental:** This API is under active development and may change.Invoke the installed app&apos;s issue-link callback and store the returned association.Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.For `action=link`, the optional `expectedExternalIssueUrl` query parameterrequires an exact canonical `webUrl` match. An existing matching link isreturned with HTTP 200 without calling the App; a different linkreturns 409. The callback must also return this URL before a new link issaved. Callback effects cannot be rolled back if its response conflicts.A new association returns HTTP 201. Omitting the parameter preserves theApp&apos;s existing replacement behavior and HTTP 200 response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder.ExternalIssueActionsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest body, Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder.ExternalIssueActionsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -83,6 +83,23 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.ExternalIssueActions.ExternalIssueActionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// **Experimental:** This API is under active development and may change.Invoke the installed app&apos;s issue-link callback and store the returned association.Submit the app-specific form fields alongside `groupId`, `action`, and `uri`.For `action=link`, the optional `expectedExternalIssueUrl` query parameterrequires an exact canonical `webUrl` match. An existing matching link isreturned with HTTP 200 without calling the App; a different linkreturns 409. The callback must also return this URL before a new link issaved. Callback effects cannot be rolled back if its response conflicts.A new association returns HTTP 201. Omitting the parameter preserves theApp&apos;s existing replacement behavior and HTTP 200 response.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ExternalIssueActionsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>The exact canonical webUrl of the external issue to link. Only supported for action=link. An existing matching association is a no-op; a different association or callback URL returns 409 without replacing the link.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expectedExternalIssueUrl")]
+            public string? ExpectedExternalIssueUrl { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expectedExternalIssueUrl")]
+            public string ExpectedExternalIssueUrl { get; set; }
+#endif
         }
     }
 }

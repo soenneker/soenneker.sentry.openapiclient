@@ -34,10 +34,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
         }
         /// <summary>
-        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. This does not delete the issue in the external provider.
+        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. An absent link also returns 204. This does not delete the issuein the external provider.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Sentry.OpenApiClient.Models.UnlinkAnExternalIssueFromAnIssue409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.Integrations.Item.WithIntegrationItemRequestBuilder.WithIntegrationItemRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -48,7 +49,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "409", global::Soenneker.Sentry.OpenApiClient.Models.UnlinkAnExternalIssueFromAnIssue409Response.CreateFromDiscriminatorValue },
+            };
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the form fields needed to either link an existing external issue(such as a Jira ticket or GitHub issue) to a Sentry issue, or create a newone. The returned `linkIssueConfig`/`createIssueConfig` describes the fieldsto submit back to this endpoint via `PUT`/`POST` respectively.
@@ -89,27 +94,32 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalIssueAndLinkItToAnIssue201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateAnExternalIssueAndLinkItToAnIssue201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Link an issue that already exists in the external provider (such as a Jiraticket or GitHub issue) to the given Sentry issue. Additional accepted fieldsare integration-specific; fetch them from the `linkIssueConfig` returned bythe `GET` endpoint with `?action=link`.
+        /// Link an issue that already exists in the external provider (such as a Jiraticket or GitHub issue) to the given Sentry issue. Additional accepted fieldsare integration-specific; fetch them from the `linkIssueConfig` returned bythe `GET` endpoint with `?action=link`. Linking the same issue again returnsthe existing link with HTTP 200, without repeating provider comments. A newlink returns HTTP 201.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue201Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue200Response"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue409Response">When receiving a 409 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue201Response?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue200Response?> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue201Response> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue200Response> PutAsync(global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "409", global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue409Response.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssue200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. This does not delete the issue in the external provider.
+        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. An absent link also returns 204. This does not delete the issuein the external provider.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,6 +134,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #endif
             var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/{integrationId}?externalIssue={externalIssue}", PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -168,7 +179,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return requestInfo;
         }
         /// <summary>
-        /// Link an issue that already exists in the external provider (such as a Jiraticket or GitHub issue) to the given Sentry issue. Additional accepted fieldsare integration-specific; fetch them from the `linkIssueConfig` returned bythe `GET` endpoint with `?action=link`.
+        /// Link an issue that already exists in the external provider (such as a Jiraticket or GitHub issue) to the given Sentry issue. Additional accepted fieldsare integration-specific; fetch them from the `linkIssueConfig` returned bythe `GET` endpoint with `?action=link`. Linking the same issue again returnsthe existing link with HTTP 200, without repeating provider comments. A newlink returns HTTP 201.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +210,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item.Integrations.Item.WithIntegrationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. This does not delete the issue in the external provider.
+        /// Remove the link between a Sentry issue and an external issue. If no otherSentry issues reference the external issue, the link record is deletedentirely. An absent link also returns 204. This does not delete the issuein the external provider.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithIntegrationItemRequestBuilderDeleteQueryParameters 

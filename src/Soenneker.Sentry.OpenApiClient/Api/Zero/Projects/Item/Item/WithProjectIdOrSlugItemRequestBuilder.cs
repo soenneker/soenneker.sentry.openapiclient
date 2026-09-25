@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Codeowners;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInboundFilters;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Events;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files;
@@ -44,6 +45,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Codeowners.CodeownersRequestBuilder Codeowners
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Codeowners.CodeownersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customInboundFilters property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInboundFilters.CustomInboundFiltersRequestBuilder CustomInboundFilters
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInboundFilters.CustomInboundFiltersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The environments property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments.EnvironmentsRequestBuilder Environments
