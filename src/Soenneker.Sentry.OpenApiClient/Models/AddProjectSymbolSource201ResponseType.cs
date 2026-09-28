@@ -20,6 +20,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Gcs,
         #pragma warning restore CS1591
+        [EnumMember(Value = "azure")]
+        #pragma warning disable CS1591
+        Azure,
+        #pragma warning restore CS1591
         [EnumMember(Value = "appStoreConnect")]
         #pragma warning disable CS1591
         AppStoreConnect,

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>The type of the source.* `http` - SymbolServer (HTTP)* `gcs` - Google Cloud Storage* `s3` - Amazon S3</summary>
+    /// <summary>The type of the source.* `http` - SymbolServer (HTTP)* `gcs` - Google Cloud Storage* `s3` - Amazon S3* `azure` - Azure Blob Storage</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AddProjectSymbolSourceRequestType
     {
@@ -18,6 +18,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "s3")]
         #pragma warning disable CS1591
         S3,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "azure")]
+        #pragma warning disable CS1591
+        Azure,
         #pragma warning restore CS1591
     }
 }

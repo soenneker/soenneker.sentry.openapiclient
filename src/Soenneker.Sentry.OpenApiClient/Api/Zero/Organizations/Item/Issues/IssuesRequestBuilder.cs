@@ -176,6 +176,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderDeleteQueryParameters 
         {
+            /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("end")]
+            public DateTimeOffset? End { get; set; }
             /// <summary>The name of environments to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -222,6 +225,19 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), &apos;Date Added&apos; (`inbox`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Models.DeleteOrganizationIssuesSortParameter? Sort { get; set; }
+            /// <summary>The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("start")]
+            public DateTimeOffset? Start { get; set; }
+            /// <summary>The period of time for the query, will override the start &amp; end parameters, a number followed by one of:- `d` for days- `h` for hours- `m` for minutes- `s` for seconds- `w` for weeksFor example, `24h`, to mean query data starting from 24 hours ago to now.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriod")]
+            public string? StatsPeriod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriod")]
+            public string StatsPeriod { get; set; }
+#endif
             /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -344,6 +360,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class IssuesRequestBuilderPutQueryParameters 
         {
+            /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("end")]
+            public DateTimeOffset? End { get; set; }
             /// <summary>The name of environments to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -390,6 +409,19 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             /// <summary>The sort order of the view. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), &apos;Date Added&apos; (`inbox`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesSortParameter? Sort { get; set; }
+            /// <summary>The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("start")]
+            public DateTimeOffset? Start { get; set; }
+            /// <summary>The period of time for the query, will override the start &amp; end parameters, a number followed by one of:- `d` for days- `h` for hours- `m` for minutes- `s` for seconds- `w` for weeksFor example, `24h`, to mean query data starting from 24 hours ago to now.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriod")]
+            public string? StatsPeriod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriod")]
+            public string StatsPeriod { get; set; }
+#endif
             /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

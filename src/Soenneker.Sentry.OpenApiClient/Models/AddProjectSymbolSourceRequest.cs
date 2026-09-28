@@ -20,6 +20,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string AccessKey { get; set; }
 #endif
+        /// <summary>The Azure storage account name. Required for Azure sources, invalid for all others.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Account { get; set; }
+#nullable restore
+#else
+        public string Account { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The GCS or S3 bucket where the source resides. Required for GCS and S3 source, invalid for HTTP sources.</summary>
@@ -37,6 +45,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string ClientEmail { get; set; }
+#endif
+        /// <summary>The Microsoft Entra application (client) ID. Required for Azure sources, invalid for all others.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientId { get; set; }
+#nullable restore
+#else
+        public string ClientId { get; set; }
+#endif
+        /// <summary>The Microsoft Entra client secret. Required for Azure sources, invalid for all others.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClientSecret { get; set; }
+#nullable restore
+#else
+        public string ClientSecret { get; set; }
+#endif
+        /// <summary>The Azure blob container name. Required for Azure sources, invalid for all others.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Container { get; set; }
+#nullable restore
+#else
+        public string Container { get; set; }
 #endif
         /// <summary>Filter settings for the source. This is optional for all sources.**`filetypes`** ***(list)*** - A list of file types that can be found on this source. If this is left empty, all file types will be enabled. The options are:- `pe` - Windows executable files- `pdb` - Windows debug files- `portablepdb` - .NET portable debug files- `mach_code` - MacOS executable files- `mach_debug` - MacOS debug files- `elf_code` - ELF executable files- `elf_debug` - ELF debug files- `wasm_code` - WASM executable files- `wasm_debug` - WASM debug files- `breakpad` - Breakpad symbol files- `sourcebundle` - Source code bundles- `uuidmap` - Apple UUID mapping files- `bcsymbolmap` - Apple bitcode symbol maps- `il2cpp` - Unity IL2CPP mapping files- `proguard` - ProGuard mapping files**`path_patterns`** ***(list)*** - A list of glob patterns to check against the debug and code file paths of debug files. Only files that match one of these patterns will be requested from the source. If this is left empty, no path-based filtering takes place.**`requires_checksum`** ***(boolean)*** - Whether this source requires a debug checksum to be sent with each request. Defaults to `false`.```json{    &quot;filters&quot;: {        &quot;filetypes&quot;: [&quot;pe&quot;, &quot;pdb&quot;, &quot;portablepdb&quot;],        &quot;path_patterns&quot;: [&quot;*ffmpeg*&quot;]    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,7 +110,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Password { get; set; }
 #endif
-        /// <summary>The GCS or [S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html) prefix. Optional for GCS and S3 sourcse, invalid for HTTP.</summary>
+        /// <summary>The GCS, Azure or [S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-prefixes.html) prefix. Optional for GCS, Azure and S3 sources, invalid for HTTP.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Prefix { get; set; }
@@ -104,7 +136,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string SecretKey { get; set; }
 #endif
-        /// <summary>The type of the source.* `http` - SymbolServer (HTTP)* `gcs` - Google Cloud Storage* `s3` - Amazon S3</summary>
+        /// <summary>The Microsoft Entra tenant ID. Required for Azure sources, invalid for all others.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TenantId { get; set; }
+#nullable restore
+#else
+        public string TenantId { get; set; }
+#endif
+        /// <summary>The type of the source.* `http` - SymbolServer (HTTP)* `gcs` - Google Cloud Storage* `s3` - Amazon S3* `azure` - Azure Blob Storage</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestType? Type { get; set; }
         /// <summary>The source&apos;s URL. Optional for HTTP sources, invalid for all others.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -148,8 +188,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access_key", n => { AccessKey = n.GetStringValue(); } },
+                { "account", n => { Account = n.GetStringValue(); } },
                 { "bucket", n => { Bucket = n.GetStringValue(); } },
                 { "client_email", n => { ClientEmail = n.GetStringValue(); } },
+                { "client_id", n => { ClientId = n.GetStringValue(); } },
+                { "client_secret", n => { ClientSecret = n.GetStringValue(); } },
+                { "container", n => { Container = n.GetStringValue(); } },
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayout>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayout.CreateFromDiscriminatorValue); } },
@@ -159,6 +203,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "private_key", n => { PrivateKey = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestRegion>(); } },
                 { "secret_key", n => { SecretKey = n.GetStringValue(); } },
+                { "tenant_id", n => { TenantId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
@@ -172,8 +217,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("access_key", AccessKey);
+            writer.WriteStringValue("account", Account);
             writer.WriteStringValue("bucket", Bucket);
             writer.WriteStringValue("client_email", ClientEmail);
+            writer.WriteStringValue("client_id", ClientId);
+            writer.WriteStringValue("client_secret", ClientSecret);
+            writer.WriteStringValue("container", Container);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayout>("layout", Layout);
@@ -183,6 +232,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("private_key", PrivateKey);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestRegion>("region", Region);
             writer.WriteStringValue("secret_key", SecretKey);
+            writer.WriteStringValue("tenant_id", TenantId);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("username", Username);
