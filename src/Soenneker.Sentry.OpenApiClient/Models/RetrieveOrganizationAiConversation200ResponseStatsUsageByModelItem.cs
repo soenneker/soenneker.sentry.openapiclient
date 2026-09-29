@@ -22,6 +22,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? InputCost { get; set; }
         /// <summary>The inputTokens property</summary>
         public int? InputTokens { get; set; }
+        /// <summary>The llmCalls property</summary>
+        public int? LlmCalls { get; set; }
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -69,6 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "cacheWriteTokens", n => { CacheWriteTokens = n.GetIntValue(); } },
                 { "inputCost", n => { InputCost = n.GetDoubleValue(); } },
                 { "inputTokens", n => { InputTokens = n.GetIntValue(); } },
+                { "llmCalls", n => { LlmCalls = n.GetIntValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
                 { "outputCost", n => { OutputCost = n.GetDoubleValue(); } },
                 { "outputTokens", n => { OutputTokens = n.GetIntValue(); } },
@@ -88,6 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("cacheWriteTokens", CacheWriteTokens);
             writer.WriteDoubleValue("inputCost", InputCost);
             writer.WriteIntValue("inputTokens", InputTokens);
+            writer.WriteIntValue("llmCalls", LlmCalls);
             writer.WriteStringValue("model", Model);
             writer.WriteDoubleValue("outputCost", OutputCost);
             writer.WriteIntValue("outputTokens", OutputTokens);

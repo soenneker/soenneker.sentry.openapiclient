@@ -24,6 +24,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string DefaultBranch { get; set; }
 #endif
+        /// <summary>The hasCodeOwner property</summary>
+        public bool? HasCodeOwner { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +125,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "automaticallyGenerated", n => { AutomaticallyGenerated = n.GetBoolValue(); } },
                 { "defaultBranch", n => { DefaultBranch = n.GetStringValue(); } },
+                { "hasCodeOwner", n => { HasCodeOwner = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
@@ -143,6 +146,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("automaticallyGenerated", AutomaticallyGenerated);
             writer.WriteStringValue("defaultBranch", DefaultBranch);
+            writer.WriteBoolValue("hasCodeOwner", HasCodeOwner);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("projectId", ProjectId);

@@ -14,6 +14,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The externalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExternalId { get; set; }
+#nullable restore
+#else
+        public string ExternalId { get; set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>The integrationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IntegrationId { get; set; }
+#nullable restore
+#else
+        public string IntegrationId { get; set; }
 #endif
         /// <summary>The mappingCount property</summary>
         public int? MappingCount { get; set; }
@@ -89,7 +105,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "mappingCount", n => { MappingCount = n.GetIntValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "providerKey", n => { ProviderKey = n.GetStringValue(); } },
@@ -105,7 +123,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteIntValue("mappingCount", MappingCount);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("providerKey", ProviderKey);

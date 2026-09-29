@@ -1024,6 +1024,7 @@
                         "usageByModel": [
                           {
                             "model": "gpt-4o-mini-2024-07-18",
+                            "llmCalls": 1,
                             "inputTokens": 0,
                             "outputTokens": 0,
                             "totalTokens": 485,
@@ -43513,7 +43514,9 @@
       },
       "ProjectRepoListResponseItem": {
         "required": [
+          "externalId",
           "id",
+          "integrationId",
           "projectId",
           "providerKey",
           "repoName",
@@ -43524,6 +43527,14 @@
         "properties": {
           "id": {
             "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
           },
           "projectId": {
             "type": "string"
@@ -53041,6 +53052,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -53086,6 +53098,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
@@ -58924,6 +58939,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -58969,6 +58985,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
@@ -63937,6 +63956,7 @@
           "cacheWriteTokens",
           "inputCost",
           "inputTokens",
+          "llmCalls",
           "model",
           "outputCost",
           "outputTokens",
@@ -63949,6 +63969,9 @@
           "model": {
             "type": "string",
             "nullable": true
+          },
+          "llmCalls": {
+            "type": "integer"
           },
           "inputTokens": {
             "type": "integer"
@@ -96485,6 +96508,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -96530,6 +96554,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
@@ -96580,6 +96607,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -96625,6 +96653,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
@@ -96675,6 +96706,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -96720,6 +96752,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
@@ -99481,7 +99516,9 @@
       },
       "ListProjectRepositories200ResponseItem": {
         "required": [
+          "externalId",
           "id",
+          "integrationId",
           "projectId",
           "providerKey",
           "repoName",
@@ -99492,6 +99529,14 @@
         "properties": {
           "id": {
             "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
           },
           "projectId": {
             "type": "string"
@@ -105815,7 +105860,9 @@
       },
       "ListProjectRepositories200ResponseSchemaItem": {
         "required": [
+          "externalId",
           "id",
+          "integrationId",
           "projectId",
           "providerKey",
           "repoName",
@@ -105826,6 +105873,14 @@
         "properties": {
           "id": {
             "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
           },
           "projectId": {
             "type": "string"
@@ -109151,6 +109206,7 @@
           "cacheWriteTokens",
           "inputCost",
           "inputTokens",
+          "llmCalls",
           "model",
           "outputCost",
           "outputTokens",
@@ -109163,6 +109219,9 @@
           "model": {
             "type": "string",
             "nullable": true
+          },
+          "llmCalls": {
+            "type": "integer"
           },
           "inputTokens": {
             "type": "integer"
@@ -116358,6 +116417,7 @@
         "required": [
           "automaticallyGenerated",
           "defaultBranch",
+          "hasCodeOwner",
           "id",
           "integrationId",
           "projectId",
@@ -116403,6 +116463,9 @@
             "nullable": true
           },
           "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
             "type": "boolean"
           }
         }
