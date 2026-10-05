@@ -3,6 +3,9 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Groups;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ResourceTypes;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Schemas;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ServiceProviderConfig;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users;
 using System.Collections.Generic;
 using System.IO;
@@ -20,6 +23,21 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Groups.GroupsRequestBuilder Groups
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Groups.GroupsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ResourceTypes property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ResourceTypes.ResourceTypesRequestBuilder ResourceTypes
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ResourceTypes.ResourceTypesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The Schemas property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Schemas.SchemasRequestBuilder Schemas
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Schemas.SchemasRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The ServiceProviderConfig property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ServiceProviderConfig.ServiceProviderConfigRequestBuilder ServiceProviderConfig
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.ServiceProviderConfig.ServiceProviderConfigRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The Users property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Users.UsersRequestBuilder Users

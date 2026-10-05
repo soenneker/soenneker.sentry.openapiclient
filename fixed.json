@@ -14337,6 +14337,365 @@
         ]
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes": {
+      "get": {
+        "tags": [
+          "SCIM"
+        ],
+        "summary": "List the SCIM Resource Types",
+        "description": "List the resource types available via SCIM: User (organization\nmembers) and Group (teams). Pagination parameters are ignored per\nRFC 7644 section 4; both resource types are always returned.",
+        "operationId": "ListOrganizationScimV2ResourceTypes",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationScimV2ResourceTypes200Response"
+                },
+                "examples": {
+                  "ListTheResourceTypes": {
+                    "summary": "List the resource types",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:api:messages:2.0:ListResponse"
+                      ],
+                      "totalResults": 2,
+                      "startIndex": 1,
+                      "itemsPerPage": 2,
+                      "Resources": [
+                        {
+                          "schemas": [
+                            "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+                          ],
+                          "id": "User",
+                          "name": "User",
+                          "description": "SCIM User maps to Sentry Organization Member",
+                          "endpoint": "/Users",
+                          "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+                          "meta": {
+                            "resourceType": "ResourceType",
+                            "location": "https://sentry.io/api/0/organizations/example-org/scim/v2/ResourceTypes/User"
+                          }
+                        },
+                        {
+                          "schemas": [
+                            "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+                          ],
+                          "id": "Group",
+                          "name": "Group",
+                          "description": "SCIM Group maps to Sentry Team",
+                          "endpoint": "/Groups",
+                          "schema": "urn:ietf:params:scim:schemas:core:2.0:Group",
+                          "meta": {
+                            "resourceType": "ResourceType",
+                            "location": "https://sentry.io/api/0/organizations/example-org/scim/v2/ResourceTypes/Group"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:admin",
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes/{resourceTypeName}": {
+      "get": {
+        "tags": [
+          "SCIM"
+        ],
+        "summary": "Query an Individual SCIM Resource Type",
+        "description": "Return a single SCIM resource type by name (\u0060User\u0060 or \u0060Group\u0060).",
+        "operationId": "GetOrganizationScimV2ResourceType",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "resourceTypeName",
+            "in": "path",
+            "description": "The SCIM resource type name: \u0060User\u0060 or \u0060Group\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOrganizationScimV2ResourceType200Response"
+                },
+                "examples": {
+                  "QueryAnIndividualResourceType": {
+                    "summary": "Query an individual resource type",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:schemas:core:2.0:ResourceType"
+                      ],
+                      "id": "User",
+                      "name": "User",
+                      "description": "SCIM User maps to Sentry Organization Member",
+                      "endpoint": "/Users",
+                      "schema": "urn:ietf:params:scim:schemas:core:2.0:User",
+                      "meta": {
+                        "resourceType": "ResourceType",
+                        "location": "https://sentry.io/api/0/organizations/example-org/scim/v2/ResourceTypes/User"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:admin",
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Schemas/{schemaUri}": {
+      "get": {
+        "tags": [
+          "SCIM"
+        ],
+        "summary": "Query an Individual SCIM Schema",
+        "description": "Return a single SCIM schema definition by its URI. Sentry supports the\ncore User and Group schemas.",
+        "operationId": "GetOrganizationScimV2Schema",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "schemaUri",
+            "in": "path",
+            "description": "The SCIM schema URI, e.g. \u0060urn:ietf:params:scim:schemas:core:2.0:User\u0060.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOrganizationScimV2Schema200Response"
+                },
+                "examples": {
+                  "QueryAnIndividualSchema": {
+                    "summary": "Query an individual schema",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:schemas:core:2.0:Schema"
+                      ],
+                      "id": "urn:ietf:params:scim:schemas:core:2.0:User",
+                      "name": "User",
+                      "description": "SCIM User maps to Sentry Organization Member",
+                      "attributes": [
+                        {
+                          "name": "userName",
+                          "type": "string",
+                          "multiValued": false,
+                          "description": "Unique identifier for the User, which for Sentry is an email address.",
+                          "required": true,
+                          "caseExact": false,
+                          "mutability": "immutable",
+                          "returned": "default",
+                          "uniqueness": "server"
+                        }
+                      ],
+                      "meta": {
+                        "resourceType": "Schema",
+                        "location": "https://sentry.io/api/0/organizations/example-org/scim/v2/Schemas/urn:ietf:params:scim:schemas:core:2.0:User"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:admin",
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ServiceProviderConfig": {
+      "get": {
+        "tags": [
+          "SCIM"
+        ],
+        "summary": "Retrieve the SCIM Service Provider Configuration",
+        "description": "Return the SCIM Service Provider Configuration, which describes the\nSCIM 2.0 protocol features Sentry supports (RFC 7643 section 5).",
+        "operationId": "GetOrganizationScimV2ServiceProviderConfig",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200Response"
+                },
+                "examples": {
+                  "RetrieveTheServiceProviderConfiguration": {
+                    "summary": "Retrieve the service provider configuration",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:schemas:core:2.0:ServiceProviderConfig"
+                      ],
+                      "documentationUri": "https://docs.sentry.io/organization/authentication/sso/",
+                      "patch": {
+                        "supported": true
+                      },
+                      "bulk": {
+                        "supported": false,
+                        "maxOperations": 0,
+                        "maxPayloadSize": 0
+                      },
+                      "filter": {
+                        "supported": true,
+                        "maxResults": 100
+                      },
+                      "changePassword": {
+                        "supported": false
+                      },
+                      "sort": {
+                        "supported": false
+                      },
+                      "etag": {
+                        "supported": false
+                      },
+                      "authenticationSchemes": [
+                        {
+                          "type": "oauthbearertoken",
+                          "name": "OAuth Bearer Token",
+                          "description": "Authentication scheme using the OAuth Bearer Token standard. Use the SCIM token generated for your organization.",
+                          "specUri": "https://www.rfc-editor.org/info/rfc6750",
+                          "primary": true
+                        }
+                      ],
+                      "meta": {
+                        "resourceType": "ServiceProviderConfig",
+                        "location": "https://sentry.io/api/0/organizations/example-org/scim/v2/ServiceProviderConfig"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:admin",
+              "member:read",
+              "member:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Users": {
       "get": {
         "tags": [
@@ -38993,6 +39352,39 @@
         },
         "description": "Span page plus conversation-level metadata."
       },
+      "ScimListResourceTypesResponse": {
+        "required": [
+          "Resources",
+          "itemsPerPage",
+          "schemas",
+          "startIndex",
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "totalResults": {
+            "type": "integer"
+          },
+          "startIndex": {
+            "type": "integer"
+          },
+          "itemsPerPage": {
+            "type": "integer"
+          },
+          "Resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScimListResourceTypesResponseResourcesItem"
+            }
+          }
+        }
+      },
       "ScimListResponseEnvelopeScimMemberIndexResponse": {
         "required": [
           "Resources",
@@ -39113,6 +39505,134 @@
               "type": "string"
             },
             "description": "SCIM schema URIs identifying the request format. Must be the PatchOp schema."
+          }
+        }
+      },
+      "ScimResourceTypeResponse": {
+        "required": [
+          "description",
+          "endpoint",
+          "id",
+          "meta",
+          "name",
+          "schema",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimResourceTypeResponseMeta"
+          }
+        }
+      },
+      "ScimSchemaResponse": {
+        "required": [
+          "attributes",
+          "description",
+          "id",
+          "meta",
+          "name",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScimSchemaResponseAttributesItemProperty"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimSchemaResponseMeta"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponse": {
+        "required": [
+          "authenticationSchemes",
+          "bulk",
+          "changePassword",
+          "documentationUri",
+          "etag",
+          "filter",
+          "meta",
+          "patch",
+          "schemas",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "documentationUri": {
+            "type": "string"
+          },
+          "patch": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponsePatch"
+          },
+          "bulk": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseBulk"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseFilter"
+          },
+          "changePassword": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseChangePassword"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseSort"
+          },
+          "etag": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseEtag"
+          },
+          "authenticationSchemes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ScimServiceProviderConfigResponseAuthenticationSchemesItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimServiceProviderConfigResponseMeta"
           }
         }
       },
@@ -54022,6 +54542,44 @@
           }
         }
       },
+      "ScimListResourceTypesResponseResourcesItem": {
+        "required": [
+          "description",
+          "endpoint",
+          "id",
+          "meta",
+          "name",
+          "schema",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ScimListResourceTypesResponseResourcesItemMeta"
+          }
+        }
+      },
       "ScimListResponseEnvelopeScimMemberIndexResponseResourcesItem": {
         "required": [
           "emails",
@@ -54113,6 +54671,162 @@
             "$ref": "#/components/schemas/ScimPatchRequestOperationsItemValue"
           },
           "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ScimResourceTypeResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "ScimSchemaResponseAttributesItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ScimSchemaResponseAttributesItemAdditionalProperties"
+        }
+      },
+      "ScimSchemaResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponsePatch": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseBulk": {
+        "required": [
+          "maxOperations",
+          "maxPayloadSize",
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          },
+          "maxOperations": {
+            "type": "integer"
+          },
+          "maxPayloadSize": {
+            "type": "integer"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseFilter": {
+        "required": [
+          "maxResults",
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          },
+          "maxResults": {
+            "type": "integer"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseChangePassword": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseSort": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseEtag": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseAuthenticationSchemesItem": {
+        "required": [
+          "description",
+          "name",
+          "primary",
+          "specUri",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "specUri": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ScimServiceProviderConfigResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
             "type": "string"
           }
         }
@@ -64005,6 +64719,21 @@
           }
         }
       },
+      "ScimListResourceTypesResponseResourcesItemMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
       "ScimListResponseEnvelopeScimMemberIndexResponseResourcesItemName": {
         "required": [
           "familyName",
@@ -73620,6 +74349,167 @@
               "$ref": "#/components/schemas/UpdateOrganizationScimV2GroupRequestOperationsItem"
             },
             "description": "The list of operations to perform. Valid operations are:\n* Renaming a team:\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022replace\u0022,\n        \u0022value\u0022: {\n            \u0022id\u0022: 23,\n            \u0022displayName\u0022: \u0022newName\u0022\n        }\n    }]\n}\n\u0060\u0060\u0060\n* Adding a member to a team:\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022add\u0022,\n        \u0022path\u0022: \u0022members\u0022,\n        \u0022value\u0022: [\n            {\n                \u0022value\u0022: 23,\n                \u0022display\u0022: \u0022testexample@example.com\u0022\n            }\n        ]\n    }]\n}\n\u0060\u0060\u0060\n* Removing a member from a team:\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022remove\u0022,\n        \u0022path\u0022: \u0022members[value eq \u002223\u0022]\u0022\n    }]\n}\n\u0060\u0060\u0060\n* Replacing an entire member set of a team:\n\u0060\u0060\u0060json\n{\n    \u0022Operations\u0022: [{\n        \u0022op\u0022: \u0022replace\u0022,\n        \u0022path\u0022: \u0022members\u0022,\n        \u0022value\u0022: [\n            {\n                \u0022value\u0022: 23,\n                \u0022display\u0022: \u0022testexample2@sentry.io\u0022\n            },\n            {\n                \u0022value\u0022: 24,\n                \u0022display\u0022: \u0022testexample3@sentry.io\u0022\n            }\n        ]\n    }]\n}\n\u0060\u0060\u0060\n"
+          }
+        }
+      },
+      "ListOrganizationScimV2ResourceTypes200Response": {
+        "required": [
+          "Resources",
+          "itemsPerPage",
+          "schemas",
+          "startIndex",
+          "totalResults"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "totalResults": {
+            "type": "integer"
+          },
+          "startIndex": {
+            "type": "integer"
+          },
+          "itemsPerPage": {
+            "type": "integer"
+          },
+          "Resources": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationScimV2ResourceTypes200ResponseResourcesItem"
+            }
+          }
+        }
+      },
+      "GetOrganizationScimV2ResourceType200Response": {
+        "required": [
+          "description",
+          "endpoint",
+          "id",
+          "meta",
+          "name",
+          "schema",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ResourceType200ResponseMeta"
+          }
+        }
+      },
+      "GetOrganizationScimV2Schema200Response": {
+        "required": [
+          "attributes",
+          "description",
+          "id",
+          "meta",
+          "name",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "attributes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetOrganizationScimV2Schema200ResponseAttributesItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2Schema200ResponseMeta"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200Response": {
+        "required": [
+          "authenticationSchemes",
+          "bulk",
+          "changePassword",
+          "documentationUri",
+          "etag",
+          "filter",
+          "meta",
+          "patch",
+          "schemas",
+          "sort"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "documentationUri": {
+            "type": "string"
+          },
+          "patch": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponsePatch"
+          },
+          "bulk": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseBulk"
+          },
+          "filter": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseFilter"
+          },
+          "changePassword": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword"
+          },
+          "sort": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseSort"
+          },
+          "etag": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseEtag"
+          },
+          "authenticationSchemes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetOrganizationScimV2ServiceProviderConfig200ResponseMeta"
           }
         }
       },
@@ -83790,6 +84680,12 @@
       "ScimPatchOperationValue": {
         "type": "object"
       },
+      "ScimSchemaResponseAttributesItemProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ScimSchemaResponseAttributesItemPropertyAdditionalProperties"
+        }
+      },
       "ScimTeamPatchOperationValueProperty": {
         "type": "object",
         "additionalProperties": {
@@ -84835,6 +85731,9 @@
         "type": "object"
       },
       "ScimPatchRequestOperationsItemValue": {
+        "type": "object"
+      },
+      "ScimSchemaResponseAttributesItemAdditionalProperties": {
         "type": "object"
       },
       "ScimTeamPatchOperationValueAdditionalProperties": {
@@ -94370,6 +95269,200 @@
             "$ref": "#/components/schemas/UpdateOrganizationScimV2GroupRequestOperationsItemValue"
           },
           "path": {
+            "type": "string"
+          }
+        }
+      },
+      "ListOrganizationScimV2ResourceTypes200ResponseResourcesItem": {
+        "required": [
+          "description",
+          "endpoint",
+          "id",
+          "meta",
+          "name",
+          "schema",
+          "schemas"
+        ],
+        "type": "object",
+        "properties": {
+          "schemas": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "endpoint": {
+            "type": "string"
+          },
+          "schema": {
+            "type": "string"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListOrganizationScimV2ResourceTypes200ResponseResourcesItemMeta"
+          }
+        }
+      },
+      "GetOrganizationScimV2ResourceType200ResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "GetOrganizationScimV2Schema200ResponseAttributesItem": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/GetOrganizationScimV2Schema200ResponseAttributesItemAdditionalProperties"
+        }
+      },
+      "GetOrganizationScimV2Schema200ResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponsePatch": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseBulk": {
+        "required": [
+          "maxOperations",
+          "maxPayloadSize",
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          },
+          "maxOperations": {
+            "type": "integer"
+          },
+          "maxPayloadSize": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseFilter": {
+        "required": [
+          "maxResults",
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          },
+          "maxResults": {
+            "type": "integer"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseSort": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseEtag": {
+        "required": [
+          "supported"
+        ],
+        "type": "object",
+        "properties": {
+          "supported": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem": {
+        "required": [
+          "description",
+          "name",
+          "primary",
+          "specUri",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "specUri": {
+            "type": "string"
+          },
+          "primary": {
+            "type": "boolean"
+          }
+        }
+      },
+      "GetOrganizationScimV2ServiceProviderConfig200ResponseMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
             "type": "string"
           }
         }
@@ -108193,6 +109286,9 @@
       "RetrieveOrganizationAiConversationResponseSpansItemPropertyAdditionalProperties": {
         "type": "object"
       },
+      "ScimSchemaResponseAttributesItemPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "ScimTeamPatchOperationValuePropertyAdditionalProperties": {
         "type": "object"
       },
@@ -114739,6 +115835,24 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/UpdateOrganizationScimV2GroupRequestOperationsItemValueAdditionalProperties"
         }
+      },
+      "ListOrganizationScimV2ResourceTypes200ResponseResourcesItemMeta": {
+        "required": [
+          "location",
+          "resourceType"
+        ],
+        "type": "object",
+        "properties": {
+          "resourceType": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        }
+      },
+      "GetOrganizationScimV2Schema200ResponseAttributesItemAdditionalProperties": {
+        "type": "object"
       },
       "ListOrganizationScimV2Users200ResponseResourcesItemName": {
         "required": [
