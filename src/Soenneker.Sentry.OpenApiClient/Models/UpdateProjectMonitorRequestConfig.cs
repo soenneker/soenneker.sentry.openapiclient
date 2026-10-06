@@ -19,7 +19,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? CheckinMargin { get; set; }
         /// <summary>How many consecutive missed or failed check-ins in a row before creating a new issue.</summary>
         public int? FailureIssueThreshold { get; set; }
-        /// <summary>How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.</summary>
+        /// <summary>How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).</summary>
         public int? MaxRuntime { get; set; }
         /// <summary>How many successful check-ins in a row before resolving an issue.</summary>
         public int? RecoveryThreshold { get; set; }

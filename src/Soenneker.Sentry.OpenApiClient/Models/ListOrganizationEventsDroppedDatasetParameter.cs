@@ -5,40 +5,32 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ListProjectSymbolSources200ResponseItemLayoutType
+    public enum ListOrganizationEventsDroppedDatasetParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "native")]
+        [EnumMember(Value = "errors")]
         #pragma warning disable CS1591
-        Native,
+        Errors,
         #pragma warning restore CS1591
-        [EnumMember(Value = "symstore")]
+        [EnumMember(Value = "logs")]
         #pragma warning disable CS1591
-        Symstore,
+        Logs,
         #pragma warning restore CS1591
-        [EnumMember(Value = "symstore_index2")]
+        [EnumMember(Value = "profile_functions")]
         #pragma warning disable CS1591
-        SymstoreIndex2,
+        ProfileFunctions,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ssqp")]
+        [EnumMember(Value = "spans")]
         #pragma warning disable CS1591
-        Ssqp,
+        Spans,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unified")]
+        [EnumMember(Value = "tracemetrics")]
         #pragma warning disable CS1591
-        Unified,
+        Tracemetrics,
         #pragma warning restore CS1591
-        [EnumMember(Value = "debuginfod")]
+        [EnumMember(Value = "uptime_results")]
         #pragma warning disable CS1591
-        Debuginfod,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "slashsymbols")]
-        #pragma warning disable CS1591
-        Slashsymbols,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "nxsymstore")]
-        #pragma warning disable CS1591
-        Nxsymstore,
+        UptimeResults,
         #pragma warning restore CS1591
     }
 }

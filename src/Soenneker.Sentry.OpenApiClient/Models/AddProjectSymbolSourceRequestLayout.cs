@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Layout settings for the source. This is required for HTTP, GCS, and S3 sources.**`type`** ***(string)*** - The layout of the folder structure. The options are:- `native` - Platform-Specific (SymStore / GDB / LLVM)- `symstore` - Microsoft SymStore- `symstore_index2` - Microsoft SymStore (with index2.txt)- `ssqp` - Microsoft SSQP- `unified` - Unified Symbol Server Layout- `debuginfod` - debuginfod**`casing`** ***(string)*** - The layout of the folder structure. The options are:- `default` - Default (mixed case)- `uppercase` - Uppercase- `lowercase` - Lowercase```json{    &quot;layout&quot;: {        &quot;type&quot;: &quot;native&quot;        &quot;casing&quot;: &quot;default&quot;    }}```
+    /// Layout settings for the source. This is required for HTTP, GCS, and S3 sources.**`type`** ***(string)*** - The layout of the folder structure. The options are:- `native` - Platform-Specific (SymStore / GDB / LLVM)- `symstore` - Microsoft SymStore- `symstore_index2` - Microsoft SymStore (with index2.txt)- `ssqp` - Microsoft SSQP- `unified` - Unified Symbol Server Layout- `debuginfod` - debuginfod- `nxsymstore` - Nintendo NXSymStore**`casing`** ***(string)*** - The layout of the folder structure. The options are:- `default` - Default (mixed case)- `uppercase` - Uppercase- `lowercase` - Lowercase```json{    &quot;layout&quot;: {        &quot;type&quot;: &quot;native&quot;        &quot;casing&quot;: &quot;default&quot;    }}```
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddProjectSymbolSourceRequestLayout : IAdditionalDataHolder, IParsable
@@ -17,7 +17,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The source&apos;s casing rules.* `lowercase`* `uppercase`* `default`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayoutCasing? Casing { get; set; }
-        /// <summary>The source&apos;s layout type.* `native`* `symstore`* `symstore_index2`* `ssqp`* `unified`* `debuginfod`* `slashsymbols`</summary>
+        /// <summary>The source&apos;s layout type.* `native`* `symstore`* `symstore_index2`* `ssqp`* `unified`* `debuginfod`* `slashsymbols`* `nxsymstore`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayoutType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestLayout"/> and sets the default values.

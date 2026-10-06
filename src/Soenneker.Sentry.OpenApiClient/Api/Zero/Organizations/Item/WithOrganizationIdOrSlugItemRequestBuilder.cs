@@ -11,6 +11,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Environments;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Eventids;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsDropped;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ExternalUsers;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding;
@@ -100,6 +101,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The eventsDropped property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsDropped.EventsDroppedRequestBuilder EventsDropped
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsDropped.EventsDroppedRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The eventsTimeseries property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries.EventsTimeseriesRequestBuilder EventsTimeseries

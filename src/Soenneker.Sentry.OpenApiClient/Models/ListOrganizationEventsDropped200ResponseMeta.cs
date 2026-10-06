@@ -9,31 +9,41 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateProjectMonitorRequestAlertRuleTargetsItem : IAdditionalDataHolder, IParsable
+    public partial class ListOrganizationEventsDropped200ResponseMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>ID of target object</summary>
-        public int? TargetIdentifier { get; set; }
-        /// <summary>One of [Member, Team]* `Member`* `Team`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType? TargetType { get; set; }
+        /// <summary>The dataset property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Dataset { get; set; }
+#nullable restore
+#else
+        public string Dataset { get; set; }
+#endif
+        /// <summary>The end property</summary>
+        public double? End { get; set; }
+        /// <summary>The interval property</summary>
+        public double? Interval { get; set; }
+        /// <summary>The start property</summary>
+        public double? Start { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItem"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta"/> and sets the default values.
         /// </summary>
-        public UpdateProjectMonitorRequestAlertRuleTargetsItem()
+        public ListOrganizationEventsDropped200ResponseMeta()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItem();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -43,8 +53,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target_identifier", n => { TargetIdentifier = n.GetIntValue(); } },
-                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType>(); } },
+                { "dataset", n => { Dataset = n.GetStringValue(); } },
+                { "end", n => { End = n.GetDoubleValue(); } },
+                { "interval", n => { Interval = n.GetDoubleValue(); } },
+                { "start", n => { Start = n.GetDoubleValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +66,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("target_identifier", TargetIdentifier);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType>("target_type", TargetType);
+            writer.WriteStringValue("dataset", Dataset);
+            writer.WriteDoubleValue("end", End);
+            writer.WriteDoubleValue("interval", Interval);
+            writer.WriteDoubleValue("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

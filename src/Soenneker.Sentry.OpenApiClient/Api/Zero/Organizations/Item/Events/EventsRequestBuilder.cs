@@ -137,7 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`</summary>
+            /// <summary>Filters results by using [query syntax](/concepts/search/).Example: `query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)`With the `logs` dataset, a string attribute can also be matched against a regular expression written as `key://pattern//`, and excluded with `!key://pattern//`.Patterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with `^` or `$`, are case sensitive unless they start with `(?i)`, and are limited to 64 characters.To search for a literal value that starts with `//`, quote it: `key:&quot;//value&quot;`.See [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.Example: `query=message://^Timeout after \d+ms//`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

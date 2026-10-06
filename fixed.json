@@ -4628,7 +4628,7 @@
           {
             "name": "query",
             "in": "query",
-            "description": "Filters results by using [query syntax](/product/sentry-basics/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n",
+            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
             "schema": {
               "type": "string"
             }
@@ -4722,6 +4722,144 @@
             ]
           }
         ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/events-dropped": {
+      "get": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "Query Dropped Events",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn the events Sentry received but dropped (rate limited, filtered,\ninvalid, abuse, client discarded, cardinality limited) bucketed over the\nrequested interval, alongside the accepted volume per bucket so a caller\ncan compute the dropped share.\n\nSelect the dropped-data type with \u0060\u0060dataset\u0060\u0060 and the bucket size with\n\u0060\u0060interval\u0060\u0060. Optionally scope the dropped side to one classification with\n\u0060\u0060outcome\u0060\u0060 (top-level) and/or \u0060\u0060reason\u0060\u0060 (sub-classification within an\noutcome); the accepted volume is always returned in full.",
+        "operationId": "ListOrganizationEventsDropped",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dataset",
+            "in": "query",
+            "description": "Which dataset to query. The chosen dataset determines which fields are queryable.\n- \u0060errors\u0060 - Error events.\n- \u0060logs\u0060 - Structured log events.\n- \u0060profile_functions\u0060 - Function-level Profiling data.\n- \u0060spans\u0060 - Distributed tracing span events.\n- \u0060tracemetrics\u0060 - Application Metrics.\n- \u0060uptime_results\u0060 - Uptime monitoring check results.\n",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ListOrganizationEventsDroppedDatasetParameter"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "environment",
+            "in": "query",
+            "description": "The name of environments to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. \u0060-1\u0060 is also accepted to include all accessible projects.\nFor example, the following are valid parameters:\n- \u0060/?project=1234\u0026project=56789\u0060\n- \u0060/?project=android\u0026project=javascript-react\u0060\n- \u0060/?project=-1\u0060\n",
+            "schema": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "interval",
+            "in": "query",
+            "description": "The size of the bucket for the timeseries to have, must be a value smaller than the window being\nqueried. If the interval is invalid a default interval will be selected instead",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "outcome",
+            "in": "query",
+            "description": "Narrow the dropped events (only) to a single top-level drop classification (e.g. \u0060rate_limited\u0060, \u0060filtered\u0060).\n\n* \u0060filtered\u0060\n* \u0060rate_limited\u0060\n* \u0060invalid\u0060\n* \u0060abuse\u0060\n* \u0060client_discard\u0060\n* \u0060cardinality_limited\u0060",
+            "schema": {
+              "$ref": "#/components/schemas/ListOrganizationEventsDroppedOutcomeParameter"
+            }
+          },
+          {
+            "name": "reason",
+            "in": "query",
+            "description": "Narrow the dropped events to a single reason, the sub-classification within an outcome (e.g. \u0060spike_protection\u0060 within \u0060rate_limited\u0060). Should be combined with \u0060outcome\u0060.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationEventsDropped200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid Query"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/events-timeseries": {
@@ -4860,7 +4998,7 @@
           {
             "name": "query",
             "in": "query",
-            "description": "Filters results by using [query syntax](/product/sentry-basics/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n",
+            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
             "schema": {
               "type": "string"
             }
@@ -32829,10 +32967,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -35862,7 +36000,7 @@
             "$ref": "#/components/schemas/LayoutCasing"
           }
         },
-        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
+        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n- \u0060nxsymstore\u0060 - Nintendo NXSymStore\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
       },
       "LinkExternalIssueRequest": {
         "required": [
@@ -36191,8 +36329,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/MonitorAlertRuleTargetValidatorTargetType"
           }
         }
       },
@@ -36584,6 +36721,31 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/OrganizationEnvironmentResponseItem"
+        }
+      },
+      "OrganizationEventsDroppedResponse": {
+        "required": [
+          "acceptedEvents",
+          "droppedEvents",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/OrganizationEventsDroppedResponseMeta"
+          },
+          "droppedEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEventsDroppedResponseDroppedEventsItem"
+            }
+          },
+          "acceptedEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEventsDroppedResponseAcceptedEventsItem"
+            }
+          }
         }
       },
       "OrganizationEventsResponseDict": {
@@ -44675,10 +44837,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -46562,10 +46724,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -51798,8 +51960,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/MonitorAlertRuleValidatorTargetsItemTargetType"
           }
         }
       },
@@ -51994,6 +52155,108 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/OrganizationDetailsPutTrustedRelaysItemAdditionalProperties"
+        }
+      },
+      "OrganizationEventsDroppedResponseMeta": {
+        "required": [
+          "dataset",
+          "end",
+          "interval",
+          "start"
+        ],
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "interval": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "OrganizationEventsDroppedResponseDroppedEventsItem": {
+        "required": [
+          "category",
+          "count",
+          "end",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "OrganizationEventsDroppedResponseAcceptedEventsItem": {
+        "required": [
+          "category",
+          "count",
+          "end",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          }
         }
       },
       "OrganizationEventsResponseDictDataItem": {
@@ -55679,7 +55942,7 @@
             "$ref": "#/components/schemas/SourceLayoutCasing"
           }
         },
-        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
+        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n- \u0060nxsymstore\u0060 - Nintendo NXSymStore\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
       },
       "SourceFilters": {
         "type": "object",
@@ -59944,8 +60207,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItemTargetType"
           }
         }
       },
@@ -70808,6 +71070,31 @@
           },
           "meta": {
             "$ref": "#/components/schemas/ListOrganizationEvents200ResponseMeta"
+          }
+        }
+      },
+      "ListOrganizationEventsDropped200Response": {
+        "required": [
+          "acceptedEvents",
+          "droppedEvents",
+          "meta"
+        ],
+        "type": "object",
+        "properties": {
+          "meta": {
+            "$ref": "#/components/schemas/ListOrganizationEventsDropped200ResponseMeta"
+          },
+          "droppedEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationEventsDropped200ResponseDroppedEventsItem"
+            }
+          },
+          "acceptedEvents": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationEventsDropped200ResponseAcceptedEventsItem"
+            }
           }
         }
       },
@@ -89502,6 +89789,108 @@
         },
         "description": "Meta envelope emitted by \u0060handle_results_with_meta\u0060 and the\nempty-projects short-circuit. Every key is optional because the path\nthat emits it depends on flags (\u0060standard_meta\u0060, debug, dataset) \u2014 the\nno-projects path only carries \u0060tips\u0060, the standard path carries\neverything below."
       },
+      "ListOrganizationEventsDropped200ResponseMeta": {
+        "required": [
+          "dataset",
+          "end",
+          "interval",
+          "start"
+        ],
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "interval": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ListOrganizationEventsDropped200ResponseDroppedEventsItem": {
+        "required": [
+          "category",
+          "count",
+          "end",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
+      "ListOrganizationEventsDropped200ResponseAcceptedEventsItem": {
+        "required": [
+          "category",
+          "count",
+          "end",
+          "outcome",
+          "reason",
+          "start",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "start": {
+            "type": "number",
+            "format": "double"
+          },
+          "end": {
+            "type": "number",
+            "format": "double"
+          },
+          "count": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      },
       "ListOrganizationEventsTimeseries200ResponseMeta": {
         "required": [
           "dataset",
@@ -91405,10 +91794,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -92077,10 +92466,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -99486,10 +99875,10 @@
             "nullable": true
           },
           "max_runtime": {
-            "maximum": 40320,
+            "maximum": 10080,
             "minimum": 1,
             "type": "integer",
-            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed.",
+            "description": "How long (in minutes) is the checkin allowed to run for in CheckInStatus.IN_PROGRESS before it is considered failed. Maximum 10080 (7 days).",
             "nullable": true
           },
           "timezone": {
@@ -100775,7 +101164,7 @@
             "$ref": "#/components/schemas/AddProjectSymbolSourceRequestLayoutCasing"
           }
         },
-        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
+        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n- \u0060nxsymstore\u0060 - Nintendo NXSymStore\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
       },
       "AddProjectSymbolSourceRequestFilters": {
         "type": "object",
@@ -100883,7 +101272,7 @@
             "$ref": "#/components/schemas/UpdateProjectSymbolSourceRequestLayoutCasing"
           }
         },
-        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
+        "description": "Layout settings for the source. This is required for HTTP, GCS, and S3 sources.\n\n**\u0060type\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060native\u0060 - Platform-Specific (SymStore / GDB / LLVM)\n- \u0060symstore\u0060 - Microsoft SymStore\n- \u0060symstore_index2\u0060 - Microsoft SymStore (with index2.txt)\n- \u0060ssqp\u0060 - Microsoft SSQP\n- \u0060unified\u0060 - Unified Symbol Server Layout\n- \u0060debuginfod\u0060 - debuginfod\n- \u0060nxsymstore\u0060 - Nintendo NXSymStore\n\n**\u0060casing\u0060** ***(string)*** - The layout of the folder structure. The options are:\n- \u0060default\u0060 - Default (mixed case)\n- \u0060uppercase\u0060 - Uppercase\n- \u0060lowercase\u0060 - Lowercase\n\n\u0060\u0060\u0060json\n{\n    \u0022layout\u0022: {\n        \u0022type\u0022: \u0022native\u0022\n        \u0022casing\u0022: \u0022default\u0022\n    }\n}\n\u0060\u0060\u0060"
       },
       "UpdateProjectSymbolSourceRequestFilters": {
         "type": "object",
@@ -113706,8 +114095,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRuleTargetsItemTargetType"
           }
         }
       },
@@ -113851,8 +114239,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType"
           }
         }
       },
@@ -118426,8 +118813,7 @@
             "description": "ID of target object"
           },
           "target_type": {
-            "type": "string",
-            "description": "One of [Member, Team]"
+            "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType"
           }
         }
       },
@@ -130457,11 +130843,12 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060",
+        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060\n* \u0060nxsymstore\u0060",
         "x-ms-enum": {
           "name": "LayoutType",
           "modelAsString": false,
@@ -130493,6 +130880,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -130524,6 +130915,15 @@
             }
           ]
         }
+      },
+      "MonitorAlertRuleTargetValidatorTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
       },
       "MonitorValidatorStatus": {
         "enum": [
@@ -135841,6 +136241,15 @@
           ]
         }
       },
+      "MonitorAlertRuleValidatorTargetsItemTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
+      },
       "OrganizationGroupIndexPutResponseAssignedToType": {
         "enum": [
           "user",
@@ -136429,11 +136838,12 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060",
+        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060\n* \u0060nxsymstore\u0060",
         "x-ms-enum": {
           "name": "SourceLayoutType",
           "modelAsString": false,
@@ -136465,6 +136875,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -136871,6 +137285,15 @@
             }
           ]
         }
+      },
+      "MonitorValidatorAlertRuleAllOf1TargetsItemTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
       },
       "OrganizationTraceResponseItemAnyOf1ErrorsItemEventType": {
         "enum": [
@@ -151378,11 +151801,12 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060",
+        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060\n* \u0060nxsymstore\u0060",
         "x-ms-enum": {
           "name": "AddProjectSymbolSourceRequestLayoutType",
           "modelAsString": false,
@@ -151414,6 +151838,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -151554,7 +151982,8 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -151589,6 +152018,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -151741,11 +152174,12 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060",
+        "description": "The source\u0027s layout type.\n\n* \u0060native\u0060\n* \u0060symstore\u0060\n* \u0060symstore_index2\u0060\n* \u0060ssqp\u0060\n* \u0060unified\u0060\n* \u0060debuginfod\u0060\n* \u0060slashsymbols\u0060\n* \u0060nxsymstore\u0060",
         "x-ms-enum": {
           "name": "UpdateProjectSymbolSourceRequestLayoutType",
           "modelAsString": false,
@@ -151777,6 +152211,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -151917,7 +152355,8 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -151952,6 +152391,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -152377,6 +152820,24 @@
           ]
         }
       },
+      "CreateOrganizationMonitorRequestAlertRuleTargetsItemTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
+      },
+      "UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
+      },
       "ListOrganizationMonitorCheckins200ResponseItemMonitorConfigScheduleType": {
         "enum": [
           "crontab",
@@ -152752,6 +153213,15 @@
           ]
         }
       },
+      "UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType": {
+        "enum": [
+          "Member",
+          "Team"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
+      },
       "ListProjectMonitorCheckins200ResponseItemMonitorConfigScheduleType": {
         "enum": [
           "crontab",
@@ -152860,7 +153330,8 @@
           "ssqp",
           "unified",
           "debuginfod",
-          "slashsymbols"
+          "slashsymbols",
+          "nxsymstore"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -152895,6 +153366,10 @@
             {
               "value": "slashsymbols",
               "name": "Slashsymbols"
+            },
+            {
+              "value": "nxsymstore",
+              "name": "Nxsymstore"
             }
           ]
         }
@@ -153294,6 +153769,91 @@
             {
               "value": "uptime_results",
               "name": "UptimeResults"
+            }
+          ]
+        }
+      },
+      "ListOrganizationEventsDroppedDatasetParameter": {
+        "enum": [
+          "errors",
+          "logs",
+          "profile_functions",
+          "spans",
+          "tracemetrics",
+          "uptime_results"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationEventsDroppedDatasetParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "errors",
+              "name": "Errors"
+            },
+            {
+              "value": "logs",
+              "name": "Logs"
+            },
+            {
+              "value": "profile_functions",
+              "name": "ProfileFunctions"
+            },
+            {
+              "value": "spans",
+              "name": "Spans"
+            },
+            {
+              "value": "tracemetrics",
+              "name": "Tracemetrics"
+            },
+            {
+              "value": "uptime_results",
+              "name": "UptimeResults"
+            }
+          ]
+        }
+      },
+      "ListOrganizationEventsDroppedOutcomeParameter": {
+        "minLength": 1,
+        "enum": [
+          "filtered",
+          "rate_limited",
+          "invalid",
+          "abuse",
+          "client_discard",
+          "cardinality_limited"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationEventsDroppedOutcomeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "filtered",
+              "name": "Filtered"
+            },
+            {
+              "value": "rate_limited",
+              "name": "RateLimited"
+            },
+            {
+              "value": "invalid",
+              "name": "Invalid"
+            },
+            {
+              "value": "abuse",
+              "name": "Abuse"
+            },
+            {
+              "value": "client_discard",
+              "name": "ClientDiscard"
+            },
+            {
+              "value": "cardinality_limited",
+              "name": "CardinalityLimited"
             }
           ]
         }

@@ -16,14 +16,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of target object</summary>
         public int? TargetIdentifier { get; set; }
-        /// <summary>One of [Member, Team]</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TargetType { get; set; }
-#nullable restore
-#else
-        public string TargetType { get; set; }
-#endif
+        /// <summary>One of [Member, Team]* `Member`* `Team`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType? TargetType { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestAlertRuleTargetsItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "target_identifier", n => { TargetIdentifier = n.GetIntValue(); } },
-                { "target_type", n => { TargetType = n.GetStringValue(); } },
+                { "target_type", n => { TargetType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("target_identifier", TargetIdentifier);
-            writer.WriteStringValue("target_type", TargetType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType>("target_type", TargetType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

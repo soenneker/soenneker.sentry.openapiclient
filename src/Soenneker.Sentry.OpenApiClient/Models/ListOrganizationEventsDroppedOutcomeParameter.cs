@@ -5,40 +5,32 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ListProjectSymbolSources200ResponseItemLayoutType
+    public enum ListOrganizationEventsDroppedOutcomeParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "native")]
+        [EnumMember(Value = "filtered")]
         #pragma warning disable CS1591
-        Native,
+        Filtered,
         #pragma warning restore CS1591
-        [EnumMember(Value = "symstore")]
+        [EnumMember(Value = "rate_limited")]
         #pragma warning disable CS1591
-        Symstore,
+        RateLimited,
         #pragma warning restore CS1591
-        [EnumMember(Value = "symstore_index2")]
+        [EnumMember(Value = "invalid")]
         #pragma warning disable CS1591
-        SymstoreIndex2,
+        Invalid,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ssqp")]
+        [EnumMember(Value = "abuse")]
         #pragma warning disable CS1591
-        Ssqp,
+        Abuse,
         #pragma warning restore CS1591
-        [EnumMember(Value = "unified")]
+        [EnumMember(Value = "client_discard")]
         #pragma warning disable CS1591
-        Unified,
+        ClientDiscard,
         #pragma warning restore CS1591
-        [EnumMember(Value = "debuginfod")]
+        [EnumMember(Value = "cardinality_limited")]
         #pragma warning disable CS1591
-        Debuginfod,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "slashsymbols")]
-        #pragma warning disable CS1591
-        Slashsymbols,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "nxsymstore")]
-        #pragma warning disable CS1591
-        Nxsymstore,
+        CardinalityLimited,
         #pragma warning restore CS1591
     }
 }
