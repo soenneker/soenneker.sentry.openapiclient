@@ -892,7 +892,7 @@
           "Explore"
         ],
         "summary": "Retrieve an Organization\u0027s AI Conversation",
-        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
         "operationId": "RetrieveOrganizationAiConversation",
         "parameters": [
           {
@@ -1011,6 +1011,8 @@
                       "webUrl": "https://sentry.io/organizations/org-slug/explore/agents/conversations/01JQZ4W8X7J2Q9B4R5M6N7P8T9/?project=1",
                       "stats": {
                         "endTimestamp": 1743465601250,
+                        "errors": 0,
+                        "errorToolNames": [],
                         "generationDuration": 1250,
                         "inputTokens": 0,
                         "llmCalls": 1,
@@ -1056,8 +1058,8 @@
                           "gen_ai.operation.type": "ai_client",
                           "gen_ai.request.model": "gpt-4o-mini",
                           "gen_ai.response.model": "gpt-4o-mini-2024-07-18",
-                          "gen_ai.request.messages": "[{\u0022role\u0022:\u0022user\u0022,\u0022content\u0022:\u0022What is the weather in San Francisco?\u0022}]",
-                          "gen_ai.response.text": "It is currently 18\u00B0C and sunny in San Francisco.",
+                          "gen_ai.input.messages": "[{\u0022role\u0022:\u0022user\u0022,\u0022content\u0022:\u0022What is the weather in San Francisco?\u0022}]",
+                          "gen_ai.output.messages": "[{\u0022role\u0022:\u0022assistant\u0022,\u0022content\u0022:\u0022It is currently 18\u00B0C and sunny in San Francisco.\u0022}]",
                           "gen_ai.usage.total_tokens": 485,
                           "gen_ai.cost.total_tokens": 0.0042,
                           "user.id": "123",
@@ -1635,7 +1637,7 @@
                             "author": "The Sentry Team",
                             "noun": "Installation",
                             "issue_url": "https://github.com/getsentry/sentry/issues/new?assignees=\u0026labels=Component:%20Integrations\u0026template=bug.yml\u0026title=Vercel%20Integration%20Problem",
-                            "source_url": "https://github.com/getsentry/sentry/tree/master/src/sentry/integrations/vercel",
+                            "source_url": "https://docs.sentry.io/integrations/deployment/vercel/",
                             "aspects": {
                               "externalInstall": {
                                 "url": "https://vercel.com/integrations/sentry/add",
@@ -5044,14 +5046,21 @@
                         {
                           "values": [
                             {
-                              "timestamp": 1741368281123,
+                              "timestamp": 1741366800000,
                               "value": 5,
                               "incomplete": false
                             },
                             {
-                              "timestamp": 1741368281123,
-                              "value": 5,
-                              "incomplete": false
+                              "timestamp": 1741370400000,
+                              "value": 3,
+                              "incomplete": true,
+                              "incompleteReason": "INGESTION_PENDING"
+                            },
+                            {
+                              "timestamp": 1741374000000,
+                              "value": 4,
+                              "incomplete": true,
+                              "incompleteReason": "NOT_ELAPSED"
                             }
                           ],
                           "yAxis": "count()",
@@ -5078,14 +5087,21 @@
                         {
                           "values": [
                             {
-                              "timestamp": 1741368281123,
+                              "timestamp": 1741366800000,
                               "value": 5,
                               "incomplete": false
                             },
                             {
-                              "timestamp": 1741368281123,
-                              "value": 5,
-                              "incomplete": false
+                              "timestamp": 1741370400000,
+                              "value": 2,
+                              "incomplete": true,
+                              "incompleteReason": "INGESTION_PENDING"
+                            },
+                            {
+                              "timestamp": 1741374000000,
+                              "value": 1,
+                              "incomplete": true,
+                              "incompleteReason": "NOT_ELAPSED"
                             }
                           ],
                           "yAxis": "count()",
@@ -5112,8 +5128,13 @@
                       ],
                       "meta": {
                         "dataset": "spans",
-                        "start": 1741368281123,
-                        "end": 1741368281123
+                        "start": 1741366800000,
+                        "end": 1741374060000,
+                        "ingestion": {
+                          "status": "healthy",
+                          "delaySeconds": 130.5,
+                          "completeThrough": 1741373929500
+                        }
                       }
                     }
                   }
@@ -25548,6 +25569,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
           }
         },
         "security": [
@@ -42092,6 +42116,9 @@
           "endTimestamp": {
             "type": "integer"
           },
+          "errors": {
+            "type": "integer"
+          },
           "generationDuration": {
             "type": "number",
             "format": "double"
@@ -42129,9 +42156,6 @@
           },
           "conversationId": {
             "type": "string"
-          },
-          "errors": {
-            "type": "integer"
           },
           "title": {
             "type": "string",
@@ -54745,6 +54769,8 @@
       "RetrieveOrganizationAiConversationResponseStats": {
         "required": [
           "endTimestamp",
+          "errorToolNames",
+          "errors",
           "generationDuration",
           "inputTokens",
           "llmCalls",
@@ -54760,6 +54786,9 @@
         "type": "object",
         "properties": {
           "endTimestamp": {
+            "type": "integer"
+          },
+          "errors": {
             "type": "integer"
           },
           "generationDuration": {
@@ -54796,6 +54825,12 @@
           },
           "totalTokens": {
             "type": "integer"
+          },
+          "errorToolNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "usageByModel": {
             "type": "array",
@@ -63819,10 +63854,6 @@
           "eventCount": {
             "type": "number",
             "format": "double"
-          },
-          "byteSize": {
-            "type": "number",
-            "format": "double"
           }
         },
         "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
@@ -63860,10 +63891,6 @@
             "format": "double"
           },
           "eventCount": {
-            "type": "number",
-            "format": "double"
-          },
-          "byteSize": {
             "type": "number",
             "format": "double"
           }
@@ -87698,6 +87725,9 @@
             "type": "integer",
             "format": "int64"
           },
+          "errors": {
+            "type": "integer"
+          },
           "generationDuration": {
             "type": "number",
             "format": "double"
@@ -87736,9 +87766,6 @@
           },
           "conversationId": {
             "type": "string"
-          },
-          "errors": {
-            "type": "integer"
           },
           "title": {
             "type": "string",
@@ -87813,6 +87840,8 @@
       "RetrieveOrganizationAiConversation200ResponseStats": {
         "required": [
           "endTimestamp",
+          "errorToolNames",
+          "errors",
           "generationDuration",
           "inputTokens",
           "llmCalls",
@@ -87830,6 +87859,9 @@
           "endTimestamp": {
             "type": "integer",
             "format": "int64"
+          },
+          "errors": {
+            "type": "integer"
           },
           "generationDuration": {
             "type": "number",
@@ -87866,6 +87898,12 @@
           },
           "totalTokens": {
             "type": "integer"
+          },
+          "errorToolNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           },
           "usageByModel": {
             "type": "array",
@@ -104281,6 +104319,9 @@
             "type": "integer",
             "format": "int64"
           },
+          "errors": {
+            "type": "integer"
+          },
           "generationDuration": {
             "type": "number",
             "format": "double"
@@ -104319,9 +104360,6 @@
           },
           "conversationId": {
             "type": "string"
-          },
-          "errors": {
-            "type": "integer"
           },
           "title": {
             "type": "string",
@@ -112563,10 +112601,6 @@
           "eventCount": {
             "type": "number",
             "format": "double"
-          },
-          "byteSize": {
-            "type": "number",
-            "format": "double"
           }
         },
         "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
@@ -112604,10 +112638,6 @@
             "format": "double"
           },
           "eventCount": {
-            "type": "number",
-            "format": "double"
-          },
-          "byteSize": {
             "type": "number",
             "format": "double"
           }
@@ -129335,11 +129365,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "CustomInboundFilterConditionType",
           "modelAsString": false,
@@ -129367,6 +129398,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -135582,11 +135617,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "CustomInboundFilterConditionsItemType",
           "modelAsString": false,
@@ -135614,6 +135650,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -148423,11 +148463,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "CreateACustomInboundFilterRequestConditionsItemType",
           "modelAsString": false,
@@ -148455,6 +148496,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -148466,11 +148511,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "CreateACustomInboundFilter201ResponseConditionsItemType",
           "modelAsString": false,
@@ -148498,6 +148544,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -148509,11 +148559,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "RetrieveACustomInboundFilter200ResponseConditionsItemType",
           "modelAsString": false,
@@ -148541,6 +148592,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -148552,11 +148607,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "UpdateACustomInboundFilterRequestConditionsItemType",
           "modelAsString": false,
@@ -148584,6 +148640,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -148595,11 +148655,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "UpdateACustomInboundFilter200ResponseConditionsItemType",
           "modelAsString": false,
@@ -148627,6 +148688,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }
@@ -153177,11 +153242,12 @@
           "log_message",
           "metric_name",
           "release",
-          "ip_address"
+          "ip_address",
+          "geo_country_code"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060 and \u0060error_message\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060",
+        "description": "The field the condition matches against. Every \u0060dataType\u0060 accepts \u0060release\u0060 and \u0060ip_address\u0060. In addition, \u0060error\u0060 accepts \u0060error_type\u0060, \u0060error_message\u0060 and \u0060geo_country_code\u0060, \u0060log\u0060 accepts \u0060log_message\u0060, and \u0060metric\u0060 accepts \u0060metric_name\u0060. \u0060span\u0060 and \u0060all\u0060 accept no other types.\n\n* \u0060error_type\u0060\n* \u0060error_message\u0060\n* \u0060log_message\u0060\n* \u0060metric_name\u0060\n* \u0060release\u0060\n* \u0060ip_address\u0060\n* \u0060geo_country_code\u0060",
         "x-ms-enum": {
           "name": "ListAProjectSCustomInboundFilters200ResponseItemConditionsItemType",
           "modelAsString": false,
@@ -153209,6 +153275,10 @@
             {
               "value": "ip_address",
               "name": "IpAddress"
+            },
+            {
+              "value": "geo_country_code",
+              "name": "GeoCountryCode"
             }
           ]
         }

@@ -14,7 +14,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type` and `error_message`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`</summary>
+        /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`* `geo_country_code`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveACustomInboundFilter200ResponseConditionsItemType? Type { get; set; }
         /// <summary>Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

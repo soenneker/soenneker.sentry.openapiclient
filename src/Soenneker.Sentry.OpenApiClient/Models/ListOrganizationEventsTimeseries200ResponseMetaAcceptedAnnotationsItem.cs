@@ -15,8 +15,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The byteSize property</summary>
-        public double? ByteSize { get; set; }
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -74,7 +72,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "byteSize", n => { ByteSize = n.GetDoubleValue(); } },
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDoubleValue(); } },
                 { "eventCount", n => { EventCount = n.GetDoubleValue(); } },
@@ -91,7 +88,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("byteSize", ByteSize);
             writer.WriteStringValue("category", Category);
             writer.WriteDoubleValue("end", End);
             writer.WriteDoubleValue("eventCount", EventCount);

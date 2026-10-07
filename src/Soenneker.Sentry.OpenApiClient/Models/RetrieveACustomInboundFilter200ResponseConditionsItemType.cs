@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type` and `error_message`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`</summary>
+    /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`* `geo_country_code`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum RetrieveACustomInboundFilter200ResponseConditionsItemType
     {
@@ -30,6 +30,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "ip_address")]
         #pragma warning disable CS1591
         IpAddress,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "geo_country_code")]
+        #pragma warning disable CS1591
+        GeoCountryCode,
         #pragma warning restore CS1591
     }
 }

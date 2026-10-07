@@ -16,6 +16,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The endTimestamp property</summary>
         public long? EndTimestamp { get; set; }
+        /// <summary>The errors property</summary>
+        public int? Errors { get; set; }
+        /// <summary>The errorToolNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ErrorToolNames { get; set; }
+#nullable restore
+#else
+        public List<string> ErrorToolNames { get; set; }
+#endif
         /// <summary>The generationDuration property</summary>
         public double? GenerationDuration { get; set; }
         /// <summary>The inputTokens property</summary>
@@ -76,6 +86,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "endTimestamp", n => { EndTimestamp = n.GetLongValue(); } },
+                { "errorToolNames", n => { ErrorToolNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "errors", n => { Errors = n.GetIntValue(); } },
                 { "generationDuration", n => { GenerationDuration = n.GetDoubleValue(); } },
                 { "inputTokens", n => { InputTokens = n.GetIntValue(); } },
                 { "llmCalls", n => { LlmCalls = n.GetIntValue(); } },
@@ -97,6 +109,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("endTimestamp", EndTimestamp);
+            writer.WriteIntValue("errors", Errors);
+            writer.WriteCollectionOfPrimitiveValues<string>("errorToolNames", ErrorToolNames);
             writer.WriteDoubleValue("generationDuration", GenerationDuration);
             writer.WriteIntValue("inputTokens", InputTokens);
             writer.WriteIntValue("llmCalls", LlmCalls);
