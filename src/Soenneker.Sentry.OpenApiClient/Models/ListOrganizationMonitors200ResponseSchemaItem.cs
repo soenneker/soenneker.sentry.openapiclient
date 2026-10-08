@@ -14,14 +14,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alertRule property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemAlertRule? AlertRule { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemAlertRule AlertRule { get; set; }
-#endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -117,7 +109,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "alertRule", n => { AlertRule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemAlertRule>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemAlertRule.CreateFromDiscriminatorValue); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments.CreateFromDiscriminatorValue); } },
@@ -138,7 +129,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemAlertRule>("alertRule", AlertRule);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments>("environments", Environments);

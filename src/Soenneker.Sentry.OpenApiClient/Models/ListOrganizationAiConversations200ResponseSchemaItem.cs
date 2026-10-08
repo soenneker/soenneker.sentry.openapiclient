@@ -70,6 +70,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The startTimestamp property</summary>
         public long? StartTimestamp { get; set; }
+        /// <summary>The timeSpan property</summary>
+        public double? TimeSpan { get; set; }
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -158,6 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetIntValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "startTimestamp", n => { StartTimestamp = n.GetLongValue(); } },
+                { "timeSpan", n => { TimeSpan = n.GetDoubleValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "toolCalls", n => { ToolCalls = n.GetIntValue(); } },
                 { "toolErrors", n => { ToolErrors = n.GetIntValue(); } },
@@ -190,6 +193,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("projectId", ProjectId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemProjectsItem>("projects", Projects);
             writer.WriteLongValue("startTimestamp", StartTimestamp);
+            writer.WriteDoubleValue("timeSpan", TimeSpan);
             writer.WriteStringValue("title", Title);
             writer.WriteIntValue("toolCalls", ToolCalls);
             writer.WriteIntValue("toolErrors", ToolErrors);

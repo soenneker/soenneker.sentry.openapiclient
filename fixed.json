@@ -707,7 +707,7 @@
           "Explore"
         ],
         "summary": "List an Organization\u0027s AI Conversations",
-        "description": "**Experimental:** This API is under active development and may change.\n\nReturn AI conversations ordered by latest span time.\n\n\u0060query\u0060 uses Sentry search syntax.\n\n**Span filters**\n\n- Description: \u0060\u0022payment failed\u0022\u0060; status: \u0060span.status:[error,internal_error]\u0060.\n- Operation: \u0060gen_ai.operation.type:tool\u0060; tool: \u0060gen_ai.tool.name:get_weather\u0060.\n- Duration: \u0060span.duration:\u003E2s\u0060; ID: \u0060gen_ai.conversation.id:\u0022session:123\u0022\u0060\n  or \u0060conversation.conversationId:\u0022session:123\u0022\u0060.\n\n**Conversation filters**\n\n- Calls: \u0060conversation.llmCalls\u0060 or \u0060conversation.messages\u0060, and\n  \u0060conversation.toolCalls\u0060; failures: \u0060conversation.errors\u0060 and\n  \u0060conversation.toolErrors\u0060.\n- Usage: \u0060conversation.inputTokens\u0060, \u0060conversation.outputTokens\u0060,\n  \u0060conversation.totalTokens\u0060, and \u0060conversation.totalCost\u0060.\n- Duration: \u0060conversation.duration\u0060 sums AI spans;\n  \u0060conversation.generationDuration\u0060 sums LLM calls.\n\nUse numeric comparisons such as \u0060conversation.toolCalls:\u003E2\u0060. Queries return\nconversations, not spans. Each \u0060AND\u0060 condition may match a different span.\nReturned totals include all AI spans in selected project, environment, and time\nfilters, not only matching spans.\n\nNegation means no span matches, including when an attribute is absent. Payloads\nare searchable only when recorded and not scrubbed. Payload failure text does\nnot mark a span as failed; set \u0060span.status:error\u0060 for reliable failure search.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn AI conversations ordered by latest span time.\n\n\u0060query\u0060 uses Sentry search syntax.\n\n**Span filters**\n\n- Description: \u0060\u0022payment failed\u0022\u0060; status: \u0060span.status:[error,internal_error]\u0060.\n- Operation: \u0060gen_ai.operation.type:tool\u0060; tool: \u0060gen_ai.tool.name:get_weather\u0060.\n- Duration: \u0060span.duration:\u003E2s\u0060; ID: \u0060gen_ai.conversation.id:\u0022session:123\u0022\u0060\n  or \u0060conversation.conversationId:\u0022session:123\u0022\u0060.\n\n**Conversation filters**\n\n- Calls: \u0060conversation.llmCalls\u0060 or \u0060conversation.messages\u0060, and\n  \u0060conversation.toolCalls\u0060; failures: \u0060conversation.errors\u0060 and\n  \u0060conversation.toolErrors\u0060.\n- Usage: \u0060conversation.inputTokens\u0060, \u0060conversation.outputTokens\u0060,\n  \u0060conversation.totalTokens\u0060, and \u0060conversation.totalCost\u0060.\n- Timespan: \u0060conversation.timeSpan\u0060 measures elapsed time between first and last AI spans;\n  \u0060conversation.generationDuration\u0060 sums LLM call durations. Both use milliseconds.\n\nUse numeric comparisons such as \u0060conversation.toolCalls:\u003E2\u0060. Queries return\nconversations, not spans. Each \u0060AND\u0060 condition may match a different span.\nReturned totals include all AI spans in selected project, environment, and time\nfilters, not only matching spans.\n\nNegation means no span matches, including when an attribute is absent. Payloads\nare searchable only when recorded and not scrubbed. Payload failure text does\nnot mark a span as failed; set \u0060span.status:error\u0060 for reliable failure search.",
         "operationId": "ListOrganizationAiConversations",
         "parameters": [
           {
@@ -835,6 +835,7 @@
                         "inputTokens": 320,
                         "outputTokens": 165,
                         "totalCost": 0.0042,
+                        "timeSpan": 2500,
                         "generationDuration": 1250.5,
                         "startTimestamp": 1743465600000,
                         "endTimestamp": 1743465602500,
@@ -15826,6 +15827,126 @@
             ]
           }
         ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/starred-service-spans": {
+      "post": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "Star a Service Span",
+        "description": "**Experimental:** This API is under active development and may change.\n\nStar a service span for the requesting user. Span queries expose this as the\n\u0060is_starred_transaction\u0060 field. Returns \u0060403\u0060 if the user has already starred\nthe service span.",
+        "operationId": "StarOrganizationServiceSpan",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/StarOrganizationServiceSpanRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:read",
+              "member:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      },
+      "delete": {
+        "tags": [
+          "Explore"
+        ],
+        "summary": "Unstar a Service Span",
+        "description": "**Experimental:** This API is under active development and may change.\n\nUnstar a service span for the requesting user. Succeeds even if the\nservice span was not starred.",
+        "operationId": "UnstarOrganizationServiceSpan",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "service_span",
+            "in": "query",
+            "description": "The name of the service span to unstar.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project_id",
+            "in": "query",
+            "description": "The ID of the project the service span belongs to.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "member:read",
+              "member:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/stats-summary": {
@@ -36302,9 +36423,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/MonitorAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -36338,43 +36456,6 @@
           },
           "owner": {
             "$ref": "#/components/schemas/MonitorOwner"
-          }
-        }
-      },
-      "MonitorAlertRuleTargetValidator": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/MonitorAlertRuleTargetValidatorTargetType"
-          }
-        }
-      },
-      "MonitorAlertRuleValidator": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MonitorAlertRuleValidatorTargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
           }
         }
       },
@@ -36421,9 +36502,6 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
-          },
-          "alert_rule": {
-            "$ref": "#/components/schemas/MonitorValidatorAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -40646,6 +40724,24 @@
           }
         }
       },
+      "StarSegment": {
+        "required": [
+          "project_id",
+          "service_span"
+        ],
+        "type": "object",
+        "properties": {
+          "service_span": {
+            "type": "string",
+            "description": "The name of the service span to star or unstar."
+          },
+          "project_id": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The ID of the project the service span belongs to."
+          }
+        }
+      },
       "StatusDetailsValidator": {
         "required": [
           "ignoreCount",
@@ -42100,6 +42196,7 @@
           "projectId",
           "projects",
           "startTimestamp",
+          "timeSpan",
           "title",
           "toolCalls",
           "toolErrors",
@@ -42156,6 +42253,10 @@
           },
           "conversationId": {
             "type": "string"
+          },
+          "timeSpan": {
+            "type": "number",
+            "format": "double"
           },
           "title": {
             "type": "string",
@@ -43383,9 +43484,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/MonitorListItemAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -44886,28 +44984,6 @@
           }
         },
         "description": "The configuration for the monitor."
-      },
-      "MonitorValidatorAlertRule": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
-          }
-        },
-        "description": "Alert rule configuration created alongside the monitor."
       },
       "OrgReleaseResponseAuthorsItem": {
         "type": "object",
@@ -46770,27 +46846,6 @@
             "type": "integer",
             "description": "How many successful check-ins in a row before resolving an issue.",
             "nullable": true
-          }
-        }
-      },
-      "MonitorValidatorAlertRuleAllOf1": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
           }
         }
       },
@@ -51670,24 +51725,6 @@
           }
         }
       },
-      "MonitorAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MonitorAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
-      },
       "MonitorConfig": {
         "required": [
           "alert_rule_id",
@@ -51969,22 +52006,6 @@
           },
           "email": {
             "type": "string"
-          }
-        }
-      },
-      "MonitorAlertRuleValidatorTargetsItem": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/MonitorAlertRuleValidatorTargetsItemTargetType"
           }
         }
       },
@@ -59156,24 +59177,6 @@
           "$ref": "#/components/schemas/ListWorkflowItemConfigAdditionalProperties"
         }
       },
-      "MonitorListItemAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/MonitorListItemAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
-      },
       "MonitorListItemConfig": {
         "required": [
           "alert_rule_id",
@@ -60227,22 +60230,6 @@
           },
           "is_verified": {
             "type": "boolean"
-          }
-        }
-      },
-      "MonitorValidatorAlertRuleAllOf1TargetsItem": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/MonitorValidatorAlertRuleAllOf1TargetsItemTargetType"
           }
         }
       },
@@ -63643,21 +63630,6 @@
           }
         }
       },
-      "MonitorAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
-      },
       "MonitorProjectAvatar": {
         "type": "object",
         "properties": {
@@ -66640,21 +66612,6 @@
         "type": "object",
         "additionalProperties": {
           "type": "string"
-        }
-      },
-      "MonitorListItemAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
         }
       },
       "MonitorListItemProjectAvatar": {
@@ -72403,9 +72360,6 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
-          },
-          "alert_rule": {
-            "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -72426,9 +72380,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/CreateOrganizationMonitor201ResponseAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -72481,9 +72432,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/GetOrganizationMonitor200ResponseAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -72557,9 +72505,6 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
-          },
-          "alert_rule": {
-            "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -72580,9 +72525,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/UpdateOrganizationMonitor200ResponseAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -75060,6 +75002,24 @@
           },
           "shortId": {
             "type": "string"
+          }
+        }
+      },
+      "StarOrganizationServiceSpanRequest": {
+        "required": [
+          "project_id",
+          "service_span"
+        ],
+        "type": "object",
+        "properties": {
+          "service_span": {
+            "type": "string",
+            "description": "The name of the service span to star or unstar."
+          },
+          "project_id": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "The ID of the project the service span belongs to."
           }
         }
       },
@@ -77864,9 +77824,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/GetProjectMonitor200ResponseAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -77940,9 +77897,6 @@
           "is_muted": {
             "type": "boolean",
             "description": "Disable creation of monitor incidents"
-          },
-          "alert_rule": {
-            "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRule"
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
@@ -77963,9 +77917,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/UpdateProjectMonitor200ResponseAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -87708,6 +87659,7 @@
           "projectId",
           "projects",
           "startTimestamp",
+          "timeSpan",
           "title",
           "toolCalls",
           "toolErrors",
@@ -87766,6 +87718,10 @@
           },
           "conversationId": {
             "type": "string"
+          },
+          "timeSpan": {
+            "type": "number",
+            "format": "double"
           },
           "title": {
             "type": "string",
@@ -91773,9 +91729,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -91857,46 +91810,6 @@
           }
         },
         "description": "The configuration for the monitor."
-      },
-      "CreateOrganizationMonitorRequestAlertRule": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRuleTargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
-          }
-        },
-        "description": "Alert rule configuration created alongside the monitor."
-      },
-      "CreateOrganizationMonitor201ResponseAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/CreateOrganizationMonitor201ResponseAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
       },
       "CreateOrganizationMonitor201ResponseConfig": {
         "required": [
@@ -92178,24 +92091,6 @@
             "type": "string"
           },
           "email": {
-            "type": "string"
-          }
-        }
-      },
-      "GetOrganizationMonitor200ResponseAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetOrganizationMonitor200ResponseAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
             "type": "string"
           }
         }
@@ -92529,46 +92424,6 @@
           }
         },
         "description": "The configuration for the monitor."
-      },
-      "UpdateOrganizationMonitorRequestAlertRule": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRuleTargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
-          }
-        },
-        "description": "Alert rule configuration created alongside the monitor."
-      },
-      "UpdateOrganizationMonitor200ResponseAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateOrganizationMonitor200ResponseAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
       },
       "UpdateOrganizationMonitor200ResponseConfig": {
         "required": [
@@ -99591,24 +99446,6 @@
           }
         }
       },
-      "GetProjectMonitor200ResponseAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/GetProjectMonitor200ResponseAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
-      },
       "GetProjectMonitor200ResponseConfig": {
         "required": [
           "alert_rule_id",
@@ -99938,46 +99775,6 @@
           }
         },
         "description": "The configuration for the monitor."
-      },
-      "UpdateProjectMonitorRequestAlertRule": {
-        "required": [
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "environment": {
-            "maxLength": 64,
-            "type": "string",
-            "description": "Name of the environment",
-            "nullable": true
-          },
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRuleTargetsItem"
-            },
-            "description": "Array of dictionaries with information of the user or team to be notified"
-          }
-        },
-        "description": "Alert rule configuration created alongside the monitor."
-      },
-      "UpdateProjectMonitor200ResponseAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UpdateProjectMonitor200ResponseAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
       },
       "UpdateProjectMonitor200ResponseConfig": {
         "required": [
@@ -104302,6 +104099,7 @@
           "projectId",
           "projects",
           "startTimestamp",
+          "timeSpan",
           "title",
           "toolCalls",
           "toolErrors",
@@ -104360,6 +104158,10 @@
           },
           "conversationId": {
             "type": "string"
+          },
+          "timeSpan": {
+            "type": "number",
+            "format": "double"
           },
           "title": {
             "type": "string",
@@ -105274,9 +105076,6 @@
         ],
         "type": "object",
         "properties": {
-          "alertRule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemAlertRule"
-          },
           "id": {
             "type": "string"
           },
@@ -113807,24 +113606,6 @@
       "DeleteOrganizationMemberTeam200ResponseFlagsAdditionalProperties": {
         "type": "object"
       },
-      "ListOrganizationMonitors200ResponseItemAlertRule": {
-        "required": [
-          "environment",
-          "targets"
-        ],
-        "type": "object",
-        "properties": {
-          "targets": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemAlertRuleTargetsItem"
-            }
-          },
-          "environment": {
-            "type": "string"
-          }
-        }
-      },
       "ListOrganizationMonitors200ResponseItemConfig": {
         "required": [
           "alert_rule_id",
@@ -114113,37 +113894,6 @@
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
       },
-      "CreateOrganizationMonitorRequestAlertRuleTargetsItem": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/CreateOrganizationMonitorRequestAlertRuleTargetsItemTargetType"
-          }
-        }
-      },
-      "CreateOrganizationMonitor201ResponseAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
-      },
       "CreateOrganizationMonitor201ResponseProjectStats": {
         "type": "object"
       },
@@ -114190,21 +113940,6 @@
           }
         },
         "nullable": true
-      },
-      "GetOrganizationMonitor200ResponseAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
       },
       "GetOrganizationMonitor200ResponseProjectStats": {
         "type": "object"
@@ -114256,37 +113991,6 @@
       "UpdateOrganizationMonitorRequestConfigSchedule": {
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
-      },
-      "UpdateOrganizationMonitorRequestAlertRuleTargetsItem": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType"
-          }
-        }
-      },
-      "UpdateOrganizationMonitor200ResponseAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
       },
       "UpdateOrganizationMonitor200ResponseProjectStats": {
         "type": "object"
@@ -118765,21 +118469,6 @@
           }
         }
       },
-      "GetProjectMonitor200ResponseAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
-      },
       "GetProjectMonitor200ResponseProjectStats": {
         "type": "object"
       },
@@ -118830,37 +118519,6 @@
       "UpdateProjectMonitorRequestConfigSchedule": {
         "type": "object",
         "description": "Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, \u0027day\u0027])"
-      },
-      "UpdateProjectMonitorRequestAlertRuleTargetsItem": {
-        "required": [
-          "target_identifier",
-          "target_type"
-        ],
-        "type": "object",
-        "properties": {
-          "target_identifier": {
-            "type": "integer",
-            "description": "ID of target object"
-          },
-          "target_type": {
-            "$ref": "#/components/schemas/UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType"
-          }
-        }
-      },
-      "UpdateProjectMonitor200ResponseAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
       },
       "UpdateProjectMonitor200ResponseProjectStats": {
         "type": "object"
@@ -122731,21 +122389,6 @@
       },
       "UpdateOrganizationMember200ResponseUserExperimentsAdditionalProperties": {
         "type": "object"
-      },
-      "ListOrganizationMonitors200ResponseItemAlertRuleTargetsItem": {
-        "required": [
-          "targetIdentifier",
-          "targetType"
-        ],
-        "type": "object",
-        "properties": {
-          "targetIdentifier": {
-            "type": "integer"
-          },
-          "targetType": {
-            "type": "string"
-          }
-        }
       },
       "ListOrganizationMonitors200ResponseItemProjectStats": {
         "type": "object"
@@ -130951,15 +130594,6 @@
           ]
         }
       },
-      "MonitorAlertRuleTargetValidatorTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
-      },
       "MonitorValidatorStatus": {
         "enum": [
           "active",
@@ -136281,15 +135915,6 @@
           ]
         }
       },
-      "MonitorAlertRuleValidatorTargetsItemTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
-      },
       "OrganizationGroupIndexPutResponseAssignedToType": {
         "enum": [
           "user",
@@ -137325,15 +136950,6 @@
             }
           ]
         }
-      },
-      "MonitorValidatorAlertRuleAllOf1TargetsItemTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
       },
       "OrganizationTraceResponseItemAnyOf1ErrorsItemEventType": {
         "enum": [
@@ -152885,24 +152501,6 @@
           ]
         }
       },
-      "CreateOrganizationMonitorRequestAlertRuleTargetsItemTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
-      },
-      "UpdateOrganizationMonitorRequestAlertRuleTargetsItemTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
-      },
       "ListOrganizationMonitorCheckins200ResponseItemMonitorConfigScheduleType": {
         "enum": [
           "crontab",
@@ -153282,15 +152880,6 @@
             }
           ]
         }
-      },
-      "UpdateProjectMonitorRequestAlertRuleTargetsItemTargetType": {
-        "enum": [
-          "Member",
-          "Team"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "One of [Member, Team]\n\n* \u0060Member\u0060\n* \u0060Team\u0060"
       },
       "ListProjectMonitorCheckins200ResponseItemMonitorConfigScheduleType": {
         "enum": [

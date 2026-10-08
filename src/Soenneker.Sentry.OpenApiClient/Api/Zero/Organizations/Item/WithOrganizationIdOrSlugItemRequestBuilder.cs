@@ -39,6 +39,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryApps;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServiceSpans;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StatsSummary;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Tags;
@@ -241,6 +242,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsRequestBuilder SpikeProtections
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections.SpikeProtectionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The starredServiceSpans property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServiceSpans.StarredServiceSpansRequestBuilder StarredServiceSpans
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServiceSpans.StarredServiceSpansRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats_v2 property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Stats_v2.Stats_v2RequestBuilder Stats_v2

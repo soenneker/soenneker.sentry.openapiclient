@@ -9,43 +9,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class CreateOrganizationMonitor201ResponseAlertRule : IAdditionalDataHolder, IParsable
+    public partial class StarOrganizationServiceSpanRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The environment property</summary>
+        /// <summary>The ID of the project the service span belongs to.</summary>
+        public int? ProjectId { get; set; }
+        /// <summary>The name of the service span to star or unstar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? ServiceSpan { get; set; }
 #nullable restore
 #else
-        public string Environment { get; set; }
-#endif
-        /// <summary>The targets property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRuleTargetsItem>? Targets { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRuleTargetsItem> Targets { get; set; }
+        public string ServiceSpan { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRule"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest"/> and sets the default values.
         /// </summary>
-        public CreateOrganizationMonitor201ResponseAlertRule()
+        public StarOrganizationServiceSpanRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRule"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRule();
+            return new global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +49,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "environment", n => { Environment = n.GetStringValue(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRuleTargetsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRuleTargetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "project_id", n => { ProjectId = n.GetIntValue(); } },
+                { "service_span", n => { ServiceSpan = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("environment", Environment);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitor201ResponseAlertRuleTargetsItem>("targets", Targets);
+            writer.WriteIntValue("project_id", ProjectId);
+            writer.WriteStringValue("service_span", ServiceSpan);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
