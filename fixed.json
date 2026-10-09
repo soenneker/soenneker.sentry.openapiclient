@@ -893,7 +893,7 @@
           "Explore"
         ],
         "summary": "Retrieve an Organization\u0027s AI Conversation",
-        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\n\u0060stats.inputTokens\u0060 includes cache-read and cache-write tokens.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
         "operationId": "RetrieveOrganizationAiConversation",
         "parameters": [
           {
@@ -1011,6 +1011,8 @@
                       ],
                       "webUrl": "https://sentry.io/organizations/org-slug/explore/agents/conversations/01JQZ4W8X7J2Q9B4R5M6N7P8T9/?project=1",
                       "stats": {
+                        "cacheReadTokens": 0,
+                        "cacheWriteTokens": 0,
                         "endTimestamp": 1743465601250,
                         "errors": 0,
                         "errorToolNames": [],
@@ -1018,6 +1020,7 @@
                         "inputTokens": 0,
                         "llmCalls": 1,
                         "outputTokens": 0,
+                        "reasoningTokens": 0,
                         "startTimestamp": 1743465600000,
                         "toolCalls": 0,
                         "toolErrors": 0,
@@ -54789,6 +54792,8 @@
       },
       "RetrieveOrganizationAiConversationResponseStats": {
         "required": [
+          "cacheReadTokens",
+          "cacheWriteTokens",
           "endTimestamp",
           "errorToolNames",
           "errors",
@@ -54796,6 +54801,7 @@
           "inputTokens",
           "llmCalls",
           "outputTokens",
+          "reasoningTokens",
           "startTimestamp",
           "toolCalls",
           "toolErrors",
@@ -54847,11 +54853,20 @@
           "totalTokens": {
             "type": "integer"
           },
+          "cacheReadTokens": {
+            "type": "integer"
+          },
+          "cacheWriteTokens": {
+            "type": "integer"
+          },
           "errorToolNames": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "reasoningTokens": {
+            "type": "integer"
           },
           "usageByModel": {
             "type": "array",
@@ -87795,6 +87810,8 @@
       },
       "RetrieveOrganizationAiConversation200ResponseStats": {
         "required": [
+          "cacheReadTokens",
+          "cacheWriteTokens",
           "endTimestamp",
           "errorToolNames",
           "errors",
@@ -87802,6 +87819,7 @@
           "inputTokens",
           "llmCalls",
           "outputTokens",
+          "reasoningTokens",
           "startTimestamp",
           "toolCalls",
           "toolErrors",
@@ -87855,11 +87873,20 @@
           "totalTokens": {
             "type": "integer"
           },
+          "cacheReadTokens": {
+            "type": "integer"
+          },
+          "cacheWriteTokens": {
+            "type": "integer"
+          },
           "errorToolNames": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "reasoningTokens": {
+            "type": "integer"
           },
           "usageByModel": {
             "type": "array",

@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         {
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conversations.Item.WithConversationItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens.Without an explicit range, Sentry widens the search across available retention.A missing conversation returns an empty `spans` list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithConversationItemRequestBuilderGetQueryParameters 
