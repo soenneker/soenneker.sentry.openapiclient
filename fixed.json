@@ -4735,7 +4735,7 @@
         "tags": [
           "Explore"
         ],
-        "summary": "Query Dropped Events",
+        "summary": "Query Dropped and Accepted Events/Stats by Outcome and Reason",
         "description": "**Experimental:** This API is under active development and may change.\n\nReturn the events Sentry received but dropped (rate limited, filtered,\ninvalid, abuse, client discarded, cardinality limited) bucketed over the\nrequested interval, alongside the accepted volume per bucket so a caller\ncan compute the dropped share.\n\nSelect the dropped-data type with \u0060\u0060dataset\u0060\u0060 and the bucket size with\n\u0060\u0060interval\u0060\u0060. Optionally scope the dropped side to one classification with\n\u0060\u0060outcome\u0060\u0060 (top-level) and/or \u0060\u0060reason\u0060\u0060 (sub-classification within an\noutcome); the accepted volume is always returned in full.",
         "operationId": "ListOrganizationEventsDropped",
         "parameters": [
@@ -5374,6 +5374,231 @@
           {
             "auth_token": [
               "org:admin",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/flags/logs": {
+      "get": {
+        "tags": [
+          "Flags"
+        ],
+        "summary": "List an Organization\u0027s Flag Logs",
+        "description": "Return a paginated list of feature flag changes (creations, updates and deletions)\nrecorded for an organization within the requested time range.",
+        "operationId": "ListOrganizationFlagLogs",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flag",
+            "in": "query",
+            "description": "The name of a feature flag to filter by. Repeat the parameter to match multiple flags.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "provider",
+            "in": "query",
+            "description": "The flag provider to filter by. Use \u0060unknown\u0060 to match logs without a provider. Repeat the parameter to match multiple providers.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ListOrganizationFlagLogsProviderParameterItem"
+              }
+            }
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "The field to sort results by.\n\nAvailable fields are:\n- \u0060action\u0060\n- \u0060createdAt\u0060\n- \u0060createdBy\u0060\n- \u0060createdByType\u0060\n- \u0060flag\u0060\n- \u0060provider\u0060\n\nPrefix with \u0060-\u0060 to sort in descending order.\n",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Limit the number of rows to return in the result. Default and maximum allowed is 100.",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationFlagLogs200Response"
+                },
+                "examples": {
+                  "ListAnOrganization\u0027sFlagLogs": {
+                    "summary": "List an organization\u0027s flag logs",
+                    "value": {
+                      "data": [
+                        {
+                          "id": 1,
+                          "action": "updated",
+                          "createdAt": "2024-01-01T05:12:33.000000\u002B00:00",
+                          "createdBy": "jane.doe@example.com",
+                          "createdByType": "email",
+                          "flag": "new-checkout-flow",
+                          "provider": "launchdarkly",
+                          "tags": {
+                            "environment": "production"
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/flags/logs/{flagLogId}": {
+      "get": {
+        "tags": [
+          "Flags"
+        ],
+        "summary": "Retrieve an Organization\u0027s Flag Log",
+        "description": "Return a single feature flag change recorded for an organization.",
+        "operationId": "RetrieveOrganizationFlagLog",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "flagLogId",
+            "in": "path",
+            "description": "The ID of the flag log entry you\u0027d like to retrieve.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200Response"
+                },
+                "examples": {
+                  "RetrieveAFlagLog": {
+                    "summary": "Retrieve a flag log",
+                    "value": {
+                      "data": {
+                        "id": 1,
+                        "action": "updated",
+                        "createdAt": "2024-01-01T05:12:33.000000\u002B00:00",
+                        "createdBy": "jane.doe@example.com",
+                        "createdByType": "email",
+                        "flag": "new-checkout-flow",
+                        "provider": "launchdarkly",
+                        "tags": {
+                          "environment": "production"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:read",
               "org:write"
             ]
           }
@@ -35057,6 +35282,17 @@
         },
         "description": "Filter settings for the source. This is optional for all sources.\n\n**\u0060filetypes\u0060** ***(list)*** - A list of file types that can be found on this source. If this is left empty, all file types will be enabled. The options are:\n- \u0060pe\u0060 - Windows executable files\n- \u0060pdb\u0060 - Windows debug files\n- \u0060portablepdb\u0060 - .NET portable debug files\n- \u0060mach_code\u0060 - MacOS executable files\n- \u0060mach_debug\u0060 - MacOS debug files\n- \u0060elf_code\u0060 - ELF executable files\n- \u0060elf_debug\u0060 - ELF debug files\n- \u0060wasm_code\u0060 - WASM executable files\n- \u0060wasm_debug\u0060 - WASM debug files\n- \u0060breakpad\u0060 - Breakpad symbol files\n- \u0060sourcebundle\u0060 - Source code bundles\n- \u0060uuidmap\u0060 - Apple UUID mapping files\n- \u0060bcsymbolmap\u0060 - Apple bitcode symbol maps\n- \u0060il2cpp\u0060 - Unity IL2CPP mapping files\n- \u0060proguard\u0060 - ProGuard mapping files\n\n**\u0060path_patterns\u0060** ***(list)*** - A list of glob patterns to check against the debug and code file paths of debug files. Only files that match one of these patterns will be requested from the source. If this is left empty, no path-based filtering takes place.\n\n**\u0060requires_checksum\u0060** ***(boolean)*** - Whether this source requires a debug checksum to be sent with each request. Defaults to \u0060false\u0060.\n\n\u0060\u0060\u0060json\n{\n    \u0022filters\u0022: {\n        \u0022filetypes\u0022: [\u0022pe\u0022, \u0022pdb\u0022, \u0022portablepdb\u0022],\n        \u0022path_patterns\u0022: [\u0022*ffmpeg*\u0022]\n    }\n}\n\u0060\u0060\u0060"
       },
+      "GetFlagLogResponse": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetFlagLogResponseData"
+          }
+        }
+      },
       "GetReplay": {
         "required": [
           "data"
@@ -36208,6 +36444,20 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListEventAttachmentsResponseItem"
+        }
+      },
+      "ListFlagLogsResponse": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListFlagLogsResponseDataItem"
+            }
+          }
         }
       },
       "ListMemberOnTeamResponse": {
@@ -50059,6 +50309,47 @@
           }
         }
       },
+      "GetFlagLogResponseData": {
+        "required": [
+          "action",
+          "createdAt",
+          "createdBy",
+          "createdByType",
+          "flag",
+          "id",
+          "provider",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "action": {
+            "$ref": "#/components/schemas/GetFlagLogResponseDataAction"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByType": {
+            "$ref": "#/components/schemas/GetFlagLogResponseDataCreatedByType"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/GetFlagLogResponseDataProvider"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/GetFlagLogResponseDataTagsProperty"
+          }
+        }
+      },
       "GetReplayData": {
         "type": "object",
         "properties": {
@@ -51510,6 +51801,47 @@
         },
         "nullable": true
       },
+      "ListFlagLogsResponseDataItem": {
+        "required": [
+          "action",
+          "createdAt",
+          "createdBy",
+          "createdByType",
+          "flag",
+          "id",
+          "provider",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListFlagLogsResponseDataItemAction"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByType": {
+            "$ref": "#/components/schemas/ListFlagLogsResponseDataItemCreatedByType"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListFlagLogsResponseDataItemProvider"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ListFlagLogsResponseDataItemTagsProperty"
+          }
+        }
+      },
       "ListReplayClicksDataItem": {
         "required": [
           "node_id",
@@ -52376,18 +52708,6 @@
           "end": {
             "type": "number",
             "format": "double"
-          },
-          "droppedAnnotations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaDroppedAnnotationsItem"
-            }
-          },
-          "acceptedAnnotations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaAcceptedAnnotationsItem"
-            }
           },
           "ingestion": {
             "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseMetaIngestion"
@@ -62720,6 +63040,12 @@
         },
         "nullable": true
       },
+      "GetFlagLogResponseDataTags": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/GetFlagLogResponseDataTagsAdditionalProperties"
+        }
+      },
       "GetReplayDataUser": {
         "type": "object",
         "properties": {
@@ -63488,6 +63814,12 @@
         },
         "nullable": true
       },
+      "ListFlagLogsResponseDataItemTags": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListFlagLogsResponseDataItemTagsAdditionalProperties"
+        }
+      },
       "ListReplaysDataItemUser": {
         "type": "object",
         "properties": {
@@ -63805,84 +64137,6 @@
           }
         },
         "description": "Ingestion status for the data behind a response."
-      },
-      "OrganizationEventsTimeseriesResponseMetaDroppedAnnotationsItem": {
-        "required": [
-          "category",
-          "end",
-          "eventCount",
-          "outcome",
-          "reason",
-          "start",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/SystemType"
-          },
-          "category": {
-            "type": "string"
-          },
-          "outcome": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "start": {
-            "type": "number",
-            "format": "double"
-          },
-          "end": {
-            "type": "number",
-            "format": "double"
-          },
-          "eventCount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
-      },
-      "OrganizationEventsTimeseriesResponseMetaAcceptedAnnotationsItem": {
-        "required": [
-          "category",
-          "end",
-          "eventCount",
-          "outcome",
-          "reason",
-          "start",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/SystemType"
-          },
-          "category": {
-            "type": "string"
-          },
-          "outcome": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "start": {
-            "type": "number",
-            "format": "double"
-          },
-          "end": {
-            "type": "number",
-            "format": "double"
-          },
-          "eventCount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
       },
       "OrganizationEventsTimeseriesResponseMetaIngestion": {
         "required": [
@@ -71283,6 +71537,31 @@
           },
           "integrationId": {
             "type": "string"
+          }
+        }
+      },
+      "ListOrganizationFlagLogs200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItem"
+            }
+          }
+        }
+      },
+      "RetrieveOrganizationFlagLog200Response": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseData"
           }
         }
       },
@@ -85640,6 +85919,12 @@
           "$ref": "#/components/schemas/EventIdLookupResponseEventBreakdownsPropertyAdditionalProperties"
         }
       },
+      "GetFlagLogResponseDataTagsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/GetFlagLogResponseDataTagsPropertyAdditionalProperties"
+        }
+      },
       "GetReplayDataClicksItemProperty": {
         "type": "object",
         "additionalProperties": {
@@ -85753,6 +86038,12 @@
       },
       "IssueEventDetailsResponseSdkUpdatesItemAdditionalProperties": {
         "type": "object"
+      },
+      "ListFlagLogsResponseDataItemTagsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListFlagLogsResponseDataItemTagsPropertyAdditionalProperties"
+        }
       },
       "ListReplaysDataItemClicksItemProperty": {
         "type": "object",
@@ -86620,6 +86911,9 @@
           "$ref": "#/components/schemas/EventIdLookupResponseEventBreakdownsAdditionalPropertiesAdditionalProperties"
         }
       },
+      "GetFlagLogResponseDataTagsAdditionalProperties": {
+        "type": "object"
+      },
       "GetReplayDataClicksItemAdditionalProperties": {
         "type": "object"
       },
@@ -86667,6 +86961,9 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/IssueEventDetailsResponseReleaseVersionInfoVersionPropertyAdditionalProperties"
         }
+      },
+      "ListFlagLogsResponseDataItemTagsAdditionalProperties": {
+        "type": "object"
       },
       "ListReplaysDataItemClicksItemAdditionalProperties": {
         "type": "object"
@@ -89931,18 +90228,6 @@
             "type": "number",
             "format": "double"
           },
-          "droppedAnnotations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem"
-            }
-          },
-          "acceptedAnnotations": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem"
-            }
-          },
           "ingestion": {
             "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseMetaIngestion"
           }
@@ -89973,6 +90258,88 @@
           },
           "meta": {
             "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMeta"
+          }
+        }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItem": {
+        "required": [
+          "action",
+          "createdAt",
+          "createdBy",
+          "createdByType",
+          "flag",
+          "id",
+          "provider",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "action": {
+            "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItemAction"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByType": {
+            "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItemCreatedByType"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItemProvider"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItemTags"
+          }
+        }
+      },
+      "RetrieveOrganizationFlagLog200ResponseData": {
+        "required": [
+          "action",
+          "createdAt",
+          "createdBy",
+          "createdByType",
+          "flag",
+          "id",
+          "provider",
+          "tags"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "action": {
+            "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseDataAction"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "createdBy": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdByType": {
+            "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseDataCreatedByType"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseDataProvider"
+          },
+          "tags": {
+            "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseDataTags"
           }
         }
       },
@@ -109779,6 +110146,9 @@
           "$ref": "#/components/schemas/EventIdLookupResponseEventBreakdownsAdditionalPropertiesAdditionalProperties"
         }
       },
+      "GetFlagLogResponseDataTagsPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "GetReplayDataClicksItemPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -109801,6 +110171,9 @@
         "type": "object"
       },
       "IssueEventDetailsResponseReleaseLastCommitPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "ListFlagLogsResponseDataItemTagsPropertyAdditionalProperties": {
         "type": "object"
       },
       "ListReplaysDataItemClicksItemPropertyAdditionalProperties": {
@@ -112392,84 +112765,6 @@
         },
         "description": "Ingestion status for the data behind a response."
       },
-      "ListOrganizationEventsTimeseries200ResponseMetaDroppedAnnotationsItem": {
-        "required": [
-          "category",
-          "end",
-          "eventCount",
-          "outcome",
-          "reason",
-          "start",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/SystemType"
-          },
-          "category": {
-            "type": "string"
-          },
-          "outcome": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "start": {
-            "type": "number",
-            "format": "double"
-          },
-          "end": {
-            "type": "number",
-            "format": "double"
-          },
-          "eventCount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
-      },
-      "ListOrganizationEventsTimeseries200ResponseMetaAcceptedAnnotationsItem": {
-        "required": [
-          "category",
-          "end",
-          "eventCount",
-          "outcome",
-          "reason",
-          "start",
-          "type"
-        ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/SystemType"
-          },
-          "category": {
-            "type": "string"
-          },
-          "outcome": {
-            "type": "string"
-          },
-          "reason": {
-            "type": "string"
-          },
-          "start": {
-            "type": "number",
-            "format": "double"
-          },
-          "end": {
-            "type": "number",
-            "format": "double"
-          },
-          "eventCount": {
-            "type": "number",
-            "format": "double"
-          }
-        },
-        "description": "One time bucket\u0027s volume for a system data-fidelity annotation."
-      },
       "ListOrganizationEventsTimeseries200ResponseMetaIngestion": {
         "required": [
           "status"
@@ -112573,6 +112868,18 @@
             "type": "number",
             "format": "double"
           }
+        }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItemTags": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationFlagLogs200ResponseDataItemTagsAdditionalProperties"
+        }
+      },
+      "RetrieveOrganizationFlagLog200ResponseDataTags": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/RetrieveOrganizationFlagLog200ResponseDataTagsAdditionalProperties"
         }
       },
       "ListOrganizationForwarding200ResponseItemEnrolledProjectsItem": {
@@ -121923,6 +122230,12 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ResolveOrganizationEventId200ResponseEventBreakdownsAdditionalPropertiesAdditionalProperties"
         }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItemTagsAdditionalProperties": {
+        "type": "object"
+      },
+      "RetrieveOrganizationFlagLog200ResponseDataTagsAdditionalProperties": {
+        "type": "object"
       },
       "ListOrganizationForwarding200ResponseItemProjectConfigsItemProject": {
         "required": [
@@ -135803,6 +136116,101 @@
           ]
         }
       },
+      "GetFlagLogResponseDataAction": {
+        "enum": [
+          "created",
+          "deleted",
+          "updated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetFlagLogResponseDataAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            }
+          ]
+        }
+      },
+      "GetFlagLogResponseDataCreatedByType": {
+        "enum": [
+          "email",
+          "id",
+          "name",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "GetFlagLogResponseDataCreatedByType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
+      "GetFlagLogResponseDataProvider": {
+        "enum": [
+          "generic",
+          "flagpole",
+          "launchdarkly",
+          "unleash",
+          "statsig",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "GetFlagLogResponseDataProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "generic",
+              "name": "Generic"
+            },
+            {
+              "value": "flagpole",
+              "name": "Flagpole"
+            },
+            {
+              "value": "launchdarkly",
+              "name": "Launchdarkly"
+            },
+            {
+              "value": "unleash",
+              "name": "Unleash"
+            },
+            {
+              "value": "statsig",
+              "name": "Statsig"
+            }
+          ]
+        }
+      },
       "GroupDetailsResponseAssignedToType": {
         "enum": [
           "user",
@@ -135894,6 +136302,101 @@
             {
               "value": "dark",
               "name": "Dark"
+            }
+          ]
+        }
+      },
+      "ListFlagLogsResponseDataItemAction": {
+        "enum": [
+          "created",
+          "deleted",
+          "updated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListFlagLogsResponseDataItemAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            }
+          ]
+        }
+      },
+      "ListFlagLogsResponseDataItemCreatedByType": {
+        "enum": [
+          "email",
+          "id",
+          "name",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ListFlagLogsResponseDataItemCreatedByType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
+      "ListFlagLogsResponseDataItemProvider": {
+        "enum": [
+          "generic",
+          "flagpole",
+          "launchdarkly",
+          "unleash",
+          "statsig",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ListFlagLogsResponseDataItemProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "generic",
+              "name": "Generic"
+            },
+            {
+              "value": "flagpole",
+              "name": "Flagpole"
+            },
+            {
+              "value": "launchdarkly",
+              "name": "Launchdarkly"
+            },
+            {
+              "value": "unleash",
+              "name": "Unleash"
+            },
+            {
+              "value": "statsig",
+              "name": "Statsig"
             }
           ]
         }
@@ -137062,23 +137565,6 @@
             {
               "value": "occurrence",
               "name": "Occurrence"
-            }
-          ]
-        }
-      },
-      "SystemType": {
-        "enum": [
-          "system"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "SystemType",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "system",
-              "name": "System"
             }
           ]
         }
@@ -140951,6 +141437,196 @@
             {
               "value": "feedback",
               "name": "Feedback"
+            }
+          ]
+        }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItemAction": {
+        "enum": [
+          "created",
+          "deleted",
+          "updated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationFlagLogs200ResponseDataItemAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            }
+          ]
+        }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItemCreatedByType": {
+        "enum": [
+          "email",
+          "id",
+          "name",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ListOrganizationFlagLogs200ResponseDataItemCreatedByType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
+      "ListOrganizationFlagLogs200ResponseDataItemProvider": {
+        "enum": [
+          "generic",
+          "flagpole",
+          "launchdarkly",
+          "unleash",
+          "statsig",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "ListOrganizationFlagLogs200ResponseDataItemProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "generic",
+              "name": "Generic"
+            },
+            {
+              "value": "flagpole",
+              "name": "Flagpole"
+            },
+            {
+              "value": "launchdarkly",
+              "name": "Launchdarkly"
+            },
+            {
+              "value": "unleash",
+              "name": "Unleash"
+            },
+            {
+              "value": "statsig",
+              "name": "Statsig"
+            }
+          ]
+        }
+      },
+      "RetrieveOrganizationFlagLog200ResponseDataAction": {
+        "enum": [
+          "created",
+          "deleted",
+          "updated"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "RetrieveOrganizationFlagLog200ResponseDataAction",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "deleted",
+              "name": "Deleted"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            }
+          ]
+        }
+      },
+      "RetrieveOrganizationFlagLog200ResponseDataCreatedByType": {
+        "enum": [
+          "email",
+          "id",
+          "name",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "RetrieveOrganizationFlagLog200ResponseDataCreatedByType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "email",
+              "name": "Email"
+            },
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "name",
+              "name": "Name"
+            }
+          ]
+        }
+      },
+      "RetrieveOrganizationFlagLog200ResponseDataProvider": {
+        "enum": [
+          "generic",
+          "flagpole",
+          "launchdarkly",
+          "unleash",
+          "statsig",
+          null
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "nullable": true,
+        "x-ms-enum": {
+          "name": "RetrieveOrganizationFlagLog200ResponseDataProvider",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "generic",
+              "name": "Generic"
+            },
+            {
+              "value": "flagpole",
+              "name": "Flagpole"
+            },
+            {
+              "value": "launchdarkly",
+              "name": "Launchdarkly"
+            },
+            {
+              "value": "unleash",
+              "name": "Unleash"
+            },
+            {
+              "value": "statsig",
+              "name": "Statsig"
             }
           ]
         }
@@ -153652,6 +154328,48 @@
           ]
         }
       },
+      "ListOrganizationFlagLogsProviderParameterItem": {
+        "enum": [
+          "flagpole",
+          "generic",
+          "launchdarkly",
+          "statsig",
+          "unknown",
+          "unleash"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListOrganizationFlagLogsProviderParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "flagpole",
+              "name": "Flagpole"
+            },
+            {
+              "value": "generic",
+              "name": "Generic"
+            },
+            {
+              "value": "launchdarkly",
+              "name": "Launchdarkly"
+            },
+            {
+              "value": "statsig",
+              "name": "Statsig"
+            },
+            {
+              "value": "unknown",
+              "name": "Unknown"
+            },
+            {
+              "value": "unleash",
+              "name": "Unleash"
+            }
+          ]
+        }
+      },
       "ListOrganizationIssueViewsCreatedByParameter": {
         "minLength": 1,
         "enum": [
@@ -155842,6 +156560,15 @@
       "externalDocs": {
         "description": "Found an error? Let us know.",
         "url": "https://github.com/getsentry/sentry-docs/issues/new/?title=API%20Documentation%20Error:%20/api/profiling/\u0026template=api_error_template.md"
+      },
+      "x-display-description": false
+    },
+    {
+      "name": "Flags",
+      "description": "Endpoints for retrieving feature flag change logs",
+      "externalDocs": {
+        "description": "Found an error? Let us know.",
+        "url": "https://github.com/getsentry/sentry-docs/issues/new/?title=API%20Documentation%20Error:%20/api/flags/\u0026template=api_error_template.md"
       },
       "x-display-description": false
     }

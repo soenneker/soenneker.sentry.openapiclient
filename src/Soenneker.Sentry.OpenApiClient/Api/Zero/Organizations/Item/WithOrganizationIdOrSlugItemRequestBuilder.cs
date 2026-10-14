@@ -14,6 +14,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsDropped;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimeseries;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ExternalUsers;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Flags;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearchViews;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations;
@@ -117,6 +118,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ExternalUsers.ExternalUsersRequestBuilder ExternalUsers
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ExternalUsers.ExternalUsersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The flags property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Flags.FlagsRequestBuilder Flags
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Flags.FlagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The forwarding property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.ForwardingRequestBuilder Forwarding
