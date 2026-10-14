@@ -893,7 +893,7 @@
           "Explore"
         ],
         "summary": "Retrieve an Organization\u0027s AI Conversation",
-        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\n\u0060stats.inputTokens\u0060 includes cache-read and cache-write tokens.\nWithout an explicit range, Sentry widens the search across available retention.\nA missing conversation returns an empty \u0060spans\u0060 list.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\n\u0060stats.inputTokens\u0060 includes cache-read and cache-write tokens. Stats are returned\non the first page only. Without an explicit range, Sentry widens the search across\navailable retention. A missing conversation returns an empty \u0060spans\u0060 list.",
         "operationId": "RetrieveOrganizationAiConversation",
         "parameters": [
           {
@@ -55194,7 +55194,8 @@
               "$ref": "#/components/schemas/RetrieveOrganizationAiConversationResponseStatsUsageByModelItem"
             }
           }
-        }
+        },
+        "nullable": true
       },
       "ScimListResourceTypesResponseResourcesItem": {
         "required": [
@@ -88191,7 +88192,8 @@
               "$ref": "#/components/schemas/RetrieveOrganizationAiConversation200ResponseStatsUsageByModelItem"
             }
           }
-        }
+        },
+        "nullable": true
       },
       "GetOrganizationConfigIntegrations200ResponseProvidersItem": {
         "required": [
