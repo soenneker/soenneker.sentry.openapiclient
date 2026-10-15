@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttributesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", pathParameters)
+        public AttributesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,expand*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AttributesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", rawUrl)
+        public AttributesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes{?attributeType*,cursor*,dataset*,end*,environment*,expand*,itemType*,project*,query*,start*,statsPeriod*,substringMatch*}", rawUrl)
         {
         }
         /// <summary>
-        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.
+        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.Pass `expand=context` (experimental) to include each attribute&apos;s metadata:a brief description, examples, and deprecation details.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.
+        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.Pass `expand=context` (experimental) to include each attribute&apos;s metadata:a brief description, examples, and deprecation details.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.Attributes.AttributesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.
+        /// List the attribute keys available on a given trace item dataset (spans, logs,trace metrics, etc.), with optional substring and structured filtering.Pass `expand=context` (experimental) to include each attribute&apos;s metadata:a brief description, examples, and deprecation details.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AttributesRequestBuilderGetQueryParameters 
@@ -121,6 +121,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
 #else
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
+#endif
+            /// <summary>**Experimental:** This parameter is under active development and may change.Optional fields to expand. Pass `context` to include attribute metadata (brief, examples, deprecation, etc.).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expand")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.ContextItem[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expand")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.ContextItem[] Expand { get; set; }
 #endif
             /// <summary>Deprecated alias of `dataset`. Use `dataset` instead.</summary>
             [Obsolete("")]

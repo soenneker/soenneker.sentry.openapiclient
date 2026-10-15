@@ -6393,6 +6393,139 @@
         ]
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channel-validate": {
+      "get": {
+        "tags": [
+          "Integration"
+        ],
+        "summary": "Validate a Messaging Channel for an Integration",
+        "description": "**Experimental:** This API is under active development and may change.\n\nValidate whether a channel exists for the given integration.",
+        "operationId": "ValidateOrganizationIntegrationChannel",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationId",
+            "in": "path",
+            "description": "The ID of the integration installed on the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "channel",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ValidateOrganizationIntegrationChannel200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channels": {
+      "get": {
+        "tags": [
+          "Integration"
+        ],
+        "summary": "List Messaging Channels for an Integration",
+        "description": "**Experimental:** This API is under active development and may change.\n\nList all messaging channels for an integration.",
+        "operationId": "ListOrganizationIntegrationChannels",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationId",
+            "in": "path",
+            "description": "The ID of the integration installed on the organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationIntegrationChannels200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "x-sentry-experimental": true
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/repos": {
       "get": {
         "tags": [
@@ -17073,7 +17206,7 @@
           "Discover"
         ],
         "summary": "List Trace Item Attributes",
-        "description": "List the attribute keys available on a given trace item dataset (spans, logs,\ntrace metrics, etc.), with optional substring and structured filtering.",
+        "description": "List the attribute keys available on a given trace item dataset (spans, logs,\ntrace metrics, etc.), with optional substring and structured filtering.\n\nPass \u0060expand=context\u0060 (experimental) to include each attribute\u0027s metadata:\na brief description, examples, and deprecation details.",
         "operationId": "ListOrganizationTraceItemAttributes",
         "parameters": [
           {
@@ -17183,6 +17316,18 @@
             "schema": {
               "type": "string"
             }
+          },
+          {
+            "name": "expand",
+            "in": "query",
+            "description": "**Experimental:** This parameter is under active development and may change.\n\nOptional fields to expand. Pass \u0060context\u0060 to include attribute metadata (brief, examples, deprecation, etc.).",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ContextItem"
+              }
+            },
+            "x-sentry-experimental": true
           },
           {
             "name": "cursor",
@@ -36026,6 +36171,37 @@
           }
         }
       },
+      "IntegrationChannelValidationResponse": {
+        "required": [
+          "valid"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "valid": {
+            "type": "boolean"
+          }
+        }
+      },
+      "IntegrationChannelsResponse": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "warning": {
+            "type": "string"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/IntegrationChannelsResponseResultsItem"
+            }
+          }
+        }
+      },
       "IntegrationIssueConfigResponse": {
         "required": [
           "accountType",
@@ -43640,6 +43816,9 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemAttributeType"
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemContext"
           }
         }
       },
@@ -46510,6 +46689,24 @@
             }
           }
         }
+      },
+      "ListTraceItemAttributesResponseItemContextExamplesItem": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
       },
       "ListWorkflowItemTriggersConditions": {
         "type": "object",
@@ -51118,6 +51315,29 @@
           }
         },
         "nullable": true
+      },
+      "IntegrationChannelsResponseResultsItem": {
+        "required": [
+          "display",
+          "id",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "display": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
       },
       "IntegrationIssueConfigResponseMissingFeaturesItem": {
         "required": [
@@ -59465,6 +59685,39 @@
             "type": "boolean"
           }
         }
+      },
+      "ListTraceItemAttributesResponseItemContext": {
+        "type": "object",
+        "properties": {
+          "isConvention": {
+            "type": "boolean"
+          },
+          "isCustom": {
+            "type": "boolean"
+          },
+          "brief": {
+            "type": "string"
+          },
+          "isDeprecated": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemContextExamplesItem"
+            }
+          },
+          "replacementAttribute": {
+            "type": "string"
+          }
+        },
+        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
       },
       "ListWorkflowItemTriggers": {
         "type": "object",
@@ -71960,6 +72213,37 @@
           }
         }
       },
+      "ValidateOrganizationIntegrationChannel200Response": {
+        "required": [
+          "valid"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "valid": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ListOrganizationIntegrationChannels200Response": {
+        "required": [
+          "results"
+        ],
+        "type": "object",
+        "properties": {
+          "warning": {
+            "type": "string"
+          },
+          "results": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationIntegrationChannels200ResponseResultsItem"
+            }
+          }
+        }
+      },
       "ListOrganizationIntegrationRepositories200Response": {
         "required": [
           "repos"
@@ -83100,6 +83384,24 @@
           }
         }
       },
+      "ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "type": "number",
+            "format": "double"
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      },
       "ListOrganizationWorkflows200ResponseItemTriggersConditions": {
         "type": "object",
         "anyOf": [
@@ -90874,6 +91176,29 @@
       "GetOrganizationIntegration200ResponseConfigData": {
         "type": "object"
       },
+      "ListOrganizationIntegrationChannels200ResponseResultsItem": {
+        "required": [
+          "display",
+          "id",
+          "name",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "display": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
       "ListOrganizationIntegrationRepositories200ResponseReposItem": {
         "required": [
           "defaultBranch",
@@ -97115,6 +97440,9 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemAttributeType"
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContext"
           }
         }
       },
@@ -106466,6 +106794,9 @@
           },
           "attributeType": {
             "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemAttributeType"
+          },
+          "context": {
+            "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContext"
           }
         }
       },
@@ -117129,6 +117460,39 @@
             "type": "boolean"
           }
         }
+      },
+      "ListOrganizationTraceItemAttributes200ResponseItemContext": {
+        "type": "object",
+        "properties": {
+          "isConvention": {
+            "type": "boolean"
+          },
+          "isCustom": {
+            "type": "boolean"
+          },
+          "brief": {
+            "type": "string"
+          },
+          "isDeprecated": {
+            "type": "boolean"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem"
+            }
+          },
+          "replacementAttribute": {
+            "type": "string"
+          }
+        },
+        "description": "Additional, mostly-static metadata about an attribute.\n\nWhen \u0060\u0060expand=context\u0060\u0060 is requested, context is attached to every attribute.\nMetadata comes from the sentry conventions, Sentry\u0027s own column definitions,\nor user-authored context (gated behind \u0060\u0060data-browsing-attribute-context\u0060\u0060),\nin that precedence order. Only the fields available are included, so an\nattribute with no metadata gets an empty context."
       },
       "ListOrganizationTraceMetrics200ResponseItemContext": {
         "type": "object",
@@ -155834,6 +156198,23 @@
           ]
         }
       },
+      "ContextItem": {
+        "enum": [
+          "context"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ContextItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "context",
+              "name": "Context"
+            }
+          ]
+        }
+      },
       "ListOrganizationTraceMetricsSortParameter": {
         "enum": [
           "-count",
@@ -155892,23 +156273,6 @@
             {
               "value": "unit",
               "name": "Unit1"
-            }
-          ]
-        }
-      },
-      "ContextItem": {
-        "enum": [
-          "context"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "x-ms-enum": {
-          "name": "ContextItem",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "context",
-              "name": "Context"
             }
           ]
         }

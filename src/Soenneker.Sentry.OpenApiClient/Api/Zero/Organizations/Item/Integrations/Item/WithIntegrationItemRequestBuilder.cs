@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.ChannelValidate;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Channels;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Repos;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +20,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integration
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithIntegrationItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The channels property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Channels.ChannelsRequestBuilder Channels
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Channels.ChannelsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The channelValidate property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.ChannelValidate.ChannelValidateRequestBuilder ChannelValidate
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.ChannelValidate.ChannelValidateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The repos property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Integrations.Item.Repos.ReposRequestBuilder Repos
         {
