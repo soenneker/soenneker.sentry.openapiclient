@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppCo
         {
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.
+        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.API clients can use `filter=issue-link` to create or link an external issue throughan app such as Linear. The `uri` values in `schema` are paths on the app&apos;s own server.Clients never call them directly; Sentry calls the app on their behalf:- To load a select field&apos;s choices, pass the field&apos;s `uri` to  `GET /sentry-app-installations/{installationUuid}/external-requests/`.- To create or link the issue, send the form values with the `uri` from  `schema.create` or `schema.link` to  `POST /sentry-app-installations/{installationUuid}/external-issue-actions/`.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppCo
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.
+        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.API clients can use `filter=issue-link` to create or link an external issue throughan app such as Linear. The `uri` values in `schema` are paths on the app&apos;s own server.Clients never call them directly; Sentry calls the app on their behalf:- To load a select field&apos;s choices, pass the field&apos;s `uri` to  `GET /sentry-app-installations/{installationUuid}/external-requests/`.- To create or link the issue, send the form values with the `uri` from  `schema.create` or `schema.link` to  `POST /sentry-app-installations/{installationUuid}/external-issue-actions/`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppCo
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppComponents.SentryAppComponentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.
+        /// **Experimental:** This API is under active development and may change.Retrieve prepared UI components for installed custom integrations, including issue-link forms.API clients can use `filter=issue-link` to create or link an external issue throughan app such as Linear. The `uri` values in `schema` are paths on the app&apos;s own server.Clients never call them directly; Sentry calls the app on their behalf:- To load a select field&apos;s choices, pass the field&apos;s `uri` to  `GET /sentry-app-installations/{installationUuid}/external-requests/`.- To create or link the issue, send the form values with the `uri` from  `schema.create` or `schema.link` to  `POST /sentry-app-installations/{installationUuid}/external-issue-actions/`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SentryAppComponentsRequestBuilderGetQueryParameters 

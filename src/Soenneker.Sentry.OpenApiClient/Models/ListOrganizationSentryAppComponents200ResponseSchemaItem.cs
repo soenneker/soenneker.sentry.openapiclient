@@ -22,6 +22,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError Error { get; set; }
 #endif
+        /// <summary>The installationUuid property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InstallationUuid { get; set; }
+#nullable restore
+#else
+        public string InstallationUuid { get; set; }
+#endif
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -80,6 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError.CreateFromDiscriminatorValue); } },
+                { "installationUuid", n => { InstallationUuid = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema.CreateFromDiscriminatorValue); } },
                 { "sentryApp", n => { SentryApp = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -94,6 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>("error", Error);
+            writer.WriteStringValue("installationUuid", InstallationUuid);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>("schema", Schema);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp>("sentryApp", SentryApp);
             writer.WriteStringValue("type", Type);
