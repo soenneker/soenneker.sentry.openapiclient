@@ -44,6 +44,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The start property</summary>
         public double? Start { get; set; }
+        /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Tags { get; set; }
+#nullable restore
+#else
+        public List<string> Tags { get; set; }
+#endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -83,6 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "outcome", n => { Outcome = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -99,6 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);
             writer.WriteDoubleValue("start", Start);
+            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
