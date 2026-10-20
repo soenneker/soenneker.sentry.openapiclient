@@ -893,7 +893,7 @@
           "Explore"
         ],
         "summary": "Retrieve an Organization\u0027s AI Conversation",
-        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\n\u0060stats.inputTokens\u0060 includes cache-read and cache-write tokens. Stats are returned\non the first page only. Without an explicit range, Sentry widens the search across\navailable retention. A missing conversation returns an empty \u0060spans\u0060 list.",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn spans recorded for one AI conversation in start-time order.\n\nMessage, tool, and response attributes contain their recorded string values.\n\u0060stats.errors\u0060 counts spans whose status is not \u0060ok\u0060, \u0060cancelled\u0060, or \u0060unknown\u0060.\n\u0060stats.errorToolNames\u0060 lists tools used by those spans.\n\u0060stats.inputTokens\u0060 includes cache-read and cache-write tokens. In \u0060stats.usageByModel\u0060,\n\u0060inputCost\u0060 includes cache-read and cache-write costs, and \u0060outputCost\u0060 includes\nreasoning cost. These cost breakdowns are not added to \u0060totalCost\u0060.\nStats are returned on the first page only. Without an explicit range, Sentry widens\nthe search across available retention. A missing conversation returns an empty \u0060spans\u0060 list.",
         "operationId": "RetrieveOrganizationAiConversation",
         "parameters": [
           {
@@ -1013,6 +1013,9 @@
                       "stats": {
                         "cacheReadTokens": 0,
                         "cacheWriteTokens": 0,
+                        "cacheReadCost": 0,
+                        "cacheWriteCost": 0,
+                        "reasoningCost": 0,
                         "endTimestamp": 1743465601250,
                         "errors": 0,
                         "errorToolNames": [],
@@ -1039,6 +1042,9 @@
                             "reasoningTokens": 0,
                             "inputCost": 0,
                             "outputCost": 0,
+                            "cacheReadCost": 0,
+                            "cacheWriteCost": 0,
+                            "reasoningCost": 0,
                             "totalCost": 0.0042
                           }
                         ]
@@ -26649,6 +26655,142 @@
         ]
       }
     },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stacktrace-link": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Get a Source Code Link for a Stack Trace Frame",
+        "description": "Resolve a stack trace filename to its linked source file using the project\u0027s code mappings and connected source code integrations.",
+        "operationId": "GetProjectStacktraceLink",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "file",
+            "in": "query",
+            "description": "The file path from the stack trace frame.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "platform",
+            "in": "query",
+            "description": "The platform associated with the frame.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "absPath",
+            "in": "query",
+            "description": "The absolute path of the stack frame, if known.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "commitId",
+            "in": "query",
+            "description": "The commit ID associated with the event.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sdkName",
+            "in": "query",
+            "description": "The SDK name associated with the event.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "module",
+            "in": "query",
+            "description": "The module name, if known.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "package",
+            "in": "query",
+            "description": "The package name, if known.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "lineNo",
+            "in": "query",
+            "description": "The source line number, if known.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "groupId",
+            "in": "query",
+            "description": "The issue ID, if known.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProjectStacktraceLink200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats": {
       "get": {
         "tags": [
@@ -41153,6 +41295,42 @@
           }
         }
       },
+      "StacktraceLinkResponse": {
+        "required": [
+          "config",
+          "error",
+          "integrations",
+          "sourceUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "sourcePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "attemptedUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "config": {
+            "$ref": "#/components/schemas/StacktraceLinkResponseConfig"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItem"
+            }
+          }
+        }
+      },
       "StarSegment": {
         "required": [
           "project_id",
@@ -55350,7 +55528,9 @@
       },
       "RetrieveOrganizationAiConversationResponseStats": {
         "required": [
+          "cacheReadCost",
           "cacheReadTokens",
+          "cacheWriteCost",
           "cacheWriteTokens",
           "endTimestamp",
           "errorToolNames",
@@ -55359,6 +55539,7 @@
           "inputTokens",
           "llmCalls",
           "outputTokens",
+          "reasoningCost",
           "reasoningTokens",
           "startTimestamp",
           "toolCalls",
@@ -55425,6 +55606,18 @@
           },
           "reasoningTokens": {
             "type": "integer"
+          },
+          "cacheReadCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheWriteCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "reasoningCost": {
+            "type": "number",
+            "format": "double"
           },
           "usageByModel": {
             "type": "array",
@@ -56609,6 +56802,123 @@
             "items": {
               "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItem"
             }
+          }
+        }
+      },
+      "StacktraceLinkResponseConfig": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/StacktraceLinkResponseConfigProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        },
+        "nullable": true
+      },
+      "StacktraceLinkResponseIntegrationsItem": {
+        "required": [
+          "accountType",
+          "domainName",
+          "icon",
+          "id",
+          "missingFeatures",
+          "name",
+          "outOfDate",
+          "provider",
+          "scopes",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "domainName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountType": {
+            "type": "string",
+            "nullable": true
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "outOfDate": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItemMissingFeaturesItem"
+            },
+            "nullable": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItemProvider"
           }
         }
       },
@@ -65468,7 +65778,9 @@
       },
       "RetrieveOrganizationAiConversationResponseStatsUsageByModelItem": {
         "required": [
+          "cacheReadCost",
           "cacheReadTokens",
+          "cacheWriteCost",
           "cacheWriteTokens",
           "inputCost",
           "inputTokens",
@@ -65476,6 +65788,7 @@
           "model",
           "outputCost",
           "outputTokens",
+          "reasoningCost",
           "reasoningTokens",
           "totalCost",
           "totalTokens"
@@ -65512,6 +65825,18 @@
             "format": "double"
           },
           "outputCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheReadCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheWriteCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "reasoningCost": {
             "type": "number",
             "format": "double"
           },
@@ -66119,6 +66444,99 @@
           },
           "scraping_process": {
             "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcess"
+          }
+        }
+      },
+      "StacktraceLinkResponseConfigProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/StacktraceLinkResponseConfigProviderAspectsProperty"
+          }
+        },
+        "nullable": true
+      },
+      "StacktraceLinkResponseIntegrationsItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
+      },
+      "StacktraceLinkResponseIntegrationsItemProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItemProviderAspectsProperty"
           }
         }
       },
@@ -69047,6 +69465,18 @@
           "source_map": {
             "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceMap"
           }
+        }
+      },
+      "StacktraceLinkResponseConfigProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/StacktraceLinkResponseConfigProviderAspectsAdditionalProperties"
+        }
+      },
+      "StacktraceLinkResponseIntegrationsItemProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItemProviderAspectsAdditionalProperties"
         }
       },
       "TeamOrganizationExtraOptionsAdditionalProperties": {
@@ -79094,6 +79524,42 @@
           }
         }
       },
+      "GetProjectStacktraceLink200Response": {
+        "required": [
+          "config",
+          "error",
+          "integrations",
+          "sourceUrl"
+        ],
+        "type": "object",
+        "properties": {
+          "sourcePath": {
+            "type": "string",
+            "nullable": true
+          },
+          "attemptedUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "error": {
+            "type": "string",
+            "nullable": true
+          },
+          "config": {
+            "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseConfig"
+          },
+          "sourceUrl": {
+            "type": "string",
+            "nullable": true
+          },
+          "integrations": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseIntegrationsItem"
+            }
+          }
+        }
+      },
       "ListProjectStats200Response": {
         "type": "array",
         "items": {
@@ -87388,6 +87854,18 @@
       "SizeAnalysisResponseComparisonsItemDiffItemsItemDiffItemsItem": {
         "type": "object"
       },
+      "StacktraceLinkResponseConfigProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/StacktraceLinkResponseConfigProviderAspectsPropertyAdditionalProperties"
+        }
+      },
+      "StacktraceLinkResponseIntegrationsItemProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/StacktraceLinkResponseIntegrationsItemProviderAspectsPropertyAdditionalProperties"
+        }
+      },
       "TeamOrganizationExtraOptionsAdditionalPropertiesProperty": {
         "type": "object",
         "additionalProperties": {
@@ -87597,6 +88075,12 @@
         "type": "object"
       },
       "SizeAnalysisResponseComparisonsItemInsightDiffItemsItemGroupDiffsItemDiffItemsItem": {
+        "type": "object"
+      },
+      "StacktraceLinkResponseConfigProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
+      "StacktraceLinkResponseIntegrationsItemProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "TeamOrganizationExtraOptionsAdditionalPropertiesAdditionalProperties": {
@@ -88428,7 +88912,9 @@
       },
       "RetrieveOrganizationAiConversation200ResponseStats": {
         "required": [
+          "cacheReadCost",
           "cacheReadTokens",
+          "cacheWriteCost",
           "cacheWriteTokens",
           "endTimestamp",
           "errorToolNames",
@@ -88437,6 +88923,7 @@
           "inputTokens",
           "llmCalls",
           "outputTokens",
+          "reasoningCost",
           "reasoningTokens",
           "startTimestamp",
           "toolCalls",
@@ -88505,6 +88992,18 @@
           },
           "reasoningTokens": {
             "type": "integer"
+          },
+          "cacheReadCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheWriteCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "reasoningCost": {
+            "type": "number",
+            "format": "double"
           },
           "usageByModel": {
             "type": "array",
@@ -101636,6 +102135,123 @@
           }
         }
       },
+      "GetProjectStacktraceLink200ResponseConfig": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseConfigProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        },
+        "nullable": true
+      },
+      "GetProjectStacktraceLink200ResponseIntegrationsItem": {
+        "required": [
+          "accountType",
+          "domainName",
+          "icon",
+          "id",
+          "missingFeatures",
+          "name",
+          "outOfDate",
+          "provider",
+          "scopes",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string",
+            "nullable": true
+          },
+          "domainName": {
+            "type": "string",
+            "nullable": true
+          },
+          "accountType": {
+            "type": "string",
+            "nullable": true
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "outOfDate": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "missingFeatures": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseIntegrationsItemMissingFeaturesItem"
+            },
+            "nullable": true
+          },
+          "status": {
+            "type": "string"
+          },
+          "provider": {
+            "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseIntegrationsItemProvider"
+          }
+        }
+      },
       "ListProjectSymbolSources200ResponseItem": {
         "required": [
           "type",
@@ -110735,6 +111351,12 @@
       "ProjectEventDetailsResponseReleaseVersionInfoVersionPropertyAdditionalProperties": {
         "type": "object"
       },
+      "StacktraceLinkResponseConfigProviderAspectsPropertyAdditionalProperties": {
+        "type": "object"
+      },
+      "StacktraceLinkResponseIntegrationsItemProviderAspectsPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "TeamOrganizationExtraOptionsAdditionalPropertiesPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -111297,7 +111919,9 @@
       },
       "RetrieveOrganizationAiConversation200ResponseStatsUsageByModelItem": {
         "required": [
+          "cacheReadCost",
           "cacheReadTokens",
+          "cacheWriteCost",
           "cacheWriteTokens",
           "inputCost",
           "inputTokens",
@@ -111305,6 +111929,7 @@
           "model",
           "outputCost",
           "outputTokens",
+          "reasoningCost",
           "reasoningTokens",
           "totalCost",
           "totalTokens"
@@ -111341,6 +111966,18 @@
             "format": "double"
           },
           "outputCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheReadCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "cacheWriteCost": {
+            "type": "number",
+            "format": "double"
+          },
+          "reasoningCost": {
             "type": "number",
             "format": "double"
           },
@@ -119972,6 +120609,99 @@
           "$ref": "#/components/schemas/ListProjectReplayViewedBy200ResponseDataViewedByItemAdditionalProperties"
         }
       },
+      "GetProjectStacktraceLink200ResponseConfigProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseConfigProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "GetProjectStacktraceLink200ResponseIntegrationsItemMissingFeaturesItem": {
+        "required": [
+          "description",
+          "key"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "description": "A feature the installation can no longer support, named by the permission\ntier it falls short of, so the update-permissions modal can list them."
+      },
+      "GetProjectStacktraceLink200ResponseIntegrationsItemProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseIntegrationsItemProviderAspects"
+          }
+        }
+      },
       "ListProjectSymbolSources200ResponseItemPassword": {
         "type": "object",
         "properties": {
@@ -125177,6 +125907,18 @@
       "ListProjectReplayViewedBy200ResponseDataViewedByItemAdditionalProperties": {
         "type": "object"
       },
+      "GetProjectStacktraceLink200ResponseConfigProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseConfigProviderAspectsAdditionalProperties"
+        }
+      },
+      "GetProjectStacktraceLink200ResponseIntegrationsItemProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/GetProjectStacktraceLink200ResponseIntegrationsItemProviderAspectsAdditionalProperties"
+        }
+      },
       "ListProjectTeams200ResponseItemFlagsAdditionalProperties": {
         "type": "object"
       },
@@ -126394,6 +127136,12 @@
             "type": "boolean"
           }
         }
+      },
+      "GetProjectStacktraceLink200ResponseConfigProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
+      "GetProjectStacktraceLink200ResponseIntegrationsItemProviderAspectsAdditionalProperties": {
+        "type": "object"
       },
       "GetTeam200ResponseOrganizationExtraOptionsAdditionalPropertiesAdditionalProperties": {
         "type": "object"

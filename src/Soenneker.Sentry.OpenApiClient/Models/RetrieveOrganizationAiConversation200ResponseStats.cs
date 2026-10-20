@@ -14,8 +14,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The cacheReadCost property</summary>
+        public double? CacheReadCost { get; set; }
         /// <summary>The cacheReadTokens property</summary>
         public int? CacheReadTokens { get; set; }
+        /// <summary>The cacheWriteCost property</summary>
+        public double? CacheWriteCost { get; set; }
         /// <summary>The cacheWriteTokens property</summary>
         public int? CacheWriteTokens { get; set; }
         /// <summary>The endTimestamp property</summary>
@@ -38,6 +42,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? LlmCalls { get; set; }
         /// <summary>The outputTokens property</summary>
         public int? OutputTokens { get; set; }
+        /// <summary>The reasoningCost property</summary>
+        public double? ReasoningCost { get; set; }
         /// <summary>The reasoningTokens property</summary>
         public int? ReasoningTokens { get; set; }
         /// <summary>The startTimestamp property</summary>
@@ -91,7 +97,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cacheReadCost", n => { CacheReadCost = n.GetDoubleValue(); } },
                 { "cacheReadTokens", n => { CacheReadTokens = n.GetIntValue(); } },
+                { "cacheWriteCost", n => { CacheWriteCost = n.GetDoubleValue(); } },
                 { "cacheWriteTokens", n => { CacheWriteTokens = n.GetIntValue(); } },
                 { "endTimestamp", n => { EndTimestamp = n.GetLongValue(); } },
                 { "errorToolNames", n => { ErrorToolNames = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -100,6 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "inputTokens", n => { InputTokens = n.GetIntValue(); } },
                 { "llmCalls", n => { LlmCalls = n.GetIntValue(); } },
                 { "outputTokens", n => { OutputTokens = n.GetIntValue(); } },
+                { "reasoningCost", n => { ReasoningCost = n.GetDoubleValue(); } },
                 { "reasoningTokens", n => { ReasoningTokens = n.GetIntValue(); } },
                 { "startTimestamp", n => { StartTimestamp = n.GetLongValue(); } },
                 { "toolCalls", n => { ToolCalls = n.GetIntValue(); } },
@@ -117,7 +126,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("cacheReadCost", CacheReadCost);
             writer.WriteIntValue("cacheReadTokens", CacheReadTokens);
+            writer.WriteDoubleValue("cacheWriteCost", CacheWriteCost);
             writer.WriteIntValue("cacheWriteTokens", CacheWriteTokens);
             writer.WriteLongValue("endTimestamp", EndTimestamp);
             writer.WriteIntValue("errors", Errors);
@@ -126,6 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("inputTokens", InputTokens);
             writer.WriteIntValue("llmCalls", LlmCalls);
             writer.WriteIntValue("outputTokens", OutputTokens);
+            writer.WriteDoubleValue("reasoningCost", ReasoningCost);
             writer.WriteIntValue("reasoningTokens", ReasoningTokens);
             writer.WriteLongValue("startTimestamp", StartTimestamp);
             writer.WriteIntValue("toolCalls", ToolCalls);

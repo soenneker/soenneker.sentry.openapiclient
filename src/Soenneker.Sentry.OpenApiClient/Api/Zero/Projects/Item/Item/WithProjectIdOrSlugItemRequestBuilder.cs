@@ -21,6 +21,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Profiling;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Replays;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.StacktraceLink;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Tags;
@@ -130,6 +131,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder Repo
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Repo.RepoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The stacktraceLink property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.StacktraceLink.StacktraceLinkRequestBuilder StacktraceLink
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.StacktraceLink.StacktraceLinkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The stats property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats.StatsRequestBuilder Stats
