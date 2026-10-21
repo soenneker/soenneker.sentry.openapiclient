@@ -14,10 +14,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The comparisonFilled property</summary>
+        public bool? ComparisonFilled { get; set; }
+        /// <summary>The comparisonSmoothed property</summary>
+        public bool? ComparisonSmoothed { get; set; }
         /// <summary>The comparisonValue property</summary>
         public double? ComparisonValue { get; set; }
         /// <summary>The confidence property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? Confidence { get; set; }
+        /// <summary>The filled property</summary>
+        public bool? Filled { get; set; }
         /// <summary>The incomplete property</summary>
         public bool? Incomplete { get; set; }
         /// <summary>The incompleteReason property</summary>
@@ -32,6 +38,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? SampleCount { get; set; }
         /// <summary>The sampleRate property</summary>
         public double? SampleRate { get; set; }
+        /// <summary>The smoothed property</summary>
+        public bool? Smoothed { get; set; }
         /// <summary>The timestamp property</summary>
         public double? Timestamp { get; set; }
         /// <summary>The value property</summary>
@@ -61,12 +69,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "comparisonFilled", n => { ComparisonFilled = n.GetBoolValue(); } },
+                { "comparisonSmoothed", n => { ComparisonSmoothed = n.GetBoolValue(); } },
                 { "comparisonValue", n => { ComparisonValue = n.GetDoubleValue(); } },
                 { "confidence", n => { Confidence = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>(); } },
+                { "filled", n => { Filled = n.GetBoolValue(); } },
                 { "incomplete", n => { Incomplete = n.GetBoolValue(); } },
                 { "incompleteReason", n => { IncompleteReason = n.GetStringValue(); } },
                 { "sampleCount", n => { SampleCount = n.GetDoubleValue(); } },
                 { "sampleRate", n => { SampleRate = n.GetDoubleValue(); } },
+                { "smoothed", n => { Smoothed = n.GetBoolValue(); } },
                 { "timestamp", n => { Timestamp = n.GetDoubleValue(); } },
                 { "value", n => { Value = n.GetDoubleValue(); } },
             };
@@ -78,12 +90,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("comparisonFilled", ComparisonFilled);
+            writer.WriteBoolValue("comparisonSmoothed", ComparisonSmoothed);
             writer.WriteDoubleValue("comparisonValue", ComparisonValue);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>("confidence", Confidence);
+            writer.WriteBoolValue("filled", Filled);
             writer.WriteBoolValue("incomplete", Incomplete);
             writer.WriteStringValue("incompleteReason", IncompleteReason);
             writer.WriteDoubleValue("sampleCount", SampleCount);
             writer.WriteDoubleValue("sampleRate", SampleRate);
+            writer.WriteBoolValue("smoothed", Smoothed);
             writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteDoubleValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

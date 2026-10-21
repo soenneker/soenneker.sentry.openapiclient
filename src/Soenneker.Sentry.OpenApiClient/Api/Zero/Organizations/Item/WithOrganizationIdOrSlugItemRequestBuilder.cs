@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeownersAssociations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors;
@@ -68,6 +70,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.AgentsRequestBuilder Agents
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The codeMappings property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.CodeMappingsRequestBuilder CodeMappings
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.CodeMappingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The codeownersAssociations property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeownersAssociations.CodeownersAssociationsRequestBuilder CodeownersAssociations
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeownersAssociations.CodeownersAssociationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The config property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config.ConfigRequestBuilder Config

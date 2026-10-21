@@ -1109,6 +1109,231 @@
         "x-sentry-experimental": true
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/code-mappings": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "List an Organization\u0027s Code Mappings",
+        "description": "Return repository path mappings for projects the user can access.",
+        "operationId": "ListOrganizationCodeMappings",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "integrationId",
+            "in": "query",
+            "description": "Filter mappings to a specific installed integration.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "Filter by project ID or slug. Pass \u0060-1\u0060 to include all projects the user can access. When omitted, mappings include all projects the user can access.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "The maximum number of mappings to return per page.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseSchema"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:ci",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Create an Organization Code Mapping",
+        "description": "Create a repository path mapping for a project and installed integration.",
+        "operationId": "CreateOrganizationCodeMapping",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateOrganizationCodeMappingRequestRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationCodeMapping201Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/codeowners-associations": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "List Code Owner Associations",
+        "description": "Return CODEOWNERS associations for projects the authenticated user is a member of. Specify \u0060project\u0060 to filter the results.",
+        "operationId": "ListOrganizationCodeownersAssociations",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "project",
+            "in": "query",
+            "description": "Filter by project ID or slug. Specify multiple values to include multiple projects. Use \u0060-1\u0060 to include all accessible projects.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "provider",
+            "in": "query",
+            "description": "Filter associations by integration provider.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseSchema"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:ci",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/config/integrations": {
       "get": {
         "tags": [
@@ -4640,7 +4865,7 @@
           {
             "name": "query",
             "in": "query",
-            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
+            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters. A query can contain up to 16 regular expressions.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
             "schema": {
               "type": "string"
             }
@@ -5010,7 +5235,7 @@
           {
             "name": "query",
             "in": "query",
-            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
+            "description": "Filters results by using [query syntax](/concepts/search/).\n\nExample: \u0060query=(transaction:foo AND release:abc) OR (transaction:[bar,baz] AND release:def)\u0060\n\nWith the \u0060logs\u0060 dataset, a string attribute can also be matched against a regular expression written as \u0060key://pattern//\u0060, and excluded with \u0060!key://pattern//\u0060.\nPatterns use [RE2 syntax](https://github.com/google/re2/wiki/Syntax), match anywhere in the value unless anchored with \u0060^\u0060 or \u0060$\u0060, are case sensitive unless they start with \u0060(?i)\u0060, and are limited to 64 characters. A query can contain up to 16 regular expressions.\nTo search for a literal value that starts with \u0060//\u0060, quote it: \u0060key:\u0022//value\u0022\u0060.\nSee [regular expressions](/concepts/search/#regular-expressions-logs-only) for more details.\n\nExample: \u0060query=message://^Timeout after \\d\u002Bms//\u0060\n",
             "schema": {
               "type": "string"
             }
@@ -14482,6 +14707,70 @@
             "auth_token": [
               "org:admin",
               "org:read",
+              "org:write"
+            ]
+          }
+        ]
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/repos/settings": {
+      "put": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Update Settings for Organization Repositories",
+        "description": "Update code review settings for one or more repositories in the organization. Provide at least one of \u0060enabledCodeReview\u0060 or \u0060codeReviewTriggers\u0060.",
+        "operationId": "UpdateOrganizationRepositorySettings",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOrganizationRepositorySettingsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
               "org:write"
             ]
           }
@@ -25770,6 +26059,68 @@
         ]
       }
     },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/completion": {
+      "get": {
+        "tags": [
+          "Releases"
+        ],
+        "summary": "Retrieve a Project\u0027s Release Setup Progress",
+        "description": "Return the project\u0027s release-setup progress for these steps:\n\n- \u0060tag\u0060: The project has an issue with a recorded first release.\n- \u0060repo\u0060: The organization has at least one repository.\n- \u0060commit\u0060: At least one of the project\u0027s 1,000 most recent releases (by release ID) has an associated commit.\n- \u0060deploy\u0060: At least one of the project\u0027s releases has a deploy.\n\nResults are cached for one hour when a step is complete and one minute otherwise.",
+        "operationId": "GetProjectReleaseSetupCompletion",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetProjectReleaseSetupCompletion200ResponseSchema"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:read",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ]
+      }
+    },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}": {
       "delete": {
         "tags": [
@@ -31364,7 +31715,8 @@
           {
             "auth_token": [
               "event:admin",
-              "event:write"
+              "event:write",
+              "seer:write"
             ]
           }
         ]
@@ -33667,6 +34019,46 @@
             "description": "The description (body) of the external issue to create."
           }
         }
+      },
+      "CreateOrganizationCodeMappingRequest": {
+        "required": [
+          "integration_id",
+          "project_id",
+          "repository_id",
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of a repository belonging to the installed integration."
+          },
+          "project_id": {
+            "type": "integer",
+            "description": "The ID of the project to associate with the code mapping."
+          },
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to replace in stack trace filenames."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix to substitute for the stack trace prefix."
+          },
+          "integration_id": {
+            "type": "integer",
+            "description": "The ID of the installed integration that provides the repository."
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The default branch to use when resolving source files. May be empty for Perforce."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "CreateOrganizationReleaseResponse": {
         "required": [
@@ -36808,6 +37200,12 @@
           "$ref": "#/components/schemas/ListOrganizationClientKeysResponseItem"
         }
       },
+      "ListOrganizationCodeMappingsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappingsResponseItem"
+        }
+      },
       "ListOrganizationIntegrationResponse": {
         "type": "array",
         "items": {
@@ -36890,6 +37288,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListReleaseFilesItem"
+        }
+      },
+      "ListReleaseSetupSteps": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListReleaseSetupStepsItem"
         }
       },
       "ListReplayClicks": {
@@ -37230,6 +37634,69 @@
               "$ref": "#/components/schemas/OrgReleaseResponseProjectsItem"
             }
           }
+        }
+      },
+      "OrganizationCodeMappingResponse": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/OrganizationCodeMappingResponseProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
+      "OrganizationCodeOwnersAssociationsResponse": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationCodeOwnersAssociationsResponseAdditionalProperties"
         }
       },
       "OrganizationConfigIntegrationsEndpointResponse": {
@@ -38014,6 +38481,12 @@
             },
             "description": "An optional way to indicate the start and end commits for each repository included in a release. Head commits must include parameters \u0060\u0060repository\u0060\u0060 and \u0060\u0060commit\u0060\u0060 (the HEAD SHA). For GitLab repositories, please use the Group name instead of the slug. They can optionally include \u0060\u0060previousCommit\u0060\u0060 (the SHA of the HEAD of the previous release), which should be specified if this is the first time you\u0027ve sent commit data."
           }
+        }
+      },
+      "OrganizationRepositorySettingsResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/OrganizationRepositorySettingsResponseItem"
         }
       },
       "OrganizationSentryAppDetailsResponse": {
@@ -40145,6 +40618,33 @@
           "query": {
             "type": "string",
             "nullable": true
+          }
+        }
+      },
+      "RepositorySettings": {
+        "required": [
+          "repositoryIds"
+        ],
+        "type": "object",
+        "properties": {
+          "repositoryIds": {
+            "maxItems": 1000,
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "List of repository IDs to update settings for. Maximum 1000 repositories."
+          },
+          "enabledCodeReview": {
+            "type": "boolean",
+            "description": "Whether code review is enabled for these repositories"
+          },
+          "codeReviewTriggers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RepositorySettingsCodeReviewTriggersItem"
+            },
+            "description": "List of triggers for code review"
           }
         }
       },
@@ -42977,6 +43477,63 @@
         },
         "description": "This represents a Sentry Project Client Key."
       },
+      "ListOrganizationCodeMappingsResponseItem": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListOrganizationCodeMappingsResponseItemProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
       "ListOrganizationIntegrationResponseItem": {
         "required": [
           "accountType",
@@ -43772,6 +44329,21 @@
           "dateCreated": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "ListReleaseSetupStepsItem": {
+        "required": [
+          "complete",
+          "step"
+        ],
+        "type": "object",
+        "properties": {
+          "step": {
+            "$ref": "#/components/schemas/ListReleaseSetupStepsItemStep"
+          },
+          "complete": {
+            "type": "boolean"
           }
         }
       },
@@ -44651,6 +45223,51 @@
             "format": "date-time"
           },
           "lastSeen": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "OrganizationRepositorySettingsResponseItem": {
+        "required": [
+          "dateCreated",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/OrganizationRepositorySettingsResponseItemProviderProperty"
+          },
+          "status": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalSlug": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "settings": {
+            "$ref": "#/components/schemas/OrganizationRepositorySettingsResponseItemSettings"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "dateCreated": {
             "type": "string",
             "format": "date-time"
           }
@@ -52895,6 +53512,60 @@
           }
         }
       },
+      "OrganizationCodeMappingResponseProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/OrganizationCodeMappingResponseProviderAspectsProperty"
+          }
+        },
+        "nullable": true
+      },
+      "OrganizationCodeOwnersAssociationsResponseAdditionalProperties": {
+        "required": [
+          "associations",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "associations": {
+            "$ref": "#/components/schemas/OrganizationCodeOwnersAssociationsResponseAdditionalPropertiesAssociationsProperty"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/OrganizationCodeOwnersAssociationsResponseAdditionalPropertiesErrors"
+          }
+        }
+      },
       "OrganizationConfigIntegrationsEndpointResponseProvidersItem": {
         "required": [
           "canAdd",
@@ -59018,6 +59689,45 @@
           }
         }
       },
+      "ListOrganizationCodeMappingsResponseItemProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/ListOrganizationCodeMappingsResponseItemProviderAspectsProperty"
+          }
+        },
+        "nullable": true
+      },
       "ListOrganizationIntegrationResponseItemMissingFeaturesItem": {
         "required": [
           "description",
@@ -60821,6 +61531,31 @@
         "properties": {
           "version": {
             "type": "string"
+          }
+        },
+        "nullable": true
+      },
+      "OrganizationRepositorySettingsResponseItemProvider": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "OrganizationRepositorySettingsResponseItemSettings": {
+        "required": [
+          "codeReviewTriggers",
+          "enabledCodeReview"
+        ],
+        "type": "object",
+        "properties": {
+          "enabledCodeReview": {
+            "type": "boolean"
+          },
+          "codeReviewTriggers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         },
         "nullable": true
@@ -64681,6 +65416,60 @@
         },
         "nullable": true
       },
+      "OrganizationCodeMappingResponseProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationCodeMappingResponseProviderAspectsAdditionalProperties"
+        }
+      },
+      "OrganizationCodeOwnersAssociationsResponseAdditionalPropertiesAssociations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "OrganizationCodeOwnersAssociationsResponseAdditionalPropertiesErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
       "OrganizationEventsResponseDictMetaFields": {
         "type": "object",
         "additionalProperties": {
@@ -64754,14 +65543,28 @@
           },
           "value": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "incomplete": {
             "type": "boolean"
           },
           "comparisonValue": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
+          },
+          "filled": {
+            "type": "boolean"
+          },
+          "smoothed": {
+            "type": "boolean"
+          },
+          "comparisonFilled": {
+            "type": "boolean"
+          },
+          "comparisonSmoothed": {
+            "type": "boolean"
           },
           "sampleCount": {
             "type": "number",
@@ -67177,6 +67980,12 @@
             "type": "string",
             "nullable": true
           }
+        }
+      },
+      "ListOrganizationCodeMappingsResponseItemProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappingsResponseItemProviderAspectsAdditionalProperties"
         }
       },
       "ListOrganizationMemberResponseItemUserIdentitiesItem": {
@@ -70680,6 +71489,115 @@
           }
         },
         "description": "Span page plus conversation-level metadata."
+      },
+      "ListOrganizationCodeMappings200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseItem"
+        }
+      },
+      "CreateOrganizationCodeMappingRequestRequestBody": {
+        "required": [
+          "integration_id",
+          "project_id",
+          "repository_id",
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of a repository belonging to the installed integration."
+          },
+          "project_id": {
+            "type": "integer",
+            "description": "The ID of the project to associate with the code mapping."
+          },
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to replace in stack trace filenames."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix to substitute for the stack trace prefix."
+          },
+          "integration_id": {
+            "type": "integer",
+            "description": "The ID of the installed integration that provides the repository."
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The default branch to use when resolving source files. May be empty for Perforce."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "CreateOrganizationCodeMapping201Response": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/CreateOrganizationCodeMapping201ResponseProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ListOrganizationCodeownersAssociations200Response": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseAdditionalProperties"
+        }
       },
       "GetOrganizationConfigIntegrations200Response": {
         "required": [
@@ -75503,6 +76421,39 @@
           "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseItem"
         }
       },
+      "UpdateOrganizationRepositorySettingsRequest": {
+        "required": [
+          "repositoryIds"
+        ],
+        "type": "object",
+        "properties": {
+          "repositoryIds": {
+            "maxItems": 1000,
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "description": "List of repository IDs to update settings for. Maximum 1000 repositories."
+          },
+          "enabledCodeReview": {
+            "type": "boolean",
+            "description": "Whether code review is enabled for these repositories"
+          },
+          "codeReviewTriggers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UpdateOrganizationRepositorySettingsRequestCodeReviewTriggersItem"
+            },
+            "description": "List of triggers for code review"
+          }
+        }
+      },
+      "UpdateOrganizationRepositorySettings200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseItem"
+        }
+      },
       "ListOrganizationScimV2Groups200Response": {
         "required": [
           "Resources",
@@ -79384,6 +80335,12 @@
           }
         }
       },
+      "GetProjectReleaseSetupCompletion200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetProjectReleaseSetupCompletion200ResponseItem"
+        }
+      },
       "ListProjectReplayClicks200Response": {
         "required": [
           "data"
@@ -82971,6 +83928,18 @@
           "$ref": "#/components/schemas/ListOrganizationAiConversations200ResponseSchemaItem"
         }
       },
+      "ListOrganizationCodeMappings200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseSchemaItem"
+        }
+      },
+      "ListOrganizationCodeownersAssociations200ResponseSchema": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseSchemaAdditionalProperties"
+        }
+      },
       "ListOrganizationDashboards200ResponseSchema": {
         "type": "array",
         "items": {
@@ -83193,6 +84162,12 @@
           "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseSchemaItem"
         }
       },
+      "UpdateOrganizationRepositorySettings200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseSchemaItem"
+        }
+      },
       "ListOrganizationSentryAppComponents200ResponseSchema": {
         "type": "array",
         "items": {
@@ -83341,6 +84316,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListProjectReleaseFiles200ResponseSchemaItem"
+        }
+      },
+      "GetProjectReleaseSetupCompletion200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/GetProjectReleaseSetupCompletion200ResponseSchemaItem"
         }
       },
       "ListProjectReplayRecordingSegments200ResponseSchema": {
@@ -86314,6 +87295,12 @@
       "OrganizationProjectResponseDictItemSessionStats": {
         "type": "object"
       },
+      "OrganizationRepositorySettingsResponseItemProviderProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
       "ProjectEventsResponseDictItemMetadataProperty": {
         "type": "object",
         "additionalProperties": {
@@ -86868,6 +87855,18 @@
       "OrgReleaseResponseDataAdditionalProperties": {
         "type": "object"
       },
+      "OrganizationCodeMappingResponseProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/OrganizationCodeMappingResponseProviderAspectsPropertyAdditionalProperties"
+        }
+      },
+      "OrganizationCodeOwnersAssociationsResponseAdditionalPropertiesAssociationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
       "OrganizationConfigIntegrationsEndpointResponseProvidersItemMetadata": {
         "type": "object"
       },
@@ -87295,6 +88294,12 @@
       },
       "ListOrgTeamResponseItemProjectsItemSessionStats": {
         "type": "object"
+      },
+      "ListOrganizationCodeMappingsResponseItemProviderAspectsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappingsResponseItemProviderAspectsPropertyAdditionalProperties"
+        }
       },
       "ListOrganizationMemberResponseItemUserAuthenticatorsItem": {
         "type": "object"
@@ -87764,6 +88769,9 @@
           "$ref": "#/components/schemas/OrgReleaseResponseProjectsItemHealthDataStatsPropertyAdditionalProperties"
         }
       },
+      "OrganizationCodeMappingResponseProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
       "OrganizationIssueViewCreatedByExperimentsAdditionalProperties": {
         "type": "object"
       },
@@ -87934,6 +88942,9 @@
         }
       },
       "ListOrgTeamResponseItemOrganizationOnboardingTasksItemData": {
+        "type": "object"
+      },
+      "ListOrganizationCodeMappingsResponseItemProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "ListOrganizationMemberResponseItemUserExperimentsAdditionalProperties": {
@@ -89013,6 +90024,117 @@
           }
         },
         "nullable": true
+      },
+      "ListOrganizationCodeMappings200ResponseItem": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseItemProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
+      "CreateOrganizationCodeMapping201ResponseProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/CreateOrganizationCodeMapping201ResponseProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "ListOrganizationCodeownersAssociations200ResponseAdditionalProperties": {
+        "required": [
+          "associations",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "associations": {
+            "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesAssociations"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesErrors"
+          }
+        }
       },
       "GetOrganizationConfigIntegrations200ResponseProvidersItem": {
         "required": [
@@ -96706,6 +97828,51 @@
           }
         }
       },
+      "UpdateOrganizationRepositorySettings200ResponseItem": {
+        "required": [
+          "dateCreated",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseItemProvider"
+          },
+          "status": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalSlug": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "settings": {
+            "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseItemSettings"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "ListOrganizationScimV2Groups200ResponseResourcesItem": {
         "required": [
           "displayName",
@@ -101869,6 +103036,21 @@
           "$ref": "#/components/schemas/UpdateProjectReleaseFile200ResponseHeadersAdditionalProperties"
         }
       },
+      "GetProjectReleaseSetupCompletion200ResponseItem": {
+        "required": [
+          "complete",
+          "step"
+        ],
+        "type": "object",
+        "properties": {
+          "step": {
+            "$ref": "#/components/schemas/GetProjectReleaseSetupCompletion200ResponseItemStep"
+          },
+          "complete": {
+            "type": "boolean"
+          }
+        }
+      },
       "ListProjectReplayClicks200ResponseDataItem": {
         "required": [
           "node_id",
@@ -105584,6 +106766,78 @@
           }
         }
       },
+      "ListOrganizationCodeMappings200ResponseSchemaItem": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseItemProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
+      "ListOrganizationCodeownersAssociations200ResponseSchemaAdditionalProperties": {
+        "required": [
+          "associations",
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "associations": {
+            "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesAssociations"
+          },
+          "errors": {
+            "$ref": "#/components/schemas/ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesErrors"
+          }
+        }
+      },
       "ListOrganizationDashboards200ResponseSchemaItem": {
         "required": [
           "createdBy",
@@ -107162,6 +108416,51 @@
           }
         }
       },
+      "UpdateOrganizationRepositorySettings200ResponseSchemaItem": {
+        "required": [
+          "dateCreated",
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseItemProvider"
+          },
+          "status": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalSlug": {
+            "type": "string",
+            "nullable": true
+          },
+          "externalId": {
+            "type": "string",
+            "nullable": true
+          },
+          "settings": {
+            "$ref": "#/components/schemas/UpdateOrganizationRepositorySettings200ResponseItemSettings"
+          },
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
       "ListOrganizationSentryAppComponents200ResponseSchemaItem": {
         "required": [
           "error",
@@ -108557,6 +109856,21 @@
           "dateCreated": {
             "type": "string",
             "format": "date-time"
+          }
+        }
+      },
+      "GetProjectReleaseSetupCompletion200ResponseSchemaItem": {
+        "required": [
+          "complete",
+          "step"
+        ],
+        "type": "object",
+        "properties": {
+          "step": {
+            "$ref": "#/components/schemas/GetProjectReleaseSetupCompletion200ResponseItemStep"
+          },
+          "complete": {
+            "type": "boolean"
           }
         }
       },
@@ -111171,6 +112485,9 @@
       "OrgReleaseResponseVersionInfoVersionPropertyAdditionalProperties": {
         "type": "object"
       },
+      "OrganizationCodeMappingResponseProviderAspectsPropertyAdditionalProperties": {
+        "type": "object"
+      },
       "OrganizationIssueViewCreatedByExperimentsPropertyAdditionalProperties": {
         "type": "object"
       },
@@ -111266,6 +112583,9 @@
         "additionalProperties": {
           "$ref": "#/components/schemas/ListOrgTeamResponseItemOrganizationExtraOptionsPropertyAdditionalPropertiesAdditionalProperties"
         }
+      },
+      "ListOrganizationCodeMappingsResponseItemProviderAspectsPropertyAdditionalProperties": {
+        "type": "object"
       },
       "ListOrganizationMemberResponseItemUserExperimentsPropertyAdditionalProperties": {
         "type": "object"
@@ -111984,6 +113304,99 @@
           "totalCost": {
             "type": "number",
             "format": "double"
+          }
+        }
+      },
+      "ListOrganizationCodeMappings200ResponseItemProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseItemProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "CreateOrganizationCodeMapping201ResponseProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/CreateOrganizationCodeMapping201ResponseProviderAspectsAdditionalProperties"
+        }
+      },
+      "ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesAssociations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesErrors": {
+        "required": [
+          "missing_external_teams",
+          "missing_external_users",
+          "missing_user_emails",
+          "teams_without_access",
+          "users_without_access"
+        ],
+        "type": "object",
+        "properties": {
+          "missing_user_emails": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_users": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "missing_external_teams": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "teams_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "users_without_access": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
@@ -113809,14 +115222,28 @@
           },
           "value": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "incomplete": {
             "type": "boolean"
           },
           "comparisonValue": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
+          },
+          "filled": {
+            "type": "boolean"
+          },
+          "smoothed": {
+            "type": "boolean"
+          },
+          "comparisonFilled": {
+            "type": "boolean"
+          },
+          "comparisonSmoothed": {
+            "type": "boolean"
           },
           "sampleCount": {
             "type": "number",
@@ -117268,6 +118695,31 @@
             "format": "date-time"
           }
         }
+      },
+      "UpdateOrganizationRepositorySettings200ResponseItemProvider": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "UpdateOrganizationRepositorySettings200ResponseItemSettings": {
+        "required": [
+          "codeReviewTriggers",
+          "enabledCodeReview"
+        ],
+        "type": "object",
+        "properties": {
+          "enabledCodeReview": {
+            "type": "boolean"
+          },
+          "codeReviewTriggers": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "nullable": true
       },
       "ListOrganizationScimV2Groups200ResponseResourcesItemMeta": {
         "required": [
@@ -122672,6 +124124,15 @@
       "UpdateOrganization200ResponseProjectsItemOptionsAdditionalProperties": {
         "type": "object"
       },
+      "ListOrganizationCodeMappings200ResponseItemProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/ListOrganizationCodeMappings200ResponseItemProviderAspectsAdditionalProperties"
+        }
+      },
+      "CreateOrganizationCodeMapping201ResponseProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
       "ListOrganizationDashboards200ResponseItemCreatedByIdentitiesItem": {
         "required": [
           "dateSynced",
@@ -126313,6 +127774,9 @@
         }
       },
       "UpdateOrganization200ResponseTeamsItemOrganizationOnboardingTasksItemData": {
+        "type": "object"
+      },
+      "ListOrganizationCodeMappings200ResponseItemProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "ListOrganizationDashboards200ResponseItemCreatedByIdentitiesItemOrganization": {
@@ -132654,6 +134118,29 @@
           ]
         }
       },
+      "RepositorySettingsCodeReviewTriggersItem": {
+        "enum": [
+          "on_new_commit",
+          "on_ready_for_review"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "A code review trigger to enable.\n\n* \u0060on_new_commit\u0060\n* \u0060on_ready_for_review\u0060",
+        "x-ms-enum": {
+          "name": "RepositorySettingsCodeReviewTriggersItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on_new_commit",
+              "name": "OnNewCommit"
+            },
+            {
+              "value": "on_ready_for_review",
+              "name": "OnReadyForReview"
+            }
+          ]
+        }
+      },
       "ScimMemberProvisionSentryOrgRole": {
         "enum": [
           "billing",
@@ -133119,6 +134606,38 @@
             {
               "value": "distribution",
               "name": "Distribution"
+            }
+          ]
+        }
+      },
+      "ListReleaseSetupStepsItemStep": {
+        "enum": [
+          "tag",
+          "repo",
+          "commit",
+          "deploy"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ListReleaseSetupStepsItemStep",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "tag",
+              "name": "Tag"
+            },
+            {
+              "value": "repo",
+              "name": "Repo"
+            },
+            {
+              "value": "commit",
+              "name": "Commit"
+            },
+            {
+              "value": "deploy",
+              "name": "Deploy"
             }
           ]
         }
@@ -139945,6 +141464,29 @@
             {
               "value": "under",
               "name": "Under"
+            }
+          ]
+        }
+      },
+      "UpdateOrganizationRepositorySettingsRequestCodeReviewTriggersItem": {
+        "enum": [
+          "on_new_commit",
+          "on_ready_for_review"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "A code review trigger to enable.\n\n* \u0060on_new_commit\u0060\n* \u0060on_ready_for_review\u0060",
+        "x-ms-enum": {
+          "name": "UpdateOrganizationRepositorySettingsRequestCodeReviewTriggersItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "on_new_commit",
+              "name": "OnNewCommit"
+            },
+            {
+              "value": "on_ready_for_review",
+              "name": "OnReadyForReview"
             }
           ]
         }
@@ -153290,6 +154832,38 @@
             {
               "value": "all_artifacts",
               "name": "AllArtifacts"
+            }
+          ]
+        }
+      },
+      "GetProjectReleaseSetupCompletion200ResponseItemStep": {
+        "enum": [
+          "tag",
+          "repo",
+          "commit",
+          "deploy"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "GetProjectReleaseSetupCompletion200ResponseItemStep",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "tag",
+              "name": "Tag"
+            },
+            {
+              "value": "repo",
+              "name": "Repo"
+            },
+            {
+              "value": "commit",
+              "name": "Commit"
+            },
+            {
+              "value": "deploy",
+              "name": "Deploy"
             }
           ]
         }

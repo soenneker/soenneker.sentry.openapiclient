@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Completion;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
@@ -18,6 +19,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReleasesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The completion property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Completion.CompletionRequestBuilder Completion
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Completion.CompletionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.projects.item.item.releases.item collection</summary>
         /// <param name="position">The version identifier of the release</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Releases.Item.WithVersionItemRequestBuilder"/></returns>

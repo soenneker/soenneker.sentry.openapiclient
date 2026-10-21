@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos.Item;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos.Settings;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,6 +19,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReposRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The settings property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos.Settings.SettingsRequestBuilder Settings
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.repos.item collection</summary>
         /// <param name="position">The repository ID.</param>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Repos.Item.WithRepoItemRequestBuilder"/></returns>
