@@ -14,9 +14,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.* `glob`* `equals`* `starts_with`* `contains`* `ends_with`* `does_not_start_with`* `does_not_contain`* `does_not_end_with`* `cidr`* `not_cidr`* `gt`* `gte`* `lt`* `lte`</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemOperator? Operator { get; set; }
         /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`* `geo_country_code`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemType? Type { get; set; }
-        /// <summary>Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR.</summary>
+        /// <summary>The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Value { get; set; }
@@ -49,6 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemOperator>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemType>(); } },
                 { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -60,6 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemOperator>("operator", Operator);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200ResponseConditionsItemType>("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,7 +16,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? Active { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`&gt;2 AND &lt;4`). To broaden matching, widen a condition&apos;s values or add separate filters.</summary>
+        /// <summary>Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition&apos;s values or add separate filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilter201ResponseConditionsItem>? Conditions { get; set; }

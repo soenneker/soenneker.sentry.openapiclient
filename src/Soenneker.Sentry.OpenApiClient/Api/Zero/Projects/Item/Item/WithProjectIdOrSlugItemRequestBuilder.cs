@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CodeMappingPrefixes;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Codeowners;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInboundFilters;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Environments;
@@ -42,6 +43,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithProjectIdOrSlugItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The codeMappingPrefixes property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CodeMappingPrefixes.CodeMappingPrefixesRequestBuilder CodeMappingPrefixes
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CodeMappingPrefixes.CodeMappingPrefixesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The codeowners property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Codeowners.CodeownersRequestBuilder Codeowners
         {

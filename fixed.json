@@ -148,7 +148,10 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "both"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}": {
@@ -236,7 +239,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -698,7 +705,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/agents/conversations": {
@@ -884,6 +895,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -1106,6 +1121,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -1196,7 +1215,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -1259,7 +1282,229 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/code-mappings/{configId}": {
+      "put": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Update an Organization Code Mapping",
+        "description": "Update the repository, project, or path settings for a code mapping.",
+        "operationId": "UpdateOrganizationCodeMapping",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "The ID of the code mapping to update.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateOrganizationCodeMappingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateOrganizationCodeMapping200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      },
+      "delete": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Delete an Organization Code Mapping",
+        "description": "Delete a repository project path config\n\n:auth: required",
+        "operationId": "DeleteOrganizationCodeMapping",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "configId",
+            "in": "path",
+            "description": "The ID of the code mapping to delete.",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/code-mappings/bulk": {
+      "post": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "Create or Update Organization Code Mappings in Bulk",
+        "description": "Create or update multiple repository path mappings for a project. Mappings with matching project, stack root, and source root are updated.",
+        "operationId": "BulkUpsertOrganizationCodeMappings",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappingsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings200Response"
+                }
+              }
+            }
+          },
+          "207": {
+            "description": "One or more mappings could not be saved.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings207Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:ci",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/codeowners-associations": {
@@ -1331,7 +1576,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/config/integrations": {
@@ -1957,7 +2206,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/dashboards": {
@@ -2175,7 +2428,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -2350,7 +2607,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}": {
@@ -2520,7 +2781,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -2700,7 +2965,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -2748,7 +3017,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/detectors": {
@@ -3082,7 +3355,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -3379,7 +3656,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -3473,7 +3754,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/detectors/{detectorId}": {
@@ -3635,7 +3920,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -3805,7 +4094,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -3854,7 +4147,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/discover/saved": {
@@ -4059,7 +4356,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -4181,7 +4482,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/discover/saved/{queryId}": {
@@ -4301,7 +4606,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -4432,7 +4741,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -4480,7 +4793,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/environments": {
@@ -4551,7 +4868,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/eventids/{eventId}": {
@@ -4749,7 +5070,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/events": {
@@ -4958,7 +5283,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/events-dropped": {
@@ -5096,6 +5425,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -5392,7 +5725,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/external-users": {
@@ -5483,7 +5820,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/external-users/{externalUserId}": {
@@ -5561,7 +5902,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -5608,7 +5953,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/flags/logs": {
@@ -5754,7 +6103,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/flags/logs/{flagLogId}": {
@@ -5833,7 +6186,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/forwarding": {
@@ -6002,7 +6359,11 @@
               "org:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -6056,7 +6417,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/forwarding/{dataForwarderId}": {
@@ -6145,7 +6510,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -6188,7 +6557,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/group-search-views": {
@@ -6282,7 +6655,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -6343,7 +6720,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/integrations": {
@@ -6475,7 +6856,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}": {
@@ -6577,7 +6962,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -6621,7 +7010,11 @@
               "org:integrations"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channel-validate": {
@@ -6692,6 +7085,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -6754,6 +7151,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -6840,6 +7241,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -7221,7 +7626,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -7433,7 +7842,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -7576,7 +7989,11 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/members": {
@@ -7721,7 +8138,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -7834,7 +8255,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/members/{memberId}": {
@@ -8152,7 +8577,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -8477,7 +8906,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -8528,7 +8961,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/members/{memberId}/teams/{teamIdOrSlug}": {
@@ -8637,7 +9074,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -8724,7 +9165,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -8826,7 +9271,11 @@
               "team:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/monitors": {
@@ -8925,7 +9374,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -8988,7 +9441,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}": {
@@ -9061,7 +9518,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -9132,7 +9593,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -9194,7 +9659,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}/checkins": {
@@ -9266,7 +9735,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/notifications/actions": {
@@ -9370,7 +9843,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -9445,7 +9922,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/notifications/actions/{actionId}": {
@@ -9515,7 +9996,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -9596,7 +10081,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -9638,7 +10127,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/install-details": {
@@ -9807,7 +10300,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/size-analysis": {
@@ -10061,7 +10558,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}": {
@@ -10249,7 +10750,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -10296,7 +10801,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/images/{imageIdentifier}": {
@@ -10426,7 +10935,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/latest-base": {
@@ -10553,7 +11066,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/profiling/chunks": {
@@ -10708,7 +11225,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/profiling/flamegraph": {
@@ -10985,7 +11506,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/project-keys": {
@@ -11165,7 +11690,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/projects": {
@@ -11303,7 +11832,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -11450,7 +11983,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/projects/{projectIdOrSlug}/detectors": {
@@ -11596,7 +12133,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/relay_usage": {
@@ -11655,7 +12196,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/release-threshold-statuses": {
@@ -11868,6 +12413,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -12032,7 +12581,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -12149,7 +12702,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}": {
@@ -12595,7 +13152,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -12967,7 +13528,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -13017,7 +13582,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/commits": {
@@ -13113,7 +13682,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/deploys": {
@@ -13176,7 +13749,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -13239,7 +13816,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/files": {
@@ -13333,7 +13914,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -13408,7 +13993,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/files/{fileId}": {
@@ -13487,7 +14076,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -13568,7 +14161,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -13627,7 +14224,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/replay-count": {
@@ -13781,7 +14382,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/replay-selectors": {
@@ -13978,7 +14583,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/replays": {
@@ -14236,7 +14845,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}": {
@@ -14505,7 +15118,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/repos": {
@@ -14623,7 +15240,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/repos/{repoId}/commits": {
@@ -14710,7 +15331,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/repos/settings": {
@@ -14774,7 +15399,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Groups": {
@@ -14891,7 +15520,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -14965,7 +15598,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Groups/{teamIdOrSlug}": {
@@ -15041,7 +15678,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "patch": {
         "tags": [
@@ -15101,7 +15742,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -15150,7 +15795,11 @@
               "team:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes": {
@@ -15244,7 +15893,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes/{resourceTypeName}": {
@@ -15323,7 +15976,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Schemas/{schemaUri}": {
@@ -15413,7 +16070,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ServiceProviderConfig": {
@@ -15509,7 +16170,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Users": {
@@ -15638,7 +16303,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -15724,7 +16393,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Users/{memberId}": {
@@ -15812,7 +16485,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "patch": {
         "tags": [
@@ -15872,7 +16549,11 @@
               "member:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -15921,7 +16602,11 @@
               "member:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/sentry-app-components": {
@@ -15991,6 +16676,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -16128,7 +16817,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/sessions": {
@@ -16349,7 +17042,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/shortids/{issueId}": {
@@ -16482,7 +17179,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/starred-service-spans": {
@@ -16539,6 +17240,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "delete": {
@@ -16602,6 +17307,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -16786,7 +17495,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/stats_v2": {
@@ -16952,7 +17665,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/tags": {
@@ -17119,7 +17836,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/teams": {
@@ -17393,7 +18114,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -17492,7 +18217,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes": {
@@ -17687,7 +18416,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/trace-items/metrics": {
@@ -17859,6 +18592,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -18053,7 +18790,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/trace-meta/{traceId}": {
@@ -18174,7 +18915,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}": {
@@ -18341,7 +19086,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/user-teams": {
@@ -18581,7 +19330,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/workflows": {
@@ -18894,7 +19647,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -19043,7 +19800,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -19327,7 +20088,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -19413,7 +20178,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/workflows/{workflowId}": {
@@ -19561,7 +20330,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -19717,7 +20490,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -19772,7 +20549,11 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}": {
@@ -20076,7 +20857,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -20388,7 +21173,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -20434,7 +21223,75 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/code-mapping-prefixes/stack": {
+      "get": {
+        "tags": [
+          "Integrations"
+        ],
+        "summary": "List Stack Trace Directory Prefixes for Code Mapping Autocomplete",
+        "description": "Return ranked directory prefixes from stack traces and existing mappings to help configure a code mapping.",
+        "operationId": "ListStackCodeMappingPrefixes",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListStackCodeMappingPrefixes200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners": {
@@ -20547,7 +21404,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -20667,7 +21528,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/{codeownersId}": {
@@ -20776,7 +21641,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -20903,7 +21772,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -20961,7 +21834,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters": {
@@ -21011,14 +21888,23 @@
                         "conditions": [
                           {
                             "type": "error_type",
+                            "operator": "equals",
                             "value": [
                               "TypeError"
                             ]
                           },
                           {
-                            "type": "release",
+                            "type": "error_message",
+                            "operator": "contains",
                             "value": [
-                              "1.*"
+                              "undefined"
+                            ]
+                          },
+                          {
+                            "type": "release",
+                            "operator": "lt",
+                            "value": [
+                              "2.0.0"
                             ]
                           }
                         ],
@@ -21050,6 +21936,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "post": {
@@ -21107,14 +21997,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -21144,6 +22043,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -21202,14 +22105,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -21240,6 +22152,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "put": {
@@ -21306,14 +22222,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -21343,6 +22268,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "delete": {
@@ -21402,6 +22331,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -21490,7 +22423,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -21576,7 +22513,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments/{environment}": {
@@ -21655,7 +22596,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -21744,7 +22689,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events": {
@@ -21918,7 +22867,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}": {
@@ -22546,7 +23499,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments": {
@@ -22667,7 +23624,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments/{attachmentId}": {
@@ -22772,7 +23733,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/source-map-debug": {
@@ -22892,7 +23857,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms": {
@@ -23047,7 +24016,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters": {
@@ -23137,7 +24110,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters/{filterId}": {
@@ -23207,7 +24184,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys": {
@@ -23384,7 +24365,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -23501,7 +24486,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys/{keyId}": {
@@ -23621,7 +24610,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -23750,7 +24743,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -23805,7 +24802,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/members": {
@@ -23938,7 +24939,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}": {
@@ -24009,7 +25014,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -24089,7 +25098,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -24160,7 +25173,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}/checkins": {
@@ -24231,7 +25248,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/ownership": {
@@ -24340,7 +25361,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -24459,7 +25484,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-check-rules": {
@@ -24569,7 +25598,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-checks/skip": {
@@ -24639,7 +25672,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules": {
@@ -24710,7 +25747,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-checks/skip": {
@@ -24780,7 +25821,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/build-distribution/latest": {
@@ -25122,7 +26167,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/snapshots": {
@@ -25191,7 +26240,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/profiling/profiles/{profileId}": {
@@ -25363,7 +26416,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases": {
@@ -25518,7 +26575,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/commits": {
@@ -25623,7 +26684,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files": {
@@ -25726,7 +26791,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -25810,7 +26879,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files/{fileId}": {
@@ -25898,7 +26971,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -25988,7 +27065,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -26056,7 +27137,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/completion": {
@@ -26118,7 +27203,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}": {
@@ -26174,7 +27263,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/clicks": {
@@ -26294,7 +27387,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments": {
@@ -26433,7 +27530,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments/{segmentId}": {
@@ -26525,7 +27626,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/viewed-by": {
@@ -26636,7 +27741,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete": {
@@ -26711,7 +27820,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -26795,7 +27908,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete/{jobId}": {
@@ -26880,7 +27997,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo": {
@@ -26939,7 +28060,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -27003,7 +28128,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stacktrace-link": {
@@ -27139,7 +28268,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats": {
@@ -27336,7 +28469,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/symbol-sources": {
@@ -27434,7 +28571,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -27516,7 +28657,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -27610,7 +28755,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -27665,7 +28814,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams": {
@@ -27797,7 +28950,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams/{teamIdOrSlug}": {
@@ -27952,7 +29109,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -28100,7 +29261,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/users": {
@@ -28197,7 +29362,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/seer/models": {
@@ -28229,7 +29398,10 @@
           {
             "url": "https://{region}.sentry.io"
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell"
+        }
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-issue-actions": {
@@ -28316,6 +29488,9 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "control"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -28408,6 +29583,9 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "control"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -28510,7 +29688,10 @@
               "team:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       },
       "put": {
         "tags": [
@@ -28620,7 +29801,10 @@
               "org:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       },
       "delete": {
         "tags": [
@@ -28654,7 +29838,10 @@
               "org:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       }
     },
     "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}": {
@@ -28792,7 +29979,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -28893,7 +30084,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -28939,7 +30134,11 @@
               "team:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams": {
@@ -29041,7 +30240,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams/{externalTeamId}": {
@@ -29129,7 +30332,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -29184,7 +30391,11 @@
               "team:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/members": {
@@ -29309,7 +30520,11 @@
               "team:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/projects": {
@@ -29460,7 +30675,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -29612,7 +30831,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/tags/{key}/values": {
@@ -29686,7 +30909,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/user-feedback": {
@@ -29765,7 +30992,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -29856,7 +31087,11 @@
           {
             "dsn": []
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks": {
@@ -29929,7 +31164,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -30009,7 +31248,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks/{hookId}": {
@@ -30083,7 +31326,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -30174,7 +31421,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -30228,7 +31479,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues": {
@@ -30473,7 +31728,11 @@
               "event:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -30563,7 +31822,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -30616,7 +31879,11 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}/values": {
@@ -30746,7 +32013,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/commitfiles": {
@@ -30793,7 +32064,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/sentry-app-installations": {
@@ -30862,7 +32137,11 @@
               "org:integrations"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-issues": {
@@ -30930,7 +32209,10 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-issues/{externalIssueId}": {
@@ -30981,7 +32263,10 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/spike-protections": {
@@ -31031,7 +32316,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -31079,7 +32368,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}": {
@@ -31280,7 +32573,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -31350,7 +32647,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -31399,7 +32700,11 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/autofix": {
@@ -31640,6 +32945,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "post": {
@@ -31719,7 +33028,11 @@
               "seer:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events": {
@@ -31923,7 +33236,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}": {
@@ -32561,7 +33878,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues": {
@@ -32636,7 +33957,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues/{externalIssueId}": {
@@ -32701,6 +34026,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -33021,7 +34350,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations": {
@@ -33091,6 +34424,10 @@
             ]
           }
         ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -33252,7 +34589,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -33339,7 +34680,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -33446,7 +34791,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -33523,7 +34872,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}": {
@@ -33635,7 +34988,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     }
   },
@@ -33833,6 +35190,101 @@
           },
           "avatar": {
             "$ref": "#/components/schemas/BaseTeamAvatar"
+          }
+        }
+      },
+      "BulkCodeMappingsPartialResponse": {
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
+        ],
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkCodeMappingsPartialResponseMappingsItem"
+            }
+          }
+        }
+      },
+      "BulkCodeMappingsRequest": {
+        "required": [
+          "mappings",
+          "project",
+          "repository"
+        ],
+        "type": "object",
+        "properties": {
+          "project": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "The ID or slug of the project to configure."
+          },
+          "repository": {
+            "type": "string",
+            "description": "The repository name as it appears in Sentry."
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkCodeMappingsRequestMappingsItem"
+            },
+            "description": "One or more stack-root and source-root mappings (maximum 300)."
+          },
+          "provider": {
+            "type": "string",
+            "description": "Optional repository provider used to disambiguate or find the repository. If no matching Sentry repository exists, the repository is created after the provider confirms it exists.",
+            "nullable": true
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The repository branch to use; inferred from the integration when omitted."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "BulkCodeMappingsResponse": {
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
+        ],
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkCodeMappingsResponseMappingsItem"
+            }
           }
         }
       },
@@ -34203,7 +35655,7 @@
             "items": {
               "$ref": "#/components/schemas/CustomInboundFilterConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -34239,12 +35691,15 @@
           "type": {
             "$ref": "#/components/schemas/CustomInboundFilterConditionType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/CustomInboundFilterConditionOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -37380,6 +38835,25 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListWorkflowItem"
+        }
+      },
+      "MappingItem": {
+        "required": [
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py."
+          }
         }
       },
       "Monitor": {
@@ -40621,6 +42095,41 @@
           }
         }
       },
+      "RepositoryProjectPathConfig": {
+        "required": [
+          "project_id",
+          "repository_id",
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of a repository belonging to the installed integration."
+          },
+          "project_id": {
+            "type": "integer",
+            "description": "The ID of the project to associate with the code mapping."
+          },
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to replace in stack trace filenames."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix to substitute for the stack trace prefix."
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The default branch to use when resolving source files. May be empty for Perforce."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "RepositorySettings": {
         "required": [
           "repositoryIds"
@@ -41792,6 +43301,20 @@
           },
           "has_scraping_data": {
             "type": "boolean"
+          }
+        }
+      },
+      "StackPrefixesResponse": {
+        "required": [
+          "prefixes"
+        ],
+        "type": "object",
+        "properties": {
+          "prefixes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/StackPrefixesResponsePrefixesItem"
+            }
           }
         }
       },
@@ -49975,6 +51498,69 @@
           }
         }
       },
+      "BulkCodeMappingsPartialResponseMappingsItem": {
+        "required": [
+          "sourceRoot",
+          "stackRoot",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BulkCodeMappingsPartialResponseMappingsItemStatus"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      },
+      "BulkCodeMappingsRequestMappingsItem": {
+        "required": [
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py."
+          }
+        }
+      },
+      "BulkCodeMappingsResponseMappingsItem": {
+        "required": [
+          "sourceRoot",
+          "stackRoot",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BulkCodeMappingsResponseMappingsItemStatus"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      },
       "CommitPatchSetItem": {
         "required": [
           "path",
@@ -50197,12 +51783,15 @@
           "type": {
             "$ref": "#/components/schemas/CustomInboundFilterConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/CustomInboundFilterConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -57473,6 +59062,21 @@
             "items": {
               "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItem"
             }
+          }
+        }
+      },
+      "StackPrefixesResponsePrefixesItem": {
+        "required": [
+          "fileCount",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "fileCount": {
+            "type": "integer"
           }
         }
       },
@@ -71593,6 +73197,193 @@
           }
         }
       },
+      "UpdateOrganizationCodeMappingRequest": {
+        "required": [
+          "project_id",
+          "repository_id",
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of a repository belonging to the installed integration."
+          },
+          "project_id": {
+            "type": "integer",
+            "description": "The ID of the project to associate with the code mapping."
+          },
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to replace in stack trace filenames."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix to substitute for the stack trace prefix."
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The default branch to use when resolving source files. May be empty for Perforce."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "UpdateOrganizationCodeMapping200Response": {
+        "required": [
+          "automaticallyGenerated",
+          "defaultBranch",
+          "hasCodeOwner",
+          "id",
+          "integrationId",
+          "projectId",
+          "projectSlug",
+          "provider",
+          "repoId",
+          "repoName",
+          "sourceRoot",
+          "stackRoot"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "projectId": {
+            "type": "string"
+          },
+          "projectSlug": {
+            "type": "string"
+          },
+          "repoId": {
+            "type": "string"
+          },
+          "repoName": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "provider": {
+            "$ref": "#/components/schemas/UpdateOrganizationCodeMapping200ResponseProvider"
+          },
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "defaultBranch": {
+            "type": "string",
+            "nullable": true
+          },
+          "automaticallyGenerated": {
+            "type": "boolean"
+          },
+          "hasCodeOwner": {
+            "type": "boolean"
+          }
+        }
+      },
+      "BulkUpsertOrganizationCodeMappingsRequest": {
+        "required": [
+          "mappings",
+          "project",
+          "repository"
+        ],
+        "type": "object",
+        "properties": {
+          "project": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "The ID or slug of the project to configure."
+          },
+          "repository": {
+            "type": "string",
+            "description": "The repository name as it appears in Sentry."
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappingsRequestMappingsItem"
+            },
+            "description": "One or more stack-root and source-root mappings (maximum 300)."
+          },
+          "provider": {
+            "type": "string",
+            "description": "Optional repository provider used to disambiguate or find the repository. If no matching Sentry repository exists, the repository is created after the provider confirms it exists.",
+            "nullable": true
+          },
+          "default_branch": {
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]\u002B)(?\u003C![\\/])$",
+            "type": "string",
+            "description": "The repository branch to use; inferred from the integration when omitted."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "BulkUpsertOrganizationCodeMappings200Response": {
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
+        ],
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings200ResponseMappingsItem"
+            }
+          }
+        }
+      },
+      "BulkUpsertOrganizationCodeMappings207Response": {
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
+        ],
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings207ResponseMappingsItem"
+            }
+          }
+        }
+      },
       "ListOrganizationCodeownersAssociations200Response": {
         "type": "object",
         "additionalProperties": {
@@ -78673,6 +80464,20 @@
           }
         }
       },
+      "ListStackCodeMappingPrefixes200Response": {
+        "required": [
+          "prefixes"
+        ],
+        "type": "object",
+        "properties": {
+          "prefixes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListStackCodeMappingPrefixes200ResponsePrefixesItem"
+            }
+          }
+        }
+      },
       "ListProjectCodeOwners200Response": {
         "type": "array",
         "items": {
@@ -78900,7 +80705,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateACustomInboundFilterRequestConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -78949,7 +80754,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -78998,7 +80803,7 @@
             "items": {
               "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -79047,7 +80852,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -79096,7 +80901,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -90121,6 +91926,108 @@
         },
         "nullable": true
       },
+      "UpdateOrganizationCodeMapping200ResponseProvider": {
+        "required": [
+          "aspects",
+          "canAdd",
+          "canDisable",
+          "features",
+          "key",
+          "name",
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "canAdd": {
+            "type": "boolean"
+          },
+          "canDisable": {
+            "type": "boolean"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "aspects": {
+            "$ref": "#/components/schemas/UpdateOrganizationCodeMapping200ResponseProviderAspects"
+          }
+        },
+        "nullable": true
+      },
+      "BulkUpsertOrganizationCodeMappingsRequestMappingsItem": {
+        "required": [
+          "source_root",
+          "stack_root"
+        ],
+        "type": "object",
+        "properties": {
+          "stack_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot."
+          },
+          "source_root": {
+            "pattern": "^[^\\s\u0027\\\u0022]\u002B$",
+            "type": "string",
+            "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py."
+          }
+        }
+      },
+      "BulkUpsertOrganizationCodeMappings200ResponseMappingsItem": {
+        "required": [
+          "sourceRoot",
+          "stackRoot",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings200ResponseMappingsItemStatus"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      },
+      "BulkUpsertOrganizationCodeMappings207ResponseMappingsItem": {
+        "required": [
+          "sourceRoot",
+          "stackRoot",
+          "status"
+        ],
+        "type": "object",
+        "properties": {
+          "stackRoot": {
+            "type": "string"
+          },
+          "sourceRoot": {
+            "type": "string"
+          },
+          "status": {
+            "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings207ResponseMappingsItemStatus"
+          },
+          "detail": {
+            "type": "string"
+          }
+        }
+      },
       "ListOrganizationCodeownersAssociations200ResponseAdditionalProperties": {
         "required": [
           "associations",
@@ -100251,6 +102158,21 @@
       "UpdateProject200ResponseSeerNightshiftTweaks": {
         "type": "object"
       },
+      "ListStackCodeMappingPrefixes200ResponsePrefixesItem": {
+        "required": [
+          "fileCount",
+          "path"
+        ],
+        "type": "object",
+        "properties": {
+          "path": {
+            "type": "string"
+          },
+          "fileCount": {
+            "type": "integer"
+          }
+        }
+      },
       "ListProjectCodeOwners200ResponseItem": {
         "required": [
           "codeMappingId",
@@ -100625,7 +102547,7 @@
             "items": {
               "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -100661,12 +102583,15 @@
           "type": {
             "$ref": "#/components/schemas/CreateACustomInboundFilterRequestConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilterRequestConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -100680,12 +102605,15 @@
           "type": {
             "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/CreateACustomInboundFilter201ResponseConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -100699,12 +102627,15 @@
           "type": {
             "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/RetrieveACustomInboundFilter200ResponseConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -100718,12 +102649,15 @@
           "type": {
             "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilterRequestConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -100737,12 +102671,15 @@
           "type": {
             "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/UpdateACustomInboundFilter200ResponseConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -109218,7 +111155,7 @@
             "items": {
               "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItem"
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060\u003E2 AND \u003C4\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (\u0060gte 2.0\u0060 and \u0060lt 4.0\u0060). To broaden matching, widen a condition\u0027s values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -113350,6 +115287,12 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/CreateOrganizationCodeMapping201ResponseProviderAspectsAdditionalProperties"
+        }
+      },
+      "UpdateOrganizationCodeMapping200ResponseProviderAspects": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/UpdateOrganizationCodeMapping200ResponseProviderAspectsAdditionalProperties"
         }
       },
       "ListOrganizationCodeownersAssociations200ResponseAdditionalPropertiesAssociations": {
@@ -120703,12 +122646,15 @@
           "type": {
             "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItemType"
           },
+          "operator": {
+            "$ref": "#/components/schemas/ListAProjectSCustomInboundFilters200ResponseItemConditionsItemOperator"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as \u00601.2.0\u0060 or \u0060myapp@1.2.0\u0060. A comparison with a package only applies to releases of that package."
           }
         }
       },
@@ -124131,6 +126077,9 @@
         }
       },
       "CreateOrganizationCodeMapping201ResponseProviderAspectsAdditionalProperties": {
+        "type": "object"
+      },
+      "UpdateOrganizationCodeMapping200ResponseProviderAspectsAdditionalProperties": {
         "type": "object"
       },
       "ListOrganizationDashboards200ResponseItemCreatedByIdentitiesItem": {
@@ -132007,6 +133956,89 @@
           ]
         }
       },
+      "CustomInboundFilterConditionOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "CustomInboundFilterConditionOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            }
+          ]
+        }
+      },
       "DashboardCreateWidgetDisplayType": {
         "enum": [
           "line",
@@ -138257,6 +140289,60 @@
           ]
         }
       },
+      "BulkCodeMappingsPartialResponseMappingsItemStatus": {
+        "enum": [
+          "created",
+          "updated",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BulkCodeMappingsPartialResponseMappingsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "BulkCodeMappingsResponseMappingsItemStatus": {
+        "enum": [
+          "created",
+          "updated",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BulkCodeMappingsResponseMappingsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
       "CustomInboundFilterConditionsItemType": {
         "enum": [
           "error_type",
@@ -138301,6 +140387,89 @@
             {
               "value": "geo_country_code",
               "name": "GeoCountryCode"
+            }
+          ]
+        }
+      },
+      "CustomInboundFilterConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "CustomInboundFilterConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
             }
           ]
         }
@@ -143546,6 +145715,60 @@
             {
               "value": "feedback",
               "name": "Feedback"
+            }
+          ]
+        }
+      },
+      "BulkUpsertOrganizationCodeMappings200ResponseMappingsItemStatus": {
+        "enum": [
+          "created",
+          "updated",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BulkUpsertOrganizationCodeMappings200ResponseMappingsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            },
+            {
+              "value": "error",
+              "name": "Error"
+            }
+          ]
+        }
+      },
+      "BulkUpsertOrganizationCodeMappings207ResponseMappingsItemStatus": {
+        "enum": [
+          "created",
+          "updated",
+          "error"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "BulkUpsertOrganizationCodeMappings207ResponseMappingsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "created",
+              "name": "Created"
+            },
+            {
+              "value": "updated",
+              "name": "Updated"
+            },
+            {
+              "value": "error",
+              "name": "Error"
             }
           ]
         }
@@ -151519,6 +153742,89 @@
           ]
         }
       },
+      "CreateACustomInboundFilterRequestConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilterRequestConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            }
+          ]
+        }
+      },
       "CreateACustomInboundFilter201ResponseConditionsItemType": {
         "enum": [
           "error_type",
@@ -151563,6 +153869,89 @@
             {
               "value": "geo_country_code",
               "name": "GeoCountryCode"
+            }
+          ]
+        }
+      },
+      "CreateACustomInboundFilter201ResponseConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "CreateACustomInboundFilter201ResponseConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
             }
           ]
         }
@@ -151615,6 +154004,89 @@
           ]
         }
       },
+      "RetrieveACustomInboundFilter200ResponseConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "RetrieveACustomInboundFilter200ResponseConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            }
+          ]
+        }
+      },
       "UpdateACustomInboundFilterRequestConditionsItemType": {
         "enum": [
           "error_type",
@@ -151663,6 +154135,89 @@
           ]
         }
       },
+      "UpdateACustomInboundFilterRequestConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilterRequestConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            }
+          ]
+        }
+      },
       "UpdateACustomInboundFilter200ResponseConditionsItemType": {
         "enum": [
           "error_type",
@@ -151707,6 +154262,89 @@
             {
               "value": "geo_country_code",
               "name": "GeoCountryCode"
+            }
+          ]
+        }
+      },
+      "UpdateACustomInboundFilter200ResponseConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "UpdateACustomInboundFilter200ResponseConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
             }
           ]
         }
@@ -156312,6 +158950,89 @@
           ]
         }
       },
+      "ListAProjectSCustomInboundFilters200ResponseItemConditionsItemOperator": {
+        "enum": [
+          "glob",
+          "equals",
+          "starts_with",
+          "contains",
+          "ends_with",
+          "does_not_start_with",
+          "does_not_contain",
+          "does_not_end_with",
+          "cidr",
+          "not_cidr",
+          "gt",
+          "gte",
+          "lt",
+          "lte"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "How the field compares to \u0060value\u0060. \u0060glob\u0060 matches the field against each value as a glob pattern. \u0060equals\u0060, \u0060starts_with\u0060, \u0060contains\u0060 and \u0060ends_with\u0060 match the field against each value case-insensitively, with every character read literally; \u0060does_not_start_with\u0060, \u0060does_not_contain\u0060 and \u0060does_not_end_with\u0060 match when no value does. \u0060cidr\u0060 matches \u0060ip_address\u0060 against each value as an address or a CIDR range, and \u0060not_cidr\u0060 matches when no value does. \u0060gt\u0060, \u0060gte\u0060, \u0060lt\u0060 and \u0060lte\u0060 compare one value as a version and only apply to \u0060release\u0060.\n\n* \u0060glob\u0060\n* \u0060equals\u0060\n* \u0060starts_with\u0060\n* \u0060contains\u0060\n* \u0060ends_with\u0060\n* \u0060does_not_start_with\u0060\n* \u0060does_not_contain\u0060\n* \u0060does_not_end_with\u0060\n* \u0060cidr\u0060\n* \u0060not_cidr\u0060\n* \u0060gt\u0060\n* \u0060gte\u0060\n* \u0060lt\u0060\n* \u0060lte\u0060",
+        "x-ms-enum": {
+          "name": "ListAProjectSCustomInboundFilters200ResponseItemConditionsItemOperator",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "glob",
+              "name": "Glob"
+            },
+            {
+              "value": "equals",
+              "name": "Equals"
+            },
+            {
+              "value": "starts_with",
+              "name": "StartsWith"
+            },
+            {
+              "value": "contains",
+              "name": "Contains"
+            },
+            {
+              "value": "ends_with",
+              "name": "EndsWith"
+            },
+            {
+              "value": "does_not_start_with",
+              "name": "DoesNotStartWith"
+            },
+            {
+              "value": "does_not_contain",
+              "name": "DoesNotContain"
+            },
+            {
+              "value": "does_not_end_with",
+              "name": "DoesNotEndWith"
+            },
+            {
+              "value": "cidr",
+              "name": "Cidr"
+            },
+            {
+              "value": "not_cidr",
+              "name": "NotCidr"
+            },
+            {
+              "value": "gt",
+              "name": "Gt"
+            },
+            {
+              "value": "gte",
+              "name": "Gte"
+            },
+            {
+              "value": "lt",
+              "name": "Lt"
+            },
+            {
+              "value": "lte",
+              "name": "Lte"
+            }
+          ]
+        }
+      },
       "ListProjectMonitorCheckins200ResponseItemMonitorConfigScheduleType": {
         "enum": [
           "crontab",
@@ -157701,40 +160422,42 @@
         "enum": [
           "activity",
           "browser",
+          "clicks",
           "count_dead_clicks",
           "count_errors",
+          "count_infos",
           "count_rage_clicks",
           "count_segments",
           "count_urls",
+          "count_warnings",
           "device",
           "dist",
           "duration",
           "environment",
           "error_ids",
           "finished_at",
+          "has_viewed",
           "id",
+          "info_ids",
           "is_archived",
           "os",
+          "ota_updates",
           "platform",
           "project_id",
           "releases",
+          "replay_type",
           "sdk",
+          "segment_names",
           "started_at",
           "tags",
           "trace_ids",
-          "segment_names",
           "urls",
           "user",
-          "clicks",
-          "info_ids",
-          "warning_ids",
-          "count_warnings",
-          "count_infos",
-          "has_viewed"
+          "warning_ids"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "* \u0060activity\u0060\n* \u0060browser\u0060\n* \u0060count_dead_clicks\u0060\n* \u0060count_errors\u0060\n* \u0060count_rage_clicks\u0060\n* \u0060count_segments\u0060\n* \u0060count_urls\u0060\n* \u0060device\u0060\n* \u0060dist\u0060\n* \u0060duration\u0060\n* \u0060environment\u0060\n* \u0060error_ids\u0060\n* \u0060finished_at\u0060\n* \u0060id\u0060\n* \u0060is_archived\u0060\n* \u0060os\u0060\n* \u0060platform\u0060\n* \u0060project_id\u0060\n* \u0060releases\u0060\n* \u0060sdk\u0060\n* \u0060started_at\u0060\n* \u0060tags\u0060\n* \u0060trace_ids\u0060\n* \u0060segment_names\u0060\n* \u0060urls\u0060\n* \u0060user\u0060\n* \u0060clicks\u0060\n* \u0060info_ids\u0060\n* \u0060warning_ids\u0060\n* \u0060count_warnings\u0060\n* \u0060count_infos\u0060\n* \u0060has_viewed\u0060",
+        "description": "* \u0060activity\u0060\n* \u0060browser\u0060\n* \u0060clicks\u0060\n* \u0060count_dead_clicks\u0060\n* \u0060count_errors\u0060\n* \u0060count_infos\u0060\n* \u0060count_rage_clicks\u0060\n* \u0060count_segments\u0060\n* \u0060count_urls\u0060\n* \u0060count_warnings\u0060\n* \u0060device\u0060\n* \u0060dist\u0060\n* \u0060duration\u0060\n* \u0060environment\u0060\n* \u0060error_ids\u0060\n* \u0060finished_at\u0060\n* \u0060has_viewed\u0060\n* \u0060id\u0060\n* \u0060info_ids\u0060\n* \u0060is_archived\u0060\n* \u0060os\u0060\n* \u0060ota_updates\u0060\n* \u0060platform\u0060\n* \u0060project_id\u0060\n* \u0060releases\u0060\n* \u0060replay_type\u0060\n* \u0060sdk\u0060\n* \u0060segment_names\u0060\n* \u0060started_at\u0060\n* \u0060tags\u0060\n* \u0060trace_ids\u0060\n* \u0060urls\u0060\n* \u0060user\u0060\n* \u0060warning_ids\u0060",
         "x-ms-enum": {
           "name": "ListOrganizationReplaysFieldParameterItem",
           "modelAsString": false,
@@ -157748,12 +160471,20 @@
               "name": "Browser"
             },
             {
+              "value": "clicks",
+              "name": "Clicks"
+            },
+            {
               "value": "count_dead_clicks",
               "name": "CountDeadClicks"
             },
             {
               "value": "count_errors",
               "name": "CountErrors"
+            },
+            {
+              "value": "count_infos",
+              "name": "CountInfos"
             },
             {
               "value": "count_rage_clicks",
@@ -157766,6 +160497,10 @@
             {
               "value": "count_urls",
               "name": "CountUrls"
+            },
+            {
+              "value": "count_warnings",
+              "name": "CountWarnings"
             },
             {
               "value": "device",
@@ -157792,8 +160527,16 @@
               "name": "FinishedAt"
             },
             {
+              "value": "has_viewed",
+              "name": "HasViewed"
+            },
+            {
               "value": "id",
               "name": "Id"
+            },
+            {
+              "value": "info_ids",
+              "name": "InfoIds"
             },
             {
               "value": "is_archived",
@@ -157802,6 +160545,10 @@
             {
               "value": "os",
               "name": "Os"
+            },
+            {
+              "value": "ota_updates",
+              "name": "OtaUpdates"
             },
             {
               "value": "platform",
@@ -157816,8 +160563,16 @@
               "name": "Releases"
             },
             {
+              "value": "replay_type",
+              "name": "ReplayType"
+            },
+            {
               "value": "sdk",
               "name": "Sdk"
+            },
+            {
+              "value": "segment_names",
+              "name": "SegmentNames"
             },
             {
               "value": "started_at",
@@ -157832,10 +160587,6 @@
               "name": "TraceIds"
             },
             {
-              "value": "segment_names",
-              "name": "SegmentNames"
-            },
-            {
               "value": "urls",
               "name": "Urls"
             },
@@ -157844,28 +160595,8 @@
               "name": "User"
             },
             {
-              "value": "clicks",
-              "name": "Clicks"
-            },
-            {
-              "value": "info_ids",
-              "name": "InfoIds"
-            },
-            {
               "value": "warning_ids",
               "name": "WarningIds"
-            },
-            {
-              "value": "count_warnings",
-              "name": "CountWarnings"
-            },
-            {
-              "value": "count_infos",
-              "name": "CountInfos"
-            },
-            {
-              "value": "has_viewed",
-              "name": "HasViewed"
             }
           ]
         }
@@ -157874,40 +160605,42 @@
         "enum": [
           "activity",
           "browser",
+          "clicks",
           "count_dead_clicks",
           "count_errors",
+          "count_infos",
           "count_rage_clicks",
           "count_segments",
           "count_urls",
+          "count_warnings",
           "device",
           "dist",
           "duration",
           "environment",
           "error_ids",
           "finished_at",
+          "has_viewed",
           "id",
+          "info_ids",
           "is_archived",
           "os",
+          "ota_updates",
           "platform",
           "project_id",
           "releases",
+          "replay_type",
           "sdk",
+          "segment_names",
           "started_at",
           "tags",
           "trace_ids",
-          "segment_names",
           "urls",
           "user",
-          "clicks",
-          "info_ids",
-          "warning_ids",
-          "count_warnings",
-          "count_infos",
-          "has_viewed"
+          "warning_ids"
         ],
         "type": "string",
         "additionalProperties": false,
-        "description": "* \u0060activity\u0060\n* \u0060browser\u0060\n* \u0060count_dead_clicks\u0060\n* \u0060count_errors\u0060\n* \u0060count_rage_clicks\u0060\n* \u0060count_segments\u0060\n* \u0060count_urls\u0060\n* \u0060device\u0060\n* \u0060dist\u0060\n* \u0060duration\u0060\n* \u0060environment\u0060\n* \u0060error_ids\u0060\n* \u0060finished_at\u0060\n* \u0060id\u0060\n* \u0060is_archived\u0060\n* \u0060os\u0060\n* \u0060platform\u0060\n* \u0060project_id\u0060\n* \u0060releases\u0060\n* \u0060sdk\u0060\n* \u0060started_at\u0060\n* \u0060tags\u0060\n* \u0060trace_ids\u0060\n* \u0060segment_names\u0060\n* \u0060urls\u0060\n* \u0060user\u0060\n* \u0060clicks\u0060\n* \u0060info_ids\u0060\n* \u0060warning_ids\u0060\n* \u0060count_warnings\u0060\n* \u0060count_infos\u0060\n* \u0060has_viewed\u0060",
+        "description": "* \u0060activity\u0060\n* \u0060browser\u0060\n* \u0060clicks\u0060\n* \u0060count_dead_clicks\u0060\n* \u0060count_errors\u0060\n* \u0060count_infos\u0060\n* \u0060count_rage_clicks\u0060\n* \u0060count_segments\u0060\n* \u0060count_urls\u0060\n* \u0060count_warnings\u0060\n* \u0060device\u0060\n* \u0060dist\u0060\n* \u0060duration\u0060\n* \u0060environment\u0060\n* \u0060error_ids\u0060\n* \u0060finished_at\u0060\n* \u0060has_viewed\u0060\n* \u0060id\u0060\n* \u0060info_ids\u0060\n* \u0060is_archived\u0060\n* \u0060os\u0060\n* \u0060ota_updates\u0060\n* \u0060platform\u0060\n* \u0060project_id\u0060\n* \u0060releases\u0060\n* \u0060replay_type\u0060\n* \u0060sdk\u0060\n* \u0060segment_names\u0060\n* \u0060started_at\u0060\n* \u0060tags\u0060\n* \u0060trace_ids\u0060\n* \u0060urls\u0060\n* \u0060user\u0060\n* \u0060warning_ids\u0060",
         "x-ms-enum": {
           "name": "GetOrganizationReplayFieldParameterItem",
           "modelAsString": false,
@@ -157921,12 +160654,20 @@
               "name": "Browser"
             },
             {
+              "value": "clicks",
+              "name": "Clicks"
+            },
+            {
               "value": "count_dead_clicks",
               "name": "CountDeadClicks"
             },
             {
               "value": "count_errors",
               "name": "CountErrors"
+            },
+            {
+              "value": "count_infos",
+              "name": "CountInfos"
             },
             {
               "value": "count_rage_clicks",
@@ -157939,6 +160680,10 @@
             {
               "value": "count_urls",
               "name": "CountUrls"
+            },
+            {
+              "value": "count_warnings",
+              "name": "CountWarnings"
             },
             {
               "value": "device",
@@ -157965,8 +160710,16 @@
               "name": "FinishedAt"
             },
             {
+              "value": "has_viewed",
+              "name": "HasViewed"
+            },
+            {
               "value": "id",
               "name": "Id"
+            },
+            {
+              "value": "info_ids",
+              "name": "InfoIds"
             },
             {
               "value": "is_archived",
@@ -157975,6 +160728,10 @@
             {
               "value": "os",
               "name": "Os"
+            },
+            {
+              "value": "ota_updates",
+              "name": "OtaUpdates"
             },
             {
               "value": "platform",
@@ -157989,8 +160746,16 @@
               "name": "Releases"
             },
             {
+              "value": "replay_type",
+              "name": "ReplayType"
+            },
+            {
               "value": "sdk",
               "name": "Sdk"
+            },
+            {
+              "value": "segment_names",
+              "name": "SegmentNames"
             },
             {
               "value": "started_at",
@@ -158005,10 +160770,6 @@
               "name": "TraceIds"
             },
             {
-              "value": "segment_names",
-              "name": "SegmentNames"
-            },
-            {
               "value": "urls",
               "name": "Urls"
             },
@@ -158017,28 +160778,8 @@
               "name": "User"
             },
             {
-              "value": "clicks",
-              "name": "Clicks"
-            },
-            {
-              "value": "info_ids",
-              "name": "InfoIds"
-            },
-            {
               "value": "warning_ids",
               "name": "WarningIds"
-            },
-            {
-              "value": "count_warnings",
-              "name": "CountWarnings"
-            },
-            {
-              "value": "count_infos",
-              "name": "CountInfos"
-            },
-            {
-              "value": "has_viewed",
-              "name": "HasViewed"
             }
           ]
         }

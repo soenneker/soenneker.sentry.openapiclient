@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>* `activity`* `browser`* `count_dead_clicks`* `count_errors`* `count_rage_clicks`* `count_segments`* `count_urls`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `id`* `is_archived`* `os`* `platform`* `project_id`* `releases`* `sdk`* `started_at`* `tags`* `trace_ids`* `segment_names`* `urls`* `user`* `clicks`* `info_ids`* `warning_ids`* `count_warnings`* `count_infos`* `has_viewed`</summary>
+    /// <summary>* `activity`* `browser`* `clicks`* `count_dead_clicks`* `count_errors`* `count_infos`* `count_rage_clicks`* `count_segments`* `count_urls`* `count_warnings`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `has_viewed`* `id`* `info_ids`* `is_archived`* `os`* `ota_updates`* `platform`* `project_id`* `releases`* `replay_type`* `sdk`* `segment_names`* `started_at`* `tags`* `trace_ids`* `urls`* `user`* `warning_ids`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ListOrganizationReplaysFieldParameterItem
     {
@@ -15,6 +15,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Browser,
         #pragma warning restore CS1591
+        [EnumMember(Value = "clicks")]
+        #pragma warning disable CS1591
+        Clicks,
+        #pragma warning restore CS1591
         [EnumMember(Value = "count_dead_clicks")]
         #pragma warning disable CS1591
         CountDeadClicks,
@@ -22,6 +26,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "count_errors")]
         #pragma warning disable CS1591
         CountErrors,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "count_infos")]
+        #pragma warning disable CS1591
+        CountInfos,
         #pragma warning restore CS1591
         [EnumMember(Value = "count_rage_clicks")]
         #pragma warning disable CS1591
@@ -34,6 +42,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "count_urls")]
         #pragma warning disable CS1591
         CountUrls,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "count_warnings")]
+        #pragma warning disable CS1591
+        CountWarnings,
         #pragma warning restore CS1591
         [EnumMember(Value = "device")]
         #pragma warning disable CS1591
@@ -59,9 +71,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         FinishedAt,
         #pragma warning restore CS1591
+        [EnumMember(Value = "has_viewed")]
+        #pragma warning disable CS1591
+        HasViewed,
+        #pragma warning restore CS1591
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "info_ids")]
+        #pragma warning disable CS1591
+        InfoIds,
         #pragma warning restore CS1591
         [EnumMember(Value = "is_archived")]
         #pragma warning disable CS1591
@@ -70,6 +90,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "os")]
         #pragma warning disable CS1591
         Os,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "ota_updates")]
+        #pragma warning disable CS1591
+        OtaUpdates,
         #pragma warning restore CS1591
         [EnumMember(Value = "platform")]
         #pragma warning disable CS1591
@@ -83,9 +107,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Releases,
         #pragma warning restore CS1591
+        [EnumMember(Value = "replay_type")]
+        #pragma warning disable CS1591
+        ReplayType,
+        #pragma warning restore CS1591
         [EnumMember(Value = "sdk")]
         #pragma warning disable CS1591
         Sdk,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "segment_names")]
+        #pragma warning disable CS1591
+        SegmentNames,
         #pragma warning restore CS1591
         [EnumMember(Value = "started_at")]
         #pragma warning disable CS1591
@@ -99,10 +131,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         TraceIds,
         #pragma warning restore CS1591
-        [EnumMember(Value = "segment_names")]
-        #pragma warning disable CS1591
-        SegmentNames,
-        #pragma warning restore CS1591
         [EnumMember(Value = "urls")]
         #pragma warning disable CS1591
         Urls,
@@ -111,29 +139,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         User,
         #pragma warning restore CS1591
-        [EnumMember(Value = "clicks")]
-        #pragma warning disable CS1591
-        Clicks,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "info_ids")]
-        #pragma warning disable CS1591
-        InfoIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "warning_ids")]
         #pragma warning disable CS1591
         WarningIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "count_warnings")]
-        #pragma warning disable CS1591
-        CountWarnings,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "count_infos")]
-        #pragma warning disable CS1591
-        CountInfos,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "has_viewed")]
-        #pragma warning disable CS1591
-        HasViewed,
         #pragma warning restore CS1591
     }
 }

@@ -281,6 +281,9 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "both"
         }
       }
     },
@@ -514,6 +517,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -2300,6 +2307,10 @@
           "413": {
             "description": "Image too large."
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -2648,6 +2659,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -3090,6 +3105,10 @@
             "description": "Not Found"
           }
         },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -3274,6 +3293,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -3465,6 +3488,501 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/organizations/{organization_id_or_slug}/code-mappings/{config_id}/": {
+      "put": {
+        "operationId": "updateOrganizationCodeMapping",
+        "description": "Update the repository, project, or path settings for a code mapping.",
+        "summary": "Update an Organization Code Mapping",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "config_id",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The ID of the code mapping to update.",
+            "required": true
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case.",
+                "properties": {
+                  "repository_id": {
+                    "type": "integer",
+                    "description": "The ID of a repository belonging to the installed integration."
+                  },
+                  "project_id": {
+                    "type": "integer",
+                    "description": "The ID of the project to associate with the code mapping."
+                  },
+                  "stack_root": {
+                    "type": "string",
+                    "description": "The path prefix to replace in stack trace filenames.",
+                    "pattern": "^[^\\s'\\\"]+$"
+                  },
+                  "source_root": {
+                    "type": "string",
+                    "description": "The repository path prefix to substitute for the stack trace prefix.",
+                    "pattern": "^[^\\s'\\\"]+$"
+                  },
+                  "default_branch": {
+                    "type": "string",
+                    "description": "The default branch to use when resolving source files. May be empty for Perforce.",
+                    "pattern": "^(^(?![\\/]))([\\w\\.\\/-]+)(?<![\\/])$"
+                  }
+                },
+                "required": [
+                  "project_id",
+                  "repository_id",
+                  "source_root",
+                  "stack_root"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "projectId": {
+                      "type": "string"
+                    },
+                    "projectSlug": {
+                      "type": "string"
+                    },
+                    "repoId": {
+                      "type": "string"
+                    },
+                    "repoName": {
+                      "type": "string"
+                    },
+                    "integrationId": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "provider": {
+                      "type": "object",
+                      "properties": {
+                        "key": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "string"
+                        },
+                        "name": {
+                          "type": "string"
+                        },
+                        "canAdd": {
+                          "type": "boolean"
+                        },
+                        "canDisable": {
+                          "type": "boolean"
+                        },
+                        "features": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "aspects": {
+                          "type": "object",
+                          "additionalProperties": {}
+                        }
+                      },
+                      "required": [
+                        "aspects",
+                        "canAdd",
+                        "canDisable",
+                        "features",
+                        "key",
+                        "name",
+                        "slug"
+                      ],
+                      "nullable": true
+                    },
+                    "stackRoot": {
+                      "type": "string"
+                    },
+                    "sourceRoot": {
+                      "type": "string"
+                    },
+                    "defaultBranch": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "automaticallyGenerated": {
+                      "type": "boolean"
+                    },
+                    "hasCodeOwner": {
+                      "type": "boolean"
+                    }
+                  },
+                  "required": [
+                    "automaticallyGenerated",
+                    "defaultBranch",
+                    "hasCodeOwner",
+                    "id",
+                    "integrationId",
+                    "projectId",
+                    "projectSlug",
+                    "provider",
+                    "repoId",
+                    "repoName",
+                    "sourceRoot",
+                    "stackRoot"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      },
+      "delete": {
+        "operationId": "deleteOrganizationCodeMapping",
+        "description": "Delete a repository project path config\n\n:auth: required",
+        "summary": "Delete an Organization Code Mapping",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "config_id",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "The ID of the code mapping to delete.",
+            "required": true
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:integrations"
+            ]
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/organizations/{organization_id_or_slug}/code-mappings/bulk/": {
+      "post": {
+        "operationId": "bulkUpsertOrganizationCodeMappings",
+        "description": "Create or update multiple repository path mappings for a project. Mappings with matching project, stack root, and source root are updated.",
+        "summary": "Create or Update Organization Code Mappings in Bulk",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case.",
+                "properties": {
+                  "project": {
+                    "anyOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "string"
+                      }
+                    ],
+                    "description": "The ID or slug of the project to configure."
+                  },
+                  "repository": {
+                    "type": "string",
+                    "description": "The repository name as it appears in Sentry."
+                  },
+                  "mappings": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "stack_root": {
+                          "type": "string",
+                          "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot.",
+                          "pattern": "^[^\\s'\\\"]+$"
+                        },
+                        "source_root": {
+                          "type": "string",
+                          "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py.",
+                          "pattern": "^[^\\s'\\\"]+$"
+                        }
+                      },
+                      "required": [
+                        "source_root",
+                        "stack_root"
+                      ]
+                    },
+                    "description": "One or more stack-root and source-root mappings (maximum 300)."
+                  },
+                  "provider": {
+                    "type": "string",
+                    "nullable": true,
+                    "description": "Optional repository provider used to disambiguate or find the repository. If no matching Sentry repository exists, the repository is created after the provider confirms it exists."
+                  },
+                  "default_branch": {
+                    "type": "string",
+                    "description": "The repository branch to use; inferred from the integration when omitted.",
+                    "pattern": "^(^(?![\\/]))([\\w\\.\\/-]+)(?<![\\/])$"
+                  }
+                },
+                "required": [
+                  "mappings",
+                  "project",
+                  "repository"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:admin",
+              "org:ci",
+              "org:integrations",
+              "org:read",
+              "org:write"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "created": {
+                      "type": "integer"
+                    },
+                    "updated": {
+                      "type": "integer"
+                    },
+                    "errors": {
+                      "type": "integer"
+                    },
+                    "mappings": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "stackRoot": {
+                            "type": "string"
+                          },
+                          "sourceRoot": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "created",
+                              "updated",
+                              "error"
+                            ],
+                            "type": "string"
+                          },
+                          "detail": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "sourceRoot",
+                          "stackRoot",
+                          "status"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "created",
+                    "errors",
+                    "mappings",
+                    "updated"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          },
+          "207": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "created": {
+                      "type": "integer"
+                    },
+                    "updated": {
+                      "type": "integer"
+                    },
+                    "errors": {
+                      "type": "integer"
+                    },
+                    "mappings": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "stackRoot": {
+                            "type": "string"
+                          },
+                          "sourceRoot": {
+                            "type": "string"
+                          },
+                          "status": {
+                            "enum": [
+                              "created",
+                              "updated",
+                              "error"
+                            ],
+                            "type": "string"
+                          },
+                          "detail": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "sourceRoot",
+                          "stackRoot",
+                          "status"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "created",
+                    "errors",
+                    "mappings",
+                    "updated"
+                  ]
+                }
+              }
+            },
+            "description": "One or more mappings could not be saved."
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -3594,6 +4112,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -4264,6 +4786,10 @@
           "404": {
             "description": "Bad Request"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -4787,6 +5313,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -5827,6 +6357,10 @@
           "409": {
             "description": "Conflict"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -6555,6 +7089,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -7598,6 +8136,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -7646,6 +8188,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -8086,6 +8632,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -8498,6 +9048,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -8592,6 +9146,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -8857,6 +9415,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -9208,6 +9770,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -9257,6 +9823,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -9769,6 +10339,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -10343,6 +10917,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -10767,6 +11345,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -11350,6 +11932,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -11398,6 +11984,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -11489,6 +12079,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -12102,6 +12696,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -12400,6 +12998,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -12683,6 +13285,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -13189,6 +13795,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -13386,6 +13996,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -13541,6 +14155,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -13588,6 +14206,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -13813,6 +14435,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -13960,6 +14586,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -14266,6 +14896,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -14497,6 +15131,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -14763,6 +15401,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -14806,6 +15448,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -15190,6 +15836,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -15601,6 +16251,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -15824,6 +16478,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -16014,6 +16672,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -16058,6 +16720,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -16139,6 +16805,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -16235,6 +16905,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -16365,6 +17039,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -17491,6 +18169,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -18039,6 +18721,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -18192,6 +18878,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -18634,6 +19324,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -19105,6 +19799,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -19868,6 +20566,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -20660,6 +21362,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -20711,6 +21417,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -20892,6 +21602,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -21006,6 +21720,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -21180,6 +21898,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -21664,6 +22386,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -22807,6 +23533,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -23262,6 +23992,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -24413,6 +25147,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -24475,6 +25213,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -24670,6 +25412,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -24827,6 +25573,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -24998,6 +25748,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -25121,6 +25875,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -25298,6 +26056,10 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -25340,6 +26102,10 @@
           "204": {
             "description": "No Content"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -25677,6 +26443,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -26383,6 +27153,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -27153,6 +27927,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -27200,6 +27978,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -27460,6 +28242,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -27682,6 +28468,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -27838,6 +28628,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -28125,6 +28919,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -28484,6 +29282,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -28859,6 +29661,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -29266,6 +30072,10 @@
           "409": {
             "description": "Conflict"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -29593,6 +30403,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -29682,6 +30496,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -29990,6 +30808,10 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -30656,6 +31478,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -31425,6 +32251,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -32398,6 +33228,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -33404,6 +34238,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -33454,6 +34292,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -34206,6 +35048,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -34313,6 +35159,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -34458,6 +35308,10 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -34590,6 +35444,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -34726,6 +35584,10 @@
           "409": {
             "description": "Conflict"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -34840,6 +35702,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -34966,6 +35832,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -35025,6 +35895,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -35188,6 +36062,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -35456,6 +36334,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -35510,39 +36392,41 @@
                 "enum": [
                   "activity",
                   "browser",
+                  "clicks",
                   "count_dead_clicks",
                   "count_errors",
+                  "count_infos",
                   "count_rage_clicks",
                   "count_segments",
                   "count_urls",
+                  "count_warnings",
                   "device",
                   "dist",
                   "duration",
                   "environment",
                   "error_ids",
                   "finished_at",
+                  "has_viewed",
                   "id",
+                  "info_ids",
                   "is_archived",
                   "os",
+                  "ota_updates",
                   "platform",
                   "project_id",
                   "releases",
+                  "replay_type",
                   "sdk",
+                  "segment_names",
                   "started_at",
                   "tags",
                   "trace_ids",
-                  "segment_names",
                   "urls",
                   "user",
-                  "clicks",
-                  "info_ids",
-                  "warning_ids",
-                  "count_warnings",
-                  "count_infos",
-                  "has_viewed"
+                  "warning_ids"
                 ],
                 "type": "string",
-                "description": "* `activity`\n* `browser`\n* `count_dead_clicks`\n* `count_errors`\n* `count_rage_clicks`\n* `count_segments`\n* `count_urls`\n* `device`\n* `dist`\n* `duration`\n* `environment`\n* `error_ids`\n* `finished_at`\n* `id`\n* `is_archived`\n* `os`\n* `platform`\n* `project_id`\n* `releases`\n* `sdk`\n* `started_at`\n* `tags`\n* `trace_ids`\n* `segment_names`\n* `urls`\n* `user`\n* `clicks`\n* `info_ids`\n* `warning_ids`\n* `count_warnings`\n* `count_infos`\n* `has_viewed`"
+                "description": "* `activity`\n* `browser`\n* `clicks`\n* `count_dead_clicks`\n* `count_errors`\n* `count_infos`\n* `count_rage_clicks`\n* `count_segments`\n* `count_urls`\n* `count_warnings`\n* `device`\n* `dist`\n* `duration`\n* `environment`\n* `error_ids`\n* `finished_at`\n* `has_viewed`\n* `id`\n* `info_ids`\n* `is_archived`\n* `os`\n* `ota_updates`\n* `platform`\n* `project_id`\n* `releases`\n* `replay_type`\n* `sdk`\n* `segment_names`\n* `started_at`\n* `tags`\n* `trace_ids`\n* `urls`\n* `user`\n* `warning_ids`"
               }
             },
             "description": "Specifies a field that should be marshaled in the output. Invalid fields will be rejected."
@@ -36013,6 +36897,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -36077,39 +36965,41 @@
                 "enum": [
                   "activity",
                   "browser",
+                  "clicks",
                   "count_dead_clicks",
                   "count_errors",
+                  "count_infos",
                   "count_rage_clicks",
                   "count_segments",
                   "count_urls",
+                  "count_warnings",
                   "device",
                   "dist",
                   "duration",
                   "environment",
                   "error_ids",
                   "finished_at",
+                  "has_viewed",
                   "id",
+                  "info_ids",
                   "is_archived",
                   "os",
+                  "ota_updates",
                   "platform",
                   "project_id",
                   "releases",
+                  "replay_type",
                   "sdk",
+                  "segment_names",
                   "started_at",
                   "tags",
                   "trace_ids",
-                  "segment_names",
                   "urls",
                   "user",
-                  "clicks",
-                  "info_ids",
-                  "warning_ids",
-                  "count_warnings",
-                  "count_infos",
-                  "has_viewed"
+                  "warning_ids"
                 ],
                 "type": "string",
-                "description": "* `activity`\n* `browser`\n* `count_dead_clicks`\n* `count_errors`\n* `count_rage_clicks`\n* `count_segments`\n* `count_urls`\n* `device`\n* `dist`\n* `duration`\n* `environment`\n* `error_ids`\n* `finished_at`\n* `id`\n* `is_archived`\n* `os`\n* `platform`\n* `project_id`\n* `releases`\n* `sdk`\n* `started_at`\n* `tags`\n* `trace_ids`\n* `segment_names`\n* `urls`\n* `user`\n* `clicks`\n* `info_ids`\n* `warning_ids`\n* `count_warnings`\n* `count_infos`\n* `has_viewed`"
+                "description": "* `activity`\n* `browser`\n* `clicks`\n* `count_dead_clicks`\n* `count_errors`\n* `count_infos`\n* `count_rage_clicks`\n* `count_segments`\n* `count_urls`\n* `count_warnings`\n* `device`\n* `dist`\n* `duration`\n* `environment`\n* `error_ids`\n* `finished_at`\n* `has_viewed`\n* `id`\n* `info_ids`\n* `is_archived`\n* `os`\n* `ota_updates`\n* `platform`\n* `project_id`\n* `releases`\n* `replay_type`\n* `sdk`\n* `segment_names`\n* `started_at`\n* `tags`\n* `trace_ids`\n* `urls`\n* `user`\n* `warning_ids`"
               }
             },
             "description": "Specifies a field that should be marshaled in the output. Invalid fields will be rejected."
@@ -36578,6 +37468,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -36764,6 +37658,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -37467,6 +38365,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -37624,6 +38526,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -37820,6 +38726,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -37952,6 +38862,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -38077,6 +38991,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "patch": {
@@ -38172,6 +39090,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -38221,6 +39143,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -38392,6 +39318,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -38518,6 +39448,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -38655,6 +39589,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -38897,6 +39835,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -39134,6 +40076,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -39318,6 +40264,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -39484,6 +40434,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "patch": {
@@ -39577,6 +40531,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -39626,6 +40584,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -39790,6 +40752,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -40089,6 +41055,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -40385,6 +41355,10 @@
           "401": {
             "description": "Unauthorized"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -41099,6 +42073,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -41171,6 +42149,10 @@
             "description": "Not Found"
           }
         },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "delete": {
@@ -41233,6 +42215,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -41480,6 +42466,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -41726,6 +42716,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -41973,6 +42967,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -42689,6 +43687,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -43243,6 +44245,10 @@
           "404": {
             "description": "A team with this slug already exists."
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -43558,6 +44564,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -43794,6 +44804,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -44042,6 +45056,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -44213,6 +45231,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -44978,6 +46000,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -45660,6 +46686,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -46235,6 +47265,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -46754,6 +47788,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -47309,6 +48347,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -47395,6 +48437,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -47802,6 +48848,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -48328,6 +49378,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -48383,6 +49437,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -49292,6 +50350,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -50553,6 +51615,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -50599,6 +51665,97 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
+      }
+    },
+    "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/code-mapping-prefixes/stack/": {
+      "get": {
+        "operationId": "listStackCodeMappingPrefixes",
+        "description": "Return ranked directory prefixes from stack traces and existing mappings to help configure a code mapping.",
+        "summary": "List Stack Trace Directory Prefixes for Code Mapping Autocomplete",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "organization_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true
+          },
+          {
+            "in": "path",
+            "name": "project_id_or_slug",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true
+          }
+        ],
+        "tags": [
+          "Integrations"
+        ],
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prefixes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "path": {
+                            "type": "string"
+                          },
+                          "fileCount": {
+                            "type": "integer"
+                          }
+                        },
+                        "required": [
+                          "fileCount",
+                          "path"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "prefixes"
+                  ]
+                }
+              }
+            },
+            "description": ""
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -50966,6 +52123,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -51347,6 +52508,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -51703,6 +52868,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -52087,6 +53256,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -52145,6 +53318,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -52227,12 +53404,32 @@
                               "type": "string",
                               "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                             },
+                            "operator": {
+                              "enum": [
+                                "glob",
+                                "equals",
+                                "starts_with",
+                                "contains",
+                                "ends_with",
+                                "does_not_start_with",
+                                "does_not_contain",
+                                "does_not_end_with",
+                                "cidr",
+                                "not_cidr",
+                                "gt",
+                                "gte",
+                                "lt",
+                                "lte"
+                              ],
+                              "type": "string",
+                              "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                            },
                             "value": {
                               "type": "array",
                               "items": {
                                 "type": "string"
                               },
-                              "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                              "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                             }
                           },
                           "required": [
@@ -52240,7 +53437,7 @@
                             "value"
                           ]
                         },
-                        "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                        "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                       },
                       "dateCreated": {
                         "type": "string",
@@ -52285,14 +53482,23 @@
                         "conditions": [
                           {
                             "type": "error_type",
+                            "operator": "equals",
                             "value": [
                               "TypeError"
                             ]
                           },
                           {
-                            "type": "release",
+                            "type": "error_message",
+                            "operator": "contains",
                             "value": [
-                              "1.*"
+                              "undefined"
+                            ]
+                          },
+                          {
+                            "type": "release",
+                            "operator": "lt",
+                            "value": [
+                              "2.0.0"
                             ]
                           }
                         ],
@@ -52316,6 +53522,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       },
@@ -52385,12 +53595,32 @@
                           "type": "string",
                           "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                         },
+                        "operator": {
+                          "enum": [
+                            "glob",
+                            "equals",
+                            "starts_with",
+                            "contains",
+                            "ends_with",
+                            "does_not_start_with",
+                            "does_not_contain",
+                            "does_not_end_with",
+                            "cidr",
+                            "not_cidr",
+                            "gt",
+                            "gte",
+                            "lt",
+                            "lte"
+                          ],
+                          "type": "string",
+                          "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                        },
                         "value": {
                           "type": "array",
                           "items": {
                             "type": "string"
                           },
-                          "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                          "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                         }
                       },
                       "required": [
@@ -52398,7 +53628,7 @@
                         "value"
                       ]
                     },
-                    "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                    "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                   },
                   "dateCreated": {
                     "type": "string",
@@ -52484,12 +53714,32 @@
                             "type": "string",
                             "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                           },
+                          "operator": {
+                            "enum": [
+                              "glob",
+                              "equals",
+                              "starts_with",
+                              "contains",
+                              "ends_with",
+                              "does_not_start_with",
+                              "does_not_contain",
+                              "does_not_end_with",
+                              "cidr",
+                              "not_cidr",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ],
+                            "type": "string",
+                            "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                          },
                           "value": {
                             "type": "array",
                             "items": {
                               "type": "string"
                             },
-                            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                           }
                         },
                         "required": [
@@ -52497,7 +53747,7 @@
                           "value"
                         ]
                       },
-                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                     },
                     "dateCreated": {
                       "type": "string",
@@ -52540,14 +53790,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -52570,6 +53829,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -52660,12 +53923,32 @@
                             "type": "string",
                             "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                           },
+                          "operator": {
+                            "enum": [
+                              "glob",
+                              "equals",
+                              "starts_with",
+                              "contains",
+                              "ends_with",
+                              "does_not_start_with",
+                              "does_not_contain",
+                              "does_not_end_with",
+                              "cidr",
+                              "not_cidr",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ],
+                            "type": "string",
+                            "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                          },
                           "value": {
                             "type": "array",
                             "items": {
                               "type": "string"
                             },
-                            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                           }
                         },
                         "required": [
@@ -52673,7 +53956,7 @@
                           "value"
                         ]
                       },
-                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                     },
                     "dateCreated": {
                       "type": "string",
@@ -52716,14 +53999,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -52746,6 +54038,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       },
@@ -52824,12 +54120,32 @@
                           "type": "string",
                           "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                         },
+                        "operator": {
+                          "enum": [
+                            "glob",
+                            "equals",
+                            "starts_with",
+                            "contains",
+                            "ends_with",
+                            "does_not_start_with",
+                            "does_not_contain",
+                            "does_not_end_with",
+                            "cidr",
+                            "not_cidr",
+                            "gt",
+                            "gte",
+                            "lt",
+                            "lte"
+                          ],
+                          "type": "string",
+                          "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                        },
                         "value": {
                           "type": "array",
                           "items": {
                             "type": "string"
                           },
-                          "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                          "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                         }
                       },
                       "required": [
@@ -52837,7 +54153,7 @@
                         "value"
                       ]
                     },
-                    "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                    "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                   },
                   "dateCreated": {
                     "type": "string",
@@ -52923,12 +54239,32 @@
                             "type": "string",
                             "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                           },
+                          "operator": {
+                            "enum": [
+                              "glob",
+                              "equals",
+                              "starts_with",
+                              "contains",
+                              "ends_with",
+                              "does_not_start_with",
+                              "does_not_contain",
+                              "does_not_end_with",
+                              "cidr",
+                              "not_cidr",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ],
+                            "type": "string",
+                            "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                          },
                           "value": {
                             "type": "array",
                             "items": {
                               "type": "string"
                             },
-                            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                           }
                         },
                         "required": [
@@ -52936,7 +54272,7 @@
                           "value"
                         ]
                       },
-                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+                      "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
                     },
                     "dateCreated": {
                       "type": "string",
@@ -52979,14 +54315,23 @@
                       "conditions": [
                         {
                           "type": "error_type",
+                          "operator": "equals",
                           "value": [
                             "TypeError"
                           ]
                         },
                         {
-                          "type": "release",
+                          "type": "error_message",
+                          "operator": "contains",
                           "value": [
-                            "1.*"
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
                           ]
                         }
                       ],
@@ -53009,6 +54354,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       },
@@ -53068,6 +54417,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -53181,6 +54534,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -53304,6 +54661,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -53399,6 +54760,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -53513,6 +54878,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -53814,6 +55183,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -55058,6 +56431,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -55229,6 +56606,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -55381,6 +56762,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -55816,6 +57201,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -56032,6 +57421,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -56147,6 +57540,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -56250,6 +57647,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -56601,6 +58002,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -56925,6 +58330,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -57216,6 +58625,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -57572,6 +58985,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -57627,6 +59044,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -58057,6 +59478,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -58510,6 +59935,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -59670,6 +61099,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -59741,6 +61174,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -59935,6 +61372,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -60140,6 +61581,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -60374,6 +61819,10 @@
           "400": {
             "description": "Bad Request"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -60601,6 +62050,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -60697,6 +62150,10 @@
           "502": {
             "description": "Bad Gateway"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -60800,6 +62257,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -60896,6 +62357,10 @@
           "502": {
             "description": "Bad Gateway"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -61588,6 +63053,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -61677,6 +63146,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -61850,6 +63323,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -62506,6 +63983,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -63267,6 +64748,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -63408,6 +64893,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -63553,6 +65042,10 @@
           "409": {
             "description": "Conflict"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -63676,6 +65169,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -63811,6 +65308,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -63879,6 +65380,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -63962,6 +65467,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64018,6 +65527,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64162,6 +65675,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64308,6 +65825,10 @@
           "429": {
             "description": "Too Many Requests"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64429,6 +65950,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64560,6 +66085,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64689,6 +66218,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -64858,6 +66391,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -64994,6 +66531,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -65098,6 +66639,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -65195,6 +66740,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -65561,6 +67110,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -65777,6 +67330,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -66455,6 +68012,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -67297,6 +68858,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -68151,6 +69716,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -68206,6 +69775,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -68413,6 +69986,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -68788,6 +70365,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -69156,6 +70737,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -69303,6 +70888,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -69342,6 +70931,9 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell"
         },
         "servers": [
           {
@@ -69506,6 +71098,9 @@
             "description": "Conflict"
           }
         },
+        "x-sentry-routing": {
+          "silo": "control"
+        },
         "x-sentry-experimental": true
       }
     },
@@ -69614,6 +71209,9 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control"
         },
         "x-sentry-experimental": true
       }
@@ -69875,6 +71473,9 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control"
         }
       },
       "put": {
@@ -70253,6 +71854,9 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control"
         }
       },
       "delete": {
@@ -70287,6 +71891,9 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "control"
         }
       }
     },
@@ -70864,6 +72471,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -71421,6 +73032,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -71467,6 +73082,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -71669,6 +73288,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -71828,6 +73451,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -71883,6 +73510,10 @@
           "403": {
             "description": "Forbidden"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -72319,6 +73950,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -72707,6 +74342,10 @@
           "404": {
             "description": "Team not found."
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -73119,6 +74758,10 @@
           "409": {
             "description": "A project with this slug already exists."
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -73205,7 +74848,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/user-feedback/": {
@@ -73339,7 +74986,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -73506,7 +75157,11 @@
           {
             "dsn": []
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/": {
@@ -73614,7 +75269,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "post": {
         "tags": [
@@ -73742,7 +75401,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/hooks/{hook_id}/": {
@@ -73847,7 +75510,11 @@
               "project:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -73987,7 +75654,11 @@
               "project:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -74041,7 +75712,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/projects/{organization_id_or_slug}/{project_id_or_slug}/issues/": {
@@ -74472,7 +76147,11 @@
               "event:read"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "put": {
         "tags": [
@@ -74645,7 +76324,11 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -74698,7 +76381,11 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/tags/{key}/values/": {
@@ -74873,6 +76560,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -74920,7 +76611,11 @@
               "project:releases"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organization_id_or_slug}/sentry-app-installations/": {
@@ -75037,7 +76732,11 @@
               "org:integrations"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-issues/": {
@@ -75153,7 +76852,10 @@
               "event:write"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       }
     },
     "/api/0/sentry-app-installations/{uuid}/external-issues/{external_issue_id}/": {
@@ -75204,7 +76906,10 @@
               "event:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "control"
+        }
       }
     },
     "/api/0/organizations/{organization_id_or_slug}/spike-protections/": {
@@ -75267,7 +76972,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       },
       "delete": {
         "tags": [
@@ -75328,7 +77037,11 @@
               "project:admin"
             ]
           }
-        ]
+        ],
+        "x-sentry-routing": {
+          "silo": "unknown",
+          "organizationParameter": "organization_id_or_slug"
+        }
       }
     },
     "/api/0/organizations/{organization_id_or_slug}/issues/{issue_id}/": {
@@ -76269,6 +77982,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -77087,6 +78804,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -77136,6 +78857,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -77414,6 +79139,10 @@
             "description": "Not Found"
           }
         },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
         "x-sentry-experimental": true
       },
       "post": {
@@ -77572,6 +79301,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -77903,6 +79636,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -79188,6 +80925,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -79290,6 +81031,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -79354,6 +81099,10 @@
           "409": {
             "description": "Conflict"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -80226,6 +81975,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -80440,6 +82193,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         },
         "x-sentry-experimental": true
       }
@@ -80725,6 +82482,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "post": {
@@ -80849,6 +82610,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "put": {
@@ -81030,6 +82795,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       },
       "delete": {
@@ -81116,6 +82885,10 @@
             },
             "description": ""
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     },
@@ -81291,6 +83064,10 @@
           "404": {
             "description": "Not Found"
           }
+        },
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
         }
       }
     }
@@ -81563,6 +83340,165 @@
           "name",
           "slug",
           "teamRole"
+        ]
+      },
+      "BulkCodeMappingsPartialResponse": {
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stackRoot": {
+                  "type": "string"
+                },
+                "sourceRoot": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "created",
+                    "updated",
+                    "error"
+                  ],
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sourceRoot",
+                "stackRoot",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
+        ]
+      },
+      "BulkCodeMappingsRequest": {
+        "type": "object",
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case.",
+        "properties": {
+          "project": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              }
+            ],
+            "description": "The ID or slug of the project to configure."
+          },
+          "repository": {
+            "type": "string",
+            "description": "The repository name as it appears in Sentry."
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stack_root": {
+                  "type": "string",
+                  "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot.",
+                  "pattern": "^[^\\s'\\\"]+$"
+                },
+                "source_root": {
+                  "type": "string",
+                  "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py.",
+                  "pattern": "^[^\\s'\\\"]+$"
+                }
+              },
+              "required": [
+                "source_root",
+                "stack_root"
+              ]
+            },
+            "description": "One or more stack-root and source-root mappings (maximum 300)."
+          },
+          "provider": {
+            "type": "string",
+            "nullable": true,
+            "description": "Optional repository provider used to disambiguate or find the repository. If no matching Sentry repository exists, the repository is created after the provider confirms it exists."
+          },
+          "default_branch": {
+            "type": "string",
+            "description": "The repository branch to use; inferred from the integration when omitted.",
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]+)(?<![\\/])$"
+          }
+        },
+        "required": [
+          "mappings",
+          "project",
+          "repository"
+        ]
+      },
+      "BulkCodeMappingsResponse": {
+        "type": "object",
+        "properties": {
+          "created": {
+            "type": "integer"
+          },
+          "updated": {
+            "type": "integer"
+          },
+          "errors": {
+            "type": "integer"
+          },
+          "mappings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "stackRoot": {
+                  "type": "string"
+                },
+                "sourceRoot": {
+                  "type": "string"
+                },
+                "status": {
+                  "enum": [
+                    "created",
+                    "updated",
+                    "error"
+                  ],
+                  "type": "string"
+                },
+                "detail": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "sourceRoot",
+                "stackRoot",
+                "status"
+              ]
+            }
+          }
+        },
+        "required": [
+          "created",
+          "errors",
+          "mappings",
+          "updated"
         ]
       },
       "BulkEnvironment": {
@@ -83751,12 +85687,32 @@
                   "type": "string",
                   "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
                 },
+                "operator": {
+                  "enum": [
+                    "glob",
+                    "equals",
+                    "starts_with",
+                    "contains",
+                    "ends_with",
+                    "does_not_start_with",
+                    "does_not_contain",
+                    "does_not_end_with",
+                    "cidr",
+                    "not_cidr",
+                    "gt",
+                    "gte",
+                    "lt",
+                    "lte"
+                  ],
+                  "type": "string",
+                  "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+                },
                 "value": {
                   "type": "array",
                   "items": {
                     "type": "string"
                   },
-                  "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+                  "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
                 }
               },
               "required": [
@@ -83764,7 +85720,7 @@
                 "value"
               ]
             },
-            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`>2 AND <4`). To broaden matching, widen a condition's values or add separate filters."
+            "description": "Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition's values or add separate filters."
           },
           "dateCreated": {
             "type": "string",
@@ -83813,12 +85769,32 @@
             "type": "string",
             "description": "The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.\n\n* `error_type`\n* `error_message`\n* `log_message`\n* `metric_name`\n* `release`\n* `ip_address`\n* `geo_country_code`"
           },
+          "operator": {
+            "enum": [
+              "glob",
+              "equals",
+              "starts_with",
+              "contains",
+              "ends_with",
+              "does_not_start_with",
+              "does_not_contain",
+              "does_not_end_with",
+              "cidr",
+              "not_cidr",
+              "gt",
+              "gte",
+              "lt",
+              "lte"
+            ],
+            "type": "string",
+            "description": "How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.\n\n* `glob`\n* `equals`\n* `starts_with`\n* `contains`\n* `ends_with`\n* `does_not_start_with`\n* `does_not_contain`\n* `does_not_end_with`\n* `cidr`\n* `not_cidr`\n* `gt`\n* `gte`\n* `lt`\n* `lte`"
+          },
           "value": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "description": "Glob patterns the field is matched against. The condition matches when any pattern matches, so multiple values act as OR."
+            "description": "The values the field is compared to. The condition matches when any value matches, so multiple values act as OR; a negated operator matches when none does. A version comparison takes one release with a version such as `1.2.0` or `myapp@1.2.0`. A comparison with a package only applies to releases of that package."
           }
         },
         "required": [
@@ -99290,6 +101266,25 @@
           ]
         }
       },
+      "MappingItem": {
+        "type": "object",
+        "properties": {
+          "stack_root": {
+            "type": "string",
+            "description": "The path prefix to strip from matching stack frame filenames before adding sourceRoot.",
+            "pattern": "^[^\\s'\\\"]+$"
+          },
+          "source_root": {
+            "type": "string",
+            "description": "The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py.",
+            "pattern": "^[^\\s'\\\"]+$"
+          }
+        },
+        "required": [
+          "source_root",
+          "stack_root"
+        ]
+      },
       "Monitor": {
         "type": "object",
         "properties": {
@@ -110580,6 +112575,41 @@
           "rangeStart"
         ]
       },
+      "RepositoryProjectPathConfig": {
+        "type": "object",
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case.",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of a repository belonging to the installed integration."
+          },
+          "project_id": {
+            "type": "integer",
+            "description": "The ID of the project to associate with the code mapping."
+          },
+          "stack_root": {
+            "type": "string",
+            "description": "The path prefix to replace in stack trace filenames.",
+            "pattern": "^[^\\s'\\\"]+$"
+          },
+          "source_root": {
+            "type": "string",
+            "description": "The repository path prefix to substitute for the stack trace prefix.",
+            "pattern": "^[^\\s'\\\"]+$"
+          },
+          "default_branch": {
+            "type": "string",
+            "description": "The default branch to use when resolving source files. May be empty for Perforce.",
+            "pattern": "^(^(?![\\/]))([\\w\\.\\/-]+)(?<![\\/])$"
+          }
+        },
+        "required": [
+          "project_id",
+          "repository_id",
+          "source_root",
+          "stack_root"
+        ]
+      },
       "RepositorySettings": {
         "type": "object",
         "properties": {
@@ -114315,6 +116345,32 @@
           "release_has_some_artifact",
           "sdk_debug_id_support",
           "sdk_version"
+        ]
+      },
+      "StackPrefixesResponse": {
+        "type": "object",
+        "properties": {
+          "prefixes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "fileCount": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "fileCount",
+                "path"
+              ]
+            }
+          }
+        },
+        "required": [
+          "prefixes"
         ]
       },
       "StacktraceLinkResponse": {

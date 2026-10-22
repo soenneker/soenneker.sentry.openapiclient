@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Bulk;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Item;
 using Soenneker.Sentry.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +19,23 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMapping
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CodeMappingsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The bulk property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Bulk.BulkRequestBuilder Bulk
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Bulk.BulkRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.Sentry.OpenApiClient.api.Zero.organizations.item.codeMappings.item collection</summary>
+        /// <param name="position">The ID of the code mapping to update.</param>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Item.WithConfigItemRequestBuilder"/></returns>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Item.WithConfigItemRequestBuilder this[int position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("configId", position);
+                return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.Item.WithConfigItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.CodeMappingsRequestBuilder"/> and sets the default values.
         /// </summary>
