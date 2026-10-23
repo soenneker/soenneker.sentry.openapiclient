@@ -38,6 +38,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public string Id { get; private set; }
 #endif
+        /// <summary>Set on a filter that holds one of the filter lists of the project settings, to the id its outcomes are reported under. Such a filter keeps its data type and its one condition: only the name, the active flag and the condition values can change, and deleting it empties the list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LegacyFilter { get; private set; }
+#nullable restore
+#else
+        public string LegacyFilter { get; private set; }
+#endif
         /// <summary>A human-readable label for the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -77,6 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "legacyFilter", n => { LegacyFilter = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }

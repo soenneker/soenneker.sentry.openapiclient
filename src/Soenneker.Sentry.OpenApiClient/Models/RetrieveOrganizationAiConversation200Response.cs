@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>
-    /// Span page plus conversation-level metadata.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class RetrieveOrganizationAiConversation200Response : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The complete property</summary>
+        public bool? Complete { get; set; }
         /// <summary>The conversationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,6 +32,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem> Projects { get; set; }
 #endif
+        /// <summary>The sourceSpanCount property</summary>
+        public int? SourceSpanCount { get; set; }
         /// <summary>The spans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,6 +57,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public string Title { get; set; }
+#endif
+        /// <summary>The transcript property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseTranscriptItem>? Transcript { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseTranscriptItem> Transcript { get; set; }
 #endif
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,11 +99,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "complete", n => { Complete = n.GetBoolValue(); } },
                 { "conversationId", n => { ConversationId = n.GetStringValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "sourceSpanCount", n => { SourceSpanCount = n.GetIntValue(); } },
                 { "spans", n => { Spans = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseStats>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseStats.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
+                { "transcript", n => { Transcript = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseTranscriptItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseTranscriptItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -103,11 +117,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("complete", Complete);
             writer.WriteStringValue("conversationId", ConversationId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseProjectsItem>("projects", Projects);
+            writer.WriteIntValue("sourceSpanCount", SourceSpanCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseSpansItem>("spans", Spans);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseStats>("stats", Stats);
             writer.WriteStringValue("title", Title);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseTranscriptItem>("transcript", Transcript);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

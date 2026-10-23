@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConversationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*}", pathParameters)
+        public WithConversationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*,view*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*}", rawUrl)
+        public WithConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*,view*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,6 +134,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
 #endif
+            /// <summary>Defaults to timeline (paginated raw spans). Transcript returns paginated normalized messages; requires feature access. Transcript timestamps and durations are seconds.</summary>
+            [QueryParameter("view")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversationViewParameter? View { get; set; }
         }
     }
 }
