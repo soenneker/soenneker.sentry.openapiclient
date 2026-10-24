@@ -19,10 +19,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTeams200ResponseItemOrganizationOnboardingTasksItemData? Data { get; set; }
+        public UntypedNode? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTeams200ResponseItemOrganizationOnboardingTasksItemData Data { get; set; }
+        public UntypedNode Data { get; set; }
 #endif
         /// <summary>The dateCompleted property</summary>
         public DateTimeOffset? DateCompleted { get; set; }
@@ -68,7 +68,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completionSeen", n => { CompletionSeen = n.GetDateTimeOffsetValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTeams200ResponseItemOrganizationOnboardingTasksItemData>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTeams200ResponseItemOrganizationOnboardingTasksItemData.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "dateCompleted", n => { DateCompleted = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetStringValue(); } },
@@ -82,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completionSeen", CompletionSeen);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTeams200ResponseItemOrganizationOnboardingTasksItemData>("data", Data);
+            writer.WriteObjectValue<UntypedNode>("data", Data);
             writer.WriteDateTimeOffsetValue("dateCompleted", DateCompleted);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("task", Task);

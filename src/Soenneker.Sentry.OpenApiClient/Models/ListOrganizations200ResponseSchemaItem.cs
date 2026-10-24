@@ -31,20 +31,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemAvatar? Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar? Avatar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemAvatar Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar Avatar { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
         /// <summary>The extraOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemExtraOptions? ExtraOptions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions? ExtraOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemExtraOptions ExtraOptions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions ExtraOptions { get; set; }
 #endif
         /// <summary>The features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,10 +69,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The links property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemLinks? Links { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks? Links { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemLinks Links { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks Links { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,10 +103,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemStatus? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemStatus Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus Status { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItem"/> and sets the default values.
@@ -137,19 +137,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "allowMemberInvite", n => { AllowMemberInvite = n.GetBoolValue(); } },
                 { "allowMemberProjectCreation", n => { AllowMemberProjectCreation = n.GetBoolValue(); } },
                 { "allowSuperuserAccess", n => { AllowSuperuserAccess = n.GetBoolValue(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemAvatar.CreateFromDiscriminatorValue); } },
+                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
-                { "extraOptions", n => { ExtraOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemExtraOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemExtraOptions.CreateFromDiscriminatorValue); } },
+                { "extraOptions", n => { ExtraOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions.CreateFromDiscriminatorValue); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "hasAuthProvider", n => { HasAuthProvider = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isEarlyAdopter", n => { IsEarlyAdopter = n.GetBoolValue(); } },
-                { "links", n => { Links = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemLinks>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemLinks.CreateFromDiscriminatorValue); } },
+                { "links", n => { Links = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "onboardingTasks", n => { OnboardingTasks = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "require2FA", n => { Require2FA = n.GetBoolValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemStatus>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -163,19 +163,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("allowMemberInvite", AllowMemberInvite);
             writer.WriteBoolValue("allowMemberProjectCreation", AllowMemberProjectCreation);
             writer.WriteBoolValue("allowSuperuserAccess", AllowSuperuserAccess);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemAvatar>("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar>("avatar", Avatar);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemExtraOptions>("extraOptions", ExtraOptions);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions>("extraOptions", ExtraOptions);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
             writer.WriteBoolValue("hasAuthProvider", HasAuthProvider);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEarlyAdopter", IsEarlyAdopter);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemLinks>("links", Links);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks>("links", Links);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem>("onboardingTasks", OnboardingTasks);
             writer.WriteBoolValue("require2FA", Require2FA);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

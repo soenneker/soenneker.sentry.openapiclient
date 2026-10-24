@@ -27,10 +27,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseItemHeaders? Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseSchemaItemHeaders? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseItemHeaders Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseSchemaItemHeaders Headers { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dist", n => { Dist = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseItemHeaders>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseItemHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseSchemaItemHeaders>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseSchemaItemHeaders.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "sha1", n => { Sha1 = n.GetStringValue(); } },
@@ -101,7 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteStringValue("dist", Dist);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseItemHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseFiles200ResponseSchemaItemHeaders>("headers", Headers);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("sha1", Sha1);

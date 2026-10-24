@@ -17,20 +17,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig Config { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments? Environments { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments? Environments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments Environments { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments Environments { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,18 +55,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemOwner? Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemOwner Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner Owner { get; set; }
 #endif
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemProject? Project { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject? Project { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemProject Project { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject Project { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,15 +109,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
-                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments.CreateFromDiscriminatorValue); } },
+                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isMuted", n => { IsMuted = n.GetBoolValue(); } },
                 { "isUpserting", n => { IsUpserting = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemOwner.CreateFromDiscriminatorValue); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemProject>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemProject.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -129,15 +129,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironments>("environments", Environments);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments>("environments", Environments);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isMuted", IsMuted);
             writer.WriteBoolValue("isUpserting", IsUpserting);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemOwner>("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemProject>("project", Project);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject>("project", Project);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

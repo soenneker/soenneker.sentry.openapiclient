@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemConfig Config { get; set; }
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,10 +97,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The triggers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggers? Triggers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemTriggers? Triggers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggers Triggers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemTriggers Triggers { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItem"/> and sets the default values.
@@ -128,7 +128,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actionFilters", n => { ActionFilters = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
@@ -140,7 +140,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetStringValue(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "triggers", n => { Triggers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggers>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggers.CreateFromDiscriminatorValue); } },
+                { "triggers", n => { Triggers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemTriggers>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemTriggers.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItem>("actionFilters", ActionFilters);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemConfig>("config", Config);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
@@ -163,7 +163,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("organizationId", OrganizationId);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemTriggers>("triggers", Triggers);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseSchemaItemTriggers>("triggers", Triggers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

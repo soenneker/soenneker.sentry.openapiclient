@@ -33,10 +33,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemData? Data { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemData Data { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData Data { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
@@ -51,10 +51,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemHeaders? Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders? Headers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemHeaders Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders Headers { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,10 +125,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "codeId", n => { CodeId = n.GetStringValue(); } },
                 { "cpuName", n => { CpuName = n.GetStringValue(); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemData>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemData.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "debugId", n => { DebugId = n.GetStringValue(); } },
-                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemHeaders>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemHeaders.CreateFromDiscriminatorValue); } },
+                { "headers", n => { Headers = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "objectName", n => { ObjectName = n.GetStringValue(); } },
                 { "sha1", n => { Sha1 = n.GetStringValue(); } },
@@ -146,10 +146,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("codeId", CodeId);
             writer.WriteStringValue("cpuName", CpuName);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemData>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData>("data", Data);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteStringValue("debugId", DebugId);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseItemHeaders>("headers", Headers);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders>("headers", Headers);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("objectName", ObjectName);
             writer.WriteStringValue("sha1", Sha1);

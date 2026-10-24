@@ -19,10 +19,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The diffItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItemDiffItemsItem>? DiffItems { get; set; }
+        public UntypedNode? DiffItems { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItemDiffItemsItem> DiffItems { get; set; }
+        public UntypedNode DiffItems { get; set; }
 #endif
         /// <summary>The headSize property</summary>
         public int? HeadSize { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "baseSize", n => { BaseSize = n.GetIntValue(); } },
-                { "diffItems", n => { DiffItems = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItemDiffItemsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItemDiffItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "diffItems", n => { DiffItems = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "headSize", n => { HeadSize = n.GetIntValue(); } },
                 { "itemType", n => { ItemType = n.GetStringValue(); } },
                 { "path", n => { Path = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("baseSize", BaseSize);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItemDiffItemsItem>("diffItems", DiffItems);
+            writer.WriteObjectValue<UntypedNode>("diffItems", DiffItems);
             writer.WriteIntValue("headSize", HeadSize);
             writer.WriteStringValue("itemType", ItemType);
             writer.WriteStringValue("path", Path);

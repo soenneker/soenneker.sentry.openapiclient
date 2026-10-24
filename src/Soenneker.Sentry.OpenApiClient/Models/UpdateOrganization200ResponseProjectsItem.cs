@@ -151,10 +151,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The sessionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemSessionStats? SessionStats { get; set; }
+        public UntypedNode? SessionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemSessionStats SessionStats { get; set; }
+        public UntypedNode SessionStats { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,10 +167,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemStats? Stats { get; set; }
+        public UntypedNode? Stats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemStats Stats { get; set; }
+        public UntypedNode Stats { get; set; }
 #endif
         /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,10 +191,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The transactionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTransactionStats? TransactionStats { get; set; }
+        public UntypedNode? TransactionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTransactionStats TransactionStats { get; set; }
+        public UntypedNode TransactionStats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItem"/> and sets the default values.
@@ -258,12 +258,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemOptions>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemOptions.CreateFromDiscriminatorValue); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemSessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemSessionStats.CreateFromDiscriminatorValue); } },
+                { "sessionStats", n => { SessionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemStats.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeam>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeam.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transactionStats", n => { TransactionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTransactionStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTransactionStats.CreateFromDiscriminatorValue); } },
+                { "transactionStats", n => { TransactionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -310,12 +310,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemOptions>("options", Options);
             writer.WriteStringValue("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemSessionStats>("sessionStats", SessionStats);
+            writer.WriteObjectValue<UntypedNode>("sessionStats", SessionStats);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemStats>("stats", Stats);
+            writer.WriteObjectValue<UntypedNode>("stats", Stats);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeam>("team", Team);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTeamsItem>("teams", Teams);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseProjectsItemTransactionStats>("transactionStats", TransactionStats);
+            writer.WriteObjectValue<UntypedNode>("transactionStats", TransactionStats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -75,10 +75,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseSchemaItemProvider? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemProvider Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseSchemaItemProvider Provider { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -129,7 +129,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "missingFeatures", n => { MissingFeatures = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "outOfDate", n => { OutOfDate = n.GetBoolValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemProvider.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseSchemaItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseSchemaItemProvider.CreateFromDiscriminatorValue); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -149,7 +149,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemMissingFeaturesItem>("missingFeatures", MissingFeatures);
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("outOfDate", OutOfDate);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseItemProvider>("provider", Provider);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueIntegrations200ResponseSchemaItemProvider>("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

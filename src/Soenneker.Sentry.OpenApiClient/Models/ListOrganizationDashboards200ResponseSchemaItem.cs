@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters? Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemFilters? Filters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemFilters Filters { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions? Permissions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemPermissions? Permissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions Permissions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemPermissions Permissions { get; set; }
 #endif
         /// <summary>The prebuiltId property</summary>
         public int? PrebuiltId { get; set; }
@@ -131,14 +131,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemCreatedBy.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemCreatedBy.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemFilters>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemFilters.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isFavorited", n => { IsFavorited = n.GetBoolValue(); } },
                 { "lastVisited", n => { LastVisited = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemPermissions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemPermissions.CreateFromDiscriminatorValue); } },
                 { "prebuiltId", n => { PrebuiltId = n.GetIntValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
@@ -153,14 +153,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemCreatedBy>("createdBy", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemCreatedBy>("createdBy", CreatedBy);
             writer.WriteStringValue("dateCreated", DateCreated);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemFilters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemFilters>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isFavorited", IsFavorited);
             writer.WriteStringValue("lastVisited", LastVisited);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseItemPermissions>("permissions", Permissions);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDashboards200ResponseSchemaItemPermissions>("permissions", Permissions);
             writer.WriteIntValue("prebuiltId", PrebuiltId);
             writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
             writer.WriteStringValue("title", Title);

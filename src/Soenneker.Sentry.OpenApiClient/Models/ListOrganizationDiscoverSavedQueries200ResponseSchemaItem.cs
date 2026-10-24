@@ -33,10 +33,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>The datasetSource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The exploreQuery property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery? ExploreQuery { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemExploreQuery? ExploreQuery { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery ExploreQuery { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemExploreQuery ExploreQuery { get; set; }
 #endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -243,7 +243,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "aggregations", n => { Aggregations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemCreatedBy.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemCreatedBy.CreateFromDiscriminatorValue); } },
                 { "datasetSource", n => { DatasetSource = n.GetStringValue(); } },
                 { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetStringValue(); } },
@@ -251,7 +251,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "end", n => { End = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
-                { "exploreQuery", n => { ExploreQuery = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery.CreateFromDiscriminatorValue); } },
+                { "exploreQuery", n => { ExploreQuery = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemExploreQuery>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemExploreQuery.CreateFromDiscriminatorValue); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
@@ -281,7 +281,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aggregations", Aggregations);
             writer.WriteCollectionOfPrimitiveValues<string>("conditions", Conditions);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemCreatedBy>("createdBy", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemCreatedBy>("createdBy", CreatedBy);
             writer.WriteStringValue("datasetSource", DatasetSource);
             writer.WriteStringValue("dateCreated", DateCreated);
             writer.WriteStringValue("dateUpdated", DateUpdated);
@@ -289,7 +289,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("end", End);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
             writer.WriteBoolValue("expired", Expired);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQuery>("exploreQuery", ExploreQuery);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItemExploreQuery>("exploreQuery", ExploreQuery);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interval", Interval);

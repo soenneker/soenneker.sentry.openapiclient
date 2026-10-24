@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The assignedTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemAssignedTo? AssignedTo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo? AssignedTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemAssignedTo AssignedTo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo AssignedTo { get; set; }
 #endif
         /// <summary>The count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,10 +115,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The project property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemProject? Project { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject? Project { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemProject Project { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject Project { get; set; }
 #endif
         /// <summary>The shareId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,28 +139,28 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStats? Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats? Stats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStats Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats Stats { get; set; }
 #endif
         /// <summary>The status property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatus? Status { get; set; }
         /// <summary>The statusDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatusDetails? StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails? StatusDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatusDetails StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails StatusDetails { get; set; }
 #endif
         /// <summary>The subscriptionDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemSubscriptionDetails? SubscriptionDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails? SubscriptionDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemSubscriptionDetails SubscriptionDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails SubscriptionDetails { get; set; }
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -206,7 +206,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "annotations", n => { Annotations = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemAssignedTo.CreateFromDiscriminatorValue); } },
+                { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetStringValue(); } },
                 { "culprit", n => { Culprit = n.GetStringValue(); } },
                 { "firstSeen", n => { FirstSeen = n.GetStringValue(); } },
@@ -221,13 +221,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata.CreateFromDiscriminatorValue); } },
                 { "numComments", n => { NumComments = n.GetIntValue(); } },
                 { "permalink", n => { Permalink = n.GetStringValue(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemProject>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemProject.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject.CreateFromDiscriminatorValue); } },
                 { "shareId", n => { ShareId = n.GetStringValue(); } },
                 { "shortId", n => { ShortId = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStats.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatus>(); } },
-                { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatusDetails.CreateFromDiscriminatorValue); } },
-                { "subscriptionDetails", n => { SubscriptionDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemSubscriptionDetails>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemSubscriptionDetails.CreateFromDiscriminatorValue); } },
+                { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails.CreateFromDiscriminatorValue); } },
+                { "subscriptionDetails", n => { SubscriptionDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
@@ -241,7 +241,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("annotations", Annotations);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemAssignedTo>("assignedTo", AssignedTo);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo>("assignedTo", AssignedTo);
             writer.WriteStringValue("count", Count);
             writer.WriteStringValue("culprit", Culprit);
             writer.WriteStringValue("firstSeen", FirstSeen);
@@ -256,13 +256,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata>("metadata", Metadata);
             writer.WriteIntValue("numComments", NumComments);
             writer.WriteStringValue("permalink", Permalink);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemProject>("project", Project);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject>("project", Project);
             writer.WriteStringValue("shareId", ShareId);
             writer.WriteStringValue("shortId", ShortId);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStats>("stats", Stats);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats>("stats", Stats);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatusDetails>("statusDetails", StatusDetails);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemSubscriptionDetails>("subscriptionDetails", SubscriptionDetails);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails>("statusDetails", StatusDetails);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails>("subscriptionDetails", SubscriptionDetails);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("type", Type);
             writer.WriteIntValue("userCount", UserCount);

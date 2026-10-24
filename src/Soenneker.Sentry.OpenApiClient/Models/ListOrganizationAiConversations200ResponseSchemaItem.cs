@@ -109,10 +109,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItemUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItemUser User { get; set; }
 #endif
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,7 +169,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "totalTokens", n => { TotalTokens = n.GetIntValue(); } },
                 { "traceCount", n => { TraceCount = n.GetIntValue(); } },
                 { "traceIds", n => { TraceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItemUser.CreateFromDiscriminatorValue); } },
                 { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -202,7 +202,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("totalTokens", TotalTokens);
             writer.WriteIntValue("traceCount", TraceCount);
             writer.WriteCollectionOfPrimitiveValues<string>("traceIds", TraceIds);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseItemUser>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationAiConversations200ResponseSchemaItemUser>("user", User);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,212 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetOrganizationTrace200ResponseSchemaItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetOrganizationTrace200ResponseSchemaItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The additional_attributes property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAdditionalAttributes? AdditionalAttributes { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1? GetOrganizationTrace200ResponseItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAdditionalAttributes AdditionalAttributes { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1 GetOrganizationTrace200ResponseItemAnyOf1 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The browser_web_vital property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemBrowserWebVital? BrowserWebVital { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2? GetOrganizationTrace200ResponseItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemBrowserWebVital BrowserWebVital { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2 GetOrganizationTrace200ResponseItemAnyOf2 { get; set; }
 #endif
-        /// <summary>The children property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemChildrenItem>? Children { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3? GetOrganizationTrace200ResponseItemAnyOf3 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemChildrenItem> Children { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3 GetOrganizationTrace200ResponseItemAnyOf3 { get; set; }
 #endif
-        /// <summary>The culprit property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Culprit { get; set; }
-#nullable restore
-#else
-        public string Culprit { get; set; }
-#endif
-        /// <summary>The description property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Description { get; set; }
-#nullable restore
-#else
-        public string Description { get; set; }
-#endif
-        /// <summary>The duration property</summary>
-        public double? Duration { get; set; }
-        /// <summary>The end_timestamp property</summary>
-        public double? EndTimestamp { get; set; }
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem> Errors { get; set; }
-#endif
-        /// <summary>The event_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? EventId { get; set; }
-#nullable restore
-#else
-        public string EventId { get; set; }
-#endif
-        /// <summary>The event_type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType? EventType { get; set; }
-        /// <summary>The issue_id property</summary>
-        public int? IssueId { get; set; }
-        /// <summary>The issue_type property</summary>
-        public int? IssueType { get; set; }
-        /// <summary>The is_transaction property</summary>
-        public bool? IsTransaction { get; set; }
-        /// <summary>The level property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Level { get; set; }
-#nullable restore
-#else
-        public string Level { get; set; }
-#endif
-        /// <summary>The measurements property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMeasurements? Measurements { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMeasurements Measurements { get; set; }
-#endif
-        /// <summary>The mobile_app_vital property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMobileAppVital? MobileAppVital { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMobileAppVital MobileAppVital { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The occurrences property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemOccurrencesItem>? Occurrences { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemOccurrencesItem> Occurrences { get; set; }
-#endif
-        /// <summary>The op property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Op { get; set; }
-#nullable restore
-#else
-        public string Op { get; set; }
-#endif
-        /// <summary>The parent_span_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ParentSpanId { get; set; }
-#nullable restore
-#else
-        public string ParentSpanId { get; set; }
-#endif
-        /// <summary>The profile_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProfileId { get; set; }
-#nullable restore
-#else
-        public string ProfileId { get; set; }
-#endif
-        /// <summary>The profiler_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProfilerId { get; set; }
-#nullable restore
-#else
-        public string ProfilerId { get; set; }
-#endif
-        /// <summary>The project_id property</summary>
-        public long? ProjectId { get; set; }
-        /// <summary>The project_slug property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ProjectSlug { get; set; }
-#nullable restore
-#else
-        public string ProjectSlug { get; set; }
-#endif
-        /// <summary>The region_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RegionName { get; set; }
-#nullable restore
-#else
-        public string RegionName { get; set; }
-#endif
-        /// <summary>The sdk_name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? SdkName { get; set; }
-#nullable restore
-#else
-        public string SdkName { get; set; }
-#endif
-        /// <summary>The short_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ShortId { get; set; }
-#nullable restore
-#else
-        public string ShortId { get; set; }
-#endif
-        /// <summary>The start_timestamp property</summary>
-        public double? StartTimestamp { get; set; }
-        /// <summary>The transaction property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Transaction { get; set; }
-#nullable restore
-#else
-        public string Transaction { get; set; }
-#endif
-        /// <summary>The transaction_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TransactionId { get; set; }
-#nullable restore
-#else
-        public string TransactionId { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseSchemaItem"/> and sets the default values.
-        /// </summary>
-        public GetOrganizationTrace200ResponseSchemaItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -221,7 +45,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseSchemaItem();
+            var result = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseSchemaItem();
+            result.GetOrganizationTrace200ResponseItemAnyOf1 = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1();
+            result.GetOrganizationTrace200ResponseItemAnyOf2 = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2();
+            result.GetOrganizationTrace200ResponseItemAnyOf3 = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -229,39 +57,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetOrganizationTrace200ResponseItemAnyOf1 != null || GetOrganizationTrace200ResponseItemAnyOf2 != null || GetOrganizationTrace200ResponseItemAnyOf3 != null)
             {
-                { "additional_attributes", n => { AdditionalAttributes = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAdditionalAttributes>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAdditionalAttributes.CreateFromDiscriminatorValue); } },
-                { "browser_web_vital", n => { BrowserWebVital = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemBrowserWebVital>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemBrowserWebVital.CreateFromDiscriminatorValue); } },
-                { "children", n => { Children = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemChildrenItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemChildrenItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "culprit", n => { Culprit = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "duration", n => { Duration = n.GetDoubleValue(); } },
-                { "end_timestamp", n => { EndTimestamp = n.GetDoubleValue(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType>(); } },
-                { "is_transaction", n => { IsTransaction = n.GetBoolValue(); } },
-                { "issue_id", n => { IssueId = n.GetIntValue(); } },
-                { "issue_type", n => { IssueType = n.GetIntValue(); } },
-                { "level", n => { Level = n.GetStringValue(); } },
-                { "measurements", n => { Measurements = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMeasurements>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMeasurements.CreateFromDiscriminatorValue); } },
-                { "mobile_app_vital", n => { MobileAppVital = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMobileAppVital>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMobileAppVital.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "occurrences", n => { Occurrences = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemOccurrencesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemOccurrencesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "op", n => { Op = n.GetStringValue(); } },
-                { "parent_span_id", n => { ParentSpanId = n.GetStringValue(); } },
-                { "profile_id", n => { ProfileId = n.GetStringValue(); } },
-                { "profiler_id", n => { ProfilerId = n.GetStringValue(); } },
-                { "project_id", n => { ProjectId = n.GetLongValue(); } },
-                { "project_slug", n => { ProjectSlug = n.GetStringValue(); } },
-                { "region_name", n => { RegionName = n.GetStringValue(); } },
-                { "sdk_name", n => { SdkName = n.GetStringValue(); } },
-                { "short_id", n => { ShortId = n.GetStringValue(); } },
-                { "start_timestamp", n => { StartTimestamp = n.GetDoubleValue(); } },
-                { "transaction", n => { Transaction = n.GetStringValue(); } },
-                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GetOrganizationTrace200ResponseItemAnyOf1, GetOrganizationTrace200ResponseItemAnyOf2, GetOrganizationTrace200ResponseItemAnyOf3);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -270,37 +70,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAdditionalAttributes>("additional_attributes", AdditionalAttributes);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemBrowserWebVital>("browser_web_vital", BrowserWebVital);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemChildrenItem>("children", Children);
-            writer.WriteStringValue("culprit", Culprit);
-            writer.WriteStringValue("description", Description);
-            writer.WriteDoubleValue("duration", Duration);
-            writer.WriteDoubleValue("end_timestamp", EndTimestamp);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemErrorsItem>("errors", Errors);
-            writer.WriteStringValue("event_id", EventId);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemEventType>("event_type", EventType);
-            writer.WriteIntValue("issue_id", IssueId);
-            writer.WriteIntValue("issue_type", IssueType);
-            writer.WriteBoolValue("is_transaction", IsTransaction);
-            writer.WriteStringValue("level", Level);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMeasurements>("measurements", Measurements);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemMobileAppVital>("mobile_app_vital", MobileAppVital);
-            writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemOccurrencesItem>("occurrences", Occurrences);
-            writer.WriteStringValue("op", Op);
-            writer.WriteStringValue("parent_span_id", ParentSpanId);
-            writer.WriteStringValue("profile_id", ProfileId);
-            writer.WriteStringValue("profiler_id", ProfilerId);
-            writer.WriteLongValue("project_id", ProjectId);
-            writer.WriteStringValue("project_slug", ProjectSlug);
-            writer.WriteStringValue("region_name", RegionName);
-            writer.WriteStringValue("sdk_name", SdkName);
-            writer.WriteStringValue("short_id", ShortId);
-            writer.WriteDoubleValue("start_timestamp", StartTimestamp);
-            writer.WriteStringValue("transaction", Transaction);
-            writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1>(null, GetOrganizationTrace200ResponseItemAnyOf1, GetOrganizationTrace200ResponseItemAnyOf2, GetOrganizationTrace200ResponseItemAnyOf3);
         }
     }
 }

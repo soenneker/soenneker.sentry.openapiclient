@@ -103,18 +103,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The latestDeploys property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestDeploys? LatestDeploys { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestDeploys? LatestDeploys { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestDeploys LatestDeploys { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestDeploys LatestDeploys { get; set; }
 #endif
         /// <summary>The latestRelease property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestRelease? LatestRelease { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestRelease? LatestRelease { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestRelease LatestRelease { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestRelease LatestRelease { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,10 +127,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemOptions? Options { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemOptions? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemOptions Options { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemOptions Options { get; set; }
 #endif
         /// <summary>The platform property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,10 +151,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The sessionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemSessionStats? SessionStats { get; set; }
+        public UntypedNode? SessionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemSessionStats SessionStats { get; set; }
+        public UntypedNode SessionStats { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -167,18 +167,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemStats? Stats { get; set; }
+        public UntypedNode? Stats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemStats Stats { get; set; }
+        public UntypedNode Stats { get; set; }
 #endif
         /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeam? Team { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemTeam? Team { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeam Team { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemTeam Team { get; set; }
 #endif
         /// <summary>The teams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,10 +191,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The transactionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTransactionStats? TransactionStats { get; set; }
+        public UntypedNode? TransactionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTransactionStats TransactionStats { get; set; }
+        public UntypedNode TransactionStats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItem"/> and sets the default values.
@@ -252,18 +252,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isBookmarked", n => { IsBookmarked = n.GetBoolValue(); } },
                 { "isMember", n => { IsMember = n.GetBoolValue(); } },
-                { "latestDeploys", n => { LatestDeploys = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestDeploys>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestDeploys.CreateFromDiscriminatorValue); } },
-                { "latestRelease", n => { LatestRelease = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestRelease>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestRelease.CreateFromDiscriminatorValue); } },
+                { "latestDeploys", n => { LatestDeploys = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestDeploys>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestDeploys.CreateFromDiscriminatorValue); } },
+                { "latestRelease", n => { LatestRelease = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestRelease>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestRelease.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemOptions.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemOptions.CreateFromDiscriminatorValue); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemSessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemSessionStats.CreateFromDiscriminatorValue); } },
+                { "sessionStats", n => { SessionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemStats.CreateFromDiscriminatorValue); } },
-                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeam>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeam.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemTeam>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemTeam.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transactionStats", n => { TransactionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTransactionStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTransactionStats.CreateFromDiscriminatorValue); } },
+                { "transactionStats", n => { TransactionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -304,18 +304,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isBookmarked", IsBookmarked);
             writer.WriteBoolValue("isMember", IsMember);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestDeploys>("latestDeploys", LatestDeploys);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemLatestRelease>("latestRelease", LatestRelease);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestDeploys>("latestDeploys", LatestDeploys);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemLatestRelease>("latestRelease", LatestRelease);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemOptions>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemOptions>("options", Options);
             writer.WriteStringValue("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemSessionStats>("sessionStats", SessionStats);
+            writer.WriteObjectValue<UntypedNode>("sessionStats", SessionStats);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemStats>("stats", Stats);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeam>("team", Team);
+            writer.WriteObjectValue<UntypedNode>("stats", Stats);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseSchemaItemTeam>("team", Team);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTeamsItem>("teams", Teams);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjects200ResponseItemTransactionStats>("transactionStats", TransactionStats);
+            writer.WriteObjectValue<UntypedNode>("transactionStats", TransactionStats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

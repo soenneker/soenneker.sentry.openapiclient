@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseItemContext? Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseItemContext Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext Context { get; set; }
 #endif
         /// <summary>The count property</summary>
         public double? Count { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseItemContext>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseItemContext.CreateFromDiscriminatorValue); } },
+                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext.CreateFromDiscriminatorValue); } },
                 { "count", n => { Count = n.GetDoubleValue(); } },
                 { "lastSeen", n => { LastSeen = n.GetDoubleValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -84,7 +84,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseItemContext>("context", Context);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext>("context", Context);
             writer.WriteDoubleValue("count", Count);
             writer.WriteDoubleValue("lastSeen", LastSeen);
             writer.WriteStringValue("name", Name);

@@ -17,18 +17,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The conditionGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConditionGroup? ConditionGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConditionGroup? ConditionGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConditionGroup ConditionGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConditionGroup ConditionGroup { get; set; }
 #endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConfig Config { get; set; }
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,10 +71,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The latestGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemLatestGroup? LatestGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemLatestGroup? LatestGroup { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemLatestGroup LatestGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemLatestGroup LatestGroup { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +87,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemOwner? Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemOwner Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemOwner Owner { get; set; }
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,8 +141,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conditionGroup", n => { ConditionGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConditionGroup>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConditionGroup.CreateFromDiscriminatorValue); } },
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConfig.CreateFromDiscriminatorValue); } },
+                { "conditionGroup", n => { ConditionGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConditionGroup>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConditionGroup.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
                 { "dataSources", n => { DataSources = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemDataSourcesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemDataSourcesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
@@ -150,9 +150,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "latestGroup", n => { LatestGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemLatestGroup>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemLatestGroup.CreateFromDiscriminatorValue); } },
+                { "latestGroup", n => { LatestGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemLatestGroup>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemLatestGroup.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemOwner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemOwner.CreateFromDiscriminatorValue); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "workflowIds", n => { WorkflowIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -165,8 +165,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConditionGroup>("conditionGroup", ConditionGroup);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConditionGroup>("conditionGroup", ConditionGroup);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemConfig>("config", Config);
             writer.WriteStringValue("createdBy", CreatedBy);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemDataSourcesItem>("dataSources", DataSources);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
@@ -174,9 +174,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemLatestGroup>("latestGroup", LatestGroup);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemLatestGroup>("latestGroup", LatestGroup);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseItemOwner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDetectors200ResponseSchemaItemOwner>("owner", Owner);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("workflowIds", WorkflowIds);

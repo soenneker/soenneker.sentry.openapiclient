@@ -18,10 +18,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The browserSdk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemBrowserSdk? BrowserSdk { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk? BrowserSdk { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemBrowserSdk BrowserSdk { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk BrowserSdk { get; set; }
 #endif
         /// <summary>The browserSdkVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,18 +36,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The dsn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDsn? Dsn { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDsn? Dsn { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDsn Dsn { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDsn Dsn { get; set; }
 #endif
         /// <summary>The dynamicSdkLoaderOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDynamicSdkLoaderOptions DynamicSdkLoaderOptions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions DynamicSdkLoaderOptions { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,10 +88,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The rateLimit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit? RateLimit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemRateLimit? RateLimit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit RateLimit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemRateLimit RateLimit { get; set; }
 #endif
         /// <summary>The secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -134,18 +134,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "browserSdk", n => { BrowserSdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemBrowserSdk>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemBrowserSdk.CreateFromDiscriminatorValue); } },
+                { "browserSdk", n => { BrowserSdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk.CreateFromDiscriminatorValue); } },
                 { "browserSdkVersion", n => { BrowserSdkVersion = n.GetStringValue(); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
-                { "dsn", n => { Dsn = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDsn>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDsn.CreateFromDiscriminatorValue); } },
-                { "dynamicSdkLoaderOptions", n => { DynamicSdkLoaderOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDynamicSdkLoaderOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDynamicSdkLoaderOptions.CreateFromDiscriminatorValue); } },
+                { "dsn", n => { Dsn = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDsn>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDsn.CreateFromDiscriminatorValue); } },
+                { "dynamicSdkLoaderOptions", n => { DynamicSdkLoaderOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetLongValue(); } },
                 { "public", n => { Public = n.GetStringValue(); } },
-                { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit.CreateFromDiscriminatorValue); } },
+                { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemRateLimit>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemRateLimit.CreateFromDiscriminatorValue); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
                 { "useCase", n => { UseCase = n.GetStringValue(); } },
             };
@@ -157,18 +157,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemBrowserSdk>("browserSdk", BrowserSdk);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk>("browserSdk", BrowserSdk);
             writer.WriteStringValue("browserSdkVersion", BrowserSdkVersion);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDsn>("dsn", Dsn);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemDynamicSdkLoaderOptions>("dynamicSdkLoaderOptions", DynamicSdkLoaderOptions);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDsn>("dsn", Dsn);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions>("dynamicSdkLoaderOptions", DynamicSdkLoaderOptions);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
             writer.WriteLongValue("projectId", ProjectId);
             writer.WriteStringValue("public", Public);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseItemRateLimit>("rateLimit", RateLimit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemRateLimit>("rateLimit", RateLimit);
             writer.WriteStringValue("secret", Secret);
             writer.WriteStringValue("useCase", UseCase);
             writer.WriteAdditionalData(AdditionalData);

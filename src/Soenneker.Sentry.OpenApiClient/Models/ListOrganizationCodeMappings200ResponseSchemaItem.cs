@@ -61,10 +61,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseSchemaItemProvider? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProvider Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseSchemaItemProvider Provider { get; set; }
 #endif
         /// <summary>The repoId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,7 +130,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectSlug", n => { ProjectSlug = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProvider.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseSchemaItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseSchemaItemProvider.CreateFromDiscriminatorValue); } },
                 { "repoId", n => { RepoId = n.GetStringValue(); } },
                 { "repoName", n => { RepoName = n.GetStringValue(); } },
                 { "sourceRoot", n => { SourceRoot = n.GetStringValue(); } },
@@ -151,7 +151,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectSlug", ProjectSlug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProvider>("provider", Provider);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseSchemaItemProvider>("provider", Provider);
             writer.WriteStringValue("repoId", RepoId);
             writer.WriteStringValue("repoName", RepoName);
             writer.WriteStringValue("sourceRoot", SourceRoot);

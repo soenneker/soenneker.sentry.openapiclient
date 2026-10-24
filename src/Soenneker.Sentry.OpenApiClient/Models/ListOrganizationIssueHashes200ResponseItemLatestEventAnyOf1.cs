@@ -71,10 +71,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1EntriesItem>? Entries { get; set; }
+        public UntypedNode? Entries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1EntriesItem> Entries { get; set; }
+        public UntypedNode Entries { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -268,7 +268,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateReceived", n => { DateReceived = n.GetDateTimeOffsetValue(); } },
                 { "dist", n => { Dist = n.GetStringValue(); } },
                 { "endTimestamp", n => { EndTimestamp = n.GetDoubleValue(); } },
-                { "entries", n => { Entries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1EntriesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1EntriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "entries", n => { Entries = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1ErrorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1ErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "fingerprints", n => { Fingerprints = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -309,7 +309,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dateReceived", DateReceived);
             writer.WriteStringValue("dist", Dist);
             writer.WriteDoubleValue("endTimestamp", EndTimestamp);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1EntriesItem>("entries", Entries);
+            writer.WriteObjectValue<UntypedNode>("entries", Entries);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1ErrorsItem>("errors", Errors);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteCollectionOfPrimitiveValues<string>("fingerprints", Fingerprints);

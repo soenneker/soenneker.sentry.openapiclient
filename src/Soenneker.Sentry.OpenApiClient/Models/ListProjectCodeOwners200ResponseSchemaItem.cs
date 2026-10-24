@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The codeMapping property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemCodeMapping? CodeMapping { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemCodeMapping? CodeMapping { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemCodeMapping CodeMapping { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemCodeMapping CodeMapping { get; set; }
 #endif
         /// <summary>The codeMappingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,10 +47,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemErrors? Errors { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemErrors? Errors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemErrors Errors { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemErrors Errors { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +87,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchema? Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchemaAnyOf1? Schema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchema Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchemaAnyOf1 Schema { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItem"/> and sets the default values.
@@ -117,18 +117,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "codeMapping", n => { CodeMapping = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemCodeMapping>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemCodeMapping.CreateFromDiscriminatorValue); } },
+                { "codeMapping", n => { CodeMapping = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemCodeMapping>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemCodeMapping.CreateFromDiscriminatorValue); } },
                 { "codeMappingId", n => { CodeMappingId = n.GetStringValue(); } },
                 { "codeOwnersUrl", n => { CodeOwnersUrl = n.GetStringValue(); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dateSynced", n => { DateSynced = n.GetDateTimeOffsetValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
-                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemErrors>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemErrors.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemErrors>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemErrors.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "ownershipSyntax", n => { OwnershipSyntax = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetStringValue(); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchema.CreateFromDiscriminatorValue); } },
+                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchemaAnyOf1>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchemaAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -138,18 +138,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemCodeMapping>("codeMapping", CodeMapping);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemCodeMapping>("codeMapping", CodeMapping);
             writer.WriteStringValue("codeMappingId", CodeMappingId);
             writer.WriteStringValue("codeOwnersUrl", CodeOwnersUrl);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("dateSynced", DateSynced);
             writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemErrors>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseSchemaItemErrors>("errors", Errors);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("ownershipSyntax", OwnershipSyntax);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("raw", Raw);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchema>("schema", Schema);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectCodeOwners200ResponseItemSchemaAnyOf1>("schema", Schema);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

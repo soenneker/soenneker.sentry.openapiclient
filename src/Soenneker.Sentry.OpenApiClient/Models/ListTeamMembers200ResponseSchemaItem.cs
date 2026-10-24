@@ -37,10 +37,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemFlags? Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemFlags? Flags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemFlags Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemFlags Flags { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,10 +119,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItem"/> and sets the default values.
@@ -153,7 +153,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
                 { "externalUsers", n => { ExternalUsers = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemExternalUsersItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemExternalUsersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemFlags.CreateFromDiscriminatorValue); } },
+                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemFlags.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "inviteStatus", n => { InviteStatus = n.GetStringValue(); } },
                 { "inviterName", n => { InviterName = n.GetStringValue(); } },
@@ -164,7 +164,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "roleName", n => { RoleName = n.GetStringValue(); } },
                 { "teamRole", n => { TeamRole = n.GetStringValue(); } },
                 { "teamSlug", n => { TeamSlug = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemUser.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -178,7 +178,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteBoolValue("expired", Expired);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemExternalUsersItem>("externalUsers", ExternalUsers);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemFlags>("flags", Flags);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemFlags>("flags", Flags);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("inviterName", InviterName);
             writer.WriteStringValue("inviteStatus", InviteStatus);
@@ -189,7 +189,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("roleName", RoleName);
             writer.WriteStringValue("teamRole", TeamRole);
             writer.WriteStringValue("teamSlug", TeamSlug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseItemUser>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamMembers200ResponseSchemaItemUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

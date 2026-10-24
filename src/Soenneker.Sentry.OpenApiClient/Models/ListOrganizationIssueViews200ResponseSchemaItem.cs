@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemCreatedBy? CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy? CreatedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemCreatedBy CreatedBy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy CreatedBy { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -95,10 +95,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The timeFilters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemTimeFilters? TimeFilters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemTimeFilters? TimeFilters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemTimeFilters TimeFilters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemTimeFilters TimeFilters { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItem"/> and sets the default values.
@@ -125,7 +125,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemCreatedBy.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetStringValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "querySort", n => { QuerySort = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemQuerySort>(); } },
                 { "starred", n => { Starred = n.GetBoolValue(); } },
                 { "stars", n => { Stars = n.GetIntValue(); } },
-                { "timeFilters", n => { TimeFilters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemTimeFilters>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemTimeFilters.CreateFromDiscriminatorValue); } },
+                { "timeFilters", n => { TimeFilters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemTimeFilters>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemTimeFilters.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,7 +147,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemCreatedBy>("createdBy", CreatedBy);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy>("createdBy", CreatedBy);
             writer.WriteStringValue("dateCreated", DateCreated);
             writer.WriteStringValue("dateUpdated", DateUpdated);
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
@@ -159,7 +159,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemQuerySort>("querySort", QuerySort);
             writer.WriteBoolValue("starred", Starred);
             writer.WriteIntValue("stars", Stars);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseItemTimeFilters>("timeFilters", TimeFilters);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemTimeFilters>("timeFilters", TimeFilters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

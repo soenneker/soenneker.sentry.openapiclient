@@ -7,234 +7,52 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class AddProjectSymbolSource201Response : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AddProjectSymbolSource201Response : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The access_key property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccessKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1? AddProjectSymbolSource201ResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public string AccessKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1 AddProjectSymbolSource201ResponseOneOf1 { get; set; }
 #endif
-        /// <summary>The account property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Account { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2? AddProjectSymbolSource201ResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public string Account { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2 AddProjectSymbolSource201ResponseOneOf2 { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appconnectIssuer property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppconnectIssuer { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3? AddProjectSymbolSource201ResponseOneOf3 { get; set; }
 #nullable restore
 #else
-        public string AppconnectIssuer { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3 AddProjectSymbolSource201ResponseOneOf3 { get; set; }
 #endif
-        /// <summary>The appconnectKey property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppconnectKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4? AddProjectSymbolSource201ResponseOneOf4 { get; set; }
 #nullable restore
 #else
-        public string AppconnectKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4 AddProjectSymbolSource201ResponseOneOf4 { get; set; }
 #endif
-        /// <summary>The appconnectPrivateKey property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppconnectPrivateKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5? AddProjectSymbolSource201ResponseOneOf5 { get; set; }
 #nullable restore
 #else
-        public string AppconnectPrivateKey { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5 AddProjectSymbolSource201ResponseOneOf5 { get; set; }
 #endif
-        /// <summary>The appId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AppId { get; set; }
-#nullable restore
-#else
-        public string AppId { get; set; }
-#endif
-        /// <summary>The appName property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AppName { get; set; }
-#nullable restore
-#else
-        public string AppName { get; set; }
-#endif
-        /// <summary>The bucket property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Bucket { get; set; }
-#nullable restore
-#else
-        public string Bucket { get; set; }
-#endif
-        /// <summary>The bundleId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? BundleId { get; set; }
-#nullable restore
-#else
-        public string BundleId { get; set; }
-#endif
-        /// <summary>The client_email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ClientEmail { get; set; }
-#nullable restore
-#else
-        public string ClientEmail { get; set; }
-#endif
-        /// <summary>The client_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ClientId { get; set; }
-#nullable restore
-#else
-        public string ClientId { get; set; }
-#endif
-        /// <summary>The client_secret property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseClientSecret? ClientSecret { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseClientSecret ClientSecret { get; set; }
-#endif
-        /// <summary>The container property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Container { get; set; }
-#nullable restore
-#else
-        public string Container { get; set; }
-#endif
-        /// <summary>The filters property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseFilters? Filters { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseFilters Filters { get; set; }
-#endif
-        /// <summary>The has_index property</summary>
-        public bool? HasIndex { get; set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The is_public property</summary>
-        public bool? IsPublic { get; set; }
-        /// <summary>The layout property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseLayout? Layout { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseLayout Layout { get; set; }
-#endif
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The password property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePassword? Password { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePassword Password { get; set; }
-#endif
-        /// <summary>The platforms property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? Platforms { get; set; }
-#nullable restore
-#else
-        public List<string> Platforms { get; set; }
-#endif
-        /// <summary>The prefix property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Prefix { get; set; }
-#nullable restore
-#else
-        public string Prefix { get; set; }
-#endif
-        /// <summary>The private_key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePrivateKey? PrivateKey { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePrivateKey PrivateKey { get; set; }
-#endif
-        /// <summary>The region property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Region { get; set; }
-#nullable restore
-#else
-        public string Region { get; set; }
-#endif
-        /// <summary>The secret_key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseSecretKey? SecretKey { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseSecretKey SecretKey { get; set; }
-#endif
-        /// <summary>The tenant_id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? TenantId { get; set; }
-#nullable restore
-#else
-        public string TenantId { get; set; }
-#endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseType? Type { get; set; }
-        /// <summary>The url property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Url { get; set; }
-#nullable restore
-#else
-        public string Url { get; set; }
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response"/> and sets the default values.
-        /// </summary>
-        public AddProjectSymbolSource201Response()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -243,7 +61,29 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var result = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response();
+            if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AddProjectSymbolSource201ResponseOneOf1 = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1();
+            }
+            else if("s3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AddProjectSymbolSource201ResponseOneOf2 = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2();
+            }
+            else if("gcs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AddProjectSymbolSource201ResponseOneOf3 = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3();
+            }
+            else if("azure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AddProjectSymbolSource201ResponseOneOf4 = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4();
+            }
+            else if("appStoreConnect".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.AddProjectSymbolSource201ResponseOneOf5 = new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -251,38 +91,27 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(AddProjectSymbolSource201ResponseOneOf1 != null)
             {
-                { "access_key", n => { AccessKey = n.GetStringValue(); } },
-                { "account", n => { Account = n.GetStringValue(); } },
-                { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appName", n => { AppName = n.GetStringValue(); } },
-                { "appconnectIssuer", n => { AppconnectIssuer = n.GetStringValue(); } },
-                { "appconnectKey", n => { AppconnectKey = n.GetStringValue(); } },
-                { "appconnectPrivateKey", n => { AppconnectPrivateKey = n.GetStringValue(); } },
-                { "bucket", n => { Bucket = n.GetStringValue(); } },
-                { "bundleId", n => { BundleId = n.GetStringValue(); } },
-                { "client_email", n => { ClientEmail = n.GetStringValue(); } },
-                { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "client_secret", n => { ClientSecret = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseClientSecret>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseClientSecret.CreateFromDiscriminatorValue); } },
-                { "container", n => { Container = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseFilters>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseFilters.CreateFromDiscriminatorValue); } },
-                { "has_index", n => { HasIndex = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "is_public", n => { IsPublic = n.GetBoolValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseLayout>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseLayout.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "password", n => { Password = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePassword>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePassword.CreateFromDiscriminatorValue); } },
-                { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "prefix", n => { Prefix = n.GetStringValue(); } },
-                { "private_key", n => { PrivateKey = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePrivateKey>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePrivateKey.CreateFromDiscriminatorValue); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "secret_key", n => { SecretKey = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseSecretKey>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseSecretKey.CreateFromDiscriminatorValue); } },
-                { "tenant_id", n => { TenantId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseType>(); } },
-                { "url", n => { Url = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-            };
+                return AddProjectSymbolSource201ResponseOneOf1.GetFieldDeserializers();
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf2 != null)
+            {
+                return AddProjectSymbolSource201ResponseOneOf2.GetFieldDeserializers();
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf3 != null)
+            {
+                return AddProjectSymbolSource201ResponseOneOf3.GetFieldDeserializers();
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf4 != null)
+            {
+                return AddProjectSymbolSource201ResponseOneOf4.GetFieldDeserializers();
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf5 != null)
+            {
+                return AddProjectSymbolSource201ResponseOneOf5.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -291,36 +120,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("access_key", AccessKey);
-            writer.WriteStringValue("account", Account);
-            writer.WriteStringValue("appconnectIssuer", AppconnectIssuer);
-            writer.WriteStringValue("appconnectKey", AppconnectKey);
-            writer.WriteStringValue("appconnectPrivateKey", AppconnectPrivateKey);
-            writer.WriteStringValue("appId", AppId);
-            writer.WriteStringValue("appName", AppName);
-            writer.WriteStringValue("bucket", Bucket);
-            writer.WriteStringValue("bundleId", BundleId);
-            writer.WriteStringValue("client_email", ClientEmail);
-            writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseClientSecret>("client_secret", ClientSecret);
-            writer.WriteStringValue("container", Container);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseFilters>("filters", Filters);
-            writer.WriteBoolValue("has_index", HasIndex);
-            writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("is_public", IsPublic);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseLayout>("layout", Layout);
-            writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePassword>("password", Password);
-            writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
-            writer.WriteStringValue("prefix", Prefix);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponsePrivateKey>("private_key", PrivateKey);
-            writer.WriteStringValue("region", Region);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseSecretKey>("secret_key", SecretKey);
-            writer.WriteStringValue("tenant_id", TenantId);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseType>("type", Type);
-            writer.WriteStringValue("url", Url);
-            writer.WriteStringValue("username", Username);
-            writer.WriteAdditionalData(AdditionalData);
+            if(AddProjectSymbolSource201ResponseOneOf1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1>(null, AddProjectSymbolSource201ResponseOneOf1);
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf2>(null, AddProjectSymbolSource201ResponseOneOf2);
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf3 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf3>(null, AddProjectSymbolSource201ResponseOneOf3);
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf4 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4>(null, AddProjectSymbolSource201ResponseOneOf4);
+            }
+            else if(AddProjectSymbolSource201ResponseOneOf5 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf5>(null, AddProjectSymbolSource201ResponseOneOf5);
+            }
         }
     }
 }

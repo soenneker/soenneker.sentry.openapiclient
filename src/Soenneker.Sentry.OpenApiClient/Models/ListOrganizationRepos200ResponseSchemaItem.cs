@@ -59,18 +59,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemProvider? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemProvider Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemProvider Provider { get; set; }
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemSettings? Settings { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemSettings? Settings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemSettings Settings { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemSettings Settings { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,8 +119,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "integrationId", n => { IntegrationId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemProvider.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemSettings>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemSettings.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemProvider.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemSettings>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemSettings.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
@@ -138,8 +138,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("integrationId", IntegrationId);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemProvider>("provider", Provider);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseItemSettings>("settings", Settings);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemProvider>("provider", Provider);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepos200ResponseSchemaItemSettings>("settings", Settings);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

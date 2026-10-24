@@ -45,10 +45,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>? Teams { get; set; }
+        public UntypedNode? Teams { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem> Teams { get; set; }
+        public UntypedNode Teams { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequest"/> and sets the default values.
@@ -83,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "role", n => { Role = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestRole>(); } },
                 { "sendInvite", n => { SendInvite = n.GetBoolValue(); } },
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem>(global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "teams", n => { Teams = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestRole>("role", Role);
             writer.WriteBoolValue("sendInvite", SendInvite);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamRolesItem>("teamRoles", TeamRoles);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestTeamsItem>("teams", Teams);
+            writer.WriteObjectValue<UntypedNode>("teams", Teams);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

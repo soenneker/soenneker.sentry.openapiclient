@@ -44,18 +44,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The debug_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDebugInfo? DebugInfo { get; set; }
+        public UntypedNode? DebugInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDebugInfo DebugInfo { get; set; }
+        public UntypedNode DebugInfo { get; set; }
 #endif
         /// <summary>The discoverSplitDecision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision? DiscoverSplitDecision { get; set; }
+        public UntypedNode? DiscoverSplitDecision { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision DiscoverSplitDecision { get; set; }
+        public UntypedNode DiscoverSplitDecision { get; set; }
 #endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,8 +130,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dataScanned", n => { DataScanned = n.GetStringValue(); } },
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "datasetReason", n => { DatasetReason = n.GetStringValue(); } },
-                { "debug_info", n => { DebugInfo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDebugInfo>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDebugInfo.CreateFromDiscriminatorValue); } },
-                { "discoverSplitDecision", n => { DiscoverSplitDecision = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision.CreateFromDiscriminatorValue); } },
+                { "debug_info", n => { DebugInfo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "discoverSplitDecision", n => { DiscoverSplitDecision = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields.CreateFromDiscriminatorValue); } },
                 { "ingestion", n => { Ingestion = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion.CreateFromDiscriminatorValue); } },
                 { "isMetricsData", n => { IsMetricsData = n.GetBoolValue(); } },
@@ -152,8 +152,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("dataScanned", DataScanned);
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteStringValue("datasetReason", DatasetReason);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDebugInfo>("debug_info", DebugInfo);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision>("discoverSplitDecision", DiscoverSplitDecision);
+            writer.WriteObjectValue<UntypedNode>("debug_info", DebugInfo);
+            writer.WriteObjectValue<UntypedNode>("discoverSplitDecision", DiscoverSplitDecision);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>("fields", Fields);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion>("ingestion", Ingestion);
             writer.WriteBoolValue("isMetricsData", IsMetricsData);

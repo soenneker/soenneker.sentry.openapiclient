@@ -26,10 +26,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Varies depending on the schedule_type. Is either a crontab string, or a 2 element tuple for intervals (e.g. [1, &apos;day&apos;])</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigSchedule? Schedule { get; set; }
+        public UntypedNode? Schedule { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigSchedule Schedule { get; set; }
+        public UntypedNode Schedule { get; set; }
 #endif
         /// <summary>Currently supports &quot;crontab&quot; or &quot;interval&quot;* `crontab`* `interval`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigScheduleType? ScheduleType { get; set; }
@@ -64,7 +64,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "failure_issue_threshold", n => { FailureIssueThreshold = n.GetIntValue(); } },
                 { "max_runtime", n => { MaxRuntime = n.GetIntValue(); } },
                 { "recovery_threshold", n => { RecoveryThreshold = n.GetIntValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigSchedule>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "schedule_type", n => { ScheduleType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigScheduleType>(); } },
                 { "timezone", n => { Timezone = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigTimezone>(); } },
             };
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("failure_issue_threshold", FailureIssueThreshold);
             writer.WriteIntValue("max_runtime", MaxRuntime);
             writer.WriteIntValue("recovery_threshold", RecoveryThreshold);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<UntypedNode>("schedule", Schedule);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigScheduleType>("schedule_type", ScheduleType);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitorRequestConfigTimezone>("timezone", Timezone);
             writer.WriteAdditionalData(AdditionalData);

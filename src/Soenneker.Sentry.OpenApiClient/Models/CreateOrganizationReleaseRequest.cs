@@ -43,10 +43,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>A list of project slugs that are involved in this release.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestProjectsItem>? Projects { get; set; }
+        public UntypedNode? Projects { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestProjectsItem> Projects { get; set; }
+        public UntypedNode Projects { get; set; }
 #endif
         /// <summary>An optional commit reference. This is useful if a tagged version has been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -117,7 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateReleased", n => { DateReleased = n.GetDateTimeOffsetValue(); } },
                 { "headCommits", n => { HeadCommits = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestHeadCommitsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestHeadCommitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "owner", n => { Owner = n.GetStringValue(); } },
-                { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "projects", n => { Projects = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "refs", n => { Refs = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestRefsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestRefsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dateReleased", DateReleased);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestHeadCommitsItem>("headCommits", HeadCommits);
             writer.WriteStringValue("owner", Owner);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestProjectsItem>("projects", Projects);
+            writer.WriteObjectValue<UntypedNode>("projects", Projects);
             writer.WriteStringValue("ref", Ref);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestRefsItem>("refs", Refs);
             writer.WriteStringValue("status", Status);

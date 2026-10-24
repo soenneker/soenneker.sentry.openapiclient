@@ -251,10 +251,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseRole? Role { get; set; }
+        public UntypedNode? Role { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseRole Role { get; set; }
+        public UntypedNode Role { get; set; }
 #endif
         /// <summary>The safeFields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -404,7 +404,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "relayPiiConfig", n => { RelayPiiConfig = n.GetStringValue(); } },
                 { "require2FA", n => { Require2FA = n.GetBoolValue(); } },
                 { "requiresSso", n => { RequiresSso = n.GetBoolValue(); } },
-                { "role", n => { Role = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseRole>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseRole.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "safeFields", n => { SafeFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "samplingMode", n => { SamplingMode = n.GetStringValue(); } },
                 { "scrapeJavaScript", n => { ScrapeJavaScript = n.GetBoolValue(); } },
@@ -477,7 +477,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("relayPiiConfig", RelayPiiConfig);
             writer.WriteBoolValue("require2FA", Require2FA);
             writer.WriteBoolValue("requiresSso", RequiresSso);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseRole>("role", Role);
+            writer.WriteObjectValue<UntypedNode>("role", Role);
             writer.WriteCollectionOfPrimitiveValues<string>("safeFields", SafeFields);
             writer.WriteStringValue("samplingMode", SamplingMode);
             writer.WriteBoolValue("scrapeJavaScript", ScrapeJavaScript);

@@ -83,10 +83,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemMetadata? Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemMetadata Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemMetadata Metadata { get; set; }
 #endif
         /// <summary>The platform property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,10 +123,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItem"/> and sets the default values.
@@ -162,12 +162,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemMetadata>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemMetadata>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemMetadata.CreateFromDiscriminatorValue); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "projectID", n => { ProjectID = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemTagsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemTagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemUser.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -186,12 +186,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemMetadata>("metadata", Metadata);
             writer.WriteStringValue("platform", Platform);
             writer.WriteStringValue("projectID", ProjectID);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemTagsItem>("tags", Tags);
             writer.WriteStringValue("title", Title);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseItemUser>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueEvents200ResponseSchemaItemUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

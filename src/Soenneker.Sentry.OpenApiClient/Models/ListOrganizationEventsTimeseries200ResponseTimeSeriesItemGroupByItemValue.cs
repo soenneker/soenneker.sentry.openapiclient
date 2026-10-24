@@ -8,27 +8,13 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1"/>
+    /// Composed type wrapper for classes <see cref="double"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValue : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1? ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1 ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2? ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2 ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2 { get; set; }
-#endif
+        /// <summary>Composed type representation for type <see cref="double"/></summary>
+        public double? Double { get; set; }
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +22,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,9 +40,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValue();
-            result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1 = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1();
-            result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2 = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2();
-            result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1();
+            if(parseNode.GetDoubleValue() is double doubleValue)
+            {
+                result.Double = doubleValue;
+            }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +59,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1 != null || ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2 != null || ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 != null)
+            if(ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +72,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1>(null, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch1, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueBranch2, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1);
+            if(Double != null)
+            {
+                writer.WriteDoubleValue(null, Double);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1>(null, ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1);
+            }
         }
     }
 }

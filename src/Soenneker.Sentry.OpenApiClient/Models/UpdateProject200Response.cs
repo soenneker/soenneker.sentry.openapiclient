@@ -329,10 +329,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The seerNightshiftTweaks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSeerNightshiftTweaks? SeerNightshiftTweaks { get; set; }
+        public UntypedNode? SeerNightshiftTweaks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSeerNightshiftTweaks SeerNightshiftTweaks { get; set; }
+        public UntypedNode SeerNightshiftTweaks { get; set; }
 #endif
         /// <summary>The seerScannerAutomation property</summary>
         public bool? SeerScannerAutomation { get; set; }
@@ -347,10 +347,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The sessionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats? SessionStats { get; set; }
+        public UntypedNode? SessionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats SessionStats { get; set; }
+        public UntypedNode SessionStats { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -363,10 +363,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats? Stats { get; set; }
+        public UntypedNode? Stats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats Stats { get; set; }
+        public UntypedNode Stats { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -423,10 +423,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The transactionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTransactionStats? TransactionStats { get; set; }
+        public UntypedNode? TransactionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTransactionStats TransactionStats { get; set; }
+        public UntypedNode TransactionStats { get; set; }
 #endif
         /// <summary>The verifySSL property</summary>
         public bool? VerifySSL { get; set; }
@@ -524,12 +524,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "secondaryGroupingExpiry", n => { SecondaryGroupingExpiry = n.GetIntValue(); } },
                 { "securityToken", n => { SecurityToken = n.GetStringValue(); } },
                 { "securityTokenHeader", n => { SecurityTokenHeader = n.GetStringValue(); } },
-                { "seerNightshiftTweaks", n => { SeerNightshiftTweaks = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSeerNightshiftTweaks>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSeerNightshiftTweaks.CreateFromDiscriminatorValue); } },
+                { "seerNightshiftTweaks", n => { SeerNightshiftTweaks = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "seerScannerAutomation", n => { SeerScannerAutomation = n.GetBoolValue(); } },
                 { "sensitiveFields", n => { SensitiveFields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats.CreateFromDiscriminatorValue); } },
+                { "sessionStats", n => { SessionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "storeCrashReports", n => { StoreCrashReports = n.GetIntValue(); } },
                 { "subjectPrefix", n => { SubjectPrefix = n.GetStringValue(); } },
@@ -538,7 +538,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tempestFetchScreenshots", n => { TempestFetchScreenshots = n.GetBoolValue(); } },
-                { "transactionStats", n => { TransactionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTransactionStats>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTransactionStats.CreateFromDiscriminatorValue); } },
+                { "transactionStats", n => { TransactionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "verifySSL", n => { VerifySSL = n.GetBoolValue(); } },
             };
         }
@@ -618,12 +618,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("secondaryGroupingExpiry", SecondaryGroupingExpiry);
             writer.WriteStringValue("securityToken", SecurityToken);
             writer.WriteStringValue("securityTokenHeader", SecurityTokenHeader);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSeerNightshiftTweaks>("seerNightshiftTweaks", SeerNightshiftTweaks);
+            writer.WriteObjectValue<UntypedNode>("seerNightshiftTweaks", SeerNightshiftTweaks);
             writer.WriteBoolValue("seerScannerAutomation", SeerScannerAutomation);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveFields", SensitiveFields);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats>("sessionStats", SessionStats);
+            writer.WriteObjectValue<UntypedNode>("sessionStats", SessionStats);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats>("stats", Stats);
+            writer.WriteObjectValue<UntypedNode>("stats", Stats);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("storeCrashReports", StoreCrashReports);
             writer.WriteStringValue("subjectPrefix", SubjectPrefix);
@@ -632,7 +632,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam>("team", Team);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem>("teams", Teams);
             writer.WriteBoolValue("tempestFetchScreenshots", TempestFetchScreenshots);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTransactionStats>("transactionStats", TransactionStats);
+            writer.WriteObjectValue<UntypedNode>("transactionStats", TransactionStats);
             writer.WriteBoolValue("verifySSL", VerifySSL);
             writer.WriteAdditionalData(AdditionalData);
         }

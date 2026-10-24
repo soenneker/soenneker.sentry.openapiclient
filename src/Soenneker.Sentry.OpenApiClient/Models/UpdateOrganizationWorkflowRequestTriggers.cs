@@ -18,10 +18,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersConditionsItem>? Conditions { get; set; }
+        public UntypedNode? Conditions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersConditionsItem> Conditions { get; set; }
+        public UntypedNode Conditions { get; set; }
 #endif
         /// <summary>The id property</summary>
         public int? Id { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersConditionsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "logic_type", n => { LogicType = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersLogicType>(); } },
             };
@@ -64,7 +64,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersConditionsItem>("conditions", Conditions);
+            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
             writer.WriteIntValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestTriggersLogicType>("logic_type", LogicType);
             writer.WriteAdditionalData(AdditionalData);

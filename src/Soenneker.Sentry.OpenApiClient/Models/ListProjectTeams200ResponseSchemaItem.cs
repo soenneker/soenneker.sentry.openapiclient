@@ -25,20 +25,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemAvatar? Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemAvatar? Avatar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemAvatar Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemAvatar Avatar { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
         /// <summary>The flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemFlags? Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemFlags? Flags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemFlags Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemFlags Flags { get; set; }
 #endif
         /// <summary>The hasAccess property</summary>
         public bool? HasAccess { get; set; }
@@ -106,9 +106,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access", n => { Access = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemAvatar.CreateFromDiscriminatorValue); } },
+                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemAvatar.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
-                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemFlags.CreateFromDiscriminatorValue); } },
+                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemFlags.CreateFromDiscriminatorValue); } },
                 { "hasAccess", n => { HasAccess = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isMember", n => { IsMember = n.GetBoolValue(); } },
@@ -127,9 +127,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("access", Access);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemAvatar>("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemAvatar>("avatar", Avatar);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseItemFlags>("flags", Flags);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectTeams200ResponseSchemaItemFlags>("flags", Flags);
             writer.WriteBoolValue("hasAccess", HasAccess);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isMember", IsMember);

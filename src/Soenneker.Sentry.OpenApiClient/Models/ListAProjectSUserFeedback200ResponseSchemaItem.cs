@@ -41,10 +41,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemEvent? Event { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemEvent? Event { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemEvent Event { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemEvent Event { get; set; }
 #endif
         /// <summary>The eventID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemIssue? Issue { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemIssue? Issue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemIssue Issue { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemIssue Issue { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,10 +81,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItem"/> and sets the default values.
@@ -114,12 +114,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "comments", n => { Comments = n.GetStringValue(); } },
                 { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "event", n => { Event = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemEvent>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemEvent.CreateFromDiscriminatorValue); } },
+                { "event", n => { Event = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemEvent>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemEvent.CreateFromDiscriminatorValue); } },
                 { "eventID", n => { EventID = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "issue", n => { Issue = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemIssue>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemIssue.CreateFromDiscriminatorValue); } },
+                { "issue", n => { Issue = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemIssue>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemIssue.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemUser.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemUser>(global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -132,12 +132,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("comments", Comments);
             writer.WriteStringValue("dateCreated", DateCreated);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemEvent>("event", Event);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemEvent>("event", Event);
             writer.WriteStringValue("eventID", EventID);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemIssue>("issue", Issue);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemIssue>("issue", Issue);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseItemUser>("user", User);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItemUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

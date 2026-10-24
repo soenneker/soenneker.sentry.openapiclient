@@ -43,18 +43,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The pullRequest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequest? PullRequest { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemPullRequest? PullRequest { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequest PullRequest { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemPullRequest PullRequest { get; set; }
 #endif
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemRepository? Repository { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemRepository? Repository { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemRepository Repository { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemRepository Repository { get; set; }
 #endif
         /// <summary>The suspectCommitType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -93,8 +93,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
-                { "pullRequest", n => { PullRequest = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequest>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequest.CreateFromDiscriminatorValue); } },
-                { "repository", n => { Repository = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemRepository>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemRepository.CreateFromDiscriminatorValue); } },
+                { "pullRequest", n => { PullRequest = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemPullRequest>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemPullRequest.CreateFromDiscriminatorValue); } },
+                { "repository", n => { Repository = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemRepository>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemRepository.CreateFromDiscriminatorValue); } },
                 { "suspectCommitType", n => { SuspectCommitType = n.GetStringValue(); } },
             };
         }
@@ -109,8 +109,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("message", Message);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequest>("pullRequest", PullRequest);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemRepository>("repository", Repository);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemPullRequest>("pullRequest", PullRequest);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseSchemaItemRepository>("repository", Repository);
             writer.WriteStringValue("suspectCommitType", SuspectCommitType);
             writer.WriteAdditionalData(AdditionalData);
         }

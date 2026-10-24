@@ -87,10 +87,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchema? Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchemaAnyOf1? Schema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchema Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchemaAnyOf1 Schema { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201Response"/> and sets the default values.
@@ -128,7 +128,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "ownershipSyntax", n => { OwnershipSyntax = n.GetStringValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "raw", n => { Raw = n.GetStringValue(); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchema>(global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchema.CreateFromDiscriminatorValue); } },
+                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchemaAnyOf1>(global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchemaAnyOf1.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -149,7 +149,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("ownershipSyntax", OwnershipSyntax);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("raw", Raw);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchema>("schema", Schema);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectCodeOwners201ResponseSchemaAnyOf1>("schema", Schema);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

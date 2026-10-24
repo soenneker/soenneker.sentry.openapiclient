@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes List&lt;global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item&gt;, List&lt;global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1&gt;
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1"/>, List&lt;global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationWorkflow201ResponseActionFiltersItemActions : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item> CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item { get; set; }
 #endif
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1&gt;</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1>? CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1? CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1> CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,9 +42,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 result.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item = createOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1ItemValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1> createOrganizationWorkflow201ResponseActionFiltersItemActionsMember1Value)
-            {
-                result.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 = createOrganizationWorkflow201ResponseActionFiltersItemActionsMember1Value;
+            else {
+                result.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1();
             }
             return result;
         }
@@ -54,6 +53,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if(CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 != null)
+            {
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1);
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -67,9 +70,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item>(null, CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1Item);
             }
-            else if(CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1 != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1>(null, CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1);
+            else {
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1>(null, CreateOrganizationWorkflow201ResponseActionFiltersItemActionsMember1);
             }
         }
     }

@@ -55,10 +55,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The monitorConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseItemMonitorConfig? MonitorConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseSchemaItemMonitorConfig? MonitorConfig { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseItemMonitorConfig MonitorConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseSchemaItemMonitorConfig MonitorConfig { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "expectedTime", n => { ExpectedTime = n.GetDateTimeOffsetValue(); } },
                 { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "monitorConfig", n => { MonitorConfig = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseItemMonitorConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseItemMonitorConfig.CreateFromDiscriminatorValue); } },
+                { "monitorConfig", n => { MonitorConfig = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseSchemaItemMonitorConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseSchemaItemMonitorConfig.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -124,7 +124,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("expectedTime", ExpectedTime);
             writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseItemMonitorConfig>("monitorConfig", MonitorConfig);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitorCheckins200ResponseSchemaItemMonitorConfig>("monitorConfig", MonitorConfig);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

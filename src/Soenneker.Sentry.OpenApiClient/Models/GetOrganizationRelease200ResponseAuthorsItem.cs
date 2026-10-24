@@ -7,122 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetOrganizationRelease200ResponseAuthorsItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GetOrganizationRelease200ResponseAuthorsItem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authenticators property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAuthenticatorsItem>? Authenticators { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1? GetOrganizationRelease200ResponseAuthorsItemAnyOf1 { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAuthenticatorsItem> Authenticators { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1 GetOrganizationRelease200ResponseAuthorsItemAnyOf1 { get; set; }
 #endif
-        /// <summary>The avatar property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAvatar? Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf2? GetOrganizationRelease200ResponseAuthorsItemAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAvatar Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf2 GetOrganizationRelease200ResponseAuthorsItemAnyOf2 { get; set; }
 #endif
-        /// <summary>The avatarUrl property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AvatarUrl { get; set; }
-#nullable restore
-#else
-        public string AvatarUrl { get; set; }
-#endif
-        /// <summary>The canReset2fa property</summary>
-        public bool? CanReset2fa { get; set; }
-        /// <summary>The dateJoined property</summary>
-        public DateTimeOffset? DateJoined { get; set; }
-        /// <summary>The email property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Email { get; set; }
-#nullable restore
-#else
-        public string Email { get; set; }
-#endif
-        /// <summary>The emails property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemEmailsItem>? Emails { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemEmailsItem> Emails { get; set; }
-#endif
-        /// <summary>The experiments property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemExperiments? Experiments { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemExperiments Experiments { get; set; }
-#endif
-        /// <summary>The has2fa property</summary>
-        public bool? Has2fa { get; set; }
-        /// <summary>The hasPasswordAuth property</summary>
-        public bool? HasPasswordAuth { get; set; }
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Id { get; set; }
-#nullable restore
-#else
-        public string Id { get; set; }
-#endif
-        /// <summary>The identities property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemIdentitiesItem>? Identities { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemIdentitiesItem> Identities { get; set; }
-#endif
-        /// <summary>The isActive property</summary>
-        public bool? IsActive { get; set; }
-        /// <summary>The isManaged property</summary>
-        public bool? IsManaged { get; set; }
-        /// <summary>The isStaff property</summary>
-        public bool? IsStaff { get; set; }
-        /// <summary>The isSuperuser property</summary>
-        public bool? IsSuperuser { get; set; }
-        /// <summary>The isSuspended property</summary>
-        public bool? IsSuspended { get; set; }
-        /// <summary>The lastActive property</summary>
-        public DateTimeOffset? LastActive { get; set; }
-        /// <summary>The lastLogin property</summary>
-        public DateTimeOffset? LastLogin { get; set; }
-        /// <summary>The name property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The username property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Username { get; set; }
-#nullable restore
-#else
-        public string Username { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem"/> and sets the default values.
-        /// </summary>
-        public GetOrganizationRelease200ResponseAuthorsItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -131,7 +37,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem();
+            var result = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem();
+            result.GetOrganizationRelease200ResponseAuthorsItemAnyOf1 = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1();
+            result.GetOrganizationRelease200ResponseAuthorsItemAnyOf2 = new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf2();
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,30 +48,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GetOrganizationRelease200ResponseAuthorsItemAnyOf1 != null || GetOrganizationRelease200ResponseAuthorsItemAnyOf2 != null)
             {
-                { "authenticators", n => { Authenticators = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAuthenticatorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAuthenticatorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAvatar.CreateFromDiscriminatorValue); } },
-                { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
-                { "canReset2fa", n => { CanReset2fa = n.GetBoolValue(); } },
-                { "dateJoined", n => { DateJoined = n.GetDateTimeOffsetValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemEmailsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemEmailsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "experiments", n => { Experiments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemExperiments>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemExperiments.CreateFromDiscriminatorValue); } },
-                { "has2fa", n => { Has2fa = n.GetBoolValue(); } },
-                { "hasPasswordAuth", n => { HasPasswordAuth = n.GetBoolValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "identities", n => { Identities = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemIdentitiesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemIdentitiesItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "isActive", n => { IsActive = n.GetBoolValue(); } },
-                { "isManaged", n => { IsManaged = n.GetBoolValue(); } },
-                { "isStaff", n => { IsStaff = n.GetBoolValue(); } },
-                { "isSuperuser", n => { IsSuperuser = n.GetBoolValue(); } },
-                { "isSuspended", n => { IsSuspended = n.GetBoolValue(); } },
-                { "lastActive", n => { LastActive = n.GetDateTimeOffsetValue(); } },
-                { "lastLogin", n => { LastLogin = n.GetDateTimeOffsetValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "username", n => { Username = n.GetStringValue(); } },
-            };
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GetOrganizationRelease200ResponseAuthorsItemAnyOf1, GetOrganizationRelease200ResponseAuthorsItemAnyOf2);
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -171,28 +61,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAuthenticatorsItem>("authenticators", Authenticators);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAvatar>("avatar", Avatar);
-            writer.WriteStringValue("avatarUrl", AvatarUrl);
-            writer.WriteBoolValue("canReset2fa", CanReset2fa);
-            writer.WriteDateTimeOffsetValue("dateJoined", DateJoined);
-            writer.WriteStringValue("email", Email);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemEmailsItem>("emails", Emails);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemExperiments>("experiments", Experiments);
-            writer.WriteBoolValue("has2fa", Has2fa);
-            writer.WriteBoolValue("hasPasswordAuth", HasPasswordAuth);
-            writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemIdentitiesItem>("identities", Identities);
-            writer.WriteBoolValue("isActive", IsActive);
-            writer.WriteBoolValue("isManaged", IsManaged);
-            writer.WriteBoolValue("isStaff", IsStaff);
-            writer.WriteBoolValue("isSuperuser", IsSuperuser);
-            writer.WriteBoolValue("isSuspended", IsSuspended);
-            writer.WriteDateTimeOffsetValue("lastActive", LastActive);
-            writer.WriteDateTimeOffsetValue("lastLogin", LastLogin);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("username", Username);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItemAnyOf1>(null, GetOrganizationRelease200ResponseAuthorsItemAnyOf1, GetOrganizationRelease200ResponseAuthorsItemAnyOf2);
         }
     }
 }

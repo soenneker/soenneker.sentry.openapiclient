@@ -17,18 +17,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Aggregate functions to apply, each as a `[function, column, alias]` triple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Aggregations { get; set; }
+        public List<UntypedNode>? Aggregations { get; set; }
 #nullable restore
 #else
-        public UntypedNode Aggregations { get; set; }
+        public List<UntypedNode> Aggregations { get; set; }
 #endif
         /// <summary>Filter conditions, each as a `[column, operator, value]` triple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Conditions { get; set; }
+        public List<UntypedNode>? Conditions { get; set; }
 #nullable restore
 #else
-        public UntypedNode Conditions { get; set; }
+        public List<UntypedNode> Conditions { get; set; }
 #endif
         /// <summary>Visualization type for saved query chart. Allowed values are:- default- previous- top5- daily- dailytop5- bar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,8 +165,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregations", n => { Aggregations = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "aggregations", n => { Aggregations = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
                 { "display", n => { Display = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -195,8 +195,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("aggregations", Aggregations);
-            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("aggregations", Aggregations);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("conditions", Conditions);
             writer.WriteStringValue("display", Display);
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);

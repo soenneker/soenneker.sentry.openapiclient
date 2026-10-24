@@ -103,10 +103,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseItemOwner? Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseSchemaItemOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseItemOwner Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseSchemaItemOwner Owner { get; set; }
 #endif
         /// <summary>The popularity property</summary>
         public int? Popularity { get; set; }
@@ -222,7 +222,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "metadata", n => { Metadata = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "overview", n => { Overview = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseItemOwner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseSchemaItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseSchemaItemOwner.CreateFromDiscriminatorValue); } },
                 { "popularity", n => { Popularity = n.GetIntValue(); } },
                 { "redirectUrl", n => { RedirectUrl = n.GetStringValue(); } },
                 { "schema", n => { Schema = n.GetStringValue(); } },
@@ -256,7 +256,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("overview", Overview);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseItemOwner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryApps200ResponseSchemaItemOwner>("owner", Owner);
             writer.WriteIntValue("popularity", Popularity);
             writer.WriteStringValue("redirectUrl", RedirectUrl);
             writer.WriteStringValue("schema", Schema);

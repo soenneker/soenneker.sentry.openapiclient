@@ -25,18 +25,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The configData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigData? ConfigData { get; set; }
+        public UntypedNode? ConfigData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigData ConfigData { get; set; }
+        public UntypedNode ConfigData { get; set; }
 #endif
         /// <summary>The configOrganization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigOrganization? ConfigOrganization { get; set; }
+        public UntypedNode? ConfigOrganization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigOrganization ConfigOrganization { get; set; }
+        public UntypedNode ConfigOrganization { get; set; }
 #endif
         /// <summary>The domainName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -109,10 +109,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemProvider? Provider { get; set; }
+        public UntypedNode? Provider { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemProvider Provider { get; set; }
+        public UntypedNode Provider { get; set; }
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -156,8 +156,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "accountType", n => { AccountType = n.GetStringValue(); } },
-                { "configData", n => { ConfigData = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigData>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigData.CreateFromDiscriminatorValue); } },
-                { "configOrganization", n => { ConfigOrganization = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigOrganization>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigOrganization.CreateFromDiscriminatorValue); } },
+                { "configData", n => { ConfigData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "configOrganization", n => { ConfigOrganization = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "gracePeriodEnd", n => { GracePeriodEnd = n.GetStringValue(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "organizationId", n => { OrganizationId = n.GetIntValue(); } },
                 { "organizationIntegrationStatus", n => { OrganizationIntegrationStatus = n.GetStringValue(); } },
                 { "outOfDate", n => { OutOfDate = n.GetBoolValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemProvider.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
@@ -181,8 +181,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("accountType", AccountType);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigData>("configData", ConfigData);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemConfigOrganization>("configOrganization", ConfigOrganization);
+            writer.WriteObjectValue<UntypedNode>("configData", ConfigData);
+            writer.WriteObjectValue<UntypedNode>("configOrganization", ConfigOrganization);
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteStringValue("gracePeriodEnd", GracePeriodEnd);
@@ -193,7 +193,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("organizationId", OrganizationId);
             writer.WriteStringValue("organizationIntegrationStatus", OrganizationIntegrationStatus);
             writer.WriteBoolValue("outOfDate", OutOfDate);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemProvider>("provider", Provider);
+            writer.WriteObjectValue<UntypedNode>("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("status", Status);
             writer.WriteAdditionalData(AdditionalData);

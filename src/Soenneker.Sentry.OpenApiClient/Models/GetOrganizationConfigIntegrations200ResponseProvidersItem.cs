@@ -37,10 +37,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata? Metadata { get; set; }
+        public UntypedNode? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata Metadata { get; set; }
+        public UntypedNode Metadata { get; set; }
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,7 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "canDisable", n => { CanDisable = n.GetBoolValue(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
@@ -103,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("canDisable", CanDisable);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
             writer.WriteStringValue("key", Key);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata>("metadata", Metadata);
+            writer.WriteObjectValue<UntypedNode>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("slug", Slug);
             writer.WriteAdditionalData(AdditionalData);

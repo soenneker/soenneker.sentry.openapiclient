@@ -33,18 +33,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema? Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema? Schema { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema Schema { get; set; }
 #endif
         /// <summary>The sentryApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp? SentryApp { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp? SentryApp { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp SentryApp { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp SentryApp { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,8 +89,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError.CreateFromDiscriminatorValue); } },
                 { "installationUuid", n => { InstallationUuid = n.GetStringValue(); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema.CreateFromDiscriminatorValue); } },
-                { "sentryApp", n => { SentryApp = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp.CreateFromDiscriminatorValue); } },
+                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema.CreateFromDiscriminatorValue); } },
+                { "sentryApp", n => { SentryApp = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uuid", n => { Uuid = n.GetStringValue(); } },
             };
@@ -104,8 +104,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>("error", Error);
             writer.WriteStringValue("installationUuid", InstallationUuid);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>("schema", Schema);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSentryApp>("sentryApp", SentryApp);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema>("schema", Schema);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp>("sentryApp", SentryApp);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uuid", Uuid);
             writer.WriteAdditionalData(AdditionalData);

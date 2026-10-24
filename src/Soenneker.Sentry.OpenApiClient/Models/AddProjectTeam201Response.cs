@@ -129,10 +129,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The sessionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseSessionStats? SessionStats { get; set; }
+        public UntypedNode? SessionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseSessionStats SessionStats { get; set; }
+        public UntypedNode SessionStats { get; set; }
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -145,10 +145,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseStats? Stats { get; set; }
+        public UntypedNode? Stats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseStats Stats { get; set; }
+        public UntypedNode Stats { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -177,10 +177,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The transactionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTransactionStats? TransactionStats { get; set; }
+        public UntypedNode? TransactionStats { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTransactionStats TransactionStats { get; set; }
+        public UntypedNode TransactionStats { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201Response"/> and sets the default values.
@@ -242,13 +242,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "isPublic", n => { IsPublic = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
-                { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseSessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseSessionStats.CreateFromDiscriminatorValue); } },
+                { "sessionStats", n => { SessionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseStats>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseStats.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeam>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeam.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "transactionStats", n => { TransactionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTransactionStats>(global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTransactionStats.CreateFromDiscriminatorValue); } },
+                { "transactionStats", n => { TransactionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -293,13 +293,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("isPublic", IsPublic);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("platform", Platform);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseSessionStats>("sessionStats", SessionStats);
+            writer.WriteObjectValue<UntypedNode>("sessionStats", SessionStats);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseStats>("stats", Stats);
+            writer.WriteObjectValue<UntypedNode>("stats", Stats);
             writer.WriteStringValue("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeam>("team", Team);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTeamsItem>("teams", Teams);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201ResponseTransactionStats>("transactionStats", TransactionStats);
+            writer.WriteObjectValue<UntypedNode>("transactionStats", TransactionStats);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

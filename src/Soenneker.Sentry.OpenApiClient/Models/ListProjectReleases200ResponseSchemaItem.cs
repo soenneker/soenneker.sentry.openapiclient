@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The adoptionStages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAdoptionStages? AdoptionStages { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemAdoptionStages? AdoptionStages { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAdoptionStages AdoptionStages { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemAdoptionStages AdoptionStages { get; set; }
 #endif
         /// <summary>The authors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -35,18 +35,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The currentProjectMeta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemCurrentProjectMeta? CurrentProjectMeta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemCurrentProjectMeta? CurrentProjectMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemCurrentProjectMeta CurrentProjectMeta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemCurrentProjectMeta CurrentProjectMeta { get; set; }
 #endif
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemData? Data { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemData Data { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemData Data { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
@@ -63,18 +63,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The lastCommit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastCommit? LastCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastCommit? LastCommit { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastCommit LastCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastCommit LastCommit { get; set; }
 #endif
         /// <summary>The lastDeploy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastDeploy? LastDeploy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastDeploy? LastDeploy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastDeploy LastDeploy { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastDeploy LastDeploy { get; set; }
 #endif
         /// <summary>The lastEvent property</summary>
         public DateTimeOffset? LastEvent { get; set; }
@@ -83,10 +83,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemOwner? Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemOwner Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemOwner Owner { get; set; }
 #endif
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,10 +147,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The versionInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemVersionInfo? VersionInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemVersionInfo? VersionInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemVersionInfo VersionInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemVersionInfo VersionInfo { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItem"/> and sets the default values.
@@ -177,22 +177,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adoptionStages", n => { AdoptionStages = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAdoptionStages>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAdoptionStages.CreateFromDiscriminatorValue); } },
+                { "adoptionStages", n => { AdoptionStages = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemAdoptionStages>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemAdoptionStages.CreateFromDiscriminatorValue); } },
                 { "authors", n => { Authors = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAuthorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAuthorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "commitCount", n => { CommitCount = n.GetIntValue(); } },
-                { "currentProjectMeta", n => { CurrentProjectMeta = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemCurrentProjectMeta>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemCurrentProjectMeta.CreateFromDiscriminatorValue); } },
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemData>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemData.CreateFromDiscriminatorValue); } },
+                { "currentProjectMeta", n => { CurrentProjectMeta = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemCurrentProjectMeta>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemCurrentProjectMeta.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemData>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemData.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "dateReleased", n => { DateReleased = n.GetDateTimeOffsetValue(); } },
                 { "dateStarted", n => { DateStarted = n.GetDateTimeOffsetValue(); } },
                 { "deployCount", n => { DeployCount = n.GetIntValue(); } },
                 { "firstEvent", n => { FirstEvent = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "lastCommit", n => { LastCommit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastCommit>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastCommit.CreateFromDiscriminatorValue); } },
-                { "lastDeploy", n => { LastDeploy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastDeploy>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastDeploy.CreateFromDiscriminatorValue); } },
+                { "lastCommit", n => { LastCommit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastCommit>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastCommit.CreateFromDiscriminatorValue); } },
+                { "lastDeploy", n => { LastDeploy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastDeploy>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastDeploy.CreateFromDiscriminatorValue); } },
                 { "lastEvent", n => { LastEvent = n.GetDateTimeOffsetValue(); } },
                 { "newGroups", n => { NewGroups = n.GetIntValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemOwner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemOwner.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "shortVersion", n => { ShortVersion = n.GetStringValue(); } },
@@ -200,7 +200,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
-                { "versionInfo", n => { VersionInfo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemVersionInfo>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemVersionInfo.CreateFromDiscriminatorValue); } },
+                { "versionInfo", n => { VersionInfo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemVersionInfo>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemVersionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -210,22 +210,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAdoptionStages>("adoptionStages", AdoptionStages);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemAdoptionStages>("adoptionStages", AdoptionStages);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemAuthorsItem>("authors", Authors);
             writer.WriteIntValue("commitCount", CommitCount);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemCurrentProjectMeta>("currentProjectMeta", CurrentProjectMeta);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemData>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemCurrentProjectMeta>("currentProjectMeta", CurrentProjectMeta);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemData>("data", Data);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("dateReleased", DateReleased);
             writer.WriteDateTimeOffsetValue("dateStarted", DateStarted);
             writer.WriteIntValue("deployCount", DeployCount);
             writer.WriteDateTimeOffsetValue("firstEvent", FirstEvent);
             writer.WriteIntValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastCommit>("lastCommit", LastCommit);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemLastDeploy>("lastDeploy", LastDeploy);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastCommit>("lastCommit", LastCommit);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemLastDeploy>("lastDeploy", LastDeploy);
             writer.WriteDateTimeOffsetValue("lastEvent", LastEvent);
             writer.WriteIntValue("newGroups", NewGroups);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemOwner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemOwner>("owner", Owner);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem>("projects", Projects);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("shortVersion", ShortVersion);
@@ -233,7 +233,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("version", Version);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemVersionInfo>("versionInfo", VersionInfo);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseSchemaItemVersionInfo>("versionInfo", VersionInfo);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

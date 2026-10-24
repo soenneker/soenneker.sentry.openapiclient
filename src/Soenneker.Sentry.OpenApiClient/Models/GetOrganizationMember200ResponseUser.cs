@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The authenticators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAuthenticatorsItem>? Authenticators { get; set; }
+        public UntypedNode? Authenticators { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAuthenticatorsItem> Authenticators { get; set; }
+        public UntypedNode Authenticators { get; set; }
 #endif
         /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,7 +141,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticators", n => { Authenticators = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAuthenticatorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAuthenticatorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "authenticators", n => { Authenticators = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAvatar.CreateFromDiscriminatorValue); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "canReset2fa", n => { CanReset2fa = n.GetBoolValue(); } },
@@ -171,7 +171,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAuthenticatorsItem>("authenticators", Authenticators);
+            writer.WriteObjectValue<UntypedNode>("authenticators", Authenticators);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationMember200ResponseUserAvatar>("avatar", Avatar);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteBoolValue("canReset2fa", CanReset2fa);

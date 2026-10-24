@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>* `activity`* `browser`* `clicks`* `count_dead_clicks`* `count_errors`* `count_infos`* `count_rage_clicks`* `count_segments`* `count_urls`* `count_warnings`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `has_viewed`* `id`* `info_ids`* `is_archived`* `os`* `ota_updates`* `platform`* `project_id`* `releases`* `replay_type`* `sdk`* `segment_names`* `started_at`* `tags`* `trace_ids`* `urls`* `user`* `warning_ids`</summary>
+    /// <summary>* `activity`* `browser`* `clicks`* `count_dead_clicks`* `count_errors`* `count_infos`* `count_rage_clicks`* `count_segments`* `count_urls`* `count_warnings`* `device`* `dist`* `duration`* `environment`* `error_ids`* `finished_at`* `has_viewed`* `id`* `is_archived`* `os`* `ota_updates`* `platform`* `project_id`* `releases`* `replay_type`* `sdk`* `segment_names`* `started_at`* `tags`* `trace_ids`* `urls`* `user`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ListOrganizationReplaysFieldParameterItem
     {
@@ -79,10 +79,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "info_ids")]
-        #pragma warning disable CS1591
-        InfoIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "is_archived")]
         #pragma warning disable CS1591
         IsArchived,
@@ -138,10 +134,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591
         User,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "warning_ids")]
-        #pragma warning disable CS1591
-        WarningIds,
         #pragma warning restore CS1591
     }
 }

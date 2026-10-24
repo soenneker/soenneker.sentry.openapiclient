@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemAvatar? Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemAvatar? Avatar { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemAvatar Avatar { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemAvatar Avatar { get; set; }
 #endif
         /// <summary>The dateCreated property</summary>
         public DateTimeOffset? DateCreated { get; set; }
@@ -43,10 +43,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The flags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemFlags? Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemFlags? Flags { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemFlags Flags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemFlags Flags { get; set; }
 #endif
         /// <summary>The hasAccess property</summary>
         public bool? HasAccess { get; set; }
@@ -75,10 +75,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemOrganization? Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemOrganization? Organization { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemOrganization Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemOrganization Organization { get; set; }
 #endif
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -130,17 +130,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "access", n => { Access = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemAvatar.CreateFromDiscriminatorValue); } },
+                { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemAvatar.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "externalTeams", n => { ExternalTeams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemExternalTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemExternalTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemFlags.CreateFromDiscriminatorValue); } },
+                { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemFlags.CreateFromDiscriminatorValue); } },
                 { "hasAccess", n => { HasAccess = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isMember", n => { IsMember = n.GetBoolValue(); } },
                 { "isPending", n => { IsPending = n.GetBoolValue(); } },
                 { "memberCount", n => { MemberCount = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemOrganization>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemOrganization.CreateFromDiscriminatorValue); } },
+                { "organization", n => { Organization = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemOrganization>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemOrganization.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
                 { "teamRole", n => { TeamRole = n.GetStringValue(); } },
@@ -154,17 +154,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("access", Access);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemAvatar>("avatar", Avatar);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemAvatar>("avatar", Avatar);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemExternalTeamsItem>("externalTeams", ExternalTeams);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemFlags>("flags", Flags);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemFlags>("flags", Flags);
             writer.WriteBoolValue("hasAccess", HasAccess);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isMember", IsMember);
             writer.WriteBoolValue("isPending", IsPending);
             writer.WriteIntValue("memberCount", MemberCount);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemOrganization>("organization", Organization);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseSchemaItemOrganization>("organization", Organization);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationUserTeams200ResponseItemProjectsItem>("projects", Projects);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("teamRole", TeamRole);

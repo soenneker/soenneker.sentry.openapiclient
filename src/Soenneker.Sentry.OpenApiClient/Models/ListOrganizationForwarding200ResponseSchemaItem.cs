@@ -17,10 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig Config { get; set; }
 #endif
         /// <summary>The dateAdded property</summary>
         public DateTimeOffset? DateAdded { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "dateAdded", n => { DateAdded = n.GetDateTimeOffsetValue(); } },
                 { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
                 { "enrollNewProjects", n => { EnrollNewProjects = n.GetBoolValue(); } },
@@ -114,7 +114,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("dateAdded", DateAdded);
             writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemEnrolledProjectsItem>("enrolledProjects", EnrolledProjects);
