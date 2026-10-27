@@ -38,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditions();
-            if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item> createOrganizationWorkflow201ResponseTriggersConditionsAnyOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item> createOrganizationWorkflow201ResponseTriggersConditionsAnyOf1ItemValue)
             {
                 result.CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1Item = createOrganizationWorkflow201ResponseTriggersConditionsAnyOf1ItemValue;
             }
