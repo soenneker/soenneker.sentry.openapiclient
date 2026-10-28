@@ -98,6 +98,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The selectedAggregate property</summary>
         public int? SelectedAggregate { get; set; }
+        /// <summary>The transformations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations? Transformations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations Transformations { get; set; }
+#endif
         /// <summary>The widgetId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -143,6 +151,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "onDemand", n => { OnDemand = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemOnDemandItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemOnDemandItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
                 { "selectedAggregate", n => { SelectedAggregate = n.GetIntValue(); } },
+                { "transformations", n => { Transformations = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations.CreateFromDiscriminatorValue); } },
                 { "widgetId", n => { WidgetId = n.GetStringValue(); } },
             };
         }
@@ -165,6 +174,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemOnDemandItem>("onDemand", OnDemand);
             writer.WriteStringValue("orderby", Orderby);
             writer.WriteIntValue("selectedAggregate", SelectedAggregate);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations>("transformations", Transformations);
             writer.WriteStringValue("widgetId", WidgetId);
             writer.WriteAdditionalData(AdditionalData);
         }

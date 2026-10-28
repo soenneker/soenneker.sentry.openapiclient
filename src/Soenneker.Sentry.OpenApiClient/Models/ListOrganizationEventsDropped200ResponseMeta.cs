@@ -28,6 +28,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? Interval { get; set; }
         /// <summary>The start property</summary>
         public double? Start { get; set; }
+        /// <summary>The suppressedDrops property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem>? SuppressedDrops { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem> SuppressedDrops { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta"/> and sets the default values.
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "end", n => { End = n.GetDoubleValue(); } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
                 { "start", n => { Start = n.GetDoubleValue(); } },
+                { "suppressedDrops", n => { SuppressedDrops = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -70,6 +79,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDoubleValue("end", End);
             writer.WriteDoubleValue("interval", Interval);
             writer.WriteDoubleValue("start", Start);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem>("suppressedDrops", SuppressedDrops);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

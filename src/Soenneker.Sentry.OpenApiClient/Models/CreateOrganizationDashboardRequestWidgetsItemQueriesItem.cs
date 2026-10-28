@@ -101,6 +101,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>The selected_aggregate property</summary>
         public int? SelectedAggregate { get; set; }
+        /// <summary>The transformations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations? Transformations { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations Transformations { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItem"/> and sets the default values.
         /// </summary>
@@ -139,6 +147,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "on_demand_extraction_disabled", n => { OnDemandExtractionDisabled = n.GetBoolValue(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
                 { "selected_aggregate", n => { SelectedAggregate = n.GetIntValue(); } },
+                { "transformations", n => { Transformations = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -161,6 +170,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("on_demand_extraction_disabled", OnDemandExtractionDisabled);
             writer.WriteStringValue("orderby", Orderby);
             writer.WriteIntValue("selected_aggregate", SelectedAggregate);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations>("transformations", Transformations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

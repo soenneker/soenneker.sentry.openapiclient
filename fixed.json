@@ -2574,6 +2574,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -2754,6 +2755,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -2935,6 +2937,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -20836,6 +20839,7 @@
                         "android",
                         "chromium"
                       ],
+                      "enableNativeSourceServerMapping": false,
                       "dynamicSamplingBiases": [
                         {
                           "id": "boostEnvironments",
@@ -21152,6 +21156,7 @@
                         "android",
                         "chromium"
                       ],
+                      "enableNativeSourceServerMapping": false,
                       "dynamicSamplingBiases": [
                         {
                           "id": "boostEnvironments",
@@ -36145,6 +36150,9 @@
             },
             "nullable": true
           },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardWidgetQueryTransformationsProperty"
+          },
           "columns": {
             "type": "array",
             "items": {
@@ -36400,6 +36408,7 @@
           "digestsMinDelay",
           "dynamicSamplingBiases",
           "enableAutoReleaseCreation",
+          "enableNativeSourceServerMapping",
           "features",
           "fingerprintingRules",
           "firstEvent",
@@ -36725,6 +36734,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean"
           },
           "dynamicSamplingBiases": {
             "type": "array",
@@ -40770,6 +40782,10 @@
             "type": "string",
             "description": "Custom symbol sources, as a JSON string, to use when symbolicating events.",
             "nullable": true
+          },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean",
+            "description": "Apply source server (srcsrv) information from native debug files to symbolicated frames."
           },
           "scrubIPAddresses": {
             "type": "boolean",
@@ -50757,6 +50773,9 @@
             },
             "nullable": true
           },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardCreateWidgetQueriesItemTransformationsProperty"
+          },
           "columns": {
             "type": "array",
             "items": {
@@ -51115,6 +51134,9 @@
             },
             "nullable": true
           },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardWidgetQueriesItemTransformationsProperty"
+          },
           "columns": {
             "type": "array",
             "items": {
@@ -51160,6 +51182,15 @@
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardWidgetQueryTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "DashboardWidgetQueryOnDemandExtraction": {
         "type": "object",
@@ -54003,7 +54034,8 @@
           "dataset",
           "end",
           "interval",
-          "start"
+          "start",
+          "suppressedDrops"
         ],
         "type": "object",
         "properties": {
@@ -54021,6 +54053,12 @@
           "interval": {
             "type": "number",
             "format": "double"
+          },
+          "suppressedDrops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/OrganizationEventsDroppedResponseMetaSuppressedDropsItem"
+            }
           }
         }
       },
@@ -63932,6 +63970,9 @@
             },
             "nullable": true
           },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardWidgetsItemQueriesItemTransformationsProperty"
+          },
           "columns": {
             "type": "array",
             "items": {
@@ -63977,6 +64018,15 @@
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardCreateWidgetQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "DashboardCreateWidgetQueriesItemOnDemandExtraction": {
         "type": "object",
@@ -64029,6 +64079,9 @@
               "type": "string"
             },
             "nullable": true
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardDetailsWidgetsItemQueriesItemTransformationsProperty"
           },
           "columns": {
             "type": "array",
@@ -64184,6 +64237,7 @@
           "onDemand",
           "orderby",
           "selectedAggregate",
+          "transformations",
           "widgetId"
         ],
         "type": "object",
@@ -64205,6 +64259,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/DashboardDetailsModelWidgetsItemQueriesItemTransformationsProperty"
           },
           "columns": {
             "type": "array",
@@ -64288,6 +64345,15 @@
       "DashboardDetailsModelFiltersGlobalFilterItem": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "DashboardWidgetQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "DashboardWidgetQueriesItemOnDemandExtraction": {
         "type": "object",
@@ -65811,6 +65877,34 @@
             }
           }
         }
+      },
+      "OrganizationEventsDroppedResponseMetaSuppressedDropsItem": {
+        "required": [
+          "category",
+          "cause",
+          "count",
+          "outcome",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "cause": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "description": "Drop volume withheld from the dropped annotations as a known misreport."
       },
       "OrganizationEventsResponseDictMetaFields": {
         "type": "object",
@@ -69587,6 +69681,15 @@
         "type": "object",
         "additionalProperties": {}
       },
+      "DashboardWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "DashboardWidgetsItemQueriesItemOnDemandExtraction": {
         "type": "object",
         "properties": {
@@ -69614,6 +69717,15 @@
           }
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "DashboardDetailsWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "DashboardDetailsWidgetsItemQueriesItemOnDemandExtraction": {
         "type": "object",
@@ -69677,6 +69789,15 @@
         "type": "object",
         "additionalProperties": {
           "type": "integer"
+        }
+      },
+      "DashboardDetailsModelWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "DashboardDetailsModelWidgetsItemQueriesItemOnDemandItem": {
@@ -78040,6 +78161,7 @@
           "digestsMinDelay",
           "dynamicSamplingBiases",
           "enableAutoReleaseCreation",
+          "enableNativeSourceServerMapping",
           "features",
           "fingerprintingRules",
           "firstEvent",
@@ -78366,6 +78488,9 @@
               "type": "string"
             }
           },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean"
+          },
           "dynamicSamplingBiases": {
             "type": "array",
             "items": {
@@ -78622,6 +78747,10 @@
             "description": "Custom symbol sources, as a JSON string, to use when symbolicating events.",
             "nullable": true
           },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean",
+            "description": "Apply source server (srcsrv) information from native debug files to symbolicated frames."
+          },
           "scrubIPAddresses": {
             "type": "boolean",
             "description": "Discard client IP addresses rather than storing them on events."
@@ -78716,6 +78845,7 @@
           "digestsMinDelay",
           "dynamicSamplingBiases",
           "enableAutoReleaseCreation",
+          "enableNativeSourceServerMapping",
           "features",
           "fingerprintingRules",
           "firstEvent",
@@ -79041,6 +79171,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean"
           },
           "dynamicSamplingBiases": {
             "type": "array",
@@ -88379,6 +88512,15 @@
         "additionalProperties": {},
         "nullable": true
       },
+      "DashboardWidgetQueryTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "DataForwarderConfigProperty": {
         "type": "object",
         "additionalProperties": {
@@ -89031,6 +89173,15 @@
         "additionalProperties": {},
         "nullable": true
       },
+      "DashboardCreateWidgetQueriesItemTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "DashboardDetailsWidgetsItemThresholdsProperty": {
         "type": "object",
         "additionalProperties": {},
@@ -89050,6 +89201,15 @@
       "DashboardDetailsModelFiltersGlobalFilterItemProperty": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "DashboardWidgetQueriesItemTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
       },
       "DataForwarderResponseProjectConfigsItemOverridesProperty": {
         "type": "object",
@@ -89567,10 +89727,37 @@
         "type": "object",
         "additionalProperties": {}
       },
+      "DashboardWidgetsItemQueriesItemTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "DashboardDetailsWidgetsItemQueriesItemTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "DashboardDetailsModelWidgetsItemThresholdsMaxValuesProperty": {
         "type": "object",
         "additionalProperties": {
           "type": "integer"
+        }
+      },
+      "DashboardDetailsModelWidgetsItemQueriesItemTransformationsProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "DashboardDetailsModelWidgetsItemChangedReasonItemOrderbyItemProperty": {
@@ -92571,7 +92758,8 @@
           "dataset",
           "end",
           "interval",
-          "start"
+          "start",
+          "suppressedDrops"
         ],
         "type": "object",
         "properties": {
@@ -92589,6 +92777,12 @@
           "interval": {
             "type": "number",
             "format": "double"
+          },
+          "suppressedDrops": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem"
+            }
           }
         }
       },
@@ -113908,6 +114102,9 @@
             },
             "nullable": true
           },
+          "transformations": {
+            "$ref": "#/components/schemas/CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations"
+          },
           "columns": {
             "type": "array",
             "items": {
@@ -114095,6 +114292,7 @@
           "onDemand",
           "orderby",
           "selectedAggregate",
+          "transformations",
           "widgetId"
         ],
         "type": "object",
@@ -114116,6 +114314,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemQueriesItemTransformations"
           },
           "columns": {
             "type": "array",
@@ -114308,6 +114509,7 @@
           "onDemand",
           "orderby",
           "selectedAggregate",
+          "transformations",
           "widgetId"
         ],
         "type": "object",
@@ -114329,6 +114531,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations"
           },
           "columns": {
             "type": "array",
@@ -114436,6 +114641,9 @@
               "type": "string"
             },
             "nullable": true
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/UpdateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations"
           },
           "columns": {
             "type": "array",
@@ -114630,6 +114838,7 @@
           "onDemand",
           "orderby",
           "selectedAggregate",
+          "transformations",
           "widgetId"
         ],
         "type": "object",
@@ -114651,6 +114860,9 @@
             "items": {
               "type": "string"
             }
+          },
+          "transformations": {
+            "$ref": "#/components/schemas/UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations"
           },
           "columns": {
             "type": "array",
@@ -115392,6 +115604,34 @@
           }
         },
         "description": "Ingestion status for the data behind a response."
+      },
+      "ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem": {
+        "required": [
+          "category",
+          "cause",
+          "count",
+          "outcome",
+          "reason"
+        ],
+        "type": "object",
+        "properties": {
+          "cause": {
+            "type": "string"
+          },
+          "category": {
+            "type": "string"
+          },
+          "outcome": {
+            "type": "string"
+          },
+          "reason": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer"
+          }
+        },
+        "description": "Drop volume withheld from the dropped annotations as a known misreport."
       },
       "ListOrganizationEventsTimeseries200ResponseMetaIngestion": {
         "required": [
@@ -126639,6 +126879,15 @@
         "type": "object",
         "additionalProperties": {}
       },
+      "CreateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "CreateOrganizationDashboardRequestWidgetsItemQueriesItemOnDemandExtraction": {
         "type": "object",
         "properties": {
@@ -126701,6 +126950,15 @@
         "type": "object",
         "additionalProperties": {
           "type": "integer"
+        }
+      },
+      "CreateOrganizationDashboard201ResponseWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "CreateOrganizationDashboard201ResponseWidgetsItemQueriesItemOnDemandItem": {
@@ -126785,6 +127043,15 @@
           "type": "integer"
         }
       },
+      "GetOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
       "GetOrganizationDashboard200ResponseWidgetsItemQueriesItemOnDemandItem": {
         "required": [
           "dashboardWidgetQueryId",
@@ -126829,6 +127096,15 @@
         "type": "object",
         "additionalProperties": {
           "$ref": "#/components/schemas/GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
+        }
+      },
+      "UpdateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "UpdateOrganizationDashboardRequestWidgetsItemQueriesItemOnDemandExtraction": {
@@ -126893,6 +127169,15 @@
         "type": "object",
         "additionalProperties": {
           "type": "integer"
+        }
+      },
+      "UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItemTransformations": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
         }
       },
       "UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItemOnDemandItem": {

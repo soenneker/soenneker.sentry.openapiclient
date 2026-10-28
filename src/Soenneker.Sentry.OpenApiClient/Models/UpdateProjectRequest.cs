@@ -62,6 +62,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI).</summary>
         public bool? EnableAutoReleaseCreation { get; set; }
+        /// <summary>Apply source server (srcsrv) information from native debug files to symbolicated frames.</summary>
+        public bool? EnableNativeSourceServerMapping { get; set; }
         /// <summary>Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -319,6 +321,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "digestsMinDelay", n => { DigestsMinDelay = n.GetIntValue(); } },
                 { "dynamicSamplingBiases", n => { DynamicSamplingBiases = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "enableAutoReleaseCreation", n => { EnableAutoReleaseCreation = n.GetBoolValue(); } },
+                { "enableNativeSourceServerMapping", n => { EnableNativeSourceServerMapping = n.GetBoolValue(); } },
                 { "fingerprintingRules", n => { FingerprintingRules = n.GetStringValue(); } },
                 { "groupingConfig", n => { GroupingConfig = n.GetStringValue(); } },
                 { "groupingEnhancements", n => { GroupingEnhancements = n.GetStringValue(); } },
@@ -387,6 +390,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("digestsMinDelay", DigestsMinDelay);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>("dynamicSamplingBiases", DynamicSamplingBiases);
             writer.WriteBoolValue("enableAutoReleaseCreation", EnableAutoReleaseCreation);
+            writer.WriteBoolValue("enableNativeSourceServerMapping", EnableNativeSourceServerMapping);
             writer.WriteStringValue("fingerprintingRules", FingerprintingRules);
             writer.WriteStringValue("groupingConfig", GroupingConfig);
             writer.WriteStringValue("groupingEnhancements", GroupingEnhancements);

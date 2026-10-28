@@ -5799,6 +5799,15 @@
                                 },
                                 "nullable": true
                               },
+                              "transformations": {
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
+                              },
                               "columns": {
                                 "type": "array",
                                 "items": {
@@ -6340,6 +6349,15 @@
                                     "type": "string"
                                   }
                                 },
+                                "transformations": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
                                 "columns": {
                                   "type": "array",
                                   "items": {
@@ -6422,6 +6440,7 @@
                                 "onDemand",
                                 "orderby",
                                 "selectedAggregate",
+                                "transformations",
                                 "widgetId"
                               ]
                             }
@@ -6665,6 +6684,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -7078,6 +7098,15 @@
                                     "type": "string"
                                   }
                                 },
+                                "transformations": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
                                 "columns": {
                                   "type": "array",
                                   "items": {
@@ -7160,6 +7189,7 @@
                                 "onDemand",
                                 "orderby",
                                 "selectedAggregate",
+                                "transformations",
                                 "widgetId"
                               ]
                             }
@@ -7403,6 +7433,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -7583,6 +7614,15 @@
                                   "type": "string"
                                 },
                                 "nullable": true
+                              },
+                              "transformations": {
+                                "type": "object",
+                                "additionalProperties": {
+                                  "type": "array",
+                                  "items": {
+                                    "type": "string"
+                                  }
+                                }
                               },
                               "columns": {
                                 "type": "array",
@@ -8122,6 +8162,15 @@
                                     "type": "string"
                                   }
                                 },
+                                "transformations": {
+                                  "type": "object",
+                                  "additionalProperties": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "string"
+                                    }
+                                  }
+                                },
                                 "columns": {
                                   "type": "array",
                                   "items": {
@@ -8204,6 +8253,7 @@
                                 "onDemand",
                                 "orderby",
                                 "selectedAggregate",
+                                "transformations",
                                 "widgetId"
                               ]
                             }
@@ -8447,6 +8497,7 @@
                               "aggregates": [
                                 "avg(transaction.duration)"
                               ],
+                              "transformations": {},
                               "columns": [
                                 "transaction"
                               ],
@@ -13542,13 +13593,45 @@
                         "interval": {
                           "type": "number",
                           "format": "double"
+                        },
+                        "suppressedDrops": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "description": "Drop volume withheld from the dropped annotations as a known misreport.",
+                            "properties": {
+                              "cause": {
+                                "type": "string"
+                              },
+                              "category": {
+                                "type": "string"
+                              },
+                              "outcome": {
+                                "type": "string"
+                              },
+                              "reason": {
+                                "type": "string"
+                              },
+                              "count": {
+                                "type": "integer"
+                              }
+                            },
+                            "required": [
+                              "category",
+                              "cause",
+                              "count",
+                              "outcome",
+                              "reason"
+                            ]
+                          }
                         }
                       },
                       "required": [
                         "dataset",
                         "end",
                         "interval",
-                        "start"
+                        "start",
+                        "suppressedDrops"
                       ]
                     },
                     "droppedEvents": {
@@ -50345,6 +50428,9 @@
                         "type": "string"
                       }
                     },
+                    "enableNativeSourceServerMapping": {
+                      "type": "boolean"
+                    },
                     "dynamicSamplingBiases": {
                       "type": "array",
                       "items": {
@@ -50403,6 +50489,7 @@
                     "digestsMinDelay",
                     "dynamicSamplingBiases",
                     "enableAutoReleaseCreation",
+                    "enableNativeSourceServerMapping",
                     "features",
                     "fingerprintingRules",
                     "firstEvent",
@@ -50668,6 +50755,7 @@
                         "android",
                         "chromium"
                       ],
+                      "enableNativeSourceServerMapping": false,
                       "dynamicSamplingBiases": [
                         {
                           "id": "boostEnvironments",
@@ -50995,6 +51083,10 @@
                     "type": "string",
                     "nullable": true,
                     "description": "Custom symbol sources, as a JSON string, to use when symbolicating events."
+                  },
+                  "enableNativeSourceServerMapping": {
+                    "type": "boolean",
+                    "description": "Apply source server (srcsrv) information from native debug files to symbolicated frames."
                   },
                   "scrubIPAddresses": {
                     "type": "boolean",
@@ -51610,6 +51702,9 @@
                         "type": "string"
                       }
                     },
+                    "enableNativeSourceServerMapping": {
+                      "type": "boolean"
+                    },
                     "dynamicSamplingBiases": {
                       "type": "array",
                       "items": {
@@ -51668,6 +51763,7 @@
                     "digestsMinDelay",
                     "dynamicSamplingBiases",
                     "enableAutoReleaseCreation",
+                    "enableNativeSourceServerMapping",
                     "features",
                     "fingerprintingRules",
                     "firstEvent",
@@ -51933,6 +52029,7 @@
                         "android",
                         "chromium"
                       ],
+                      "enableNativeSourceServerMapping": false,
                       "dynamicSamplingBiases": [
                         {
                           "id": "boostEnvironments",
@@ -86312,6 +86409,15 @@
                         },
                         "nullable": true
                       },
+                      "transformations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
                       "columns": {
                         "type": "array",
                         "items": {
@@ -86607,6 +86713,15 @@
                   },
                   "nullable": true
                 },
+                "transformations": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
                 "columns": {
                   "type": "array",
                   "items": {
@@ -86871,6 +86986,15 @@
                           "type": "string"
                         },
                         "nullable": true
+                      },
+                      "transformations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
                       },
                       "columns": {
                         "type": "array",
@@ -87394,6 +87518,15 @@
                           "type": "string"
                         }
                       },
+                      "transformations": {
+                        "type": "object",
+                        "additionalProperties": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
                       "columns": {
                         "type": "array",
                         "items": {
@@ -87476,6 +87609,7 @@
                       "onDemand",
                       "orderby",
                       "selectedAggregate",
+                      "transformations",
                       "widgetId"
                     ]
                   }
@@ -88042,6 +88176,15 @@
                   },
                   "nullable": true
                 },
+                "transformations": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
                 "columns": {
                   "type": "array",
                   "items": {
@@ -88218,6 +88361,15 @@
               "type": "string"
             },
             "nullable": true
+          },
+          "transformations": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
           },
           "columns": {
             "type": "array",
@@ -89052,6 +89204,9 @@
               "type": "string"
             }
           },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean"
+          },
           "dynamicSamplingBiases": {
             "type": "array",
             "items": {
@@ -89110,6 +89265,7 @@
           "digestsMinDelay",
           "dynamicSamplingBiases",
           "enableAutoReleaseCreation",
+          "enableNativeSourceServerMapping",
           "features",
           "fingerprintingRules",
           "firstEvent",
@@ -104157,13 +104313,45 @@
               "interval": {
                 "type": "number",
                 "format": "double"
+              },
+              "suppressedDrops": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "description": "Drop volume withheld from the dropped annotations as a known misreport.",
+                  "properties": {
+                    "cause": {
+                      "type": "string"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "outcome": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    },
+                    "count": {
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "category",
+                    "cause",
+                    "count",
+                    "outcome",
+                    "reason"
+                  ]
+                }
               }
             },
             "required": [
               "dataset",
               "end",
               "interval",
-              "start"
+              "start",
+              "suppressedDrops"
             ]
           },
           "droppedEvents": {
@@ -109954,6 +110142,10 @@
             "type": "string",
             "nullable": true,
             "description": "Custom symbol sources, as a JSON string, to use when symbolicating events."
+          },
+          "enableNativeSourceServerMapping": {
+            "type": "boolean",
+            "description": "Apply source server (srcsrv) information from native debug files to symbolicated frames."
           },
           "scrubIPAddresses": {
             "type": "boolean",
