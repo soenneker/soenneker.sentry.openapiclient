@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Difs;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FilesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The difs property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Difs.DifsRequestBuilder Difs
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Difs.DifsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The dsyms property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder Dsyms
         {

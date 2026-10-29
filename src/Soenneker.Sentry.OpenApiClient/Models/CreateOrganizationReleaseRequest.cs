@@ -14,7 +14,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An optional list of commit data to be associated.</summary>
+        /// <summary>An optional list of commit data to be associated. Very long lists are truncated to the most recent commits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestCommitsItem>? Commits { get; set; }

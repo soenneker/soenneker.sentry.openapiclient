@@ -1173,6 +1173,196 @@
         "x-sentry-experimental": true
       }
     },
+    "/api/0/organizations/{organizationIdOrSlug}/artifactbundle/assemble/": {
+      "post": {
+        "tags": [
+          "Releases"
+        ],
+        "summary": "Assemble an Artifact Bundle",
+        "description": "**Experimental:** This API is under active development and may change.\n\nAssemble previously uploaded chunks into an artifact bundle, such as source maps, and\nstore its debug IDs.\n\nThe response reports the bundle\u0027s \u0060state\u0060. If chunks are missing, upload them and send\nthe request again. Repeat the request to poll until the state is \u0060ok\u0060 or \u0060error\u0060.\nResending an identical request is safe: a bundle that is already assembling or\nassembled reports its state instead of starting a new job.",
+        "operationId": "AssembleOrganizationArtifactBundle",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssembleOrganizationArtifactBundleRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssembleOrganizationArtifactBundle200Response"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-idempotent": true,
+        "x-sentry-experimental": true
+      }
+    },
+    "/api/0/organizations/{organizationIdOrSlug}/chunk-upload/": {
+      "get": {
+        "tags": [
+          "Organizations"
+        ],
+        "summary": "Retrieve Chunk Upload Options",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReturn the URL and limits to use when uploading file chunks, such as the chunk size,\nthe number of chunks per request, and the supported compression.",
+        "operationId": "GetOrganizationChunkUploadOptions",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetOrganizationChunkUploadOptions200Response"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:read",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-experimental": true
+      },
+      "post": {
+        "tags": [
+          "Organizations"
+        ],
+        "summary": "Upload File Chunks",
+        "description": "**Experimental:** This API is under active development and may change.\n\nUpload file chunks so they can be assembled into debug information files or artifact\nbundles. Send requests to the URL from the chunk upload options, which uses the\nregion-specific domain (for example \u0060us.sentry.io\u0060 or \u0060de.sentry.io\u0060).\n\nChunks may be compressed with one of the codecs listed in the options. Select it with\nthe \u0060Content-Encoding\u0060 request header. Resending a chunk is safe: chunks are stored\nby checksum, so an identical upload changes nothing.",
+        "operationId": "UploadOrganizationChunks",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadOrganizationChunksFormDataRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-idempotent": true,
+        "x-sentry-experimental": true
+      }
+    },
     "/api/0/organizations/{organizationIdOrSlug}/code-mappings/": {
       "get": {
         "tags": [
@@ -22975,6 +23165,17 @@
                 "type": "string"
               }
             }
+          },
+          {
+            "name": "collapse",
+            "in": "query",
+            "description": "Parts of the response to skip computing. Specify \u0060adjacentEvents\u0060 to skip looking up the neighboring events in the issue; \u0060nextEventID\u0060 and \u0060previousEventID\u0060 are then always \u0060null\u0060. Unknown values are ignored.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AdjacentEventsItem"
+              }
+            }
           }
         ],
         "responses": {
@@ -23916,6 +24117,85 @@
           "silo": "cell",
           "organizationParameter": "organization_id_or_slug"
         }
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/difs/assemble/": {
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Assemble Debug Information Files",
+        "description": "**Experimental:** This API is under active development and may change.\n\nAssemble previously uploaded chunks into debug information files.\n\nThe response reports each file\u0027s \u0060state\u0060, keyed by the same checksums. If chunks are\nmissing, upload them and send the request again. Repeat the request to poll until the\nstate is \u0060ok\u0060 or \u0060error\u0060. Resending an identical request is safe: a file that is\nalready assembling or assembled reports its state instead of starting a new job.",
+        "operationId": "AssembleProjectDebugFiles",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AssembleProjectDebugFilesRequestRequestBody"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "org:ci",
+              "project:admin",
+              "project:releases",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-idempotent": true,
+        "x-sentry-experimental": true
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms/": {
@@ -28187,6 +28467,244 @@
           "silo": "cell",
           "organizationParameter": "organization_id_or_slug"
         }
+      }
+    },
+    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/seer/repos/": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "List Repositories Configured for Seer",
+        "description": "**Experimental:** This API is under active development and may change.\n\nList repositories connected to Seer for the project.",
+        "operationId": "ListProjectSeerRepositories",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "query",
+            "description": "Filter repositories using Sentry search syntax. \u0060name\u0060 supports substring matching and is also the free-text key. \u0060provider\u0060 supports \u0060=\u0060, \u0060!=\u0060, \u0060IN\u0060, and \u0060NOT IN\u0060 operators, and matches with or without the \u0060integrations:\u0060 prefix.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "sortBy",
+            "in": "query",
+            "description": "Sort by repository name or provider. Defaults to \u0060name\u0060.",
+            "schema": {
+              "$ref": "#/components/schemas/ListProjectSeerRepositoriesSortByParameter"
+            }
+          },
+          {
+            "name": "cursor",
+            "in": "query",
+            "description": "A pointer to the last object fetched and its sort order; used to retrieve the next or previous results.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "x-learn-more": "https://docs.sentry.io/api/pagination/"
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "The maximum number of results per page.",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListProjectSeerRepositories200ResponseSchema"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:read",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-experimental": true
+      },
+      "post": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Add Repositories to Seer for a Project",
+        "description": "**Experimental:** This API is under active development and may change.\n\nAdd the specified repositories to Seer without removing other repositories. At least one repository is required. Re-submitting a repository replaces its branchName, instructions, and branchOverrides; omitted values are cleared.",
+        "operationId": "AddProjectSeerRepositories",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddProjectSeerRepositoriesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-experimental": true
+      },
+      "put": {
+        "tags": [
+          "Projects"
+        ],
+        "summary": "Replace Repositories Configured for Seer",
+        "description": "**Experimental:** This API is under active development and may change.\n\nReplace the project\u0027s active Seer repository configurations with the submitted repositories. An empty \u0060repos\u0060 list removes all active Seer repository configurations. Inactive repository configurations are retained and become available again if the repositories are reactivated.",
+        "operationId": "ReplaceProjectSeerRepositories",
+        "parameters": [
+          {
+            "name": "organizationIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the organization the resource belongs to.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "projectIdOrSlug",
+            "in": "path",
+            "description": "The ID or slug of the project the resource belongs to. Project slugs are unique within each organization.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReplaceProjectSeerRepositoriesRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "No Content"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "auth_token": [
+              "project:admin",
+              "project:write"
+            ]
+          }
+        ],
+        "x-sentry-routing": {
+          "silo": "cell",
+          "organizationParameter": "organization_id_or_slug"
+        },
+        "x-sentry-experimental": true
       }
     },
     "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stacktrace-link/": {
@@ -33345,6 +33863,17 @@
             }
           },
           {
+            "name": "collapse",
+            "in": "query",
+            "description": "Parts of the response to skip computing. Specify \u0060adjacentEvents\u0060 to skip looking up the neighboring events in the issue; \u0060nextEventID\u0060 and \u0060previousEventID\u0060 are then always \u0060null\u0060. Unknown values are ignored.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/AdjacentEventsItem"
+              }
+            }
+          },
+          {
             "name": "llmFormat",
             "in": "query",
             "description": "If set, adds a \u0060formatted\u0060 field to the response with the event rendered as the requested format for LLM consumption.",
@@ -35078,6 +35607,34 @@
         },
         "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
+      "ArtifactBundleAssembleResponse": {
+        "required": [
+          "missingChunks",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "missingChunks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AssembleProjectDebugFilesResponse": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AssembleProjectDebugFilesResponseAdditionalProperties"
+        }
+      },
       "AutofixPostResponse": {
         "required": [
           "run_id",
@@ -35241,6 +35798,29 @@
           }
         }
       },
+      "BranchOverride": {
+        "required": [
+          "branch_name",
+          "tag_name",
+          "tag_value"
+        ],
+        "type": "object",
+        "properties": {
+          "tag_name": {
+            "type": "string",
+            "description": "Event tag key to match."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "Event tag value to match."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The repository branch Seer uses for issues whose events have this tag value."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "BulkCodeMappingsPartialResponse": {
         "required": [
           "created",
@@ -35391,6 +35971,71 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/CheckInListItem"
+        }
+      },
+      "ChunkUpload": {
+        "required": [
+          "file"
+        ],
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "The chunks to upload. Name each part after the SHA-1 checksum of its uncompressed content. Repeat the field for each chunk, up to \u0060chunksPerRequest\u0060 per request."
+          }
+        }
+      },
+      "ChunkUploadOptionsResponse": {
+        "required": [
+          "accept",
+          "chunkSize",
+          "chunksPerRequest",
+          "compression",
+          "concurrency",
+          "hashAlgorithm",
+          "maxFileSize",
+          "maxRequestSize",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "chunkSize": {
+            "type": "integer"
+          },
+          "chunksPerRequest": {
+            "type": "integer"
+          },
+          "maxFileSize": {
+            "type": "integer"
+          },
+          "maxRequestSize": {
+            "type": "integer"
+          },
+          "concurrency": {
+            "type": "integer"
+          },
+          "hashAlgorithm": {
+            "type": "string"
+          },
+          "compression": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accept": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
         }
       },
       "Commit": {
@@ -39969,7 +40614,7 @@
             "items": {
               "$ref": "#/components/schemas/OrganizationReleaseCommitsItem"
             },
-            "description": "An optional list of commit data to be associated."
+            "description": "An optional list of commit data to be associated. Very long lists are truncated to the most recent commits."
           },
           "status": {
             "type": "string",
@@ -41369,6 +42014,12 @@
           "$ref": "#/components/schemas/ProjectRepoListResponseItem"
         }
       },
+      "ProjectSeerRepositoriesResponse": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProjectSeerRepositoriesResponseItem"
+        }
+      },
       "ProjectSizeStatusCheckRulesResponse": {
         "required": [
           "enabled",
@@ -41965,7 +42616,7 @@
             "items": {
               "$ref": "#/components/schemas/ReleaseSerializerWithProjectsCommitsItem"
             },
-            "description": "An optional list of commit data to be associated."
+            "description": "An optional list of commit data to be associated. Very long lists are truncated to the most recent commits."
           },
           "status": {
             "type": "string",
@@ -42531,6 +43182,53 @@
           }
         },
         "description": "Response containing list of actively used LLM model names from Seer."
+      },
+      "SeerProjectRepoCreate": {
+        "required": [
+          "repository_id"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of an active, supported repository in the organization."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The branch Seer works from in this repository. Leave empty to use the repository\u0027s default branch.",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Extra context Seer should use when working with this repository.",
+            "nullable": true
+          },
+          "branch_overrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeerProjectRepoCreateBranchOverridesItem"
+            },
+            "description": "Deprecated. Branch overrides selected by matching tags.",
+            "deprecated": true
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "SeerProjectReposBulk": {
+        "required": [
+          "repos"
+        ],
+        "type": "object",
+        "properties": {
+          "repos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeerProjectReposBulkReposItem"
+            },
+            "description": "Repositories to link and configure for Seer in this project."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "SentryAppComponentsResponse": {
         "type": "array",
@@ -47078,6 +47776,63 @@
           }
         }
       },
+      "ProjectSeerRepositoriesResponseItem": {
+        "required": [
+          "branchName",
+          "branchOverrides",
+          "externalId",
+          "id",
+          "instructions",
+          "integrationId",
+          "name",
+          "organizationId",
+          "owner",
+          "provider",
+          "repositoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "organizationId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchOverrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProjectSeerRepositoriesResponseItemBranchOverridesItem"
+            }
+          },
+          "instructions": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
       "ProjectTeamsResponseItem": {
         "required": [
           "access",
@@ -50360,6 +51115,31 @@
       "ActionFilterValidatorActionsItem": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "AssembleProjectDebugFilesResponseAdditionalProperties": {
+        "required": [
+          "missingChunks",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "missingChunks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "dif": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFilesResponseAdditionalPropertiesDif"
+          }
+        }
       },
       "AutofixStateResponseFormatted": {
         "required": [
@@ -56856,6 +57636,60 @@
           }
         }
       },
+      "SeerProjectRepoCreateBranchOverridesItem": {
+        "required": [
+          "branch_name",
+          "tag_name",
+          "tag_value"
+        ],
+        "type": "object",
+        "properties": {
+          "tag_name": {
+            "type": "string",
+            "description": "Event tag key to match."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "Event tag value to match."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The repository branch Seer uses for issues whose events have this tag value."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "SeerProjectReposBulkReposItem": {
+        "required": [
+          "repository_id"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of an active, supported repository in the organization."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The branch Seer works from in this repository. Leave empty to use the repository\u0027s default branch.",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Extra context Seer should use when working with this repository.",
+            "nullable": true
+          },
+          "branch_overrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SeerProjectReposBulkReposItemBranchOverridesItem"
+            },
+            "description": "Deprecated. Branch overrides selected by matching tags.",
+            "deprecated": true
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "SentryAppDetailsResponseAvatarsItem": {
         "required": [
           "avatarType",
@@ -61915,6 +62749,29 @@
         "type": "object",
         "additionalProperties": {}
       },
+      "ProjectSeerRepositoriesResponseItemBranchOverridesItem": {
+        "required": [
+          "branchName",
+          "id",
+          "tagName",
+          "tagValue"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tagName": {
+            "type": "string"
+          },
+          "tagValue": {
+            "type": "string"
+          },
+          "branchName": {
+            "type": "string"
+          }
+        }
+      },
       "ProjectTeamsResponseItemFlags": {
         "type": "object",
         "additionalProperties": {}
@@ -63863,6 +64720,63 @@
       "SentryAppComponentsResponseItemErrorAnyOf2Context": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "AssembleProjectDebugFilesResponseAdditionalPropertiesDif": {
+        "required": [
+          "codeId",
+          "cpuName",
+          "data",
+          "dateCreated",
+          "debugId",
+          "headers",
+          "id",
+          "objectName",
+          "sha1",
+          "size",
+          "symbolType",
+          "uuid"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "debugId": {
+            "type": "string"
+          },
+          "codeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpuName": {
+            "type": "string"
+          },
+          "objectName": {
+            "type": "string"
+          },
+          "symbolType": {
+            "type": "string"
+          },
+          "headers": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFilesResponseAdditionalPropertiesDifHeadersProperty"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "sha1": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFilesResponseAdditionalPropertiesDifDataProperty"
+          }
+        }
       },
       "CreateOrganizationReleaseResponseVersionInfoVersion": {
         "type": "object",
@@ -67067,6 +67981,29 @@
         "type": "object",
         "additionalProperties": {}
       },
+      "SeerProjectReposBulkReposItemBranchOverridesItem": {
+        "required": [
+          "branch_name",
+          "tag_name",
+          "tag_value"
+        ],
+        "type": "object",
+        "properties": {
+          "tag_name": {
+            "type": "string",
+            "description": "Event tag key to match."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "Event tag value to match."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The repository branch Seer uses for issues whose events have this tag value."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
       "SessionsQueryResultGroupsItemBy": {
         "type": "object",
         "properties": {
@@ -69677,6 +70614,16 @@
         },
         "description": "Owner as it appears in the API response (after identifier-\u003Ename rename)."
       },
+      "AssembleProjectDebugFilesResponseAdditionalPropertiesDifHeaders": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "AssembleProjectDebugFilesResponseAdditionalPropertiesDifData": {
+        "type": "object",
+        "additionalProperties": {}
+      },
       "CreateOrganizationReleaseResponseProjectsItemHealthDataStats": {
         "type": "object",
         "additionalProperties": {}
@@ -71874,6 +72821,133 @@
             "$ref": "#/components/schemas/RetrieveOrganizationAiConversation200ResponseAnyOf2"
           }
         ]
+      },
+      "AssembleOrganizationArtifactBundleRequest": {
+        "required": [
+          "checksum",
+          "chunks",
+          "projects"
+        ],
+        "type": "object",
+        "properties": {
+          "projects": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The IDs or slugs of the projects the bundle belongs to."
+          },
+          "checksum": {
+            "pattern": "^[0-9a-f]{40}$",
+            "type": "string",
+            "description": "The SHA-1 checksum of the whole bundle."
+          },
+          "chunks": {
+            "type": "array",
+            "items": {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            "description": "The SHA-1 checksums of the bundle\u0027s chunks, in order. Upload missing chunks with the chunk upload endpoint. Send an empty list to poll the bundle\u0027s state."
+          },
+          "version": {
+            "pattern": "^[^/]\u002B$",
+            "type": "string",
+            "description": "The release to associate the bundle with."
+          },
+          "dist": {
+            "type": "string",
+            "description": "The distribution to associate the bundle with. Requires \u0060version\u0060."
+          }
+        },
+        "additionalProperties": false
+      },
+      "AssembleOrganizationArtifactBundle200Response": {
+        "required": [
+          "missingChunks",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "missingChunks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "GetOrganizationChunkUploadOptions200Response": {
+        "required": [
+          "accept",
+          "chunkSize",
+          "chunksPerRequest",
+          "compression",
+          "concurrency",
+          "hashAlgorithm",
+          "maxFileSize",
+          "maxRequestSize",
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "chunkSize": {
+            "type": "integer"
+          },
+          "chunksPerRequest": {
+            "type": "integer"
+          },
+          "maxFileSize": {
+            "type": "integer"
+          },
+          "maxRequestSize": {
+            "type": "integer"
+          },
+          "concurrency": {
+            "type": "integer"
+          },
+          "hashAlgorithm": {
+            "type": "string"
+          },
+          "compression": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "accept": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "UploadOrganizationChunksFormDataRequest": {
+        "required": [
+          "file"
+        ],
+        "type": "object",
+        "properties": {
+          "file": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "The chunks to upload. Name each part after the SHA-1 checksum of its uncompressed content. Repeat the field for each chunk, up to \u0060chunksPerRequest\u0060 per request."
+          }
+        }
       },
       "ListOrganizationCodeMappings200Response": {
         "type": "array",
@@ -76242,7 +77316,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateOrganizationReleaseRequestCommitsItem"
             },
-            "description": "An optional list of commit data to be associated."
+            "description": "An optional list of commit data to be associated. Very long lists are truncated to the most recent commits."
           },
           "status": {
             "type": "string",
@@ -76512,7 +77586,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateOrganizationReleaseRequestCommitsItem"
             },
-            "description": "An optional list of commit data to be associated."
+            "description": "An optional list of commit data to be associated. Very long lists are truncated to the most recent commits."
           },
           "status": {
             "type": "string",
@@ -80084,6 +81158,19 @@
           }
         }
       },
+      "AssembleProjectDebugFilesRequest": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AssembleProjectDebugFilesRequestAdditionalProperties"
+        },
+        "description": "The files to assemble, keyed by the SHA-1 checksum of each whole file."
+      },
+      "AssembleProjectDebugFiles200Response": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalProperties"
+        }
+      },
       "ListProjectDebugFiles200Response": {
         "type": "array",
         "items": {
@@ -81057,6 +82144,44 @@
             "type": "boolean"
           }
         }
+      },
+      "ListProjectSeerRepositories200Response": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectSeerRepositories200ResponseItem"
+        }
+      },
+      "AddProjectSeerRepositoriesRequest": {
+        "required": [
+          "repos"
+        ],
+        "type": "object",
+        "properties": {
+          "repos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddProjectSeerRepositoriesRequestReposItem"
+            },
+            "description": "Repositories to link and configure for Seer in this project."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "ReplaceProjectSeerRepositoriesRequest": {
+        "required": [
+          "repos"
+        ],
+        "type": "object",
+        "properties": {
+          "repos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReplaceProjectSeerRepositoriesRequestReposItem"
+            },
+            "description": "Repositories to link and configure for Seer in this project."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "GetProjectStacktraceLink200Response": {
         "required": [
@@ -84483,6 +85608,19 @@
           "$ref": "#/components/schemas/ListProjectEventAttachments200ResponseSchemaItem"
         }
       },
+      "AssembleProjectDebugFilesRequestRequestBody": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AssembleProjectDebugFilesRequestRequestBodyAdditionalProperties"
+        },
+        "description": "The files to assemble, keyed by the SHA-1 checksum of each whole file."
+      },
+      "AssembleProjectDebugFiles200ResponseSchema": {
+        "type": "object",
+        "additionalProperties": {
+          "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseSchemaAdditionalProperties"
+        }
+      },
       "ListProjectDebugFiles200ResponseSchema": {
         "type": "array",
         "items": {
@@ -84555,6 +85693,12 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/ListProjectRepositories200ResponseSchemaItem"
+        }
+      },
+      "ListProjectSeerRepositories200ResponseSchema": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ListProjectSeerRepositories200ResponseSchemaItem"
         }
       },
       "ListProjectStats200ResponseSchema": {
@@ -89720,6 +90864,16 @@
         }
       },
       "ListWorkflowItemActionFiltersItemActionsAnyOf1ItemConfigProperty": {
+        "type": "object",
+        "additionalProperties": {}
+      },
+      "AssembleProjectDebugFilesResponseAdditionalPropertiesDifHeadersProperty": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "AssembleProjectDebugFilesResponseAdditionalPropertiesDifDataProperty": {
         "type": "object",
         "additionalProperties": {}
       },
@@ -101414,6 +102568,57 @@
           }
         }
       },
+      "AssembleProjectDebugFilesRequestAdditionalProperties": {
+        "required": [
+          "name",
+          "chunks"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The file name. A ProGuard mapping without \u0060debug_id\u0060 can carry it in the name, as in \u0060/proguard/mapping-\u003Cuuid\u003E.txt\u0060."
+          },
+          "chunks": {
+            "type": "array",
+            "items": {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            "description": "The SHA-1 checksums of the file\u0027s chunks, in order. Upload missing chunks with the chunk upload endpoint. Send an empty list to poll the file\u0027s state."
+          },
+          "debug_id": {
+            "pattern": "^[A-Fa-f0-9-]\u002B$",
+            "type": "string",
+            "description": "The debug ID to store the file under, overriding the one read from the file."
+          }
+        }
+      },
+      "AssembleProjectDebugFiles200ResponseAdditionalProperties": {
+        "required": [
+          "missingChunks",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "missingChunks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "dif": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalPropertiesDif"
+          }
+        }
+      },
       "ListProjectDebugFiles200ResponseItem": {
         "required": [
           "codeId",
@@ -103448,6 +104653,125 @@
             "type": "integer"
           }
         }
+      },
+      "ListProjectSeerRepositories200ResponseItem": {
+        "required": [
+          "branchName",
+          "branchOverrides",
+          "externalId",
+          "id",
+          "instructions",
+          "integrationId",
+          "name",
+          "organizationId",
+          "owner",
+          "provider",
+          "repositoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "organizationId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchOverrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListProjectSeerRepositories200ResponseItemBranchOverridesItem"
+            }
+          },
+          "instructions": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "AddProjectSeerRepositoriesRequestReposItem": {
+        "required": [
+          "repository_id"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of an active, supported repository in the organization."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The branch Seer works from in this repository. Leave empty to use the repository\u0027s default branch.",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Extra context Seer should use when working with this repository.",
+            "nullable": true
+          },
+          "branch_overrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/AddProjectSeerRepositoriesRequestReposItemBranchOverridesItem"
+            },
+            "description": "Deprecated. Branch overrides selected by matching tags.",
+            "deprecated": true
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "ReplaceProjectSeerRepositoriesRequestReposItem": {
+        "required": [
+          "repository_id"
+        ],
+        "type": "object",
+        "properties": {
+          "repository_id": {
+            "type": "integer",
+            "description": "The ID of an active, supported repository in the organization."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The branch Seer works from in this repository. Leave empty to use the repository\u0027s default branch.",
+            "nullable": true
+          },
+          "instructions": {
+            "type": "string",
+            "description": "Extra context Seer should use when working with this repository.",
+            "nullable": true
+          },
+          "branch_overrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem"
+            },
+            "description": "Deprecated. Branch overrides selected by matching tags.",
+            "deprecated": true
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "GetProjectStacktraceLink200ResponseConfig": {
         "required": [
@@ -109054,6 +110378,57 @@
           }
         }
       },
+      "AssembleProjectDebugFilesRequestRequestBodyAdditionalProperties": {
+        "required": [
+          "name",
+          "chunks"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The file name. A ProGuard mapping without \u0060debug_id\u0060 can carry it in the name, as in \u0060/proguard/mapping-\u003Cuuid\u003E.txt\u0060."
+          },
+          "chunks": {
+            "type": "array",
+            "items": {
+              "pattern": "^[0-9a-f]{40}$",
+              "type": "string"
+            },
+            "description": "The SHA-1 checksums of the file\u0027s chunks, in order. Upload missing chunks with the chunk upload endpoint. Send an empty list to poll the file\u0027s state."
+          },
+          "debug_id": {
+            "pattern": "^[A-Fa-f0-9-]\u002B$",
+            "type": "string",
+            "description": "The debug ID to store the file under, overriding the one read from the file."
+          }
+        }
+      },
+      "AssembleProjectDebugFiles200ResponseSchemaAdditionalProperties": {
+        "required": [
+          "missingChunks",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "missingChunks": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "detail": {
+            "type": "string",
+            "nullable": true
+          },
+          "dif": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseSchemaAdditionalPropertiesDif"
+          }
+        }
+      },
       "ListProjectDebugFiles200ResponseSchemaItem": {
         "required": [
           "codeId",
@@ -109563,6 +110938,63 @@
           },
           "mappingCount": {
             "type": "integer"
+          }
+        }
+      },
+      "ListProjectSeerRepositories200ResponseSchemaItem": {
+        "required": [
+          "branchName",
+          "branchOverrides",
+          "externalId",
+          "id",
+          "instructions",
+          "integrationId",
+          "name",
+          "organizationId",
+          "owner",
+          "provider",
+          "repositoryId"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "repositoryId": {
+            "type": "string"
+          },
+          "organizationId": {
+            "type": "string"
+          },
+          "provider": {
+            "type": "string"
+          },
+          "owner": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "externalId": {
+            "type": "string"
+          },
+          "integrationId": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchName": {
+            "type": "string",
+            "nullable": true
+          },
+          "branchOverrides": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListProjectSeerRepositories200ResponseItemBranchOverridesItem"
+            }
+          },
+          "instructions": {
+            "type": "string",
+            "nullable": true
           }
         }
       },
@@ -120598,6 +122030,63 @@
           }
         }
       },
+      "AssembleProjectDebugFiles200ResponseAdditionalPropertiesDif": {
+        "required": [
+          "codeId",
+          "cpuName",
+          "data",
+          "dateCreated",
+          "debugId",
+          "headers",
+          "id",
+          "objectName",
+          "sha1",
+          "size",
+          "symbolType",
+          "uuid"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "debugId": {
+            "type": "string"
+          },
+          "codeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpuName": {
+            "type": "string"
+          },
+          "objectName": {
+            "type": "string"
+          },
+          "symbolType": {
+            "type": "string"
+          },
+          "headers": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifHeaders"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "sha1": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifData"
+          }
+        }
+      },
       "ListProjectDebugFiles200ResponseItemHeaders": {
         "type": "object",
         "additionalProperties": {
@@ -121521,6 +123010,75 @@
       "ListProjectReplayViewedBy200ResponseDataViewedByItem": {
         "type": "object",
         "additionalProperties": {}
+      },
+      "ListProjectSeerRepositories200ResponseItemBranchOverridesItem": {
+        "required": [
+          "branchName",
+          "id",
+          "tagName",
+          "tagValue"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "tagName": {
+            "type": "string"
+          },
+          "tagValue": {
+            "type": "string"
+          },
+          "branchName": {
+            "type": "string"
+          }
+        }
+      },
+      "AddProjectSeerRepositoriesRequestReposItemBranchOverridesItem": {
+        "required": [
+          "branch_name",
+          "tag_name",
+          "tag_value"
+        ],
+        "type": "object",
+        "properties": {
+          "tag_name": {
+            "type": "string",
+            "description": "Event tag key to match."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "Event tag value to match."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The repository branch Seer uses for issues whose events have this tag value."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
+      },
+      "ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem": {
+        "required": [
+          "branch_name",
+          "tag_name",
+          "tag_value"
+        ],
+        "type": "object",
+        "properties": {
+          "tag_name": {
+            "type": "string",
+            "description": "Event tag key to match."
+          },
+          "tag_value": {
+            "type": "string",
+            "description": "Event tag value to match."
+          },
+          "branch_name": {
+            "type": "string",
+            "description": "The repository branch Seer uses for issues whose events have this tag value."
+          }
+        },
+        "description": "Allows parameters to be defined in snake case, but passed as camel case.\n\nErrors are output in camel case."
       },
       "GetProjectStacktraceLink200ResponseConfigProvider": {
         "required": [
@@ -125039,6 +126597,63 @@
         "additionalProperties": {
           "type": "string",
           "nullable": true
+        }
+      },
+      "AssembleProjectDebugFiles200ResponseSchemaAdditionalPropertiesDif": {
+        "required": [
+          "codeId",
+          "cpuName",
+          "data",
+          "dateCreated",
+          "debugId",
+          "headers",
+          "id",
+          "objectName",
+          "sha1",
+          "size",
+          "symbolType",
+          "uuid"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "uuid": {
+            "type": "string"
+          },
+          "debugId": {
+            "type": "string"
+          },
+          "codeId": {
+            "type": "string",
+            "nullable": true
+          },
+          "cpuName": {
+            "type": "string"
+          },
+          "objectName": {
+            "type": "string"
+          },
+          "symbolType": {
+            "type": "string"
+          },
+          "headers": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifHeaders"
+          },
+          "size": {
+            "type": "integer"
+          },
+          "sha1": {
+            "type": "string"
+          },
+          "dateCreated": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "data": {
+            "$ref": "#/components/schemas/AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifData"
+          }
         }
       },
       "ListProjectDebugFiles200ResponseSchemaItemHeaders": {
@@ -128885,6 +130500,16 @@
             "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap"
           }
         }
+      },
+      "AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifHeaders": {
+        "type": "object",
+        "additionalProperties": {
+          "type": "string"
+        }
+      },
+      "AssembleProjectDebugFiles200ResponseAdditionalPropertiesDifData": {
+        "type": "object",
+        "additionalProperties": {}
       },
       "ListProjectMembers200ResponseItemUserIdentitiesItem": {
         "required": [
@@ -161909,6 +163534,53 @@
             {
               "value": "visible",
               "name": "Visible"
+            }
+          ]
+        }
+      },
+      "AdjacentEventsItem": {
+        "enum": [
+          "adjacentEvents"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "AdjacentEventsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "adjacentEvents",
+              "name": "AdjacentEvents"
+            }
+          ]
+        }
+      },
+      "ListProjectSeerRepositoriesSortByParameter": {
+        "enum": [
+          "-name",
+          "-provider",
+          "name",
+          "provider"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "ListProjectSeerRepositoriesSortByParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "-name",
+              "name": "Name"
+            },
+            {
+              "value": "-provider",
+              "name": "Provider"
+            },
+            {
+              "value": "name",
+              "name": "Name1"
+            },
+            {
+              "value": "provider",
+              "name": "Provider1"
             }
           ]
         }

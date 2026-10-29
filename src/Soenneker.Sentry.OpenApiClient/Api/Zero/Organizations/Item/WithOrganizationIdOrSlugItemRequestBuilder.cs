@@ -3,6 +3,8 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeownersAssociations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config;
@@ -67,6 +69,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.AgentsRequestBuilder Agents
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The artifactbundle property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle.ArtifactbundleRequestBuilder Artifactbundle
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle.ArtifactbundleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The chunkUpload property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload.ChunkUploadRequestBuilder ChunkUpload
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload.ChunkUploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The codeMappings property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings.CodeMappingsRequestBuilder CodeMappings
