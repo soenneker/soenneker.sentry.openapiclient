@@ -12,29 +12,46 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationWorkflowRequestActionFiltersItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("logic_type") is { } nullNodeLogicType && nullNodeLogicType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogicType = null;
+        }
+
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem>? Actions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem>? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem>? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem> Actions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem> Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemActionsItem> _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Conditions { get; set; }
+        public UntypedNode? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private UntypedNode? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public UntypedNode Conditions { get; set; }
+        public UntypedNode Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private UntypedNode _explicitNullValueConditions = default!;
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>* `any`* `any-short`* `all`* `none`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemLogicType? LogicType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemLogicType? LogicType { get => _explicitNullValueLogicType; set { _explicitNullValueLogicType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logic_type"); else _explicitNullProperties?.Remove("logic_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemLogicType? _explicitNullValueLogicType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItem"/> and sets the default values.
         /// </summary>
@@ -50,7 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
             writer.WriteIntValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationWorkflowRequestActionFiltersItemLogicType>("logic_type", LogicType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

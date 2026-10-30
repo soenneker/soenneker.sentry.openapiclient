@@ -11,13 +11,24 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListProjectReplayClicks200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("node_id") is { } nullNodeNodeId && nullNodeNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeId = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The node_id property</summary>
-        public int? NodeId { get; set; }
+        public int? NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("node_id"); else _explicitNullProperties?.Remove("node_id"); } }
+        private int? _explicitNullValueNodeId = default!;
         /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayClicks200ResponseDataItem"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayClicks200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayClicks200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayClicks200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("node_id", NodeId);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,18 +11,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StarOrganizationServiceSpanRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("service_span") is { } nullNodeServiceSpan && nullNodeServiceSpan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceSpan = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ID of the project the service span belongs to.</summary>
-        public int? ProjectId { get; set; }
+        public int? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private int? _explicitNullValueProjectId = default!;
         /// <summary>The name of the service span to star or unstar.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceSpan { get; set; }
+        public string? ServiceSpan { get => _explicitNullValueServiceSpan; set { _explicitNullValueServiceSpan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_span"); else _explicitNullProperties?.Remove("service_span"); } }
+        private string? _explicitNullValueServiceSpan = default!;
 #nullable restore
 #else
-        public string ServiceSpan { get; set; }
+        public string ServiceSpan { get => _explicitNullValueServiceSpan; set { _explicitNullValueServiceSpan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_span"); else _explicitNullProperties?.Remove("service_span"); } }
+        private string _explicitNullValueServiceSpan = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.StarOrganizationServiceSpanRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("project_id", ProjectId);
             writer.WriteStringValue("service_span", ServiceSpan);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

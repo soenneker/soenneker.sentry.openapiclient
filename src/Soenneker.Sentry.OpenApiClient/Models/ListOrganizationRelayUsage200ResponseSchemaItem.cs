@@ -11,36 +11,56 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationRelayUsage200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("firstSeen") is { } nullNodeFirstSeen && nullNodeFirstSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeen = null;
+            if (parseNode.GetChildNode("lastSeen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("publicKey") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("relayId") is { } nullNodeRelayId && nullNodeRelayId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayId = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The firstSeen property</summary>
-        public DateTimeOffset? FirstSeen { get; set; }
+        public DateTimeOffset? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
+        private DateTimeOffset? _explicitNullValueFirstSeen = default!;
         /// <summary>The lastSeen property</summary>
-        public DateTimeOffset? LastSeen { get; set; }
+        public DateTimeOffset? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
+        private DateTimeOffset? _explicitNullValueLastSeen = default!;
         /// <summary>The publicKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("publicKey"); else _explicitNullProperties?.Remove("publicKey"); } }
+        private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>The relayId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelayId { get; set; }
+        public string? RelayId { get => _explicitNullValueRelayId; set { _explicitNullValueRelayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayId"); else _explicitNullProperties?.Remove("relayId"); } }
+        private string? _explicitNullValueRelayId = default!;
 #nullable restore
 #else
-        public string RelayId { get; set; }
+        public string RelayId { get => _explicitNullValueRelayId; set { _explicitNullValueRelayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayId"); else _explicitNullProperties?.Remove("relayId"); } }
+        private string _explicitNullValueRelayId = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRelayUsage200ResponseSchemaItem"/> and sets the default values.
@@ -57,7 +77,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRelayUsage200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRelayUsage200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRelayUsage200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("publicKey", PublicKey);
             writer.WriteStringValue("relayId", RelayId);
             writer.WriteStringValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

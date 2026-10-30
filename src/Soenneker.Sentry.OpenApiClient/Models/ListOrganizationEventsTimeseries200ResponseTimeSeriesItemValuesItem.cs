@@ -11,39 +11,71 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comparisonFilled") is { } nullNodeComparisonFilled && nullNodeComparisonFilled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonFilled = null;
+            if (parseNode.GetChildNode("comparisonSmoothed") is { } nullNodeComparisonSmoothed && nullNodeComparisonSmoothed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonSmoothed = null;
+            if (parseNode.GetChildNode("comparisonValue") is { } nullNodeComparisonValue && nullNodeComparisonValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonValue = null;
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("filled") is { } nullNodeFilled && nullNodeFilled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filled = null;
+            if (parseNode.GetChildNode("incomplete") is { } nullNodeIncomplete && nullNodeIncomplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Incomplete = null;
+            if (parseNode.GetChildNode("incompleteReason") is { } nullNodeIncompleteReason && nullNodeIncompleteReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncompleteReason = null;
+            if (parseNode.GetChildNode("sampleCount") is { } nullNodeSampleCount && nullNodeSampleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleCount = null;
+            if (parseNode.GetChildNode("sampleRate") is { } nullNodeSampleRate && nullNodeSampleRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SampleRate = null;
+            if (parseNode.GetChildNode("smoothed") is { } nullNodeSmoothed && nullNodeSmoothed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Smoothed = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comparisonFilled property</summary>
-        public bool? ComparisonFilled { get; set; }
+        public bool? ComparisonFilled { get => _explicitNullValueComparisonFilled; set { _explicitNullValueComparisonFilled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonFilled"); else _explicitNullProperties?.Remove("comparisonFilled"); } }
+        private bool? _explicitNullValueComparisonFilled = default!;
         /// <summary>The comparisonSmoothed property</summary>
-        public bool? ComparisonSmoothed { get; set; }
+        public bool? ComparisonSmoothed { get => _explicitNullValueComparisonSmoothed; set { _explicitNullValueComparisonSmoothed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonSmoothed"); else _explicitNullProperties?.Remove("comparisonSmoothed"); } }
+        private bool? _explicitNullValueComparisonSmoothed = default!;
         /// <summary>The comparisonValue property</summary>
-        public double? ComparisonValue { get; set; }
+        public double? ComparisonValue { get => _explicitNullValueComparisonValue; set { _explicitNullValueComparisonValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonValue"); else _explicitNullProperties?.Remove("comparisonValue"); } }
+        private double? _explicitNullValueComparisonValue = default!;
         /// <summary>The confidence property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? Confidence { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? _explicitNullValueConfidence = default!;
         /// <summary>The filled property</summary>
-        public bool? Filled { get; set; }
+        public bool? Filled { get => _explicitNullValueFilled; set { _explicitNullValueFilled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filled"); else _explicitNullProperties?.Remove("filled"); } }
+        private bool? _explicitNullValueFilled = default!;
         /// <summary>The incomplete property</summary>
-        public bool? Incomplete { get; set; }
+        public bool? Incomplete { get => _explicitNullValueIncomplete; set { _explicitNullValueIncomplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete"); else _explicitNullProperties?.Remove("incomplete"); } }
+        private bool? _explicitNullValueIncomplete = default!;
         /// <summary>The incompleteReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IncompleteReason { get; set; }
+        public string? IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incompleteReason"); else _explicitNullProperties?.Remove("incompleteReason"); } }
+        private string? _explicitNullValueIncompleteReason = default!;
 #nullable restore
 #else
-        public string IncompleteReason { get; set; }
+        public string IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incompleteReason"); else _explicitNullProperties?.Remove("incompleteReason"); } }
+        private string _explicitNullValueIncompleteReason = default!;
 #endif
         /// <summary>The sampleCount property</summary>
-        public double? SampleCount { get; set; }
+        public double? SampleCount { get => _explicitNullValueSampleCount; set { _explicitNullValueSampleCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleCount"); else _explicitNullProperties?.Remove("sampleCount"); } }
+        private double? _explicitNullValueSampleCount = default!;
         /// <summary>The sampleRate property</summary>
-        public double? SampleRate { get; set; }
+        public double? SampleRate { get => _explicitNullValueSampleRate; set { _explicitNullValueSampleRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRate"); else _explicitNullProperties?.Remove("sampleRate"); } }
+        private double? _explicitNullValueSampleRate = default!;
         /// <summary>The smoothed property</summary>
-        public bool? Smoothed { get; set; }
+        public bool? Smoothed { get => _explicitNullValueSmoothed; set { _explicitNullValueSmoothed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smoothed"); else _explicitNullProperties?.Remove("smoothed"); } }
+        private bool? _explicitNullValueSmoothed = default!;
         /// <summary>The timestamp property</summary>
-        public double? Timestamp { get; set; }
+        public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private double? _explicitNullValueTimestamp = default!;
         /// <summary>The value property</summary>
-        public double? Value { get; set; }
+        public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private double? _explicitNullValueValue = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem"/> and sets the default values.
         /// </summary>
@@ -59,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +134,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("smoothed", Smoothed);
             writer.WriteDoubleValue("timestamp", Timestamp);
             writer.WriteDoubleValue("value", Value);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

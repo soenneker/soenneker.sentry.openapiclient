@@ -12,24 +12,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetOrganizationIssueAutofixState200Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autofix") is { } nullNodeAutofix && nullNodeAutofix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autofix = null;
+            if (parseNode.GetChildNode("formatted") is { } nullNodeFormatted && nullNodeFormatted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formatted = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The autofix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? Autofix { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? _explicitNullValueAutofix = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix Autofix { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix _explicitNullValueAutofix = default!;
 #endif
         /// <summary>The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.``content`` is text for the text formats and a serialized JSON object for ``json``, so theresponse shape is the same whichever format a caller asks for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? Formatted { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? _explicitNullValueFormatted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted Formatted { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted _explicitNullValueFormatted = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix>("autofix", Autofix);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted>("formatted", Formatted);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

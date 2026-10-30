@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Compute statistics, such as attribute value distributions, over the traceitems (spans or occurrences) matching the given query within the requestedtime range.

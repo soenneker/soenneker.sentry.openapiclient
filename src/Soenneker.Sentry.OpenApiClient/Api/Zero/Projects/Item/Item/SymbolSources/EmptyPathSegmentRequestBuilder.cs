@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List custom symbol sources configured for a project.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseSchemaItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a custom symbol source in a project.
@@ -107,7 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSourc
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a custom symbol source from a project.

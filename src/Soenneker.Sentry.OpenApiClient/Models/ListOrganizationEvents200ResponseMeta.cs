@@ -12,94 +12,137 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationEvents200ResponseMeta : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bytesScanned") is { } nullNodeBytesScanned && nullNodeBytesScanned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BytesScanned = null;
+            if (parseNode.GetChildNode("dataScanned") is { } nullNodeDataScanned && nullNodeDataScanned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScanned = null;
+            if (parseNode.GetChildNode("dataset") is { } nullNodeDataset && nullNodeDataset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dataset = null;
+            if (parseNode.GetChildNode("datasetReason") is { } nullNodeDatasetReason && nullNodeDatasetReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DatasetReason = null;
+            if (parseNode.GetChildNode("debug_info") is { } nullNodeDebugInfo && nullNodeDebugInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugInfo = null;
+            if (parseNode.GetChildNode("discoverSplitDecision") is { } nullNodeDiscoverSplitDecision && nullNodeDiscoverSplitDecision.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscoverSplitDecision = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("ingestion") is { } nullNodeIngestion && nullNodeIngestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ingestion = null;
+            if (parseNode.GetChildNode("isMetricsData") is { } nullNodeIsMetricsData && nullNodeIsMetricsData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMetricsData = null;
+            if (parseNode.GetChildNode("isMetricsExtractedData") is { } nullNodeIsMetricsExtractedData && nullNodeIsMetricsExtractedData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMetricsExtractedData = null;
+            if (parseNode.GetChildNode("routingHint") is { } nullNodeRoutingHint && nullNodeRoutingHint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RoutingHint = null;
+            if (parseNode.GetChildNode("tips") is { } nullNodeTips && nullNodeTips.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tips = null;
+            if (parseNode.GetChildNode("units") is { } nullNodeUnits && nullNodeUnits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Units = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bytesScanned property</summary>
-        public int? BytesScanned { get; set; }
+        public int? BytesScanned { get => _explicitNullValueBytesScanned; set { _explicitNullValueBytesScanned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesScanned"); else _explicitNullProperties?.Remove("bytesScanned"); } }
+        private int? _explicitNullValueBytesScanned = default!;
         /// <summary>The dataScanned property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataScanned { get; set; }
+        public string? DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
+        private string? _explicitNullValueDataScanned = default!;
 #nullable restore
 #else
-        public string DataScanned { get; set; }
+        public string DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
+        private string _explicitNullValueDataScanned = default!;
 #endif
         /// <summary>The dataset property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dataset { get; set; }
+        public string? Dataset { get => _explicitNullValueDataset; set { _explicitNullValueDataset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset"); else _explicitNullProperties?.Remove("dataset"); } }
+        private string? _explicitNullValueDataset = default!;
 #nullable restore
 #else
-        public string Dataset { get; set; }
+        public string Dataset { get => _explicitNullValueDataset; set { _explicitNullValueDataset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset"); else _explicitNullProperties?.Remove("dataset"); } }
+        private string _explicitNullValueDataset = default!;
 #endif
         /// <summary>The datasetReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DatasetReason { get; set; }
+        public string? DatasetReason { get => _explicitNullValueDatasetReason; set { _explicitNullValueDatasetReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetReason"); else _explicitNullProperties?.Remove("datasetReason"); } }
+        private string? _explicitNullValueDatasetReason = default!;
 #nullable restore
 #else
-        public string DatasetReason { get; set; }
+        public string DatasetReason { get => _explicitNullValueDatasetReason; set { _explicitNullValueDatasetReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetReason"); else _explicitNullProperties?.Remove("datasetReason"); } }
+        private string _explicitNullValueDatasetReason = default!;
 #endif
         /// <summary>The debug_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DebugInfo { get; set; }
+        public UntypedNode? DebugInfo { get => _explicitNullValueDebugInfo; set { _explicitNullValueDebugInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_info"); else _explicitNullProperties?.Remove("debug_info"); } }
+        private UntypedNode? _explicitNullValueDebugInfo = default!;
 #nullable restore
 #else
-        public UntypedNode DebugInfo { get; set; }
+        public UntypedNode DebugInfo { get => _explicitNullValueDebugInfo; set { _explicitNullValueDebugInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_info"); else _explicitNullProperties?.Remove("debug_info"); } }
+        private UntypedNode _explicitNullValueDebugInfo = default!;
 #endif
         /// <summary>The discoverSplitDecision property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DiscoverSplitDecision { get; set; }
+        public UntypedNode? DiscoverSplitDecision { get => _explicitNullValueDiscoverSplitDecision; set { _explicitNullValueDiscoverSplitDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoverSplitDecision"); else _explicitNullProperties?.Remove("discoverSplitDecision"); } }
+        private UntypedNode? _explicitNullValueDiscoverSplitDecision = default!;
 #nullable restore
 #else
-        public UntypedNode DiscoverSplitDecision { get; set; }
+        public UntypedNode DiscoverSplitDecision { get => _explicitNullValueDiscoverSplitDecision; set { _explicitNullValueDiscoverSplitDecision = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoverSplitDecision"); else _explicitNullProperties?.Remove("discoverSplitDecision"); } }
+        private UntypedNode _explicitNullValueDiscoverSplitDecision = default!;
 #endif
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields? Fields { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields Fields { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields _explicitNullValueFields = default!;
 #endif
         /// <summary>Ingestion status for the data behind a response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion? Ingestion { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion? Ingestion { get => _explicitNullValueIngestion; set { _explicitNullValueIngestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestion"); else _explicitNullProperties?.Remove("ingestion"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion? _explicitNullValueIngestion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion Ingestion { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion Ingestion { get => _explicitNullValueIngestion; set { _explicitNullValueIngestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestion"); else _explicitNullProperties?.Remove("ingestion"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion _explicitNullValueIngestion = default!;
 #endif
         /// <summary>The isMetricsData property</summary>
-        public bool? IsMetricsData { get; set; }
+        public bool? IsMetricsData { get => _explicitNullValueIsMetricsData; set { _explicitNullValueIsMetricsData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMetricsData"); else _explicitNullProperties?.Remove("isMetricsData"); } }
+        private bool? _explicitNullValueIsMetricsData = default!;
         /// <summary>The isMetricsExtractedData property</summary>
-        public bool? IsMetricsExtractedData { get; set; }
+        public bool? IsMetricsExtractedData { get => _explicitNullValueIsMetricsExtractedData; set { _explicitNullValueIsMetricsExtractedData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMetricsExtractedData"); else _explicitNullProperties?.Remove("isMetricsExtractedData"); } }
+        private bool? _explicitNullValueIsMetricsExtractedData = default!;
         /// <summary>The routingHint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoutingHint { get; set; }
+        public string? RoutingHint { get => _explicitNullValueRoutingHint; set { _explicitNullValueRoutingHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingHint"); else _explicitNullProperties?.Remove("routingHint"); } }
+        private string? _explicitNullValueRoutingHint = default!;
 #nullable restore
 #else
-        public string RoutingHint { get; set; }
+        public string RoutingHint { get => _explicitNullValueRoutingHint; set { _explicitNullValueRoutingHint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingHint"); else _explicitNullProperties?.Remove("routingHint"); } }
+        private string _explicitNullValueRoutingHint = default!;
 #endif
         /// <summary>The tips property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips? Tips { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips? Tips { get => _explicitNullValueTips; set { _explicitNullValueTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tips"); else _explicitNullProperties?.Remove("tips"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips? _explicitNullValueTips = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips Tips { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips Tips { get => _explicitNullValueTips; set { _explicitNullValueTips = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tips"); else _explicitNullProperties?.Remove("tips"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips _explicitNullValueTips = default!;
 #endif
         /// <summary>The units property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits? Units { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits? _explicitNullValueUnits = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits Units { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits _explicitNullValueUnits = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMeta"/> and sets the default values.
@@ -116,7 +159,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,6 +204,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("routingHint", RoutingHint);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips>("tips", Tips);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits>("units", Units);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

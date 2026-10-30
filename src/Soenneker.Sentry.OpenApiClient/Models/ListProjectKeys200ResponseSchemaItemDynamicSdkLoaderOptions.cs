@@ -11,19 +11,36 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("hasDebug") is { } nullNodeHasDebug && nullNodeHasDebug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDebug = null;
+            if (parseNode.GetChildNode("hasFeedback") is { } nullNodeHasFeedback && nullNodeHasFeedback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasFeedback = null;
+            if (parseNode.GetChildNode("hasLogsAndMetrics") is { } nullNodeHasLogsAndMetrics && nullNodeHasLogsAndMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasLogsAndMetrics = null;
+            if (parseNode.GetChildNode("hasPerformance") is { } nullNodeHasPerformance && nullNodeHasPerformance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPerformance = null;
+            if (parseNode.GetChildNode("hasReplay") is { } nullNodeHasReplay && nullNodeHasReplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasReplay = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hasDebug property</summary>
-        public bool? HasDebug { get; set; }
+        public bool? HasDebug { get => _explicitNullValueHasDebug; set { _explicitNullValueHasDebug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasDebug"); else _explicitNullProperties?.Remove("hasDebug"); } }
+        private bool? _explicitNullValueHasDebug = default!;
         /// <summary>The hasFeedback property</summary>
-        public bool? HasFeedback { get; set; }
+        public bool? HasFeedback { get => _explicitNullValueHasFeedback; set { _explicitNullValueHasFeedback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFeedback"); else _explicitNullProperties?.Remove("hasFeedback"); } }
+        private bool? _explicitNullValueHasFeedback = default!;
         /// <summary>The hasLogsAndMetrics property</summary>
-        public bool? HasLogsAndMetrics { get; set; }
+        public bool? HasLogsAndMetrics { get => _explicitNullValueHasLogsAndMetrics; set { _explicitNullValueHasLogsAndMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasLogsAndMetrics"); else _explicitNullProperties?.Remove("hasLogsAndMetrics"); } }
+        private bool? _explicitNullValueHasLogsAndMetrics = default!;
         /// <summary>The hasPerformance property</summary>
-        public bool? HasPerformance { get; set; }
+        public bool? HasPerformance { get => _explicitNullValueHasPerformance; set { _explicitNullValueHasPerformance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPerformance"); else _explicitNullProperties?.Remove("hasPerformance"); } }
+        private bool? _explicitNullValueHasPerformance = default!;
         /// <summary>The hasReplay property</summary>
-        public bool? HasReplay { get; set; }
+        public bool? HasReplay { get => _explicitNullValueHasReplay; set { _explicitNullValueHasReplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasReplay"); else _explicitNullProperties?.Remove("hasReplay"); } }
+        private bool? _explicitNullValueHasReplay = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions"/> and sets the default values.
         /// </summary>
@@ -39,7 +56,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("hasLogsAndMetrics", HasLogsAndMetrics);
             writer.WriteBoolValue("hasPerformance", HasPerformance);
             writer.WriteBoolValue("hasReplay", HasReplay);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

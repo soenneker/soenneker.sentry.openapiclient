@@ -11,60 +11,94 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListProjectReleases200ResponseItemProjectsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateReleased") is { } nullNodeDateReleased && nullNodeDateReleased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateReleased = null;
+            if (parseNode.GetChildNode("dateStarted") is { } nullNodeDateStarted && nullNodeDateStarted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateStarted = null;
+            if (parseNode.GetChildNode("hasHealthData") is { } nullNodeHasHealthData && nullNodeHasHealthData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasHealthData = null;
+            if (parseNode.GetChildNode("healthData") is { } nullNodeHealthData && nullNodeHealthData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HealthData = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("newGroups") is { } nullNodeNewGroups && nullNodeNewGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NewGroups = null;
+            if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("platforms") is { } nullNodePlatforms && nullNodePlatforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platforms = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateReleased property</summary>
-        public DateTimeOffset? DateReleased { get; set; }
+        public DateTimeOffset? DateReleased { get => _explicitNullValueDateReleased; set { _explicitNullValueDateReleased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReleased"); else _explicitNullProperties?.Remove("dateReleased"); } }
+        private DateTimeOffset? _explicitNullValueDateReleased = default!;
         /// <summary>The dateStarted property</summary>
-        public DateTimeOffset? DateStarted { get; set; }
+        public DateTimeOffset? DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
+        private DateTimeOffset? _explicitNullValueDateStarted = default!;
         /// <summary>The hasHealthData property</summary>
-        public bool? HasHealthData { get; set; }
+        public bool? HasHealthData { get => _explicitNullValueHasHealthData; set { _explicitNullValueHasHealthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasHealthData"); else _explicitNullProperties?.Remove("hasHealthData"); } }
+        private bool? _explicitNullValueHasHealthData = default!;
         /// <summary>The healthData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData? HealthData { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData? HealthData { get => _explicitNullValueHealthData; set { _explicitNullValueHealthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthData"); else _explicitNullProperties?.Remove("healthData"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData? _explicitNullValueHealthData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData HealthData { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData HealthData { get => _explicitNullValueHealthData; set { _explicitNullValueHealthData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthData"); else _explicitNullProperties?.Remove("healthData"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItemHealthData _explicitNullValueHealthData = default!;
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The newGroups property</summary>
-        public int? NewGroups { get; set; }
+        public int? NewGroups { get => _explicitNullValueNewGroups; set { _explicitNullValueNewGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newGroups"); else _explicitNullProperties?.Remove("newGroups"); } }
+        private int? _explicitNullValueNewGroups = default!;
         /// <summary>The platform property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform { get; set; }
+        public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string? _explicitNullValuePlatform = default!;
 #nullable restore
 #else
-        public string Platform { get; set; }
+        public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>The platforms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Platforms { get; set; }
+        public List<string>? Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
+        private List<string>? _explicitNullValuePlatforms = default!;
 #nullable restore
 #else
-        public List<string> Platforms { get; set; }
+        public List<string> Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
+        private List<string> _explicitNullValuePlatforms = default!;
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem"/> and sets the default values.
@@ -81,7 +115,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReleases200ResponseItemProjectsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +156,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
             writer.WriteStringValue("slug", Slug);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,47 +11,72 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImage : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("canvas_theme") is { } nullNodeCanvasTheme && nullNodeCanvasTheme.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CanvasTheme = null;
+            if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("image_file_name") is { } nullNodeImageFileName && nullNodeImageFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageFileName = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("width") is { } nullNodeWidth && nullNodeWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Width = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The canvas_theme property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImageCanvasTheme? CanvasTheme { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImageCanvasTheme? CanvasTheme { get => _explicitNullValueCanvasTheme; set { _explicitNullValueCanvasTheme = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canvas_theme"); else _explicitNullProperties?.Remove("canvas_theme"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImageCanvasTheme? _explicitNullValueCanvasTheme = default!;
         /// <summary>The display_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private string _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Group { get; set; }
+        public string? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private string? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public string Group { get; set; }
+        public string Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private string _explicitNullValueGroup = default!;
 #endif
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public int? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private int? _explicitNullValueHeight = default!;
         /// <summary>The image_file_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageFileName { get; set; }
+        public string? ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
+        private string? _explicitNullValueImageFileName = default!;
 #nullable restore
 #else
-        public string ImageFileName { get; set; }
+        public string ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
+        private string _explicitNullValueImageFileName = default!;
 #endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The width property</summary>
-        public int? Width { get; set; }
+        public int? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
+        private int? _explicitNullValueWidth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImage"/> and sets the default values.
         /// </summary>
@@ -67,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItemBaseImage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +125,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("image_file_name", ImageFileName);
             writer.WriteStringValue("key", Key);
             writer.WriteIntValue("width", Width);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

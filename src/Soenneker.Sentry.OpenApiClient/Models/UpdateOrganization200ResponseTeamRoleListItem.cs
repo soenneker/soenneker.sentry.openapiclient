@@ -11,56 +11,86 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganization200ResponseTeamRoleListItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowed") is { } nullNodeAllowed && nullNodeAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Allowed = null;
+            if (parseNode.GetChildNode("desc") is { } nullNodeDesc && nullNodeDesc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Desc = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("isAllowed") is { } nullNodeIsAllowed && nullNodeIsAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAllowed = null;
+            if (parseNode.GetChildNode("isMinimumRoleFor") is { } nullNodeIsMinimumRoleFor && nullNodeIsMinimumRoleFor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMinimumRoleFor = null;
+            if (parseNode.GetChildNode("isRetired") is { } nullNodeIsRetired && nullNodeIsRetired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsRetired = null;
+            if (parseNode.GetChildNode("isTeamRolesAllowed") is { } nullNodeIsTeamRolesAllowed && nullNodeIsTeamRolesAllowed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTeamRolesAllowed = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allowed property</summary>
-        public bool? Allowed { get; set; }
+        public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
+        private bool? _explicitNullValueAllowed = default!;
         /// <summary>The desc property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Desc { get; set; }
+        public string? Desc { get => _explicitNullValueDesc; set { _explicitNullValueDesc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desc"); else _explicitNullProperties?.Remove("desc"); } }
+        private string? _explicitNullValueDesc = default!;
 #nullable restore
 #else
-        public string Desc { get; set; }
+        public string Desc { get => _explicitNullValueDesc; set { _explicitNullValueDesc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desc"); else _explicitNullProperties?.Remove("desc"); } }
+        private string _explicitNullValueDesc = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The isAllowed property</summary>
-        public bool? IsAllowed { get; set; }
+        public bool? IsAllowed { get => _explicitNullValueIsAllowed; set { _explicitNullValueIsAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAllowed"); else _explicitNullProperties?.Remove("isAllowed"); } }
+        private bool? _explicitNullValueIsAllowed = default!;
         /// <summary>The isMinimumRoleFor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IsMinimumRoleFor { get; set; }
+        public string? IsMinimumRoleFor { get => _explicitNullValueIsMinimumRoleFor; set { _explicitNullValueIsMinimumRoleFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMinimumRoleFor"); else _explicitNullProperties?.Remove("isMinimumRoleFor"); } }
+        private string? _explicitNullValueIsMinimumRoleFor = default!;
 #nullable restore
 #else
-        public string IsMinimumRoleFor { get; set; }
+        public string IsMinimumRoleFor { get => _explicitNullValueIsMinimumRoleFor; set { _explicitNullValueIsMinimumRoleFor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMinimumRoleFor"); else _explicitNullProperties?.Remove("isMinimumRoleFor"); } }
+        private string _explicitNullValueIsMinimumRoleFor = default!;
 #endif
         /// <summary>The isRetired property</summary>
-        public bool? IsRetired { get; set; }
+        public bool? IsRetired { get => _explicitNullValueIsRetired; set { _explicitNullValueIsRetired = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRetired"); else _explicitNullProperties?.Remove("isRetired"); } }
+        private bool? _explicitNullValueIsRetired = default!;
         /// <summary>The isTeamRolesAllowed property</summary>
-        public bool? IsTeamRolesAllowed { get; set; }
+        public bool? IsTeamRolesAllowed { get => _explicitNullValueIsTeamRolesAllowed; set { _explicitNullValueIsTeamRolesAllowed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isTeamRolesAllowed"); else _explicitNullProperties?.Remove("isTeamRolesAllowed"); } }
+        private bool? _explicitNullValueIsTeamRolesAllowed = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The scopes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Scopes { get; set; }
+        public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string>? _explicitNullValueScopes = default!;
 #nullable restore
 #else
-        public List<string> Scopes { get; set; }
+        public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
+        private List<string> _explicitNullValueScopes = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseTeamRoleListItem"/> and sets the default values.
@@ -77,7 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseTeamRoleListItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseTeamRoleListItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganization200ResponseTeamRoleListItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,6 +144,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("isTeamRolesAllowed", IsTeamRolesAllowed);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationWorkflows200ResponseItemActionFiltersItemActions : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,14 +43,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActions();
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item> listOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1ItemValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject) && parseNode.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item> listOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1ItemValue)
             {
                 result.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item = listOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1ItemValue;
             }
             else {
-                result.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item == null && result.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,12 +73,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item == null && ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 != null && ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item == null) { if (ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item != null)
             {
                 writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item>(null, ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1Item);
             }
             else {
+                if (ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1>(null, ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsMember1);
             }
         }

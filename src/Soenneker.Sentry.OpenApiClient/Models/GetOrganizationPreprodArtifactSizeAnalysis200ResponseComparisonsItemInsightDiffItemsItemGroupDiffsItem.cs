@@ -11,46 +11,71 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("baseSize") is { } nullNodeBaseSize && nullNodeBaseSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseSize = null;
+            if (parseNode.GetChildNode("diffItems") is { } nullNodeDiffItems && nullNodeDiffItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffItems = null;
+            if (parseNode.GetChildNode("headSize") is { } nullNodeHeadSize && nullNodeHeadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSize = null;
+            if (parseNode.GetChildNode("itemType") is { } nullNodeItemType && nullNodeItemType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemType = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+            if (parseNode.GetChildNode("sizeDiff") is { } nullNodeSizeDiff && nullNodeSizeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SizeDiff = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The baseSize property</summary>
-        public int? BaseSize { get; set; }
+        public int? BaseSize { get => _explicitNullValueBaseSize; set { _explicitNullValueBaseSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSize"); else _explicitNullProperties?.Remove("baseSize"); } }
+        private int? _explicitNullValueBaseSize = default!;
         /// <summary>The diffItems property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DiffItems { get; set; }
+        public UntypedNode? DiffItems { get => _explicitNullValueDiffItems; set { _explicitNullValueDiffItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diffItems"); else _explicitNullProperties?.Remove("diffItems"); } }
+        private UntypedNode? _explicitNullValueDiffItems = default!;
 #nullable restore
 #else
-        public UntypedNode DiffItems { get; set; }
+        public UntypedNode DiffItems { get => _explicitNullValueDiffItems; set { _explicitNullValueDiffItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diffItems"); else _explicitNullProperties?.Remove("diffItems"); } }
+        private UntypedNode _explicitNullValueDiffItems = default!;
 #endif
         /// <summary>The headSize property</summary>
-        public int? HeadSize { get; set; }
+        public int? HeadSize { get => _explicitNullValueHeadSize; set { _explicitNullValueHeadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSize"); else _explicitNullProperties?.Remove("headSize"); } }
+        private int? _explicitNullValueHeadSize = default!;
         /// <summary>The itemType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemType { get; set; }
+        public string? ItemType { get => _explicitNullValueItemType; set { _explicitNullValueItemType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemType"); else _explicitNullProperties?.Remove("itemType"); } }
+        private string? _explicitNullValueItemType = default!;
 #nullable restore
 #else
-        public string ItemType { get; set; }
+        public string ItemType { get => _explicitNullValueItemType; set { _explicitNullValueItemType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemType"); else _explicitNullProperties?.Remove("itemType"); } }
+        private string _explicitNullValueItemType = default!;
 #endif
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get; set; }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string _explicitNullValuePath = default!;
 #endif
         /// <summary>The sizeDiff property</summary>
-        public int? SizeDiff { get; set; }
+        public int? SizeDiff { get => _explicitNullValueSizeDiff; set { _explicitNullValueSizeDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sizeDiff"); else _explicitNullProperties?.Remove("sizeDiff"); } }
+        private int? _explicitNullValueSizeDiff = default!;
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem"/> and sets the default values.
@@ -67,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +125,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("path", Path);
             writer.WriteIntValue("sizeDiff", SizeDiff);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

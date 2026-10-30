@@ -11,86 +11,126 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectCodeOwners200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("codeMapping") is { } nullNodeCodeMapping && nullNodeCodeMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeMapping = null;
+            if (parseNode.GetChildNode("codeMappingId") is { } nullNodeCodeMappingId && nullNodeCodeMappingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeMappingId = null;
+            if (parseNode.GetChildNode("codeOwnersUrl") is { } nullNodeCodeOwnersUrl && nullNodeCodeOwnersUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeOwnersUrl = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateSynced") is { } nullNodeDateSynced && nullNodeDateSynced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateSynced = null;
+            if (parseNode.GetChildNode("dateUpdated") is { } nullNodeDateUpdated && nullNodeDateUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUpdated = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("ownershipSyntax") is { } nullNodeOwnershipSyntax && nullNodeOwnershipSyntax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnershipSyntax = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The codeMapping property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping? CodeMapping { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping? CodeMapping { get => _explicitNullValueCodeMapping; set { _explicitNullValueCodeMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeMapping"); else _explicitNullProperties?.Remove("codeMapping"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping? _explicitNullValueCodeMapping = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping CodeMapping { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping CodeMapping { get => _explicitNullValueCodeMapping; set { _explicitNullValueCodeMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeMapping"); else _explicitNullProperties?.Remove("codeMapping"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseCodeMapping _explicitNullValueCodeMapping = default!;
 #endif
         /// <summary>The codeMappingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeMappingId { get; set; }
+        public string? CodeMappingId { get => _explicitNullValueCodeMappingId; set { _explicitNullValueCodeMappingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeMappingId"); else _explicitNullProperties?.Remove("codeMappingId"); } }
+        private string? _explicitNullValueCodeMappingId = default!;
 #nullable restore
 #else
-        public string CodeMappingId { get; set; }
+        public string CodeMappingId { get => _explicitNullValueCodeMappingId; set { _explicitNullValueCodeMappingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeMappingId"); else _explicitNullProperties?.Remove("codeMappingId"); } }
+        private string _explicitNullValueCodeMappingId = default!;
 #endif
         /// <summary>The codeOwnersUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeOwnersUrl { get; set; }
+        public string? CodeOwnersUrl { get => _explicitNullValueCodeOwnersUrl; set { _explicitNullValueCodeOwnersUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeOwnersUrl"); else _explicitNullProperties?.Remove("codeOwnersUrl"); } }
+        private string? _explicitNullValueCodeOwnersUrl = default!;
 #nullable restore
 #else
-        public string CodeOwnersUrl { get; set; }
+        public string CodeOwnersUrl { get => _explicitNullValueCodeOwnersUrl; set { _explicitNullValueCodeOwnersUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeOwnersUrl"); else _explicitNullProperties?.Remove("codeOwnersUrl"); } }
+        private string _explicitNullValueCodeOwnersUrl = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateSynced property</summary>
-        public DateTimeOffset? DateSynced { get; set; }
+        public DateTimeOffset? DateSynced { get => _explicitNullValueDateSynced; set { _explicitNullValueDateSynced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateSynced"); else _explicitNullProperties?.Remove("dateSynced"); } }
+        private DateTimeOffset? _explicitNullValueDateSynced = default!;
         /// <summary>The dateUpdated property</summary>
-        public DateTimeOffset? DateUpdated { get; set; }
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors? Errors { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors Errors { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseErrors _explicitNullValueErrors = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The ownershipSyntax property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnershipSyntax { get; set; }
+        public string? OwnershipSyntax { get => _explicitNullValueOwnershipSyntax; set { _explicitNullValueOwnershipSyntax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownershipSyntax"); else _explicitNullProperties?.Remove("ownershipSyntax"); } }
+        private string? _explicitNullValueOwnershipSyntax = default!;
 #nullable restore
 #else
-        public string OwnershipSyntax { get; set; }
+        public string OwnershipSyntax { get => _explicitNullValueOwnershipSyntax; set { _explicitNullValueOwnershipSyntax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ownershipSyntax"); else _explicitNullProperties?.Remove("ownershipSyntax"); } }
+        private string _explicitNullValueOwnershipSyntax = default!;
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Raw { get; set; }
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public string Raw { get; set; }
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string _explicitNullValueRaw = default!;
 #endif
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1? Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1 Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1 Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1 _explicitNullValueSchema = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200Response"/> and sets the default values.
@@ -107,7 +147,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,6 +190,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectCodeOwners200ResponseSchemaAnyOf1>("schema", Schema);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

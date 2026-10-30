@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("equations") is { } nullNodeEquations && nullNodeEquations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Equations = null;
+            if (parseNode.GetChildNode("orderby") is { } nullNodeOrderby && nullNodeOrderby.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Orderby = null;
+            if (parseNode.GetChildNode("selected_columns") is { } nullNodeSelectedColumns && nullNodeSelectedColumns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SelectedColumns = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The equations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem>? Equations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem>? Equations { get => _explicitNullValueEquations; set { _explicitNullValueEquations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equations"); else _explicitNullProperties?.Remove("equations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem>? _explicitNullValueEquations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem> Equations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem> Equations { get => _explicitNullValueEquations; set { _explicitNullValueEquations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equations"); else _explicitNullProperties?.Remove("equations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem> _explicitNullValueEquations = default!;
 #endif
         /// <summary>The orderby property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem>? Orderby { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem>? Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem>? _explicitNullValueOrderby = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem> Orderby { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem> Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem> _explicitNullValueOrderby = default!;
 #endif
         /// <summary>The selected_columns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SelectedColumns { get; set; }
+        public List<string>? SelectedColumns { get => _explicitNullValueSelectedColumns; set { _explicitNullValueSelectedColumns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_columns"); else _explicitNullProperties?.Remove("selected_columns"); } }
+        private List<string>? _explicitNullValueSelectedColumns = default!;
 #nullable restore
 #else
-        public List<string> SelectedColumns { get; set; }
+        public List<string> SelectedColumns { get => _explicitNullValueSelectedColumns; set { _explicitNullValueSelectedColumns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_columns"); else _explicitNullProperties?.Remove("selected_columns"); } }
+        private List<string> _explicitNullValueSelectedColumns = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItem>("equations", Equations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemOrderbyItem>("orderby", Orderby);
             writer.WriteCollectionOfPrimitiveValues<string>("selected_columns", SelectedColumns);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

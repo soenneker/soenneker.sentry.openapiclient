@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Teams.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DeleteProjectTeam200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DeleteProjectTeam200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.DeleteProjectTeam200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.DeleteProjectTeam200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Give a team access to a project.
@@ -67,7 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Teams.Item
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.AddProjectTeam201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Revoke a team&apos;s access to a project.Note that Team Admins can only revoke access to teams they are admins of.

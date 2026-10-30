@@ -12,42 +12,63 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("cause") is { } nullNodeCause && nullNodeCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cause = null;
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("outcome") is { } nullNodeOutcome && nullNodeOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Outcome = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+        public string? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private string? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public string Category { get; set; }
+        public string Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        private string _explicitNullValueCategory = default!;
 #endif
         /// <summary>The cause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cause { get; set; }
+        public string? Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private string? _explicitNullValueCause = default!;
 #nullable restore
 #else
-        public string Cause { get; set; }
+        public string Cause { get => _explicitNullValueCause; set { _explicitNullValueCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cause"); else _explicitNullProperties?.Remove("cause"); } }
+        private string _explicitNullValueCause = default!;
 #endif
         /// <summary>The count property</summary>
-        public int? Count { get; set; }
+        public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private int? _explicitNullValueCount = default!;
         /// <summary>The outcome property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Outcome { get; set; }
+        public string? Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private string? _explicitNullValueOutcome = default!;
 #nullable restore
 #else
-        public string Outcome { get; set; }
+        public string Outcome { get => _explicitNullValueOutcome; set { _explicitNullValueOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outcome"); else _explicitNullProperties?.Remove("outcome"); } }
+        private string _explicitNullValueOutcome = default!;
 #endif
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason { get; set; }
+        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string? _explicitNullValueReason = default!;
 #nullable restore
 #else
-        public string Reason { get; set; }
+        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private string _explicitNullValueReason = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMetaSuppressedDropsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("count", Count);
             writer.WriteStringValue("outcome", Outcome);
             writer.WriteStringValue("reason", Reason);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

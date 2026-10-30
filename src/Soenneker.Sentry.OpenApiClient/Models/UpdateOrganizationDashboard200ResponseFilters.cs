@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationDashboard200ResponseFilters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("globalFilter") is { } nullNodeGlobalFilter && nullNodeGlobalFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalFilter = null;
+            if (parseNode.GetChildNode("release") is { } nullNodeRelease && nullNodeRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Release = null;
+            if (parseNode.GetChildNode("releaseId") is { } nullNodeReleaseId && nullNodeReleaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The globalFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem>? GlobalFilter { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem>? GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem>? _explicitNullValueGlobalFilter = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem> GlobalFilter { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem> GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem> _explicitNullValueGlobalFilter = default!;
 #endif
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Release { get; set; }
+        public List<string>? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private List<string>? _explicitNullValueRelease = default!;
 #nullable restore
 #else
-        public List<string> Release { get; set; }
+        public List<string> Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private List<string> _explicitNullValueRelease = default!;
 #endif
         /// <summary>The releaseId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReleaseId { get; set; }
+        public List<string>? ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
+        private List<string>? _explicitNullValueReleaseId = default!;
 #nullable restore
 #else
-        public List<string> ReleaseId { get; set; }
+        public List<string> ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
+        private List<string> _explicitNullValueReleaseId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFilters"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFilters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFilters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseFiltersGlobalFilterItem>("globalFilter", GlobalFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("release", Release);
             writer.WriteCollectionOfPrimitiveValues<string>("releaseId", ReleaseId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations.Item.Ex
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssue200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssue200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create or update an external issue from an integration platform integration.

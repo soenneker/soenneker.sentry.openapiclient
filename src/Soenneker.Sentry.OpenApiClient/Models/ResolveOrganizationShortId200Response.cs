@@ -11,48 +11,70 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResolveOrganizationShortId200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("group") is { } nullNodeGroup && nullNodeGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Group = null;
+            if (parseNode.GetChildNode("groupId") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("organizationSlug") is { } nullNodeOrganizationSlug && nullNodeOrganizationSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationSlug = null;
+            if (parseNode.GetChildNode("projectSlug") is { } nullNodeProjectSlug && nullNodeProjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSlug = null;
+            if (parseNode.GetChildNode("shortId") is { } nullNodeShortId && nullNodeShortId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShortId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup? Group { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup? _explicitNullValueGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup Group { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup _explicitNullValueGroup = default!;
 #endif
         /// <summary>The groupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get; set; }
+        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupId"); else _explicitNullProperties?.Remove("groupId"); } }
+        private string? _explicitNullValueGroupId = default!;
 #nullable restore
 #else
-        public string GroupId { get; set; }
+        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupId"); else _explicitNullProperties?.Remove("groupId"); } }
+        private string _explicitNullValueGroupId = default!;
 #endif
         /// <summary>The organizationSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationSlug { get; set; }
+        public string? OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string? _explicitNullValueOrganizationSlug = default!;
 #nullable restore
 #else
-        public string OrganizationSlug { get; set; }
+        public string OrganizationSlug { get => _explicitNullValueOrganizationSlug; set { _explicitNullValueOrganizationSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationSlug"); else _explicitNullProperties?.Remove("organizationSlug"); } }
+        private string _explicitNullValueOrganizationSlug = default!;
 #endif
         /// <summary>The projectSlug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectSlug { get; set; }
+        public string? ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSlug"); else _explicitNullProperties?.Remove("projectSlug"); } }
+        private string? _explicitNullValueProjectSlug = default!;
 #nullable restore
 #else
-        public string ProjectSlug { get; set; }
+        public string ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSlug"); else _explicitNullProperties?.Remove("projectSlug"); } }
+        private string _explicitNullValueProjectSlug = default!;
 #endif
         /// <summary>The shortId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShortId { get; set; }
+        public string? ShortId { get => _explicitNullValueShortId; set { _explicitNullValueShortId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortId"); else _explicitNullProperties?.Remove("shortId"); } }
+        private string? _explicitNullValueShortId = default!;
 #nullable restore
 #else
-        public string ShortId { get; set; }
+        public string ShortId { get => _explicitNullValueShortId; set { _explicitNullValueShortId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortId"); else _explicitNullProperties?.Remove("shortId"); } }
+        private string _explicitNullValueShortId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200Response"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("organizationSlug", OrganizationSlug);
             writer.WriteStringValue("projectSlug", ProjectSlug);
             writer.WriteStringValue("shortId", ShortId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

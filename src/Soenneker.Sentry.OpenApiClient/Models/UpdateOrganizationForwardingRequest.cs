@@ -11,33 +11,54 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationForwardingRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("enroll_new_projects") is { } nullNodeEnrollNewProjects && nullNodeEnrollNewProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnrollNewProjects = null;
+            if (parseNode.GetChildNode("is_enabled") is { } nullNodeIsEnabled && nullNodeIsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEnabled = null;
+            if (parseNode.GetChildNode("organization_id") is { } nullNodeOrganizationId && nullNodeOrganizationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationId = null;
+            if (parseNode.GetChildNode("project_ids") is { } nullNodeProjectIds && nullNodeProjectIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectIds = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration for the data forwarder, specific to the provider type. For a &apos;sqs&apos; provider, the required keys are queue_url, region, access_key, secret_key. If using a FIFO queue, you must also provide a message_group_id, though s3_bucket is optional. For a &apos;segment&apos; provider, the required keys are write_key. For a &apos;splunk&apos; provider, the required keys are instance_url, index, source, token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>Whether to enroll new projects automatically, after they&apos;re created.</summary>
-        public bool? EnrollNewProjects { get; set; }
+        public bool? EnrollNewProjects { get => _explicitNullValueEnrollNewProjects; set { _explicitNullValueEnrollNewProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enroll_new_projects"); else _explicitNullProperties?.Remove("enroll_new_projects"); } }
+        private bool? _explicitNullValueEnrollNewProjects = default!;
         /// <summary>Whether the data forwarder is enabled.</summary>
-        public bool? IsEnabled { get; set; }
+        public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_enabled"); else _explicitNullProperties?.Remove("is_enabled"); } }
+        private bool? _explicitNullValueIsEnabled = default!;
         /// <summary>The ID of the organization related to the data forwarder.</summary>
-        public int? OrganizationId { get; set; }
+        public int? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization_id"); else _explicitNullProperties?.Remove("organization_id"); } }
+        private int? _explicitNullValueOrganizationId = default!;
         /// <summary>The IDs of the projects connected to the data forwarder. Missing project IDs will be unenrolled if previously enrolled.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ProjectIds { get; set; }
+        public List<int?>? ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<int?>? _explicitNullValueProjectIds = default!;
 #nullable restore
 #else
-        public List<int?> ProjectIds { get; set; }
+        public List<int?> ProjectIds { get => _explicitNullValueProjectIds; set { _explicitNullValueProjectIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_ids"); else _explicitNullProperties?.Remove("project_ids"); } }
+        private List<int?> _explicitNullValueProjectIds = default!;
 #endif
         /// <summary>The provider of the data forwarder. One of &quot;segment&quot;, &quot;sqs&quot;, or &quot;splunk&quot;.* `segment` - Segment* `sqs` - Amazon SQS* `splunk` - Splunk</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestProvider? _explicitNullValueProvider = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequest"/> and sets the default values.
         /// </summary>
@@ -55,7 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("organization_id", OrganizationId);
             writer.WriteCollectionOfPrimitiveValues<int?>("project_ids", ProjectIds);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwardingRequestProvider>("provider", Provider);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

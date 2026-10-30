@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover.Sa
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseSchemaItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover.Sa
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQuery201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQuery201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQuery201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQuery201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of saved queries that are associated with the given organization.

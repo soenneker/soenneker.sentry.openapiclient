@@ -11,21 +11,35 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("debug_id") is { } nullNodeDebugId && nullNodeDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugId = null;
+            if (parseNode.GetChildNode("uploaded_source_file_with_correct_debug_id") is { } nullNodeUploadedSourceFileWithCorrectDebugId && nullNodeUploadedSourceFileWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceFileWithCorrectDebugId = null;
+            if (parseNode.GetChildNode("uploaded_source_map_with_correct_debug_id") is { } nullNodeUploadedSourceMapWithCorrectDebugId && nullNodeUploadedSourceMapWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceMapWithCorrectDebugId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The debug_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DebugId { get; set; }
+        public string? DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
+        private string? _explicitNullValueDebugId = default!;
 #nullable restore
 #else
-        public string DebugId { get; set; }
+        public string DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
+        private string _explicitNullValueDebugId = default!;
 #endif
         /// <summary>The uploaded_source_file_with_correct_debug_id property</summary>
-        public bool? UploadedSourceFileWithCorrectDebugId { get; set; }
+        public bool? UploadedSourceFileWithCorrectDebugId { get => _explicitNullValueUploadedSourceFileWithCorrectDebugId; set { _explicitNullValueUploadedSourceFileWithCorrectDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_file_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_file_with_correct_debug_id"); } }
+        private bool? _explicitNullValueUploadedSourceFileWithCorrectDebugId = default!;
         /// <summary>The uploaded_source_map_with_correct_debug_id property</summary>
-        public bool? UploadedSourceMapWithCorrectDebugId { get; set; }
+        public bool? UploadedSourceMapWithCorrectDebugId { get => _explicitNullValueUploadedSourceMapWithCorrectDebugId; set { _explicitNullValueUploadedSourceMapWithCorrectDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_map_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_map_with_correct_debug_id"); } }
+        private bool? _explicitNullValueUploadedSourceMapWithCorrectDebugId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("debug_id", DebugId);
             writer.WriteBoolValue("uploaded_source_file_with_correct_debug_id", UploadedSourceFileWithCorrectDebugId);
             writer.WriteBoolValue("uploaded_source_map_with_correct_debug_id", UploadedSourceMapWithCorrectDebugId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

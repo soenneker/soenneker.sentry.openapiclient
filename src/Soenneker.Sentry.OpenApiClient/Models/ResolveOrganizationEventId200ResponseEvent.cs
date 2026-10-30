@@ -11,228 +11,325 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ResolveOrganizationEventId200ResponseEvent : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("breakdowns") is { } nullNodeBreakdowns && nullNodeBreakdowns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdowns = null;
+            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("contexts") is { } nullNodeContexts && nullNodeContexts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contexts = null;
+            if (parseNode.GetChildNode("crashFile") is { } nullNodeCrashFile && nullNodeCrashFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CrashFile = null;
+            if (parseNode.GetChildNode("culprit") is { } nullNodeCulprit && nullNodeCulprit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Culprit = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateReceived") is { } nullNodeDateReceived && nullNodeDateReceived.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateReceived = null;
+            if (parseNode.GetChildNode("dist") is { } nullNodeDist && nullNodeDist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dist = null;
+            if (parseNode.GetChildNode("endTimestamp") is { } nullNodeEndTimestamp && nullNodeEndTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndTimestamp = null;
+            if (parseNode.GetChildNode("entries") is { } nullNodeEntries && nullNodeEntries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entries = null;
+            if (parseNode.GetChildNode("errors") is { } nullNodeErrors && nullNodeErrors.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errors = null;
+            if (parseNode.GetChildNode("eventID") is { } nullNodeEventID && nullNodeEventID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventID = null;
+            if (parseNode.GetChildNode("fingerprints") is { } nullNodeFingerprints && nullNodeFingerprints.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fingerprints = null;
+            if (parseNode.GetChildNode("groupID") is { } nullNodeGroupID && nullNodeGroupID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupID = null;
+            if (parseNode.GetChildNode("groupingConfig") is { } nullNodeGroupingConfig && nullNodeGroupingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupingConfig = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("location") is { } nullNodeLocation && nullNodeLocation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Location = null;
+            if (parseNode.GetChildNode("measurements") is { } nullNodeMeasurements && nullNodeMeasurements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measurements = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("_meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("metadata") is { } nullNodeMetadata && nullNodeMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Metadata = null;
+            if (parseNode.GetChildNode("occurrence") is { } nullNodeOccurrence && nullNodeOccurrence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Occurrence = null;
+            if (parseNode.GetChildNode("packages") is { } nullNodePackages && nullNodePackages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Packages = null;
+            if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("projectID") is { } nullNodeProjectID && nullNodeProjectID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectID = null;
+            if (parseNode.GetChildNode("sdk") is { } nullNodeSdk && nullNodeSdk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sdk = null;
+            if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+            if (parseNode.GetChildNode("startTimestamp") is { } nullNodeStartTimestamp && nullNodeStartTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartTimestamp = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The breakdowns property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns? Breakdowns { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns? Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns? _explicitNullValueBreakdowns = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns Breakdowns { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventBreakdowns _explicitNullValueBreakdowns = default!;
 #endif
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext? Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContext _explicitNullValueContext = default!;
 #endif
         /// <summary>The contexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts? Contexts { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts? Contexts { get => _explicitNullValueContexts; set { _explicitNullValueContexts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contexts"); else _explicitNullProperties?.Remove("contexts"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts? _explicitNullValueContexts = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts Contexts { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts Contexts { get => _explicitNullValueContexts; set { _explicitNullValueContexts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contexts"); else _explicitNullProperties?.Remove("contexts"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventContexts _explicitNullValueContexts = default!;
 #endif
         /// <summary>The crashFile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CrashFile { get; set; }
+        public string? CrashFile { get => _explicitNullValueCrashFile; set { _explicitNullValueCrashFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFile"); else _explicitNullProperties?.Remove("crashFile"); } }
+        private string? _explicitNullValueCrashFile = default!;
 #nullable restore
 #else
-        public string CrashFile { get; set; }
+        public string CrashFile { get => _explicitNullValueCrashFile; set { _explicitNullValueCrashFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFile"); else _explicitNullProperties?.Remove("crashFile"); } }
+        private string _explicitNullValueCrashFile = default!;
 #endif
         /// <summary>The culprit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Culprit { get; set; }
+        public string? Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
+        private string? _explicitNullValueCulprit = default!;
 #nullable restore
 #else
-        public string Culprit { get; set; }
+        public string Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
+        private string _explicitNullValueCulprit = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateReceived property</summary>
-        public DateTimeOffset? DateReceived { get; set; }
+        public DateTimeOffset? DateReceived { get => _explicitNullValueDateReceived; set { _explicitNullValueDateReceived = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReceived"); else _explicitNullProperties?.Remove("dateReceived"); } }
+        private DateTimeOffset? _explicitNullValueDateReceived = default!;
         /// <summary>The dist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dist { get; set; }
+        public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string? _explicitNullValueDist = default!;
 #nullable restore
 #else
-        public string Dist { get; set; }
+        public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string _explicitNullValueDist = default!;
 #endif
         /// <summary>The endTimestamp property</summary>
-        public double? EndTimestamp { get; set; }
+        public double? EndTimestamp { get => _explicitNullValueEndTimestamp; set { _explicitNullValueEndTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTimestamp"); else _explicitNullProperties?.Remove("endTimestamp"); } }
+        private double? _explicitNullValueEndTimestamp = default!;
         /// <summary>The entries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Entries { get; set; }
+        public UntypedNode? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private UntypedNode? _explicitNullValueEntries = default!;
 #nullable restore
 #else
-        public UntypedNode Entries { get; set; }
+        public UntypedNode Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
+        private UntypedNode _explicitNullValueEntries = default!;
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem>? Errors { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem>? _explicitNullValueErrors = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem> Errors { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventErrorsItem> _explicitNullValueErrors = default!;
 #endif
         /// <summary>The eventID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventID { get; set; }
+        public string? EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
+        private string? _explicitNullValueEventID = default!;
 #nullable restore
 #else
-        public string EventID { get; set; }
+        public string EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
+        private string _explicitNullValueEventID = default!;
 #endif
         /// <summary>The fingerprints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fingerprints { get; set; }
+        public List<string>? Fingerprints { get => _explicitNullValueFingerprints; set { _explicitNullValueFingerprints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprints"); else _explicitNullProperties?.Remove("fingerprints"); } }
+        private List<string>? _explicitNullValueFingerprints = default!;
 #nullable restore
 #else
-        public List<string> Fingerprints { get; set; }
+        public List<string> Fingerprints { get => _explicitNullValueFingerprints; set { _explicitNullValueFingerprints = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprints"); else _explicitNullProperties?.Remove("fingerprints"); } }
+        private List<string> _explicitNullValueFingerprints = default!;
 #endif
         /// <summary>The groupID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupID { get; set; }
+        public string? GroupID { get => _explicitNullValueGroupID; set { _explicitNullValueGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupID"); else _explicitNullProperties?.Remove("groupID"); } }
+        private string? _explicitNullValueGroupID = default!;
 #nullable restore
 #else
-        public string GroupID { get; set; }
+        public string GroupID { get => _explicitNullValueGroupID; set { _explicitNullValueGroupID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupID"); else _explicitNullProperties?.Remove("groupID"); } }
+        private string _explicitNullValueGroupID = default!;
 #endif
         /// <summary>The groupingConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig? GroupingConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig? GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig? _explicitNullValueGroupingConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig GroupingConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventGroupingConfig _explicitNullValueGroupingConfig = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The location property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Location { get; set; }
+        public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private string? _explicitNullValueLocation = default!;
 #nullable restore
 #else
-        public string Location { get; set; }
+        public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
+        private string _explicitNullValueLocation = default!;
 #endif
         /// <summary>The measurements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements? Measurements { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements? Measurements { get => _explicitNullValueMeasurements; set { _explicitNullValueMeasurements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurements"); else _explicitNullProperties?.Remove("measurements"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements? _explicitNullValueMeasurements = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements Measurements { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements Measurements { get => _explicitNullValueMeasurements; set { _explicitNullValueMeasurements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurements"); else _explicitNullProperties?.Remove("measurements"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeasurements _explicitNullValueMeasurements = default!;
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta? Meta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta Meta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata? Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata Metadata { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventMetadata _explicitNullValueMetadata = default!;
 #endif
         /// <summary>The occurrence property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence? Occurrence { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence? Occurrence { get => _explicitNullValueOccurrence; set { _explicitNullValueOccurrence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrence"); else _explicitNullProperties?.Remove("occurrence"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence? _explicitNullValueOccurrence = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence Occurrence { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence Occurrence { get => _explicitNullValueOccurrence; set { _explicitNullValueOccurrence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrence"); else _explicitNullProperties?.Remove("occurrence"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventOccurrence _explicitNullValueOccurrence = default!;
 #endif
         /// <summary>The packages property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages? Packages { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages? Packages { get => _explicitNullValuePackages; set { _explicitNullValuePackages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packages"); else _explicitNullProperties?.Remove("packages"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages? _explicitNullValuePackages = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages Packages { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages Packages { get => _explicitNullValuePackages; set { _explicitNullValuePackages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packages"); else _explicitNullProperties?.Remove("packages"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventPackages _explicitNullValuePackages = default!;
 #endif
         /// <summary>The platform property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform { get; set; }
+        public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string? _explicitNullValuePlatform = default!;
 #nullable restore
 #else
-        public string Platform { get; set; }
+        public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>The projectID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectID { get; set; }
+        public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string? _explicitNullValueProjectID = default!;
 #nullable restore
 #else
-        public string ProjectID { get; set; }
+        public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
+        private string _explicitNullValueProjectID = default!;
 #endif
         /// <summary>The sdk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk? Sdk { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk? Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk? _explicitNullValueSdk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk Sdk { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventSdk _explicitNullValueSdk = default!;
 #endif
         /// <summary>The size property</summary>
-        public int? Size { get; set; }
+        public int? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        private int? _explicitNullValueSize = default!;
         /// <summary>The startTimestamp property</summary>
-        public double? StartTimestamp { get; set; }
+        public double? StartTimestamp { get => _explicitNullValueStartTimestamp; set { _explicitNullValueStartTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTimestamp"); else _explicitNullProperties?.Remove("startTimestamp"); } }
+        private double? _explicitNullValueStartTimestamp = default!;
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem>? Tags { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem>? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem> Tags { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventTagsItem> _explicitNullValueTags = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventType? Type { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventType? _explicitNullValueType = default!;
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEvent"/> and sets the default values.
@@ -249,7 +346,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEvent();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -332,6 +429,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200ResponseEventUser>("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

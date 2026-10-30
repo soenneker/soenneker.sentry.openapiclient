@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Gro
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Query an individual team with a SCIM Group GET Request.- Note that the members field will only contain up to 10000 members.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Gro
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2Group200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2Group200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2Group200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2Group200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update a team&apos;s attributes with a SCIM Group PATCH Request.
@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Gro
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a team with a SCIM Group DELETE Request.

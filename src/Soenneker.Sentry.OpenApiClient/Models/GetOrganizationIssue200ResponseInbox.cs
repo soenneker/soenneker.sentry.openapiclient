@@ -11,20 +11,34 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationIssue200ResponseInbox : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("date_added") is { } nullNodeDateAdded && nullNodeDateAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateAdded = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("reason_details") is { } nullNodeReasonDetails && nullNodeReasonDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasonDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The date_added property</summary>
-        public DateTimeOffset? DateAdded { get; set; }
+        public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_added"); else _explicitNullProperties?.Remove("date_added"); } }
+        private DateTimeOffset? _explicitNullValueDateAdded = default!;
         /// <summary>The reason property</summary>
-        public int? Reason { get; set; }
+        public int? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private int? _explicitNullValueReason = default!;
         /// <summary>The reason_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails? ReasonDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails? ReasonDetails { get => _explicitNullValueReasonDetails; set { _explicitNullValueReasonDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_details"); else _explicitNullProperties?.Remove("reason_details"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails? _explicitNullValueReasonDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails ReasonDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails ReasonDetails { get => _explicitNullValueReasonDetails; set { _explicitNullValueReasonDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_details"); else _explicitNullProperties?.Remove("reason_details"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails _explicitNullValueReasonDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInbox"/> and sets the default values.
@@ -41,7 +55,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInbox CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInbox();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInbox(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("date_added", DateAdded);
             writer.WriteIntValue("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails>("reason_details", ReasonDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

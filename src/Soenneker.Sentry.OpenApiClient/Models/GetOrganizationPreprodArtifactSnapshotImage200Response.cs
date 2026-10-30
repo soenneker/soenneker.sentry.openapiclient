@@ -11,58 +11,85 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSnapshotImage200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base_image") is { } nullNodeBaseImage && nullNodeBaseImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseImage = null;
+            if (parseNode.GetChildNode("comparison_status") is { } nullNodeComparisonStatus && nullNodeComparisonStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonStatus = null;
+            if (parseNode.GetChildNode("diff_image_url") is { } nullNodeDiffImageUrl && nullNodeDiffImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffImageUrl = null;
+            if (parseNode.GetChildNode("diff_percentage") is { } nullNodeDiffPercentage && nullNodeDiffPercentage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffPercentage = null;
+            if (parseNode.GetChildNode("head_image") is { } nullNodeHeadImage && nullNodeHeadImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadImage = null;
+            if (parseNode.GetChildNode("image_file_name") is { } nullNodeImageFileName && nullNodeImageFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageFileName = null;
+            if (parseNode.GetChildNode("previous_image_file_name") is { } nullNodePreviousImageFileName && nullNodePreviousImageFileName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousImageFileName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The base_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage? BaseImage { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage? BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage? _explicitNullValueBaseImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage BaseImage { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage _explicitNullValueBaseImage = default!;
 #endif
         /// <summary>The comparison_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonStatus { get; set; }
+        public string? ComparisonStatus { get => _explicitNullValueComparisonStatus; set { _explicitNullValueComparisonStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_status"); else _explicitNullProperties?.Remove("comparison_status"); } }
+        private string? _explicitNullValueComparisonStatus = default!;
 #nullable restore
 #else
-        public string ComparisonStatus { get; set; }
+        public string ComparisonStatus { get => _explicitNullValueComparisonStatus; set { _explicitNullValueComparisonStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_status"); else _explicitNullProperties?.Remove("comparison_status"); } }
+        private string _explicitNullValueComparisonStatus = default!;
 #endif
         /// <summary>The diff_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiffImageUrl { get; set; }
+        public string? DiffImageUrl { get => _explicitNullValueDiffImageUrl; set { _explicitNullValueDiffImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_url"); else _explicitNullProperties?.Remove("diff_image_url"); } }
+        private string? _explicitNullValueDiffImageUrl = default!;
 #nullable restore
 #else
-        public string DiffImageUrl { get; set; }
+        public string DiffImageUrl { get => _explicitNullValueDiffImageUrl; set { _explicitNullValueDiffImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_url"); else _explicitNullProperties?.Remove("diff_image_url"); } }
+        private string _explicitNullValueDiffImageUrl = default!;
 #endif
         /// <summary>The diff_percentage property</summary>
-        public double? DiffPercentage { get; set; }
+        public double? DiffPercentage { get => _explicitNullValueDiffPercentage; set { _explicitNullValueDiffPercentage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_percentage"); else _explicitNullProperties?.Remove("diff_percentage"); } }
+        private double? _explicitNullValueDiffPercentage = default!;
         /// <summary>The head_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage? HeadImage { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage? HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage? _explicitNullValueHeadImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage HeadImage { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage _explicitNullValueHeadImage = default!;
 #endif
         /// <summary>The image_file_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageFileName { get; set; }
+        public string? ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
+        private string? _explicitNullValueImageFileName = default!;
 #nullable restore
 #else
-        public string ImageFileName { get; set; }
+        public string ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
+        private string _explicitNullValueImageFileName = default!;
 #endif
         /// <summary>The previous_image_file_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousImageFileName { get; set; }
+        public string? PreviousImageFileName { get => _explicitNullValuePreviousImageFileName; set { _explicitNullValuePreviousImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_image_file_name"); else _explicitNullProperties?.Remove("previous_image_file_name"); } }
+        private string? _explicitNullValuePreviousImageFileName = default!;
 #nullable restore
 #else
-        public string PreviousImageFileName { get; set; }
+        public string PreviousImageFileName { get => _explicitNullValuePreviousImageFileName; set { _explicitNullValuePreviousImageFileName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_image_file_name"); else _explicitNullProperties?.Remove("previous_image_file_name"); } }
+        private string _explicitNullValuePreviousImageFileName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage>("head_image", HeadImage);
             writer.WriteStringValue("image_file_name", ImageFileName);
             writer.WriteStringValue("previous_image_file_name", PreviousImageFileName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

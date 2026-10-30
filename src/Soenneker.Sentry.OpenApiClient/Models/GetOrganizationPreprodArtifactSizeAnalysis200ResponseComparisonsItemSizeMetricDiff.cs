@@ -11,32 +11,53 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("baseDownloadSize") is { } nullNodeBaseDownloadSize && nullNodeBaseDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseDownloadSize = null;
+            if (parseNode.GetChildNode("baseInstallSize") is { } nullNodeBaseInstallSize && nullNodeBaseInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseInstallSize = null;
+            if (parseNode.GetChildNode("headDownloadSize") is { } nullNodeHeadDownloadSize && nullNodeHeadDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadDownloadSize = null;
+            if (parseNode.GetChildNode("headInstallSize") is { } nullNodeHeadInstallSize && nullNodeHeadInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadInstallSize = null;
+            if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
+            if (parseNode.GetChildNode("metricsArtifactType") is { } nullNodeMetricsArtifactType && nullNodeMetricsArtifactType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsArtifactType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The baseDownloadSize property</summary>
-        public int? BaseDownloadSize { get; set; }
+        public int? BaseDownloadSize { get => _explicitNullValueBaseDownloadSize; set { _explicitNullValueBaseDownloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseDownloadSize"); else _explicitNullProperties?.Remove("baseDownloadSize"); } }
+        private int? _explicitNullValueBaseDownloadSize = default!;
         /// <summary>The baseInstallSize property</summary>
-        public int? BaseInstallSize { get; set; }
+        public int? BaseInstallSize { get => _explicitNullValueBaseInstallSize; set { _explicitNullValueBaseInstallSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseInstallSize"); else _explicitNullProperties?.Remove("baseInstallSize"); } }
+        private int? _explicitNullValueBaseInstallSize = default!;
         /// <summary>The headDownloadSize property</summary>
-        public int? HeadDownloadSize { get; set; }
+        public int? HeadDownloadSize { get => _explicitNullValueHeadDownloadSize; set { _explicitNullValueHeadDownloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headDownloadSize"); else _explicitNullProperties?.Remove("headDownloadSize"); } }
+        private int? _explicitNullValueHeadDownloadSize = default!;
         /// <summary>The headInstallSize property</summary>
-        public int? HeadInstallSize { get; set; }
+        public int? HeadInstallSize { get => _explicitNullValueHeadInstallSize; set { _explicitNullValueHeadInstallSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headInstallSize"); else _explicitNullProperties?.Remove("headInstallSize"); } }
+        private int? _explicitNullValueHeadInstallSize = default!;
         /// <summary>The identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get; set; }
+        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private string? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public string Identifier { get; set; }
+        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private string _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>The metricsArtifactType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricsArtifactType { get; set; }
+        public string? MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
+        private string? _explicitNullValueMetricsArtifactType = default!;
 #nullable restore
 #else
-        public string MetricsArtifactType { get; set; }
+        public string MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
+        private string _explicitNullValueMetricsArtifactType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff"/> and sets the default values.
@@ -53,7 +74,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("headInstallSize", HeadInstallSize);
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteStringValue("metricsArtifactType", MetricsArtifactType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

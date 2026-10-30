@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedbac
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSUserFeedback200ResponseSchemaItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedbac
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a list of user feedback items within this project.*This list does not include submissions from the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget). This is because it is based on an older format called User Reports - read more [here](https://develop.sentry.dev/application/feedback-architecture/#user-reports). To return a list of user feedback items from the widget, please use the [issue API](https://docs.sentry.io/api/events/list-a-projects-issues/) with the filter `issue.category:feedback`.*

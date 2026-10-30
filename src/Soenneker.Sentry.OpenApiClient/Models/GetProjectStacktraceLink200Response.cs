@@ -11,56 +11,81 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectStacktraceLink200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attemptedUrl") is { } nullNodeAttemptedUrl && nullNodeAttemptedUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttemptedUrl = null;
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("error") is { } nullNodeError && nullNodeError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Error = null;
+            if (parseNode.GetChildNode("integrations") is { } nullNodeIntegrations && nullNodeIntegrations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Integrations = null;
+            if (parseNode.GetChildNode("sourcePath") is { } nullNodeSourcePath && nullNodeSourcePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourcePath = null;
+            if (parseNode.GetChildNode("sourceUrl") is { } nullNodeSourceUrl && nullNodeSourceUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attemptedUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttemptedUrl { get; set; }
+        public string? AttemptedUrl { get => _explicitNullValueAttemptedUrl; set { _explicitNullValueAttemptedUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attemptedUrl"); else _explicitNullProperties?.Remove("attemptedUrl"); } }
+        private string? _explicitNullValueAttemptedUrl = default!;
 #nullable restore
 #else
-        public string AttemptedUrl { get; set; }
+        public string AttemptedUrl { get => _explicitNullValueAttemptedUrl; set { _explicitNullValueAttemptedUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attemptedUrl"); else _explicitNullProperties?.Remove("attemptedUrl"); } }
+        private string _explicitNullValueAttemptedUrl = default!;
 #endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Error { get; set; }
+        public string? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string? _explicitNullValueError = default!;
 #nullable restore
 #else
-        public string Error { get; set; }
+        public string Error { get => _explicitNullValueError; set { _explicitNullValueError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
+        private string _explicitNullValueError = default!;
 #endif
         /// <summary>The integrations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem>? Integrations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem>? Integrations { get => _explicitNullValueIntegrations; set { _explicitNullValueIntegrations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrations"); else _explicitNullProperties?.Remove("integrations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem>? _explicitNullValueIntegrations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem> Integrations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem> Integrations { get => _explicitNullValueIntegrations; set { _explicitNullValueIntegrations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrations"); else _explicitNullProperties?.Remove("integrations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem> _explicitNullValueIntegrations = default!;
 #endif
         /// <summary>The sourcePath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourcePath { get; set; }
+        public string? SourcePath { get => _explicitNullValueSourcePath; set { _explicitNullValueSourcePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcePath"); else _explicitNullProperties?.Remove("sourcePath"); } }
+        private string? _explicitNullValueSourcePath = default!;
 #nullable restore
 #else
-        public string SourcePath { get; set; }
+        public string SourcePath { get => _explicitNullValueSourcePath; set { _explicitNullValueSourcePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcePath"); else _explicitNullProperties?.Remove("sourcePath"); } }
+        private string _explicitNullValueSourcePath = default!;
 #endif
         /// <summary>The sourceUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl { get; set; }
+        public string? SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string? _explicitNullValueSourceUrl = default!;
 #nullable restore
 #else
-        public string SourceUrl { get; set; }
+        public string SourceUrl { get => _explicitNullValueSourceUrl; set { _explicitNullValueSourceUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceUrl"); else _explicitNullProperties?.Remove("sourceUrl"); } }
+        private string _explicitNullValueSourceUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200Response"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectStacktraceLink200ResponseIntegrationsItem>("integrations", Integrations);
             writer.WriteStringValue("sourcePath", SourcePath);
             writer.WriteStringValue("sourceUrl", SourceUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

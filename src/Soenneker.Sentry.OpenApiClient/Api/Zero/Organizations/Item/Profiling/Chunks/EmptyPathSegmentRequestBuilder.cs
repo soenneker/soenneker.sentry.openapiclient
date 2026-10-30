@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling.C
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProfilingChunks200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProfilingChunks200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProfilingChunks200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProfilingChunks200ResponseSchema.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve continuous profiling data for a profiler over a time range.Exactly one project must be specified via the `project` query parameter.Requires continuous profiling to be enabled for the organization.

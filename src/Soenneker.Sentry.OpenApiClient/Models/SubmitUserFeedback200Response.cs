@@ -11,80 +11,114 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SubmitUserFeedback200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("event") is { } nullNodeEvent && nullNodeEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Event = null;
+            if (parseNode.GetChildNode("eventID") is { } nullNodeEventID && nullNodeEventID.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventID = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("issue") is { } nullNodeIssue && nullNodeIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Issue = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The comments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comments { get; set; }
+        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string? _explicitNullValueComments = default!;
 #nullable restore
 #else
-        public string Comments { get; set; }
+        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string _explicitNullValueComments = default!;
 #endif
         /// <summary>The dateCreated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateCreated { get; set; }
+        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private string? _explicitNullValueDateCreated = default!;
 #nullable restore
 #else
-        public string DateCreated { get; set; }
+        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private string _explicitNullValueDateCreated = default!;
 #endif
         /// <summary>The email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent? Event { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent? Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent? _explicitNullValueEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent Event { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent Event { get => _explicitNullValueEvent; set { _explicitNullValueEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event"); else _explicitNullProperties?.Remove("event"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseEvent _explicitNullValueEvent = default!;
 #endif
         /// <summary>The eventID property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventID { get; set; }
+        public string? EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
+        private string? _explicitNullValueEventID = default!;
 #nullable restore
 #else
-        public string EventID { get; set; }
+        public string EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
+        private string _explicitNullValueEventID = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The issue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue? Issue { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue? Issue { get => _explicitNullValueIssue; set { _explicitNullValueIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue"); else _explicitNullProperties?.Remove("issue"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue? _explicitNullValueIssue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue Issue { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue Issue { get => _explicitNullValueIssue; set { _explicitNullValueIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issue"); else _explicitNullProperties?.Remove("issue"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue _explicitNullValueIssue = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser? User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser? _explicitNullValueUser = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser User { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser _explicitNullValueUser = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response"/> and sets the default values.
@@ -101,7 +135,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,6 +172,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssue>("issue", Issue);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseUser>("user", User);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

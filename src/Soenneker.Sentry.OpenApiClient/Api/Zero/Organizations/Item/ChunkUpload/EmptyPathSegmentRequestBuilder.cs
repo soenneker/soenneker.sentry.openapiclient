@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationChunkUploadOptions200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationChunkUploadOptions200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationChunkUploadOptions200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationChunkUploadOptions200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Upload file chunks so they can be assembled into debug information files or artifactbundles. Send requests to the URL from the chunk upload options, which uses theregion-specific domain (for example `us.sentry.io` or `de.sentry.io`).Chunks may be compressed with one of the codecs listed in the options. Select it withthe `Content-Encoding` request header. Resending a chunk is safe: chunks are storedby checksum, so an identical upload changes nothing.
@@ -60,16 +60,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PostAsync(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Return the URL and limits to use when uploading file chunks, such as the chunk size,the number of chunks per request, and the supported compression.
@@ -98,11 +98,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Microsoft.Kiota.Abstractions.MultipartBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

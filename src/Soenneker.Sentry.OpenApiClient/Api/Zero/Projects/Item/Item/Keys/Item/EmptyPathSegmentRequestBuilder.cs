@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Keys.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return a client key bound to a project.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Keys.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update various settings for a client key.
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Keys.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKey200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKey200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKey200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKey200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a client key for a given project.

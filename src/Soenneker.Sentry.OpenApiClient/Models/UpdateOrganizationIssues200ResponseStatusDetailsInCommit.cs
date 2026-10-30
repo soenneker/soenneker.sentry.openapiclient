@@ -11,24 +11,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationIssues200ResponseStatusDetailsInCommit : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("commit") is { } nullNodeCommit && nullNodeCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commit = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The commit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Commit { get; set; }
+        public string? Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
+        private string? _explicitNullValueCommit = default!;
 #nullable restore
 #else
-        public string Commit { get; set; }
+        public string Commit { get => _explicitNullValueCommit; set { _explicitNullValueCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commit"); else _explicitNullProperties?.Remove("commit"); } }
+        private string _explicitNullValueCommit = default!;
 #endif
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get; set; }
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string Repository { get; set; }
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetailsInCommit"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetailsInCommit CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetailsInCommit();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetailsInCommit(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("commit", Commit);
             writer.WriteStringValue("repository", Repository);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,76 +11,113 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddProjectSymbolSource201ResponseOneOf1 : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("has_index") is { } nullNodeHasIndex && nullNodeHasIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasIndex = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_public") is { } nullNodeIsPublic && nullNodeIsPublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPublic = null;
+            if (parseNode.GetChildNode("layout") is { } nullNodeLayout && nullNodeLayout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Layout = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
+            if (parseNode.GetChildNode("platforms") is { } nullNodePlatforms && nullNodePlatforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platforms = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("username") is { } nullNodeUsername && nullNodeUsername.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Username = null;
+        }
+
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters? Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Filters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The has_index property</summary>
-        public bool? HasIndex { get; set; }
+        public bool? HasIndex { get => _explicitNullValueHasIndex; set { _explicitNullValueHasIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_index"); else _explicitNullProperties?.Remove("has_index"); } }
+        private bool? _explicitNullValueHasIndex = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_public property</summary>
-        public bool? IsPublic { get; set; }
+        public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_public"); else _explicitNullProperties?.Remove("is_public"); } }
+        private bool? _explicitNullValueIsPublic = default!;
         /// <summary>The layout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout? Layout { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout Layout { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Layout _explicitNullValueLayout = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The password property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password? Password { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password? Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password? _explicitNullValuePassword = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password Password { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password Password { get => _explicitNullValuePassword; set { _explicitNullValuePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("password"); else _explicitNullProperties?.Remove("password"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1Password _explicitNullValuePassword = default!;
 #endif
         /// <summary>The platforms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Platforms { get; set; }
+        public List<string>? Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
+        private List<string>? _explicitNullValuePlatforms = default!;
 #nullable restore
 #else
-        public List<string> Platforms { get; set; }
+        public List<string> Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
+        private List<string> _explicitNullValuePlatforms = default!;
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.HttpType? Type { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.HttpType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.HttpType? _explicitNullValueType = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>The username property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Username { get; set; }
+        public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string? _explicitNullValueUsername = default!;
 #nullable restore
 #else
-        public string Username { get; set; }
+        public string Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
+        private string _explicitNullValueUsername = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,7 +127,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,7 +167,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.HttpType>("type", Type);
             writer.WriteStringValue("url", Url);
-            writer.WriteStringValue("username", Username);
+            writer.WriteStringValue("username", Username);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

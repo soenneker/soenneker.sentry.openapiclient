@@ -11,26 +11,41 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateProjectPreprodSnapshotSkippedStatusCheckRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("sha") is { } nullNodeSha && nullNodeSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The repository integration provider.* `github`* `github_enterprise`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider? _explicitNullValueProvider = default!;
         /// <summary>The repository name in `owner/name` format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get; set; }
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string Repository { get; set; }
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>The full 40-character lowercase commit SHA.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha { get; set; }
+        public string? Sha { get => _explicitNullValueSha; set { _explicitNullValueSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha"); else _explicitNullProperties?.Remove("sha"); } }
+        private string? _explicitNullValueSha = default!;
 #nullable restore
 #else
-        public string Sha { get; set; }
+        public string Sha { get => _explicitNullValueSha; set { _explicitNullValueSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha"); else _explicitNullProperties?.Remove("sha"); } }
+        private string _explicitNullValueSha = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequest"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectPreprodSnapshotSkippedStatusCheckRequestProvider>("provider", Provider);
             writer.WriteStringValue("repository", Repository);
             writer.WriteStringValue("sha", Sha);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,126 +11,206 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alertsMemberWrite") is { } nullNodeAlertsMemberWrite && nullNodeAlertsMemberWrite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertsMemberWrite = null;
+            if (parseNode.GetChildNode("allowJoinRequests") is { } nullNodeAllowJoinRequests && nullNodeAllowJoinRequests.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowJoinRequests = null;
+            if (parseNode.GetChildNode("allowSharedIssues") is { } nullNodeAllowSharedIssues && nullNodeAllowSharedIssues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowSharedIssues = null;
+            if (parseNode.GetChildNode("apdexThreshold") is { } nullNodeApdexThreshold && nullNodeApdexThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApdexThreshold = null;
+            if (parseNode.GetChildNode("attachmentsRole") is { } nullNodeAttachmentsRole && nullNodeAttachmentsRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttachmentsRole = null;
+            if (parseNode.GetChildNode("avatar") is { } nullNodeAvatar && nullNodeAvatar.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Avatar = null;
+            if (parseNode.GetChildNode("avatarType") is { } nullNodeAvatarType && nullNodeAvatarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarType = null;
+            if (parseNode.GetChildNode("cancelDeletion") is { } nullNodeCancelDeletion && nullNodeCancelDeletion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CancelDeletion = null;
+            if (parseNode.GetChildNode("dataScrubber") is { } nullNodeDataScrubber && nullNodeDataScrubber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScrubber = null;
+            if (parseNode.GetChildNode("dataScrubberDefaults") is { } nullNodeDataScrubberDefaults && nullNodeDataScrubberDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScrubberDefaults = null;
+            if (parseNode.GetChildNode("debugFilesRole") is { } nullNodeDebugFilesRole && nullNodeDebugFilesRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugFilesRole = null;
+            if (parseNode.GetChildNode("defaultRole") is { } nullNodeDefaultRole && nullNodeDefaultRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultRole = null;
+            if (parseNode.GetChildNode("enhancedPrivacy") is { } nullNodeEnhancedPrivacy && nullNodeEnhancedPrivacy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnhancedPrivacy = null;
+            if (parseNode.GetChildNode("eventsMemberAdmin") is { } nullNodeEventsMemberAdmin && nullNodeEventsMemberAdmin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventsMemberAdmin = null;
+            if (parseNode.GetChildNode("hasGranularReplayPermissions") is { } nullNodeHasGranularReplayPermissions && nullNodeHasGranularReplayPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasGranularReplayPermissions = null;
+            if (parseNode.GetChildNode("hideAiFeatures") is { } nullNodeHideAiFeatures && nullNodeHideAiFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HideAiFeatures = null;
+            if (parseNode.GetChildNode("isEarlyAdopter") is { } nullNodeIsEarlyAdopter && nullNodeIsEarlyAdopter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEarlyAdopter = null;
+            if (parseNode.GetChildNode("issueAlertsThreadFlag") is { } nullNodeIssueAlertsThreadFlag && nullNodeIssueAlertsThreadFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueAlertsThreadFlag = null;
+            if (parseNode.GetChildNode("metricAlertsThreadFlag") is { } nullNodeMetricAlertsThreadFlag && nullNodeMetricAlertsThreadFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricAlertsThreadFlag = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("openMembership") is { } nullNodeOpenMembership && nullNodeOpenMembership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OpenMembership = null;
+            if (parseNode.GetChildNode("relayDsnEndpoint") is { } nullNodeRelayDsnEndpoint && nullNodeRelayDsnEndpoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayDsnEndpoint = null;
+            if (parseNode.GetChildNode("relayPiiConfig") is { } nullNodeRelayPiiConfig && nullNodeRelayPiiConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayPiiConfig = null;
+            if (parseNode.GetChildNode("replayAccessMembers") is { } nullNodeReplayAccessMembers && nullNodeReplayAccessMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplayAccessMembers = null;
+            if (parseNode.GetChildNode("require2FA") is { } nullNodeRequire2FA && nullNodeRequire2FA.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Require2FA = null;
+            if (parseNode.GetChildNode("safeFields") is { } nullNodeSafeFields && nullNodeSafeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SafeFields = null;
+            if (parseNode.GetChildNode("scrapeJavaScript") is { } nullNodeScrapeJavaScript && nullNodeScrapeJavaScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeJavaScript = null;
+            if (parseNode.GetChildNode("scrubIPAddresses") is { } nullNodeScrubIPAddresses && nullNodeScrubIPAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrubIPAddresses = null;
+            if (parseNode.GetChildNode("sensitiveFields") is { } nullNodeSensitiveFields && nullNodeSensitiveFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensitiveFields = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("storeCrashReports") is { } nullNodeStoreCrashReports && nullNodeStoreCrashReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreCrashReports = null;
+            if (parseNode.GetChildNode("trustedRelays") is { } nullNodeTrustedRelays && nullNodeTrustedRelays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustedRelays = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specify `true` to allow members to create, edit, and delete alert rules by granting them the `alerts:write` scope.</summary>
-        public bool? AlertsMemberWrite { get; set; }
+        public bool? AlertsMemberWrite { get => _explicitNullValueAlertsMemberWrite; set { _explicitNullValueAlertsMemberWrite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alertsMemberWrite"); else _explicitNullProperties?.Remove("alertsMemberWrite"); } }
+        private bool? _explicitNullValueAlertsMemberWrite = default!;
         /// <summary>Specify `true` to allow users to request to join your organization.</summary>
-        public bool? AllowJoinRequests { get; set; }
+        public bool? AllowJoinRequests { get => _explicitNullValueAllowJoinRequests; set { _explicitNullValueAllowJoinRequests = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowJoinRequests"); else _explicitNullProperties?.Remove("allowJoinRequests"); } }
+        private bool? _explicitNullValueAllowJoinRequests = default!;
         /// <summary>Specify `true` to allow sharing of limited details on issues to anonymous users.</summary>
-        public bool? AllowSharedIssues { get; set; }
+        public bool? AllowSharedIssues { get => _explicitNullValueAllowSharedIssues; set { _explicitNullValueAllowSharedIssues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowSharedIssues"); else _explicitNullProperties?.Remove("allowSharedIssues"); } }
+        private bool? _explicitNullValueAllowSharedIssues = default!;
         /// <summary>Deprecated. Response-time threshold in milliseconds previously used to compute Apdex.</summary>
-        public int? ApdexThreshold { get; set; }
+        public int? ApdexThreshold { get => _explicitNullValueApdexThreshold; set { _explicitNullValueApdexThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apdexThreshold"); else _explicitNullProperties?.Remove("apdexThreshold"); } }
+        private int? _explicitNullValueApdexThreshold = default!;
         /// <summary>The role required to download event attachments, such as native crash reports or log files.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole? AttachmentsRole { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole? AttachmentsRole { get => _explicitNullValueAttachmentsRole; set { _explicitNullValueAttachmentsRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attachmentsRole"); else _explicitNullProperties?.Remove("attachmentsRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAttachmentsRole? _explicitNullValueAttachmentsRole = default!;
         /// <summary>The image to upload as the organization avatar, in base64. Required if `avatarType` is `upload`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Avatar { get; set; }
+        public string? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
+        private string? _explicitNullValueAvatar = default!;
 #nullable restore
 #else
-        public string Avatar { get; set; }
+        public string Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
+        private string _explicitNullValueAvatar = default!;
 #endif
         /// <summary>The type of display picture for the organization.* `letter_avatar` - Use initials* `upload` - Upload an image</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAvatarType? AvatarType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAvatarType? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestAvatarType? _explicitNullValueAvatarType = default!;
         /// <summary>Specify `true` to restore an organization that is pending deletion.</summary>
-        public bool? CancelDeletion { get; set; }
+        public bool? CancelDeletion { get => _explicitNullValueCancelDeletion; set { _explicitNullValueCancelDeletion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancelDeletion"); else _explicitNullProperties?.Remove("cancelDeletion"); } }
+        private bool? _explicitNullValueCancelDeletion = default!;
         /// <summary>Specify `true` to require server-side data scrubbing for all projects.</summary>
-        public bool? DataScrubber { get; set; }
+        public bool? DataScrubber { get => _explicitNullValueDataScrubber; set { _explicitNullValueDataScrubber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubber"); else _explicitNullProperties?.Remove("dataScrubber"); } }
+        private bool? _explicitNullValueDataScrubber = default!;
         /// <summary>Specify `true` to apply the default scrubbers to prevent things like passwords and credit cards from being stored for all projects.</summary>
-        public bool? DataScrubberDefaults { get; set; }
+        public bool? DataScrubberDefaults { get => _explicitNullValueDataScrubberDefaults; set { _explicitNullValueDataScrubberDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubberDefaults"); else _explicitNullProperties?.Remove("dataScrubberDefaults"); } }
+        private bool? _explicitNullValueDataScrubberDefaults = default!;
         /// <summary>The role required to download debug information files, ProGuard mappings and source maps.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDebugFilesRole? DebugFilesRole { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDebugFilesRole? DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDebugFilesRole? _explicitNullValueDebugFilesRole = default!;
         /// <summary>The default role new members will receive.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDefaultRole? DefaultRole { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDefaultRole? DefaultRole { get => _explicitNullValueDefaultRole; set { _explicitNullValueDefaultRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultRole"); else _explicitNullProperties?.Remove("defaultRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestDefaultRole? _explicitNullValueDefaultRole = default!;
         /// <summary>Specify `true` to enable enhanced privacy controls to limit personally identifiable information (PII) as well as source code in things like notifications.</summary>
-        public bool? EnhancedPrivacy { get; set; }
+        public bool? EnhancedPrivacy { get => _explicitNullValueEnhancedPrivacy; set { _explicitNullValueEnhancedPrivacy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enhancedPrivacy"); else _explicitNullProperties?.Remove("enhancedPrivacy"); } }
+        private bool? _explicitNullValueEnhancedPrivacy = default!;
         /// <summary>Specify `true` to allow members to delete events (including the delete &amp; discard action) by granting them the `event:admin` scope.</summary>
-        public bool? EventsMemberAdmin { get; set; }
+        public bool? EventsMemberAdmin { get => _explicitNullValueEventsMemberAdmin; set { _explicitNullValueEventsMemberAdmin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventsMemberAdmin"); else _explicitNullProperties?.Remove("eventsMemberAdmin"); } }
+        private bool? _explicitNullValueEventsMemberAdmin = default!;
         /// <summary>Specify `true` to enable granular replay permissions, allowing per-member access control for replay data.</summary>
-        public bool? HasGranularReplayPermissions { get; set; }
+        public bool? HasGranularReplayPermissions { get => _explicitNullValueHasGranularReplayPermissions; set { _explicitNullValueHasGranularReplayPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasGranularReplayPermissions"); else _explicitNullProperties?.Remove("hasGranularReplayPermissions"); } }
+        private bool? _explicitNullValueHasGranularReplayPermissions = default!;
         /// <summary>Specify `true` to hide AI features from the organization.</summary>
-        public bool? HideAiFeatures { get; set; }
+        public bool? HideAiFeatures { get => _explicitNullValueHideAiFeatures; set { _explicitNullValueHideAiFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hideAiFeatures"); else _explicitNullProperties?.Remove("hideAiFeatures"); } }
+        private bool? _explicitNullValueHideAiFeatures = default!;
         /// <summary>Specify `true` to opt-in to new features before they&apos;re released to the public.</summary>
-        public bool? IsEarlyAdopter { get; set; }
+        public bool? IsEarlyAdopter { get => _explicitNullValueIsEarlyAdopter; set { _explicitNullValueIsEarlyAdopter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEarlyAdopter"); else _explicitNullProperties?.Remove("isEarlyAdopter"); } }
+        private bool? _explicitNullValueIsEarlyAdopter = default!;
         /// <summary>Specify `true` to allow the Sentry Slack integration to post replies in threads for an Issue Alert notification. Requires a Slack integration.</summary>
-        public bool? IssueAlertsThreadFlag { get; set; }
+        public bool? IssueAlertsThreadFlag { get => _explicitNullValueIssueAlertsThreadFlag; set { _explicitNullValueIssueAlertsThreadFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueAlertsThreadFlag"); else _explicitNullProperties?.Remove("issueAlertsThreadFlag"); } }
+        private bool? _explicitNullValueIssueAlertsThreadFlag = default!;
         /// <summary>Specify `true` to allow the Sentry Slack integration to post replies in threads for a Metric Alert notification. Requires a Slack integration.</summary>
-        public bool? MetricAlertsThreadFlag { get; set; }
+        public bool? MetricAlertsThreadFlag { get => _explicitNullValueMetricAlertsThreadFlag; set { _explicitNullValueMetricAlertsThreadFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricAlertsThreadFlag"); else _explicitNullProperties?.Remove("metricAlertsThreadFlag"); } }
+        private bool? _explicitNullValueMetricAlertsThreadFlag = default!;
         /// <summary>The new name for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Specify `true` to allow organization members to freely join any team.</summary>
-        public bool? OpenMembership { get; set; }
+        public bool? OpenMembership { get => _explicitNullValueOpenMembership; set { _explicitNullValueOpenMembership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("openMembership"); else _explicitNullProperties?.Remove("openMembership"); } }
+        private bool? _explicitNullValueOpenMembership = default!;
         /// <summary>A Relay base URL to use when displaying Client Key DSNs for this organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelayDsnEndpoint { get; set; }
+        public string? RelayDsnEndpoint { get => _explicitNullValueRelayDsnEndpoint; set { _explicitNullValueRelayDsnEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayDsnEndpoint"); else _explicitNullProperties?.Remove("relayDsnEndpoint"); } }
+        private string? _explicitNullValueRelayDsnEndpoint = default!;
 #nullable restore
 #else
-        public string RelayDsnEndpoint { get; set; }
+        public string RelayDsnEndpoint { get => _explicitNullValueRelayDsnEndpoint; set { _explicitNullValueRelayDsnEndpoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayDsnEndpoint"); else _explicitNullProperties?.Remove("relayDsnEndpoint"); } }
+        private string _explicitNullValueRelayDsnEndpoint = default!;
 #endif
         /// <summary>Advanced data scrubbing rules that can be configured for each project as a JSON string. The new rules will only apply to new incoming events. For more details on advanced data scrubbing, see our [full documentation](/security-legal-pii/scrubbing/advanced-datascrubbing/).&gt; Warning: Calling this endpoint with this field fully overwrites the advanced data scrubbing rules.Below is an example of a payload for a set of advanced data scrubbing rules for masking credit card numbers from the log message (equivalent to `[Mask] [Credit card numbers] from [$message]` in the Sentry app) and removing a specific key called `foo` (equivalent to `[Remove] [Anything] from [extra.foo]` in the Sentry app):```json{    relayPiiConfig: &quot;{\&quot;rules&quot;:{\&quot;0\&quot;:{\&quot;type\&quot;:\&quot;creditcard\&quot;,\&quot;redaction\&quot;:{\&quot;method\&quot;:\&quot;mask\&quot;}},\&quot;1\&quot;:{\&quot;type\&quot;:\&quot;anything\&quot;,\&quot;redaction\&quot;:{\&quot;method\&quot;:\&quot;remove\&quot;}}},\&quot;applications\&quot;:{\&quot;$message\&quot;:[\&quot;0\&quot;],\&quot;extra.foo\&quot;:[\&quot;1\&quot;]}}&quot;}```        </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelayPiiConfig { get; set; }
+        public string? RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
+        private string? _explicitNullValueRelayPiiConfig = default!;
 #nullable restore
 #else
-        public string RelayPiiConfig { get; set; }
+        public string RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
+        private string _explicitNullValueRelayPiiConfig = default!;
 #endif
         /// <summary>A list of user IDs who have permission to access replay data. Requires the hasGranularReplayPermissions flag to be true to be enforced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? ReplayAccessMembers { get; set; }
+        public List<int?>? ReplayAccessMembers { get => _explicitNullValueReplayAccessMembers; set { _explicitNullValueReplayAccessMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayAccessMembers"); else _explicitNullProperties?.Remove("replayAccessMembers"); } }
+        private List<int?>? _explicitNullValueReplayAccessMembers = default!;
 #nullable restore
 #else
-        public List<int?> ReplayAccessMembers { get; set; }
+        public List<int?> ReplayAccessMembers { get => _explicitNullValueReplayAccessMembers; set { _explicitNullValueReplayAccessMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayAccessMembers"); else _explicitNullProperties?.Remove("replayAccessMembers"); } }
+        private List<int?> _explicitNullValueReplayAccessMembers = default!;
 #endif
         /// <summary>Specify `true` to require and enforce two-factor authentication for all members.</summary>
-        public bool? Require2FA { get; set; }
+        public bool? Require2FA { get => _explicitNullValueRequire2FA; set { _explicitNullValueRequire2FA = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require2FA"); else _explicitNullProperties?.Remove("require2FA"); } }
+        private bool? _explicitNullValueRequire2FA = default!;
         /// <summary>A list of global field names which data scrubbers should ignore.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SafeFields { get; set; }
+        public List<string>? SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
+        private List<string>? _explicitNullValueSafeFields = default!;
 #nullable restore
 #else
-        public List<string> SafeFields { get; set; }
+        public List<string> SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
+        private List<string> _explicitNullValueSafeFields = default!;
 #endif
         /// <summary>Specify `true` to allow Sentry to scrape missing JavaScript source context when possible.</summary>
-        public bool? ScrapeJavaScript { get; set; }
+        public bool? ScrapeJavaScript { get => _explicitNullValueScrapeJavaScript; set { _explicitNullValueScrapeJavaScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeJavaScript"); else _explicitNullProperties?.Remove("scrapeJavaScript"); } }
+        private bool? _explicitNullValueScrapeJavaScript = default!;
         /// <summary>Specify `true` to prevent IP addresses from being stored for new events on all projects.</summary>
-        public bool? ScrubIPAddresses { get; set; }
+        public bool? ScrubIPAddresses { get => _explicitNullValueScrubIPAddresses; set { _explicitNullValueScrubIPAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrubIPAddresses"); else _explicitNullProperties?.Remove("scrubIPAddresses"); } }
+        private bool? _explicitNullValueScrubIPAddresses = default!;
         /// <summary>A list of additional global field names to match against when scrubbing data for all projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SensitiveFields { get; set; }
+        public List<string>? SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
+        private List<string>? _explicitNullValueSensitiveFields = default!;
 #nullable restore
 #else
-        public List<string> SensitiveFields { get; set; }
+        public List<string> SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
+        private List<string> _explicitNullValueSensitiveFields = default!;
 #endif
         /// <summary>The new slug for the organization, which needs to be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>How many native crash reports (such as Minidumps for improved processing and download in issue details) to store per issue.* `0` - Disabled* `1` - 1 per issue* `5` - 5 per issue* `10` - 10 per issue* `20` - 20 per issue* `50` - 50 per issue* `100` - 100 per issue* `-1` - Unlimited</summary>
-        public int? StoreCrashReports { get; set; }
+        public int? StoreCrashReports { get => _explicitNullValueStoreCrashReports; set { _explicitNullValueStoreCrashReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCrashReports"); else _explicitNullProperties?.Remove("storeCrashReports"); } }
+        private int? _explicitNullValueStoreCrashReports = default!;
         /// <summary>A list of local Relays (the name, public key, and description as a JSON) registered for the organization. This feature is only available for organizations on the Business and Enterprise plans. Read more about Relay [here](/product/relay/).                                          Below is an example of a list containing a single local Relay registered for the organization:                                          ```json                                          {                                            trustedRelays: [                                                {                                                    name: &quot;my-relay&quot;,                                                    publicKey: &quot;eiwr9fdruw4erfh892qy4493reyf89ur34wefd90h&quot;,                                                    description: &quot;Configuration for my-relay.&quot;                                                }                                            ]                                          }                                          ```                                          </summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem>? TrustedRelays { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem>? TrustedRelays { get => _explicitNullValueTrustedRelays; set { _explicitNullValueTrustedRelays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedRelays"); else _explicitNullProperties?.Remove("trustedRelays"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem>? _explicitNullValueTrustedRelays = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem> TrustedRelays { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem> TrustedRelays { get => _explicitNullValueTrustedRelays; set { _explicitNullValueTrustedRelays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustedRelays"); else _explicitNullProperties?.Remove("trustedRelays"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem> _explicitNullValueTrustedRelays = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequest"/> and sets the default values.
@@ -147,7 +227,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,6 +310,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("slug", Slug);
             writer.WriteIntValue("storeCrashReports", StoreCrashReports);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRequestTrustedRelaysItem>("trustedRelays", TrustedRelays);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

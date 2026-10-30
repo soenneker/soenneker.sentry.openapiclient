@@ -11,42 +11,68 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationFlagLogs200ResponseDataItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("createdAt") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("createdBy") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("createdByType") is { } nullNodeCreatedByType && nullNodeCreatedByType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedByType = null;
+            if (parseNode.GetChildNode("flag") is { } nullNodeFlag && nullNodeFlag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Flag = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("tags") is { } nullNodeTags && nullNodeTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tags = null;
+        }
+
         /// <summary>The action property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemAction? Action { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The createdAt property</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdAt"); else _explicitNullProperties?.Remove("createdAt"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The createdByType property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemCreatedByType? CreatedByType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemCreatedByType? CreatedByType { get => _explicitNullValueCreatedByType; set { _explicitNullValueCreatedByType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdByType"); else _explicitNullProperties?.Remove("createdByType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemCreatedByType? _explicitNullValueCreatedByType = default!;
         /// <summary>The flag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Flag { get; set; }
+        public string? Flag { get => _explicitNullValueFlag; set { _explicitNullValueFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag"); else _explicitNullProperties?.Remove("flag"); } }
+        private string? _explicitNullValueFlag = default!;
 #nullable restore
 #else
-        public string Flag { get; set; }
+        public string Flag { get => _explicitNullValueFlag; set { _explicitNullValueFlag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flag"); else _explicitNullProperties?.Remove("flag"); } }
+        private string _explicitNullValueFlag = default!;
 #endif
         /// <summary>The id property</summary>
-        public int? Id { get; set; }
+        public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private int? _explicitNullValueId = default!;
         /// <summary>The provider property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemProvider? _explicitNullValueProvider = default!;
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags? Tags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags? _explicitNullValueTags = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags Tags { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags _explicitNullValueTags = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItem"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("id", Id);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemProvider>("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationFlagLogs200ResponseDataItemTags>("tags", Tags);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,59 +11,86 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationReleaseRequestCommitsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author_email") is { } nullNodeAuthorEmail && nullNodeAuthorEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorEmail = null;
+            if (parseNode.GetChildNode("author_name") is { } nullNodeAuthorName && nullNodeAuthorName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthorName = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("patch_set") is { } nullNodePatchSet && nullNodePatchSet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PatchSet = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author_email property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorEmail { get; set; }
+        public string? AuthorEmail { get => _explicitNullValueAuthorEmail; set { _explicitNullValueAuthorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_email"); else _explicitNullProperties?.Remove("author_email"); } }
+        private string? _explicitNullValueAuthorEmail = default!;
 #nullable restore
 #else
-        public string AuthorEmail { get; set; }
+        public string AuthorEmail { get => _explicitNullValueAuthorEmail; set { _explicitNullValueAuthorEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_email"); else _explicitNullProperties?.Remove("author_email"); } }
+        private string _explicitNullValueAuthorEmail = default!;
 #endif
         /// <summary>The author_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthorName { get; set; }
+        public string? AuthorName { get => _explicitNullValueAuthorName; set { _explicitNullValueAuthorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_name"); else _explicitNullProperties?.Remove("author_name"); } }
+        private string? _explicitNullValueAuthorName = default!;
 #nullable restore
 #else
-        public string AuthorName { get; set; }
+        public string AuthorName { get => _explicitNullValueAuthorName; set { _explicitNullValueAuthorName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author_name"); else _explicitNullProperties?.Remove("author_name"); } }
+        private string _explicitNullValueAuthorName = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The patch_set property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem>? PatchSet { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem>? PatchSet { get => _explicitNullValuePatchSet; set { _explicitNullValuePatchSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch_set"); else _explicitNullProperties?.Remove("patch_set"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem>? _explicitNullValuePatchSet = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem> PatchSet { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem> PatchSet { get => _explicitNullValuePatchSet; set { _explicitNullValuePatchSet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch_set"); else _explicitNullProperties?.Remove("patch_set"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem> _explicitNullValuePatchSet = default!;
 #endif
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get; set; }
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string Repository { get; set; }
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>The timestamp property</summary>
-        public DateTimeOffset? Timestamp { get; set; }
+        public DateTimeOffset? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private DateTimeOffset? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem"/> and sets the default values.
         /// </summary>
@@ -79,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItemPatchSetItem>("patch_set", PatchSet);
             writer.WriteStringValue("repository", Repository);
             writer.WriteDateTimeOffsetValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

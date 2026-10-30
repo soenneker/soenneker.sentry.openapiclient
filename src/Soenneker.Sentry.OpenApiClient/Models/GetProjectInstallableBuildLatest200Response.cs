@@ -11,24 +11,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectInstallableBuildLatest200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("currentArtifact") is { } nullNodeCurrentArtifact && nullNodeCurrentArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentArtifact = null;
+            if (parseNode.GetChildNode("latestArtifact") is { } nullNodeLatestArtifact && nullNodeLatestArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestArtifact = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The currentArtifact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact? CurrentArtifact { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact? CurrentArtifact { get => _explicitNullValueCurrentArtifact; set { _explicitNullValueCurrentArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentArtifact"); else _explicitNullProperties?.Remove("currentArtifact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact? _explicitNullValueCurrentArtifact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact CurrentArtifact { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact CurrentArtifact { get => _explicitNullValueCurrentArtifact; set { _explicitNullValueCurrentArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentArtifact"); else _explicitNullProperties?.Remove("currentArtifact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact _explicitNullValueCurrentArtifact = default!;
 #endif
         /// <summary>The latestArtifact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact? LatestArtifact { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact? LatestArtifact { get => _explicitNullValueLatestArtifact; set { _explicitNullValueLatestArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestArtifact"); else _explicitNullProperties?.Remove("latestArtifact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact? _explicitNullValueLatestArtifact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact LatestArtifact { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact LatestArtifact { get => _explicitNullValueLatestArtifact; set { _explicitNullValueLatestArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestArtifact"); else _explicitNullProperties?.Remove("latestArtifact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact _explicitNullValueLatestArtifact = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact>("currentArtifact", CurrentArtifact);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact>("latestArtifact", LatestArtifact);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,26 +11,41 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ExecuteSentryAppInstallationExternalIssueActionRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("groupId") is { } nullNodeGroupId && nullNodeGroupId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupId = null;
+            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+        }
+
         /// <summary>The action to perform: `link` or `create`.</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction? Action { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The numeric Sentry issue ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get; set; }
+        public string? GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupId"); else _explicitNullProperties?.Remove("groupId"); } }
+        private string? _explicitNullValueGroupId = default!;
 #nullable restore
 #else
-        public string GroupId { get; set; }
+        public string GroupId { get => _explicitNullValueGroupId; set { _explicitNullValueGroupId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupId"); else _explicitNullProperties?.Remove("groupId"); } }
+        private string _explicitNullValueGroupId = default!;
 #endif
         /// <summary>The relative callback URI from the app&apos;s issue-link form.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get; set; }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get; set; }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ExecuteSentryAppInstallationExternalIssueActionRequestAction>("action", Action);
             writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("uri", Uri);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

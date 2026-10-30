@@ -12,27 +12,42 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddProjectSymbolSourceRequestFilters : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filetypes") is { } nullNodeFiletypes && nullNodeFiletypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filetypes = null;
+            if (parseNode.GetChildNode("path_patterns") is { } nullNodePathPatterns && nullNodePathPatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPatterns = null;
+            if (parseNode.GetChildNode("requires_checksum") is { } nullNodeRequiresChecksum && nullNodeRequiresChecksum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresChecksum = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The file types enabled for the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?>? Filetypes { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?>? Filetypes { get => _explicitNullValueFiletypes; set { _explicitNullValueFiletypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filetypes"); else _explicitNullProperties?.Remove("filetypes"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?>? _explicitNullValueFiletypes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?> Filetypes { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?> Filetypes { get => _explicitNullValueFiletypes; set { _explicitNullValueFiletypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filetypes"); else _explicitNullProperties?.Remove("filetypes"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem?> _explicitNullValueFiletypes = default!;
 #endif
         /// <summary>The debug and code file paths enabled for the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PathPatterns { get; set; }
+        public List<string>? PathPatterns { get => _explicitNullValuePathPatterns; set { _explicitNullValuePathPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_patterns"); else _explicitNullProperties?.Remove("path_patterns"); } }
+        private List<string>? _explicitNullValuePathPatterns = default!;
 #nullable restore
 #else
-        public List<string> PathPatterns { get; set; }
+        public List<string> PathPatterns { get => _explicitNullValuePathPatterns; set { _explicitNullValuePathPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_patterns"); else _explicitNullProperties?.Remove("path_patterns"); } }
+        private List<string> _explicitNullValuePathPatterns = default!;
 #endif
         /// <summary>Whether the source requires debug checksums.</summary>
-        public bool? RequiresChecksum { get; set; }
+        public bool? RequiresChecksum { get => _explicitNullValueRequiresChecksum; set { _explicitNullValueRequiresChecksum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_checksum"); else _explicitNullProperties?.Remove("requires_checksum"); } }
+        private bool? _explicitNullValueRequiresChecksum = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFilters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSourceRequestFiltersFiletypesItem>("filetypes", Filetypes);
             writer.WriteCollectionOfPrimitiveValues<string>("path_patterns", PathPatterns);
             writer.WriteBoolValue("requires_checksum", RequiresChecksum);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

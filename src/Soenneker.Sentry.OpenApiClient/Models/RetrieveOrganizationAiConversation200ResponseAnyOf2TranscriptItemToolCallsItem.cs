@@ -11,28 +11,45 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveOrganizationAiConversation200ResponseAnyOf2TranscriptItemToolCallsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("hasError") is { } nullNodeHasError && nullNodeHasError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasError = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nodeId") is { } nullNodeNodeId && nullNodeNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NodeId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The duration property</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The hasError property</summary>
-        public bool? HasError { get; set; }
+        public bool? HasError { get => _explicitNullValueHasError; set { _explicitNullValueHasError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasError"); else _explicitNullProperties?.Remove("hasError"); } }
+        private bool? _explicitNullValueHasError = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nodeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NodeId { get; set; }
+        public string? NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeId"); else _explicitNullProperties?.Remove("nodeId"); } }
+        private string? _explicitNullValueNodeId = default!;
 #nullable restore
 #else
-        public string NodeId { get; set; }
+        public string NodeId { get => _explicitNullValueNodeId; set { _explicitNullValueNodeId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nodeId"); else _explicitNullProperties?.Remove("nodeId"); } }
+        private string _explicitNullValueNodeId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf2TranscriptItemToolCallsItem"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf2TranscriptItemToolCallsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf2TranscriptItemToolCallsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf2TranscriptItemToolCallsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("hasError", HasError);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("nodeId", NodeId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

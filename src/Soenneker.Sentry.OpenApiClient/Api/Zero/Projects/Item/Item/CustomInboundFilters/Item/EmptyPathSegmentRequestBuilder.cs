@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInbou
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Retrieve a single custom inbound filter.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInbou
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveACustomInboundFilter200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveACustomInboundFilter200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveACustomInboundFilter200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveACustomInboundFilter200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Update a custom inbound filter&apos;s name, active state, or conditions.
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.CustomInbou
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateACustomInboundFilter200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Delete a custom inbound filter.

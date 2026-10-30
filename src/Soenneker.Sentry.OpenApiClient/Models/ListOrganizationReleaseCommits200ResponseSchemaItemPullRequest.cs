@@ -11,62 +11,93 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationReleaseCommits200ResponseSchemaItemPullRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("externalUrl") is { } nullNodeExternalUrl && nullNodeExternalUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalUrl = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("mergedAt") is { } nullNodeMergedAt && nullNodeMergedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedAt = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The author property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor? Author { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor? _explicitNullValueAuthor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor Author { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestAuthor _explicitNullValueAuthor = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The externalUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalUrl { get; set; }
+        public string? ExternalUrl { get => _explicitNullValueExternalUrl; set { _explicitNullValueExternalUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalUrl"); else _explicitNullProperties?.Remove("externalUrl"); } }
+        private string? _explicitNullValueExternalUrl = default!;
 #nullable restore
 #else
-        public string ExternalUrl { get; set; }
+        public string ExternalUrl { get => _explicitNullValueExternalUrl; set { _explicitNullValueExternalUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalUrl"); else _explicitNullProperties?.Remove("externalUrl"); } }
+        private string _explicitNullValueExternalUrl = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The mergedAt property</summary>
-        public DateTimeOffset? MergedAt { get; set; }
+        public DateTimeOffset? MergedAt { get => _explicitNullValueMergedAt; set { _explicitNullValueMergedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedAt"); else _explicitNullProperties?.Remove("mergedAt"); } }
+        private DateTimeOffset? _explicitNullValueMergedAt = default!;
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Message { get; set; }
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public string Message { get; set; }
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
 #endif
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository? Repository { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository Repository { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository _explicitNullValueRepository = default!;
 #endif
         /// <summary>The status property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestStatus? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseSchemaItemPullRequest"/> and sets the default values.
@@ -83,7 +114,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseSchemaItemPullRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseSchemaItemPullRequest();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseSchemaItemPullRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,6 +153,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestRepository>("repository", Repository);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemPullRequestStatus>("status", Status);
             writer.WriteStringValue("title", Title);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

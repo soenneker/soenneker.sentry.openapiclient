@@ -12,24 +12,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateOrganizationDashboardRequestWidgetsItemQueriesItemLinkedDashboardsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dashboard_id") is { } nullNodeDashboardId && nullNodeDashboardId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardId = null;
+            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dashboard_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DashboardId { get; set; }
+        public string? DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
+        private string? _explicitNullValueDashboardId = default!;
 #nullable restore
 #else
-        public string DashboardId { get; set; }
+        public string DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboard_id"); else _explicitNullProperties?.Remove("dashboard_id"); } }
+        private string _explicitNullValueDashboardId = default!;
 #endif
         /// <summary>The field property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get; set; }
+        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private string? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public string Field { get; set; }
+        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        private string _explicitNullValueField = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItemLinkedDashboardsItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItemLinkedDashboardsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItemLinkedDashboardsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItemLinkedDashboardsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dashboard_id", DashboardId);
             writer.WriteStringValue("field", Field);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

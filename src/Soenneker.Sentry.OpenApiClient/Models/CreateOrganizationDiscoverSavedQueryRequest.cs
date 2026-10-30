@@ -11,134 +11,197 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationDiscoverSavedQueryRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("aggregations") is { } nullNodeAggregations && nullNodeAggregations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Aggregations = null;
+            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("display") is { } nullNodeDisplay && nullNodeDisplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Display = null;
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("groupby") is { } nullNodeGroupby && nullNodeGroupby.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groupby = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("limit") is { } nullNodeLimit && nullNodeLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Limit = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("orderby") is { } nullNodeOrderby && nullNodeOrderby.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Orderby = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("queryDataset") is { } nullNodeQueryDataset && nullNodeQueryDataset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryDataset = null;
+            if (parseNode.GetChildNode("range") is { } nullNodeRange && nullNodeRange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Range = null;
+            if (parseNode.GetChildNode("rollup") is { } nullNodeRollup && nullNodeRollup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rollup = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("topEvents") is { } nullNodeTopEvents && nullNodeTopEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopEvents = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+            if (parseNode.GetChildNode("widths") is { } nullNodeWidths && nullNodeWidths.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widths = null;
+            if (parseNode.GetChildNode("yAxis") is { } nullNodeYAxis && nullNodeYAxis.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) YAxis = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Aggregate functions to apply, each as a `[function, column, alias]` triple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Aggregations { get; set; }
+        public List<UntypedNode>? Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
+        private List<UntypedNode>? _explicitNullValueAggregations = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Aggregations { get; set; }
+        public List<UntypedNode> Aggregations { get => _explicitNullValueAggregations; set { _explicitNullValueAggregations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aggregations"); else _explicitNullProperties?.Remove("aggregations"); } }
+        private List<UntypedNode> _explicitNullValueAggregations = default!;
 #endif
         /// <summary>Filter conditions, each as a `[column, operator, value]` triple.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Conditions { get; set; }
+        public List<UntypedNode>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<UntypedNode>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Conditions { get; set; }
+        public List<UntypedNode> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<UntypedNode> _explicitNullValueConditions = default!;
 #endif
         /// <summary>Visualization type for saved query chart. Allowed values are:- default- previous- top5- daily- dailytop5- bar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Display { get; set; }
+        public string? Display { get => _explicitNullValueDisplay; set { _explicitNullValueDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display"); else _explicitNullProperties?.Remove("display"); } }
+        private string? _explicitNullValueDisplay = default!;
 #nullable restore
 #else
-        public string Display { get; set; }
+        public string Display { get => _explicitNullValueDisplay; set { _explicitNullValueDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display"); else _explicitNullProperties?.Remove("display"); } }
+        private string _explicitNullValueDisplay = default!;
 #endif
         /// <summary>The saved end time for this saved query.</summary>
-        public DateTimeOffset? End { get; set; }
+        public DateTimeOffset? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private DateTimeOffset? _explicitNullValueEnd = default!;
         /// <summary>The name of environments to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Environment { get; set; }
+        public List<string>? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private List<string>? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public List<string> Environment { get; set; }
+        public List<string> Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private List<string> _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The fields, functions, or equations that can be requested for the query. At most 20 fields can be selected per request. Each field can be one of the following types:- A built-in key field. See possible fields in the [properties table](/product/sentry-basics/search/searchable-properties/#properties-table), under any field that is an event property.    - example: `field=transaction`- A tag. Tags should use the `tag[]` formatting to avoid ambiguity with any fields    - example: `field=tag[isEnterprise]`- A function which will be in the format of `function_name(parameters,...)`. See possible functions in the [query builder documentation](/product/discover-queries/query-builder/#stacking-functions).    - when a function is included, Discover will group by any tags or fields    - example: `field=count_if(transaction.duration,greater,300)`- An equation when prefixed with `equation|`. Read more about [equations here](/product/discover-queries/query-builder/query-equations/).    - example: `field=equation|count_if(transaction.duration,greater,300) / count() * 100`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Fields { get; set; }
+        public List<string>? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<string>? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public List<string> Fields { get; set; }
+        public List<string> Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        private List<string> _explicitNullValueFields = default!;
 #endif
         /// <summary>Columns to group results by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Groupby { get; set; }
+        public List<string>? Groupby { get => _explicitNullValueGroupby; set { _explicitNullValueGroupby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupby"); else _explicitNullProperties?.Remove("groupby"); } }
+        private List<string>? _explicitNullValueGroupby = default!;
 #nullable restore
 #else
-        public List<string> Groupby { get; set; }
+        public List<string> Groupby { get => _explicitNullValueGroupby; set { _explicitNullValueGroupby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupby"); else _explicitNullProperties?.Remove("groupby"); } }
+        private List<string> _explicitNullValueGroupby = default!;
 #endif
         /// <summary>Resolution of the time series.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Interval { get; set; }
+        public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string? _explicitNullValueInterval = default!;
 #nullable restore
 #else
-        public string Interval { get; set; }
+        public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private string _explicitNullValueInterval = default!;
 #endif
         /// <summary>Maximum number of rows to return, from `0` to `1000`.</summary>
-        public int? Limit { get; set; }
+        public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
+        private int? _explicitNullValueLimit = default!;
         /// <summary>The user-defined saved query name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>How to order the query results. Must be something in the `field` list, excluding equations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Orderby { get; set; }
+        public string? Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
+        private string? _explicitNullValueOrderby = default!;
 #nullable restore
 #else
-        public string Orderby { get; set; }
+        public string Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
+        private string _explicitNullValueOrderby = default!;
 #endif
         /// <summary>The saved projects filter for this query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Projects { get; set; }
+        public List<int?>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<int?> Projects { get; set; }
+        public List<int?> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?> _explicitNullValueProjects = default!;
 #endif
         /// <summary>Filters results by using [query syntax](/product/sentry-basics/search/).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>The dataset you would like to query. Note: `discover` is a **deprecated** value. The allowed values are: `error-events`, `transaction-like`* `discover`* `error-events`* `transaction-like`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequestQueryDataset? QueryDataset { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequestQueryDataset? QueryDataset { get => _explicitNullValueQueryDataset; set { _explicitNullValueQueryDataset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queryDataset"); else _explicitNullProperties?.Remove("queryDataset"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequestQueryDataset? _explicitNullValueQueryDataset = default!;
         /// <summary>The saved time range period for this saved query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Range { get; set; }
+        public string? Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
+        private string? _explicitNullValueRange = default!;
 #nullable restore
 #else
-        public string Range { get; set; }
+        public string Range { get => _explicitNullValueRange; set { _explicitNullValueRange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range"); else _explicitNullProperties?.Remove("range"); } }
+        private string _explicitNullValueRange = default!;
 #endif
         /// <summary>Time-bucket granularity in seconds for the saved query.</summary>
-        public int? Rollup { get; set; }
+        public int? Rollup { get => _explicitNullValueRollup; set { _explicitNullValueRollup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rollup"); else _explicitNullProperties?.Remove("rollup"); } }
+        private int? _explicitNullValueRollup = default!;
         /// <summary>The saved start time for this saved query.</summary>
-        public DateTimeOffset? Start { get; set; }
+        public DateTimeOffset? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private DateTimeOffset? _explicitNullValueStart = default!;
         /// <summary>Number of top events&apos; timeseries to be visualized.</summary>
-        public int? TopEvents { get; set; }
+        public int? TopEvents { get => _explicitNullValueTopEvents; set { _explicitNullValueTopEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topEvents"); else _explicitNullProperties?.Remove("topEvents"); } }
+        private int? _explicitNullValueTopEvents = default!;
         /// <summary>Saved query schema version. `1` for the legacy shape, `2` for the current one.</summary>
-        public int? Version { get; set; }
+        public int? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private int? _explicitNullValueVersion = default!;
         /// <summary>Rendered column widths, in the same order as the query&apos;s fields.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Widths { get; set; }
+        public List<string>? Widths { get => _explicitNullValueWidths; set { _explicitNullValueWidths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widths"); else _explicitNullProperties?.Remove("widths"); } }
+        private List<string>? _explicitNullValueWidths = default!;
 #nullable restore
 #else
-        public List<string> Widths { get; set; }
+        public List<string> Widths { get => _explicitNullValueWidths; set { _explicitNullValueWidths = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widths"); else _explicitNullProperties?.Remove("widths"); } }
+        private List<string> _explicitNullValueWidths = default!;
 #endif
         /// <summary>Aggregate functions to be plotted on the chart.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? YAxis { get; set; }
+        public List<string>? YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yAxis"); else _explicitNullProperties?.Remove("yAxis"); } }
+        private List<string>? _explicitNullValueYAxis = default!;
 #nullable restore
 #else
-        public List<string> YAxis { get; set; }
+        public List<string> YAxis { get => _explicitNullValueYAxis; set { _explicitNullValueYAxis = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("yAxis"); else _explicitNullProperties?.Remove("yAxis"); } }
+        private List<string> _explicitNullValueYAxis = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequest"/> and sets the default values.
@@ -155,7 +218,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDiscoverSavedQueryRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,8 +228,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "aggregations", n => { Aggregations = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<UntypedNode>()?.AsList(); } },
+                { "aggregations", n => { Aggregations = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "display", n => { Display = n.GetStringValue(); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -216,6 +279,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("version", Version);
             writer.WriteCollectionOfPrimitiveValues<string>("widths", Widths);
             writer.WriteCollectionOfPrimitiveValues<string>("yAxis", YAxis);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

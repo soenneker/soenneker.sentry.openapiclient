@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Return details on an individual issue, including its basic stats, commentand user-report counts, and a summary of the latest event.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an individual issue&apos;s attributes. Only the attributes submittedare modified.
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Asynchronously queue an individual issue for deletion.

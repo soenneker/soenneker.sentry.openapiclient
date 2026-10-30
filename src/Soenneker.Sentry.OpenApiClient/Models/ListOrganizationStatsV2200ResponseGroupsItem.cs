@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationStatsV2200ResponseGroupsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("by") is { } nullNodeBy && nullNodeBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) By = null;
+            if (parseNode.GetChildNode("series") is { } nullNodeSeries && nullNodeSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Series = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy? By { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy? By { get => _explicitNullValueBy; set { _explicitNullValueBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by"); else _explicitNullProperties?.Remove("by"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy? _explicitNullValueBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy By { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy By { get => _explicitNullValueBy; set { _explicitNullValueBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("by"); else _explicitNullProperties?.Remove("by"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy _explicitNullValueBy = default!;
 #endif
         /// <summary>The series property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries? Series { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries? Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries? _explicitNullValueSeries = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries Series { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries _explicitNullValueSeries = default!;
 #endif
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals? Totals { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals Totals { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemBy>("by", By);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemSeries>("series", Series);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationStatsV2200ResponseGroupsItemTotals>("totals", Totals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

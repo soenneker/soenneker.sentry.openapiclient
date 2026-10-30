@@ -11,68 +11,100 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListProjectEventAttachments200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("headers") is { } nullNodeHeaders && nullNodeHeaders.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Headers = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("mimetype") is { } nullNodeMimetype && nullNodeMimetype.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mimetype = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("sha1") is { } nullNodeSha1 && nullNodeSha1.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sha1 = null;
+            if (parseNode.GetChildNode("size") is { } nullNodeSize && nullNodeSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Size = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>The headers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders? Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders? _explicitNullValueHeaders = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders Headers { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItemHeaders _explicitNullValueHeaders = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The mimetype property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mimetype { get; set; }
+        public string? Mimetype { get => _explicitNullValueMimetype; set { _explicitNullValueMimetype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimetype"); else _explicitNullProperties?.Remove("mimetype"); } }
+        private string? _explicitNullValueMimetype = default!;
 #nullable restore
 #else
-        public string Mimetype { get; set; }
+        public string Mimetype { get => _explicitNullValueMimetype; set { _explicitNullValueMimetype = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mimetype"); else _explicitNullProperties?.Remove("mimetype"); } }
+        private string _explicitNullValueMimetype = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The sha1 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Sha1 { get; set; }
+        public string? Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
+        private string? _explicitNullValueSha1 = default!;
 #nullable restore
 #else
-        public string Sha1 { get; set; }
+        public string Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
+        private string _explicitNullValueSha1 = default!;
 #endif
         /// <summary>The size property</summary>
-        public int? Size { get; set; }
+        public int? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
+        private int? _explicitNullValueSize = default!;
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItem"/> and sets the default values.
@@ -89,7 +121,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectEventAttachments200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +158,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("sha1", Sha1);
             writer.WriteIntValue("size", Size);
             writer.WriteStringValue("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,40 +11,59 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SubmitUserFeedbackRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comments") is { } nullNodeComments && nullNodeComments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comments = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Comments supplied by user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comments { get; set; }
+        public string? Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string? _explicitNullValueComments = default!;
 #nullable restore
 #else
-        public string Comments { get; set; }
+        public string Comments { get => _explicitNullValueComments; set { _explicitNullValueComments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comments"); else _explicitNullProperties?.Remove("comments"); } }
+        private string _explicitNullValueComments = default!;
 #endif
         /// <summary>User&apos;s email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public string Email { get; set; }
+        public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private string _explicitNullValueEmail = default!;
 #endif
         /// <summary>The event ID. This can be retrieved from the [beforeSend callback](https://docs.sentry.io/platforms/javascript/configuration/filtering/#using-beforesend).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>User&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedbackRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedbackRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedbackRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedbackRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("event_id", EventId);
             writer.WriteStringValue("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

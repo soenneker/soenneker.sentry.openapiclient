@@ -11,40 +11,59 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationDashboard201ResponseWidgetsItemThresholds : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("max_values") is { } nullNodeMaxValues && nullNodeMaxValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValues = null;
+            if (parseNode.GetChildNode("preferredPolarity") is { } nullNodePreferredPolarity && nullNodePreferredPolarity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredPolarity = null;
+            if (parseNode.GetChildNode("timeWindow") is { } nullNodeTimeWindow && nullNodeTimeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeWindow = null;
+            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The max_values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? MaxValues { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? _explicitNullValueMaxValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues MaxValues { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues _explicitNullValueMaxValues = default!;
 #endif
         /// <summary>The preferredPolarity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredPolarity { get; set; }
+        public string? PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
+        private string? _explicitNullValuePreferredPolarity = default!;
 #nullable restore
 #else
-        public string PreferredPolarity { get; set; }
+        public string PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
+        private string _explicitNullValuePreferredPolarity = default!;
 #endif
         /// <summary>The timeWindow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeWindow { get; set; }
+        public string? TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
+        private string? _explicitNullValueTimeWindow = default!;
 #nullable restore
 #else
-        public string TimeWindow { get; set; }
+        public string TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
+        private string _explicitNullValueTimeWindow = default!;
 #endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get; set; }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get; set; }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholds"/> and sets the default values.
@@ -61,7 +80,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholds();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("preferredPolarity", PreferredPolarity);
             writer.WriteStringValue("timeWindow", TimeWindow);
             writer.WriteStringValue("unit", Unit);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

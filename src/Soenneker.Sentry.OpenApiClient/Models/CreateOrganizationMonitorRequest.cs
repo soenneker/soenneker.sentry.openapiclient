@@ -12,53 +12,79 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationMonitorRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("is_muted") is { } nullNodeIsMuted && nullNodeIsMuted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMuted = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The configuration for the monitor.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>Disable creation of monitor incidents</summary>
-        public bool? IsMuted { get; set; }
+        public bool? IsMuted { get => _explicitNullValueIsMuted; set { _explicitNullValueIsMuted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_muted"); else _explicitNullProperties?.Remove("is_muted"); } }
+        private bool? _explicitNullValueIsMuted = default!;
         /// <summary>Name of the monitor. Used for notifications. If not set the slug will be derived from your monitor name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The ID of the team or user that owns the monitor. (eg. user:51 or team:6)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Owner { get; set; }
+        public string? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public string Owner { get; set; }
+        public string Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private string _explicitNullValueOwner = default!;
 #endif
         /// <summary>The project ID or slug to associate the monitor to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Project { get; set; }
+        public string? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public string Project { get; set; }
+        public string Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string _explicitNullValueProject = default!;
 #endif
         /// <summary>Uniquely identifies your monitor within your organization. Changing this slug will require updates to any instrumented check-in calls.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>Status of the monitor. Disabled monitors will not accept events and will not count towards the monitor quota.* `active`* `disabled`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestStatus? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest"/> and sets the default values.
         /// </summary>
@@ -74,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +133,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("project", Project);
             writer.WriteStringValue("slug", Slug);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationMonitorRequestStatus>("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

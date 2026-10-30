@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves explore data for a given organization as a timeseries.This endpoint can return timeseries for either 1 or many axis, and results grouped to the top events dependingon the parameters passed**Note**: For queries extending past `30d`, spanning billions of rows, or running on projects with lowsample rates, the aggregation `yAxis=count_unique()` and filters on high-cardinalityfields (such as `query=user.id:bc`) will not return accurate results. Use these queries for roughestimation only.

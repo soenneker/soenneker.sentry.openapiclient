@@ -11,29 +11,46 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationIssueHashes200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("latestEvent") is { } nullNodeLatestEvent && nullNodeLatestEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestEvent = null;
+            if (parseNode.GetChildNode("mergedBySeer") is { } nullNodeMergedBySeer && nullNodeMergedBySeer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MergedBySeer = null;
+            if (parseNode.GetChildNode("seerMatchDistance") is { } nullNodeSeerMatchDistance && nullNodeSeerMatchDistance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeerMatchDistance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The latestEvent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent? LatestEvent { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent? LatestEvent { get => _explicitNullValueLatestEvent; set { _explicitNullValueLatestEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestEvent"); else _explicitNullProperties?.Remove("latestEvent"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent? _explicitNullValueLatestEvent = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent LatestEvent { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent LatestEvent { get => _explicitNullValueLatestEvent; set { _explicitNullValueLatestEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestEvent"); else _explicitNullProperties?.Remove("latestEvent"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent _explicitNullValueLatestEvent = default!;
 #endif
         /// <summary>The mergedBySeer property</summary>
-        public bool? MergedBySeer { get; set; }
+        public bool? MergedBySeer { get => _explicitNullValueMergedBySeer; set { _explicitNullValueMergedBySeer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedBySeer"); else _explicitNullProperties?.Remove("mergedBySeer"); } }
+        private bool? _explicitNullValueMergedBySeer = default!;
         /// <summary>The seerMatchDistance property</summary>
-        public double? SeerMatchDistance { get; set; }
+        public double? SeerMatchDistance { get => _explicitNullValueSeerMatchDistance; set { _explicitNullValueSeerMatchDistance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerMatchDistance"); else _explicitNullProperties?.Remove("seerMatchDistance"); } }
+        private double? _explicitNullValueSeerMatchDistance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -49,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent>("latestEvent", LatestEvent);
             writer.WriteBoolValue("mergedBySeer", MergedBySeer);
             writer.WriteDoubleValue("seerMatchDistance", SeerMatchDistance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

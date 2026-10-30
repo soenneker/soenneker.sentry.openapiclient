@@ -11,40 +11,59 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectEvent200ResponseReleaseVersionInfo : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("buildHash") is { } nullNodeBuildHash && nullNodeBuildHash.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildHash = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("package") is { } nullNodePackage && nullNodePackage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Package = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The buildHash property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildHash { get; set; }
+        public string? BuildHash { get => _explicitNullValueBuildHash; set { _explicitNullValueBuildHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildHash"); else _explicitNullProperties?.Remove("buildHash"); } }
+        private string? _explicitNullValueBuildHash = default!;
 #nullable restore
 #else
-        public string BuildHash { get; set; }
+        public string BuildHash { get => _explicitNullValueBuildHash; set { _explicitNullValueBuildHash = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildHash"); else _explicitNullProperties?.Remove("buildHash"); } }
+        private string _explicitNullValueBuildHash = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The package property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Package { get; set; }
+        public string? Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
+        private string? _explicitNullValuePackage = default!;
 #nullable restore
 #else
-        public string Package { get; set; }
+        public string Package { get => _explicitNullValuePackage; set { _explicitNullValuePackage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("package"); else _explicitNullProperties?.Remove("package"); } }
+        private string _explicitNullValuePackage = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion? Version { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion Version { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfo"/> and sets the default values.
@@ -61,7 +80,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfo();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("package", Package);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseReleaseVersionInfoVersion>("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

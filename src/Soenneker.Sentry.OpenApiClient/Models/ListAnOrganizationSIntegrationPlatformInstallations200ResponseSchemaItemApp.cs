@@ -11,26 +11,41 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sentryAppId") is { } nullNodeSentryAppId && nullNodeSentryAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryAppId = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The sentryAppId property</summary>
-        public int? SentryAppId { get; set; }
+        public int? SentryAppId { get => _explicitNullValueSentryAppId; set { _explicitNullValueSentryAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryAppId"); else _explicitNullProperties?.Remove("sentryAppId"); } }
+        private int? _explicitNullValueSentryAppId = default!;
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>The uuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; set; }
+        public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string? _explicitNullValueUuid = default!;
 #nullable restore
 #else
-        public string Uuid { get; set; }
+        public string Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string _explicitNullValueUuid = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("sentryAppId", SentryAppId);
             writer.WriteStringValue("slug", Slug);
             writer.WriteStringValue("uuid", Uuid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

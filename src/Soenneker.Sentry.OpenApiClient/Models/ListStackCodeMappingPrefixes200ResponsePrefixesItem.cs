@@ -11,18 +11,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListStackCodeMappingPrefixes200ResponsePrefixesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fileCount") is { } nullNodeFileCount && nullNodeFileCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FileCount = null;
+            if (parseNode.GetChildNode("path") is { } nullNodePath && nullNodePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Path = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The fileCount property</summary>
-        public int? FileCount { get; set; }
+        public int? FileCount { get => _explicitNullValueFileCount; set { _explicitNullValueFileCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileCount"); else _explicitNullProperties?.Remove("fileCount"); } }
+        private int? _explicitNullValueFileCount = default!;
         /// <summary>The path property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Path { get; set; }
+        public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string? _explicitNullValuePath = default!;
 #nullable restore
 #else
-        public string Path { get; set; }
+        public string Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
+        private string _explicitNullValuePath = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("fileCount", FileCount);
             writer.WriteStringValue("path", Path);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

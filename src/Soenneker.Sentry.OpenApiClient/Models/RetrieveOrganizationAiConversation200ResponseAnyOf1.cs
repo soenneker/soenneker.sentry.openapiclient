@@ -12,56 +12,81 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RetrieveOrganizationAiConversation200ResponseAnyOf1 : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversationId") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("spans") is { } nullNodeSpans && nullNodeSpans.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spans = null;
+            if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("webUrl") is { } nullNodeWebUrl && nullNodeWebUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conversationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversationId"); else _explicitNullProperties?.Remove("conversationId"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversationId"); else _explicitNullProperties?.Remove("conversationId"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The projects property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem>? Projects { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem> Projects { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1ProjectsItem> _explicitNullValueProjects = default!;
 #endif
         /// <summary>The spans property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem>? Spans { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem>? Spans { get => _explicitNullValueSpans; set { _explicitNullValueSpans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spans"); else _explicitNullProperties?.Remove("spans"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem>? _explicitNullValueSpans = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem> Spans { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem> Spans { get => _explicitNullValueSpans; set { _explicitNullValueSpans = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spans"); else _explicitNullProperties?.Remove("spans"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1SpansItem> _explicitNullValueSpans = default!;
 #endif
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats? Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats _explicitNullValueStats = default!;
 #endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>The webUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl { get; set; }
+        public string? WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webUrl"); else _explicitNullProperties?.Remove("webUrl"); } }
+        private string? _explicitNullValueWebUrl = default!;
 #nullable restore
 #else
-        public string WebUrl { get; set; }
+        public string WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webUrl"); else _explicitNullProperties?.Remove("webUrl"); } }
+        private string _explicitNullValueWebUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1"/> and sets the default values.
@@ -78,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,6 +134,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1Stats>("stats", Stats);
             writer.WriteStringValue("title", Title);
             writer.WriteStringValue("webUrl", WebUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

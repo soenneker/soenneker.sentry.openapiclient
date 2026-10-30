@@ -12,38 +12,60 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationCodeMappingRequestRequestBody : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_branch") is { } nullNodeDefaultBranch && nullNodeDefaultBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultBranch = null;
+            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("repository_id") is { } nullNodeRepositoryId && nullNodeRepositoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepositoryId = null;
+            if (parseNode.GetChildNode("source_root") is { } nullNodeSourceRoot && nullNodeSourceRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceRoot = null;
+            if (parseNode.GetChildNode("stack_root") is { } nullNodeStackRoot && nullNodeStackRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StackRoot = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The default branch to use when resolving source files. May be empty for Perforce.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultBranch { get; set; }
+        public string? DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string? _explicitNullValueDefaultBranch = default!;
 #nullable restore
 #else
-        public string DefaultBranch { get; set; }
+        public string DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string _explicitNullValueDefaultBranch = default!;
 #endif
         /// <summary>The ID of the installed integration that provides the repository.</summary>
-        public int? IntegrationId { get; set; }
+        public int? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        private int? _explicitNullValueIntegrationId = default!;
         /// <summary>The ID of the project to associate with the code mapping.</summary>
-        public int? ProjectId { get; set; }
+        public int? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private int? _explicitNullValueProjectId = default!;
         /// <summary>The ID of a repository belonging to the installed integration.</summary>
-        public int? RepositoryId { get; set; }
+        public int? RepositoryId { get => _explicitNullValueRepositoryId; set { _explicitNullValueRepositoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository_id"); else _explicitNullProperties?.Remove("repository_id"); } }
+        private int? _explicitNullValueRepositoryId = default!;
         /// <summary>The repository path prefix to substitute for the stack trace prefix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceRoot { get; set; }
+        public string? SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
+        private string? _explicitNullValueSourceRoot = default!;
 #nullable restore
 #else
-        public string SourceRoot { get; set; }
+        public string SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
+        private string _explicitNullValueSourceRoot = default!;
 #endif
         /// <summary>The path prefix to replace in stack trace filenames.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StackRoot { get; set; }
+        public string? StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
+        private string? _explicitNullValueStackRoot = default!;
 #nullable restore
 #else
-        public string StackRoot { get; set; }
+        public string StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
+        private string _explicitNullValueStackRoot = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationCodeMappingRequestRequestBody"/> and sets the default values.
@@ -60,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationCodeMappingRequestRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationCodeMappingRequestRequestBody();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationCodeMappingRequestRequestBody(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,6 +113,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("repository_id", RepositoryId);
             writer.WriteStringValue("source_root", SourceRoot);
             writer.WriteStringValue("stack_root", StackRoot);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

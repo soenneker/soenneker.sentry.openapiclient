@@ -11,37 +11,57 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationTags200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("topValues") is { } nullNodeTopValues && nullNodeTopValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TopValues = null;
+            if (parseNode.GetChildNode("totalValues") is { } nullNodeTotalValues && nullNodeTotalValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalValues = null;
+            if (parseNode.GetChildNode("uniqueValues") is { } nullNodeUniqueValues && nullNodeUniqueValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UniqueValues = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The topValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem>? TopValues { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem>? TopValues { get => _explicitNullValueTopValues; set { _explicitNullValueTopValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topValues"); else _explicitNullProperties?.Remove("topValues"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem>? _explicitNullValueTopValues = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem> TopValues { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem> TopValues { get => _explicitNullValueTopValues; set { _explicitNullValueTopValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topValues"); else _explicitNullProperties?.Remove("topValues"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem> _explicitNullValueTopValues = default!;
 #endif
         /// <summary>The totalValues property</summary>
-        public int? TotalValues { get; set; }
+        public int? TotalValues { get => _explicitNullValueTotalValues; set { _explicitNullValueTotalValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalValues"); else _explicitNullProperties?.Remove("totalValues"); } }
+        private int? _explicitNullValueTotalValues = default!;
         /// <summary>The uniqueValues property</summary>
-        public int? UniqueValues { get; set; }
+        public int? UniqueValues { get => _explicitNullValueUniqueValues; set { _explicitNullValueUniqueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueValues"); else _explicitNullProperties?.Remove("uniqueValues"); } }
+        private int? _explicitNullValueUniqueValues = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -57,7 +77,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,6 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem>("topValues", TopValues);
             writer.WriteIntValue("totalValues", TotalValues);
             writer.WriteIntValue("uniqueValues", UniqueValues);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

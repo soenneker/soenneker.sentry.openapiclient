@@ -12,36 +12,61 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateOrganizationIssueRequestStatusDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
+            if (parseNode.GetChildNode("ignoreDuration") is { } nullNodeIgnoreDuration && nullNodeIgnoreDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreDuration = null;
+            if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
+            if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
+            if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
+            if (parseNode.GetChildNode("inCommit") is { } nullNodeInCommit && nullNodeInCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InCommit = null;
+            if (parseNode.GetChildNode("inNextRelease") is { } nullNodeInNextRelease && nullNodeInNextRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InNextRelease = null;
+            if (parseNode.GetChildNode("inRelease") is { } nullNodeInRelease && nullNodeInRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InRelease = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Ignore the issue until it has occurred this many times in `ignoreWindow` minutes.</summary>
-        public int? IgnoreCount { get; set; }
+        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
+        private int? _explicitNullValueIgnoreCount = default!;
         /// <summary>Ignore the issue until for this many minutes.</summary>
-        public int? IgnoreDuration { get; set; }
+        public int? IgnoreDuration { get => _explicitNullValueIgnoreDuration; set { _explicitNullValueIgnoreDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreDuration"); else _explicitNullProperties?.Remove("ignoreDuration"); } }
+        private int? _explicitNullValueIgnoreDuration = default!;
         /// <summary>Ignore the issue until it has affected this many users in `ignoreUserWindow` minutes.</summary>
-        public int? IgnoreUserCount { get; set; }
+        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
+        private int? _explicitNullValueIgnoreUserCount = default!;
         /// <summary>Ignore the issue until it has affected `ignoreUserCount` users in this many minutes. (Max: 1 week)</summary>
-        public int? IgnoreUserWindow { get; set; }
+        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
+        private int? _explicitNullValueIgnoreUserWindow = default!;
         /// <summary>Ignore the issue until it has occurred `ignoreCount` times in this many minutes. (Max: 1 week)</summary>
-        public int? IgnoreWindow { get; set; }
+        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
+        private int? _explicitNullValueIgnoreWindow = default!;
         /// <summary>The commit data that the issue should use for resolution.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit? InCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit? InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit? _explicitNullValueInCommit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit InCommit { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit _explicitNullValueInCommit = default!;
 #endif
         /// <summary>If true, marks the issue as resolved in the next release.</summary>
-        public bool? InNextRelease { get; set; }
+        public bool? InNextRelease { get => _explicitNullValueInNextRelease; set { _explicitNullValueInNextRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inNextRelease"); else _explicitNullProperties?.Remove("inNextRelease"); } }
+        private bool? _explicitNullValueInNextRelease = default!;
         /// <summary>The version of the release that the issue should be resolved in.If set to `latest`, the latest release will be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InRelease { get; set; }
+        public string? InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        private string? _explicitNullValueInRelease = default!;
 #nullable restore
 #else
-        public string InRelease { get; set; }
+        public string InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        private string _explicitNullValueInRelease = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails"/> and sets the default values.
@@ -58,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +118,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssueRequestStatusDetailsInCommit>("inCommit", InCommit);
             writer.WriteBoolValue("inNextRelease", InNextRelease);
             writer.WriteStringValue("inRelease", InRelease);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,13 +11,24 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("is_transformed_alias") is { } nullNodeIsTransformedAlias && nullNodeIsTransformedAlias.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTransformedAlias = null;
+            if (parseNode.GetChildNode("source_type") is { } nullNodeSourceType && nullNodeSourceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The is_transformed_alias property</summary>
-        public bool? IsTransformedAlias { get; set; }
+        public bool? IsTransformedAlias { get => _explicitNullValueIsTransformedAlias; set { _explicitNullValueIsTransformedAlias = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_transformed_alias"); else _explicitNullProperties?.Remove("is_transformed_alias"); } }
+        private bool? _explicitNullValueIsTransformedAlias = default!;
         /// <summary>The source_type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType? SourceType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType? _explicitNullValueSourceType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("is_transformed_alias", IsTransformedAlias);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType>("source_type", SourceType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

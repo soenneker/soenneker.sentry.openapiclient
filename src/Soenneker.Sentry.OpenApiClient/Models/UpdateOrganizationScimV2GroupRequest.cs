@@ -11,24 +11,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationScimV2GroupRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("Operations") is { } nullNodeOperations && nullNodeOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operations = null;
+            if (parseNode.GetChildNode("schemas") is { } nullNodeSchemas && nullNodeSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemas = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The list of operations to perform. Valid operations are:* Renaming a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;replace&quot;,        &quot;value&quot;: {            &quot;id&quot;: 23,            &quot;displayName&quot;: &quot;newName&quot;        }    }]}```* Adding a member to a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;add&quot;,        &quot;path&quot;: &quot;members&quot;,        &quot;value&quot;: [            {                &quot;value&quot;: 23,                &quot;display&quot;: &quot;testexample@example.com&quot;            }        ]    }]}```* Removing a member from a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;remove&quot;,        &quot;path&quot;: &quot;members[value eq &quot;23&quot;]&quot;    }]}```* Replacing an entire member set of a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;replace&quot;,        &quot;path&quot;: &quot;members&quot;,        &quot;value&quot;: [            {                &quot;value&quot;: 23,                &quot;display&quot;: &quot;testexample2@sentry.io&quot;            },            {                &quot;value&quot;: 24,                &quot;display&quot;: &quot;testexample3@sentry.io&quot;            }        ]    }]}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? Operations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? _explicitNullValueOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> Operations { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> _explicitNullValueOperations = default!;
 #endif
         /// <summary>SCIM schema URIs identifying the request format. Must be the PatchOp schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Schemas { get; set; }
+        public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        private List<string>? _explicitNullValueSchemas = default!;
 #nullable restore
 #else
-        public List<string> Schemas { get; set; }
+        public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        private List<string> _explicitNullValueSchemas = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequest"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>("Operations", Operations);
             writer.WriteCollectionOfPrimitiveValues<string>("schemas", Schemas);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

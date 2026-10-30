@@ -11,43 +11,79 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveOrganizationAiConversation200ResponseAnyOf1StatsUsageByModelItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cacheReadCost") is { } nullNodeCacheReadCost && nullNodeCacheReadCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheReadCost = null;
+            if (parseNode.GetChildNode("cacheReadTokens") is { } nullNodeCacheReadTokens && nullNodeCacheReadTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheReadTokens = null;
+            if (parseNode.GetChildNode("cacheWriteCost") is { } nullNodeCacheWriteCost && nullNodeCacheWriteCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheWriteCost = null;
+            if (parseNode.GetChildNode("cacheWriteTokens") is { } nullNodeCacheWriteTokens && nullNodeCacheWriteTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CacheWriteTokens = null;
+            if (parseNode.GetChildNode("inputCost") is { } nullNodeInputCost && nullNodeInputCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputCost = null;
+            if (parseNode.GetChildNode("inputTokens") is { } nullNodeInputTokens && nullNodeInputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputTokens = null;
+            if (parseNode.GetChildNode("llmCalls") is { } nullNodeLlmCalls && nullNodeLlmCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LlmCalls = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("outputCost") is { } nullNodeOutputCost && nullNodeOutputCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputCost = null;
+            if (parseNode.GetChildNode("outputTokens") is { } nullNodeOutputTokens && nullNodeOutputTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OutputTokens = null;
+            if (parseNode.GetChildNode("reasoningCost") is { } nullNodeReasoningCost && nullNodeReasoningCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasoningCost = null;
+            if (parseNode.GetChildNode("reasoningTokens") is { } nullNodeReasoningTokens && nullNodeReasoningTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReasoningTokens = null;
+            if (parseNode.GetChildNode("totalCost") is { } nullNodeTotalCost && nullNodeTotalCost.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalCost = null;
+            if (parseNode.GetChildNode("totalTokens") is { } nullNodeTotalTokens && nullNodeTotalTokens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalTokens = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cacheReadCost property</summary>
-        public double? CacheReadCost { get; set; }
+        public double? CacheReadCost { get => _explicitNullValueCacheReadCost; set { _explicitNullValueCacheReadCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheReadCost"); else _explicitNullProperties?.Remove("cacheReadCost"); } }
+        private double? _explicitNullValueCacheReadCost = default!;
         /// <summary>The cacheReadTokens property</summary>
-        public int? CacheReadTokens { get; set; }
+        public int? CacheReadTokens { get => _explicitNullValueCacheReadTokens; set { _explicitNullValueCacheReadTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheReadTokens"); else _explicitNullProperties?.Remove("cacheReadTokens"); } }
+        private int? _explicitNullValueCacheReadTokens = default!;
         /// <summary>The cacheWriteCost property</summary>
-        public double? CacheWriteCost { get; set; }
+        public double? CacheWriteCost { get => _explicitNullValueCacheWriteCost; set { _explicitNullValueCacheWriteCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheWriteCost"); else _explicitNullProperties?.Remove("cacheWriteCost"); } }
+        private double? _explicitNullValueCacheWriteCost = default!;
         /// <summary>The cacheWriteTokens property</summary>
-        public int? CacheWriteTokens { get; set; }
+        public int? CacheWriteTokens { get => _explicitNullValueCacheWriteTokens; set { _explicitNullValueCacheWriteTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cacheWriteTokens"); else _explicitNullProperties?.Remove("cacheWriteTokens"); } }
+        private int? _explicitNullValueCacheWriteTokens = default!;
         /// <summary>The inputCost property</summary>
-        public double? InputCost { get; set; }
+        public double? InputCost { get => _explicitNullValueInputCost; set { _explicitNullValueInputCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputCost"); else _explicitNullProperties?.Remove("inputCost"); } }
+        private double? _explicitNullValueInputCost = default!;
         /// <summary>The inputTokens property</summary>
-        public int? InputTokens { get; set; }
+        public int? InputTokens { get => _explicitNullValueInputTokens; set { _explicitNullValueInputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inputTokens"); else _explicitNullProperties?.Remove("inputTokens"); } }
+        private int? _explicitNullValueInputTokens = default!;
         /// <summary>The llmCalls property</summary>
-        public int? LlmCalls { get; set; }
+        public int? LlmCalls { get => _explicitNullValueLlmCalls; set { _explicitNullValueLlmCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("llmCalls"); else _explicitNullProperties?.Remove("llmCalls"); } }
+        private int? _explicitNullValueLlmCalls = default!;
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The outputCost property</summary>
-        public double? OutputCost { get; set; }
+        public double? OutputCost { get => _explicitNullValueOutputCost; set { _explicitNullValueOutputCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputCost"); else _explicitNullProperties?.Remove("outputCost"); } }
+        private double? _explicitNullValueOutputCost = default!;
         /// <summary>The outputTokens property</summary>
-        public int? OutputTokens { get; set; }
+        public int? OutputTokens { get => _explicitNullValueOutputTokens; set { _explicitNullValueOutputTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outputTokens"); else _explicitNullProperties?.Remove("outputTokens"); } }
+        private int? _explicitNullValueOutputTokens = default!;
         /// <summary>The reasoningCost property</summary>
-        public double? ReasoningCost { get; set; }
+        public double? ReasoningCost { get => _explicitNullValueReasoningCost; set { _explicitNullValueReasoningCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoningCost"); else _explicitNullProperties?.Remove("reasoningCost"); } }
+        private double? _explicitNullValueReasoningCost = default!;
         /// <summary>The reasoningTokens property</summary>
-        public int? ReasoningTokens { get; set; }
+        public int? ReasoningTokens { get => _explicitNullValueReasoningTokens; set { _explicitNullValueReasoningTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reasoningTokens"); else _explicitNullProperties?.Remove("reasoningTokens"); } }
+        private int? _explicitNullValueReasoningTokens = default!;
         /// <summary>The totalCost property</summary>
-        public double? TotalCost { get; set; }
+        public double? TotalCost { get => _explicitNullValueTotalCost; set { _explicitNullValueTotalCost = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalCost"); else _explicitNullProperties?.Remove("totalCost"); } }
+        private double? _explicitNullValueTotalCost = default!;
         /// <summary>The totalTokens property</summary>
-        public int? TotalTokens { get; set; }
+        public int? TotalTokens { get => _explicitNullValueTotalTokens; set { _explicitNullValueTotalTokens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalTokens"); else _explicitNullProperties?.Remove("totalTokens"); } }
+        private int? _explicitNullValueTotalTokens = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1StatsUsageByModelItem"/> and sets the default values.
         /// </summary>
@@ -63,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1StatsUsageByModelItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1StatsUsageByModelItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200ResponseAnyOf1StatsUsageByModelItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,6 +146,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("reasoningTokens", ReasoningTokens);
             writer.WriteDoubleValue("totalCost", TotalCost);
             writer.WriteIntValue("totalTokens", TotalTokens);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

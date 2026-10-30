@@ -11,279 +11,431 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allowedDomains") is { } nullNodeAllowedDomains && nullNodeAllowedDomains.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowedDomains = null;
+            if (parseNode.GetChildNode("autofixAutomationTuning") is { } nullNodeAutofixAutomationTuning && nullNodeAutofixAutomationTuning.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutofixAutomationTuning = null;
+            if (parseNode.GetChildNode("builtinSymbolSources") is { } nullNodeBuiltinSymbolSources && nullNodeBuiltinSymbolSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuiltinSymbolSources = null;
+            if (parseNode.GetChildNode("copy_from_project") is { } nullNodeCopyFromProject && nullNodeCopyFromProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CopyFromProject = null;
+            if (parseNode.GetChildNode("dataScrubber") is { } nullNodeDataScrubber && nullNodeDataScrubber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScrubber = null;
+            if (parseNode.GetChildNode("dataScrubberDefaults") is { } nullNodeDataScrubberDefaults && nullNodeDataScrubberDefaults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScrubberDefaults = null;
+            if (parseNode.GetChildNode("debugFilesRole") is { } nullNodeDebugFilesRole && nullNodeDebugFilesRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugFilesRole = null;
+            if (parseNode.GetChildNode("defaultEnvironment") is { } nullNodeDefaultEnvironment && nullNodeDefaultEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultEnvironment = null;
+            if (parseNode.GetChildNode("digestsMaxDelay") is { } nullNodeDigestsMaxDelay && nullNodeDigestsMaxDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigestsMaxDelay = null;
+            if (parseNode.GetChildNode("digestsMinDelay") is { } nullNodeDigestsMinDelay && nullNodeDigestsMinDelay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DigestsMinDelay = null;
+            if (parseNode.GetChildNode("dynamicSamplingBiases") is { } nullNodeDynamicSamplingBiases && nullNodeDynamicSamplingBiases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicSamplingBiases = null;
+            if (parseNode.GetChildNode("enableAutoReleaseCreation") is { } nullNodeEnableAutoReleaseCreation && nullNodeEnableAutoReleaseCreation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableAutoReleaseCreation = null;
+            if (parseNode.GetChildNode("enableNativeSourceServerMapping") is { } nullNodeEnableNativeSourceServerMapping && nullNodeEnableNativeSourceServerMapping.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableNativeSourceServerMapping = null;
+            if (parseNode.GetChildNode("fingerprintingRules") is { } nullNodeFingerprintingRules && nullNodeFingerprintingRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FingerprintingRules = null;
+            if (parseNode.GetChildNode("groupingConfig") is { } nullNodeGroupingConfig && nullNodeGroupingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupingConfig = null;
+            if (parseNode.GetChildNode("groupingEnhancements") is { } nullNodeGroupingEnhancements && nullNodeGroupingEnhancements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupingEnhancements = null;
+            if (parseNode.GetChildNode("highlightContext") is { } nullNodeHighlightContext && nullNodeHighlightContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightContext = null;
+            if (parseNode.GetChildNode("highlightTags") is { } nullNodeHighlightTags && nullNodeHighlightTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HighlightTags = null;
+            if (parseNode.GetChildNode("isBookmarked") is { } nullNodeIsBookmarked && nullNodeIsBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBookmarked = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("preprodDistributionEnabledByCustomer") is { } nullNodePreprodDistributionEnabledByCustomer && nullNodePreprodDistributionEnabledByCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodDistributionEnabledByCustomer = null;
+            if (parseNode.GetChildNode("preprodDistributionEnabledQuery") is { } nullNodePreprodDistributionEnabledQuery && nullNodePreprodDistributionEnabledQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodDistributionEnabledQuery = null;
+            if (parseNode.GetChildNode("preprodDistributionPrCommentsEnabledByCustomer") is { } nullNodePreprodDistributionPrCommentsEnabledByCustomer && nullNodePreprodDistributionPrCommentsEnabledByCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodDistributionPrCommentsEnabledByCustomer = null;
+            if (parseNode.GetChildNode("preprodSizeEnabledByCustomer") is { } nullNodePreprodSizeEnabledByCustomer && nullNodePreprodSizeEnabledByCustomer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizeEnabledByCustomer = null;
+            if (parseNode.GetChildNode("preprodSizeEnabledQuery") is { } nullNodePreprodSizeEnabledQuery && nullNodePreprodSizeEnabledQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizeEnabledQuery = null;
+            if (parseNode.GetChildNode("preprodSizePrCommentsEnabled") is { } nullNodePreprodSizePrCommentsEnabled && nullNodePreprodSizePrCommentsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizePrCommentsEnabled = null;
+            if (parseNode.GetChildNode("preprodSizePrCommentsRules") is { } nullNodePreprodSizePrCommentsRules && nullNodePreprodSizePrCommentsRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizePrCommentsRules = null;
+            if (parseNode.GetChildNode("preprodSizeStatusChecksEnabled") is { } nullNodePreprodSizeStatusChecksEnabled && nullNodePreprodSizeStatusChecksEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizeStatusChecksEnabled = null;
+            if (parseNode.GetChildNode("preprodSizeStatusChecksRules") is { } nullNodePreprodSizeStatusChecksRules && nullNodePreprodSizeStatusChecksRules.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSizeStatusChecksRules = null;
+            if (parseNode.GetChildNode("preprodSnapshotPrCommentsEnabled") is { } nullNodePreprodSnapshotPrCommentsEnabled && nullNodePreprodSnapshotPrCommentsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotPrCommentsEnabled = null;
+            if (parseNode.GetChildNode("preprodSnapshotPrCommentsPostOnAdded") is { } nullNodePreprodSnapshotPrCommentsPostOnAdded && nullNodePreprodSnapshotPrCommentsPostOnAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotPrCommentsPostOnAdded = null;
+            if (parseNode.GetChildNode("preprodSnapshotPrCommentsPostOnChanged") is { } nullNodePreprodSnapshotPrCommentsPostOnChanged && nullNodePreprodSnapshotPrCommentsPostOnChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotPrCommentsPostOnChanged = null;
+            if (parseNode.GetChildNode("preprodSnapshotPrCommentsPostOnRemoved") is { } nullNodePreprodSnapshotPrCommentsPostOnRemoved && nullNodePreprodSnapshotPrCommentsPostOnRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotPrCommentsPostOnRemoved = null;
+            if (parseNode.GetChildNode("preprodSnapshotPrCommentsPostOnRenamed") is { } nullNodePreprodSnapshotPrCommentsPostOnRenamed && nullNodePreprodSnapshotPrCommentsPostOnRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotPrCommentsPostOnRenamed = null;
+            if (parseNode.GetChildNode("preprodSnapshotStatusChecksEnabled") is { } nullNodePreprodSnapshotStatusChecksEnabled && nullNodePreprodSnapshotStatusChecksEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotStatusChecksEnabled = null;
+            if (parseNode.GetChildNode("preprodSnapshotStatusChecksFailOnAdded") is { } nullNodePreprodSnapshotStatusChecksFailOnAdded && nullNodePreprodSnapshotStatusChecksFailOnAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotStatusChecksFailOnAdded = null;
+            if (parseNode.GetChildNode("preprodSnapshotStatusChecksFailOnChanged") is { } nullNodePreprodSnapshotStatusChecksFailOnChanged && nullNodePreprodSnapshotStatusChecksFailOnChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotStatusChecksFailOnChanged = null;
+            if (parseNode.GetChildNode("preprodSnapshotStatusChecksFailOnRemoved") is { } nullNodePreprodSnapshotStatusChecksFailOnRemoved && nullNodePreprodSnapshotStatusChecksFailOnRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotStatusChecksFailOnRemoved = null;
+            if (parseNode.GetChildNode("preprodSnapshotStatusChecksFailOnRenamed") is { } nullNodePreprodSnapshotStatusChecksFailOnRenamed && nullNodePreprodSnapshotStatusChecksFailOnRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreprodSnapshotStatusChecksFailOnRenamed = null;
+            if (parseNode.GetChildNode("relayPiiConfig") is { } nullNodeRelayPiiConfig && nullNodeRelayPiiConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayPiiConfig = null;
+            if (parseNode.GetChildNode("resolveAge") is { } nullNodeResolveAge && nullNodeResolveAge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolveAge = null;
+            if (parseNode.GetChildNode("safeFields") is { } nullNodeSafeFields && nullNodeSafeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SafeFields = null;
+            if (parseNode.GetChildNode("scmSourceContextEnabled") is { } nullNodeScmSourceContextEnabled && nullNodeScmSourceContextEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScmSourceContextEnabled = null;
+            if (parseNode.GetChildNode("scrapeJavaScript") is { } nullNodeScrapeJavaScript && nullNodeScrapeJavaScript.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapeJavaScript = null;
+            if (parseNode.GetChildNode("scrubIPAddresses") is { } nullNodeScrubIPAddresses && nullNodeScrubIPAddresses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrubIPAddresses = null;
+            if (parseNode.GetChildNode("secondaryGroupingConfig") is { } nullNodeSecondaryGroupingConfig && nullNodeSecondaryGroupingConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryGroupingConfig = null;
+            if (parseNode.GetChildNode("secondaryGroupingExpiry") is { } nullNodeSecondaryGroupingExpiry && nullNodeSecondaryGroupingExpiry.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryGroupingExpiry = null;
+            if (parseNode.GetChildNode("securityToken") is { } nullNodeSecurityToken && nullNodeSecurityToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityToken = null;
+            if (parseNode.GetChildNode("securityTokenHeader") is { } nullNodeSecurityTokenHeader && nullNodeSecurityTokenHeader.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecurityTokenHeader = null;
+            if (parseNode.GetChildNode("seerScannerAutomation") is { } nullNodeSeerScannerAutomation && nullNodeSeerScannerAutomation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SeerScannerAutomation = null;
+            if (parseNode.GetChildNode("sensitiveFields") is { } nullNodeSensitiveFields && nullNodeSensitiveFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SensitiveFields = null;
+            if (parseNode.GetChildNode("slug") is { } nullNodeSlug && nullNodeSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Slug = null;
+            if (parseNode.GetChildNode("storeCrashReports") is { } nullNodeStoreCrashReports && nullNodeStoreCrashReports.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoreCrashReports = null;
+            if (parseNode.GetChildNode("subjectPrefix") is { } nullNodeSubjectPrefix && nullNodeSubjectPrefix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectPrefix = null;
+            if (parseNode.GetChildNode("subjectTemplate") is { } nullNodeSubjectTemplate && nullNodeSubjectTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectTemplate = null;
+            if (parseNode.GetChildNode("symbolSources") is { } nullNodeSymbolSources && nullNodeSymbolSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SymbolSources = null;
+            if (parseNode.GetChildNode("targetSampleRate") is { } nullNodeTargetSampleRate && nullNodeTargetSampleRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetSampleRate = null;
+            if (parseNode.GetChildNode("tempestFetchScreenshots") is { } nullNodeTempestFetchScreenshots && nullNodeTempestFetchScreenshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TempestFetchScreenshots = null;
+            if (parseNode.GetChildNode("verifySSL") is { } nullNodeVerifySSL && nullNodeVerifySSL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifySSL = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Origins permitted to send events to this project. Use `*` to allow any.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedDomains { get; set; }
+        public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string>? _explicitNullValueAllowedDomains = default!;
 #nullable restore
 #else
-        public List<string> AllowedDomains { get; set; }
+        public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
+        private List<string> _explicitNullValueAllowedDomains = default!;
 #endif
         /// <summary>How aggressively Seer runs Autofix on new issues. Can be updated with **`project:read`** permission.* `off`* `super_low`* `low`* `medium`* `high`* `always`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning? AutofixAutomationTuning { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning? AutofixAutomationTuning { get => _explicitNullValueAutofixAutomationTuning; set { _explicitNullValueAutofixAutomationTuning = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofixAutomationTuning"); else _explicitNullProperties?.Remove("autofixAutomationTuning"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestAutofixAutomationTuning? _explicitNullValueAutofixAutomationTuning = default!;
         /// <summary>Identifiers of Sentry-hosted symbol sources to use when symbolicating events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BuiltinSymbolSources { get; set; }
+        public List<string>? BuiltinSymbolSources { get => _explicitNullValueBuiltinSymbolSources; set { _explicitNullValueBuiltinSymbolSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builtinSymbolSources"); else _explicitNullProperties?.Remove("builtinSymbolSources"); } }
+        private List<string>? _explicitNullValueBuiltinSymbolSources = default!;
 #nullable restore
 #else
-        public List<string> BuiltinSymbolSources { get; set; }
+        public List<string> BuiltinSymbolSources { get => _explicitNullValueBuiltinSymbolSources; set { _explicitNullValueBuiltinSymbolSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builtinSymbolSources"); else _explicitNullProperties?.Remove("builtinSymbolSources"); } }
+        private List<string> _explicitNullValueBuiltinSymbolSources = default!;
 #endif
         /// <summary>ID of a project whose settings, teams, and keys should be copied into this one.</summary>
-        public int? CopyFromProject { get; set; }
+        public int? CopyFromProject { get => _explicitNullValueCopyFromProject; set { _explicitNullValueCopyFromProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("copy_from_project"); else _explicitNullProperties?.Remove("copy_from_project"); } }
+        private int? _explicitNullValueCopyFromProject = default!;
         /// <summary>Remove known sensitive values from events before storing them.</summary>
-        public bool? DataScrubber { get; set; }
+        public bool? DataScrubber { get => _explicitNullValueDataScrubber; set { _explicitNullValueDataScrubber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubber"); else _explicitNullProperties?.Remove("dataScrubber"); } }
+        private bool? _explicitNullValueDataScrubber = default!;
         /// <summary>Also scrub Sentry&apos;s built-in list of sensitive field names.</summary>
-        public bool? DataScrubberDefaults { get; set; }
+        public bool? DataScrubberDefaults { get => _explicitNullValueDataScrubberDefaults; set { _explicitNullValueDataScrubberDefaults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubberDefaults"); else _explicitNullProperties?.Remove("dataScrubberDefaults"); } }
+        private bool? _explicitNullValueDataScrubberDefaults = default!;
         /// <summary>The role required to download debug information files, ProGuard mappings and source maps. If not set, inherits from organization setting.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? DebugFilesRole { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? _explicitNullValueDebugFilesRole = default!;
         /// <summary>Environment selected by default when viewing this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultEnvironment { get; set; }
+        public string? DefaultEnvironment { get => _explicitNullValueDefaultEnvironment; set { _explicitNullValueDefaultEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultEnvironment"); else _explicitNullProperties?.Remove("defaultEnvironment"); } }
+        private string? _explicitNullValueDefaultEnvironment = default!;
 #nullable restore
 #else
-        public string DefaultEnvironment { get; set; }
+        public string DefaultEnvironment { get => _explicitNullValueDefaultEnvironment; set { _explicitNullValueDefaultEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultEnvironment"); else _explicitNullProperties?.Remove("defaultEnvironment"); } }
+        private string _explicitNullValueDefaultEnvironment = default!;
 #endif
         /// <summary>Maximum time in seconds to wait before sending an issue digest email.</summary>
-        public int? DigestsMaxDelay { get; set; }
+        public int? DigestsMaxDelay { get => _explicitNullValueDigestsMaxDelay; set { _explicitNullValueDigestsMaxDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digestsMaxDelay"); else _explicitNullProperties?.Remove("digestsMaxDelay"); } }
+        private int? _explicitNullValueDigestsMaxDelay = default!;
         /// <summary>Minimum time in seconds to wait before sending an issue digest email.</summary>
-        public int? DigestsMinDelay { get; set; }
+        public int? DigestsMinDelay { get => _explicitNullValueDigestsMinDelay; set { _explicitNullValueDigestsMinDelay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digestsMinDelay"); else _explicitNullProperties?.Remove("digestsMinDelay"); } }
+        private int? _explicitNullValueDigestsMinDelay = default!;
         /// <summary>Per-bias toggles adjusting which transactions dynamic sampling favors retaining.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>? DynamicSamplingBiases { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>? DynamicSamplingBiases { get => _explicitNullValueDynamicSamplingBiases; set { _explicitNullValueDynamicSamplingBiases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSamplingBiases"); else _explicitNullProperties?.Remove("dynamicSamplingBiases"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem>? _explicitNullValueDynamicSamplingBiases = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem> DynamicSamplingBiases { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem> DynamicSamplingBiases { get => _explicitNullValueDynamicSamplingBiases; set { _explicitNullValueDynamicSamplingBiases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSamplingBiases"); else _explicitNullProperties?.Remove("dynamicSamplingBiases"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDynamicSamplingBiasesItem> _explicitNullValueDynamicSamplingBiases = default!;
 #endif
         /// <summary>Automatically create releases from ingested events. When disabled, releases must be created manually (e.g. via the Sentry CLI).</summary>
-        public bool? EnableAutoReleaseCreation { get; set; }
+        public bool? EnableAutoReleaseCreation { get => _explicitNullValueEnableAutoReleaseCreation; set { _explicitNullValueEnableAutoReleaseCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAutoReleaseCreation"); else _explicitNullProperties?.Remove("enableAutoReleaseCreation"); } }
+        private bool? _explicitNullValueEnableAutoReleaseCreation = default!;
         /// <summary>Apply source server (srcsrv) information from native debug files to symbolicated frames.</summary>
-        public bool? EnableNativeSourceServerMapping { get; set; }
+        public bool? EnableNativeSourceServerMapping { get => _explicitNullValueEnableNativeSourceServerMapping; set { _explicitNullValueEnableNativeSourceServerMapping = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableNativeSourceServerMapping"); else _explicitNullProperties?.Remove("enableNativeSourceServerMapping"); } }
+        private bool? _explicitNullValueEnableNativeSourceServerMapping = default!;
         /// <summary>Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FingerprintingRules { get; set; }
+        public string? FingerprintingRules { get => _explicitNullValueFingerprintingRules; set { _explicitNullValueFingerprintingRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprintingRules"); else _explicitNullProperties?.Remove("fingerprintingRules"); } }
+        private string? _explicitNullValueFingerprintingRules = default!;
 #nullable restore
 #else
-        public string FingerprintingRules { get; set; }
+        public string FingerprintingRules { get => _explicitNullValueFingerprintingRules; set { _explicitNullValueFingerprintingRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprintingRules"); else _explicitNullProperties?.Remove("fingerprintingRules"); } }
+        private string _explicitNullValueFingerprintingRules = default!;
 #endif
         /// <summary>Identifier of the grouping algorithm used to assign events to issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupingConfig { get; set; }
+        public string? GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
+        private string? _explicitNullValueGroupingConfig = default!;
 #nullable restore
 #else
-        public string GroupingConfig { get; set; }
+        public string GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
+        private string _explicitNullValueGroupingConfig = default!;
 #endif
         /// <summary>Grouping enhancement rules, as a newline-delimited config string, adjusting which stack frames contribute to an issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupingEnhancements { get; set; }
+        public string? GroupingEnhancements { get => _explicitNullValueGroupingEnhancements; set { _explicitNullValueGroupingEnhancements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingEnhancements"); else _explicitNullProperties?.Remove("groupingEnhancements"); } }
+        private string? _explicitNullValueGroupingEnhancements = default!;
 #nullable restore
 #else
-        public string GroupingEnhancements { get; set; }
+        public string GroupingEnhancements { get => _explicitNullValueGroupingEnhancements; set { _explicitNullValueGroupingEnhancements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingEnhancements"); else _explicitNullProperties?.Remove("groupingEnhancements"); } }
+        private string _explicitNullValueGroupingEnhancements = default!;
 #endif
         /// <summary>A JSON mapping of context types to lists of strings for their keys.E.g. `{&apos;user&apos;: [&apos;id&apos;, &apos;email&apos;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext? HighlightContext { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext? HighlightContext { get => _explicitNullValueHighlightContext; set { _explicitNullValueHighlightContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightContext"); else _explicitNullProperties?.Remove("highlightContext"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext? _explicitNullValueHighlightContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext HighlightContext { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext HighlightContext { get => _explicitNullValueHighlightContext; set { _explicitNullValueHighlightContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightContext"); else _explicitNullProperties?.Remove("highlightContext"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestHighlightContext _explicitNullValueHighlightContext = default!;
 #endif
         /// <summary>A list of strings with tag keys to highlight on this project&apos;s issues.E.g. `[&apos;release&apos;, &apos;environment&apos;]`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? HighlightTags { get; set; }
+        public List<string>? HighlightTags { get => _explicitNullValueHighlightTags; set { _explicitNullValueHighlightTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightTags"); else _explicitNullProperties?.Remove("highlightTags"); } }
+        private List<string>? _explicitNullValueHighlightTags = default!;
 #nullable restore
 #else
-        public List<string> HighlightTags { get; set; }
+        public List<string> HighlightTags { get => _explicitNullValueHighlightTags; set { _explicitNullValueHighlightTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightTags"); else _explicitNullProperties?.Remove("highlightTags"); } }
+        private List<string> _explicitNullValueHighlightTags = default!;
 #endif
         /// <summary>Enables starring the project within the projects tab. Can be updated with **`project:read`** permission.</summary>
-        public bool? IsBookmarked { get; set; }
+        public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
+        private bool? _explicitNullValueIsBookmarked = default!;
         /// <summary>The name for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The platform for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform { get; set; }
+        public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string? _explicitNullValuePlatform = default!;
 #nullable restore
 #else
-        public string Platform { get; set; }
+        public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>Enable preprod build distribution. Can be updated with **`project:read`** permission.</summary>
-        public bool? PreprodDistributionEnabledByCustomer { get; set; }
+        public bool? PreprodDistributionEnabledByCustomer { get => _explicitNullValuePreprodDistributionEnabledByCustomer; set { _explicitNullValuePreprodDistributionEnabledByCustomer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodDistributionEnabledByCustomer"); else _explicitNullProperties?.Remove("preprodDistributionEnabledByCustomer"); } }
+        private bool? _explicitNullValuePreprodDistributionEnabledByCustomer = default!;
         /// <summary>Query selecting which preprod builds are distributed. Can be updated with **`project:read`** permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreprodDistributionEnabledQuery { get; set; }
+        public string? PreprodDistributionEnabledQuery { get => _explicitNullValuePreprodDistributionEnabledQuery; set { _explicitNullValuePreprodDistributionEnabledQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodDistributionEnabledQuery"); else _explicitNullProperties?.Remove("preprodDistributionEnabledQuery"); } }
+        private string? _explicitNullValuePreprodDistributionEnabledQuery = default!;
 #nullable restore
 #else
-        public string PreprodDistributionEnabledQuery { get; set; }
+        public string PreprodDistributionEnabledQuery { get => _explicitNullValuePreprodDistributionEnabledQuery; set { _explicitNullValuePreprodDistributionEnabledQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodDistributionEnabledQuery"); else _explicitNullProperties?.Remove("preprodDistributionEnabledQuery"); } }
+        private string _explicitNullValuePreprodDistributionEnabledQuery = default!;
 #endif
         /// <summary>Post preprod distribution updates as PR comments. Can be updated with **`project:read`** permission.</summary>
-        public bool? PreprodDistributionPrCommentsEnabledByCustomer { get; set; }
+        public bool? PreprodDistributionPrCommentsEnabledByCustomer { get => _explicitNullValuePreprodDistributionPrCommentsEnabledByCustomer; set { _explicitNullValuePreprodDistributionPrCommentsEnabledByCustomer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodDistributionPrCommentsEnabledByCustomer"); else _explicitNullProperties?.Remove("preprodDistributionPrCommentsEnabledByCustomer"); } }
+        private bool? _explicitNullValuePreprodDistributionPrCommentsEnabledByCustomer = default!;
         /// <summary>Enable preprod size analysis. Can be updated with **`project:read`** permission.</summary>
-        public bool? PreprodSizeEnabledByCustomer { get; set; }
+        public bool? PreprodSizeEnabledByCustomer { get => _explicitNullValuePreprodSizeEnabledByCustomer; set { _explicitNullValuePreprodSizeEnabledByCustomer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeEnabledByCustomer"); else _explicitNullProperties?.Remove("preprodSizeEnabledByCustomer"); } }
+        private bool? _explicitNullValuePreprodSizeEnabledByCustomer = default!;
         /// <summary>Query selecting which preprod builds are size-analyzed. Can be updated with **`project:read`** permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreprodSizeEnabledQuery { get; set; }
+        public string? PreprodSizeEnabledQuery { get => _explicitNullValuePreprodSizeEnabledQuery; set { _explicitNullValuePreprodSizeEnabledQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeEnabledQuery"); else _explicitNullProperties?.Remove("preprodSizeEnabledQuery"); } }
+        private string? _explicitNullValuePreprodSizeEnabledQuery = default!;
 #nullable restore
 #else
-        public string PreprodSizeEnabledQuery { get; set; }
+        public string PreprodSizeEnabledQuery { get => _explicitNullValuePreprodSizeEnabledQuery; set { _explicitNullValuePreprodSizeEnabledQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeEnabledQuery"); else _explicitNullProperties?.Remove("preprodSizeEnabledQuery"); } }
+        private string _explicitNullValuePreprodSizeEnabledQuery = default!;
 #endif
         /// <summary>Enable preprod size PR comments. Can be updated with **`project:read`** permission.</summary>
-        public bool? PreprodSizePrCommentsEnabled { get; set; }
+        public bool? PreprodSizePrCommentsEnabled { get => _explicitNullValuePreprodSizePrCommentsEnabled; set { _explicitNullValuePreprodSizePrCommentsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizePrCommentsEnabled"); else _explicitNullProperties?.Remove("preprodSizePrCommentsEnabled"); } }
+        private bool? _explicitNullValuePreprodSizePrCommentsEnabled = default!;
         /// <summary>Rules controlling which preprod size changes are posted as PR comments. Can be updated with **`project:read`** permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules? PreprodSizePrCommentsRules { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules? PreprodSizePrCommentsRules { get => _explicitNullValuePreprodSizePrCommentsRules; set { _explicitNullValuePreprodSizePrCommentsRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizePrCommentsRules"); else _explicitNullProperties?.Remove("preprodSizePrCommentsRules"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules? _explicitNullValuePreprodSizePrCommentsRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules PreprodSizePrCommentsRules { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules PreprodSizePrCommentsRules { get => _explicitNullValuePreprodSizePrCommentsRules; set { _explicitNullValuePreprodSizePrCommentsRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizePrCommentsRules"); else _explicitNullProperties?.Remove("preprodSizePrCommentsRules"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizePrCommentsRules _explicitNullValuePreprodSizePrCommentsRules = default!;
 #endif
         /// <summary>Enable preprod size status checks. Can be updated with **`project:read`** permission.</summary>
-        public bool? PreprodSizeStatusChecksEnabled { get; set; }
+        public bool? PreprodSizeStatusChecksEnabled { get => _explicitNullValuePreprodSizeStatusChecksEnabled; set { _explicitNullValuePreprodSizeStatusChecksEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeStatusChecksEnabled"); else _explicitNullProperties?.Remove("preprodSizeStatusChecksEnabled"); } }
+        private bool? _explicitNullValuePreprodSizeStatusChecksEnabled = default!;
         /// <summary>Rules controlling when preprod size status checks fail. Can be updated with **`project:read`** permission.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules? PreprodSizeStatusChecksRules { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules? PreprodSizeStatusChecksRules { get => _explicitNullValuePreprodSizeStatusChecksRules; set { _explicitNullValuePreprodSizeStatusChecksRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeStatusChecksRules"); else _explicitNullProperties?.Remove("preprodSizeStatusChecksRules"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules? _explicitNullValuePreprodSizeStatusChecksRules = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules PreprodSizeStatusChecksRules { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules PreprodSizeStatusChecksRules { get => _explicitNullValuePreprodSizeStatusChecksRules; set { _explicitNullValuePreprodSizeStatusChecksRules = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSizeStatusChecksRules"); else _explicitNullProperties?.Remove("preprodSizeStatusChecksRules"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestPreprodSizeStatusChecksRules _explicitNullValuePreprodSizeStatusChecksRules = default!;
 #endif
         /// <summary>Post preprod snapshot changes as PR comments.</summary>
-        public bool? PreprodSnapshotPrCommentsEnabled { get; set; }
+        public bool? PreprodSnapshotPrCommentsEnabled { get => _explicitNullValuePreprodSnapshotPrCommentsEnabled; set { _explicitNullValuePreprodSnapshotPrCommentsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotPrCommentsEnabled"); else _explicitNullProperties?.Remove("preprodSnapshotPrCommentsEnabled"); } }
+        private bool? _explicitNullValuePreprodSnapshotPrCommentsEnabled = default!;
         /// <summary>Include added snapshots in preprod snapshot PR comments.</summary>
-        public bool? PreprodSnapshotPrCommentsPostOnAdded { get; set; }
+        public bool? PreprodSnapshotPrCommentsPostOnAdded { get => _explicitNullValuePreprodSnapshotPrCommentsPostOnAdded; set { _explicitNullValuePreprodSnapshotPrCommentsPostOnAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotPrCommentsPostOnAdded"); else _explicitNullProperties?.Remove("preprodSnapshotPrCommentsPostOnAdded"); } }
+        private bool? _explicitNullValuePreprodSnapshotPrCommentsPostOnAdded = default!;
         /// <summary>Include changed snapshots in preprod snapshot PR comments.</summary>
-        public bool? PreprodSnapshotPrCommentsPostOnChanged { get; set; }
+        public bool? PreprodSnapshotPrCommentsPostOnChanged { get => _explicitNullValuePreprodSnapshotPrCommentsPostOnChanged; set { _explicitNullValuePreprodSnapshotPrCommentsPostOnChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotPrCommentsPostOnChanged"); else _explicitNullProperties?.Remove("preprodSnapshotPrCommentsPostOnChanged"); } }
+        private bool? _explicitNullValuePreprodSnapshotPrCommentsPostOnChanged = default!;
         /// <summary>Include removed snapshots in preprod snapshot PR comments.</summary>
-        public bool? PreprodSnapshotPrCommentsPostOnRemoved { get; set; }
+        public bool? PreprodSnapshotPrCommentsPostOnRemoved { get => _explicitNullValuePreprodSnapshotPrCommentsPostOnRemoved; set { _explicitNullValuePreprodSnapshotPrCommentsPostOnRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotPrCommentsPostOnRemoved"); else _explicitNullProperties?.Remove("preprodSnapshotPrCommentsPostOnRemoved"); } }
+        private bool? _explicitNullValuePreprodSnapshotPrCommentsPostOnRemoved = default!;
         /// <summary>Include renamed snapshots in preprod snapshot PR comments.</summary>
-        public bool? PreprodSnapshotPrCommentsPostOnRenamed { get; set; }
+        public bool? PreprodSnapshotPrCommentsPostOnRenamed { get => _explicitNullValuePreprodSnapshotPrCommentsPostOnRenamed; set { _explicitNullValuePreprodSnapshotPrCommentsPostOnRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotPrCommentsPostOnRenamed"); else _explicitNullProperties?.Remove("preprodSnapshotPrCommentsPostOnRenamed"); } }
+        private bool? _explicitNullValuePreprodSnapshotPrCommentsPostOnRenamed = default!;
         /// <summary>Enable preprod snapshot status checks.</summary>
-        public bool? PreprodSnapshotStatusChecksEnabled { get; set; }
+        public bool? PreprodSnapshotStatusChecksEnabled { get => _explicitNullValuePreprodSnapshotStatusChecksEnabled; set { _explicitNullValuePreprodSnapshotStatusChecksEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotStatusChecksEnabled"); else _explicitNullProperties?.Remove("preprodSnapshotStatusChecksEnabled"); } }
+        private bool? _explicitNullValuePreprodSnapshotStatusChecksEnabled = default!;
         /// <summary>Fail the preprod snapshot status check when snapshots are added.</summary>
-        public bool? PreprodSnapshotStatusChecksFailOnAdded { get; set; }
+        public bool? PreprodSnapshotStatusChecksFailOnAdded { get => _explicitNullValuePreprodSnapshotStatusChecksFailOnAdded; set { _explicitNullValuePreprodSnapshotStatusChecksFailOnAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotStatusChecksFailOnAdded"); else _explicitNullProperties?.Remove("preprodSnapshotStatusChecksFailOnAdded"); } }
+        private bool? _explicitNullValuePreprodSnapshotStatusChecksFailOnAdded = default!;
         /// <summary>Fail the preprod snapshot status check when snapshots change.</summary>
-        public bool? PreprodSnapshotStatusChecksFailOnChanged { get; set; }
+        public bool? PreprodSnapshotStatusChecksFailOnChanged { get => _explicitNullValuePreprodSnapshotStatusChecksFailOnChanged; set { _explicitNullValuePreprodSnapshotStatusChecksFailOnChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotStatusChecksFailOnChanged"); else _explicitNullProperties?.Remove("preprodSnapshotStatusChecksFailOnChanged"); } }
+        private bool? _explicitNullValuePreprodSnapshotStatusChecksFailOnChanged = default!;
         /// <summary>Fail the preprod snapshot status check when snapshots are removed.</summary>
-        public bool? PreprodSnapshotStatusChecksFailOnRemoved { get; set; }
+        public bool? PreprodSnapshotStatusChecksFailOnRemoved { get => _explicitNullValuePreprodSnapshotStatusChecksFailOnRemoved; set { _explicitNullValuePreprodSnapshotStatusChecksFailOnRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotStatusChecksFailOnRemoved"); else _explicitNullProperties?.Remove("preprodSnapshotStatusChecksFailOnRemoved"); } }
+        private bool? _explicitNullValuePreprodSnapshotStatusChecksFailOnRemoved = default!;
         /// <summary>Fail the preprod snapshot status check when snapshots are renamed.</summary>
-        public bool? PreprodSnapshotStatusChecksFailOnRenamed { get; set; }
+        public bool? PreprodSnapshotStatusChecksFailOnRenamed { get => _explicitNullValuePreprodSnapshotStatusChecksFailOnRenamed; set { _explicitNullValuePreprodSnapshotStatusChecksFailOnRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preprodSnapshotStatusChecksFailOnRenamed"); else _explicitNullProperties?.Remove("preprodSnapshotStatusChecksFailOnRenamed"); } }
+        private bool? _explicitNullValuePreprodSnapshotStatusChecksFailOnRenamed = default!;
         /// <summary>Advanced data scrubbing rules, as a JSON string, applied before events are stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelayPiiConfig { get; set; }
+        public string? RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
+        private string? _explicitNullValueRelayPiiConfig = default!;
 #nullable restore
 #else
-        public string RelayPiiConfig { get; set; }
+        public string RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
+        private string _explicitNullValueRelayPiiConfig = default!;
 #endif
         /// <summary>Automatically resolve an issue if it hasn&apos;t been seen for this many hours. Set to `0` to disable auto-resolve.</summary>
-        public int? ResolveAge { get; set; }
+        public int? ResolveAge { get => _explicitNullValueResolveAge; set { _explicitNullValueResolveAge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolveAge"); else _explicitNullProperties?.Remove("resolveAge"); } }
+        private int? _explicitNullValueResolveAge = default!;
         /// <summary>Field names to exempt from scrubbing, including the built-in defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SafeFields { get; set; }
+        public List<string>? SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
+        private List<string>? _explicitNullValueSafeFields = default!;
 #nullable restore
 #else
-        public List<string> SafeFields { get; set; }
+        public List<string> SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
+        private List<string> _explicitNullValueSafeFields = default!;
 #endif
         /// <summary>Enable on-demand source context fetching from SCM integrations for stack traces.</summary>
-        public bool? ScmSourceContextEnabled { get; set; }
+        public bool? ScmSourceContextEnabled { get => _explicitNullValueScmSourceContextEnabled; set { _explicitNullValueScmSourceContextEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scmSourceContextEnabled"); else _explicitNullProperties?.Remove("scmSourceContextEnabled"); } }
+        private bool? _explicitNullValueScmSourceContextEnabled = default!;
         /// <summary>Allow Sentry to fetch source files and source maps from your servers.</summary>
-        public bool? ScrapeJavaScript { get; set; }
+        public bool? ScrapeJavaScript { get => _explicitNullValueScrapeJavaScript; set { _explicitNullValueScrapeJavaScript = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeJavaScript"); else _explicitNullProperties?.Remove("scrapeJavaScript"); } }
+        private bool? _explicitNullValueScrapeJavaScript = default!;
         /// <summary>Discard client IP addresses rather than storing them on events.</summary>
-        public bool? ScrubIPAddresses { get; set; }
+        public bool? ScrubIPAddresses { get => _explicitNullValueScrubIPAddresses; set { _explicitNullValueScrubIPAddresses = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrubIPAddresses"); else _explicitNullProperties?.Remove("scrubIPAddresses"); } }
+        private bool? _explicitNullValueScrubIPAddresses = default!;
         /// <summary>Grouping algorithm run alongside the primary one during a grouping migration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryGroupingConfig { get; set; }
+        public string? SecondaryGroupingConfig { get => _explicitNullValueSecondaryGroupingConfig; set { _explicitNullValueSecondaryGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingConfig"); else _explicitNullProperties?.Remove("secondaryGroupingConfig"); } }
+        private string? _explicitNullValueSecondaryGroupingConfig = default!;
 #nullable restore
 #else
-        public string SecondaryGroupingConfig { get; set; }
+        public string SecondaryGroupingConfig { get => _explicitNullValueSecondaryGroupingConfig; set { _explicitNullValueSecondaryGroupingConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingConfig"); else _explicitNullProperties?.Remove("secondaryGroupingConfig"); } }
+        private string _explicitNullValueSecondaryGroupingConfig = default!;
 #endif
         /// <summary>Unix timestamp after which the secondary grouping algorithm stops running.</summary>
-        public int? SecondaryGroupingExpiry { get; set; }
+        public int? SecondaryGroupingExpiry { get => _explicitNullValueSecondaryGroupingExpiry; set { _explicitNullValueSecondaryGroupingExpiry = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingExpiry"); else _explicitNullProperties?.Remove("secondaryGroupingExpiry"); } }
+        private int? _explicitNullValueSecondaryGroupingExpiry = default!;
         /// <summary>Token sent with security reports (CSP, Expect-CT, HPKP) so Sentry can verify their origin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityToken { get; set; }
+        public string? SecurityToken { get => _explicitNullValueSecurityToken; set { _explicitNullValueSecurityToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityToken"); else _explicitNullProperties?.Remove("securityToken"); } }
+        private string? _explicitNullValueSecurityToken = default!;
 #nullable restore
 #else
-        public string SecurityToken { get; set; }
+        public string SecurityToken { get => _explicitNullValueSecurityToken; set { _explicitNullValueSecurityToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityToken"); else _explicitNullProperties?.Remove("securityToken"); } }
+        private string _explicitNullValueSecurityToken = default!;
 #endif
         /// <summary>Name of the header carrying the security token on inbound security reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityTokenHeader { get; set; }
+        public string? SecurityTokenHeader { get => _explicitNullValueSecurityTokenHeader; set { _explicitNullValueSecurityTokenHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityTokenHeader"); else _explicitNullProperties?.Remove("securityTokenHeader"); } }
+        private string? _explicitNullValueSecurityTokenHeader = default!;
 #nullable restore
 #else
-        public string SecurityTokenHeader { get; set; }
+        public string SecurityTokenHeader { get => _explicitNullValueSecurityTokenHeader; set { _explicitNullValueSecurityTokenHeader = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityTokenHeader"); else _explicitNullProperties?.Remove("securityTokenHeader"); } }
+        private string _explicitNullValueSecurityTokenHeader = default!;
 #endif
         /// <summary>Let Seer scan new issues automatically. Can be updated with **`project:read`** permission.</summary>
-        public bool? SeerScannerAutomation { get; set; }
+        public bool? SeerScannerAutomation { get => _explicitNullValueSeerScannerAutomation; set { _explicitNullValueSeerScannerAutomation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerScannerAutomation"); else _explicitNullProperties?.Remove("seerScannerAutomation"); } }
+        private bool? _explicitNullValueSeerScannerAutomation = default!;
         /// <summary>Additional field names to scrub from events, beyond the defaults.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SensitiveFields { get; set; }
+        public List<string>? SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
+        private List<string>? _explicitNullValueSensitiveFields = default!;
 #nullable restore
 #else
-        public List<string> SensitiveFields { get; set; }
+        public List<string> SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
+        private List<string> _explicitNullValueSensitiveFields = default!;
 #endif
         /// <summary>Uniquely identifies a project and is used for the interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Slug { get; set; }
+        public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string? _explicitNullValueSlug = default!;
 #nullable restore
 #else
-        public string Slug { get; set; }
+        public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
+        private string _explicitNullValueSlug = default!;
 #endif
         /// <summary>Number of native crash report files to store per issue. Use `-1` for unlimited or `0` to store none.</summary>
-        public int? StoreCrashReports { get; set; }
+        public int? StoreCrashReports { get => _explicitNullValueStoreCrashReports; set { _explicitNullValueStoreCrashReports = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCrashReports"); else _explicitNullProperties?.Remove("storeCrashReports"); } }
+        private int? _explicitNullValueStoreCrashReports = default!;
         /// <summary>Custom prefix for emails from this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectPrefix { get; set; }
+        public string? SubjectPrefix { get => _explicitNullValueSubjectPrefix; set { _explicitNullValueSubjectPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectPrefix"); else _explicitNullProperties?.Remove("subjectPrefix"); } }
+        private string? _explicitNullValueSubjectPrefix = default!;
 #nullable restore
 #else
-        public string SubjectPrefix { get; set; }
+        public string SubjectPrefix { get => _explicitNullValueSubjectPrefix; set { _explicitNullValueSubjectPrefix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectPrefix"); else _explicitNullProperties?.Remove("subjectPrefix"); } }
+        private string _explicitNullValueSubjectPrefix = default!;
 #endif
         /// <summary>The email subject to use (excluding the prefix) for individual alerts. Here are the list of variables you can use:- `$title`- `$shortID`- `$projectID`- `$orgID`- `${tag:key}` - such as `${tag:environment}` or `${tag:release}`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectTemplate { get; set; }
+        public string? SubjectTemplate { get => _explicitNullValueSubjectTemplate; set { _explicitNullValueSubjectTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectTemplate"); else _explicitNullProperties?.Remove("subjectTemplate"); } }
+        private string? _explicitNullValueSubjectTemplate = default!;
 #nullable restore
 #else
-        public string SubjectTemplate { get; set; }
+        public string SubjectTemplate { get => _explicitNullValueSubjectTemplate; set { _explicitNullValueSubjectTemplate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectTemplate"); else _explicitNullProperties?.Remove("subjectTemplate"); } }
+        private string _explicitNullValueSubjectTemplate = default!;
 #endif
         /// <summary>Custom symbol sources, as a JSON string, to use when symbolicating events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SymbolSources { get; set; }
+        public string? SymbolSources { get => _explicitNullValueSymbolSources; set { _explicitNullValueSymbolSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolSources"); else _explicitNullProperties?.Remove("symbolSources"); } }
+        private string? _explicitNullValueSymbolSources = default!;
 #nullable restore
 #else
-        public string SymbolSources { get; set; }
+        public string SymbolSources { get => _explicitNullValueSymbolSources; set { _explicitNullValueSymbolSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolSources"); else _explicitNullProperties?.Remove("symbolSources"); } }
+        private string _explicitNullValueSymbolSources = default!;
 #endif
         /// <summary>Target proportion of transactions to retain, from `0` to `1`. Requires manual dynamic sampling mode.</summary>
-        public double? TargetSampleRate { get; set; }
+        public double? TargetSampleRate { get => _explicitNullValueTargetSampleRate; set { _explicitNullValueTargetSampleRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetSampleRate"); else _explicitNullProperties?.Remove("targetSampleRate"); } }
+        private double? _explicitNullValueTargetSampleRate = default!;
         /// <summary>Fetch screenshots attached to console crash reports. Requires the Tempest feature.</summary>
-        public bool? TempestFetchScreenshots { get; set; }
+        public bool? TempestFetchScreenshots { get => _explicitNullValueTempestFetchScreenshots; set { _explicitNullValueTempestFetchScreenshots = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempestFetchScreenshots"); else _explicitNullProperties?.Remove("tempestFetchScreenshots"); } }
+        private bool? _explicitNullValueTempestFetchScreenshots = default!;
         /// <summary>Verify SSL certificates when delivering outbound webhooks and service hooks.</summary>
-        public bool? VerifySSL { get; set; }
+        public bool? VerifySSL { get => _explicitNullValueVerifySSL; set { _explicitNullValueVerifySSL = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifySSL"); else _explicitNullProperties?.Remove("verifySSL"); } }
+        private bool? _explicitNullValueVerifySSL = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequest"/> and sets the default values.
         /// </summary>
@@ -299,7 +451,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -438,6 +590,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDoubleValue("targetSampleRate", TargetSampleRate);
             writer.WriteBoolValue("tempestFetchScreenshots", TempestFetchScreenshots);
             writer.WriteBoolValue("verifySSL", VerifySSL);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

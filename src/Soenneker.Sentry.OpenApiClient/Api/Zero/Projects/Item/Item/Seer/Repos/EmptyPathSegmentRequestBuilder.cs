@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Seer.Repos
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSeerRepositories200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSeerRepositories200ResponseSchemaItem.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            var collectionResult = await RequestAdapter.SendCollectionAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSeerRepositories200ResponseSchemaItem>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSeerRepositories200ResponseSchemaItem.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
             return collectionResult?.AsList();
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Seer.Repos
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Replace the project&apos;s active Seer repository configurations with the submitted repositories. An empty `repos` list removes all active Seer repository configurations. Inactive repository configurations are retained and become available again if the repositories are reactivated.
@@ -88,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Seer.Repos
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.List repositories connected to Seer for the project.

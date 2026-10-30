@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a data forwarder for an organization or update a project-specific override.Updates to the data forwarder&apos;s configuration require `org:write` permissions, and the entireconfiguration to be provided, including the `project_ids` field.To configure project-specific overrides, specify only the following fields:  - &apos;project_id&apos;: The ID of the project to create/modify the override for.  - &apos;overrides&apos;: Follows the same format as `config` but all provider fields are optional, since only specified fields are overridden.  - &apos;is_enabled&apos;: To enable/disable the forwarder for events on the specific project.Overrides can be performed with `project:write` permissions on the project being modified.
@@ -68,7 +68,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Forwarding.
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a data forwarder for an organization. All project-specific overrides will be deleted as well.

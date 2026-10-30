@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the most recent base snapshot for a given app.A base snapshot is one uploaded without a `base_sha` (i.e., a snapshotfrom a base branch like `main`). Use the optional `branch` and `project`parameters to narrow the search.The response includes the full image list with download URLs. Use`compact_metadata=1` to reduce image metadata.This endpoint requires a bearer token with `project:read` access.

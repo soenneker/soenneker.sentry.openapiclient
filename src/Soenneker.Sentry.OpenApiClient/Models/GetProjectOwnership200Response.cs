@@ -11,42 +11,68 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectOwnership200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoAssignment") is { } nullNodeAutoAssignment && nullNodeAutoAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignment = null;
+            if (parseNode.GetChildNode("codeownersAutoSync") is { } nullNodeCodeownersAutoSync && nullNodeCodeownersAutoSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeownersAutoSync = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("fallthrough") is { } nullNodeFallthrough && nullNodeFallthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fallthrough = null;
+            if (parseNode.GetChildNode("isActive") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("lastUpdated") is { } nullNodeLastUpdated && nullNodeLastUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastUpdated = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("schema") is { } nullNodeSchema && nullNodeSchema.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schema = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The autoAssignment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutoAssignment { get; set; }
+        public string? AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        private string? _explicitNullValueAutoAssignment = default!;
 #nullable restore
 #else
-        public string AutoAssignment { get; set; }
+        public string AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        private string _explicitNullValueAutoAssignment = default!;
 #endif
         /// <summary>The codeownersAutoSync property</summary>
-        public bool? CodeownersAutoSync { get; set; }
+        public bool? CodeownersAutoSync { get => _explicitNullValueCodeownersAutoSync; set { _explicitNullValueCodeownersAutoSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeownersAutoSync"); else _explicitNullProperties?.Remove("codeownersAutoSync"); } }
+        private bool? _explicitNullValueCodeownersAutoSync = default!;
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The fallthrough property</summary>
-        public bool? Fallthrough { get; set; }
+        public bool? Fallthrough { get => _explicitNullValueFallthrough; set { _explicitNullValueFallthrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallthrough"); else _explicitNullProperties?.Remove("fallthrough"); } }
+        private bool? _explicitNullValueFallthrough = default!;
         /// <summary>The isActive property</summary>
-        public bool? IsActive { get; set; }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
+        private bool? _explicitNullValueIsActive = default!;
         /// <summary>The lastUpdated property</summary>
-        public DateTimeOffset? LastUpdated { get; set; }
+        public DateTimeOffset? LastUpdated { get => _explicitNullValueLastUpdated; set { _explicitNullValueLastUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastUpdated"); else _explicitNullProperties?.Remove("lastUpdated"); } }
+        private DateTimeOffset? _explicitNullValueLastUpdated = default!;
         /// <summary>The raw property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Raw { get; set; }
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public string Raw { get; set; }
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string _explicitNullValueRaw = default!;
 #endif
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema? Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema Schema { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema _explicitNullValueSchema = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200Response"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lastUpdated", LastUpdated);
             writer.WriteStringValue("raw", Raw);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchema>("schema", Schema);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,21 +11,36 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateACustomInboundFilterRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
+            if (parseNode.GetChildNode("dataType") is { } nullNodeDataType && nullNodeDataType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataType = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Whether the filter drops matching data. An inactive filter is kept but ignored.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Conditions are combined with AND: an event must match every condition to be filtered out. There is no OR between conditions, so e.g. two release conditions can express a range (`gte 2.0` and `lt 4.0`). To broaden matching, widen a condition&apos;s values or add separate filters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem>? Conditions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem> Conditions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem> _explicitNullValueConditions = default!;
 #endif
         /// <summary>The data the filter matches against. `all` is the catch-all: it filters every data type Sentry ingests, including ones added later, and accepts only the conditions that every data type carries a field for.* `all`* `error`* `log`* `metric`* `span`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestDataType? DataType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestDataType? DataType { get => _explicitNullValueDataType; set { _explicitNullValueDataType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataType"); else _explicitNullProperties?.Remove("dataType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestDataType? _explicitNullValueDataType = default!;
         /// <summary>When the filter was created.</summary>
         public DateTimeOffset? DateCreated { get; private set; }
         /// <summary>When the filter was last changed.</summary>
@@ -49,10 +64,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>A human-readable label for the filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequest"/> and sets the default values.
@@ -69,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestConditionsItem>("conditions", Conditions);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateACustomInboundFilterRequestDataType>("dataType", DataType);
             writer.WriteStringValue("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

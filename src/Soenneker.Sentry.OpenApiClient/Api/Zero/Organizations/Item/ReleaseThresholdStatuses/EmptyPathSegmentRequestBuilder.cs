@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ReleaseThre
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseThresholdStatuses200ResponseSchema.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.List all derived statuses of releases that fall within the provided start/end datetimes.Constructs a response key&apos;d off \{`release_version`\}-\{`project_slug`\} that lists thresholds with their status for *specified* projects.Each returned enriched threshold will contain the full serialized `release_threshold` instance as well as it&apos;s derived health statuses.

@@ -12,48 +12,70 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BulkUpsertOrganizationCodeMappingsRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_branch") is { } nullNodeDefaultBranch && nullNodeDefaultBranch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultBranch = null;
+            if (parseNode.GetChildNode("mappings") is { } nullNodeMappings && nullNodeMappings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mappings = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The repository branch to use; inferred from the integration when omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultBranch { get; set; }
+        public string? DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string? _explicitNullValueDefaultBranch = default!;
 #nullable restore
 #else
-        public string DefaultBranch { get; set; }
+        public string DefaultBranch { get => _explicitNullValueDefaultBranch; set { _explicitNullValueDefaultBranch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_branch"); else _explicitNullProperties?.Remove("default_branch"); } }
+        private string _explicitNullValueDefaultBranch = default!;
 #endif
         /// <summary>One or more stack-root and source-root mappings (maximum 300).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem>? Mappings { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem>? Mappings { get => _explicitNullValueMappings; set { _explicitNullValueMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mappings"); else _explicitNullProperties?.Remove("mappings"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem>? _explicitNullValueMappings = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem> Mappings { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem> Mappings { get => _explicitNullValueMappings; set { _explicitNullValueMappings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mappings"); else _explicitNullProperties?.Remove("mappings"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem> _explicitNullValueMappings = default!;
 #endif
         /// <summary>The ID or slug of the project to configure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project? Project { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project Project { get; set; }
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode _explicitNullValueProject = default!;
 #endif
         /// <summary>Optional repository provider used to disambiguate or find the repository. If no matching Sentry repository exists, the repository is created after the provider confirms it exists.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>The repository name as it appears in Sentry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get; set; }
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string Repository { get; set; }
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,7 +104,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "default_branch", n => { DefaultBranch = n.GetStringValue(); } },
                 { "mappings", n => { Mappings = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem>(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project>(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project.CreateFromDiscriminatorValue); } },
+                { "project", n => { Project = n.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetStringValue(); } },
             };
@@ -96,9 +118,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("default_branch", DefaultBranch);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequestMappingsItem>("mappings", Mappings);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project>("project", Project);
+            writer.WriteObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>("project", Project);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("repository", Repository);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
         /// <summary>
@@ -124,14 +147,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
             public static global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project CreateFromDiscriminatorValue(IParseNode parseNode)
             {
+            // A null union input must not initialize an object branch.
+            if (global::System.Object.ReferenceEquals(parseNode, null)) throw new global::System.ArgumentNullException(nameof(parseNode));
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return new global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project();
+
                 if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
                 var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
                 var result = new global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest.BulkUpsertOrganizationCodeMappingsRequest_project();
-                if(parseNode.GetIntValue() is int integerValue)
+                if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedInteger && parseNode.GetIntValue() is int integerValue)
                 {
                     result.Integer = integerValue;
                 }
-                else if(parseNode.GetStringValue() is string stringValue)
+                else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string stringValue)
                 {
                     result.String = stringValue;
                 }
@@ -151,6 +178,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             /// <param name="writer">Serialization writer to use to serialize this model</param>
             public virtual void Serialize(ISerializationWriter writer)
             {
+            // Empty composed wrappers serialize as JSON null.
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (Integer == null && String == null) { writer.WriteNullValue(null); return; }
+
                 if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
                 if(Integer != null)
                 {

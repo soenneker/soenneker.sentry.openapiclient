@@ -12,54 +12,87 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartOrganizationIssueAutofixRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("enable_bash_mode") is { } nullNodeEnableBashMode && nullNodeEnableBashMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBashMode = null;
+            if (parseNode.GetChildNode("insert_index") is { } nullNodeInsertIndex && nullNodeInsertIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertIndex = null;
+            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("referrer") is { } nullNodeReferrer && nullNodeReferrer.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Referrer = null;
+            if (parseNode.GetChildNode("repo_name") is { } nullNodeRepoName && nullNodeRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepoName = null;
+            if (parseNode.GetChildNode("run_id") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("sentry_run_id") is { } nullNodeSentryRunId && nullNodeSentryRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryRunId = null;
+            if (parseNode.GetChildNode("step") is { } nullNodeStep && nullNodeStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Step = null;
+            if (parseNode.GetChildNode("stopping_point") is { } nullNodeStoppingPoint && nullNodeStoppingPoint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StoppingPoint = null;
+            if (parseNode.GetChildNode("user_context") is { } nullNodeUserContext && nullNodeUserContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserContext = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Override bash mode tools.</summary>
-        public bool? EnableBashMode { get; set; }
+        public bool? EnableBashMode { get => _explicitNullValueEnableBashMode; set { _explicitNullValueEnableBashMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_bash_mode"); else _explicitNullProperties?.Remove("enable_bash_mode"); } }
+        private bool? _explicitNullValueEnableBashMode = default!;
         /// <summary>Block index to insert at. When provided, truncates blocks after this point for retry-from-step.</summary>
-        public int? InsertIndex { get; set; }
+        public int? InsertIndex { get => _explicitNullValueInsertIndex; set { _explicitNullValueInsertIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert_index"); else _explicitNullProperties?.Remove("insert_index"); } }
+        private int? _explicitNullValueInsertIndex = default!;
         /// <summary>Coding agent integration ID. Required for coding_agent_handoff step (unless provider is specified).</summary>
-        public int? IntegrationId { get; set; }
+        public int? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        private int? _explicitNullValueIntegrationId = default!;
         /// <summary>Coding agent provider (e.g., &apos;github_copilot&apos;). Alternative to integration_id for user-authenticated providers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get; set; }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get; set; }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>Referrer identifying where the issue fix was triggered from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Referrer { get; set; }
+        public string? Referrer { get => _explicitNullValueReferrer; set { _explicitNullValueReferrer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrer"); else _explicitNullProperties?.Remove("referrer"); } }
+        private string? _explicitNullValueReferrer = default!;
 #nullable restore
 #else
-        public string Referrer { get; set; }
+        public string Referrer { get => _explicitNullValueReferrer; set { _explicitNullValueReferrer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("referrer"); else _explicitNullProperties?.Remove("referrer"); } }
+        private string _explicitNullValueReferrer = default!;
 #endif
         /// <summary>Optional repository name for which to create the pull request. Do not pass a repository name to create pull requests in all relevant repositories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepoName { get; set; }
+        public string? RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        private string? _explicitNullValueRepoName = default!;
 #nullable restore
 #else
-        public string RepoName { get; set; }
+        public string RepoName { get => _explicitNullValueRepoName; set { _explicitNullValueRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo_name"); else _explicitNullProperties?.Remove("repo_name"); } }
+        private string _explicitNullValueRepoName = default!;
 #endif
         /// <summary>**Deprecated** in favor of sentry_run_id; retained for backward compatibility. The existing run&apos;s numeric Seer id to continue. If neither run_id nor sentry_run_id is provided, starts a new run.</summary>
-        public int? RunId { get; set; }
+        public int? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_id"); else _explicitNullProperties?.Remove("run_id"); } }
+        private int? _explicitNullValueRunId = default!;
         /// <summary>Existing run&apos;s UUID to continue. Preferred over run_id, and takes precedence when both are given.</summary>
-        public Guid? SentryRunId { get; set; }
+        public Guid? SentryRunId { get => _explicitNullValueSentryRunId; set { _explicitNullValueSentryRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentry_run_id"); else _explicitNullProperties?.Remove("sentry_run_id"); } }
+        private Guid? _explicitNullValueSentryRunId = default!;
         /// <summary>Which autofix step to run.* `root_cause`* `solution`* `code_changes`* `pr_iteration`* `open_pr`* `coding_agent_handoff`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStep? Step { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStep? Step { get => _explicitNullValueStep; set { _explicitNullValueStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step"); else _explicitNullProperties?.Remove("step"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStep? _explicitNullValueStep = default!;
         /// <summary>Where the issue fix process should stop. If not provided, will run to root cause.* `root_cause`* `solution`* `code_changes`* `open_pr`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStoppingPoint? StoppingPoint { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStoppingPoint? StoppingPoint { get => _explicitNullValueStoppingPoint; set { _explicitNullValueStoppingPoint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stopping_point"); else _explicitNullProperties?.Remove("stopping_point"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStoppingPoint? _explicitNullValueStoppingPoint = default!;
         /// <summary>Optional user context to append to the step prompt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserContext { get; set; }
+        public string? UserContext { get => _explicitNullValueUserContext; set { _explicitNullValueUserContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_context"); else _explicitNullProperties?.Remove("user_context"); } }
+        private string? _explicitNullValueUserContext = default!;
 #nullable restore
 #else
-        public string UserContext { get; set; }
+        public string UserContext { get => _explicitNullValueUserContext; set { _explicitNullValueUserContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_context"); else _explicitNullProperties?.Remove("user_context"); } }
+        private string _explicitNullValueUserContext = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequest"/> and sets the default values.
@@ -77,7 +110,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +151,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStep>("step", Step);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofixRequestStoppingPoint>("stopping_point", StoppingPoint);
             writer.WriteStringValue("user_context", UserContext);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

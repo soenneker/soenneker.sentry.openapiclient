@@ -11,44 +11,67 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationReleaseCommits200ResponseItemReleasesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateReleased") is { } nullNodeDateReleased && nullNodeDateReleased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateReleased = null;
+            if (parseNode.GetChildNode("ref") is { } nullNodeRef && nullNodeRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ref = null;
+            if (parseNode.GetChildNode("shortVersion") is { } nullNodeShortVersion && nullNodeShortVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShortVersion = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateReleased property</summary>
-        public DateTimeOffset? DateReleased { get; set; }
+        public DateTimeOffset? DateReleased { get => _explicitNullValueDateReleased; set { _explicitNullValueDateReleased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReleased"); else _explicitNullProperties?.Remove("dateReleased"); } }
+        private DateTimeOffset? _explicitNullValueDateReleased = default!;
         /// <summary>The ref property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string? _explicitNullValueRef = default!;
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string _explicitNullValueRef = default!;
 #endif
         /// <summary>The shortVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShortVersion { get; set; }
+        public string? ShortVersion { get => _explicitNullValueShortVersion; set { _explicitNullValueShortVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortVersion"); else _explicitNullProperties?.Remove("shortVersion"); } }
+        private string? _explicitNullValueShortVersion = default!;
 #nullable restore
 #else
-        public string ShortVersion { get; set; }
+        public string ShortVersion { get => _explicitNullValueShortVersion; set { _explicitNullValueShortVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortVersion"); else _explicitNullProperties?.Remove("shortVersion"); } }
+        private string _explicitNullValueShortVersion = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>The version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemReleasesItem"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemReleasesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemReleasesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleaseCommits200ResponseItemReleasesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("shortVersion", ShortVersion);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("version", Version);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

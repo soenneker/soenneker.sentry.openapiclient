@@ -11,110 +11,159 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationProjectDetector201Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conditionGroup") is { } nullNodeConditionGroup && nullNodeConditionGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConditionGroup = null;
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("createdBy") is { } nullNodeCreatedBy && nullNodeCreatedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedBy = null;
+            if (parseNode.GetChildNode("dataSources") is { } nullNodeDataSources && nullNodeDataSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataSources = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateUpdated") is { } nullNodeDateUpdated && nullNodeDateUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUpdated = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("latestGroup") is { } nullNodeLatestGroup && nullNodeLatestGroup.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LatestGroup = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner") is { } nullNodeOwner && nullNodeOwner.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owner = null;
+            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("workflowIds") is { } nullNodeWorkflowIds && nullNodeWorkflowIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WorkflowIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The conditionGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup? ConditionGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup? ConditionGroup { get => _explicitNullValueConditionGroup; set { _explicitNullValueConditionGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditionGroup"); else _explicitNullProperties?.Remove("conditionGroup"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup? _explicitNullValueConditionGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup ConditionGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup ConditionGroup { get => _explicitNullValueConditionGroup; set { _explicitNullValueConditionGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditionGroup"); else _explicitNullProperties?.Remove("conditionGroup"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConditionGroup _explicitNullValueConditionGroup = default!;
 #endif
         /// <summary>The config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig? Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig Config { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy { get; set; }
+        public string? CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string? _explicitNullValueCreatedBy = default!;
 #nullable restore
 #else
-        public string CreatedBy { get; set; }
+        public string CreatedBy { get => _explicitNullValueCreatedBy; set { _explicitNullValueCreatedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdBy"); else _explicitNullProperties?.Remove("createdBy"); } }
+        private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The dataSources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem>? DataSources { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem>? DataSources { get => _explicitNullValueDataSources; set { _explicitNullValueDataSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSources"); else _explicitNullProperties?.Remove("dataSources"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem>? _explicitNullValueDataSources = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem> DataSources { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem> DataSources { get => _explicitNullValueDataSources; set { _explicitNullValueDataSources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataSources"); else _explicitNullProperties?.Remove("dataSources"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItem> _explicitNullValueDataSources = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateUpdated property</summary>
-        public DateTimeOffset? DateUpdated { get; set; }
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get; set; }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        private bool? _explicitNullValueEnabled = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The latestGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup? LatestGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup? LatestGroup { get => _explicitNullValueLatestGroup; set { _explicitNullValueLatestGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestGroup"); else _explicitNullProperties?.Remove("latestGroup"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup? _explicitNullValueLatestGroup = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup LatestGroup { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup LatestGroup { get => _explicitNullValueLatestGroup; set { _explicitNullValueLatestGroup = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestGroup"); else _explicitNullProperties?.Remove("latestGroup"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseLatestGroup _explicitNullValueLatestGroup = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The owner property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner? Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner? _explicitNullValueOwner = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner Owner { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseOwner _explicitNullValueOwner = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The workflowIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WorkflowIds { get; set; }
+        public List<string>? WorkflowIds { get => _explicitNullValueWorkflowIds; set { _explicitNullValueWorkflowIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflowIds"); else _explicitNullProperties?.Remove("workflowIds"); } }
+        private List<string>? _explicitNullValueWorkflowIds = default!;
 #nullable restore
 #else
-        public List<string> WorkflowIds { get; set; }
+        public List<string> WorkflowIds { get => _explicitNullValueWorkflowIds; set { _explicitNullValueWorkflowIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("workflowIds"); else _explicitNullProperties?.Remove("workflowIds"); } }
+        private List<string> _explicitNullValueWorkflowIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response"/> and sets the default values.
@@ -131,7 +180,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,6 +229,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("type", Type);
             writer.WriteCollectionOfPrimitiveValues<string>("workflowIds", WorkflowIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,37 +11,62 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationTraceMeta200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("errorsCount") is { } nullNodeErrorsCount && nullNodeErrorsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorsCount = null;
+            if (parseNode.GetChildNode("logsCount") is { } nullNodeLogsCount && nullNodeLogsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogsCount = null;
+            if (parseNode.GetChildNode("metricsCount") is { } nullNodeMetricsCount && nullNodeMetricsCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsCount = null;
+            if (parseNode.GetChildNode("performanceIssuesCount") is { } nullNodePerformanceIssuesCount && nullNodePerformanceIssuesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerformanceIssuesCount = null;
+            if (parseNode.GetChildNode("spansCount") is { } nullNodeSpansCount && nullNodeSpansCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpansCount = null;
+            if (parseNode.GetChildNode("spansCountMap") is { } nullNodeSpansCountMap && nullNodeSpansCountMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpansCountMap = null;
+            if (parseNode.GetChildNode("transactionChildCountMap") is { } nullNodeTransactionChildCountMap && nullNodeTransactionChildCountMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionChildCountMap = null;
+            if (parseNode.GetChildNode("uptimeCount") is { } nullNodeUptimeCount && nullNodeUptimeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UptimeCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The errorsCount property</summary>
-        public int? ErrorsCount { get; set; }
+        public int? ErrorsCount { get => _explicitNullValueErrorsCount; set { _explicitNullValueErrorsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorsCount"); else _explicitNullProperties?.Remove("errorsCount"); } }
+        private int? _explicitNullValueErrorsCount = default!;
         /// <summary>The logsCount property</summary>
-        public double? LogsCount { get; set; }
+        public double? LogsCount { get => _explicitNullValueLogsCount; set { _explicitNullValueLogsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logsCount"); else _explicitNullProperties?.Remove("logsCount"); } }
+        private double? _explicitNullValueLogsCount = default!;
         /// <summary>The metricsCount property</summary>
-        public double? MetricsCount { get; set; }
+        public double? MetricsCount { get => _explicitNullValueMetricsCount; set { _explicitNullValueMetricsCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsCount"); else _explicitNullProperties?.Remove("metricsCount"); } }
+        private double? _explicitNullValueMetricsCount = default!;
         /// <summary>The performanceIssuesCount property</summary>
-        public int? PerformanceIssuesCount { get; set; }
+        public int? PerformanceIssuesCount { get => _explicitNullValuePerformanceIssuesCount; set { _explicitNullValuePerformanceIssuesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceIssuesCount"); else _explicitNullProperties?.Remove("performanceIssuesCount"); } }
+        private int? _explicitNullValuePerformanceIssuesCount = default!;
         /// <summary>The spansCount property</summary>
-        public double? SpansCount { get; set; }
+        public double? SpansCount { get => _explicitNullValueSpansCount; set { _explicitNullValueSpansCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCount"); else _explicitNullProperties?.Remove("spansCount"); } }
+        private double? _explicitNullValueSpansCount = default!;
         /// <summary>The spansCountMap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap? SpansCountMap { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap? SpansCountMap { get => _explicitNullValueSpansCountMap; set { _explicitNullValueSpansCountMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCountMap"); else _explicitNullProperties?.Remove("spansCountMap"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap? _explicitNullValueSpansCountMap = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap SpansCountMap { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap SpansCountMap { get => _explicitNullValueSpansCountMap; set { _explicitNullValueSpansCountMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCountMap"); else _explicitNullProperties?.Remove("spansCountMap"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap _explicitNullValueSpansCountMap = default!;
 #endif
         /// <summary>The transactionChildCountMap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem>? TransactionChildCountMap { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem>? TransactionChildCountMap { get => _explicitNullValueTransactionChildCountMap; set { _explicitNullValueTransactionChildCountMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionChildCountMap"); else _explicitNullProperties?.Remove("transactionChildCountMap"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem>? _explicitNullValueTransactionChildCountMap = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem> TransactionChildCountMap { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem> TransactionChildCountMap { get => _explicitNullValueTransactionChildCountMap; set { _explicitNullValueTransactionChildCountMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionChildCountMap"); else _explicitNullProperties?.Remove("transactionChildCountMap"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem> _explicitNullValueTransactionChildCountMap = default!;
 #endif
         /// <summary>The uptimeCount property</summary>
-        public int? UptimeCount { get; set; }
+        public int? UptimeCount { get => _explicitNullValueUptimeCount; set { _explicitNullValueUptimeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptimeCount"); else _explicitNullProperties?.Remove("uptimeCount"); } }
+        private int? _explicitNullValueUptimeCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200Response"/> and sets the default values.
         /// </summary>
@@ -57,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap>("spansCountMap", SpansCountMap);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem>("transactionChildCountMap", TransactionChildCountMap);
             writer.WriteIntValue("uptimeCount", UptimeCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

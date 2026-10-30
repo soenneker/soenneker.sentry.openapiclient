@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload a new snapshot with image metadata.The request body is a JSON object containing `app_id` (required),`images` (required, a mapping of filenames to image metadata objects),and optional VCS fields (`head_sha`, `base_sha`, `provider`,`head_repo_name`, `head_ref`, `base_repo_name`, `base_ref`, `pr_number`).When VCS info with a `base_sha` is provided and a matching base snapshotexists, a comparison is automatically triggered.This endpoint requires a bearer token with `project:write` access.

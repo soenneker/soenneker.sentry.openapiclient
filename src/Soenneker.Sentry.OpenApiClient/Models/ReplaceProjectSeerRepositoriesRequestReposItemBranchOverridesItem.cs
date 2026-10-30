@@ -12,32 +12,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("branch_name") is { } nullNodeBranchName && nullNodeBranchName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BranchName = null;
+            if (parseNode.GetChildNode("tag_name") is { } nullNodeTagName && nullNodeTagName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagName = null;
+            if (parseNode.GetChildNode("tag_value") is { } nullNodeTagValue && nullNodeTagValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TagValue = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The repository branch Seer uses for issues whose events have this tag value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BranchName { get; set; }
+        public string? BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_name"); else _explicitNullProperties?.Remove("branch_name"); } }
+        private string? _explicitNullValueBranchName = default!;
 #nullable restore
 #else
-        public string BranchName { get; set; }
+        public string BranchName { get => _explicitNullValueBranchName; set { _explicitNullValueBranchName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("branch_name"); else _explicitNullProperties?.Remove("branch_name"); } }
+        private string _explicitNullValueBranchName = default!;
 #endif
         /// <summary>Event tag key to match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TagName { get; set; }
+        public string? TagName { get => _explicitNullValueTagName; set { _explicitNullValueTagName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_name"); else _explicitNullProperties?.Remove("tag_name"); } }
+        private string? _explicitNullValueTagName = default!;
 #nullable restore
 #else
-        public string TagName { get; set; }
+        public string TagName { get => _explicitNullValueTagName; set { _explicitNullValueTagName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_name"); else _explicitNullProperties?.Remove("tag_name"); } }
+        private string _explicitNullValueTagName = default!;
 #endif
         /// <summary>Event tag value to match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TagValue { get; set; }
+        public string? TagValue { get => _explicitNullValueTagValue; set { _explicitNullValueTagValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_value"); else _explicitNullProperties?.Remove("tag_value"); } }
+        private string? _explicitNullValueTagValue = default!;
 #nullable restore
 #else
-        public string TagValue { get; set; }
+        public string TagValue { get => _explicitNullValueTagValue; set { _explicitNullValueTagValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag_value"); else _explicitNullProperties?.Remove("tag_value"); } }
+        private string _explicitNullValueTagValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("branch_name", BranchName);
             writer.WriteStringValue("tag_name", TagName);
             writer.WriteStringValue("tag_value", TagValue);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

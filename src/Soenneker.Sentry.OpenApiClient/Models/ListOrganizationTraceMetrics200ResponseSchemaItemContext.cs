@@ -11,24 +11,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationTraceMetrics200ResponseSchemaItemContext : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brief") is { } nullNodeBrief && nullNodeBrief.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brief = null;
+            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The brief property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brief { get; set; }
+        public string? Brief { get => _explicitNullValueBrief; set { _explicitNullValueBrief = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brief"); else _explicitNullProperties?.Remove("brief"); } }
+        private string? _explicitNullValueBrief = default!;
 #nullable restore
 #else
-        public string Brief { get; set; }
+        public string Brief { get => _explicitNullValueBrief; set { _explicitNullValueBrief = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brief"); else _explicitNullProperties?.Remove("brief"); } }
+        private string _explicitNullValueBrief = default!;
 #endif
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Details { get; set; }
+        public List<string>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private List<string>? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public List<string> Details { get; set; }
+        public List<string> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private List<string> _explicitNullValueDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceMetrics200ResponseSchemaItemContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("brief", Brief);
             writer.WriteCollectionOfPrimitiveValues<string>("details", Details);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

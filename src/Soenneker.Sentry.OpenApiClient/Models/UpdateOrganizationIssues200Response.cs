@@ -11,84 +11,127 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationIssues200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assignedTo") is { } nullNodeAssignedTo && nullNodeAssignedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedTo = null;
+            if (parseNode.GetChildNode("discard") is { } nullNodeDiscard && nullNodeDiscard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discard = null;
+            if (parseNode.GetChildNode("hasSeen") is { } nullNodeHasSeen && nullNodeHasSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSeen = null;
+            if (parseNode.GetChildNode("inbox") is { } nullNodeInbox && nullNodeInbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inbox = null;
+            if (parseNode.GetChildNode("isBookmarked") is { } nullNodeIsBookmarked && nullNodeIsBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBookmarked = null;
+            if (parseNode.GetChildNode("isPublic") is { } nullNodeIsPublic && nullNodeIsPublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPublic = null;
+            if (parseNode.GetChildNode("isSubscribed") is { } nullNodeIsSubscribed && nullNodeIsSubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSubscribed = null;
+            if (parseNode.GetChildNode("merge") is { } nullNodeMerge && nullNodeMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merge = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("shareId") is { } nullNodeShareId && nullNodeShareId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareId = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusDetails") is { } nullNodeStatusDetails && nullNodeStatusDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusDetails = null;
+            if (parseNode.GetChildNode("subscriptionDetails") is { } nullNodeSubscriptionDetails && nullNodeSubscriptionDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionDetails = null;
+            if (parseNode.GetChildNode("substatus") is { } nullNodeSubstatus && nullNodeSubstatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Substatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The assignedTo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo? AssignedTo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo? AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo? _explicitNullValueAssignedTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo AssignedTo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseAssignedTo _explicitNullValueAssignedTo = default!;
 #endif
         /// <summary>The discard property</summary>
-        public bool? Discard { get; set; }
+        public bool? Discard { get => _explicitNullValueDiscard; set { _explicitNullValueDiscard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discard"); else _explicitNullProperties?.Remove("discard"); } }
+        private bool? _explicitNullValueDiscard = default!;
         /// <summary>The hasSeen property</summary>
-        public bool? HasSeen { get; set; }
+        public bool? HasSeen { get => _explicitNullValueHasSeen; set { _explicitNullValueHasSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasSeen"); else _explicitNullProperties?.Remove("hasSeen"); } }
+        private bool? _explicitNullValueHasSeen = default!;
         /// <summary>The inbox property</summary>
-        public bool? Inbox { get; set; }
+        public bool? Inbox { get => _explicitNullValueInbox; set { _explicitNullValueInbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbox"); else _explicitNullProperties?.Remove("inbox"); } }
+        private bool? _explicitNullValueInbox = default!;
         /// <summary>The isBookmarked property</summary>
-        public bool? IsBookmarked { get; set; }
+        public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
+        private bool? _explicitNullValueIsBookmarked = default!;
         /// <summary>The isPublic property</summary>
-        public bool? IsPublic { get; set; }
+        public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isPublic"); else _explicitNullProperties?.Remove("isPublic"); } }
+        private bool? _explicitNullValueIsPublic = default!;
         /// <summary>The isSubscribed property</summary>
-        public bool? IsSubscribed { get; set; }
+        public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSubscribed"); else _explicitNullProperties?.Remove("isSubscribed"); } }
+        private bool? _explicitNullValueIsSubscribed = default!;
         /// <summary>The merge property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge? Merge { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge? Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge? _explicitNullValueMerge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge Merge { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseMerge _explicitNullValueMerge = default!;
 #endif
         /// <summary>The priority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Priority { get; set; }
+        public string? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private string? _explicitNullValuePriority = default!;
 #nullable restore
 #else
-        public string Priority { get; set; }
+        public string Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private string _explicitNullValuePriority = default!;
 #endif
         /// <summary>The shareId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareId { get; set; }
+        public string? ShareId { get => _explicitNullValueShareId; set { _explicitNullValueShareId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareId"); else _explicitNullProperties?.Remove("shareId"); } }
+        private string? _explicitNullValueShareId = default!;
 #nullable restore
 #else
-        public string ShareId { get; set; }
+        public string ShareId { get => _explicitNullValueShareId; set { _explicitNullValueShareId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareId"); else _explicitNullProperties?.Remove("shareId"); } }
+        private string _explicitNullValueShareId = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The statusDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails? StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails? StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails? _explicitNullValueStatusDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails _explicitNullValueStatusDetails = default!;
 #endif
         /// <summary>The subscriptionDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails? SubscriptionDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails? SubscriptionDetails { get => _explicitNullValueSubscriptionDetails; set { _explicitNullValueSubscriptionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionDetails"); else _explicitNullProperties?.Remove("subscriptionDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails? _explicitNullValueSubscriptionDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails SubscriptionDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails SubscriptionDetails { get => _explicitNullValueSubscriptionDetails; set { _explicitNullValueSubscriptionDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionDetails"); else _explicitNullProperties?.Remove("subscriptionDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails _explicitNullValueSubscriptionDetails = default!;
 #endif
         /// <summary>The substatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Substatus { get; set; }
+        public string? Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
+        private string? _explicitNullValueSubstatus = default!;
 #nullable restore
 #else
-        public string Substatus { get; set; }
+        public string Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
+        private string _explicitNullValueSubstatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200Response"/> and sets the default values.
@@ -105,7 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,6 +195,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseStatusDetails>("statusDetails", StatusDetails);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssues200ResponseSubscriptionDetails>("subscriptionDetails", SubscriptionDetails);
             writer.WriteStringValue("substatus", Substatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,42 +12,63 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GetOrganizationTrace200ResponseItemAnyOf1ChildrenItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("project_slug") is { } nullNodeProjectSlug && nullNodeProjectSlug.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectSlug = null;
+            if (parseNode.GetChildNode("transaction") is { } nullNodeTransaction && nullNodeTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Transaction = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>The event_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>The project_id property</summary>
-        public int? ProjectId { get; set; }
+        public int? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private int? _explicitNullValueProjectId = default!;
         /// <summary>The project_slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectSlug { get; set; }
+        public string? ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_slug"); else _explicitNullProperties?.Remove("project_slug"); } }
+        private string? _explicitNullValueProjectSlug = default!;
 #nullable restore
 #else
-        public string ProjectSlug { get; set; }
+        public string ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_slug"); else _explicitNullProperties?.Remove("project_slug"); } }
+        private string _explicitNullValueProjectSlug = default!;
 #endif
         /// <summary>The transaction property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Transaction { get; set; }
+        public string? Transaction { get => _explicitNullValueTransaction; set { _explicitNullValueTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction"); else _explicitNullProperties?.Remove("transaction"); } }
+        private string? _explicitNullValueTransaction = default!;
 #nullable restore
 #else
-        public string Transaction { get; set; }
+        public string Transaction { get => _explicitNullValueTransaction; set { _explicitNullValueTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction"); else _explicitNullProperties?.Remove("transaction"); } }
+        private string _explicitNullValueTransaction = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1ChildrenItem"/> and sets the default values.
@@ -64,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1ChildrenItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1ChildrenItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1ChildrenItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,6 +114,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("project_id", ProjectId);
             writer.WriteStringValue("project_slug", ProjectSlug);
             writer.WriteStringValue("transaction", Transaction);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

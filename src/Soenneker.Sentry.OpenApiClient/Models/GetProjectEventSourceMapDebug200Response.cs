@@ -11,60 +11,94 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectEventSourceMapDebug200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dist") is { } nullNodeDist && nullNodeDist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dist = null;
+            if (parseNode.GetChildNode("exceptions") is { } nullNodeExceptions && nullNodeExceptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Exceptions = null;
+            if (parseNode.GetChildNode("has_debug_ids") is { } nullNodeHasDebugIds && nullNodeHasDebugIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasDebugIds = null;
+            if (parseNode.GetChildNode("has_scraping_data") is { } nullNodeHasScrapingData && nullNodeHasScrapingData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasScrapingData = null;
+            if (parseNode.GetChildNode("has_uploaded_some_artifact_with_a_debug_id") is { } nullNodeHasUploadedSomeArtifactWithADebugId && nullNodeHasUploadedSomeArtifactWithADebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasUploadedSomeArtifactWithADebugId = null;
+            if (parseNode.GetChildNode("min_debug_id_sdk_version") is { } nullNodeMinDebugIdSdkVersion && nullNodeMinDebugIdSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MinDebugIdSdkVersion = null;
+            if (parseNode.GetChildNode("project_has_some_artifact_bundle") is { } nullNodeProjectHasSomeArtifactBundle && nullNodeProjectHasSomeArtifactBundle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectHasSomeArtifactBundle = null;
+            if (parseNode.GetChildNode("release") is { } nullNodeRelease && nullNodeRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Release = null;
+            if (parseNode.GetChildNode("release_has_some_artifact") is { } nullNodeReleaseHasSomeArtifact && nullNodeReleaseHasSomeArtifact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseHasSomeArtifact = null;
+            if (parseNode.GetChildNode("sdk_debug_id_support") is { } nullNodeSdkDebugIdSupport && nullNodeSdkDebugIdSupport.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkDebugIdSupport = null;
+            if (parseNode.GetChildNode("sdk_version") is { } nullNodeSdkVersion && nullNodeSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dist property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dist { get; set; }
+        public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string? _explicitNullValueDist = default!;
 #nullable restore
 #else
-        public string Dist { get; set; }
+        public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string _explicitNullValueDist = default!;
 #endif
         /// <summary>The exceptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem>? Exceptions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem>? Exceptions { get => _explicitNullValueExceptions; set { _explicitNullValueExceptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceptions"); else _explicitNullProperties?.Remove("exceptions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem>? _explicitNullValueExceptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem> Exceptions { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem> Exceptions { get => _explicitNullValueExceptions; set { _explicitNullValueExceptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceptions"); else _explicitNullProperties?.Remove("exceptions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem> _explicitNullValueExceptions = default!;
 #endif
         /// <summary>The has_debug_ids property</summary>
-        public bool? HasDebugIds { get; set; }
+        public bool? HasDebugIds { get => _explicitNullValueHasDebugIds; set { _explicitNullValueHasDebugIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_debug_ids"); else _explicitNullProperties?.Remove("has_debug_ids"); } }
+        private bool? _explicitNullValueHasDebugIds = default!;
         /// <summary>The has_scraping_data property</summary>
-        public bool? HasScrapingData { get; set; }
+        public bool? HasScrapingData { get => _explicitNullValueHasScrapingData; set { _explicitNullValueHasScrapingData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_scraping_data"); else _explicitNullProperties?.Remove("has_scraping_data"); } }
+        private bool? _explicitNullValueHasScrapingData = default!;
         /// <summary>The has_uploaded_some_artifact_with_a_debug_id property</summary>
-        public bool? HasUploadedSomeArtifactWithADebugId { get; set; }
+        public bool? HasUploadedSomeArtifactWithADebugId { get => _explicitNullValueHasUploadedSomeArtifactWithADebugId; set { _explicitNullValueHasUploadedSomeArtifactWithADebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_uploaded_some_artifact_with_a_debug_id"); else _explicitNullProperties?.Remove("has_uploaded_some_artifact_with_a_debug_id"); } }
+        private bool? _explicitNullValueHasUploadedSomeArtifactWithADebugId = default!;
         /// <summary>The min_debug_id_sdk_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinDebugIdSdkVersion { get; set; }
+        public string? MinDebugIdSdkVersion { get => _explicitNullValueMinDebugIdSdkVersion; set { _explicitNullValueMinDebugIdSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_debug_id_sdk_version"); else _explicitNullProperties?.Remove("min_debug_id_sdk_version"); } }
+        private string? _explicitNullValueMinDebugIdSdkVersion = default!;
 #nullable restore
 #else
-        public string MinDebugIdSdkVersion { get; set; }
+        public string MinDebugIdSdkVersion { get => _explicitNullValueMinDebugIdSdkVersion; set { _explicitNullValueMinDebugIdSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_debug_id_sdk_version"); else _explicitNullProperties?.Remove("min_debug_id_sdk_version"); } }
+        private string _explicitNullValueMinDebugIdSdkVersion = default!;
 #endif
         /// <summary>The project_has_some_artifact_bundle property</summary>
-        public bool? ProjectHasSomeArtifactBundle { get; set; }
+        public bool? ProjectHasSomeArtifactBundle { get => _explicitNullValueProjectHasSomeArtifactBundle; set { _explicitNullValueProjectHasSomeArtifactBundle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_has_some_artifact_bundle"); else _explicitNullProperties?.Remove("project_has_some_artifact_bundle"); } }
+        private bool? _explicitNullValueProjectHasSomeArtifactBundle = default!;
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Release { get; set; }
+        public string? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private string? _explicitNullValueRelease = default!;
 #nullable restore
 #else
-        public string Release { get; set; }
+        public string Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private string _explicitNullValueRelease = default!;
 #endif
         /// <summary>The release_has_some_artifact property</summary>
-        public bool? ReleaseHasSomeArtifact { get; set; }
+        public bool? ReleaseHasSomeArtifact { get => _explicitNullValueReleaseHasSomeArtifact; set { _explicitNullValueReleaseHasSomeArtifact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release_has_some_artifact"); else _explicitNullProperties?.Remove("release_has_some_artifact"); } }
+        private bool? _explicitNullValueReleaseHasSomeArtifact = default!;
         /// <summary>The sdk_debug_id_support property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport? SdkDebugIdSupport { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport? SdkDebugIdSupport { get => _explicitNullValueSdkDebugIdSupport; set { _explicitNullValueSdkDebugIdSupport = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_debug_id_support"); else _explicitNullProperties?.Remove("sdk_debug_id_support"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport? _explicitNullValueSdkDebugIdSupport = default!;
         /// <summary>The sdk_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SdkVersion { get; set; }
+        public string? SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
+        private string? _explicitNullValueSdkVersion = default!;
 #nullable restore
 #else
-        public string SdkVersion { get; set; }
+        public string SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }
+        private string _explicitNullValueSdkVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response"/> and sets the default values.
@@ -81,7 +115,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +156,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("release_has_some_artifact", ReleaseHasSomeArtifact);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport>("sdk_debug_id_support", SdkDebugIdSupport);
             writer.WriteStringValue("sdk_version", SdkVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

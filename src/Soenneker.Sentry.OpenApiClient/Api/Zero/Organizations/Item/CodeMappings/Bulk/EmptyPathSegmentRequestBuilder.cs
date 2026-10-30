@@ -36,22 +36,22 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMapping
         /// <summary>
         /// Create or update multiple repository path mappings for a project. Mappings with matching project, stack root, and source root are updated.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings200Response"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsSuccessResponse"/></returns>
         /// <param name="body">Allows parameters to be defined in snake case, but passed as camel case.Errors are output in camel case.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings200Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsSuccessResponse?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings200Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsSuccessResponse> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsSuccessResponse>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappingsSuccessResponse.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create or update multiple repository path mappings for a project. Mappings with matching project, stack root, and source root are updated.

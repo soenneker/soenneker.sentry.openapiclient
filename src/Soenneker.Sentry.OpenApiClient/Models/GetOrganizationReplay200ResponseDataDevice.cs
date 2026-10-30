@@ -11,40 +11,59 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationReplay200ResponseDataDevice : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brand") is { } nullNodeBrand && nullNodeBrand.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Brand = null;
+            if (parseNode.GetChildNode("family") is { } nullNodeFamily && nullNodeFamily.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Family = null;
+            if (parseNode.GetChildNode("model") is { } nullNodeModel && nullNodeModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Model = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The brand property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Brand { get; set; }
+        public string? Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string? _explicitNullValueBrand = default!;
 #nullable restore
 #else
-        public string Brand { get; set; }
+        public string Brand { get => _explicitNullValueBrand; set { _explicitNullValueBrand = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brand"); else _explicitNullProperties?.Remove("brand"); } }
+        private string _explicitNullValueBrand = default!;
 #endif
         /// <summary>The family property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Family { get; set; }
+        public string? Family { get => _explicitNullValueFamily; set { _explicitNullValueFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("family"); else _explicitNullProperties?.Remove("family"); } }
+        private string? _explicitNullValueFamily = default!;
 #nullable restore
 #else
-        public string Family { get; set; }
+        public string Family { get => _explicitNullValueFamily; set { _explicitNullValueFamily = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("family"); else _explicitNullProperties?.Remove("family"); } }
+        private string _explicitNullValueFamily = default!;
 #endif
         /// <summary>The model property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model { get; set; }
+        public string? Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string? _explicitNullValueModel = default!;
 #nullable restore
 #else
-        public string Model { get; set; }
+        public string Model { get => _explicitNullValueModel; set { _explicitNullValueModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("model"); else _explicitNullProperties?.Remove("model"); } }
+        private string _explicitNullValueModel = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("family", Family);
             writer.WriteStringValue("model", Model);
             writer.WriteStringValue("name", Name);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

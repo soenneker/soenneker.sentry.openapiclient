@@ -12,31 +12,50 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateTeamExternalTeamRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+            if (parseNode.GetChildNode("external_name") is { } nullNodeExternalName && nullNodeExternalName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalName = null;
+            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("team_id") is { } nullNodeTeamId && nullNodeTeamId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The associated user ID for provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get; set; }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get; set; }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>The associated name for the provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalName { get; set; }
+        public string? ExternalName { get => _explicitNullValueExternalName; set { _explicitNullValueExternalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_name"); else _explicitNullProperties?.Remove("external_name"); } }
+        private string? _explicitNullValueExternalName = default!;
 #nullable restore
 #else
-        public string ExternalName { get; set; }
+        public string ExternalName { get => _explicitNullValueExternalName; set { _explicitNullValueExternalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_name"); else _explicitNullProperties?.Remove("external_name"); } }
+        private string _explicitNullValueExternalName = default!;
 #endif
         /// <summary>The Integration ID.</summary>
-        public int? IntegrationId { get; set; }
+        public int? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        private int? _explicitNullValueIntegrationId = default!;
         /// <summary>The provider of the external actor.* `github`* `github_enterprise`* `jira_server`* `slack`* `slack_staging`* `perforce`* `gitlab`* `cursor_origin`* `msteams`* `custom_scm`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider? _explicitNullValueProvider = default!;
         /// <summary>ID of the Sentry team to link to the external team.</summary>
-        public int? TeamId { get; set; }
+        public int? TeamId { get => _explicitNullValueTeamId; set { _explicitNullValueTeamId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team_id"); else _explicitNullProperties?.Remove("team_id"); } }
+        private int? _explicitNullValueTeamId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("integration_id", IntegrationId);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateTeamExternalTeamRequestProvider>("provider", Provider);
             writer.WriteIntValue("team_id", TeamId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

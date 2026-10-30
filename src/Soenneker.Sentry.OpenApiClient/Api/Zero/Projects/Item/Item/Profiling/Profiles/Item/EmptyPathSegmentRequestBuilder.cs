@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Profiling.P
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectProfilingProfile200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectProfilingProfile200ResponseSchema.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectProfilingProfile200ResponseSchema>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetProjectProfilingProfile200ResponseSchema.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a single profile by its ID.The response includes the profile&apos;s metadata, its sampled stack data, and theassociated release, when one is found.Requires profiling to be enabled for the organization.

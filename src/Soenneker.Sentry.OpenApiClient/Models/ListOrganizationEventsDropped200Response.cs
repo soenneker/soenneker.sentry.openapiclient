@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationEventsDropped200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("acceptedEvents") is { } nullNodeAcceptedEvents && nullNodeAcceptedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptedEvents = null;
+            if (parseNode.GetChildNode("droppedEvents") is { } nullNodeDroppedEvents && nullNodeDroppedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DroppedEvents = null;
+            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+        }
+
         /// <summary>The acceptedEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem>? AcceptedEvents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem>? AcceptedEvents { get => _explicitNullValueAcceptedEvents; set { _explicitNullValueAcceptedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedEvents"); else _explicitNullProperties?.Remove("acceptedEvents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem>? _explicitNullValueAcceptedEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem> AcceptedEvents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem> AcceptedEvents { get => _explicitNullValueAcceptedEvents; set { _explicitNullValueAcceptedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedEvents"); else _explicitNullProperties?.Remove("acceptedEvents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem> _explicitNullValueAcceptedEvents = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The droppedEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem>? DroppedEvents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem>? DroppedEvents { get => _explicitNullValueDroppedEvents; set { _explicitNullValueDroppedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("droppedEvents"); else _explicitNullProperties?.Remove("droppedEvents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem>? _explicitNullValueDroppedEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem> DroppedEvents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem> DroppedEvents { get => _explicitNullValueDroppedEvents; set { _explicitNullValueDroppedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("droppedEvents"); else _explicitNullProperties?.Remove("droppedEvents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem> _explicitNullValueDroppedEvents = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta? Meta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta Meta { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200Response"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem>("acceptedEvents", AcceptedEvents);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem>("droppedEvents", DroppedEvents);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta>("meta", Meta);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

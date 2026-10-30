@@ -12,13 +12,24 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateProjectSymbolSourceRequestLayout : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("casing") is { } nullNodeCasing && nullNodeCasing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Casing = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The source&apos;s casing rules.* `lowercase`* `uppercase`* `default`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutCasing? Casing { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutCasing? Casing { get => _explicitNullValueCasing; set { _explicitNullValueCasing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("casing"); else _explicitNullProperties?.Remove("casing"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutCasing? _explicitNullValueCasing = default!;
         /// <summary>The source&apos;s layout type.* `native`* `symstore`* `symstore_index2`* `ssqp`* `unified`* `debuginfod`* `slashsymbols`* `nxsymstore`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutType? Type { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayout"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayout CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayout();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayout(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutCasing>("casing", Casing);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSourceRequestLayoutType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AssembleOrganizationArtifactBundle200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("detail") is { } nullNodeDetail && nullNodeDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detail = null;
+            if (parseNode.GetChildNode("missingChunks") is { } nullNodeMissingChunks && nullNodeMissingChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingChunks = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail { get; set; }
+        public string? Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
+        private string? _explicitNullValueDetail = default!;
 #nullable restore
 #else
-        public string Detail { get; set; }
+        public string Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
+        private string _explicitNullValueDetail = default!;
 #endif
         /// <summary>The missingChunks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingChunks { get; set; }
+        public List<string>? MissingChunks { get => _explicitNullValueMissingChunks; set { _explicitNullValueMissingChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingChunks"); else _explicitNullProperties?.Remove("missingChunks"); } }
+        private List<string>? _explicitNullValueMissingChunks = default!;
 #nullable restore
 #else
-        public List<string> MissingChunks { get; set; }
+        public List<string> MissingChunks { get => _explicitNullValueMissingChunks; set { _explicitNullValueMissingChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingChunks"); else _explicitNullProperties?.Remove("missingChunks"); } }
+        private List<string> _explicitNullValueMissingChunks = default!;
 #endif
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundle200Response"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundle200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundle200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundle200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("detail", Detail);
             writer.WriteCollectionOfPrimitiveValues<string>("missingChunks", MissingChunks);
             writer.WriteStringValue("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

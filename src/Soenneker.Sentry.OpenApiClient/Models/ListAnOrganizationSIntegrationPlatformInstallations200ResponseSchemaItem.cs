@@ -11,40 +11,59 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app") is { } nullNodeApp && nullNodeApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) App = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("uuid") is { } nullNodeUuid && nullNodeUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuid = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp? App { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp? App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp? _explicitNullValueApp = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp App { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp App { get => _explicitNullValueApp; set { _explicitNullValueApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app"); else _explicitNullProperties?.Remove("app"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemApp _explicitNullValueApp = default!;
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization? Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The uuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uuid { get; set; }
+        public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string? _explicitNullValueUuid = default!;
 #nullable restore
 #else
-        public string Uuid { get; set; }
+        public string Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private string _explicitNullValueUuid = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListAnOrganizationSIntegrationPlatformInstallations200ResponseSchemaItemOrganization>("organization", Organization);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("uuid", Uuid);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

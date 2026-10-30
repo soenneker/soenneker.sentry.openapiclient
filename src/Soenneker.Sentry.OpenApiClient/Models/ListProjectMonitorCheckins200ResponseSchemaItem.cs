@@ -11,62 +11,98 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListProjectMonitorCheckins200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateAdded") is { } nullNodeDateAdded && nullNodeDateAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateAdded = null;
+            if (parseNode.GetChildNode("dateClock") is { } nullNodeDateClock && nullNodeDateClock.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateClock = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("dateInProgress") is { } nullNodeDateInProgress && nullNodeDateInProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateInProgress = null;
+            if (parseNode.GetChildNode("dateUpdated") is { } nullNodeDateUpdated && nullNodeDateUpdated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateUpdated = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("expectedTime") is { } nullNodeExpectedTime && nullNodeExpectedTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpectedTime = null;
+            if (parseNode.GetChildNode("groups") is { } nullNodeGroups && nullNodeGroups.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Groups = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("monitorConfig") is { } nullNodeMonitorConfig && nullNodeMonitorConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MonitorConfig = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateAdded property</summary>
-        public DateTimeOffset? DateAdded { get; set; }
+        public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
+        private DateTimeOffset? _explicitNullValueDateAdded = default!;
         /// <summary>The dateClock property</summary>
-        public DateTimeOffset? DateClock { get; set; }
+        public DateTimeOffset? DateClock { get => _explicitNullValueDateClock; set { _explicitNullValueDateClock = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateClock"); else _explicitNullProperties?.Remove("dateClock"); } }
+        private DateTimeOffset? _explicitNullValueDateClock = default!;
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateInProgress property</summary>
-        public DateTimeOffset? DateInProgress { get; set; }
+        public DateTimeOffset? DateInProgress { get => _explicitNullValueDateInProgress; set { _explicitNullValueDateInProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateInProgress"); else _explicitNullProperties?.Remove("dateInProgress"); } }
+        private DateTimeOffset? _explicitNullValueDateInProgress = default!;
         /// <summary>The dateUpdated property</summary>
-        public DateTimeOffset? DateUpdated { get; set; }
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
         /// <summary>The duration property</summary>
-        public int? Duration { get; set; }
+        public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private int? _explicitNullValueDuration = default!;
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get; set; }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The expectedTime property</summary>
-        public DateTimeOffset? ExpectedTime { get; set; }
+        public DateTimeOffset? ExpectedTime { get => _explicitNullValueExpectedTime; set { _explicitNullValueExpectedTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedTime"); else _explicitNullProperties?.Remove("expectedTime"); } }
+        private DateTimeOffset? _explicitNullValueExpectedTime = default!;
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Groups { get; set; }
+        public List<string>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<string>? _explicitNullValueGroups = default!;
 #nullable restore
 #else
-        public List<string> Groups { get; set; }
+        public List<string> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
+        private List<string> _explicitNullValueGroups = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The monitorConfig property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig? MonitorConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig? MonitorConfig { get => _explicitNullValueMonitorConfig; set { _explicitNullValueMonitorConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitorConfig"); else _explicitNullProperties?.Remove("monitorConfig"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig? _explicitNullValueMonitorConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig MonitorConfig { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig MonitorConfig { get => _explicitNullValueMonitorConfig; set { _explicitNullValueMonitorConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitorConfig"); else _explicitNullProperties?.Remove("monitorConfig"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig _explicitNullValueMonitorConfig = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItem"/> and sets the default values.
@@ -83,7 +119,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,6 +162,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig>("monitorConfig", MonitorConfig);
             writer.WriteStringValue("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

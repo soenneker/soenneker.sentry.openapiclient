@@ -11,35 +11,53 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectReplayRecordingSegment200ResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateAdded") is { } nullNodeDateAdded && nullNodeDateAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateAdded = null;
+            if (parseNode.GetChildNode("projectId") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("replayId") is { } nullNodeReplayId && nullNodeReplayId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplayId = null;
+            if (parseNode.GetChildNode("segmentId") is { } nullNodeSegmentId && nullNodeSegmentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateAdded property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DateAdded { get; set; }
+        public string? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
+        private string? _explicitNullValueDateAdded = default!;
 #nullable restore
 #else
-        public string DateAdded { get; set; }
+        public string DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
+        private string _explicitNullValueDateAdded = default!;
 #endif
         /// <summary>The projectId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The replayId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplayId { get; set; }
+        public string? ReplayId { get => _explicitNullValueReplayId; set { _explicitNullValueReplayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayId"); else _explicitNullProperties?.Remove("replayId"); } }
+        private string? _explicitNullValueReplayId = default!;
 #nullable restore
 #else
-        public string ReplayId { get; set; }
+        public string ReplayId { get => _explicitNullValueReplayId; set { _explicitNullValueReplayId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayId"); else _explicitNullProperties?.Remove("replayId"); } }
+        private string _explicitNullValueReplayId = default!;
 #endif
         /// <summary>The segmentId property</summary>
-        public int? SegmentId { get; set; }
+        public int? SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
+        private int? _explicitNullValueSegmentId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReplayRecordingSegment200ResponseData"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReplayRecordingSegment200ResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReplayRecordingSegment200ResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReplayRecordingSegment200ResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("replayId", ReplayId);
             writer.WriteIntValue("segmentId", SegmentId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

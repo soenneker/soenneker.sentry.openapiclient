@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            await RequestAdapter.SendNoContentAsync(requestInfo, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve full details for a snapshot, including categorized image listsand comparison status.When a comparison exists (`comparison_type` is `diff`), images arecategorized into `changed`, `added`, `removed`, `renamed`, `unchanged`,`errored`, and `skipped` lists with counts, and the top-level `images`array is empty because those images are already present in thecategorized lists. For `solo` and `waiting_for_base` snapshots thecategorized lists are empty and `images` is the only populated source.`image_count` is accurate in all modes.Use `compact_metadata=1` to strip image objects down to `display_name`,`image_file_name`, `group`, and `description` only.This endpoint requires a bearer token with `project:read` access.
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a snapshot and all associated data (images, comparisons, metrics).This is a permanent, irreversible operation. The snapshot and its imageswill no longer be accessible after deletion.This endpoint requires a bearer token with `project:write` access.

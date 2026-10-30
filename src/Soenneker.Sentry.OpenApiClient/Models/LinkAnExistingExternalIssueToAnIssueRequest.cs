@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class LinkAnExistingExternalIssueToAnIssueRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("comment") is { } nullNodeComment && nullNodeComment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comment = null;
+            if (parseNode.GetChildNode("externalIssue") is { } nullNodeExternalIssue && nullNodeExternalIssue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIssue = null;
+            if (parseNode.GetChildNode("repo") is { } nullNodeRepo && nullNodeRepo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repo = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional comment to post to the external issue when linking, if supported by the integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment { get; set; }
+        public string? Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string? _explicitNullValueComment = default!;
 #nullable restore
 #else
-        public string Comment { get; set; }
+        public string Comment { get => _explicitNullValueComment; set { _explicitNullValueComment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comment"); else _explicitNullProperties?.Remove("comment"); } }
+        private string _explicitNullValueComment = default!;
 #endif
         /// <summary>The identifier or full URL of the existing external issue to link. URL support depends on the selected integration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalIssue { get; set; }
+        public string? ExternalIssue { get => _explicitNullValueExternalIssue; set { _explicitNullValueExternalIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalIssue"); else _explicitNullProperties?.Remove("externalIssue"); } }
+        private string? _explicitNullValueExternalIssue = default!;
 #nullable restore
 #else
-        public string ExternalIssue { get; set; }
+        public string ExternalIssue { get => _explicitNullValueExternalIssue; set { _explicitNullValueExternalIssue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalIssue"); else _explicitNullProperties?.Remove("externalIssue"); } }
+        private string _explicitNullValueExternalIssue = default!;
 #endif
         /// <summary>The repository containing the external issue, in owner/name format. Required by GitHub, GitHub Enterprise, and Bitbucket integrations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repo { get; set; }
+        public string? Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        private string? _explicitNullValueRepo = default!;
 #nullable restore
 #else
-        public string Repo { get; set; }
+        public string Repo { get => _explicitNullValueRepo; set { _explicitNullValueRepo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repo"); else _explicitNullProperties?.Remove("repo"); } }
+        private string _explicitNullValueRepo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.LinkAnExistingExternalIssueToAnIssueRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("externalIssue", ExternalIssue);
             writer.WriteStringValue("repo", Repo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

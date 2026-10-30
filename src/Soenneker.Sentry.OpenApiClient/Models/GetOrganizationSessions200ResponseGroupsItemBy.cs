@@ -11,34 +11,52 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationSessions200ResponseGroupsItemBy : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("release") is { } nullNodeRelease && nullNodeRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Release = null;
+            if (parseNode.GetChildNode("session.status") is { } nullNodeSessionStatus && nullNodeSessionStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SessionStatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Environment { get; set; }
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public string Environment { get; set; }
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The project property</summary>
-        public int? Project { get; set; }
+        public int? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private int? _explicitNullValueProject = default!;
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Release { get; set; }
+        public string? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private string? _explicitNullValueRelease = default!;
 #nullable restore
 #else
-        public string Release { get; set; }
+        public string Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        private string _explicitNullValueRelease = default!;
 #endif
         /// <summary>The sessionStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionStatus { get; set; }
+        public string? SessionStatus { get => _explicitNullValueSessionStatus; set { _explicitNullValueSessionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session.status"); else _explicitNullProperties?.Remove("session.status"); } }
+        private string? _explicitNullValueSessionStatus = default!;
 #nullable restore
 #else
-        public string SessionStatus { get; set; }
+        public string SessionStatus { get => _explicitNullValueSessionStatus; set { _explicitNullValueSessionStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("session.status"); else _explicitNullProperties?.Remove("session.status"); } }
+        private string _explicitNullValueSessionStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200ResponseGroupsItemBy"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200ResponseGroupsItemBy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200ResponseGroupsItemBy();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSessions200ResponseGroupsItemBy(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("project", Project);
             writer.WriteStringValue("release", Release);
             writer.WriteStringValue("session.status", SessionStatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

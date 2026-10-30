@@ -11,52 +11,78 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationIssueViewRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environments") is { } nullNodeEnvironments && nullNodeEnvironments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environments = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("query") is { } nullNodeQuery && nullNodeQuery.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Query = null;
+            if (parseNode.GetChildNode("querySort") is { } nullNodeQuerySort && nullNodeQuerySort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuerySort = null;
+            if (parseNode.GetChildNode("starred") is { } nullNodeStarred && nullNodeStarred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Starred = null;
+            if (parseNode.GetChildNode("timeFilters") is { } nullNodeTimeFilters && nullNodeTimeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeFilters = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environment names included in the view. An empty list includes all environments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Environments { get; set; }
+        public List<string>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public List<string> Environments { get; set; }
+        public List<string> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<string> _explicitNullValueEnvironments = default!;
 #endif
         /// <summary>The name of the issue view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The project IDs included in the view. Use `-1` to include all projects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Projects { get; set; }
+        public List<int?>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<int?> Projects { get; set; }
+        public List<int?> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?> _explicitNullValueProjects = default!;
 #endif
         /// <summary>The issue search query. Issue search does not support the `AND`/`OR` boolean operators or parenthesized boolean groups. To match any of several values, use the list form instead: `issue:[PROJ-AB1, PROJ-CD2]`, `issue.priority:[high, medium]`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Query { get; set; }
+        public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string? _explicitNullValueQuery = default!;
 #nullable restore
 #else
-        public string Query { get; set; }
+        public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
+        private string _explicitNullValueQuery = default!;
 #endif
         /// <summary>How to sort issues in the view.* `date` - Last Seen* `new` - First Seen* `trends` - Trends* `freq` - Events* `user` - Users* `inbox` - Date Added* `recommended` - Recommended</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestQuerySort? QuerySort { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestQuerySort? QuerySort { get => _explicitNullValueQuerySort; set { _explicitNullValueQuerySort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("querySort"); else _explicitNullProperties?.Remove("querySort"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestQuerySort? _explicitNullValueQuerySort = default!;
         /// <summary>Whether to star the issue view for the current user.</summary>
-        public bool? Starred { get; set; }
+        public bool? Starred { get => _explicitNullValueStarred; set { _explicitNullValueStarred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starred"); else _explicitNullProperties?.Remove("starred"); } }
+        private bool? _explicitNullValueStarred = default!;
         /// <summary>The time range for the view.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters? TimeFilters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters? TimeFilters { get => _explicitNullValueTimeFilters; set { _explicitNullValueTimeFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeFilters"); else _explicitNullProperties?.Remove("timeFilters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters? _explicitNullValueTimeFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters TimeFilters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters TimeFilters { get => _explicitNullValueTimeFilters; set { _explicitNullValueTimeFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeFilters"); else _explicitNullProperties?.Remove("timeFilters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters _explicitNullValueTimeFilters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequest"/> and sets the default values.
@@ -73,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,6 +132,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestQuerySort>("querySort", QuerySort);
             writer.WriteBoolValue("starred", Starred);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueViewRequestTimeFilters>("timeFilters", TimeFilters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

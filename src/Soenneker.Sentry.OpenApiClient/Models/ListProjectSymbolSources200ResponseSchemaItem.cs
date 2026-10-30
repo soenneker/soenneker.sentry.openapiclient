@@ -12,7 +12,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListProjectSymbolSources200ResponseSchemaItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,25 +70,38 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseSchemaItem();
             if("http".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListProjectSymbolSources200ResponseItemOneOf1 = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1();
+                
             }
             else if("s3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListProjectSymbolSources200ResponseItemOneOf2 = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf2();
+                
             }
             else if("gcs".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListProjectSymbolSources200ResponseItemOneOf3 = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf3();
+                
             }
             else if("azure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListProjectSymbolSources200ResponseItemOneOf4 = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4();
+                
             }
             else if("appStoreConnect".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ListProjectSymbolSources200ResponseItemOneOf5 = new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf5();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("http".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("url") != null && parseNode.GetChildNode("layout") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("s3".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("bucket") != null && parseNode.GetChildNode("region") != null && parseNode.GetChildNode("access_key") != null && parseNode.GetChildNode("secret_key") != null && parseNode.GetChildNode("layout") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("gcs".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("bucket") != null && parseNode.GetChildNode("client_email") != null && parseNode.GetChildNode("private_key") != null && parseNode.GetChildNode("layout") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("azure".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("account") != null && parseNode.GetChildNode("container") != null && parseNode.GetChildNode("tenant_id") != null && parseNode.GetChildNode("client_id") != null && parseNode.GetChildNode("client_secret") != null && parseNode.GetChildNode("layout") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("appStoreConnect".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("appconnectIssuer") != null && parseNode.GetChildNode("appconnectKey") != null && parseNode.GetChildNode("appconnectPrivateKey") != null && parseNode.GetChildNode("appName") != null && parseNode.GetChildNode("appId") != null && parseNode.GetChildNode("bundleId") != null))();
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ListProjectSymbolSources200ResponseItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1(), parseNode);
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ListProjectSymbolSources200ResponseItemOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf2(), parseNode);
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4) result.ListProjectSymbolSources200ResponseItemOneOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf3(), parseNode);
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4) result.ListProjectSymbolSources200ResponseItemOneOf4 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4(), parseNode);
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.ListProjectSymbolSources200ResponseItemOneOf5 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf5(), parseNode);
+            if (result.ListProjectSymbolSources200ResponseItemOneOf1 == null && result.ListProjectSymbolSources200ResponseItemOneOf2 == null && result.ListProjectSymbolSources200ResponseItemOneOf3 == null && result.ListProjectSymbolSources200ResponseItemOneOf4 == null && result.ListProjectSymbolSources200ResponseItemOneOf5 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -119,25 +137,38 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ListProjectSymbolSources200ResponseItemOneOf1 == null && ListProjectSymbolSources200ResponseItemOneOf2 == null && ListProjectSymbolSources200ResponseItemOneOf3 == null && ListProjectSymbolSources200ResponseItemOneOf4 == null && ListProjectSymbolSources200ResponseItemOneOf5 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListProjectSymbolSources200ResponseItemOneOf1 != null && ListProjectSymbolSources200ResponseItemOneOf2 == null && ListProjectSymbolSources200ResponseItemOneOf3 == null && ListProjectSymbolSources200ResponseItemOneOf4 == null && ListProjectSymbolSources200ResponseItemOneOf5 == null) { if (ListProjectSymbolSources200ResponseItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListProjectSymbolSources200ResponseItemOneOf1); return; }
+            if (ListProjectSymbolSources200ResponseItemOneOf2 != null && ListProjectSymbolSources200ResponseItemOneOf1 == null && ListProjectSymbolSources200ResponseItemOneOf3 == null && ListProjectSymbolSources200ResponseItemOneOf4 == null && ListProjectSymbolSources200ResponseItemOneOf5 == null) { if (ListProjectSymbolSources200ResponseItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListProjectSymbolSources200ResponseItemOneOf2); return; }
+            if (ListProjectSymbolSources200ResponseItemOneOf3 != null && ListProjectSymbolSources200ResponseItemOneOf1 == null && ListProjectSymbolSources200ResponseItemOneOf2 == null && ListProjectSymbolSources200ResponseItemOneOf4 == null && ListProjectSymbolSources200ResponseItemOneOf5 == null) { if (ListProjectSymbolSources200ResponseItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListProjectSymbolSources200ResponseItemOneOf3); return; }
+            if (ListProjectSymbolSources200ResponseItemOneOf4 != null && ListProjectSymbolSources200ResponseItemOneOf1 == null && ListProjectSymbolSources200ResponseItemOneOf2 == null && ListProjectSymbolSources200ResponseItemOneOf3 == null && ListProjectSymbolSources200ResponseItemOneOf5 == null) { if (ListProjectSymbolSources200ResponseItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListProjectSymbolSources200ResponseItemOneOf4); return; }
+            if (ListProjectSymbolSources200ResponseItemOneOf5 != null && ListProjectSymbolSources200ResponseItemOneOf1 == null && ListProjectSymbolSources200ResponseItemOneOf2 == null && ListProjectSymbolSources200ResponseItemOneOf3 == null && ListProjectSymbolSources200ResponseItemOneOf4 == null) { if (ListProjectSymbolSources200ResponseItemOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListProjectSymbolSources200ResponseItemOneOf5); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ListProjectSymbolSources200ResponseItemOneOf1 != null)
             {
+                if (ListProjectSymbolSources200ResponseItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1>(null, ListProjectSymbolSources200ResponseItemOneOf1);
             }
             else if(ListProjectSymbolSources200ResponseItemOneOf2 != null)
             {
+                if (ListProjectSymbolSources200ResponseItemOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf2>(null, ListProjectSymbolSources200ResponseItemOneOf2);
             }
             else if(ListProjectSymbolSources200ResponseItemOneOf3 != null)
             {
+                if (ListProjectSymbolSources200ResponseItemOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf3>(null, ListProjectSymbolSources200ResponseItemOneOf3);
             }
             else if(ListProjectSymbolSources200ResponseItemOneOf4 != null)
             {
+                if (ListProjectSymbolSources200ResponseItemOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4>(null, ListProjectSymbolSources200ResponseItemOneOf4);
             }
             else if(ListProjectSymbolSources200ResponseItemOneOf5 != null)
             {
+                if (ListProjectSymbolSources200ResponseItemOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf5>(null, ListProjectSymbolSources200ResponseItemOneOf5);
             }
         }

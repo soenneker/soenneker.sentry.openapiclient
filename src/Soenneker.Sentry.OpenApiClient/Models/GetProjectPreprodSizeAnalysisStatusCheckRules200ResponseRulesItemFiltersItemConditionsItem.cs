@@ -11,18 +11,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("values") is { } nullNodeValues && nullNodeValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Values = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The operator property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator? Operator { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator? _explicitNullValueOperator = default!;
         /// <summary>The values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values { get; set; }
+        public List<string>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<string>? _explicitNullValueValues = default!;
 #nullable restore
 #else
-        public List<string> Values { get; set; }
+        public List<string> Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }
+        private List<string> _explicitNullValueValues = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItem"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator>("operator", Operator);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

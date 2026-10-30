@@ -11,18 +11,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectFilterRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("subfilters") is { } nullNodeSubfilters && nullNodeSubfilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subfilters = null;
+        }
+
         /// <summary>Toggle the browser-extensions, localhost, filtered-transaction, or web-crawlers filter on or off.</summary>
-        public bool? Active { get; set; }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Specifies which legacy browser filters should be active. Anything excluded from the list will bedisabled. The options are:- `ie` - Internet Explorer Version 11 and lower- `edge` - Edge Version 110 and lower- `safari` - Safari Version 15 and lower- `firefox` - Firefox Version 110 and lower- `chrome` - Chrome Version 110 and lower- `opera` - Opera Version 99 and lower- `android` - Android Version 3 and lower- `opera_mini` - Opera Mini Version 34 and lowerDeprecated options:- `ie_pre_9` - Internet Explorer Version 8 and lower- `ie9` - Internet Explorer Version 9- `ie10` - Internet Explorer Version 10- `ie11` - Internet Explorer Version 11- `safari_pre_6` - Safari Version 5 and lower- `opera_pre_15` - Opera Version 14 and lower- `opera_mini_pre_8` - Opera Mini Version 8 and lower- `android_pre_4` - Android Version 3 and lower- `edge_pre_79` - Edge Version 18 and lower (non Chromium based)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?>? Subfilters { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?>? Subfilters { get => _explicitNullValueSubfilters; set { _explicitNullValueSubfilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subfilters"); else _explicitNullProperties?.Remove("subfilters"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?>? _explicitNullValueSubfilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?> Subfilters { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?> Subfilters { get => _explicitNullValueSubfilters; set { _explicitNullValueSubfilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subfilters"); else _explicitNullProperties?.Remove("subfilters"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem?> _explicitNullValueSubfilters = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequest"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("active", Active);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectFilterRequestSubfiltersItem>("subfilters", Subfilters);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

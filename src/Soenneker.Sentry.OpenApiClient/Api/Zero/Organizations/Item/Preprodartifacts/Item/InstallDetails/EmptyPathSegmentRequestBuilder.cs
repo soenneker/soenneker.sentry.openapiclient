@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve install info for a given artifact.Returns distribution and installation details for a specific preprod artifact,including whether the artifact is installable, the install URL, download count,and iOS-specific code signing information.

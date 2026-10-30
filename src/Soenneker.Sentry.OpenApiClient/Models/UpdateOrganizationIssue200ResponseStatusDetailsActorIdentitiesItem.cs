@@ -11,44 +11,67 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dateSynced") is { } nullNodeDateSynced && nullNodeDateSynced.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateSynced = null;
+            if (parseNode.GetChildNode("dateVerified") is { } nullNodeDateVerified && nullNodeDateVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateVerified = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("organization") is { } nullNodeOrganization && nullNodeOrganization.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Organization = null;
+            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateSynced property</summary>
-        public DateTimeOffset? DateSynced { get; set; }
+        public DateTimeOffset? DateSynced { get => _explicitNullValueDateSynced; set { _explicitNullValueDateSynced = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateSynced"); else _explicitNullProperties?.Remove("dateSynced"); } }
+        private DateTimeOffset? _explicitNullValueDateSynced = default!;
         /// <summary>The dateVerified property</summary>
-        public DateTimeOffset? DateVerified { get; set; }
+        public DateTimeOffset? DateVerified { get => _explicitNullValueDateVerified; set { _explicitNullValueDateVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateVerified"); else _explicitNullProperties?.Remove("dateVerified"); } }
+        private DateTimeOffset? _explicitNullValueDateVerified = default!;
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The organization property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization? Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization? _explicitNullValueOrganization = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization Organization { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization _explicitNullValueOrganization = default!;
 #endif
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider? Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider Provider { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider _explicitNullValueProvider = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItem"/> and sets the default values.
@@ -65,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +119,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemOrganization>("organization", Organization);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetailsActorIdentitiesItemProvider>("provider", Provider);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

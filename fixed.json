@@ -1694,6 +1694,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappingsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings200Response"
                 }
               }
@@ -1704,6 +1707,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappingsSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings207Response"
                 }
               }
@@ -6005,7 +6011,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateOrganizationExternalUser200Response"
+                  "$ref": "#/components/schemas/CreateOrganizationExternalUserSuccessResponse"
                 },
                 "examples": {
                   "CreateAnExternalUser": {
@@ -6018,6 +6024,9 @@
                       "id": "1"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationExternalUser200Response"
                 }
               }
             }
@@ -6027,7 +6036,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateOrganizationExternalUser201Response"
+                  "$ref": "#/components/schemas/CreateOrganizationExternalUserSuccessResponse"
                 },
                 "examples": {
                   "CreateAnExternalUser": {
@@ -6040,6 +6049,9 @@
                       "id": "1"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationExternalUser201Response"
                 }
               }
             }
@@ -30021,6 +30033,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueActionSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueAction200Response"
                 }
               }
@@ -30031,6 +30046,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueActionSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueAction201Response"
                 }
               }
@@ -30757,7 +30775,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateTeamExternalTeam200Response"
+                  "$ref": "#/components/schemas/CreateTeamExternalTeamSuccessResponse"
                 },
                 "examples": {
                   "CreateAnExternalTeam": {
@@ -30771,6 +30789,9 @@
                       "teamId": "2"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateTeamExternalTeam200Response"
                 }
               }
             }
@@ -30780,7 +30801,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/CreateTeamExternalTeam201Response"
+                  "$ref": "#/components/schemas/CreateTeamExternalTeamSuccessResponse"
                 },
                 "examples": {
                   "CreateAnExternalTeam": {
@@ -30794,6 +30815,9 @@
                       "teamId": "2"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/CreateTeamExternalTeam201Response"
                 }
               }
             }
@@ -35320,6 +35344,9 @@
             "content": {
               "application/json": {
                 "schema": {
+                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssueSuccessResponse"
+                },
+                "x-client-original-success-schema": {
                   "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue200Response"
                 }
               }
@@ -35330,7 +35357,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue201Response"
+                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssueSuccessResponse"
                 },
                 "examples": {
                   "CreateOrLinkAnExternalIssue": {
@@ -35343,6 +35370,9 @@
                       "displayName": "PROJECT-123"
                     }
                   }
+                },
+                "x-client-original-success-schema": {
+                  "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue201Response"
                 }
               }
             }
@@ -163915,6 +163945,56 @@
             "type": "string"
           }
         }
+      },
+      "BulkUpsertOrganizationCodeMappingsSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings200Response"
+          },
+          {
+            "$ref": "#/components/schemas/BulkUpsertOrganizationCodeMappings207Response"
+          }
+        ]
+      },
+      "CreateOrganizationExternalUserSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CreateOrganizationExternalUser200Response"
+          },
+          {
+            "$ref": "#/components/schemas/CreateOrganizationExternalUser201Response"
+          }
+        ]
+      },
+      "ExecuteSentryAppInstallationExternalIssueActionSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueAction200Response"
+          },
+          {
+            "$ref": "#/components/schemas/ExecuteSentryAppInstallationExternalIssueAction201Response"
+          }
+        ]
+      },
+      "CreateTeamExternalTeamSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/CreateTeamExternalTeam200Response"
+          },
+          {
+            "$ref": "#/components/schemas/CreateTeamExternalTeam201Response"
+          }
+        ]
+      },
+      "LinkAnExistingExternalIssueToAnIssueSuccessResponse": {
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue200Response"
+          },
+          {
+            "$ref": "#/components/schemas/LinkAnExistingExternalIssueToAnIssue201Response"
+          }
+        ]
       }
     },
     "securitySchemes": {

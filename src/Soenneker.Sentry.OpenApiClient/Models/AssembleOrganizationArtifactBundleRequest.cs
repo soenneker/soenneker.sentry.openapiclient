@@ -11,46 +11,68 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AssembleOrganizationArtifactBundleRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("checksum") is { } nullNodeChecksum && nullNodeChecksum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Checksum = null;
+            if (parseNode.GetChildNode("chunks") is { } nullNodeChunks && nullNodeChunks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chunks = null;
+            if (parseNode.GetChildNode("dist") is { } nullNodeDist && nullNodeDist.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dist = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("version") is { } nullNodeVersion && nullNodeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Version = null;
+        }
+
         /// <summary>The SHA-1 checksum of the whole bundle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Checksum { get; set; }
+        public string? Checksum { get => _explicitNullValueChecksum; set { _explicitNullValueChecksum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checksum"); else _explicitNullProperties?.Remove("checksum"); } }
+        private string? _explicitNullValueChecksum = default!;
 #nullable restore
 #else
-        public string Checksum { get; set; }
+        public string Checksum { get => _explicitNullValueChecksum; set { _explicitNullValueChecksum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checksum"); else _explicitNullProperties?.Remove("checksum"); } }
+        private string _explicitNullValueChecksum = default!;
 #endif
         /// <summary>The SHA-1 checksums of the bundle&apos;s chunks, in order. Upload missing chunks with the chunk upload endpoint. Send an empty list to poll the bundle&apos;s state.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Chunks { get; set; }
+        public List<string>? Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        private List<string>? _explicitNullValueChunks = default!;
 #nullable restore
 #else
-        public List<string> Chunks { get; set; }
+        public List<string> Chunks { get => _explicitNullValueChunks; set { _explicitNullValueChunks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunks"); else _explicitNullProperties?.Remove("chunks"); } }
+        private List<string> _explicitNullValueChunks = default!;
 #endif
         /// <summary>The distribution to associate the bundle with. Requires `version`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dist { get; set; }
+        public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string? _explicitNullValueDist = default!;
 #nullable restore
 #else
-        public string Dist { get; set; }
+        public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
+        private string _explicitNullValueDist = default!;
 #endif
         /// <summary>The IDs or slugs of the projects the bundle belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Projects { get; set; }
+        public List<string>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<string>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<string> Projects { get; set; }
+        public List<string> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<string> _explicitNullValueProjects = default!;
 #endif
         /// <summary>The release to associate the bundle with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string? _explicitNullValueVersion = default!;
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
+        private string _explicitNullValueVersion = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundleRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundleRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.AssembleOrganizationArtifactBundleRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,7 +110,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("chunks", Chunks);
             writer.WriteStringValue("dist", Dist);
             writer.WriteCollectionOfPrimitiveValues<string>("projects", Projects);
-            writer.WriteStringValue("version", Version);
+            writer.WriteStringValue("version", Version);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

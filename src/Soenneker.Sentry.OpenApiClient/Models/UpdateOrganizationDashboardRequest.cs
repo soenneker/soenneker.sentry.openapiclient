@@ -12,78 +12,115 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateOrganizationDashboardRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+            if (parseNode.GetChildNode("utc") is { } nullNodeUtc && nullNodeUtc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Utc = null;
+            if (parseNode.GetChildNode("widgets") is { } nullNodeWidgets && nullNodeWidgets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Widgets = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The saved end time for this dashboard.</summary>
-        public DateTimeOffset? End { get; set; }
+        public DateTimeOffset? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private DateTimeOffset? _explicitNullValueEnd = default!;
         /// <summary>The saved environment filter for this dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Environment { get; set; }
+        public List<string>? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private List<string>? _explicitNullValueEnvironment = default!;
 #nullable restore
 #else
-        public List<string> Environment { get; set; }
+        public List<string> Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private List<string> _explicitNullValueEnvironment = default!;
 #endif
         /// <summary>The saved filters for this dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters? Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters Filters { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestFilters _explicitNullValueFilters = default!;
 #endif
         /// <summary>A dashboard&apos;s unique id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>The saved time range period for this dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Period { get; set; }
+        public string? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private string? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public string Period { get; set; }
+        public string Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private string _explicitNullValuePeriod = default!;
 #endif
         /// <summary>Permissions that restrict users from editing dashboards</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions? Permissions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions Permissions { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestPermissions _explicitNullValuePermissions = default!;
 #endif
         /// <summary>The saved projects filter for this dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? Projects { get; set; }
+        public List<int?>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<int?> Projects { get; set; }
+        public List<int?> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<int?> _explicitNullValueProjects = default!;
 #endif
         /// <summary>The saved start time for this dashboard.</summary>
-        public DateTimeOffset? Start { get; set; }
+        public DateTimeOffset? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private DateTimeOffset? _explicitNullValueStart = default!;
         /// <summary>The user-defined dashboard title.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>Setting that lets you display saved time range for this dashboard in UTC.</summary>
-        public bool? Utc { get; set; }
+        public bool? Utc { get => _explicitNullValueUtc; set { _explicitNullValueUtc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utc"); else _explicitNullProperties?.Remove("utc"); } }
+        private bool? _explicitNullValueUtc = default!;
         /// <summary>A json list of widgets saved in this dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem>? Widgets { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem>? Widgets { get => _explicitNullValueWidgets; set { _explicitNullValueWidgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widgets"); else _explicitNullProperties?.Remove("widgets"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem>? _explicitNullValueWidgets = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem> Widgets { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem> Widgets { get => _explicitNullValueWidgets; set { _explicitNullValueWidgets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widgets"); else _explicitNullProperties?.Remove("widgets"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem> _explicitNullValueWidgets = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequest"/> and sets the default values.
@@ -100,7 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,6 +178,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("utc", Utc);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem>("widgets", Widgets);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

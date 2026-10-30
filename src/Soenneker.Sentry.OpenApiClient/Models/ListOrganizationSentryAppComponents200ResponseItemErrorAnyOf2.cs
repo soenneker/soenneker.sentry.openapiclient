@@ -11,24 +11,37 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("detail") is { } nullNodeDetail && nullNodeDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detail = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context? Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context _explicitNullValueContext = default!;
 #endif
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail { get; set; }
+        public string? Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
+        private string? _explicitNullValueDetail = default!;
 #nullable restore
 #else
-        public string Detail { get; set; }
+        public string Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
+        private string _explicitNullValueDetail = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2"/> and sets the default values.
@@ -45,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,6 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemErrorAnyOf2Context>("context", Context);
             writer.WriteStringValue("detail", Detail);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

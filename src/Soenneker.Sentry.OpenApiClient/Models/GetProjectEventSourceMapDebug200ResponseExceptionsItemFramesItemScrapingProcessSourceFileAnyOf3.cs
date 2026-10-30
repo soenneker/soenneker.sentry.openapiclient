@@ -11,28 +11,45 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("details") is { } nullNodeDetails && nullNodeDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Details = null;
+            if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Details { get; set; }
+        public string? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private string? _explicitNullValueDetails = default!;
 #nullable restore
 #else
-        public string Details { get; set; }
+        public string Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
+        private string _explicitNullValueDetails = default!;
 #endif
         /// <summary>The reason property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason? Reason { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason? _explicitNullValueReason = default!;
         /// <summary>The status property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus? _explicitNullValueStatus = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3"/> and sets the default values.
@@ -49,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,6 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3Reason>("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.FailureStatus>("status", Status);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

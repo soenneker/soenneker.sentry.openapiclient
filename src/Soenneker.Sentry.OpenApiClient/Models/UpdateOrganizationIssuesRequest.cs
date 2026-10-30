@@ -11,57 +11,102 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationIssuesRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("assignedTo") is { } nullNodeAssignedTo && nullNodeAssignedTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssignedTo = null;
+            if (parseNode.GetChildNode("discard") is { } nullNodeDiscard && nullNodeDiscard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discard = null;
+            if (parseNode.GetChildNode("hasSeen") is { } nullNodeHasSeen && nullNodeHasSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasSeen = null;
+            if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
+            if (parseNode.GetChildNode("ignoreDuration") is { } nullNodeIgnoreDuration && nullNodeIgnoreDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreDuration = null;
+            if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
+            if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
+            if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
+            if (parseNode.GetChildNode("inbox") is { } nullNodeInbox && nullNodeInbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Inbox = null;
+            if (parseNode.GetChildNode("isBookmarked") is { } nullNodeIsBookmarked && nullNodeIsBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsBookmarked = null;
+            if (parseNode.GetChildNode("isPublic") is { } nullNodeIsPublic && nullNodeIsPublic.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPublic = null;
+            if (parseNode.GetChildNode("isSubscribed") is { } nullNodeIsSubscribed && nullNodeIsSubscribed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSubscribed = null;
+            if (parseNode.GetChildNode("merge") is { } nullNodeMerge && nullNodeMerge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Merge = null;
+            if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
+            if (parseNode.GetChildNode("snoozeDuration") is { } nullNodeSnoozeDuration && nullNodeSnoozeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnoozeDuration = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("statusDetails") is { } nullNodeStatusDetails && nullNodeStatusDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusDetails = null;
+            if (parseNode.GetChildNode("substatus") is { } nullNodeSubstatus && nullNodeSubstatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Substatus = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The user or team that should be assigned to the issues. Values take the form of `&lt;user_id&gt;`, `user:&lt;user_id&gt;`, `&lt;username&gt;`, `&lt;user_primary_email&gt;`, or `team:&lt;team_id&gt;`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignedTo { get; set; }
+        public string? AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
+        private string? _explicitNullValueAssignedTo = default!;
 #nullable restore
 #else
-        public string AssignedTo { get; set; }
+        public string AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
+        private string _explicitNullValueAssignedTo = default!;
 #endif
         /// <summary>If true, discards the issues instead of updating them.</summary>
-        public bool? Discard { get; set; }
+        public bool? Discard { get => _explicitNullValueDiscard; set { _explicitNullValueDiscard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discard"); else _explicitNullProperties?.Remove("discard"); } }
+        private bool? _explicitNullValueDiscard = default!;
         /// <summary>If true, marks the issue as seen by the requestor.</summary>
-        public bool? HasSeen { get; set; }
+        public bool? HasSeen { get => _explicitNullValueHasSeen; set { _explicitNullValueHasSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasSeen"); else _explicitNullProperties?.Remove("hasSeen"); } }
+        private bool? _explicitNullValueHasSeen = default!;
         /// <summary>Ignore the issue until it is seen this many more times.</summary>
-        public int? IgnoreCount { get; set; }
+        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
+        private int? _explicitNullValueIgnoreCount = default!;
         /// <summary>Ignore the issue for this many minutes.</summary>
-        public int? IgnoreDuration { get; set; }
+        public int? IgnoreDuration { get => _explicitNullValueIgnoreDuration; set { _explicitNullValueIgnoreDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreDuration"); else _explicitNullProperties?.Remove("ignoreDuration"); } }
+        private int? _explicitNullValueIgnoreDuration = default!;
         /// <summary>Ignore the issue until it affects this many more users.</summary>
-        public int? IgnoreUserCount { get; set; }
+        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
+        private int? _explicitNullValueIgnoreUserCount = default!;
         /// <summary>Window in minutes over which `ignoreUserCount` is measured. Maximum is 7 days.</summary>
-        public int? IgnoreUserWindow { get; set; }
+        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
+        private int? _explicitNullValueIgnoreUserWindow = default!;
         /// <summary>Window in minutes over which `ignoreCount` is measured. Maximum is 7 days.</summary>
-        public int? IgnoreWindow { get; set; }
+        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
+        private int? _explicitNullValueIgnoreWindow = default!;
         /// <summary>If true, marks the issue as reviewed by the requestor.</summary>
-        public bool? Inbox { get; set; }
+        public bool? Inbox { get => _explicitNullValueInbox; set { _explicitNullValueInbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inbox"); else _explicitNullProperties?.Remove("inbox"); } }
+        private bool? _explicitNullValueInbox = default!;
         /// <summary>If true, bookmarks the issue for the requestor.</summary>
-        public bool? IsBookmarked { get; set; }
+        public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
+        private bool? _explicitNullValueIsBookmarked = default!;
         /// <summary>If true, publishes the issue.</summary>
-        public bool? IsPublic { get; set; }
+        public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isPublic"); else _explicitNullProperties?.Remove("isPublic"); } }
+        private bool? _explicitNullValueIsPublic = default!;
         /// <summary>If true, subscribes the requestor to the issue.</summary>
-        public bool? IsSubscribed { get; set; }
+        public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSubscribed"); else _explicitNullProperties?.Remove("isSubscribed"); } }
+        private bool? _explicitNullValueIsSubscribed = default!;
         /// <summary>If true, merges the issues together.</summary>
-        public bool? Merge { get; set; }
+        public bool? Merge { get => _explicitNullValueMerge; set { _explicitNullValueMerge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("merge"); else _explicitNullProperties?.Remove("merge"); } }
+        private bool? _explicitNullValueMerge = default!;
         /// <summary>The priority that should be set for the issues* `low`* `medium`* `high`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestPriority? Priority { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestPriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestPriority? _explicitNullValuePriority = default!;
         /// <summary>Snooze the issue for this many minutes.</summary>
-        public int? SnoozeDuration { get; set; }
+        public int? SnoozeDuration { get => _explicitNullValueSnoozeDuration; set { _explicitNullValueSnoozeDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snoozeDuration"); else _explicitNullProperties?.Remove("snoozeDuration"); } }
+        private int? _explicitNullValueSnoozeDuration = default!;
         /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus? Status { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails? StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails? StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails? _explicitNullValueStatusDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails StatusDetails { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails _explicitNullValueStatusDetails = default!;
 #endif
         /// <summary>The new substatus of the issue.* `archived_until_escalating`* `archived_until_condition_met`* `archived_forever`* `escalating`* `ongoing`* `regressed`* `new`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus? Substatus { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus? Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus? _explicitNullValueSubstatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequest"/> and sets the default values.
         /// </summary>
@@ -77,7 +122,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +177,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails>("statusDetails", StatusDetails);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus>("substatus", Substatus);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

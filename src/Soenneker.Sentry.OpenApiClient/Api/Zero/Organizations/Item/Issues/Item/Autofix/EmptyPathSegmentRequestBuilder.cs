@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Trigger a Seer Issue Fix run for a specific issue.The issue fix process can:- Identify the root cause of the issue- Propose a solution- Generate code changes- Create a pull request with the fixThe process runs asynchronously, and you can get the state using the GET endpoint.
@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Experimental:** This API is under active development and may change.Retrieve the current detailed state of an issue fix process for a specific issue including:- Current status- Steps performed and their outcomes- Repository information and permissions- Root Cause Analysis- Proposed Solution- Generated code changes

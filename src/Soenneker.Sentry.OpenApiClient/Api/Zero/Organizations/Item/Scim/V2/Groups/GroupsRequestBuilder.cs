@@ -62,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Gro
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Groups200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Groups200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Groups200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Groups200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new team bound to an organization via a SCIM Groups POSTRequest. The slug will have a normalization of uppercases/spaces tolowercases and dashes.Note that teams are always created with an empty member set.
@@ -82,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Scim.V2.Gro
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2Group201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2Group201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2Group201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2Group201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of teams bound to a organization with a SCIM Groups GET Request.Note that the members field will only contain up to 10,000 members.

@@ -11,34 +11,52 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrUpdateAnExternalIssueRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
+            if (parseNode.GetChildNode("issueId") is { } nullNodeIssueId && nullNodeIssueId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IssueId = null;
+            if (parseNode.GetChildNode("project") is { } nullNodeProject && nullNodeProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Project = null;
+            if (parseNode.GetChildNode("webUrl") is { } nullNodeWebUrl && nullNodeWebUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebUrl = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A unique identifier of the external issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get; set; }
+        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private string? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public string Identifier { get; set; }
+        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private string _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>The ID of the Sentry issue to link the external issue to.</summary>
-        public int? IssueId { get; set; }
+        public int? IssueId { get => _explicitNullValueIssueId; set { _explicitNullValueIssueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("issueId"); else _explicitNullProperties?.Remove("issueId"); } }
+        private int? _explicitNullValueIssueId = default!;
         /// <summary>The external service&apos;s project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Project { get; set; }
+        public string? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string? _explicitNullValueProject = default!;
 #nullable restore
 #else
-        public string Project { get; set; }
+        public string Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
+        private string _explicitNullValueProject = default!;
 #endif
         /// <summary>The URL of the external service to link the issue to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl { get; set; }
+        public string? WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webUrl"); else _explicitNullProperties?.Remove("webUrl"); } }
+        private string? _explicitNullValueWebUrl = default!;
 #nullable restore
 #else
-        public string WebUrl { get; set; }
+        public string WebUrl { get => _explicitNullValueWebUrl; set { _explicitNullValueWebUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webUrl"); else _explicitNullProperties?.Remove("webUrl"); } }
+        private string _explicitNullValueWebUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssueRequest"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssueRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssueRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrUpdateAnExternalIssueRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("issueId", IssueId);
             writer.WriteStringValue("project", Project);
             writer.WriteStringValue("webUrl", WebUrl);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

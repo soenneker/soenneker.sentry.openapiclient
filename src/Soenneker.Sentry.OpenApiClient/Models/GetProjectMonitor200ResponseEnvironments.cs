@@ -11,42 +11,68 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectMonitor200ResponseEnvironments : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("activeIncident") is { } nullNodeActiveIncident && nullNodeActiveIncident.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveIncident = null;
+            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("isMuted") is { } nullNodeIsMuted && nullNodeIsMuted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMuted = null;
+            if (parseNode.GetChildNode("lastCheckIn") is { } nullNodeLastCheckIn && nullNodeLastCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckIn = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nextCheckIn") is { } nullNodeNextCheckIn && nullNodeNextCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckIn = null;
+            if (parseNode.GetChildNode("nextCheckInLatest") is { } nullNodeNextCheckInLatest && nullNodeNextCheckInLatest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckInLatest = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+        }
+
         /// <summary>The activeIncident property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident? ActiveIncident { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident? ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident? _explicitNullValueActiveIncident = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident ActiveIncident { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncident _explicitNullValueActiveIncident = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get; set; }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The isMuted property</summary>
-        public bool? IsMuted { get; set; }
+        public bool? IsMuted { get => _explicitNullValueIsMuted; set { _explicitNullValueIsMuted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMuted"); else _explicitNullProperties?.Remove("isMuted"); } }
+        private bool? _explicitNullValueIsMuted = default!;
         /// <summary>The lastCheckIn property</summary>
-        public DateTimeOffset? LastCheckIn { get; set; }
+        public DateTimeOffset? LastCheckIn { get => _explicitNullValueLastCheckIn; set { _explicitNullValueLastCheckIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCheckIn"); else _explicitNullProperties?.Remove("lastCheckIn"); } }
+        private DateTimeOffset? _explicitNullValueLastCheckIn = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nextCheckIn property</summary>
-        public DateTimeOffset? NextCheckIn { get; set; }
+        public DateTimeOffset? NextCheckIn { get => _explicitNullValueNextCheckIn; set { _explicitNullValueNextCheckIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckIn"); else _explicitNullProperties?.Remove("nextCheckIn"); } }
+        private DateTimeOffset? _explicitNullValueNextCheckIn = default!;
         /// <summary>The nextCheckInLatest property</summary>
-        public DateTimeOffset? NextCheckInLatest { get; set; }
+        public DateTimeOffset? NextCheckInLatest { get => _explicitNullValueNextCheckInLatest; set { _explicitNullValueNextCheckInLatest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckInLatest"); else _explicitNullProperties?.Remove("nextCheckInLatest"); } }
+        private DateTimeOffset? _explicitNullValueNextCheckInLatest = default!;
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironments"/> and sets the default values.
@@ -63,7 +89,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironments();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironments(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +124,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("nextCheckIn", NextCheckIn);
             writer.WriteDateTimeOffsetValue("nextCheckInLatest", NextCheckInLatest);
             writer.WriteStringValue("status", Status);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

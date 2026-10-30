@@ -11,110 +11,159 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSizeAnalysis200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analysisDuration") is { } nullNodeAnalysisDuration && nullNodeAnalysisDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisDuration = null;
+            if (parseNode.GetChildNode("analysisVersion") is { } nullNodeAnalysisVersion && nullNodeAnalysisVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisVersion = null;
+            if (parseNode.GetChildNode("appComponents") is { } nullNodeAppComponents && nullNodeAppComponents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppComponents = null;
+            if (parseNode.GetChildNode("appInfo") is { } nullNodeAppInfo && nullNodeAppInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppInfo = null;
+            if (parseNode.GetChildNode("baseAppInfo") is { } nullNodeBaseAppInfo && nullNodeBaseAppInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseAppInfo = null;
+            if (parseNode.GetChildNode("baseBuildId") is { } nullNodeBaseBuildId && nullNodeBaseBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseBuildId = null;
+            if (parseNode.GetChildNode("buildId") is { } nullNodeBuildId && nullNodeBuildId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildId = null;
+            if (parseNode.GetChildNode("comparisons") is { } nullNodeComparisons && nullNodeComparisons.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Comparisons = null;
+            if (parseNode.GetChildNode("downloadSize") is { } nullNodeDownloadSize && nullNodeDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DownloadSize = null;
+            if (parseNode.GetChildNode("errorCode") is { } nullNodeErrorCode && nullNodeErrorCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorCode = null;
+            if (parseNode.GetChildNode("errorMessage") is { } nullNodeErrorMessage && nullNodeErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErrorMessage = null;
+            if (parseNode.GetChildNode("gitInfo") is { } nullNodeGitInfo && nullNodeGitInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GitInfo = null;
+            if (parseNode.GetChildNode("insights") is { } nullNodeInsights && nullNodeInsights.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Insights = null;
+            if (parseNode.GetChildNode("installSize") is { } nullNodeInstallSize && nullNodeInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InstallSize = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The analysisDuration property</summary>
-        public double? AnalysisDuration { get; set; }
+        public double? AnalysisDuration { get => _explicitNullValueAnalysisDuration; set { _explicitNullValueAnalysisDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisDuration"); else _explicitNullProperties?.Remove("analysisDuration"); } }
+        private double? _explicitNullValueAnalysisDuration = default!;
         /// <summary>The analysisVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalysisVersion { get; set; }
+        public string? AnalysisVersion { get => _explicitNullValueAnalysisVersion; set { _explicitNullValueAnalysisVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisVersion"); else _explicitNullProperties?.Remove("analysisVersion"); } }
+        private string? _explicitNullValueAnalysisVersion = default!;
 #nullable restore
 #else
-        public string AnalysisVersion { get; set; }
+        public string AnalysisVersion { get => _explicitNullValueAnalysisVersion; set { _explicitNullValueAnalysisVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysisVersion"); else _explicitNullProperties?.Remove("analysisVersion"); } }
+        private string _explicitNullValueAnalysisVersion = default!;
 #endif
         /// <summary>The appComponents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem>? AppComponents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem>? AppComponents { get => _explicitNullValueAppComponents; set { _explicitNullValueAppComponents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appComponents"); else _explicitNullProperties?.Remove("appComponents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem>? _explicitNullValueAppComponents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem> AppComponents { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem> AppComponents { get => _explicitNullValueAppComponents; set { _explicitNullValueAppComponents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appComponents"); else _explicitNullProperties?.Remove("appComponents"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItem> _explicitNullValueAppComponents = default!;
 #endif
         /// <summary>The appInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo? AppInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo? AppInfo { get => _explicitNullValueAppInfo; set { _explicitNullValueAppInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appInfo"); else _explicitNullProperties?.Remove("appInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo? _explicitNullValueAppInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo AppInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo AppInfo { get => _explicitNullValueAppInfo; set { _explicitNullValueAppInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appInfo"); else _explicitNullProperties?.Remove("appInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppInfo _explicitNullValueAppInfo = default!;
 #endif
         /// <summary>The baseAppInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo? BaseAppInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo? BaseAppInfo { get => _explicitNullValueBaseAppInfo; set { _explicitNullValueBaseAppInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseAppInfo"); else _explicitNullProperties?.Remove("baseAppInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo? _explicitNullValueBaseAppInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo BaseAppInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo BaseAppInfo { get => _explicitNullValueBaseAppInfo; set { _explicitNullValueBaseAppInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseAppInfo"); else _explicitNullProperties?.Remove("baseAppInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseBaseAppInfo _explicitNullValueBaseAppInfo = default!;
 #endif
         /// <summary>The baseBuildId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseBuildId { get; set; }
+        public string? BaseBuildId { get => _explicitNullValueBaseBuildId; set { _explicitNullValueBaseBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseBuildId"); else _explicitNullProperties?.Remove("baseBuildId"); } }
+        private string? _explicitNullValueBaseBuildId = default!;
 #nullable restore
 #else
-        public string BaseBuildId { get; set; }
+        public string BaseBuildId { get => _explicitNullValueBaseBuildId; set { _explicitNullValueBaseBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseBuildId"); else _explicitNullProperties?.Remove("baseBuildId"); } }
+        private string _explicitNullValueBaseBuildId = default!;
 #endif
         /// <summary>The buildId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BuildId { get; set; }
+        public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        private string? _explicitNullValueBuildId = default!;
 #nullable restore
 #else
-        public string BuildId { get; set; }
+        public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
+        private string _explicitNullValueBuildId = default!;
 #endif
         /// <summary>The comparisons property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem>? Comparisons { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem>? Comparisons { get => _explicitNullValueComparisons; set { _explicitNullValueComparisons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisons"); else _explicitNullProperties?.Remove("comparisons"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem>? _explicitNullValueComparisons = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem> Comparisons { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem> Comparisons { get => _explicitNullValueComparisons; set { _explicitNullValueComparisons = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisons"); else _explicitNullProperties?.Remove("comparisons"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItem> _explicitNullValueComparisons = default!;
 #endif
         /// <summary>The downloadSize property</summary>
-        public int? DownloadSize { get; set; }
+        public int? DownloadSize { get => _explicitNullValueDownloadSize; set { _explicitNullValueDownloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadSize"); else _explicitNullProperties?.Remove("downloadSize"); } }
+        private int? _explicitNullValueDownloadSize = default!;
         /// <summary>The errorCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get; set; }
+        public string? ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        private string? _explicitNullValueErrorCode = default!;
 #nullable restore
 #else
-        public string ErrorCode { get; set; }
+        public string ErrorCode { get => _explicitNullValueErrorCode; set { _explicitNullValueErrorCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorCode"); else _explicitNullProperties?.Remove("errorCode"); } }
+        private string _explicitNullValueErrorCode = default!;
 #endif
         /// <summary>The errorMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage { get; set; }
+        public string? ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        private string? _explicitNullValueErrorMessage = default!;
 #nullable restore
 #else
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get => _explicitNullValueErrorMessage; set { _explicitNullValueErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorMessage"); else _explicitNullProperties?.Remove("errorMessage"); } }
+        private string _explicitNullValueErrorMessage = default!;
 #endif
         /// <summary>The gitInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo? GitInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo? GitInfo { get => _explicitNullValueGitInfo; set { _explicitNullValueGitInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitInfo"); else _explicitNullProperties?.Remove("gitInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo? _explicitNullValueGitInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo GitInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo GitInfo { get => _explicitNullValueGitInfo; set { _explicitNullValueGitInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitInfo"); else _explicitNullProperties?.Remove("gitInfo"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseGitInfo _explicitNullValueGitInfo = default!;
 #endif
         /// <summary>The insights property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights? Insights { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights? Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights? _explicitNullValueInsights = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights Insights { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights Insights { get => _explicitNullValueInsights; set { _explicitNullValueInsights = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insights"); else _explicitNullProperties?.Remove("insights"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights _explicitNullValueInsights = default!;
 #endif
         /// <summary>The installSize property</summary>
-        public int? InstallSize { get; set; }
+        public int? InstallSize { get => _explicitNullValueInstallSize; set { _explicitNullValueInstallSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installSize"); else _explicitNullProperties?.Remove("installSize"); } }
+        private int? _explicitNullValueInstallSize = default!;
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response"/> and sets the default values.
@@ -131,7 +180,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -180,6 +229,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseInsights>("insights", Insights);
             writer.WriteIntValue("installSize", InstallSize);
             writer.WriteStringValue("state", State);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

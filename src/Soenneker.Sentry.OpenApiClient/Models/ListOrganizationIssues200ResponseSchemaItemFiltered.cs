@@ -11,31 +11,50 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationIssues200ResponseSchemaItemFiltered : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("count") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("firstSeen") is { } nullNodeFirstSeen && nullNodeFirstSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstSeen = null;
+            if (parseNode.GetChildNode("lastSeen") is { } nullNodeLastSeen && nullNodeLastSeen.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastSeen = null;
+            if (parseNode.GetChildNode("stats") is { } nullNodeStats && nullNodeStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stats = null;
+            if (parseNode.GetChildNode("userCount") is { } nullNodeUserCount && nullNodeUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Count { get; set; }
+        public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private string? _explicitNullValueCount = default!;
 #nullable restore
 #else
-        public string Count { get; set; }
+        public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
+        private string _explicitNullValueCount = default!;
 #endif
         /// <summary>The firstSeen property</summary>
-        public DateTimeOffset? FirstSeen { get; set; }
+        public DateTimeOffset? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
+        private DateTimeOffset? _explicitNullValueFirstSeen = default!;
         /// <summary>The lastSeen property</summary>
-        public DateTimeOffset? LastSeen { get; set; }
+        public DateTimeOffset? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
+        private DateTimeOffset? _explicitNullValueLastSeen = default!;
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats? Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats Stats { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats _explicitNullValueStats = default!;
 #endif
         /// <summary>The userCount property</summary>
-        public int? UserCount { get; set; }
+        public int? UserCount { get => _explicitNullValueUserCount; set { _explicitNullValueUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userCount"); else _explicitNullProperties?.Remove("userCount"); } }
+        private int? _explicitNullValueUserCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseSchemaItemFiltered"/> and sets the default values.
         /// </summary>
@@ -51,7 +70,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseSchemaItemFiltered CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseSchemaItemFiltered();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseSchemaItemFiltered(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,6 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("lastSeen", LastSeen);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssues200ResponseItemFilteredStats>("stats", Stats);
             writer.WriteIntValue("userCount", UserCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

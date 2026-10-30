@@ -11,35 +11,53 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateOrganizationIssueView201ResponseTimeFilters : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("end") is { } nullNodeEnd && nullNodeEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) End = null;
+            if (parseNode.GetChildNode("period") is { } nullNodePeriod && nullNodePeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Period = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("utc") is { } nullNodeUtc && nullNodeUtc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Utc = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? End { get; set; }
+        public string? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private string? _explicitNullValueEnd = default!;
 #nullable restore
 #else
-        public string End { get; set; }
+        public string End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
+        private string _explicitNullValueEnd = default!;
 #endif
         /// <summary>The period property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Period { get; set; }
+        public string? Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private string? _explicitNullValuePeriod = default!;
 #nullable restore
 #else
-        public string Period { get; set; }
+        public string Period { get => _explicitNullValuePeriod; set { _explicitNullValuePeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("period"); else _explicitNullProperties?.Remove("period"); } }
+        private string _explicitNullValuePeriod = default!;
 #endif
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Start { get; set; }
+        public string? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private string? _explicitNullValueStart = default!;
 #nullable restore
 #else
-        public string Start { get; set; }
+        public string Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private string _explicitNullValueStart = default!;
 #endif
         /// <summary>The utc property</summary>
-        public bool? Utc { get; set; }
+        public bool? Utc { get => _explicitNullValueUtc; set { _explicitNullValueUtc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("utc"); else _explicitNullProperties?.Remove("utc"); } }
+        private bool? _explicitNullValueUtc = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201ResponseTimeFilters"/> and sets the default values.
         /// </summary>
@@ -55,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201ResponseTimeFilters CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201ResponseTimeFilters();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201ResponseTimeFilters(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("period", Period);
             writer.WriteStringValue("start", Start);
             writer.WriteBoolValue("utc", Utc);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

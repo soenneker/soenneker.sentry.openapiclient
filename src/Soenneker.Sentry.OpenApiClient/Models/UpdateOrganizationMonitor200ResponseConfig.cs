@@ -11,36 +11,61 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationMonitor200ResponseConfig : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alert_rule_id") is { } nullNodeAlertRuleId && nullNodeAlertRuleId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlertRuleId = null;
+            if (parseNode.GetChildNode("checkin_margin") is { } nullNodeCheckinMargin && nullNodeCheckinMargin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckinMargin = null;
+            if (parseNode.GetChildNode("failure_issue_threshold") is { } nullNodeFailureIssueThreshold && nullNodeFailureIssueThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailureIssueThreshold = null;
+            if (parseNode.GetChildNode("max_runtime") is { } nullNodeMaxRuntime && nullNodeMaxRuntime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRuntime = null;
+            if (parseNode.GetChildNode("recovery_threshold") is { } nullNodeRecoveryThreshold && nullNodeRecoveryThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RecoveryThreshold = null;
+            if (parseNode.GetChildNode("schedule") is { } nullNodeSchedule && nullNodeSchedule.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schedule = null;
+            if (parseNode.GetChildNode("schedule_type") is { } nullNodeScheduleType && nullNodeScheduleType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduleType = null;
+            if (parseNode.GetChildNode("timezone") is { } nullNodeTimezone && nullNodeTimezone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timezone = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alert_rule_id property</summary>
-        public int? AlertRuleId { get; set; }
+        public int? AlertRuleId { get => _explicitNullValueAlertRuleId; set { _explicitNullValueAlertRuleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_rule_id"); else _explicitNullProperties?.Remove("alert_rule_id"); } }
+        private int? _explicitNullValueAlertRuleId = default!;
         /// <summary>The checkin_margin property</summary>
-        public int? CheckinMargin { get; set; }
+        public int? CheckinMargin { get => _explicitNullValueCheckinMargin; set { _explicitNullValueCheckinMargin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkin_margin"); else _explicitNullProperties?.Remove("checkin_margin"); } }
+        private int? _explicitNullValueCheckinMargin = default!;
         /// <summary>The failure_issue_threshold property</summary>
-        public int? FailureIssueThreshold { get; set; }
+        public int? FailureIssueThreshold { get => _explicitNullValueFailureIssueThreshold; set { _explicitNullValueFailureIssueThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_issue_threshold"); else _explicitNullProperties?.Remove("failure_issue_threshold"); } }
+        private int? _explicitNullValueFailureIssueThreshold = default!;
         /// <summary>The max_runtime property</summary>
-        public int? MaxRuntime { get; set; }
+        public int? MaxRuntime { get => _explicitNullValueMaxRuntime; set { _explicitNullValueMaxRuntime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_runtime"); else _explicitNullProperties?.Remove("max_runtime"); } }
+        private int? _explicitNullValueMaxRuntime = default!;
         /// <summary>The recovery_threshold property</summary>
-        public int? RecoveryThreshold { get; set; }
+        public int? RecoveryThreshold { get => _explicitNullValueRecoveryThreshold; set { _explicitNullValueRecoveryThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recovery_threshold"); else _explicitNullProperties?.Remove("recovery_threshold"); } }
+        private int? _explicitNullValueRecoveryThreshold = default!;
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule? Schedule { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule Schedule { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule _explicitNullValueSchedule = default!;
 #endif
         /// <summary>The schedule_type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigScheduleType? ScheduleType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigScheduleType? ScheduleType { get => _explicitNullValueScheduleType; set { _explicitNullValueScheduleType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_type"); else _explicitNullProperties?.Remove("schedule_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigScheduleType? _explicitNullValueScheduleType = default!;
         /// <summary>The timezone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timezone { get; set; }
+        public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string? _explicitNullValueTimezone = default!;
 #nullable restore
 #else
-        public string Timezone { get; set; }
+        public string Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
+        private string _explicitNullValueTimezone = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfig"/> and sets the default values.
@@ -57,7 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,6 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigSchedule>("schedule", Schedule);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseConfigScheduleType>("schedule_type", ScheduleType);
             writer.WriteStringValue("timezone", Timezone);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

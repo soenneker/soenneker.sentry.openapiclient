@@ -12,18 +12,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartOrganizationIssueAutofix202Response : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("run_id") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
+            if (parseNode.GetChildNode("sentry_run_id") is { } nullNodeSentryRunId && nullNodeSentryRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryRunId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The run_id property</summary>
-        public int? RunId { get; set; }
+        public int? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_id"); else _explicitNullProperties?.Remove("run_id"); } }
+        private int? _explicitNullValueRunId = default!;
         /// <summary>The sentry_run_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SentryRunId { get; set; }
+        public string? SentryRunId { get => _explicitNullValueSentryRunId; set { _explicitNullValueSentryRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentry_run_id"); else _explicitNullProperties?.Remove("sentry_run_id"); } }
+        private string? _explicitNullValueSentryRunId = default!;
 #nullable restore
 #else
-        public string SentryRunId { get; set; }
+        public string SentryRunId { get => _explicitNullValueSentryRunId; set { _explicitNullValueSentryRunId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentry_run_id"); else _explicitNullProperties?.Remove("sentry_run_id"); } }
+        private string _explicitNullValueSentryRunId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.StartOrganizationIssueAutofix202Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("run_id", RunId);
             writer.WriteStringValue("sentry_run_id", SentryRunId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

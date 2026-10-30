@@ -11,180 +11,264 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSnapshot200Response : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("added") is { } nullNodeAdded && nullNodeAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Added = null;
+            if (parseNode.GetChildNode("added_count") is { } nullNodeAddedCount && nullNodeAddedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedCount = null;
+            if (parseNode.GetChildNode("app_id") is { } nullNodeAppId && nullNodeAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppId = null;
+            if (parseNode.GetChildNode("approval_status") is { } nullNodeApprovalStatus && nullNodeApprovalStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApprovalStatus = null;
+            if (parseNode.GetChildNode("approvers") is { } nullNodeApprovers && nullNodeApprovers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Approvers = null;
+            if (parseNode.GetChildNode("base_artifact_id") is { } nullNodeBaseArtifactId && nullNodeBaseArtifactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseArtifactId = null;
+            if (parseNode.GetChildNode("changed") is { } nullNodeChanged && nullNodeChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Changed = null;
+            if (parseNode.GetChildNode("changed_count") is { } nullNodeChangedCount && nullNodeChangedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangedCount = null;
+            if (parseNode.GetChildNode("comparison_error_message") is { } nullNodeComparisonErrorMessage && nullNodeComparisonErrorMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonErrorMessage = null;
+            if (parseNode.GetChildNode("comparison_state") is { } nullNodeComparisonState && nullNodeComparisonState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonState = null;
+            if (parseNode.GetChildNode("comparison_type") is { } nullNodeComparisonType && nullNodeComparisonType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ComparisonType = null;
+            if (parseNode.GetChildNode("diff_threshold") is { } nullNodeDiffThreshold && nullNodeDiffThreshold.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffThreshold = null;
+            if (parseNode.GetChildNode("errored") is { } nullNodeErrored && nullNodeErrored.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Errored = null;
+            if (parseNode.GetChildNode("errored_count") is { } nullNodeErroredCount && nullNodeErroredCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ErroredCount = null;
+            if (parseNode.GetChildNode("head_artifact_id") is { } nullNodeHeadArtifactId && nullNodeHeadArtifactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadArtifactId = null;
+            if (parseNode.GetChildNode("image_count") is { } nullNodeImageCount && nullNodeImageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageCount = null;
+            if (parseNode.GetChildNode("images") is { } nullNodeImages && nullNodeImages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Images = null;
+            if (parseNode.GetChildNode("is_selective") is { } nullNodeIsSelective && nullNodeIsSelective.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsSelective = null;
+            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("removed") is { } nullNodeRemoved && nullNodeRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Removed = null;
+            if (parseNode.GetChildNode("removed_count") is { } nullNodeRemovedCount && nullNodeRemovedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovedCount = null;
+            if (parseNode.GetChildNode("renamed") is { } nullNodeRenamed && nullNodeRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Renamed = null;
+            if (parseNode.GetChildNode("renamed_count") is { } nullNodeRenamedCount && nullNodeRenamedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RenamedCount = null;
+            if (parseNode.GetChildNode("skipped") is { } nullNodeSkipped && nullNodeSkipped.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Skipped = null;
+            if (parseNode.GetChildNode("skipped_count") is { } nullNodeSkippedCount && nullNodeSkippedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippedCount = null;
+            if (parseNode.GetChildNode("state") is { } nullNodeState && nullNodeState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) State = null;
+            if (parseNode.GetChildNode("unchanged") is { } nullNodeUnchanged && nullNodeUnchanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unchanged = null;
+            if (parseNode.GetChildNode("unchanged_count") is { } nullNodeUnchangedCount && nullNodeUnchangedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnchangedCount = null;
+            if (parseNode.GetChildNode("vcs_info") is { } nullNodeVcsInfo && nullNodeVcsInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VcsInfo = null;
+        }
+
         /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem>? Added { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem>? Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem>? _explicitNullValueAdded = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem> Added { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem> Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem> _explicitNullValueAdded = default!;
 #endif
         /// <summary>The added_count property</summary>
-        public int? AddedCount { get; set; }
+        public int? AddedCount { get => _explicitNullValueAddedCount; set { _explicitNullValueAddedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_count"); else _explicitNullProperties?.Remove("added_count"); } }
+        private int? _explicitNullValueAddedCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId { get; set; }
+        public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        private string? _explicitNullValueAppId = default!;
 #nullable restore
 #else
-        public string AppId { get; set; }
+        public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
+        private string _explicitNullValueAppId = default!;
 #endif
         /// <summary>The approval_status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalStatus { get; set; }
+        public string? ApprovalStatus { get => _explicitNullValueApprovalStatus; set { _explicitNullValueApprovalStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_status"); else _explicitNullProperties?.Remove("approval_status"); } }
+        private string? _explicitNullValueApprovalStatus = default!;
 #nullable restore
 #else
-        public string ApprovalStatus { get; set; }
+        public string ApprovalStatus { get => _explicitNullValueApprovalStatus; set { _explicitNullValueApprovalStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_status"); else _explicitNullProperties?.Remove("approval_status"); } }
+        private string _explicitNullValueApprovalStatus = default!;
 #endif
         /// <summary>The approvers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem>? Approvers { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem>? Approvers { get => _explicitNullValueApprovers; set { _explicitNullValueApprovers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvers"); else _explicitNullProperties?.Remove("approvers"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem>? _explicitNullValueApprovers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem> Approvers { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem> Approvers { get => _explicitNullValueApprovers; set { _explicitNullValueApprovers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvers"); else _explicitNullProperties?.Remove("approvers"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem> _explicitNullValueApprovers = default!;
 #endif
         /// <summary>The base_artifact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseArtifactId { get; set; }
+        public string? BaseArtifactId { get => _explicitNullValueBaseArtifactId; set { _explicitNullValueBaseArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_artifact_id"); else _explicitNullProperties?.Remove("base_artifact_id"); } }
+        private string? _explicitNullValueBaseArtifactId = default!;
 #nullable restore
 #else
-        public string BaseArtifactId { get; set; }
+        public string BaseArtifactId { get => _explicitNullValueBaseArtifactId; set { _explicitNullValueBaseArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_artifact_id"); else _explicitNullProperties?.Remove("base_artifact_id"); } }
+        private string _explicitNullValueBaseArtifactId = default!;
 #endif
         /// <summary>The changed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem>? Changed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem>? Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem>? _explicitNullValueChanged = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem> Changed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem> Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem> _explicitNullValueChanged = default!;
 #endif
         /// <summary>The changed_count property</summary>
-        public int? ChangedCount { get; set; }
+        public int? ChangedCount { get => _explicitNullValueChangedCount; set { _explicitNullValueChangedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_count"); else _explicitNullProperties?.Remove("changed_count"); } }
+        private int? _explicitNullValueChangedCount = default!;
         /// <summary>The comparison_error_message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonErrorMessage { get; set; }
+        public string? ComparisonErrorMessage { get => _explicitNullValueComparisonErrorMessage; set { _explicitNullValueComparisonErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_error_message"); else _explicitNullProperties?.Remove("comparison_error_message"); } }
+        private string? _explicitNullValueComparisonErrorMessage = default!;
 #nullable restore
 #else
-        public string ComparisonErrorMessage { get; set; }
+        public string ComparisonErrorMessage { get => _explicitNullValueComparisonErrorMessage; set { _explicitNullValueComparisonErrorMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_error_message"); else _explicitNullProperties?.Remove("comparison_error_message"); } }
+        private string _explicitNullValueComparisonErrorMessage = default!;
 #endif
         /// <summary>The comparison_state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonState { get; set; }
+        public string? ComparisonState { get => _explicitNullValueComparisonState; set { _explicitNullValueComparisonState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_state"); else _explicitNullProperties?.Remove("comparison_state"); } }
+        private string? _explicitNullValueComparisonState = default!;
 #nullable restore
 #else
-        public string ComparisonState { get; set; }
+        public string ComparisonState { get => _explicitNullValueComparisonState; set { _explicitNullValueComparisonState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_state"); else _explicitNullProperties?.Remove("comparison_state"); } }
+        private string _explicitNullValueComparisonState = default!;
 #endif
         /// <summary>The comparison_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComparisonType { get; set; }
+        public string? ComparisonType { get => _explicitNullValueComparisonType; set { _explicitNullValueComparisonType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_type"); else _explicitNullProperties?.Remove("comparison_type"); } }
+        private string? _explicitNullValueComparisonType = default!;
 #nullable restore
 #else
-        public string ComparisonType { get; set; }
+        public string ComparisonType { get => _explicitNullValueComparisonType; set { _explicitNullValueComparisonType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_type"); else _explicitNullProperties?.Remove("comparison_type"); } }
+        private string _explicitNullValueComparisonType = default!;
 #endif
         /// <summary>The diff_threshold property</summary>
-        public double? DiffThreshold { get; set; }
+        public double? DiffThreshold { get => _explicitNullValueDiffThreshold; set { _explicitNullValueDiffThreshold = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_threshold"); else _explicitNullProperties?.Remove("diff_threshold"); } }
+        private double? _explicitNullValueDiffThreshold = default!;
         /// <summary>The errored property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem>? Errored { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem>? Errored { get => _explicitNullValueErrored; set { _explicitNullValueErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored"); else _explicitNullProperties?.Remove("errored"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem>? _explicitNullValueErrored = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem> Errored { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem> Errored { get => _explicitNullValueErrored; set { _explicitNullValueErrored = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored"); else _explicitNullProperties?.Remove("errored"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem> _explicitNullValueErrored = default!;
 #endif
         /// <summary>The errored_count property</summary>
-        public int? ErroredCount { get; set; }
+        public int? ErroredCount { get => _explicitNullValueErroredCount; set { _explicitNullValueErroredCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored_count"); else _explicitNullProperties?.Remove("errored_count"); } }
+        private int? _explicitNullValueErroredCount = default!;
         /// <summary>The head_artifact_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeadArtifactId { get; set; }
+        public string? HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
+        private string? _explicitNullValueHeadArtifactId = default!;
 #nullable restore
 #else
-        public string HeadArtifactId { get; set; }
+        public string HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
+        private string _explicitNullValueHeadArtifactId = default!;
 #endif
         /// <summary>The image_count property</summary>
-        public int? ImageCount { get; set; }
+        public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_count"); else _explicitNullProperties?.Remove("image_count"); } }
+        private int? _explicitNullValueImageCount = default!;
         /// <summary>The images property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem>? Images { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem> Images { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem> _explicitNullValueImages = default!;
 #endif
         /// <summary>The is_selective property</summary>
-        public bool? IsSelective { get; set; }
+        public bool? IsSelective { get => _explicitNullValueIsSelective; set { _explicitNullValueIsSelective = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_selective"); else _explicitNullProperties?.Remove("is_selective"); } }
+        private bool? _explicitNullValueIsSelective = default!;
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get; set; }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get; set; }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The removed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem>? Removed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem>? Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem>? _explicitNullValueRemoved = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem> Removed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem> Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem> _explicitNullValueRemoved = default!;
 #endif
         /// <summary>The removed_count property</summary>
-        public int? RemovedCount { get; set; }
+        public int? RemovedCount { get => _explicitNullValueRemovedCount; set { _explicitNullValueRemovedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed_count"); else _explicitNullProperties?.Remove("removed_count"); } }
+        private int? _explicitNullValueRemovedCount = default!;
         /// <summary>The renamed property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem>? Renamed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem>? Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem>? _explicitNullValueRenamed = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem> Renamed { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem> Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem> _explicitNullValueRenamed = default!;
 #endif
         /// <summary>The renamed_count property</summary>
-        public int? RenamedCount { get; set; }
+        public int? RenamedCount { get => _explicitNullValueRenamedCount; set { _explicitNullValueRenamedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_count"); else _explicitNullProperties?.Remove("renamed_count"); } }
+        private int? _explicitNullValueRenamedCount = default!;
         /// <summary>The skipped property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem>? Skipped { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem>? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem>? _explicitNullValueSkipped = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem> Skipped { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem> Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem> _explicitNullValueSkipped = default!;
 #endif
         /// <summary>The skipped_count property</summary>
-        public int? SkippedCount { get; set; }
+        public int? SkippedCount { get => _explicitNullValueSkippedCount; set { _explicitNullValueSkippedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_count"); else _explicitNullProperties?.Remove("skipped_count"); } }
+        private int? _explicitNullValueSkippedCount = default!;
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State { get; set; }
+        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string? _explicitNullValueState = default!;
 #nullable restore
 #else
-        public string State { get; set; }
+        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private string _explicitNullValueState = default!;
 #endif
         /// <summary>The unchanged property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem>? Unchanged { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem>? Unchanged { get => _explicitNullValueUnchanged; set { _explicitNullValueUnchanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged"); else _explicitNullProperties?.Remove("unchanged"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem>? _explicitNullValueUnchanged = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem> Unchanged { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem> Unchanged { get => _explicitNullValueUnchanged; set { _explicitNullValueUnchanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged"); else _explicitNullProperties?.Remove("unchanged"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem> _explicitNullValueUnchanged = default!;
 #endif
         /// <summary>The unchanged_count property</summary>
-        public int? UnchangedCount { get; set; }
+        public int? UnchangedCount { get => _explicitNullValueUnchangedCount; set { _explicitNullValueUnchangedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged_count"); else _explicitNullProperties?.Remove("unchanged_count"); } }
+        private int? _explicitNullValueUnchangedCount = default!;
         /// <summary>The vcs_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo? VcsInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo? VcsInfo { get => _explicitNullValueVcsInfo; set { _explicitNullValueVcsInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcs_info"); else _explicitNullProperties?.Remove("vcs_info"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo? _explicitNullValueVcsInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo VcsInfo { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo VcsInfo { get => _explicitNullValueVcsInfo; set { _explicitNullValueVcsInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcs_info"); else _explicitNullProperties?.Remove("vcs_info"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo _explicitNullValueVcsInfo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response"/> and sets the default values.
@@ -201,7 +285,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200Response(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -278,6 +362,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem>("unchanged", Unchanged);
             writer.WriteIntValue("unchanged_count", UnchangedCount);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo>("vcs_info", VcsInfo);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationNotificationsActions201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Notification Action for Spike Protection.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.
@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notificatio
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsAction201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns all Spike Protection Notification Actions for an organization.Notification Actions notify a set of members when an action has been triggered through a notification service such as Slack or Sentry.For example, organization owners and managers can receive an email when a spike occurs.You can use the `project` query parameter with project IDs or slugs to filter for certain projects.A legacy project slug query parameter is also supported and takes priority if both are present.

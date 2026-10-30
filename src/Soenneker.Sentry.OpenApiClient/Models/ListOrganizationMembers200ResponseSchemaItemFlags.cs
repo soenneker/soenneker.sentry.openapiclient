@@ -11,21 +11,40 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationMembers200ResponseSchemaItemFlags : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("idp:provisioned") is { } nullNodeIdpProvisioned && nullNodeIdpProvisioned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpProvisioned = null;
+            if (parseNode.GetChildNode("idp:role-restricted") is { } nullNodeIdpRoleRestricted && nullNodeIdpRoleRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdpRoleRestricted = null;
+            if (parseNode.GetChildNode("member-limit:restricted") is { } nullNodeMemberLimitRestricted && nullNodeMemberLimitRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MemberLimitRestricted = null;
+            if (parseNode.GetChildNode("partnership:restricted") is { } nullNodePartnershipRestricted && nullNodePartnershipRestricted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PartnershipRestricted = null;
+            if (parseNode.GetChildNode("sso:invalid") is { } nullNodeSsoInvalid && nullNodeSsoInvalid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoInvalid = null;
+            if (parseNode.GetChildNode("sso:linked") is { } nullNodeSsoLinked && nullNodeSsoLinked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SsoLinked = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The idpProvisioned property</summary>
-        public bool? IdpProvisioned { get; set; }
+        public bool? IdpProvisioned { get => _explicitNullValueIdpProvisioned; set { _explicitNullValueIdpProvisioned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp:provisioned"); else _explicitNullProperties?.Remove("idp:provisioned"); } }
+        private bool? _explicitNullValueIdpProvisioned = default!;
         /// <summary>The idpRoleRestricted property</summary>
-        public bool? IdpRoleRestricted { get; set; }
+        public bool? IdpRoleRestricted { get => _explicitNullValueIdpRoleRestricted; set { _explicitNullValueIdpRoleRestricted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp:role-restricted"); else _explicitNullProperties?.Remove("idp:role-restricted"); } }
+        private bool? _explicitNullValueIdpRoleRestricted = default!;
         /// <summary>The memberLimitRestricted property</summary>
-        public bool? MemberLimitRestricted { get; set; }
+        public bool? MemberLimitRestricted { get => _explicitNullValueMemberLimitRestricted; set { _explicitNullValueMemberLimitRestricted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member-limit:restricted"); else _explicitNullProperties?.Remove("member-limit:restricted"); } }
+        private bool? _explicitNullValueMemberLimitRestricted = default!;
         /// <summary>The partnershipRestricted property</summary>
-        public bool? PartnershipRestricted { get; set; }
+        public bool? PartnershipRestricted { get => _explicitNullValuePartnershipRestricted; set { _explicitNullValuePartnershipRestricted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnership:restricted"); else _explicitNullProperties?.Remove("partnership:restricted"); } }
+        private bool? _explicitNullValuePartnershipRestricted = default!;
         /// <summary>The ssoInvalid property</summary>
-        public bool? SsoInvalid { get; set; }
+        public bool? SsoInvalid { get => _explicitNullValueSsoInvalid; set { _explicitNullValueSsoInvalid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso:invalid"); else _explicitNullProperties?.Remove("sso:invalid"); } }
+        private bool? _explicitNullValueSsoInvalid = default!;
         /// <summary>The ssoLinked property</summary>
-        public bool? SsoLinked { get; set; }
+        public bool? SsoLinked { get => _explicitNullValueSsoLinked; set { _explicitNullValueSsoLinked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso:linked"); else _explicitNullProperties?.Remove("sso:linked"); } }
+        private bool? _explicitNullValueSsoLinked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMembers200ResponseSchemaItemFlags"/> and sets the default values.
         /// </summary>
@@ -41,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMembers200ResponseSchemaItemFlags CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMembers200ResponseSchemaItemFlags();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMembers200ResponseSchemaItemFlags(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("partnership:restricted", PartnershipRestricted);
             writer.WriteBoolValue("sso:invalid", SsoInvalid);
             writer.WriteBoolValue("sso:linked", SsoLinked);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,18 +11,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ProvisionOrganizationScimV2UserRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("sentryOrgRole") is { } nullNodeSentryOrgRole && nullNodeSentryOrgRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryOrgRole = null;
+            if (parseNode.GetChildNode("userName") is { } nullNodeUserName && nullNodeUserName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserName = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organization role of the member. If unspecified, this will be                    set to the organization&apos;s default role. The options are:* `billing` - Can manage payment and compliance details.* `member` - Can view and act on events, as well as view most other data within the organization.* `manager` - Has full management access to all teams and projects. Can also manage        the organization&apos;s membership.* `admin` - Can edit global integrations, manage projects, and add/remove teams.        They automatically assume the Team Admin role for teams they join.        Note: This role can no longer be assigned in Business and Enterprise plans. Use `TeamRoles` instead.        </summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? SentryOrgRole { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? SentryOrgRole { get => _explicitNullValueSentryOrgRole; set { _explicitNullValueSentryOrgRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryOrgRole"); else _explicitNullProperties?.Remove("sentryOrgRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? _explicitNullValueSentryOrgRole = default!;
         /// <summary>The SAML field used for email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName { get; set; }
+        public string? UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
+        private string? _explicitNullValueUserName = default!;
 #nullable restore
 #else
-        public string UserName { get; set; }
+        public string UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
+        private string _explicitNullValueUserName = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequest"/> and sets the default values.
@@ -39,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole>("sentryOrgRole", SentryOrgRole);
             writer.WriteStringValue("userName", UserName);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

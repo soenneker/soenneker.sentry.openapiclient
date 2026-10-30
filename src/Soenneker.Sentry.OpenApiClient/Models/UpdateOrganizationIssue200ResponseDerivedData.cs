@@ -11,51 +11,80 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationIssue200ResponseDerivedData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocker") is { } nullNodeBlocker && nullNodeBlocker.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocker = null;
+            if (parseNode.GetChildNode("hasOpenFixPr") is { } nullNodeHasOpenFixPr && nullNodeHasOpenFixPr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasOpenFixPr = null;
+            if (parseNode.GetChildNode("hasRootCause") is { } nullNodeHasRootCause && nullNodeHasRootCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRootCause = null;
+            if (parseNode.GetChildNode("isAssigned") is { } nullNodeIsAssigned && nullNodeIsAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAssigned = null;
+            if (parseNode.GetChildNode("lastCompletedAutofixStep") is { } nullNodeLastCompletedAutofixStep && nullNodeLastCompletedAutofixStep.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCompletedAutofixStep = null;
+            if (parseNode.GetChildNode("lastProgressedAt") is { } nullNodeLastProgressedAt && nullNodeLastProgressedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastProgressedAt = null;
+            if (parseNode.GetChildNode("progress") is { } nullNodeProgress && nullNodeProgress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Progress = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("viewCount") is { } nullNodeViewCount && nullNodeViewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The blocker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Blocker { get; set; }
+        public string? Blocker { get => _explicitNullValueBlocker; set { _explicitNullValueBlocker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocker"); else _explicitNullProperties?.Remove("blocker"); } }
+        private string? _explicitNullValueBlocker = default!;
 #nullable restore
 #else
-        public string Blocker { get; set; }
+        public string Blocker { get => _explicitNullValueBlocker; set { _explicitNullValueBlocker = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocker"); else _explicitNullProperties?.Remove("blocker"); } }
+        private string _explicitNullValueBlocker = default!;
 #endif
         /// <summary>The hasOpenFixPr property</summary>
-        public bool? HasOpenFixPr { get; set; }
+        public bool? HasOpenFixPr { get => _explicitNullValueHasOpenFixPr; set { _explicitNullValueHasOpenFixPr = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasOpenFixPr"); else _explicitNullProperties?.Remove("hasOpenFixPr"); } }
+        private bool? _explicitNullValueHasOpenFixPr = default!;
         /// <summary>The hasRootCause property</summary>
-        public bool? HasRootCause { get; set; }
+        public bool? HasRootCause { get => _explicitNullValueHasRootCause; set { _explicitNullValueHasRootCause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasRootCause"); else _explicitNullProperties?.Remove("hasRootCause"); } }
+        private bool? _explicitNullValueHasRootCause = default!;
         /// <summary>The isAssigned property</summary>
-        public bool? IsAssigned { get; set; }
+        public bool? IsAssigned { get => _explicitNullValueIsAssigned; set { _explicitNullValueIsAssigned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAssigned"); else _explicitNullProperties?.Remove("isAssigned"); } }
+        private bool? _explicitNullValueIsAssigned = default!;
         /// <summary>The lastCompletedAutofixStep property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastCompletedAutofixStep { get; set; }
+        public string? LastCompletedAutofixStep { get => _explicitNullValueLastCompletedAutofixStep; set { _explicitNullValueLastCompletedAutofixStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCompletedAutofixStep"); else _explicitNullProperties?.Remove("lastCompletedAutofixStep"); } }
+        private string? _explicitNullValueLastCompletedAutofixStep = default!;
 #nullable restore
 #else
-        public string LastCompletedAutofixStep { get; set; }
+        public string LastCompletedAutofixStep { get => _explicitNullValueLastCompletedAutofixStep; set { _explicitNullValueLastCompletedAutofixStep = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCompletedAutofixStep"); else _explicitNullProperties?.Remove("lastCompletedAutofixStep"); } }
+        private string _explicitNullValueLastCompletedAutofixStep = default!;
 #endif
         /// <summary>The lastProgressedAt property</summary>
-        public DateTimeOffset? LastProgressedAt { get; set; }
+        public DateTimeOffset? LastProgressedAt { get => _explicitNullValueLastProgressedAt; set { _explicitNullValueLastProgressedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastProgressedAt"); else _explicitNullProperties?.Remove("lastProgressedAt"); } }
+        private DateTimeOffset? _explicitNullValueLastProgressedAt = default!;
         /// <summary>The progress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Progress { get; set; }
+        public string? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private string? _explicitNullValueProgress = default!;
 #nullable restore
 #else
-        public string Progress { get; set; }
+        public string Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
+        private string _explicitNullValueProgress = default!;
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>The viewCount property</summary>
-        public int? ViewCount { get; set; }
+        public int? ViewCount { get => _explicitNullValueViewCount; set { _explicitNullValueViewCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewCount"); else _explicitNullProperties?.Remove("viewCount"); } }
+        private int? _explicitNullValueViewCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedData"/> and sets the default values.
         /// </summary>
@@ -71,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("progress", Progress);
             writer.WriteStringValue("status", Status);
             writer.WriteIntValue("viewCount", ViewCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

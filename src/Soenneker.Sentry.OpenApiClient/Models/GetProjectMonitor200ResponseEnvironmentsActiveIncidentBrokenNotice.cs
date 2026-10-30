@@ -11,13 +11,24 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("environmentMutedTimestamp") is { } nullNodeEnvironmentMutedTimestamp && nullNodeEnvironmentMutedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentMutedTimestamp = null;
+            if (parseNode.GetChildNode("userNotifiedTimestamp") is { } nullNodeUserNotifiedTimestamp && nullNodeUserNotifiedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserNotifiedTimestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environmentMutedTimestamp property</summary>
-        public DateTimeOffset? EnvironmentMutedTimestamp { get; set; }
+        public DateTimeOffset? EnvironmentMutedTimestamp { get => _explicitNullValueEnvironmentMutedTimestamp; set { _explicitNullValueEnvironmentMutedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentMutedTimestamp"); else _explicitNullProperties?.Remove("environmentMutedTimestamp"); } }
+        private DateTimeOffset? _explicitNullValueEnvironmentMutedTimestamp = default!;
         /// <summary>The userNotifiedTimestamp property</summary>
-        public DateTimeOffset? UserNotifiedTimestamp { get; set; }
+        public DateTimeOffset? UserNotifiedTimestamp { get => _explicitNullValueUserNotifiedTimestamp; set { _explicitNullValueUserNotifiedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userNotifiedTimestamp"); else _explicitNullProperties?.Remove("userNotifiedTimestamp"); } }
+        private DateTimeOffset? _explicitNullValueUserNotifiedTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice"/> and sets the default values.
         /// </summary>
@@ -33,7 +44,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,6 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("environmentMutedTimestamp", EnvironmentMutedTimestamp);
             writer.WriteDateTimeOffsetValue("userNotifiedTimestamp", UserNotifiedTimestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

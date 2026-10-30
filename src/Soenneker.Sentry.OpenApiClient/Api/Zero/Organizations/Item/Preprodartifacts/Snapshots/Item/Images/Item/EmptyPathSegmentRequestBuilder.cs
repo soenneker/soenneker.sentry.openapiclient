@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve detailed information for a single image within a snapshot.The `image_identifier` can be either the image filename or its contenthash. The response includes head and base image metadata, comparisonstatus, diff image URL, diff percentage, and previous filename forrenames.This endpoint uses a flat response format with nullable fields designedfor LLM/MCP consumers.This endpoint requires a bearer token with `project:read` access.

@@ -12,60 +12,89 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreateOrganizationNotificationsActionRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("integration_id") is { } nullNodeIntegrationId && nullNodeIntegrationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IntegrationId = null;
+            if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("sentry_app_id") is { } nullNodeSentryAppId && nullNodeSentryAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryAppId = null;
+            if (parseNode.GetChildNode("service_type") is { } nullNodeServiceType && nullNodeServiceType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServiceType = null;
+            if (parseNode.GetChildNode("target_display") is { } nullNodeTargetDisplay && nullNodeTargetDisplay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetDisplay = null;
+            if (parseNode.GetChildNode("target_identifier") is { } nullNodeTargetIdentifier && nullNodeTargetIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetIdentifier = null;
+            if (parseNode.GetChildNode("target_type") is { } nullNodeTargetType && nullNodeTargetType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetType = null;
+            if (parseNode.GetChildNode("trigger_type") is { } nullNodeTriggerType && nullNodeTriggerType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TriggerType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>ID of the integration used as the notification service. See[List Integrations](https://docs.sentry.io/api/integrations/list-an-organizations-available-integrations/)to retrieve a full list of integrations.Required if **service_type** is `slack`, `pagerduty` or `opsgenie`.</summary>
-        public int? IntegrationId { get; set; }
+        public int? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration_id"); else _explicitNullProperties?.Remove("integration_id"); } }
+        private int? _explicitNullValueIntegrationId = default!;
         /// <summary>List of project IDs or slugs that the Notification Action is created for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Projects { get; set; }
+        public List<string>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<string>? _explicitNullValueProjects = default!;
 #nullable restore
 #else
-        public List<string> Projects { get; set; }
+        public List<string> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
+        private List<string> _explicitNullValueProjects = default!;
 #endif
         /// <summary>ID of the custom integration to notify, when the target is a Sentry app.</summary>
-        public int? SentryAppId { get; set; }
+        public int? SentryAppId { get => _explicitNullValueSentryAppId; set { _explicitNullValueSentryAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentry_app_id"); else _explicitNullProperties?.Remove("sentry_app_id"); } }
+        private int? _explicitNullValueSentryAppId = default!;
         /// <summary>Service that is used for sending the notification.- `email`- `slack`- `sentry_notification`- `pagerduty`- `opsgenie`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceType { get; set; }
+        public string? ServiceType { get => _explicitNullValueServiceType; set { _explicitNullValueServiceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_type"); else _explicitNullProperties?.Remove("service_type"); } }
+        private string? _explicitNullValueServiceType = default!;
 #nullable restore
 #else
-        public string ServiceType { get; set; }
+        public string ServiceType { get => _explicitNullValueServiceType; set { _explicitNullValueServiceType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("service_type"); else _explicitNullProperties?.Remove("service_type"); } }
+        private string _explicitNullValueServiceType = default!;
 #endif
         /// <summary>Name of the notification target, like a Slack channel name.Required if **service_type** is `slack` or `opsgenie`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetDisplay { get; set; }
+        public string? TargetDisplay { get => _explicitNullValueTargetDisplay; set { _explicitNullValueTargetDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_display"); else _explicitNullProperties?.Remove("target_display"); } }
+        private string? _explicitNullValueTargetDisplay = default!;
 #nullable restore
 #else
-        public string TargetDisplay { get; set; }
+        public string TargetDisplay { get => _explicitNullValueTargetDisplay; set { _explicitNullValueTargetDisplay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_display"); else _explicitNullProperties?.Remove("target_display"); } }
+        private string _explicitNullValueTargetDisplay = default!;
 #endif
         /// <summary>ID of the notification target, like a Slack channel ID.Required if **service_type** is `slack` or `opsgenie`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetIdentifier { get; set; }
+        public string? TargetIdentifier { get => _explicitNullValueTargetIdentifier; set { _explicitNullValueTargetIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_identifier"); else _explicitNullProperties?.Remove("target_identifier"); } }
+        private string? _explicitNullValueTargetIdentifier = default!;
 #nullable restore
 #else
-        public string TargetIdentifier { get; set; }
+        public string TargetIdentifier { get => _explicitNullValueTargetIdentifier; set { _explicitNullValueTargetIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_identifier"); else _explicitNullProperties?.Remove("target_identifier"); } }
+        private string _explicitNullValueTargetIdentifier = default!;
 #endif
         /// <summary>How the notification target is addressed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetType { get; set; }
+        public string? TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_type"); else _explicitNullProperties?.Remove("target_type"); } }
+        private string? _explicitNullValueTargetType = default!;
 #nullable restore
 #else
-        public string TargetType { get; set; }
+        public string TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("target_type"); else _explicitNullProperties?.Remove("target_type"); } }
+        private string _explicitNullValueTargetType = default!;
 #endif
         /// <summary>Type of the trigger that causes the notification. The only supported trigger right now is: `spike-protection`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TriggerType { get; set; }
+        public string? TriggerType { get => _explicitNullValueTriggerType; set { _explicitNullValueTriggerType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_type"); else _explicitNullProperties?.Remove("trigger_type"); } }
+        private string? _explicitNullValueTriggerType = default!;
 #nullable restore
 #else
-        public string TriggerType { get; set; }
+        public string TriggerType { get => _explicitNullValueTriggerType; set { _explicitNullValueTriggerType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trigger_type"); else _explicitNullProperties?.Remove("trigger_type"); } }
+        private string _explicitNullValueTriggerType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest"/> and sets the default values.
@@ -83,7 +112,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationNotificationsActionRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +147,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("target_identifier", TargetIdentifier);
             writer.WriteStringValue("target_type", TargetType);
             writer.WriteStringValue("trigger_type", TriggerType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,50 +11,74 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ListOrganizationTraceItemAttributes200ResponseSchemaItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("attributeSource") is { } nullNodeAttributeSource && nullNodeAttributeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeSource = null;
+            if (parseNode.GetChildNode("attributeType") is { } nullNodeAttributeType && nullNodeAttributeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeType = null;
+            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("secondaryAliases") is { } nullNodeSecondaryAliases && nullNodeSecondaryAliases.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondaryAliases = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The attributeSource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource? AttributeSource { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource? AttributeSource { get => _explicitNullValueAttributeSource; set { _explicitNullValueAttributeSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeSource"); else _explicitNullProperties?.Remove("attributeSource"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource? _explicitNullValueAttributeSource = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource AttributeSource { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource AttributeSource { get => _explicitNullValueAttributeSource; set { _explicitNullValueAttributeSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeSource"); else _explicitNullProperties?.Remove("attributeSource"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource _explicitNullValueAttributeSource = default!;
 #endif
         /// <summary>The attributeType property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType? AttributeType { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType? AttributeType { get => _explicitNullValueAttributeType; set { _explicitNullValueAttributeType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeType"); else _explicitNullProperties?.Remove("attributeType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType? _explicitNullValueAttributeType = default!;
         /// <summary>Additional, mostly-static metadata about an attribute.When ``expand=context`` is requested, context is attached to every attribute.Metadata comes from the sentry conventions, Sentry&apos;s own column definitions,or user-authored context (gated behind ``data-browsing-attribute-context``),in that precedence order. Only the fields available are included, so anattribute with no metadata gets an empty context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext? Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext Context { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext _explicitNullValueContext = default!;
 #endif
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Key { get; set; }
+        public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string? _explicitNullValueKey = default!;
 #nullable restore
 #else
-        public string Key { get; set; }
+        public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>The secondaryAliases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SecondaryAliases { get; set; }
+        public List<string>? SecondaryAliases { get => _explicitNullValueSecondaryAliases; set { _explicitNullValueSecondaryAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryAliases"); else _explicitNullProperties?.Remove("secondaryAliases"); } }
+        private List<string>? _explicitNullValueSecondaryAliases = default!;
 #nullable restore
 #else
-        public List<string> SecondaryAliases { get; set; }
+        public List<string> SecondaryAliases { get => _explicitNullValueSecondaryAliases; set { _explicitNullValueSecondaryAliases = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryAliases"); else _explicitNullProperties?.Remove("secondaryAliases"); } }
+        private List<string> _explicitNullValueSecondaryAliases = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItem"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("secondaryAliases", SecondaryAliases);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

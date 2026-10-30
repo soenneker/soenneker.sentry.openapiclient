@@ -11,58 +11,85 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationReleaseRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("commits") is { } nullNodeCommits && nullNodeCommits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Commits = null;
+            if (parseNode.GetChildNode("dateReleased") is { } nullNodeDateReleased && nullNodeDateReleased.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateReleased = null;
+            if (parseNode.GetChildNode("headCommits") is { } nullNodeHeadCommits && nullNodeHeadCommits.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadCommits = null;
+            if (parseNode.GetChildNode("ref") is { } nullNodeRef && nullNodeRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ref = null;
+            if (parseNode.GetChildNode("refs") is { } nullNodeRefs && nullNodeRefs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refs = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>An optional list of commit data to be associated. Very long lists are truncated to the most recent commits.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem>? Commits { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem>? Commits { get => _explicitNullValueCommits; set { _explicitNullValueCommits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commits"); else _explicitNullProperties?.Remove("commits"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem>? _explicitNullValueCommits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem> Commits { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem> Commits { get => _explicitNullValueCommits; set { _explicitNullValueCommits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commits"); else _explicitNullProperties?.Remove("commits"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestCommitsItem> _explicitNullValueCommits = default!;
 #endif
         /// <summary>An optional date that indicates when the release went live.  If not provided the current time is used.</summary>
-        public DateTimeOffset? DateReleased { get; set; }
+        public DateTimeOffset? DateReleased { get => _explicitNullValueDateReleased; set { _explicitNullValueDateReleased = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReleased"); else _explicitNullProperties?.Remove("dateReleased"); } }
+        private DateTimeOffset? _explicitNullValueDateReleased = default!;
         /// <summary>Deprecated, use `commits`. Head commits to associate with the release.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>? HeadCommits { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>? HeadCommits { get => _explicitNullValueHeadCommits; set { _explicitNullValueHeadCommits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headCommits"); else _explicitNullProperties?.Remove("headCommits"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem>? _explicitNullValueHeadCommits = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem> HeadCommits { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem> HeadCommits { get => _explicitNullValueHeadCommits; set { _explicitNullValueHeadCommits = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headCommits"); else _explicitNullProperties?.Remove("headCommits"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestHeadCommitsItem> _explicitNullValueHeadCommits = default!;
 #endif
         /// <summary>An optional commit reference. This is useful if a tagged version has been provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ref { get; set; }
+        public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string? _explicitNullValueRef = default!;
 #nullable restore
 #else
-        public string Ref { get; set; }
+        public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
+        private string _explicitNullValueRef = default!;
 #endif
         /// <summary>An optional way to indicate the start and end commits for each repository included in a release. Head commits must include parameters ``repository`` and ``commit`` (the HEAD SHA). For GitLab repositories, please use the Group name instead of the slug. They can optionally include ``previousCommit`` (the SHA of the HEAD of the previous release), which should be specified if this is the first time you&apos;ve sent commit data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>? Refs { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>? Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>? _explicitNullValueRefs = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem> Refs { get; set; }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem> Refs { get => _explicitNullValueRefs; set { _explicitNullValueRefs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refs"); else _explicitNullProperties?.Remove("refs"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem> _explicitNullValueRefs = default!;
 #endif
         /// <summary>The status of the release. Can be `open` or `archived`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get; set; }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get; set; }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>A URL that points to the release. For instance, this can be the path to an online interface to the source code, such as a GitHub URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest"/> and sets the default values.
@@ -79,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,6 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationReleaseRequestRefsItem>("refs", Refs);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("url", Url);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

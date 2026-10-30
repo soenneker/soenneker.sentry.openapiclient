@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("debug_id_process") is { } nullNodeDebugIdProcess && nullNodeDebugIdProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugIdProcess = null;
+            if (parseNode.GetChildNode("release_process") is { } nullNodeReleaseProcess && nullNodeReleaseProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseProcess = null;
+            if (parseNode.GetChildNode("scraping_process") is { } nullNodeScrapingProcess && nullNodeScrapingProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrapingProcess = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The debug_id_process property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess? DebugIdProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess? DebugIdProcess { get => _explicitNullValueDebugIdProcess; set { _explicitNullValueDebugIdProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id_process"); else _explicitNullProperties?.Remove("debug_id_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess? _explicitNullValueDebugIdProcess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess DebugIdProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess DebugIdProcess { get => _explicitNullValueDebugIdProcess; set { _explicitNullValueDebugIdProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id_process"); else _explicitNullProperties?.Remove("debug_id_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess _explicitNullValueDebugIdProcess = default!;
 #endif
         /// <summary>The release_process property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess? ReleaseProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess? ReleaseProcess { get => _explicitNullValueReleaseProcess; set { _explicitNullValueReleaseProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release_process"); else _explicitNullProperties?.Remove("release_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess? _explicitNullValueReleaseProcess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess ReleaseProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess ReleaseProcess { get => _explicitNullValueReleaseProcess; set { _explicitNullValueReleaseProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release_process"); else _explicitNullProperties?.Remove("release_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess _explicitNullValueReleaseProcess = default!;
 #endif
         /// <summary>The scraping_process property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess? ScrapingProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess? ScrapingProcess { get => _explicitNullValueScrapingProcess; set { _explicitNullValueScrapingProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scraping_process"); else _explicitNullProperties?.Remove("scraping_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess? _explicitNullValueScrapingProcess = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess ScrapingProcess { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess ScrapingProcess { get => _explicitNullValueScrapingProcess; set { _explicitNullValueScrapingProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scraping_process"); else _explicitNullProperties?.Remove("scraping_process"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess _explicitNullValueScrapingProcess = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItem"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess>("debug_id_process", DebugIdProcess);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess>("release_process", ReleaseProcess);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcess>("scraping_process", ScrapingProcess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

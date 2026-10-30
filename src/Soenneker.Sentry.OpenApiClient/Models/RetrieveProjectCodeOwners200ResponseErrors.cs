@@ -11,48 +11,70 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RetrieveProjectCodeOwners200ResponseErrors : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("missing_external_teams") is { } nullNodeMissingExternalTeams && nullNodeMissingExternalTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalTeams = null;
+            if (parseNode.GetChildNode("missing_external_users") is { } nullNodeMissingExternalUsers && nullNodeMissingExternalUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalUsers = null;
+            if (parseNode.GetChildNode("missing_user_emails") is { } nullNodeMissingUserEmails && nullNodeMissingUserEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingUserEmails = null;
+            if (parseNode.GetChildNode("teams_without_access") is { } nullNodeTeamsWithoutAccess && nullNodeTeamsWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsWithoutAccess = null;
+            if (parseNode.GetChildNode("users_without_access") is { } nullNodeUsersWithoutAccess && nullNodeUsersWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersWithoutAccess = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The missing_external_teams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingExternalTeams { get; set; }
+        public List<string>? MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
+        private List<string>? _explicitNullValueMissingExternalTeams = default!;
 #nullable restore
 #else
-        public List<string> MissingExternalTeams { get; set; }
+        public List<string> MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
+        private List<string> _explicitNullValueMissingExternalTeams = default!;
 #endif
         /// <summary>The missing_external_users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingExternalUsers { get; set; }
+        public List<string>? MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
+        private List<string>? _explicitNullValueMissingExternalUsers = default!;
 #nullable restore
 #else
-        public List<string> MissingExternalUsers { get; set; }
+        public List<string> MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
+        private List<string> _explicitNullValueMissingExternalUsers = default!;
 #endif
         /// <summary>The missing_user_emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingUserEmails { get; set; }
+        public List<string>? MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
+        private List<string>? _explicitNullValueMissingUserEmails = default!;
 #nullable restore
 #else
-        public List<string> MissingUserEmails { get; set; }
+        public List<string> MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
+        private List<string> _explicitNullValueMissingUserEmails = default!;
 #endif
         /// <summary>The teams_without_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamsWithoutAccess { get; set; }
+        public List<string>? TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
+        private List<string>? _explicitNullValueTeamsWithoutAccess = default!;
 #nullable restore
 #else
-        public List<string> TeamsWithoutAccess { get; set; }
+        public List<string> TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
+        private List<string> _explicitNullValueTeamsWithoutAccess = default!;
 #endif
         /// <summary>The users_without_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UsersWithoutAccess { get; set; }
+        public List<string>? UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
+        private List<string>? _explicitNullValueUsersWithoutAccess = default!;
 #nullable restore
 #else
-        public List<string> UsersWithoutAccess { get; set; }
+        public List<string> UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
+        private List<string> _explicitNullValueUsersWithoutAccess = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseErrors"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseErrors CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseErrors();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseErrors(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("missing_user_emails", MissingUserEmails);
             writer.WriteCollectionOfPrimitiveValues<string>("teams_without_access", TeamsWithoutAccess);
             writer.WriteCollectionOfPrimitiveValues<string>("users_without_access", UsersWithoutAccess);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

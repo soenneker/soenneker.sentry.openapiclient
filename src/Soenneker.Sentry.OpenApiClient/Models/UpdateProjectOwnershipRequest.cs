@@ -11,28 +11,45 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateProjectOwnershipRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("autoAssignment") is { } nullNodeAutoAssignment && nullNodeAutoAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignment = null;
+            if (parseNode.GetChildNode("codeownersAutoSync") is { } nullNodeCodeownersAutoSync && nullNodeCodeownersAutoSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeownersAutoSync = null;
+            if (parseNode.GetChildNode("fallthrough") is { } nullNodeFallthrough && nullNodeFallthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fallthrough = null;
+            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Auto-assignment settings. The available options are:- Auto Assign to Issue Owner- Auto Assign to Suspect Commits- Turn off Auto-Assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutoAssignment { get; set; }
+        public string? AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        private string? _explicitNullValueAutoAssignment = default!;
 #nullable restore
 #else
-        public string AutoAssignment { get; set; }
+        public string AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        private string _explicitNullValueAutoAssignment = default!;
 #endif
         /// <summary>Set to `True` to sync issue owners with CODEOWNERS updates in a release.</summary>
-        public bool? CodeownersAutoSync { get; set; }
+        public bool? CodeownersAutoSync { get => _explicitNullValueCodeownersAutoSync; set { _explicitNullValueCodeownersAutoSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeownersAutoSync"); else _explicitNullProperties?.Remove("codeownersAutoSync"); } }
+        private bool? _explicitNullValueCodeownersAutoSync = default!;
         /// <summary>A boolean determining who to assign ownership to when an ownership rule has no match. If set to `True`, all project members are made owners. Otherwise, no owners are set.</summary>
-        public bool? Fallthrough { get; set; }
+        public bool? Fallthrough { get => _explicitNullValueFallthrough; set { _explicitNullValueFallthrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallthrough"); else _explicitNullProperties?.Remove("fallthrough"); } }
+        private bool? _explicitNullValueFallthrough = default!;
         /// <summary>Raw input for ownership configuration. See the [Ownership Rules Documentation](/product/issues/ownership-rules/) to learn more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Raw { get; set; }
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public string Raw { get; set; }
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string _explicitNullValueRaw = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnershipRequest"/> and sets the default values.
@@ -50,7 +67,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnershipRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnershipRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnershipRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("codeownersAutoSync", CodeownersAutoSync);
             writer.WriteBoolValue("fallthrough", Fallthrough);
             writer.WriteStringValue("raw", Raw);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

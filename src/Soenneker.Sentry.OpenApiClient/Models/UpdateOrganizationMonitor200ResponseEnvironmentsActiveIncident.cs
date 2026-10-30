@@ -11,21 +11,35 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncident : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("brokenNotice") is { } nullNodeBrokenNotice && nullNodeBrokenNotice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrokenNotice = null;
+            if (parseNode.GetChildNode("resolvingTimestamp") is { } nullNodeResolvingTimestamp && nullNodeResolvingTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResolvingTimestamp = null;
+            if (parseNode.GetChildNode("startingTimestamp") is { } nullNodeStartingTimestamp && nullNodeStartingTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartingTimestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The brokenNotice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice? BrokenNotice { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice? BrokenNotice { get => _explicitNullValueBrokenNotice; set { _explicitNullValueBrokenNotice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brokenNotice"); else _explicitNullProperties?.Remove("brokenNotice"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice? _explicitNullValueBrokenNotice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice BrokenNotice { get; set; }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice BrokenNotice { get => _explicitNullValueBrokenNotice; set { _explicitNullValueBrokenNotice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brokenNotice"); else _explicitNullProperties?.Remove("brokenNotice"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice _explicitNullValueBrokenNotice = default!;
 #endif
         /// <summary>The resolvingTimestamp property</summary>
-        public DateTimeOffset? ResolvingTimestamp { get; set; }
+        public DateTimeOffset? ResolvingTimestamp { get => _explicitNullValueResolvingTimestamp; set { _explicitNullValueResolvingTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolvingTimestamp"); else _explicitNullProperties?.Remove("resolvingTimestamp"); } }
+        private DateTimeOffset? _explicitNullValueResolvingTimestamp = default!;
         /// <summary>The startingTimestamp property</summary>
-        public DateTimeOffset? StartingTimestamp { get; set; }
+        public DateTimeOffset? StartingTimestamp { get => _explicitNullValueStartingTimestamp; set { _explicitNullValueStartingTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startingTimestamp"); else _explicitNullProperties?.Remove("startingTimestamp"); } }
+        private DateTimeOffset? _explicitNullValueStartingTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncident"/> and sets the default values.
         /// </summary>
@@ -41,7 +55,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncident CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncident();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncident(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,6 +82,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice>("brokenNotice", BrokenNotice);
             writer.WriteDateTimeOffsetValue("resolvingTimestamp", ResolvingTimestamp);
             writer.WriteDateTimeOffsetValue("startingTimestamp", StartingTimestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

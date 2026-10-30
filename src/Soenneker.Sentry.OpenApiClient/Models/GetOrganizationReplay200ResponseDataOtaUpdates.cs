@@ -11,32 +11,48 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetOrganizationReplay200ResponseDataOtaUpdates : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("channel") is { } nullNodeChannel && nullNodeChannel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Channel = null;
+            if (parseNode.GetChildNode("runtime_version") is { } nullNodeRuntimeVersion && nullNodeRuntimeVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuntimeVersion = null;
+            if (parseNode.GetChildNode("update_id") is { } nullNodeUpdateId && nullNodeUpdateId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdateId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The channel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Channel { get; set; }
+        public string? Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        private string? _explicitNullValueChannel = default!;
 #nullable restore
 #else
-        public string Channel { get; set; }
+        public string Channel { get => _explicitNullValueChannel; set { _explicitNullValueChannel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("channel"); else _explicitNullProperties?.Remove("channel"); } }
+        private string _explicitNullValueChannel = default!;
 #endif
         /// <summary>The runtime_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuntimeVersion { get; set; }
+        public string? RuntimeVersion { get => _explicitNullValueRuntimeVersion; set { _explicitNullValueRuntimeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_version"); else _explicitNullProperties?.Remove("runtime_version"); } }
+        private string? _explicitNullValueRuntimeVersion = default!;
 #nullable restore
 #else
-        public string RuntimeVersion { get; set; }
+        public string RuntimeVersion { get => _explicitNullValueRuntimeVersion; set { _explicitNullValueRuntimeVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("runtime_version"); else _explicitNullProperties?.Remove("runtime_version"); } }
+        private string _explicitNullValueRuntimeVersion = default!;
 #endif
         /// <summary>The update_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdateId { get; set; }
+        public string? UpdateId { get => _explicitNullValueUpdateId; set { _explicitNullValueUpdateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_id"); else _explicitNullProperties?.Remove("update_id"); } }
+        private string? _explicitNullValueUpdateId = default!;
 #nullable restore
 #else
-        public string UpdateId { get; set; }
+        public string UpdateId { get => _explicitNullValueUpdateId; set { _explicitNullValueUpdateId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_id"); else _explicitNullProperties?.Remove("update_id"); } }
+        private string _explicitNullValueUpdateId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("channel", Channel);
             writer.WriteStringValue("runtime_version", RuntimeVersion);
             writer.WriteStringValue("update_id", UpdateId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
