@@ -17,23 +17,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("isEditableByEveryone") is { } nullNodeIsEditableByEveryone && nullNodeIsEditableByEveryone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEditableByEveryone = null;
-            if (parseNode.GetChildNode("teamsWithEditAccess") is { } nullNodeTeamsWithEditAccess && nullNodeTeamsWithEditAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsWithEditAccess = null;
+            if (parseNode.GetChildNode("isEditableByEveryone") is null) { _explicitNullValueIsEditableByEveryone = default!; _explicitNullProperties?.Remove("isEditableByEveryone"); }
+            else if (parseNode.GetChildNode("isEditableByEveryone") is { } nullNodeIsEditableByEveryone && nullNodeIsEditableByEveryone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEditableByEveryone = null;
+            if (parseNode.GetChildNode("teamsWithEditAccess") is null) { _explicitNullValueTeamsWithEditAccess = default!; _explicitNullProperties?.Remove("teamsWithEditAccess"); }
+            else if (parseNode.GetChildNode("teamsWithEditAccess") is { } nullNodeTeamsWithEditAccess && nullNodeTeamsWithEditAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsWithEditAccess = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The isEditableByEveryone property</summary>
-        public bool? IsEditableByEveryone { get => _explicitNullValueIsEditableByEveryone; set { _explicitNullValueIsEditableByEveryone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEditableByEveryone"); else _explicitNullProperties?.Remove("isEditableByEveryone"); } }
+        public bool? IsEditableByEveryone { get => _explicitNullValueIsEditableByEveryone; set { _explicitNullValueIsEditableByEveryone = value; AdditionalData?.Remove("isEditableByEveryone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEditableByEveryone"); else _explicitNullProperties?.Remove("isEditableByEveryone"); } }
         private bool? _explicitNullValueIsEditableByEveryone = default!;
         /// <summary>The teamsWithEditAccess property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? TeamsWithEditAccess { get => _explicitNullValueTeamsWithEditAccess; set { _explicitNullValueTeamsWithEditAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsWithEditAccess"); else _explicitNullProperties?.Remove("teamsWithEditAccess"); } }
+        public List<int?>? TeamsWithEditAccess { get => _explicitNullValueTeamsWithEditAccess; set { _explicitNullValueTeamsWithEditAccess = value; AdditionalData?.Remove("teamsWithEditAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsWithEditAccess"); else _explicitNullProperties?.Remove("teamsWithEditAccess"); } }
         private List<int?>? _explicitNullValueTeamsWithEditAccess = default!;
 #nullable restore
 #else
-        public List<int?> TeamsWithEditAccess { get => _explicitNullValueTeamsWithEditAccess; set { _explicitNullValueTeamsWithEditAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsWithEditAccess"); else _explicitNullProperties?.Remove("teamsWithEditAccess"); } }
+        public List<int?> TeamsWithEditAccess { get => _explicitNullValueTeamsWithEditAccess; set { _explicitNullValueTeamsWithEditAccess = value; AdditionalData?.Remove("teamsWithEditAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamsWithEditAccess"); else _explicitNullProperties?.Remove("teamsWithEditAccess"); } }
         private List<int?> _explicitNullValueTeamsWithEditAccess = default!;
 #endif
         /// <summary>

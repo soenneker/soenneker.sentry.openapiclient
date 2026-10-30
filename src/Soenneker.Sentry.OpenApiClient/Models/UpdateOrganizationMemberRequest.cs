@@ -17,23 +17,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("orgRole") is { } nullNodeOrgRole && nullNodeOrgRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgRole = null;
-            if (parseNode.GetChildNode("teamRoles") is { } nullNodeTeamRoles && nullNodeTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamRoles = null;
+            if (parseNode.GetChildNode("orgRole") is null) { _explicitNullValueOrgRole = default!; _explicitNullProperties?.Remove("orgRole"); }
+            else if (parseNode.GetChildNode("orgRole") is { } nullNodeOrgRole && nullNodeOrgRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgRole = null;
+            if (parseNode.GetChildNode("teamRoles") is null) { _explicitNullValueTeamRoles = default!; _explicitNullProperties?.Remove("teamRoles"); }
+            else if (parseNode.GetChildNode("teamRoles") is { } nullNodeTeamRoles && nullNodeTeamRoles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamRoles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organization role of the member. The options are:* `billing` - Can manage payment and compliance details.* `member` - Can view and act on events, as well as view most other data within the organization.* `manager` - Has full management access to all teams and projects. Can also manage        the organization&apos;s membership.* `owner` - Has unrestricted access to the organization, its data, and its        settings. Can add, modify, and delete projects and members, as well as        make billing and plan changes.* `admin` - Can edit global integrations, manage projects, and add/remove teams.        They automatically assume the Team Admin role for teams they join.        Note: This role can no longer be assigned in Business and Enterprise plans. Use `TeamRoles` instead.        </summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestOrgRole? OrgRole { get => _explicitNullValueOrgRole; set { _explicitNullValueOrgRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orgRole"); else _explicitNullProperties?.Remove("orgRole"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestOrgRole? OrgRole { get => _explicitNullValueOrgRole; set { _explicitNullValueOrgRole = value; AdditionalData?.Remove("orgRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orgRole"); else _explicitNullProperties?.Remove("orgRole"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestOrgRole? _explicitNullValueOrgRole = default!;
         /// <summary>Configures the team role of the member. The two roles are:- `contributor` - Can view and act on issues. Depending on organization settings, they can also add team members.- `admin` - Has full management access to their team&apos;s membership and projects.```json{    &quot;teamRoles&quot;: [        {            &quot;teamSlug&quot;: &quot;ancient-gabelers&quot;,            &quot;role&quot;: &quot;admin&quot;        },        {            &quot;teamSlug&quot;: &quot;powerful-abolitionist&quot;,            &quot;role&quot;: &quot;contributor&quot;        }    ]}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem>? TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem>? TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; AdditionalData?.Remove("teamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem>? _explicitNullValueTeamRoles = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem> TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem> TeamRoles { get => _explicitNullValueTeamRoles; set { _explicitNullValueTeamRoles = value; AdditionalData?.Remove("teamRoles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRoles"); else _explicitNullProperties?.Remove("teamRoles"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem> _explicitNullValueTeamRoles = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "orgRole", n => { OrgRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestOrgRole>(); } },
+                { "orgRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestOrgRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrgRole = default; _explicitNullProperties?.Remove("orgRole"); AdditionalData["orgRole"] = unknown; } else { OrgRole = parsed; AdditionalData.Remove("orgRole"); } } },
                 { "teamRoles", n => { TeamRoles = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberRequestTeamRolesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }

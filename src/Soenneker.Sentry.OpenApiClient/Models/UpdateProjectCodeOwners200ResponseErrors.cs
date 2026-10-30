@@ -17,11 +17,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("missing_external_teams") is { } nullNodeMissingExternalTeams && nullNodeMissingExternalTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalTeams = null;
-            if (parseNode.GetChildNode("missing_external_users") is { } nullNodeMissingExternalUsers && nullNodeMissingExternalUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalUsers = null;
-            if (parseNode.GetChildNode("missing_user_emails") is { } nullNodeMissingUserEmails && nullNodeMissingUserEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingUserEmails = null;
-            if (parseNode.GetChildNode("teams_without_access") is { } nullNodeTeamsWithoutAccess && nullNodeTeamsWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsWithoutAccess = null;
-            if (parseNode.GetChildNode("users_without_access") is { } nullNodeUsersWithoutAccess && nullNodeUsersWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersWithoutAccess = null;
+            if (parseNode.GetChildNode("missing_external_teams") is null) { _explicitNullValueMissingExternalTeams = default!; _explicitNullProperties?.Remove("missing_external_teams"); }
+            else if (parseNode.GetChildNode("missing_external_teams") is { } nullNodeMissingExternalTeams && nullNodeMissingExternalTeams.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalTeams = null;
+            if (parseNode.GetChildNode("missing_external_users") is null) { _explicitNullValueMissingExternalUsers = default!; _explicitNullProperties?.Remove("missing_external_users"); }
+            else if (parseNode.GetChildNode("missing_external_users") is { } nullNodeMissingExternalUsers && nullNodeMissingExternalUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingExternalUsers = null;
+            if (parseNode.GetChildNode("missing_user_emails") is null) { _explicitNullValueMissingUserEmails = default!; _explicitNullProperties?.Remove("missing_user_emails"); }
+            else if (parseNode.GetChildNode("missing_user_emails") is { } nullNodeMissingUserEmails && nullNodeMissingUserEmails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MissingUserEmails = null;
+            if (parseNode.GetChildNode("teams_without_access") is null) { _explicitNullValueTeamsWithoutAccess = default!; _explicitNullProperties?.Remove("teams_without_access"); }
+            else if (parseNode.GetChildNode("teams_without_access") is { } nullNodeTeamsWithoutAccess && nullNodeTeamsWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TeamsWithoutAccess = null;
+            if (parseNode.GetChildNode("users_without_access") is null) { _explicitNullValueUsersWithoutAccess = default!; _explicitNullProperties?.Remove("users_without_access"); }
+            else if (parseNode.GetChildNode("users_without_access") is { } nullNodeUsersWithoutAccess && nullNodeUsersWithoutAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsersWithoutAccess = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The missing_external_teams property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
+        public List<string>? MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; AdditionalData?.Remove("missing_external_teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
         private List<string>? _explicitNullValueMissingExternalTeams = default!;
 #nullable restore
 #else
-        public List<string> MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
+        public List<string> MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; AdditionalData?.Remove("missing_external_teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
         private List<string> _explicitNullValueMissingExternalTeams = default!;
 #endif
         /// <summary>The missing_external_users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
+        public List<string>? MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; AdditionalData?.Remove("missing_external_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
         private List<string>? _explicitNullValueMissingExternalUsers = default!;
 #nullable restore
 #else
-        public List<string> MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
+        public List<string> MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; AdditionalData?.Remove("missing_external_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
         private List<string> _explicitNullValueMissingExternalUsers = default!;
 #endif
         /// <summary>The missing_user_emails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
+        public List<string>? MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; AdditionalData?.Remove("missing_user_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
         private List<string>? _explicitNullValueMissingUserEmails = default!;
 #nullable restore
 #else
-        public List<string> MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
+        public List<string> MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; AdditionalData?.Remove("missing_user_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
         private List<string> _explicitNullValueMissingUserEmails = default!;
 #endif
         /// <summary>The teams_without_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
+        public List<string>? TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; AdditionalData?.Remove("teams_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
         private List<string>? _explicitNullValueTeamsWithoutAccess = default!;
 #nullable restore
 #else
-        public List<string> TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
+        public List<string> TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; AdditionalData?.Remove("teams_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
         private List<string> _explicitNullValueTeamsWithoutAccess = default!;
 #endif
         /// <summary>The users_without_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
+        public List<string>? UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; AdditionalData?.Remove("users_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
         private List<string>? _explicitNullValueUsersWithoutAccess = default!;
 #nullable restore
 #else
-        public List<string> UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
+        public List<string> UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; AdditionalData?.Remove("users_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }
         private List<string> _explicitNullValueUsersWithoutAccess = default!;
 #endif
         /// <summary>

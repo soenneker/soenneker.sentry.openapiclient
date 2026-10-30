@@ -17,14 +17,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("baseRef") is { } nullNodeBaseRef && nullNodeBaseRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseRef = null;
-            if (parseNode.GetChildNode("baseRepoName") is { } nullNodeBaseRepoName && nullNodeBaseRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseRepoName = null;
-            if (parseNode.GetChildNode("baseSha") is { } nullNodeBaseSha && nullNodeBaseSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseSha = null;
-            if (parseNode.GetChildNode("headRef") is { } nullNodeHeadRef && nullNodeHeadRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadRef = null;
-            if (parseNode.GetChildNode("headRepoName") is { } nullNodeHeadRepoName && nullNodeHeadRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadRepoName = null;
-            if (parseNode.GetChildNode("headSha") is { } nullNodeHeadSha && nullNodeHeadSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSha = null;
-            if (parseNode.GetChildNode("prNumber") is { } nullNodePrNumber && nullNodePrNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrNumber = null;
-            if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
+            if (parseNode.GetChildNode("baseRef") is null) { _explicitNullValueBaseRef = default!; _explicitNullProperties?.Remove("baseRef"); }
+            else if (parseNode.GetChildNode("baseRef") is { } nullNodeBaseRef && nullNodeBaseRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseRef = null;
+            if (parseNode.GetChildNode("baseRepoName") is null) { _explicitNullValueBaseRepoName = default!; _explicitNullProperties?.Remove("baseRepoName"); }
+            else if (parseNode.GetChildNode("baseRepoName") is { } nullNodeBaseRepoName && nullNodeBaseRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseRepoName = null;
+            if (parseNode.GetChildNode("baseSha") is null) { _explicitNullValueBaseSha = default!; _explicitNullProperties?.Remove("baseSha"); }
+            else if (parseNode.GetChildNode("baseSha") is { } nullNodeBaseSha && nullNodeBaseSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseSha = null;
+            if (parseNode.GetChildNode("headRef") is null) { _explicitNullValueHeadRef = default!; _explicitNullProperties?.Remove("headRef"); }
+            else if (parseNode.GetChildNode("headRef") is { } nullNodeHeadRef && nullNodeHeadRef.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadRef = null;
+            if (parseNode.GetChildNode("headRepoName") is null) { _explicitNullValueHeadRepoName = default!; _explicitNullProperties?.Remove("headRepoName"); }
+            else if (parseNode.GetChildNode("headRepoName") is { } nullNodeHeadRepoName && nullNodeHeadRepoName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadRepoName = null;
+            if (parseNode.GetChildNode("headSha") is null) { _explicitNullValueHeadSha = default!; _explicitNullProperties?.Remove("headSha"); }
+            else if (parseNode.GetChildNode("headSha") is { } nullNodeHeadSha && nullNodeHeadSha.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadSha = null;
+            if (parseNode.GetChildNode("prNumber") is null) { _explicitNullValuePrNumber = default!; _explicitNullProperties?.Remove("prNumber"); }
+            else if (parseNode.GetChildNode("prNumber") is { } nullNodePrNumber && nullNodePrNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrNumber = null;
+            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
+            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,74 +40,74 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The baseRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
+        public string? BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; AdditionalData?.Remove("baseRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
         private string? _explicitNullValueBaseRef = default!;
 #nullable restore
 #else
-        public string BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
+        public string BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; AdditionalData?.Remove("baseRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
         private string _explicitNullValueBaseRef = default!;
 #endif
         /// <summary>The baseRepoName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
+        public string? BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; AdditionalData?.Remove("baseRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
         private string? _explicitNullValueBaseRepoName = default!;
 #nullable restore
 #else
-        public string BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
+        public string BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; AdditionalData?.Remove("baseRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
         private string _explicitNullValueBaseRepoName = default!;
 #endif
         /// <summary>The baseSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
+        public string? BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; AdditionalData?.Remove("baseSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
         private string? _explicitNullValueBaseSha = default!;
 #nullable restore
 #else
-        public string BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
+        public string BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; AdditionalData?.Remove("baseSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
         private string _explicitNullValueBaseSha = default!;
 #endif
         /// <summary>The headRef property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
+        public string? HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; AdditionalData?.Remove("headRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
         private string? _explicitNullValueHeadRef = default!;
 #nullable restore
 #else
-        public string HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
+        public string HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; AdditionalData?.Remove("headRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
         private string _explicitNullValueHeadRef = default!;
 #endif
         /// <summary>The headRepoName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
+        public string? HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; AdditionalData?.Remove("headRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
         private string? _explicitNullValueHeadRepoName = default!;
 #nullable restore
 #else
-        public string HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
+        public string HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; AdditionalData?.Remove("headRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
         private string _explicitNullValueHeadRepoName = default!;
 #endif
         /// <summary>The headSha property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
+        public string? HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; AdditionalData?.Remove("headSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
         private string? _explicitNullValueHeadSha = default!;
 #nullable restore
 #else
-        public string HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
+        public string HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; AdditionalData?.Remove("headSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
         private string _explicitNullValueHeadSha = default!;
 #endif
         /// <summary>The prNumber property</summary>
-        public int? PrNumber { get => _explicitNullValuePrNumber; set { _explicitNullValuePrNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prNumber"); else _explicitNullProperties?.Remove("prNumber"); } }
+        public int? PrNumber { get => _explicitNullValuePrNumber; set { _explicitNullValuePrNumber = value; AdditionalData?.Remove("prNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prNumber"); else _explicitNullProperties?.Remove("prNumber"); } }
         private int? _explicitNullValuePrNumber = default!;
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private string _explicitNullValueProvider = default!;
 #endif
         /// <summary>

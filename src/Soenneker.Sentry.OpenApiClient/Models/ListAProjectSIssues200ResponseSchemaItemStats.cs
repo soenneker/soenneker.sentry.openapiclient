@@ -17,7 +17,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("24h") is { } nullNodeTwoFourh && nullNodeTwoFourh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFourh = null;
+            if (parseNode.GetChildNode("24h") is null) { _explicitNullValueTwoFourh = default!; _explicitNullProperties?.Remove("24h"); }
+            else if (parseNode.GetChildNode("24h") is { } nullNodeTwoFourh && nullNodeTwoFourh.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TwoFourh = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The TwoFourh property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? TwoFourh { get => _explicitNullValueTwoFourh; set { _explicitNullValueTwoFourh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24h"); else _explicitNullProperties?.Remove("24h"); } }
+        public UntypedNode? TwoFourh { get => _explicitNullValueTwoFourh; set { _explicitNullValueTwoFourh = value; AdditionalData?.Remove("24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24h"); else _explicitNullProperties?.Remove("24h"); } }
         private UntypedNode? _explicitNullValueTwoFourh = default!;
 #nullable restore
 #else
-        public UntypedNode TwoFourh { get => _explicitNullValueTwoFourh; set { _explicitNullValueTwoFourh = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24h"); else _explicitNullProperties?.Remove("24h"); } }
+        public UntypedNode TwoFourh { get => _explicitNullValueTwoFourh; set { _explicitNullValueTwoFourh = value; AdditionalData?.Remove("24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24h"); else _explicitNullProperties?.Remove("24h"); } }
         private UntypedNode _explicitNullValueTwoFourh = default!;
 #endif
         /// <summary>

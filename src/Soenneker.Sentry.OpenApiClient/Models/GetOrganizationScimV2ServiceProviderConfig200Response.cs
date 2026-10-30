@@ -17,16 +17,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("authenticationSchemes") is { } nullNodeAuthenticationSchemes && nullNodeAuthenticationSchemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationSchemes = null;
-            if (parseNode.GetChildNode("bulk") is { } nullNodeBulk && nullNodeBulk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bulk = null;
-            if (parseNode.GetChildNode("changePassword") is { } nullNodeChangePassword && nullNodeChangePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangePassword = null;
-            if (parseNode.GetChildNode("documentationUri") is { } nullNodeDocumentationUri && nullNodeDocumentationUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentationUri = null;
-            if (parseNode.GetChildNode("etag") is { } nullNodeEtag && nullNodeEtag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Etag = null;
-            if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
-            if (parseNode.GetChildNode("patch") is { } nullNodePatch && nullNodePatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patch = null;
-            if (parseNode.GetChildNode("schemas") is { } nullNodeSchemas && nullNodeSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemas = null;
-            if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
+            if (parseNode.GetChildNode("authenticationSchemes") is null) { _explicitNullValueAuthenticationSchemes = default!; _explicitNullProperties?.Remove("authenticationSchemes"); }
+            else if (parseNode.GetChildNode("authenticationSchemes") is { } nullNodeAuthenticationSchemes && nullNodeAuthenticationSchemes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthenticationSchemes = null;
+            if (parseNode.GetChildNode("bulk") is null) { _explicitNullValueBulk = default!; _explicitNullProperties?.Remove("bulk"); }
+            else if (parseNode.GetChildNode("bulk") is { } nullNodeBulk && nullNodeBulk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bulk = null;
+            if (parseNode.GetChildNode("changePassword") is null) { _explicitNullValueChangePassword = default!; _explicitNullProperties?.Remove("changePassword"); }
+            else if (parseNode.GetChildNode("changePassword") is { } nullNodeChangePassword && nullNodeChangePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChangePassword = null;
+            if (parseNode.GetChildNode("documentationUri") is null) { _explicitNullValueDocumentationUri = default!; _explicitNullProperties?.Remove("documentationUri"); }
+            else if (parseNode.GetChildNode("documentationUri") is { } nullNodeDocumentationUri && nullNodeDocumentationUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DocumentationUri = null;
+            if (parseNode.GetChildNode("etag") is null) { _explicitNullValueEtag = default!; _explicitNullProperties?.Remove("etag"); }
+            else if (parseNode.GetChildNode("etag") is { } nullNodeEtag && nullNodeEtag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Etag = null;
+            if (parseNode.GetChildNode("filter") is null) { _explicitNullValueFilter = default!; _explicitNullProperties?.Remove("filter"); }
+            else if (parseNode.GetChildNode("filter") is { } nullNodeFilter && nullNodeFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filter = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("patch") is null) { _explicitNullValuePatch = default!; _explicitNullProperties?.Remove("patch"); }
+            else if (parseNode.GetChildNode("patch") is { } nullNodePatch && nullNodePatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patch = null;
+            if (parseNode.GetChildNode("schemas") is null) { _explicitNullValueSchemas = default!; _explicitNullProperties?.Remove("schemas"); }
+            else if (parseNode.GetChildNode("schemas") is { } nullNodeSchemas && nullNodeSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemas = null;
+            if (parseNode.GetChildNode("sort") is null) { _explicitNullValueSort = default!; _explicitNullProperties?.Remove("sort"); }
+            else if (parseNode.GetChildNode("sort") is { } nullNodeSort && nullNodeSort.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sort = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,101 +44,101 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The authenticationSchemes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem>? AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem>? AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; AdditionalData?.Remove("authenticationSchemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem>? _explicitNullValueAuthenticationSchemes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem> AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem> AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; AdditionalData?.Remove("authenticationSchemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem> _explicitNullValueAuthenticationSchemes = default!;
 #endif
         /// <summary>The bulk property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk? Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk? Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; AdditionalData?.Remove("bulk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk? _explicitNullValueBulk = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; AdditionalData?.Remove("bulk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk _explicitNullValueBulk = default!;
 #endif
         /// <summary>The changePassword property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword? ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword? ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; AdditionalData?.Remove("changePassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword? _explicitNullValueChangePassword = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; AdditionalData?.Remove("changePassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword _explicitNullValueChangePassword = default!;
 #endif
         /// <summary>The documentationUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
+        public string? DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; AdditionalData?.Remove("documentationUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
         private string? _explicitNullValueDocumentationUri = default!;
 #nullable restore
 #else
-        public string DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
+        public string DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; AdditionalData?.Remove("documentationUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
         private string _explicitNullValueDocumentationUri = default!;
 #endif
         /// <summary>The etag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag? Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag? Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; AdditionalData?.Remove("etag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag? _explicitNullValueEtag = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; AdditionalData?.Remove("etag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag _explicitNullValueEtag = default!;
 #endif
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter? _explicitNullValueFilter = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter _explicitNullValueFilter = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>The patch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch? Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch? Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; AdditionalData?.Remove("patch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch? _explicitNullValuePatch = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; AdditionalData?.Remove("patch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch _explicitNullValuePatch = default!;
 #endif
         /// <summary>The schemas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string>? _explicitNullValueSchemas = default!;
 #nullable restore
 #else
-        public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string> _explicitNullValueSchemas = default!;
 #endif
         /// <summary>The sort property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort? _explicitNullValueSort = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort _explicitNullValueSort = default!;
 #endif
         /// <summary>

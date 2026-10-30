@@ -17,49 +17,54 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("browserSdkVersion") is { } nullNodeBrowserSdkVersion && nullNodeBrowserSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserSdkVersion = null;
-            if (parseNode.GetChildNode("dynamicSdkLoaderOptions") is { } nullNodeDynamicSdkLoaderOptions && nullNodeDynamicSdkLoaderOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicSdkLoaderOptions = null;
-            if (parseNode.GetChildNode("isActive") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("browserSdkVersion") is null) { _explicitNullValueBrowserSdkVersion = default!; _explicitNullProperties?.Remove("browserSdkVersion"); }
+            else if (parseNode.GetChildNode("browserSdkVersion") is { } nullNodeBrowserSdkVersion && nullNodeBrowserSdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BrowserSdkVersion = null;
+            if (parseNode.GetChildNode("dynamicSdkLoaderOptions") is null) { _explicitNullValueDynamicSdkLoaderOptions = default!; _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); }
+            else if (parseNode.GetChildNode("dynamicSdkLoaderOptions") is { } nullNodeDynamicSdkLoaderOptions && nullNodeDynamicSdkLoaderOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DynamicSdkLoaderOptions = null;
+            if (parseNode.GetChildNode("isActive") is null) { _explicitNullValueIsActive = default!; _explicitNullProperties?.Remove("isActive"); }
+            else if (parseNode.GetChildNode("isActive") is { } nullNodeIsActive && nullNodeIsActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsActive = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("rateLimit") is null) { _explicitNullValueRateLimit = default!; _explicitNullProperties?.Remove("rateLimit"); }
+            else if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The Sentry Javascript SDK version to use. The currently supported options are:* `latest` - Most recent version* `7.x` - Version 7 releases</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion? BrowserSdkVersion { get => _explicitNullValueBrowserSdkVersion; set { _explicitNullValueBrowserSdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdkVersion"); else _explicitNullProperties?.Remove("browserSdkVersion"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion? BrowserSdkVersion { get => _explicitNullValueBrowserSdkVersion; set { _explicitNullValueBrowserSdkVersion = value; AdditionalData?.Remove("browserSdkVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdkVersion"); else _explicitNullProperties?.Remove("browserSdkVersion"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion? _explicitNullValueBrowserSdkVersion = default!;
         /// <summary>Configures multiple options for the Javascript Loader Script.- `Performance Monitoring`- `Debug Bundles &amp; Logging`- `Session Replay` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `User Feedback` - Note that the loader will load the ES6 bundle instead of the ES5 bundle.- `Logs and Metrics` - Note that the loader will load the ES6 bundle instead of the ES5 bundle. Requires SDK &gt;= 10.0.0.```json{    &quot;dynamicSdkLoaderOptions&quot;: {        &quot;hasReplay&quot;: true,        &quot;hasPerformance&quot;: true,        &quot;hasDebug&quot;: true,        &quot;hasFeedback&quot;: true,        &quot;hasLogsAndMetrics&quot;: true    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; AdditionalData?.Remove("dynamicSdkLoaderOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions? _explicitNullValueDynamicSdkLoaderOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; AdditionalData?.Remove("dynamicSdkLoaderOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions _explicitNullValueDynamicSdkLoaderOptions = default!;
 #endif
         /// <summary>Activate or deactivate the client key.</summary>
-        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
+        public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("isActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
         private bool? _explicitNullValueIsActive = default!;
         /// <summary>The name for the client key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    &quot;rateLimit&quot;: {        &quot;window&quot;: 7200, // time in seconds        &quot;count&quot;: 1000 // error cap    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit? _explicitNullValueRateLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestRateLimit _explicitNullValueRateLimit = default!;
 #endif
         /// <summary>
@@ -87,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "browserSdkVersion", n => { BrowserSdkVersion = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion>(); } },
+                { "browserSdkVersion", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBrowserSdkVersion = default; _explicitNullProperties?.Remove("browserSdkVersion"); AdditionalData["browserSdkVersion"] = unknown; } else { BrowserSdkVersion = parsed; AdditionalData.Remove("browserSdkVersion"); } } },
                 { "dynamicSdkLoaderOptions", n => { DynamicSdkLoaderOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions.CreateFromDiscriminatorValue); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },

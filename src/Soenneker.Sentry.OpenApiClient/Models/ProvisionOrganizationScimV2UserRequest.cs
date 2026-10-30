@@ -17,23 +17,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("sentryOrgRole") is { } nullNodeSentryOrgRole && nullNodeSentryOrgRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryOrgRole = null;
-            if (parseNode.GetChildNode("userName") is { } nullNodeUserName && nullNodeUserName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserName = null;
+            if (parseNode.GetChildNode("sentryOrgRole") is null) { _explicitNullValueSentryOrgRole = default!; _explicitNullProperties?.Remove("sentryOrgRole"); }
+            else if (parseNode.GetChildNode("sentryOrgRole") is { } nullNodeSentryOrgRole && nullNodeSentryOrgRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SentryOrgRole = null;
+            if (parseNode.GetChildNode("userName") is null) { _explicitNullValueUserName = default!; _explicitNullProperties?.Remove("userName"); }
+            else if (parseNode.GetChildNode("userName") is { } nullNodeUserName && nullNodeUserName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The organization role of the member. If unspecified, this will be                    set to the organization&apos;s default role. The options are:* `billing` - Can manage payment and compliance details.* `member` - Can view and act on events, as well as view most other data within the organization.* `manager` - Has full management access to all teams and projects. Can also manage        the organization&apos;s membership.* `admin` - Can edit global integrations, manage projects, and add/remove teams.        They automatically assume the Team Admin role for teams they join.        Note: This role can no longer be assigned in Business and Enterprise plans. Use `TeamRoles` instead.        </summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? SentryOrgRole { get => _explicitNullValueSentryOrgRole; set { _explicitNullValueSentryOrgRole = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryOrgRole"); else _explicitNullProperties?.Remove("sentryOrgRole"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? SentryOrgRole { get => _explicitNullValueSentryOrgRole; set { _explicitNullValueSentryOrgRole = value; AdditionalData?.Remove("sentryOrgRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryOrgRole"); else _explicitNullProperties?.Remove("sentryOrgRole"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole? _explicitNullValueSentryOrgRole = default!;
         /// <summary>The SAML field used for email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
+        public string? UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; AdditionalData?.Remove("userName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
         private string? _explicitNullValueUserName = default!;
 #nullable restore
 #else
-        public string UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
+        public string UserName { get => _explicitNullValueUserName; set { _explicitNullValueUserName = value; AdditionalData?.Remove("userName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userName"); else _explicitNullProperties?.Remove("userName"); } }
         private string _explicitNullValueUserName = default!;
 #endif
         /// <summary>
@@ -61,7 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sentryOrgRole", n => { SentryOrgRole = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole>(); } },
+                { "sentryOrgRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ProvisionOrganizationScimV2UserRequestSentryOrgRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSentryOrgRole = default; _explicitNullProperties?.Remove("sentryOrgRole"); AdditionalData["sentryOrgRole"] = unknown; } else { SentryOrgRole = parsed; AdditionalData.Remove("sentryOrgRole"); } } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }

@@ -17,61 +17,69 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("activeIncident") is { } nullNodeActiveIncident && nullNodeActiveIncident.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveIncident = null;
-            if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
-            if (parseNode.GetChildNode("isMuted") is { } nullNodeIsMuted && nullNodeIsMuted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMuted = null;
-            if (parseNode.GetChildNode("lastCheckIn") is { } nullNodeLastCheckIn && nullNodeLastCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckIn = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("nextCheckIn") is { } nullNodeNextCheckIn && nullNodeNextCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckIn = null;
-            if (parseNode.GetChildNode("nextCheckInLatest") is { } nullNodeNextCheckInLatest && nullNodeNextCheckInLatest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckInLatest = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("activeIncident") is null) { _explicitNullValueActiveIncident = default!; _explicitNullProperties?.Remove("activeIncident"); }
+            else if (parseNode.GetChildNode("activeIncident") is { } nullNodeActiveIncident && nullNodeActiveIncident.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActiveIncident = null;
+            if (parseNode.GetChildNode("dateCreated") is null) { _explicitNullValueDateCreated = default!; _explicitNullProperties?.Remove("dateCreated"); }
+            else if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("isMuted") is null) { _explicitNullValueIsMuted = default!; _explicitNullProperties?.Remove("isMuted"); }
+            else if (parseNode.GetChildNode("isMuted") is { } nullNodeIsMuted && nullNodeIsMuted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMuted = null;
+            if (parseNode.GetChildNode("lastCheckIn") is null) { _explicitNullValueLastCheckIn = default!; _explicitNullProperties?.Remove("lastCheckIn"); }
+            else if (parseNode.GetChildNode("lastCheckIn") is { } nullNodeLastCheckIn && nullNodeLastCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LastCheckIn = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("nextCheckIn") is null) { _explicitNullValueNextCheckIn = default!; _explicitNullProperties?.Remove("nextCheckIn"); }
+            else if (parseNode.GetChildNode("nextCheckIn") is { } nullNodeNextCheckIn && nullNodeNextCheckIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckIn = null;
+            if (parseNode.GetChildNode("nextCheckInLatest") is null) { _explicitNullValueNextCheckInLatest = default!; _explicitNullProperties?.Remove("nextCheckInLatest"); }
+            else if (parseNode.GetChildNode("nextCheckInLatest") is { } nullNodeNextCheckInLatest && nullNodeNextCheckInLatest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextCheckInLatest = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>The activeIncident property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident? ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident? ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; AdditionalData?.Remove("activeIncident"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident? _explicitNullValueActiveIncident = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident ActiveIncident { get => _explicitNullValueActiveIncident; set { _explicitNullValueActiveIncident = value; AdditionalData?.Remove("activeIncident"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activeIncident"); else _explicitNullProperties?.Remove("activeIncident"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsActiveIncident _explicitNullValueActiveIncident = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dateCreated property</summary>
-        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The isMuted property</summary>
-        public bool? IsMuted { get => _explicitNullValueIsMuted; set { _explicitNullValueIsMuted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMuted"); else _explicitNullProperties?.Remove("isMuted"); } }
+        public bool? IsMuted { get => _explicitNullValueIsMuted; set { _explicitNullValueIsMuted = value; AdditionalData?.Remove("isMuted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMuted"); else _explicitNullProperties?.Remove("isMuted"); } }
         private bool? _explicitNullValueIsMuted = default!;
         /// <summary>The lastCheckIn property</summary>
-        public DateTimeOffset? LastCheckIn { get => _explicitNullValueLastCheckIn; set { _explicitNullValueLastCheckIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCheckIn"); else _explicitNullProperties?.Remove("lastCheckIn"); } }
+        public DateTimeOffset? LastCheckIn { get => _explicitNullValueLastCheckIn; set { _explicitNullValueLastCheckIn = value; AdditionalData?.Remove("lastCheckIn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCheckIn"); else _explicitNullProperties?.Remove("lastCheckIn"); } }
         private DateTimeOffset? _explicitNullValueLastCheckIn = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The nextCheckIn property</summary>
-        public DateTimeOffset? NextCheckIn { get => _explicitNullValueNextCheckIn; set { _explicitNullValueNextCheckIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckIn"); else _explicitNullProperties?.Remove("nextCheckIn"); } }
+        public DateTimeOffset? NextCheckIn { get => _explicitNullValueNextCheckIn; set { _explicitNullValueNextCheckIn = value; AdditionalData?.Remove("nextCheckIn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckIn"); else _explicitNullProperties?.Remove("nextCheckIn"); } }
         private DateTimeOffset? _explicitNullValueNextCheckIn = default!;
         /// <summary>The nextCheckInLatest property</summary>
-        public DateTimeOffset? NextCheckInLatest { get => _explicitNullValueNextCheckInLatest; set { _explicitNullValueNextCheckInLatest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckInLatest"); else _explicitNullProperties?.Remove("nextCheckInLatest"); } }
+        public DateTimeOffset? NextCheckInLatest { get => _explicitNullValueNextCheckInLatest; set { _explicitNullValueNextCheckInLatest = value; AdditionalData?.Remove("nextCheckInLatest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextCheckInLatest"); else _explicitNullProperties?.Remove("nextCheckInLatest"); } }
         private DateTimeOffset? _explicitNullValueNextCheckInLatest = default!;
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string? _explicitNullValueStatus = default!;
 #nullable restore
 #else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
         /// <summary>

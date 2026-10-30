@@ -17,17 +17,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("environmentMutedTimestamp") is { } nullNodeEnvironmentMutedTimestamp && nullNodeEnvironmentMutedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentMutedTimestamp = null;
-            if (parseNode.GetChildNode("userNotifiedTimestamp") is { } nullNodeUserNotifiedTimestamp && nullNodeUserNotifiedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserNotifiedTimestamp = null;
+            if (parseNode.GetChildNode("environmentMutedTimestamp") is null) { _explicitNullValueEnvironmentMutedTimestamp = default!; _explicitNullProperties?.Remove("environmentMutedTimestamp"); }
+            else if (parseNode.GetChildNode("environmentMutedTimestamp") is { } nullNodeEnvironmentMutedTimestamp && nullNodeEnvironmentMutedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentMutedTimestamp = null;
+            if (parseNode.GetChildNode("userNotifiedTimestamp") is null) { _explicitNullValueUserNotifiedTimestamp = default!; _explicitNullProperties?.Remove("userNotifiedTimestamp"); }
+            else if (parseNode.GetChildNode("userNotifiedTimestamp") is { } nullNodeUserNotifiedTimestamp && nullNodeUserNotifiedTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserNotifiedTimestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The environmentMutedTimestamp property</summary>
-        public DateTimeOffset? EnvironmentMutedTimestamp { get => _explicitNullValueEnvironmentMutedTimestamp; set { _explicitNullValueEnvironmentMutedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentMutedTimestamp"); else _explicitNullProperties?.Remove("environmentMutedTimestamp"); } }
+        public DateTimeOffset? EnvironmentMutedTimestamp { get => _explicitNullValueEnvironmentMutedTimestamp; set { _explicitNullValueEnvironmentMutedTimestamp = value; AdditionalData?.Remove("environmentMutedTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentMutedTimestamp"); else _explicitNullProperties?.Remove("environmentMutedTimestamp"); } }
         private DateTimeOffset? _explicitNullValueEnvironmentMutedTimestamp = default!;
         /// <summary>The userNotifiedTimestamp property</summary>
-        public DateTimeOffset? UserNotifiedTimestamp { get => _explicitNullValueUserNotifiedTimestamp; set { _explicitNullValueUserNotifiedTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userNotifiedTimestamp"); else _explicitNullProperties?.Remove("userNotifiedTimestamp"); } }
+        public DateTimeOffset? UserNotifiedTimestamp { get => _explicitNullValueUserNotifiedTimestamp; set { _explicitNullValueUserNotifiedTimestamp = value; AdditionalData?.Remove("userNotifiedTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userNotifiedTimestamp"); else _explicitNullProperties?.Remove("userNotifiedTimestamp"); } }
         private DateTimeOffset? _explicitNullValueUserNotifiedTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseEnvironmentsActiveIncidentBrokenNotice"/> and sets the default values.

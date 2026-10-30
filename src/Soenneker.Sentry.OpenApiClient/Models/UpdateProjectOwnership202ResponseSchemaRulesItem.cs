@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("matcher") is { } nullNodeMatcher && nullNodeMatcher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matcher = null;
-            if (parseNode.GetChildNode("owners") is { } nullNodeOwners && nullNodeOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owners = null;
+            if (parseNode.GetChildNode("matcher") is null) { _explicitNullValueMatcher = default!; _explicitNullProperties?.Remove("matcher"); }
+            else if (parseNode.GetChildNode("matcher") is { } nullNodeMatcher && nullNodeMatcher.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Matcher = null;
+            if (parseNode.GetChildNode("owners") is null) { _explicitNullValueOwners = default!; _explicitNullProperties?.Remove("owners"); }
+            else if (parseNode.GetChildNode("owners") is { } nullNodeOwners && nullNodeOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Owners = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The matcher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher? Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher? Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; AdditionalData?.Remove("matcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher? _explicitNullValueMatcher = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; AdditionalData?.Remove("matcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemMatcher _explicitNullValueMatcher = default!;
 #endif
         /// <summary>The owners property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem>? Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem>? Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; AdditionalData?.Remove("owners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem>? _explicitNullValueOwners = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem> Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem> Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; AdditionalData?.Remove("owners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectOwnership202ResponseSchemaRulesItemOwnersItem> _explicitNullValueOwners = default!;
 #endif
         /// <summary>

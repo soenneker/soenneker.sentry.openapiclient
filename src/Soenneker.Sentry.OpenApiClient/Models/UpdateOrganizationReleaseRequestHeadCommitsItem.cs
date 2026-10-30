@@ -17,9 +17,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currentId") is { } nullNodeCurrentId && nullNodeCurrentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentId = null;
-            if (parseNode.GetChildNode("previousId") is { } nullNodePreviousId && nullNodePreviousId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousId = null;
-            if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("currentId") is null) { _explicitNullValueCurrentId = default!; _explicitNullProperties?.Remove("currentId"); }
+            else if (parseNode.GetChildNode("currentId") is { } nullNodeCurrentId && nullNodeCurrentId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentId = null;
+            if (parseNode.GetChildNode("previousId") is null) { _explicitNullValuePreviousId = default!; _explicitNullProperties?.Remove("previousId"); }
+            else if (parseNode.GetChildNode("previousId") is { } nullNodePreviousId && nullNodePreviousId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousId = null;
+            if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
+            else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The currentId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentId { get => _explicitNullValueCurrentId; set { _explicitNullValueCurrentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentId"); else _explicitNullProperties?.Remove("currentId"); } }
+        public string? CurrentId { get => _explicitNullValueCurrentId; set { _explicitNullValueCurrentId = value; AdditionalData?.Remove("currentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentId"); else _explicitNullProperties?.Remove("currentId"); } }
         private string? _explicitNullValueCurrentId = default!;
 #nullable restore
 #else
-        public string CurrentId { get => _explicitNullValueCurrentId; set { _explicitNullValueCurrentId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentId"); else _explicitNullProperties?.Remove("currentId"); } }
+        public string CurrentId { get => _explicitNullValueCurrentId; set { _explicitNullValueCurrentId = value; AdditionalData?.Remove("currentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentId"); else _explicitNullProperties?.Remove("currentId"); } }
         private string _explicitNullValueCurrentId = default!;
 #endif
         /// <summary>The previousId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousId"); else _explicitNullProperties?.Remove("previousId"); } }
+        public string? PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; AdditionalData?.Remove("previousId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousId"); else _explicitNullProperties?.Remove("previousId"); } }
         private string? _explicitNullValuePreviousId = default!;
 #nullable restore
 #else
-        public string PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousId"); else _explicitNullProperties?.Remove("previousId"); } }
+        public string PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; AdditionalData?.Remove("previousId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousId"); else _explicitNullProperties?.Remove("previousId"); } }
         private string _explicitNullValuePreviousId = default!;
 #endif
         /// <summary>The repository property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        public string? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
         private string? _explicitNullValueRepository = default!;
 #nullable restore
 #else
-        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        public string Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
         private string _explicitNullValueRepository = default!;
 #endif
         /// <summary>

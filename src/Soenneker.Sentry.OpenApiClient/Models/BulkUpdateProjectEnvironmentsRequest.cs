@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("environmentNames") is { } nullNodeEnvironmentNames && nullNodeEnvironmentNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentNames = null;
-            if (parseNode.GetChildNode("isHidden") is { } nullNodeIsHidden && nullNodeIsHidden.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsHidden = null;
+            if (parseNode.GetChildNode("environmentNames") is null) { _explicitNullValueEnvironmentNames = default!; _explicitNullProperties?.Remove("environmentNames"); }
+            else if (parseNode.GetChildNode("environmentNames") is { } nullNodeEnvironmentNames && nullNodeEnvironmentNames.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnvironmentNames = null;
+            if (parseNode.GetChildNode("isHidden") is null) { _explicitNullValueIsHidden = default!; _explicitNullProperties?.Remove("isHidden"); }
+            else if (parseNode.GetChildNode("isHidden") is { } nullNodeIsHidden && nullNodeIsHidden.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsHidden = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>List of environment names to update. Maximum 1000.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnvironmentNames { get => _explicitNullValueEnvironmentNames; set { _explicitNullValueEnvironmentNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentNames"); else _explicitNullProperties?.Remove("environmentNames"); } }
+        public List<string>? EnvironmentNames { get => _explicitNullValueEnvironmentNames; set { _explicitNullValueEnvironmentNames = value; AdditionalData?.Remove("environmentNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentNames"); else _explicitNullProperties?.Remove("environmentNames"); } }
         private List<string>? _explicitNullValueEnvironmentNames = default!;
 #nullable restore
 #else
-        public List<string> EnvironmentNames { get => _explicitNullValueEnvironmentNames; set { _explicitNullValueEnvironmentNames = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentNames"); else _explicitNullProperties?.Remove("environmentNames"); } }
+        public List<string> EnvironmentNames { get => _explicitNullValueEnvironmentNames; set { _explicitNullValueEnvironmentNames = value; AdditionalData?.Remove("environmentNames"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environmentNames"); else _explicitNullProperties?.Remove("environmentNames"); } }
         private List<string> _explicitNullValueEnvironmentNames = default!;
 #endif
         /// <summary>Specify `true` to hide or `false` to show the specified environments.</summary>
-        public bool? IsHidden { get => _explicitNullValueIsHidden; set { _explicitNullValueIsHidden = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isHidden"); else _explicitNullProperties?.Remove("isHidden"); } }
+        public bool? IsHidden { get => _explicitNullValueIsHidden; set { _explicitNullValueIsHidden = value; AdditionalData?.Remove("isHidden"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isHidden"); else _explicitNullProperties?.Remove("isHidden"); } }
         private bool? _explicitNullValueIsHidden = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkUpdateProjectEnvironmentsRequest"/> and sets the default values.

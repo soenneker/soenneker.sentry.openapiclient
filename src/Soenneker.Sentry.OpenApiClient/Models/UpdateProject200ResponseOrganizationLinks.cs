@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("organizationUrl") is { } nullNodeOrganizationUrl && nullNodeOrganizationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationUrl = null;
-            if (parseNode.GetChildNode("regionUrl") is { } nullNodeRegionUrl && nullNodeRegionUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionUrl = null;
+            if (parseNode.GetChildNode("organizationUrl") is null) { _explicitNullValueOrganizationUrl = default!; _explicitNullProperties?.Remove("organizationUrl"); }
+            else if (parseNode.GetChildNode("organizationUrl") is { } nullNodeOrganizationUrl && nullNodeOrganizationUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganizationUrl = null;
+            if (parseNode.GetChildNode("regionUrl") is null) { _explicitNullValueRegionUrl = default!; _explicitNullProperties?.Remove("regionUrl"); }
+            else if (parseNode.GetChildNode("regionUrl") is { } nullNodeRegionUrl && nullNodeRegionUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegionUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The organizationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
+        public string? OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; AdditionalData?.Remove("organizationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
         private string? _explicitNullValueOrganizationUrl = default!;
 #nullable restore
 #else
-        public string OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
+        public string OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; AdditionalData?.Remove("organizationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
         private string _explicitNullValueOrganizationUrl = default!;
 #endif
         /// <summary>The regionUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegionUrl { get => _explicitNullValueRegionUrl; set { _explicitNullValueRegionUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionUrl"); else _explicitNullProperties?.Remove("regionUrl"); } }
+        public string? RegionUrl { get => _explicitNullValueRegionUrl; set { _explicitNullValueRegionUrl = value; AdditionalData?.Remove("regionUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionUrl"); else _explicitNullProperties?.Remove("regionUrl"); } }
         private string? _explicitNullValueRegionUrl = default!;
 #nullable restore
 #else
-        public string RegionUrl { get => _explicitNullValueRegionUrl; set { _explicitNullValueRegionUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionUrl"); else _explicitNullProperties?.Remove("regionUrl"); } }
+        public string RegionUrl { get => _explicitNullValueRegionUrl; set { _explicitNullValueRegionUrl = value; AdditionalData?.Remove("regionUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionUrl"); else _explicitNullProperties?.Remove("regionUrl"); } }
         private string _explicitNullValueRegionUrl = default!;
 #endif
         /// <summary>

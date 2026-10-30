@@ -17,7 +17,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
+            if (parseNode.GetChildNode("prefixes") is null) { _explicitNullValuePrefixes = default!; _explicitNullProperties?.Remove("prefixes"); }
+            else if (parseNode.GetChildNode("prefixes") is { } nullNodePrefixes && nullNodePrefixes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefixes = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The prefixes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; AdditionalData?.Remove("prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem>? _explicitNullValuePrefixes = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem> Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; AdditionalData?.Remove("prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem> _explicitNullValuePrefixes = default!;
 #endif
         /// <summary>

@@ -17,10 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autoAssignment") is { } nullNodeAutoAssignment && nullNodeAutoAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignment = null;
-            if (parseNode.GetChildNode("codeownersAutoSync") is { } nullNodeCodeownersAutoSync && nullNodeCodeownersAutoSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeownersAutoSync = null;
-            if (parseNode.GetChildNode("fallthrough") is { } nullNodeFallthrough && nullNodeFallthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fallthrough = null;
-            if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
+            if (parseNode.GetChildNode("autoAssignment") is null) { _explicitNullValueAutoAssignment = default!; _explicitNullProperties?.Remove("autoAssignment"); }
+            else if (parseNode.GetChildNode("autoAssignment") is { } nullNodeAutoAssignment && nullNodeAutoAssignment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoAssignment = null;
+            if (parseNode.GetChildNode("codeownersAutoSync") is null) { _explicitNullValueCodeownersAutoSync = default!; _explicitNullProperties?.Remove("codeownersAutoSync"); }
+            else if (parseNode.GetChildNode("codeownersAutoSync") is { } nullNodeCodeownersAutoSync && nullNodeCodeownersAutoSync.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeownersAutoSync = null;
+            if (parseNode.GetChildNode("fallthrough") is null) { _explicitNullValueFallthrough = default!; _explicitNullProperties?.Remove("fallthrough"); }
+            else if (parseNode.GetChildNode("fallthrough") is { } nullNodeFallthrough && nullNodeFallthrough.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fallthrough = null;
+            if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
+            else if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,27 +32,27 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Auto-assignment settings. The available options are:- Auto Assign to Issue Owner- Auto Assign to Suspect Commits- Turn off Auto-Assignment</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        public string? AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; AdditionalData?.Remove("autoAssignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
         private string? _explicitNullValueAutoAssignment = default!;
 #nullable restore
 #else
-        public string AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
+        public string AutoAssignment { get => _explicitNullValueAutoAssignment; set { _explicitNullValueAutoAssignment = value; AdditionalData?.Remove("autoAssignment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autoAssignment"); else _explicitNullProperties?.Remove("autoAssignment"); } }
         private string _explicitNullValueAutoAssignment = default!;
 #endif
         /// <summary>Set to `True` to sync issue owners with CODEOWNERS updates in a release.</summary>
-        public bool? CodeownersAutoSync { get => _explicitNullValueCodeownersAutoSync; set { _explicitNullValueCodeownersAutoSync = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeownersAutoSync"); else _explicitNullProperties?.Remove("codeownersAutoSync"); } }
+        public bool? CodeownersAutoSync { get => _explicitNullValueCodeownersAutoSync; set { _explicitNullValueCodeownersAutoSync = value; AdditionalData?.Remove("codeownersAutoSync"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeownersAutoSync"); else _explicitNullProperties?.Remove("codeownersAutoSync"); } }
         private bool? _explicitNullValueCodeownersAutoSync = default!;
         /// <summary>A boolean determining who to assign ownership to when an ownership rule has no match. If set to `True`, all project members are made owners. Otherwise, no owners are set.</summary>
-        public bool? Fallthrough { get => _explicitNullValueFallthrough; set { _explicitNullValueFallthrough = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallthrough"); else _explicitNullProperties?.Remove("fallthrough"); } }
+        public bool? Fallthrough { get => _explicitNullValueFallthrough; set { _explicitNullValueFallthrough = value; AdditionalData?.Remove("fallthrough"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fallthrough"); else _explicitNullProperties?.Remove("fallthrough"); } }
         private bool? _explicitNullValueFallthrough = default!;
         /// <summary>Raw input for ownership configuration. See the [Ownership Rules Documentation](/product/issues/ownership-rules/) to learn more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
         private string? _explicitNullValueRaw = default!;
 #nullable restore
 #else
-        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
         private string _explicitNullValueRaw = default!;
 #endif
         /// <summary>

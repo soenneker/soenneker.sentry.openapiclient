@@ -7,6 +7,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateOrganizationMonitorRequestConfigTimezone
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "Africa/Abidjan")]
         #pragma warning disable CS1591
         AfricaAbidjan,

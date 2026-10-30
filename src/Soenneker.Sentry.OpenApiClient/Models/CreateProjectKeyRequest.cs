@@ -17,9 +17,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
-            if (parseNode.GetChildNode("useCase") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("rateLimit") is null) { _explicitNullValueRateLimit = default!; _explicitNullProperties?.Remove("rateLimit"); }
+            else if (parseNode.GetChildNode("rateLimit") is { } nullNodeRateLimit && nullNodeRateLimit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RateLimit = null;
+            if (parseNode.GetChildNode("useCase") is null) { _explicitNullValueUseCase = default!; _explicitNullProperties?.Remove("useCase"); }
+            else if (parseNode.GetChildNode("useCase") is { } nullNodeUseCase && nullNodeUseCase.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UseCase = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The optional name of the key. If not provided it will be automatically generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Applies a rate limit to cap the number of errors accepted during a given time window. Todisable entirely set `rateLimit` to null.```json{    &quot;rateLimit&quot;: {        &quot;window&quot;: 7200, // time in seconds        &quot;count&quot;: 1000 // error cap    }}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit? _explicitNullValueRateLimit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit _explicitNullValueRateLimit = default!;
 #endif
         /// <summary>* `user`* `profiling`* `tempest`* `demo`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestUseCase? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestUseCase? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("useCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestUseCase? _explicitNullValueUseCase = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequest"/> and sets the default values.
@@ -74,7 +77,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "rateLimit", n => { RateLimit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit>(global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestRateLimit.CreateFromDiscriminatorValue); } },
-                { "useCase", n => { UseCase = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestUseCase>(); } },
+                { "useCase", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateProjectKeyRequestUseCase>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUseCase = default; _explicitNullProperties?.Remove("useCase"); AdditionalData["useCase"] = unknown; } else { UseCase = parsed; AdditionalData.Remove("useCase"); } } },
             };
         }
         /// <summary>

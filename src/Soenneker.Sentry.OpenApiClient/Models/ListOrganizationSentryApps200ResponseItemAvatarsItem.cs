@@ -17,11 +17,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("avatarType") is { } nullNodeAvatarType && nullNodeAvatarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarType = null;
-            if (parseNode.GetChildNode("avatarUrl") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
-            if (parseNode.GetChildNode("avatarUuid") is { } nullNodeAvatarUuid && nullNodeAvatarUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUuid = null;
-            if (parseNode.GetChildNode("color") is { } nullNodeColor && nullNodeColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Color = null;
-            if (parseNode.GetChildNode("photoType") is { } nullNodePhotoType && nullNodePhotoType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoType = null;
+            if (parseNode.GetChildNode("avatarType") is null) { _explicitNullValueAvatarType = default!; _explicitNullProperties?.Remove("avatarType"); }
+            else if (parseNode.GetChildNode("avatarType") is { } nullNodeAvatarType && nullNodeAvatarType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarType = null;
+            if (parseNode.GetChildNode("avatarUrl") is null) { _explicitNullValueAvatarUrl = default!; _explicitNullProperties?.Remove("avatarUrl"); }
+            else if (parseNode.GetChildNode("avatarUrl") is { } nullNodeAvatarUrl && nullNodeAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUrl = null;
+            if (parseNode.GetChildNode("avatarUuid") is null) { _explicitNullValueAvatarUuid = default!; _explicitNullProperties?.Remove("avatarUuid"); }
+            else if (parseNode.GetChildNode("avatarUuid") is { } nullNodeAvatarUuid && nullNodeAvatarUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvatarUuid = null;
+            if (parseNode.GetChildNode("color") is null) { _explicitNullValueColor = default!; _explicitNullProperties?.Remove("color"); }
+            else if (parseNode.GetChildNode("color") is { } nullNodeColor && nullNodeColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Color = null;
+            if (parseNode.GetChildNode("photoType") is null) { _explicitNullValuePhotoType = default!; _explicitNullProperties?.Remove("photoType"); }
+            else if (parseNode.GetChildNode("photoType") is { } nullNodePhotoType && nullNodePhotoType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PhotoType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The avatarType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
+        public string? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
         private string? _explicitNullValueAvatarType = default!;
 #nullable restore
 #else
-        public string AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
+        public string AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
         private string _explicitNullValueAvatarType = default!;
 #endif
         /// <summary>The avatarUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
+        public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
         private string? _explicitNullValueAvatarUrl = default!;
 #nullable restore
 #else
-        public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
+        public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
         private string _explicitNullValueAvatarUrl = default!;
 #endif
         /// <summary>The avatarUuid property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
+        public string? AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; AdditionalData?.Remove("avatarUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
         private string? _explicitNullValueAvatarUuid = default!;
 #nullable restore
 #else
-        public string AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
+        public string AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; AdditionalData?.Remove("avatarUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
         private string _explicitNullValueAvatarUuid = default!;
 #endif
         /// <summary>The color property</summary>
-        public bool? Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
+        public bool? Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
         private bool? _explicitNullValueColor = default!;
         /// <summary>The photoType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhotoType { get => _explicitNullValuePhotoType; set { _explicitNullValuePhotoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photoType"); else _explicitNullProperties?.Remove("photoType"); } }
+        public string? PhotoType { get => _explicitNullValuePhotoType; set { _explicitNullValuePhotoType = value; AdditionalData?.Remove("photoType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photoType"); else _explicitNullProperties?.Remove("photoType"); } }
         private string? _explicitNullValuePhotoType = default!;
 #nullable restore
 #else
-        public string PhotoType { get => _explicitNullValuePhotoType; set { _explicitNullValuePhotoType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photoType"); else _explicitNullProperties?.Remove("photoType"); } }
+        public string PhotoType { get => _explicitNullValuePhotoType; set { _explicitNullValuePhotoType = value; AdditionalData?.Remove("photoType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photoType"); else _explicitNullProperties?.Remove("photoType"); } }
         private string _explicitNullValuePhotoType = default!;
 #endif
         /// <summary>

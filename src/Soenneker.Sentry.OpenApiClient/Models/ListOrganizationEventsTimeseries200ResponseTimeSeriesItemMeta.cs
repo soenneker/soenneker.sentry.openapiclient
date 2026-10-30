@@ -17,46 +17,52 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dataScanned") is { } nullNodeDataScanned && nullNodeDataScanned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScanned = null;
-            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
-            if (parseNode.GetChildNode("isOther") is { } nullNodeIsOther && nullNodeIsOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOther = null;
-            if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
-            if (parseNode.GetChildNode("valueType") is { } nullNodeValueType && nullNodeValueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueType = null;
-            if (parseNode.GetChildNode("valueUnit") is { } nullNodeValueUnit && nullNodeValueUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueUnit = null;
+            if (parseNode.GetChildNode("dataScanned") is null) { _explicitNullValueDataScanned = default!; _explicitNullProperties?.Remove("dataScanned"); }
+            else if (parseNode.GetChildNode("dataScanned") is { } nullNodeDataScanned && nullNodeDataScanned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DataScanned = null;
+            if (parseNode.GetChildNode("interval") is null) { _explicitNullValueInterval = default!; _explicitNullProperties?.Remove("interval"); }
+            else if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("isOther") is null) { _explicitNullValueIsOther = default!; _explicitNullProperties?.Remove("isOther"); }
+            else if (parseNode.GetChildNode("isOther") is { } nullNodeIsOther && nullNodeIsOther.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsOther = null;
+            if (parseNode.GetChildNode("order") is null) { _explicitNullValueOrder = default!; _explicitNullProperties?.Remove("order"); }
+            else if (parseNode.GetChildNode("order") is { } nullNodeOrder && nullNodeOrder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Order = null;
+            if (parseNode.GetChildNode("valueType") is null) { _explicitNullValueValueType = default!; _explicitNullProperties?.Remove("valueType"); }
+            else if (parseNode.GetChildNode("valueType") is { } nullNodeValueType && nullNodeValueType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueType = null;
+            if (parseNode.GetChildNode("valueUnit") is null) { _explicitNullValueValueUnit = default!; _explicitNullProperties?.Remove("valueUnit"); }
+            else if (parseNode.GetChildNode("valueUnit") is { } nullNodeValueUnit && nullNodeValueUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValueUnit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dataScanned property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned? DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned? DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; AdditionalData?.Remove("dataScanned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned? _explicitNullValueDataScanned = default!;
         /// <summary>The interval property</summary>
-        public double? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        public double? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private double? _explicitNullValueInterval = default!;
         /// <summary>The isOther property</summary>
-        public bool? IsOther { get => _explicitNullValueIsOther; set { _explicitNullValueIsOther = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isOther"); else _explicitNullProperties?.Remove("isOther"); } }
+        public bool? IsOther { get => _explicitNullValueIsOther; set { _explicitNullValueIsOther = value; AdditionalData?.Remove("isOther"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isOther"); else _explicitNullProperties?.Remove("isOther"); } }
         private bool? _explicitNullValueIsOther = default!;
         /// <summary>The order property</summary>
-        public int? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
+        public int? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private int? _explicitNullValueOrder = default!;
         /// <summary>The valueType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
+        public string? ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("valueType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
         private string? _explicitNullValueValueType = default!;
 #nullable restore
 #else
-        public string ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
+        public string ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("valueType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
         private string _explicitNullValueValueType = default!;
 #endif
         /// <summary>The valueUnit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueUnit"); else _explicitNullProperties?.Remove("valueUnit"); } }
+        public string? ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; AdditionalData?.Remove("valueUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueUnit"); else _explicitNullProperties?.Remove("valueUnit"); } }
         private string? _explicitNullValueValueUnit = default!;
 #nullable restore
 #else
-        public string ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueUnit"); else _explicitNullProperties?.Remove("valueUnit"); } }
+        public string ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; AdditionalData?.Remove("valueUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueUnit"); else _explicitNullProperties?.Remove("valueUnit"); } }
         private string _explicitNullValueValueUnit = default!;
 #endif
         /// <summary>
@@ -84,7 +90,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dataScanned", n => { DataScanned = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned>(); } },
+                { "dataScanned", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataScanned = default; _explicitNullProperties?.Remove("dataScanned"); AdditionalData["dataScanned"] = unknown; } else { DataScanned = parsed; AdditionalData.Remove("dataScanned"); } } },
                 { "interval", n => { Interval = n.GetDoubleValue(); } },
                 { "isOther", n => { IsOther = n.GetBoolValue(); } },
                 { "order", n => { Order = n.GetIntValue(); } },

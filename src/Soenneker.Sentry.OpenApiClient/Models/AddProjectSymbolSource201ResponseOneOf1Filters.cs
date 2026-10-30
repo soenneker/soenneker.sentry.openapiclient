@@ -17,9 +17,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filetypes") is { } nullNodeFiletypes && nullNodeFiletypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filetypes = null;
-            if (parseNode.GetChildNode("path_patterns") is { } nullNodePathPatterns && nullNodePathPatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPatterns = null;
-            if (parseNode.GetChildNode("requires_checksum") is { } nullNodeRequiresChecksum && nullNodeRequiresChecksum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresChecksum = null;
+            if (parseNode.GetChildNode("filetypes") is null) { _explicitNullValueFiletypes = default!; _explicitNullProperties?.Remove("filetypes"); }
+            else if (parseNode.GetChildNode("filetypes") is { } nullNodeFiletypes && nullNodeFiletypes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filetypes = null;
+            if (parseNode.GetChildNode("path_patterns") is null) { _explicitNullValuePathPatterns = default!; _explicitNullProperties?.Remove("path_patterns"); }
+            else if (parseNode.GetChildNode("path_patterns") is { } nullNodePathPatterns && nullNodePathPatterns.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PathPatterns = null;
+            if (parseNode.GetChildNode("requires_checksum") is null) { _explicitNullValueRequiresChecksum = default!; _explicitNullProperties?.Remove("requires_checksum"); }
+            else if (parseNode.GetChildNode("requires_checksum") is { } nullNodeRequiresChecksum && nullNodeRequiresChecksum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresChecksum = null;
         }
 
         /// <summary>The filetypes property</summary>

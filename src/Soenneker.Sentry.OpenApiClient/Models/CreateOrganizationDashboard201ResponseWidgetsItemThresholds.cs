@@ -17,10 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("max_values") is { } nullNodeMaxValues && nullNodeMaxValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValues = null;
-            if (parseNode.GetChildNode("preferredPolarity") is { } nullNodePreferredPolarity && nullNodePreferredPolarity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredPolarity = null;
-            if (parseNode.GetChildNode("timeWindow") is { } nullNodeTimeWindow && nullNodeTimeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeWindow = null;
-            if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
+            if (parseNode.GetChildNode("max_values") is null) { _explicitNullValueMaxValues = default!; _explicitNullProperties?.Remove("max_values"); }
+            else if (parseNode.GetChildNode("max_values") is { } nullNodeMaxValues && nullNodeMaxValues.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxValues = null;
+            if (parseNode.GetChildNode("preferredPolarity") is null) { _explicitNullValuePreferredPolarity = default!; _explicitNullProperties?.Remove("preferredPolarity"); }
+            else if (parseNode.GetChildNode("preferredPolarity") is { } nullNodePreferredPolarity && nullNodePreferredPolarity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreferredPolarity = null;
+            if (parseNode.GetChildNode("timeWindow") is null) { _explicitNullValueTimeWindow = default!; _explicitNullProperties?.Remove("timeWindow"); }
+            else if (parseNode.GetChildNode("timeWindow") is { } nullNodeTimeWindow && nullNodeTimeWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeWindow = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The max_values property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; AdditionalData?.Remove("max_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? _explicitNullValueMaxValues = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; AdditionalData?.Remove("max_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues _explicitNullValueMaxValues = default!;
 #endif
         /// <summary>The preferredPolarity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
+        public string? PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; AdditionalData?.Remove("preferredPolarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
         private string? _explicitNullValuePreferredPolarity = default!;
 #nullable restore
 #else
-        public string PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
+        public string PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; AdditionalData?.Remove("preferredPolarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
         private string _explicitNullValuePreferredPolarity = default!;
 #endif
         /// <summary>The timeWindow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
+        public string? TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; AdditionalData?.Remove("timeWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
         private string? _explicitNullValueTimeWindow = default!;
 #nullable restore
 #else
-        public string TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
+        public string TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; AdditionalData?.Remove("timeWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
         private string _explicitNullValueTimeWindow = default!;
 #endif
         /// <summary>The unit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string? _explicitNullValueUnit = default!;
 #nullable restore
 #else
-        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        public string Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
         private string _explicitNullValueUnit = default!;
 #endif
         /// <summary>

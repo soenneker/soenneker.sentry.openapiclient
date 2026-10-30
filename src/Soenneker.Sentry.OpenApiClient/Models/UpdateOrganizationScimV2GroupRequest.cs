@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("Operations") is { } nullNodeOperations && nullNodeOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operations = null;
-            if (parseNode.GetChildNode("schemas") is { } nullNodeSchemas && nullNodeSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemas = null;
+            if (parseNode.GetChildNode("Operations") is null) { _explicitNullValueOperations = default!; _explicitNullProperties?.Remove("Operations"); }
+            else if (parseNode.GetChildNode("Operations") is { } nullNodeOperations && nullNodeOperations.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operations = null;
+            if (parseNode.GetChildNode("schemas") is null) { _explicitNullValueSchemas = default!; _explicitNullProperties?.Remove("schemas"); }
+            else if (parseNode.GetChildNode("schemas") is { } nullNodeSchemas && nullNodeSchemas.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Schemas = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The list of operations to perform. Valid operations are:* Renaming a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;replace&quot;,        &quot;value&quot;: {            &quot;id&quot;: 23,            &quot;displayName&quot;: &quot;newName&quot;        }    }]}```* Adding a member to a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;add&quot;,        &quot;path&quot;: &quot;members&quot;,        &quot;value&quot;: [            {                &quot;value&quot;: 23,                &quot;display&quot;: &quot;testexample@example.com&quot;            }        ]    }]}```* Removing a member from a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;remove&quot;,        &quot;path&quot;: &quot;members[value eq &quot;23&quot;]&quot;    }]}```* Replacing an entire member set of a team:```json{    &quot;Operations&quot;: [{        &quot;op&quot;: &quot;replace&quot;,        &quot;path&quot;: &quot;members&quot;,        &quot;value&quot;: [            {                &quot;value&quot;: 23,                &quot;display&quot;: &quot;testexample2@sentry.io&quot;            },            {                &quot;value&quot;: 24,                &quot;display&quot;: &quot;testexample3@sentry.io&quot;            }        ]    }]}```</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; AdditionalData?.Remove("Operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem>? _explicitNullValueOperations = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> Operations { get => _explicitNullValueOperations; set { _explicitNullValueOperations = value; AdditionalData?.Remove("Operations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Operations"); else _explicitNullProperties?.Remove("Operations"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationScimV2GroupRequestOperationsItem> _explicitNullValueOperations = default!;
 #endif
         /// <summary>SCIM schema URIs identifying the request format. Must be the PatchOp schema.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string>? _explicitNullValueSchemas = default!;
 #nullable restore
 #else
-        public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
+        public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string> _explicitNullValueSchemas = default!;
 #endif
         /// <summary>

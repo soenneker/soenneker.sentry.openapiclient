@@ -54,10 +54,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("filename") != null && parseNode.GetChildNode("type") != null && parseNode.GetChildNode("value") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("title") != null))();
-            if (result.ListAProjectSIssues200ResponseItemMetadataOneOf1 == null && result.ListAProjectSIssues200ResponseItemMetadataOneOf2 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ListAProjectSIssues200ResponseItemMetadataOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadataOneOf1(), parseNode);
-            if (result.ListAProjectSIssues200ResponseItemMetadataOneOf1 == null && result.ListAProjectSIssues200ResponseItemMetadataOneOf2 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ListAProjectSIssues200ResponseItemMetadataOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadataOneOf2(), parseNode);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("filename") && shapeMembers1.ContainsKey("type") && shapeMembers1.ContainsKey("value") && (!shapeMembers1.ContainsKey("filename") || (((shapeMembers1["filename"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("type") || (((shapeMembers1["type"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))) && (!shapeMembers1.ContainsKey("value") || (((shapeMembers1["value"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => ((unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject)) && (unionPayload is not global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject shapeObject0 || (shapeObject0.GetValue() is var shapeMembers1 && (shapeMembers1.ContainsKey("title") && (!shapeMembers1.ContainsKey("title") || (((shapeMembers1["title"] is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString)))))))))();
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0) matchingUnionBranches++;
+            if (matchesUnionBranch1) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ListAProjectSIssues200ResponseItemMetadataOneOf1 == null && result.ListAProjectSIssues200ResponseItemMetadataOneOf2 == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 && matchingUnionBranches == 1) result.ListAProjectSIssues200ResponseItemMetadataOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadataOneOf1(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch1 && matchingUnionBranches == 1) result.ListAProjectSIssues200ResponseItemMetadataOneOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadataOneOf2(), parseNode);
             if (result.ListAProjectSIssues200ResponseItemMetadataOneOf1 == null && result.ListAProjectSIssues200ResponseItemMetadataOneOf2 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
@@ -67,6 +71,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             if(ListAProjectSIssues200ResponseItemMetadataOneOf1 != null)
             {
                 return ListAProjectSIssues200ResponseItemMetadataOneOf1.GetFieldDeserializers();
@@ -85,8 +91,11 @@ return result;
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
             if (ListAProjectSIssues200ResponseItemMetadataOneOf1 == null && ListAProjectSIssues200ResponseItemMetadataOneOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ListAProjectSIssues200ResponseItemMetadataOneOf1 != null && ListAProjectSIssues200ResponseItemMetadataOneOf2 == null) { if (ListAProjectSIssues200ResponseItemMetadataOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListAProjectSIssues200ResponseItemMetadataOneOf1); return; }
-            if (ListAProjectSIssues200ResponseItemMetadataOneOf2 != null && ListAProjectSIssues200ResponseItemMetadataOneOf1 == null) { if (ListAProjectSIssues200ResponseItemMetadataOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListAProjectSIssues200ResponseItemMetadataOneOf2); return; }
+            int selectedUnionBranches = 0;
+            if (ListAProjectSIssues200ResponseItemMetadataOneOf1 != null) selectedUnionBranches++;
+            if (ListAProjectSIssues200ResponseItemMetadataOneOf2 != null) selectedUnionBranches++;
+            if (ListAProjectSIssues200ResponseItemMetadataOneOf1 != null && selectedUnionBranches == 1) { if (ListAProjectSIssues200ResponseItemMetadataOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListAProjectSIssues200ResponseItemMetadataOneOf1); return; }
+            if (ListAProjectSIssues200ResponseItemMetadataOneOf2 != null && selectedUnionBranches == 1) { if (ListAProjectSIssues200ResponseItemMetadataOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListAProjectSIssues200ResponseItemMetadataOneOf2); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ListAProjectSIssues200ResponseItemMetadataOneOf1 != null)

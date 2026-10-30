@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("codeReviewTriggers") is { } nullNodeCodeReviewTriggers && nullNodeCodeReviewTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeReviewTriggers = null;
-            if (parseNode.GetChildNode("enabledCodeReview") is { } nullNodeEnabledCodeReview && nullNodeEnabledCodeReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledCodeReview = null;
+            if (parseNode.GetChildNode("codeReviewTriggers") is null) { _explicitNullValueCodeReviewTriggers = default!; _explicitNullProperties?.Remove("codeReviewTriggers"); }
+            else if (parseNode.GetChildNode("codeReviewTriggers") is { } nullNodeCodeReviewTriggers && nullNodeCodeReviewTriggers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CodeReviewTriggers = null;
+            if (parseNode.GetChildNode("enabledCodeReview") is null) { _explicitNullValueEnabledCodeReview = default!; _explicitNullProperties?.Remove("enabledCodeReview"); }
+            else if (parseNode.GetChildNode("enabledCodeReview") is { } nullNodeEnabledCodeReview && nullNodeEnabledCodeReview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnabledCodeReview = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The codeReviewTriggers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
+        public List<string>? CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; AdditionalData?.Remove("codeReviewTriggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
         private List<string>? _explicitNullValueCodeReviewTriggers = default!;
 #nullable restore
 #else
-        public List<string> CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
+        public List<string> CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; AdditionalData?.Remove("codeReviewTriggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
         private List<string> _explicitNullValueCodeReviewTriggers = default!;
 #endif
         /// <summary>The enabledCodeReview property</summary>
-        public bool? EnabledCodeReview { get => _explicitNullValueEnabledCodeReview; set { _explicitNullValueEnabledCodeReview = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledCodeReview"); else _explicitNullProperties?.Remove("enabledCodeReview"); } }
+        public bool? EnabledCodeReview { get => _explicitNullValueEnabledCodeReview; set { _explicitNullValueEnabledCodeReview = value; AdditionalData?.Remove("enabledCodeReview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledCodeReview"); else _explicitNullProperties?.Remove("enabledCodeReview"); } }
         private bool? _explicitNullValueEnabledCodeReview = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationRepositorySettings200ResponseSchemaItemSettings"/> and sets the default values.

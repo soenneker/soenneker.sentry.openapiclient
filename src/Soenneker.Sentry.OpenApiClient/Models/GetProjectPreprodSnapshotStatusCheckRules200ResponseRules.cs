@@ -17,25 +17,29 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failOnAdded") is { } nullNodeFailOnAdded && nullNodeFailOnAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnAdded = null;
-            if (parseNode.GetChildNode("failOnChanged") is { } nullNodeFailOnChanged && nullNodeFailOnChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnChanged = null;
-            if (parseNode.GetChildNode("failOnRemoved") is { } nullNodeFailOnRemoved && nullNodeFailOnRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnRemoved = null;
-            if (parseNode.GetChildNode("failOnRenamed") is { } nullNodeFailOnRenamed && nullNodeFailOnRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnRenamed = null;
+            if (parseNode.GetChildNode("failOnAdded") is null) { _explicitNullValueFailOnAdded = default!; _explicitNullProperties?.Remove("failOnAdded"); }
+            else if (parseNode.GetChildNode("failOnAdded") is { } nullNodeFailOnAdded && nullNodeFailOnAdded.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnAdded = null;
+            if (parseNode.GetChildNode("failOnChanged") is null) { _explicitNullValueFailOnChanged = default!; _explicitNullProperties?.Remove("failOnChanged"); }
+            else if (parseNode.GetChildNode("failOnChanged") is { } nullNodeFailOnChanged && nullNodeFailOnChanged.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnChanged = null;
+            if (parseNode.GetChildNode("failOnRemoved") is null) { _explicitNullValueFailOnRemoved = default!; _explicitNullProperties?.Remove("failOnRemoved"); }
+            else if (parseNode.GetChildNode("failOnRemoved") is { } nullNodeFailOnRemoved && nullNodeFailOnRemoved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnRemoved = null;
+            if (parseNode.GetChildNode("failOnRenamed") is null) { _explicitNullValueFailOnRenamed = default!; _explicitNullProperties?.Remove("failOnRenamed"); }
+            else if (parseNode.GetChildNode("failOnRenamed") is { } nullNodeFailOnRenamed && nullNodeFailOnRenamed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailOnRenamed = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The failOnAdded property</summary>
-        public bool? FailOnAdded { get => _explicitNullValueFailOnAdded; set { _explicitNullValueFailOnAdded = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnAdded"); else _explicitNullProperties?.Remove("failOnAdded"); } }
+        public bool? FailOnAdded { get => _explicitNullValueFailOnAdded; set { _explicitNullValueFailOnAdded = value; AdditionalData?.Remove("failOnAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnAdded"); else _explicitNullProperties?.Remove("failOnAdded"); } }
         private bool? _explicitNullValueFailOnAdded = default!;
         /// <summary>The failOnChanged property</summary>
-        public bool? FailOnChanged { get => _explicitNullValueFailOnChanged; set { _explicitNullValueFailOnChanged = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnChanged"); else _explicitNullProperties?.Remove("failOnChanged"); } }
+        public bool? FailOnChanged { get => _explicitNullValueFailOnChanged; set { _explicitNullValueFailOnChanged = value; AdditionalData?.Remove("failOnChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnChanged"); else _explicitNullProperties?.Remove("failOnChanged"); } }
         private bool? _explicitNullValueFailOnChanged = default!;
         /// <summary>The failOnRemoved property</summary>
-        public bool? FailOnRemoved { get => _explicitNullValueFailOnRemoved; set { _explicitNullValueFailOnRemoved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRemoved"); else _explicitNullProperties?.Remove("failOnRemoved"); } }
+        public bool? FailOnRemoved { get => _explicitNullValueFailOnRemoved; set { _explicitNullValueFailOnRemoved = value; AdditionalData?.Remove("failOnRemoved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRemoved"); else _explicitNullProperties?.Remove("failOnRemoved"); } }
         private bool? _explicitNullValueFailOnRemoved = default!;
         /// <summary>The failOnRenamed property</summary>
-        public bool? FailOnRenamed { get => _explicitNullValueFailOnRenamed; set { _explicitNullValueFailOnRenamed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRenamed"); else _explicitNullProperties?.Remove("failOnRenamed"); } }
+        public bool? FailOnRenamed { get => _explicitNullValueFailOnRenamed; set { _explicitNullValueFailOnRenamed = value; AdditionalData?.Remove("failOnRenamed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRenamed"); else _explicitNullProperties?.Remove("failOnRenamed"); } }
         private bool? _explicitNullValueFailOnRenamed = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSnapshotStatusCheckRules200ResponseRules"/> and sets the default values.

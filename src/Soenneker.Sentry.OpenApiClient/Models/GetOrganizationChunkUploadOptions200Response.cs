@@ -17,72 +17,81 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("accept") is { } nullNodeAccept && nullNodeAccept.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accept = null;
-            if (parseNode.GetChildNode("chunkSize") is { } nullNodeChunkSize && nullNodeChunkSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkSize = null;
-            if (parseNode.GetChildNode("chunksPerRequest") is { } nullNodeChunksPerRequest && nullNodeChunksPerRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunksPerRequest = null;
-            if (parseNode.GetChildNode("compression") is { } nullNodeCompression && nullNodeCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compression = null;
-            if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
-            if (parseNode.GetChildNode("hashAlgorithm") is { } nullNodeHashAlgorithm && nullNodeHashAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HashAlgorithm = null;
-            if (parseNode.GetChildNode("maxFileSize") is { } nullNodeMaxFileSize && nullNodeMaxFileSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFileSize = null;
-            if (parseNode.GetChildNode("maxRequestSize") is { } nullNodeMaxRequestSize && nullNodeMaxRequestSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRequestSize = null;
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("accept") is null) { _explicitNullValueAccept = default!; _explicitNullProperties?.Remove("accept"); }
+            else if (parseNode.GetChildNode("accept") is { } nullNodeAccept && nullNodeAccept.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Accept = null;
+            if (parseNode.GetChildNode("chunkSize") is null) { _explicitNullValueChunkSize = default!; _explicitNullProperties?.Remove("chunkSize"); }
+            else if (parseNode.GetChildNode("chunkSize") is { } nullNodeChunkSize && nullNodeChunkSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunkSize = null;
+            if (parseNode.GetChildNode("chunksPerRequest") is null) { _explicitNullValueChunksPerRequest = default!; _explicitNullProperties?.Remove("chunksPerRequest"); }
+            else if (parseNode.GetChildNode("chunksPerRequest") is { } nullNodeChunksPerRequest && nullNodeChunksPerRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChunksPerRequest = null;
+            if (parseNode.GetChildNode("compression") is null) { _explicitNullValueCompression = default!; _explicitNullProperties?.Remove("compression"); }
+            else if (parseNode.GetChildNode("compression") is { } nullNodeCompression && nullNodeCompression.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Compression = null;
+            if (parseNode.GetChildNode("concurrency") is null) { _explicitNullValueConcurrency = default!; _explicitNullProperties?.Remove("concurrency"); }
+            else if (parseNode.GetChildNode("concurrency") is { } nullNodeConcurrency && nullNodeConcurrency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Concurrency = null;
+            if (parseNode.GetChildNode("hashAlgorithm") is null) { _explicitNullValueHashAlgorithm = default!; _explicitNullProperties?.Remove("hashAlgorithm"); }
+            else if (parseNode.GetChildNode("hashAlgorithm") is { } nullNodeHashAlgorithm && nullNodeHashAlgorithm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HashAlgorithm = null;
+            if (parseNode.GetChildNode("maxFileSize") is null) { _explicitNullValueMaxFileSize = default!; _explicitNullProperties?.Remove("maxFileSize"); }
+            else if (parseNode.GetChildNode("maxFileSize") is { } nullNodeMaxFileSize && nullNodeMaxFileSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxFileSize = null;
+            if (parseNode.GetChildNode("maxRequestSize") is null) { _explicitNullValueMaxRequestSize = default!; _explicitNullProperties?.Remove("maxRequestSize"); }
+            else if (parseNode.GetChildNode("maxRequestSize") is { } nullNodeMaxRequestSize && nullNodeMaxRequestSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRequestSize = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>The accept property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Accept { get => _explicitNullValueAccept; set { _explicitNullValueAccept = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept"); else _explicitNullProperties?.Remove("accept"); } }
+        public List<string>? Accept { get => _explicitNullValueAccept; set { _explicitNullValueAccept = value; AdditionalData?.Remove("accept"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept"); else _explicitNullProperties?.Remove("accept"); } }
         private List<string>? _explicitNullValueAccept = default!;
 #nullable restore
 #else
-        public List<string> Accept { get => _explicitNullValueAccept; set { _explicitNullValueAccept = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept"); else _explicitNullProperties?.Remove("accept"); } }
+        public List<string> Accept { get => _explicitNullValueAccept; set { _explicitNullValueAccept = value; AdditionalData?.Remove("accept"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept"); else _explicitNullProperties?.Remove("accept"); } }
         private List<string> _explicitNullValueAccept = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The chunkSize property</summary>
-        public int? ChunkSize { get => _explicitNullValueChunkSize; set { _explicitNullValueChunkSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunkSize"); else _explicitNullProperties?.Remove("chunkSize"); } }
+        public int? ChunkSize { get => _explicitNullValueChunkSize; set { _explicitNullValueChunkSize = value; AdditionalData?.Remove("chunkSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunkSize"); else _explicitNullProperties?.Remove("chunkSize"); } }
         private int? _explicitNullValueChunkSize = default!;
         /// <summary>The chunksPerRequest property</summary>
-        public int? ChunksPerRequest { get => _explicitNullValueChunksPerRequest; set { _explicitNullValueChunksPerRequest = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunksPerRequest"); else _explicitNullProperties?.Remove("chunksPerRequest"); } }
+        public int? ChunksPerRequest { get => _explicitNullValueChunksPerRequest; set { _explicitNullValueChunksPerRequest = value; AdditionalData?.Remove("chunksPerRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunksPerRequest"); else _explicitNullProperties?.Remove("chunksPerRequest"); } }
         private int? _explicitNullValueChunksPerRequest = default!;
         /// <summary>The compression property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        public List<string>? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; AdditionalData?.Remove("compression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
         private List<string>? _explicitNullValueCompression = default!;
 #nullable restore
 #else
-        public List<string> Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
+        public List<string> Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; AdditionalData?.Remove("compression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
         private List<string> _explicitNullValueCompression = default!;
 #endif
         /// <summary>The concurrency property</summary>
-        public int? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
+        public int? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private int? _explicitNullValueConcurrency = default!;
         /// <summary>The hashAlgorithm property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
+        public string? HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; AdditionalData?.Remove("hashAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
         private string? _explicitNullValueHashAlgorithm = default!;
 #nullable restore
 #else
-        public string HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
+        public string HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; AdditionalData?.Remove("hashAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
         private string _explicitNullValueHashAlgorithm = default!;
 #endif
         /// <summary>The maxFileSize property</summary>
-        public int? MaxFileSize { get => _explicitNullValueMaxFileSize; set { _explicitNullValueMaxFileSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFileSize"); else _explicitNullProperties?.Remove("maxFileSize"); } }
+        public int? MaxFileSize { get => _explicitNullValueMaxFileSize; set { _explicitNullValueMaxFileSize = value; AdditionalData?.Remove("maxFileSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFileSize"); else _explicitNullProperties?.Remove("maxFileSize"); } }
         private int? _explicitNullValueMaxFileSize = default!;
         /// <summary>The maxRequestSize property</summary>
-        public int? MaxRequestSize { get => _explicitNullValueMaxRequestSize; set { _explicitNullValueMaxRequestSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRequestSize"); else _explicitNullProperties?.Remove("maxRequestSize"); } }
+        public int? MaxRequestSize { get => _explicitNullValueMaxRequestSize; set { _explicitNullValueMaxRequestSize = value; AdditionalData?.Remove("maxRequestSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRequestSize"); else _explicitNullProperties?.Remove("maxRequestSize"); } }
         private int? _explicitNullValueMaxRequestSize = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>

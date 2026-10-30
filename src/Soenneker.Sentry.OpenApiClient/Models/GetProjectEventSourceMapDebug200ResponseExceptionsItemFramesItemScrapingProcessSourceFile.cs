@@ -7,49 +7,27 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
-        // Preserve ambiguous union payloads without inventing a discriminator.
-        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    #pragma warning disable CS1591
+    public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1? GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2? GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3? GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1? GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 { get; set; }
-#endif
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+        }
+
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile"/> and sets the default values.
+        /// </summary>
+        public GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,21 +36,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile();
-            
-            
-            
-            
-            
-            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("success".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("url") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("not_attempted".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("url") != null))();
-            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("details") != null && parseNode.GetChildNode("reason") != null && (parseNode.GetChildNode("reason")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag2 && ("not_found".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "disabled".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "invalid_host".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "permission_denied".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "timeout".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "download_error".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal) || "other".Equals(tag2.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("status") != null && (parseNode.GetChildNode("status")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag4 && ("failure".Equals(tag4.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("url") != null))();
-            if (result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1(), parseNode);
-            if (result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2(), parseNode);
-            if (result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3(), parseNode);
-            if (result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && result.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null) result.UnrecognizedValue = unionPayload;
-return result;
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,11 +46,9 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 != null || GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 != null || GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 != null || GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -92,15 +56,9 @@ return result;
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 != null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null) { if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1); return; }
-            if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 != null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null) { if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2); return; }
-            if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 != null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 == null) { if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3); return; }
-            if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 != null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2 == null && GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3 == null) { if (GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1); return; }
-
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1>(null, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3, GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileMember1);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

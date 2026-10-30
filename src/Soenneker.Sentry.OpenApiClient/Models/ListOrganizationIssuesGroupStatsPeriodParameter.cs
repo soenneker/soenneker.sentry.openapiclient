@@ -8,6 +8,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum ListOrganizationIssuesGroupStatsPeriodParameter
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "")]
+        EmptyString,
+
         [EnumMember(Value = "14d")]
         #pragma warning disable CS1591
         Value14D,

@@ -17,10 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("artifactId") is { } nullNodeArtifactId && nullNodeArtifactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArtifactId = null;
-            if (parseNode.GetChildNode("imageCount") is { } nullNodeImageCount && nullNodeImageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageCount = null;
-            if (parseNode.GetChildNode("snapshotMetricsId") is { } nullNodeSnapshotMetricsId && nullNodeSnapshotMetricsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotMetricsId = null;
-            if (parseNode.GetChildNode("snapshotUrl") is { } nullNodeSnapshotUrl && nullNodeSnapshotUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotUrl = null;
+            if (parseNode.GetChildNode("artifactId") is null) { _explicitNullValueArtifactId = default!; _explicitNullProperties?.Remove("artifactId"); }
+            else if (parseNode.GetChildNode("artifactId") is { } nullNodeArtifactId && nullNodeArtifactId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ArtifactId = null;
+            if (parseNode.GetChildNode("imageCount") is null) { _explicitNullValueImageCount = default!; _explicitNullProperties?.Remove("imageCount"); }
+            else if (parseNode.GetChildNode("imageCount") is { } nullNodeImageCount && nullNodeImageCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageCount = null;
+            if (parseNode.GetChildNode("snapshotMetricsId") is null) { _explicitNullValueSnapshotMetricsId = default!; _explicitNullProperties?.Remove("snapshotMetricsId"); }
+            else if (parseNode.GetChildNode("snapshotMetricsId") is { } nullNodeSnapshotMetricsId && nullNodeSnapshotMetricsId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotMetricsId = null;
+            if (parseNode.GetChildNode("snapshotUrl") is null) { _explicitNullValueSnapshotUrl = default!; _explicitNullProperties?.Remove("snapshotUrl"); }
+            else if (parseNode.GetChildNode("snapshotUrl") is { } nullNodeSnapshotUrl && nullNodeSnapshotUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The artifactId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
+        public string? ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; AdditionalData?.Remove("artifactId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
         private string? _explicitNullValueArtifactId = default!;
 #nullable restore
 #else
-        public string ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
+        public string ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; AdditionalData?.Remove("artifactId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
         private string _explicitNullValueArtifactId = default!;
 #endif
         /// <summary>The imageCount property</summary>
-        public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageCount"); else _explicitNullProperties?.Remove("imageCount"); } }
+        public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; AdditionalData?.Remove("imageCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageCount"); else _explicitNullProperties?.Remove("imageCount"); } }
         private int? _explicitNullValueImageCount = default!;
         /// <summary>The snapshotMetricsId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
+        public string? SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; AdditionalData?.Remove("snapshotMetricsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
         private string? _explicitNullValueSnapshotMetricsId = default!;
 #nullable restore
 #else
-        public string SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
+        public string SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; AdditionalData?.Remove("snapshotMetricsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
         private string _explicitNullValueSnapshotMetricsId = default!;
 #endif
         /// <summary>The snapshotUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotUrl { get => _explicitNullValueSnapshotUrl; set { _explicitNullValueSnapshotUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotUrl"); else _explicitNullProperties?.Remove("snapshotUrl"); } }
+        public string? SnapshotUrl { get => _explicitNullValueSnapshotUrl; set { _explicitNullValueSnapshotUrl = value; AdditionalData?.Remove("snapshotUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotUrl"); else _explicitNullProperties?.Remove("snapshotUrl"); } }
         private string? _explicitNullValueSnapshotUrl = default!;
 #nullable restore
 #else
-        public string SnapshotUrl { get => _explicitNullValueSnapshotUrl; set { _explicitNullValueSnapshotUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotUrl"); else _explicitNullProperties?.Remove("snapshotUrl"); } }
+        public string SnapshotUrl { get => _explicitNullValueSnapshotUrl; set { _explicitNullValueSnapshotUrl = value; AdditionalData?.Remove("snapshotUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotUrl"); else _explicitNullProperties?.Remove("snapshotUrl"); } }
         private string _explicitNullValueSnapshotUrl = default!;
 #endif
         /// <summary>

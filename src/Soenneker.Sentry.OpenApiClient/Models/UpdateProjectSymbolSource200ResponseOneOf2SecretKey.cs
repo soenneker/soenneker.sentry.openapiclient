@@ -17,13 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("hidden-secret") is { } nullNodeHiddenSecret && nullNodeHiddenSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenSecret = null;
+            if (parseNode.GetChildNode("hidden-secret") is null) { _explicitNullValueHiddenSecret = default!; _explicitNullProperties?.Remove("hidden-secret"); }
+            else if (parseNode.GetChildNode("hidden-secret") is { } nullNodeHiddenSecret && nullNodeHiddenSecret.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HiddenSecret = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The hiddenSecret property</summary>
-        public bool? HiddenSecret { get => _explicitNullValueHiddenSecret; set { _explicitNullValueHiddenSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hidden-secret"); else _explicitNullProperties?.Remove("hidden-secret"); } }
+        public bool? HiddenSecret { get => _explicitNullValueHiddenSecret; set { _explicitNullValueHiddenSecret = value; AdditionalData?.Remove("hidden-secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hidden-secret"); else _explicitNullProperties?.Remove("hidden-secret"); } }
         private bool? _explicitNullValueHiddenSecret = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf2SecretKey"/> and sets the default values.

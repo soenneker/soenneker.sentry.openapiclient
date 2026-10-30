@@ -17,46 +17,52 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("baseDownloadSize") is { } nullNodeBaseDownloadSize && nullNodeBaseDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseDownloadSize = null;
-            if (parseNode.GetChildNode("baseInstallSize") is { } nullNodeBaseInstallSize && nullNodeBaseInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseInstallSize = null;
-            if (parseNode.GetChildNode("headDownloadSize") is { } nullNodeHeadDownloadSize && nullNodeHeadDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadDownloadSize = null;
-            if (parseNode.GetChildNode("headInstallSize") is { } nullNodeHeadInstallSize && nullNodeHeadInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadInstallSize = null;
-            if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
-            if (parseNode.GetChildNode("metricsArtifactType") is { } nullNodeMetricsArtifactType && nullNodeMetricsArtifactType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsArtifactType = null;
+            if (parseNode.GetChildNode("baseDownloadSize") is null) { _explicitNullValueBaseDownloadSize = default!; _explicitNullProperties?.Remove("baseDownloadSize"); }
+            else if (parseNode.GetChildNode("baseDownloadSize") is { } nullNodeBaseDownloadSize && nullNodeBaseDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseDownloadSize = null;
+            if (parseNode.GetChildNode("baseInstallSize") is null) { _explicitNullValueBaseInstallSize = default!; _explicitNullProperties?.Remove("baseInstallSize"); }
+            else if (parseNode.GetChildNode("baseInstallSize") is { } nullNodeBaseInstallSize && nullNodeBaseInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseInstallSize = null;
+            if (parseNode.GetChildNode("headDownloadSize") is null) { _explicitNullValueHeadDownloadSize = default!; _explicitNullProperties?.Remove("headDownloadSize"); }
+            else if (parseNode.GetChildNode("headDownloadSize") is { } nullNodeHeadDownloadSize && nullNodeHeadDownloadSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadDownloadSize = null;
+            if (parseNode.GetChildNode("headInstallSize") is null) { _explicitNullValueHeadInstallSize = default!; _explicitNullProperties?.Remove("headInstallSize"); }
+            else if (parseNode.GetChildNode("headInstallSize") is { } nullNodeHeadInstallSize && nullNodeHeadInstallSize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadInstallSize = null;
+            if (parseNode.GetChildNode("identifier") is null) { _explicitNullValueIdentifier = default!; _explicitNullProperties?.Remove("identifier"); }
+            else if (parseNode.GetChildNode("identifier") is { } nullNodeIdentifier && nullNodeIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Identifier = null;
+            if (parseNode.GetChildNode("metricsArtifactType") is null) { _explicitNullValueMetricsArtifactType = default!; _explicitNullProperties?.Remove("metricsArtifactType"); }
+            else if (parseNode.GetChildNode("metricsArtifactType") is { } nullNodeMetricsArtifactType && nullNodeMetricsArtifactType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MetricsArtifactType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The baseDownloadSize property</summary>
-        public int? BaseDownloadSize { get => _explicitNullValueBaseDownloadSize; set { _explicitNullValueBaseDownloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseDownloadSize"); else _explicitNullProperties?.Remove("baseDownloadSize"); } }
+        public int? BaseDownloadSize { get => _explicitNullValueBaseDownloadSize; set { _explicitNullValueBaseDownloadSize = value; AdditionalData?.Remove("baseDownloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseDownloadSize"); else _explicitNullProperties?.Remove("baseDownloadSize"); } }
         private int? _explicitNullValueBaseDownloadSize = default!;
         /// <summary>The baseInstallSize property</summary>
-        public int? BaseInstallSize { get => _explicitNullValueBaseInstallSize; set { _explicitNullValueBaseInstallSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseInstallSize"); else _explicitNullProperties?.Remove("baseInstallSize"); } }
+        public int? BaseInstallSize { get => _explicitNullValueBaseInstallSize; set { _explicitNullValueBaseInstallSize = value; AdditionalData?.Remove("baseInstallSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseInstallSize"); else _explicitNullProperties?.Remove("baseInstallSize"); } }
         private int? _explicitNullValueBaseInstallSize = default!;
         /// <summary>The headDownloadSize property</summary>
-        public int? HeadDownloadSize { get => _explicitNullValueHeadDownloadSize; set { _explicitNullValueHeadDownloadSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headDownloadSize"); else _explicitNullProperties?.Remove("headDownloadSize"); } }
+        public int? HeadDownloadSize { get => _explicitNullValueHeadDownloadSize; set { _explicitNullValueHeadDownloadSize = value; AdditionalData?.Remove("headDownloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headDownloadSize"); else _explicitNullProperties?.Remove("headDownloadSize"); } }
         private int? _explicitNullValueHeadDownloadSize = default!;
         /// <summary>The headInstallSize property</summary>
-        public int? HeadInstallSize { get => _explicitNullValueHeadInstallSize; set { _explicitNullValueHeadInstallSize = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headInstallSize"); else _explicitNullProperties?.Remove("headInstallSize"); } }
+        public int? HeadInstallSize { get => _explicitNullValueHeadInstallSize; set { _explicitNullValueHeadInstallSize = value; AdditionalData?.Remove("headInstallSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headInstallSize"); else _explicitNullProperties?.Remove("headInstallSize"); } }
         private int? _explicitNullValueHeadInstallSize = default!;
         /// <summary>The identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private string? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private string _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>The metricsArtifactType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
+        public string? MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; AdditionalData?.Remove("metricsArtifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
         private string? _explicitNullValueMetricsArtifactType = default!;
 #nullable restore
 #else
-        public string MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
+        public string MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; AdditionalData?.Remove("metricsArtifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
         private string _explicitNullValueMetricsArtifactType = default!;
 #endif
         /// <summary>

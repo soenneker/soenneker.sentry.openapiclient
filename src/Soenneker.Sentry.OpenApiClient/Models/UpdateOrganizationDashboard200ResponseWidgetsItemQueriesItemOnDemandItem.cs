@@ -17,27 +17,30 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dashboardWidgetQueryId") is { } nullNodeDashboardWidgetQueryId && nullNodeDashboardWidgetQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardWidgetQueryId = null;
-            if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
-            if (parseNode.GetChildNode("extractionState") is { } nullNodeExtractionState && nullNodeExtractionState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractionState = null;
+            if (parseNode.GetChildNode("dashboardWidgetQueryId") is null) { _explicitNullValueDashboardWidgetQueryId = default!; _explicitNullProperties?.Remove("dashboardWidgetQueryId"); }
+            else if (parseNode.GetChildNode("dashboardWidgetQueryId") is { } nullNodeDashboardWidgetQueryId && nullNodeDashboardWidgetQueryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DashboardWidgetQueryId = null;
+            if (parseNode.GetChildNode("enabled") is null) { _explicitNullValueEnabled = default!; _explicitNullProperties?.Remove("enabled"); }
+            else if (parseNode.GetChildNode("enabled") is { } nullNodeEnabled && nullNodeEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Enabled = null;
+            if (parseNode.GetChildNode("extractionState") is null) { _explicitNullValueExtractionState = default!; _explicitNullProperties?.Remove("extractionState"); }
+            else if (parseNode.GetChildNode("extractionState") is { } nullNodeExtractionState && nullNodeExtractionState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExtractionState = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The dashboardWidgetQueryId property</summary>
-        public int? DashboardWidgetQueryId { get => _explicitNullValueDashboardWidgetQueryId; set { _explicitNullValueDashboardWidgetQueryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboardWidgetQueryId"); else _explicitNullProperties?.Remove("dashboardWidgetQueryId"); } }
+        public int? DashboardWidgetQueryId { get => _explicitNullValueDashboardWidgetQueryId; set { _explicitNullValueDashboardWidgetQueryId = value; AdditionalData?.Remove("dashboardWidgetQueryId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboardWidgetQueryId"); else _explicitNullProperties?.Remove("dashboardWidgetQueryId"); } }
         private int? _explicitNullValueDashboardWidgetQueryId = default!;
         /// <summary>The enabled property</summary>
-        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
+        public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
         /// <summary>The extractionState property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtractionState { get => _explicitNullValueExtractionState; set { _explicitNullValueExtractionState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extractionState"); else _explicitNullProperties?.Remove("extractionState"); } }
+        public string? ExtractionState { get => _explicitNullValueExtractionState; set { _explicitNullValueExtractionState = value; AdditionalData?.Remove("extractionState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extractionState"); else _explicitNullProperties?.Remove("extractionState"); } }
         private string? _explicitNullValueExtractionState = default!;
 #nullable restore
 #else
-        public string ExtractionState { get => _explicitNullValueExtractionState; set { _explicitNullValueExtractionState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extractionState"); else _explicitNullProperties?.Remove("extractionState"); } }
+        public string ExtractionState { get => _explicitNullValueExtractionState; set { _explicitNullValueExtractionState = value; AdditionalData?.Remove("extractionState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extractionState"); else _explicitNullProperties?.Remove("extractionState"); } }
         private string _explicitNullValueExtractionState = default!;
 #endif
         /// <summary>

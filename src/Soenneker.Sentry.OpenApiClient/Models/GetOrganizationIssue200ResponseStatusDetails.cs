@@ -17,81 +17,92 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
-            if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
-            if (parseNode.GetChildNode("ignoreUntil") is { } nullNodeIgnoreUntil && nullNodeIgnoreUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntil = null;
-            if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
-            if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
-            if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
-            if (parseNode.GetChildNode("inCommit") is { } nullNodeInCommit && nullNodeInCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InCommit = null;
-            if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
-            if (parseNode.GetChildNode("inNextRelease") is { } nullNodeInNextRelease && nullNodeInNextRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InNextRelease = null;
-            if (parseNode.GetChildNode("inRelease") is { } nullNodeInRelease && nullNodeInRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InRelease = null;
-            if (parseNode.GetChildNode("pendingEvents") is { } nullNodePendingEvents && nullNodePendingEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingEvents = null;
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("ignoreCount") is null) { _explicitNullValueIgnoreCount = default!; _explicitNullProperties?.Remove("ignoreCount"); }
+            else if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
+            if (parseNode.GetChildNode("ignoreUntil") is null) { _explicitNullValueIgnoreUntil = default!; _explicitNullProperties?.Remove("ignoreUntil"); }
+            else if (parseNode.GetChildNode("ignoreUntil") is { } nullNodeIgnoreUntil && nullNodeIgnoreUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntil = null;
+            if (parseNode.GetChildNode("ignoreUserCount") is null) { _explicitNullValueIgnoreUserCount = default!; _explicitNullProperties?.Remove("ignoreUserCount"); }
+            else if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
+            if (parseNode.GetChildNode("ignoreUserWindow") is null) { _explicitNullValueIgnoreUserWindow = default!; _explicitNullProperties?.Remove("ignoreUserWindow"); }
+            else if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
+            if (parseNode.GetChildNode("ignoreWindow") is null) { _explicitNullValueIgnoreWindow = default!; _explicitNullProperties?.Remove("ignoreWindow"); }
+            else if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
+            if (parseNode.GetChildNode("inCommit") is null) { _explicitNullValueInCommit = default!; _explicitNullProperties?.Remove("inCommit"); }
+            else if (parseNode.GetChildNode("inCommit") is { } nullNodeInCommit && nullNodeInCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InCommit = null;
+            if (parseNode.GetChildNode("info") is null) { _explicitNullValueInfo = default!; _explicitNullProperties?.Remove("info"); }
+            else if (parseNode.GetChildNode("info") is { } nullNodeInfo && nullNodeInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Info = null;
+            if (parseNode.GetChildNode("inNextRelease") is null) { _explicitNullValueInNextRelease = default!; _explicitNullProperties?.Remove("inNextRelease"); }
+            else if (parseNode.GetChildNode("inNextRelease") is { } nullNodeInNextRelease && nullNodeInNextRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InNextRelease = null;
+            if (parseNode.GetChildNode("inRelease") is null) { _explicitNullValueInRelease = default!; _explicitNullProperties?.Remove("inRelease"); }
+            else if (parseNode.GetChildNode("inRelease") is { } nullNodeInRelease && nullNodeInRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InRelease = null;
+            if (parseNode.GetChildNode("pendingEvents") is null) { _explicitNullValuePendingEvents = default!; _explicitNullProperties?.Remove("pendingEvents"); }
+            else if (parseNode.GetChildNode("pendingEvents") is { } nullNodePendingEvents && nullNodePendingEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingEvents = null;
         }
 
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor? _explicitNullValueActor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsActor _explicitNullValueActor = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The ignoreCount property</summary>
-        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
+        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; AdditionalData?.Remove("ignoreCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
         private int? _explicitNullValueIgnoreCount = default!;
         /// <summary>The ignoreUntil property</summary>
-        public DateTimeOffset? IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
+        public DateTimeOffset? IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; AdditionalData?.Remove("ignoreUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
         private DateTimeOffset? _explicitNullValueIgnoreUntil = default!;
         /// <summary>The ignoreUserCount property</summary>
-        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
+        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; AdditionalData?.Remove("ignoreUserCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
         private int? _explicitNullValueIgnoreUserCount = default!;
         /// <summary>The ignoreUserWindow property</summary>
-        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
+        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; AdditionalData?.Remove("ignoreUserWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
         private int? _explicitNullValueIgnoreUserWindow = default!;
         /// <summary>The ignoreWindow property</summary>
-        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
+        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; AdditionalData?.Remove("ignoreWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
         private int? _explicitNullValueIgnoreWindow = default!;
         /// <summary>The inCommit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        public string? InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
         private string? _explicitNullValueInCommit = default!;
 #nullable restore
 #else
-        public string InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        public string InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
         private string _explicitNullValueInCommit = default!;
 #endif
         /// <summary>The info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo? _explicitNullValueInfo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetailsInfo _explicitNullValueInfo = default!;
 #endif
         /// <summary>The inNextRelease property</summary>
-        public bool? InNextRelease { get => _explicitNullValueInNextRelease; set { _explicitNullValueInNextRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inNextRelease"); else _explicitNullProperties?.Remove("inNextRelease"); } }
+        public bool? InNextRelease { get => _explicitNullValueInNextRelease; set { _explicitNullValueInNextRelease = value; AdditionalData?.Remove("inNextRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inNextRelease"); else _explicitNullProperties?.Remove("inNextRelease"); } }
         private bool? _explicitNullValueInNextRelease = default!;
         /// <summary>The inRelease property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        public string? InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
         private string? _explicitNullValueInRelease = default!;
 #nullable restore
 #else
-        public string InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        public string InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
         private string _explicitNullValueInRelease = default!;
 #endif
         /// <summary>The pendingEvents property</summary>
-        public int? PendingEvents { get => _explicitNullValuePendingEvents; set { _explicitNullValuePendingEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingEvents"); else _explicitNullProperties?.Remove("pendingEvents"); } }
+        public int? PendingEvents { get => _explicitNullValuePendingEvents; set { _explicitNullValuePendingEvents = value; AdditionalData?.Remove("pendingEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingEvents"); else _explicitNullProperties?.Remove("pendingEvents"); } }
         private int? _explicitNullValuePendingEvents = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseStatusDetails"/> and sets the default values.

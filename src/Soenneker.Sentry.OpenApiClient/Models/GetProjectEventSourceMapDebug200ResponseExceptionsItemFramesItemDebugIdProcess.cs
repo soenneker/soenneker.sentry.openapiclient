@@ -17,9 +17,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("debug_id") is { } nullNodeDebugId && nullNodeDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugId = null;
-            if (parseNode.GetChildNode("uploaded_source_file_with_correct_debug_id") is { } nullNodeUploadedSourceFileWithCorrectDebugId && nullNodeUploadedSourceFileWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceFileWithCorrectDebugId = null;
-            if (parseNode.GetChildNode("uploaded_source_map_with_correct_debug_id") is { } nullNodeUploadedSourceMapWithCorrectDebugId && nullNodeUploadedSourceMapWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceMapWithCorrectDebugId = null;
+            if (parseNode.GetChildNode("debug_id") is null) { _explicitNullValueDebugId = default!; _explicitNullProperties?.Remove("debug_id"); }
+            else if (parseNode.GetChildNode("debug_id") is { } nullNodeDebugId && nullNodeDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DebugId = null;
+            if (parseNode.GetChildNode("uploaded_source_file_with_correct_debug_id") is null) { _explicitNullValueUploadedSourceFileWithCorrectDebugId = default!; _explicitNullProperties?.Remove("uploaded_source_file_with_correct_debug_id"); }
+            else if (parseNode.GetChildNode("uploaded_source_file_with_correct_debug_id") is { } nullNodeUploadedSourceFileWithCorrectDebugId && nullNodeUploadedSourceFileWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceFileWithCorrectDebugId = null;
+            if (parseNode.GetChildNode("uploaded_source_map_with_correct_debug_id") is null) { _explicitNullValueUploadedSourceMapWithCorrectDebugId = default!; _explicitNullProperties?.Remove("uploaded_source_map_with_correct_debug_id"); }
+            else if (parseNode.GetChildNode("uploaded_source_map_with_correct_debug_id") is { } nullNodeUploadedSourceMapWithCorrectDebugId && nullNodeUploadedSourceMapWithCorrectDebugId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadedSourceMapWithCorrectDebugId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,18 +30,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The debug_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
+        public string? DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; AdditionalData?.Remove("debug_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
         private string? _explicitNullValueDebugId = default!;
 #nullable restore
 #else
-        public string DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
+        public string DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; AdditionalData?.Remove("debug_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_id"); else _explicitNullProperties?.Remove("debug_id"); } }
         private string _explicitNullValueDebugId = default!;
 #endif
         /// <summary>The uploaded_source_file_with_correct_debug_id property</summary>
-        public bool? UploadedSourceFileWithCorrectDebugId { get => _explicitNullValueUploadedSourceFileWithCorrectDebugId; set { _explicitNullValueUploadedSourceFileWithCorrectDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_file_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_file_with_correct_debug_id"); } }
+        public bool? UploadedSourceFileWithCorrectDebugId { get => _explicitNullValueUploadedSourceFileWithCorrectDebugId; set { _explicitNullValueUploadedSourceFileWithCorrectDebugId = value; AdditionalData?.Remove("uploaded_source_file_with_correct_debug_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_file_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_file_with_correct_debug_id"); } }
         private bool? _explicitNullValueUploadedSourceFileWithCorrectDebugId = default!;
         /// <summary>The uploaded_source_map_with_correct_debug_id property</summary>
-        public bool? UploadedSourceMapWithCorrectDebugId { get => _explicitNullValueUploadedSourceMapWithCorrectDebugId; set { _explicitNullValueUploadedSourceMapWithCorrectDebugId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_map_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_map_with_correct_debug_id"); } }
+        public bool? UploadedSourceMapWithCorrectDebugId { get => _explicitNullValueUploadedSourceMapWithCorrectDebugId; set { _explicitNullValueUploadedSourceMapWithCorrectDebugId = value; AdditionalData?.Remove("uploaded_source_map_with_correct_debug_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uploaded_source_map_with_correct_debug_id"); else _explicitNullProperties?.Remove("uploaded_source_map_with_correct_debug_id"); } }
         private bool? _explicitNullValueUploadedSourceMapWithCorrectDebugId = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemDebugIdProcess"/> and sets the default values.

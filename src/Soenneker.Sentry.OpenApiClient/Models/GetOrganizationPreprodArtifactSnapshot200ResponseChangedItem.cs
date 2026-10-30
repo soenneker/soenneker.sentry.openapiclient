@@ -17,10 +17,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("base_image") is { } nullNodeBaseImage && nullNodeBaseImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseImage = null;
-            if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
-            if (parseNode.GetChildNode("diff_image_key") is { } nullNodeDiffImageKey && nullNodeDiffImageKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffImageKey = null;
-            if (parseNode.GetChildNode("head_image") is { } nullNodeHeadImage && nullNodeHeadImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadImage = null;
+            if (parseNode.GetChildNode("base_image") is null) { _explicitNullValueBaseImage = default!; _explicitNullProperties?.Remove("base_image"); }
+            else if (parseNode.GetChildNode("base_image") is { } nullNodeBaseImage && nullNodeBaseImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BaseImage = null;
+            if (parseNode.GetChildNode("diff") is null) { _explicitNullValueDiff = default!; _explicitNullProperties?.Remove("diff"); }
+            else if (parseNode.GetChildNode("diff") is { } nullNodeDiff && nullNodeDiff.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Diff = null;
+            if (parseNode.GetChildNode("diff_image_key") is null) { _explicitNullValueDiffImageKey = default!; _explicitNullProperties?.Remove("diff_image_key"); }
+            else if (parseNode.GetChildNode("diff_image_key") is { } nullNodeDiffImageKey && nullNodeDiffImageKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiffImageKey = null;
+            if (parseNode.GetChildNode("head_image") is null) { _explicitNullValueHeadImage = default!; _explicitNullProperties?.Remove("head_image"); }
+            else if (parseNode.GetChildNode("head_image") is { } nullNodeHeadImage && nullNodeHeadImage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HeadImage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The base_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage? BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage? BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage? _explicitNullValueBaseImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage _explicitNullValueBaseImage = default!;
 #endif
         /// <summary>The diff property</summary>
-        public double? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
+        public double? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; AdditionalData?.Remove("diff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
         private double? _explicitNullValueDiff = default!;
         /// <summary>The diff_image_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
+        public string? DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; AdditionalData?.Remove("diff_image_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
         private string? _explicitNullValueDiffImageKey = default!;
 #nullable restore
 #else
-        public string DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
+        public string DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; AdditionalData?.Remove("diff_image_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
         private string _explicitNullValueDiffImageKey = default!;
 #endif
         /// <summary>The head_image property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage? HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage? HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; AdditionalData?.Remove("head_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage? _explicitNullValueHeadImage = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; AdditionalData?.Remove("head_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage _explicitNullValueHeadImage = default!;
 #endif
         /// <summary>

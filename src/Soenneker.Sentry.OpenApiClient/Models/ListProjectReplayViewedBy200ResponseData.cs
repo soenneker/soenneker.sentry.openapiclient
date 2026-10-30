@@ -17,7 +17,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("viewed_by") is { } nullNodeViewedBy && nullNodeViewedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewedBy = null;
+            if (parseNode.GetChildNode("viewed_by") is null) { _explicitNullValueViewedBy = default!; _explicitNullProperties?.Remove("viewed_by"); }
+            else if (parseNode.GetChildNode("viewed_by") is { } nullNodeViewedBy && nullNodeViewedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewedBy = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The viewed_by property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem>? ViewedBy { get => _explicitNullValueViewedBy; set { _explicitNullValueViewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewed_by"); else _explicitNullProperties?.Remove("viewed_by"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem>? ViewedBy { get => _explicitNullValueViewedBy; set { _explicitNullValueViewedBy = value; AdditionalData?.Remove("viewed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewed_by"); else _explicitNullProperties?.Remove("viewed_by"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem>? _explicitNullValueViewedBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem> ViewedBy { get => _explicitNullValueViewedBy; set { _explicitNullValueViewedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewed_by"); else _explicitNullProperties?.Remove("viewed_by"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem> ViewedBy { get => _explicitNullValueViewedBy; set { _explicitNullValueViewedBy = value; AdditionalData?.Remove("viewed_by"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewed_by"); else _explicitNullProperties?.Remove("viewed_by"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectReplayViewedBy200ResponseDataViewedByItem> _explicitNullValueViewedBy = default!;
 #endif
         /// <summary>

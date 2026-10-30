@@ -18,8 +18,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("autofix") is { } nullNodeAutofix && nullNodeAutofix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autofix = null;
-            if (parseNode.GetChildNode("formatted") is { } nullNodeFormatted && nullNodeFormatted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formatted = null;
+            if (parseNode.GetChildNode("autofix") is null) { _explicitNullValueAutofix = default!; _explicitNullProperties?.Remove("autofix"); }
+            else if (parseNode.GetChildNode("autofix") is { } nullNodeAutofix && nullNodeAutofix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autofix = null;
+            if (parseNode.GetChildNode("formatted") is null) { _explicitNullValueFormatted = default!; _explicitNullProperties?.Remove("formatted"); }
+            else if (parseNode.GetChildNode("formatted") is { } nullNodeFormatted && nullNodeFormatted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Formatted = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The autofix property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; AdditionalData?.Remove("autofix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? _explicitNullValueAutofix = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; AdditionalData?.Remove("autofix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix _explicitNullValueAutofix = default!;
 #endif
         /// <summary>The ``formatted`` field the mixin adds to a response when ``?llmFormat`` is requested.``content`` is text for the text formats and a serialized JSON object for ``json``, so theresponse shape is the same whichever format a caller asks for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; AdditionalData?.Remove("formatted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted? _explicitNullValueFormatted = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted Formatted { get => _explicitNullValueFormatted; set { _explicitNullValueFormatted = value; AdditionalData?.Remove("formatted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted"); else _explicitNullProperties?.Remove("formatted"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseFormatted _explicitNullValueFormatted = default!;
 #endif
         /// <summary>

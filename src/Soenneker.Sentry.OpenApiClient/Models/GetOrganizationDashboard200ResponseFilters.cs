@@ -17,9 +17,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("globalFilter") is { } nullNodeGlobalFilter && nullNodeGlobalFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalFilter = null;
-            if (parseNode.GetChildNode("release") is { } nullNodeRelease && nullNodeRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Release = null;
-            if (parseNode.GetChildNode("releaseId") is { } nullNodeReleaseId && nullNodeReleaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseId = null;
+            if (parseNode.GetChildNode("globalFilter") is null) { _explicitNullValueGlobalFilter = default!; _explicitNullProperties?.Remove("globalFilter"); }
+            else if (parseNode.GetChildNode("globalFilter") is { } nullNodeGlobalFilter && nullNodeGlobalFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GlobalFilter = null;
+            if (parseNode.GetChildNode("release") is null) { _explicitNullValueRelease = default!; _explicitNullProperties?.Remove("release"); }
+            else if (parseNode.GetChildNode("release") is { } nullNodeRelease && nullNodeRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Release = null;
+            if (parseNode.GetChildNode("releaseId") is null) { _explicitNullValueReleaseId = default!; _explicitNullProperties?.Remove("releaseId"); }
+            else if (parseNode.GetChildNode("releaseId") is { } nullNodeReleaseId && nullNodeReleaseId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReleaseId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The globalFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem>? GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem>? GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; AdditionalData?.Remove("globalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem>? _explicitNullValueGlobalFilter = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem> GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem> GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; AdditionalData?.Remove("globalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem> _explicitNullValueGlobalFilter = default!;
 #endif
         /// <summary>The release property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        public List<string>? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
         private List<string>? _explicitNullValueRelease = default!;
 #nullable restore
 #else
-        public List<string> Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
+        public List<string> Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
         private List<string> _explicitNullValueRelease = default!;
 #endif
         /// <summary>The releaseId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
+        public List<string>? ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; AdditionalData?.Remove("releaseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
         private List<string>? _explicitNullValueReleaseId = default!;
 #nullable restore
 #else
-        public List<string> ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
+        public List<string> ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; AdditionalData?.Remove("releaseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }
         private List<string> _explicitNullValueReleaseId = default!;
 #endif
         /// <summary>

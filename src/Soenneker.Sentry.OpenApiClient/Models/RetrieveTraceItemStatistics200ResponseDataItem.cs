@@ -17,7 +17,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("attributeDistributions") is { } nullNodeAttributeDistributions && nullNodeAttributeDistributions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeDistributions = null;
+            if (parseNode.GetChildNode("attributeDistributions") is null) { _explicitNullValueAttributeDistributions = default!; _explicitNullProperties?.Remove("attributeDistributions"); }
+            else if (parseNode.GetChildNode("attributeDistributions") is { } nullNodeAttributeDistributions && nullNodeAttributeDistributions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AttributeDistributions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The attributeDistributions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions? AttributeDistributions { get => _explicitNullValueAttributeDistributions; set { _explicitNullValueAttributeDistributions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeDistributions"); else _explicitNullProperties?.Remove("attributeDistributions"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions? AttributeDistributions { get => _explicitNullValueAttributeDistributions; set { _explicitNullValueAttributeDistributions = value; AdditionalData?.Remove("attributeDistributions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeDistributions"); else _explicitNullProperties?.Remove("attributeDistributions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions? _explicitNullValueAttributeDistributions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions AttributeDistributions { get => _explicitNullValueAttributeDistributions; set { _explicitNullValueAttributeDistributions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeDistributions"); else _explicitNullProperties?.Remove("attributeDistributions"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions AttributeDistributions { get => _explicitNullValueAttributeDistributions; set { _explicitNullValueAttributeDistributions = value; AdditionalData?.Remove("attributeDistributions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("attributeDistributions"); else _explicitNullProperties?.Remove("attributeDistributions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatistics200ResponseDataItemAttributeDistributions _explicitNullValueAttributeDistributions = default!;
 #endif
         /// <summary>

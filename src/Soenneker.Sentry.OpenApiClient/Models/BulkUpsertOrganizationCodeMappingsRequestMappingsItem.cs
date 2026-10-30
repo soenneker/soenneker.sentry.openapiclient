@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_root") is { } nullNodeSourceRoot && nullNodeSourceRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceRoot = null;
-            if (parseNode.GetChildNode("stack_root") is { } nullNodeStackRoot && nullNodeStackRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StackRoot = null;
+            if (parseNode.GetChildNode("source_root") is null) { _explicitNullValueSourceRoot = default!; _explicitNullProperties?.Remove("source_root"); }
+            else if (parseNode.GetChildNode("source_root") is { } nullNodeSourceRoot && nullNodeSourceRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceRoot = null;
+            if (parseNode.GetChildNode("stack_root") is null) { _explicitNullValueStackRoot = default!; _explicitNullProperties?.Remove("stack_root"); }
+            else if (parseNode.GetChildNode("stack_root") is { } nullNodeStackRoot && nullNodeStackRoot.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StackRoot = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The repository path prefix that replaces stackRoot. For example, /app/pkg/file.py with stackRoot=/app/ and sourceRoot=src/ resolves to src/pkg/file.py.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
+        public string? SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; AdditionalData?.Remove("source_root"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
         private string? _explicitNullValueSourceRoot = default!;
 #nullable restore
 #else
-        public string SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
+        public string SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; AdditionalData?.Remove("source_root"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_root"); else _explicitNullProperties?.Remove("source_root"); } }
         private string _explicitNullValueSourceRoot = default!;
 #endif
         /// <summary>The path prefix to strip from matching stack frame filenames before adding sourceRoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
+        public string? StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; AdditionalData?.Remove("stack_root"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
         private string? _explicitNullValueStackRoot = default!;
 #nullable restore
 #else
-        public string StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
+        public string StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; AdditionalData?.Remove("stack_root"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stack_root"); else _explicitNullProperties?.Remove("stack_root"); } }
         private string _explicitNullValueStackRoot = default!;
 #endif
         /// <summary>

@@ -7,41 +7,27 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventMember1"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ListOrganizationIssueHashes200ResponseItemLatestEvent : IComposedTypeWrapper, IParsable
-    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
-        // Preserve ambiguous union payloads without inventing a discriminator.
-        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
-        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
-        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+    #pragma warning disable CS1591
+    public partial class ListOrganizationIssueHashes200ResponseItemLatestEvent : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1? ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2? ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventMember1? ListOrganizationIssueHashes200ResponseItemLatestEventMember1 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventMember1 ListOrganizationIssueHashes200ResponseItemLatestEventMember1 { get; set; }
-#endif
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+        }
+
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent"/> and sets the default values.
+        /// </summary>
+        public ListOrganizationIssueHashes200ResponseItemLatestEvent()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -50,18 +36,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent();
-            
-            
-            
-            
-            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("_meta") != null && parseNode.GetChildNode("context") != null && parseNode.GetChildNode("contexts") != null && parseNode.GetChildNode("dateReceived") != null && parseNode.GetChildNode("dist") != null && parseNode.GetChildNode("entries") != null && parseNode.GetChildNode("errors") != null && parseNode.GetChildNode("eventID") != null && parseNode.GetChildNode("groupID") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("location") != null && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("occurrence") != null && parseNode.GetChildNode("packages") != null && parseNode.GetChildNode("platform") != null && parseNode.GetChildNode("projectID") != null && parseNode.GetChildNode("sdk") != null && parseNode.GetChildNode("size") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("title") != null && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag22 && ("default".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "error".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "csp".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "nel".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "hpkp".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "expectct".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "expectstaple".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "transaction".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "generic".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal) || "feedback".Equals(tag22.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("user") != null))();
-            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("crashFile") != null && parseNode.GetChildNode("culprit") != null && parseNode.GetChildNode("dateCreated") != null && parseNode.GetChildNode("event.type") != null && parseNode.GetChildNode("eventID") != null && parseNode.GetChildNode("groupID") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("location") != null && parseNode.GetChildNode("message") != null && parseNode.GetChildNode("metadata") != null && parseNode.GetChildNode("platform") != null && parseNode.GetChildNode("projectID") != null && parseNode.GetChildNode("tags") != null && parseNode.GetChildNode("title") != null && parseNode.GetChildNode("user") != null))();
-            if (result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null && matchesUnionBranch0 && !matchesUnionBranch1) result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1(), parseNode);
-            if (result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null && matchesUnionBranch1 && !matchesUnionBranch0) result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2(), parseNode);
-            if (result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null && result.ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null) result.UnrecognizedValue = unionPayload;
-return result;
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,11 +46,9 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 != null || ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 != null || ListOrganizationIssueHashes200ResponseItemLatestEventMember1 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1, ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2, ListOrganizationIssueHashes200ResponseItemLatestEventMember1);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -81,14 +56,9 @@ return result;
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null && ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
-            if (ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 != null && ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null && ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null) { if (ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1); return; }
-            if (ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 != null && ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && ListOrganizationIssueHashes200ResponseItemLatestEventMember1 == null) { if (ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2); return; }
-            if (ListOrganizationIssueHashes200ResponseItemLatestEventMember1 != null && ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1 == null && ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2 == null) { if (ListOrganizationIssueHashes200ResponseItemLatestEventMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationIssueHashes200ResponseItemLatestEventMember1); return; }
-
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1>(null, ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1, ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2, ListOrganizationIssueHashes200ResponseItemLatestEventMember1);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

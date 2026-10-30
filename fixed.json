@@ -42740,7 +42740,7 @@
                 "format": "date-time"
               },
               "metric_value": {
-                "$ref": "#/components/schemas/ReleaseThresholdStatusResponseAdditionalPropertiesItemMetricValue"
+                "$ref": "#/components/schemas/ListOrganizationReleaseThresholdStatuses200ResponseAdditionalPropertiesItemMetricValue"
               }
             }
           }
@@ -47757,7 +47757,7 @@
             "type": "string"
           },
           "active": {
-            "$ref": "#/components/schemas/ProjectFilterResponseItemActive"
+            "$ref": "#/components/schemas/ListProjectFilters200ResponseItemActive"
           }
         }
       },
@@ -48421,15 +48421,8 @@
         ]
       },
       "ProjectCodeOwnersSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ProjectCodeOwnersSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "ReleaseThresholdStatusResponseAdditionalPropertiesItemMetricValue": {
         "anyOf": [
@@ -48532,38 +48525,12 @@
         }
       },
       "SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceFile": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceMap": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceMapAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceMapAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/SourceMapDebugExceptionsItemFramesItemScrapingProcessSourceMapAnyOf3"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "StatusDetailsValidatorInCommit": {
         "required": [
@@ -48584,60 +48551,20 @@
         "description": "The commit data that the issue should use for resolution."
       },
       "WorkflowTriggersConditions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WorkflowTriggersConditionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "WorkflowTriggersActions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WorkflowTriggersActionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "WorkflowActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WorkflowActionFiltersItemConditionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "WorkflowActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/WorkflowActionFiltersItemActionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "WorkflowValidatorTriggers": {
         "required": [
@@ -48684,32 +48611,12 @@
         ]
       },
       "CommitSerializerResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/CommitSerializerResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "GroupHashesResponseItemLatestEvent": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GroupHashesResponseItemLatestEventAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/GroupHashesResponseItemLatestEventAnyOf2"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "ListOrganizationReleaseCommitsResponseItemPullRequestAuthor": {
         "anyOf": [
@@ -48722,18 +48629,8 @@
         ]
       },
       "ListOrganizationReleaseCommitsResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationReleaseCommitsResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListOrganizationReleaseCommitsResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "ListOrganizationReleasesResponseItemAuthorsItem": {
         "anyOf": [
@@ -48756,18 +48653,8 @@
         ]
       },
       "ListProjectReleaseCommitsResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListProjectReleaseCommitsResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListProjectReleaseCommitsResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "ListProjectReleasesResponseItemAuthorsItem": {
         "anyOf": [
@@ -48797,60 +48684,20 @@
         ]
       },
       "ListWorkflowItemTriggersConditions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListWorkflowItemTriggersConditionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListWorkflowItemTriggersActions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListWorkflowItemTriggersActionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListWorkflowItemActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemConditionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListWorkflowItemActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemActionsAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "MonitorListItemConfigSchedule": {
         "anyOf": [
@@ -48868,15 +48715,8 @@
         ]
       },
       "ProjectCodeOwnersListItemSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ProjectCodeOwnersListItemSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "ProjectFilterResponseItemActive": {
         "anyOf": [
@@ -54345,7 +54185,7 @@
             "$ref": "#/components/schemas/MonitorConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/MonitorConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -61794,7 +61634,7 @@
           "examples": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListTraceItemAttributesResponseItemContextExamplesItem"
+              "$ref": "#/components/schemas/ListOrganizationTraceItemAttributes200ResponseItemContextExamplesItem"
             }
           },
           "replacementAttribute": {
@@ -61865,7 +61705,7 @@
             "$ref": "#/components/schemas/MonitorListItemConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/MonitorListItemConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -66974,7 +66814,7 @@
             "type": "string"
           },
           "value": {
-            "$ref": "#/components/schemas/OrganizationEventsTimeseriesResponseTimeSeriesItemGroupByItemValue"
+            "$ref": "#/components/schemas/ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValue"
           }
         }
       },
@@ -70820,7 +70660,7 @@
       "DashboardDetailsModelWidgetsItemChangedReasonItemEquationsItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/DashboardDetailsModelWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
+          "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
         }
       },
       "DetailedProjectOrganizationExtraOptionsAdditionalProperties": {
@@ -85581,7 +85421,7 @@
       "GetOrganizationTrace200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/GetOrganizationTrace200ResponseSchemaItem"
+          "$ref": "#/components/schemas/GetOrganizationTrace200ResponseItem"
         }
       },
       "ListOrganizationUserTeams200ResponseSchema": {
@@ -85745,7 +85585,7 @@
       "ListProjectSymbolSources200ResponseSchema": {
         "type": "array",
         "items": {
-          "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseSchemaItem"
+          "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
         }
       },
       "ListProjectTeams200ResponseSchema": {
@@ -86112,18 +85952,8 @@
         ]
       },
       "ListOrganizationReleaseCommits200ResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListOrganizationReleaseCommits200ResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "ListOrganizationReplays200ResponseDataItemTags": {
         "anyOf": [
@@ -86158,18 +85988,8 @@
         ]
       },
       "ListOrganizationRepoCommits200ResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListOrganizationRepoCommits200ResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "ListOrganizationSentryAppComponents200ResponseItemError": {
         "anyOf": [
@@ -86212,302 +86032,108 @@
         ]
       },
       "ListOrganizationWorkflows200ResponseItemTriggersConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListOrganizationWorkflows200ResponseItemTriggersActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemTriggersActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListOrganizationWorkflows200ResponseItemActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListOrganizationWorkflows200ResponseItemActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "CreateOrganizationWorkflow201ResponseTriggersConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseTriggersConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "CreateOrganizationWorkflow201ResponseTriggersActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseTriggersActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "CreateOrganizationWorkflow201ResponseActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseActionFiltersItemConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "CreateOrganizationWorkflow201ResponseActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseActionFiltersItemActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflows200ResponseItemTriggersConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemTriggersConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflows200ResponseItemTriggersActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemTriggersActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflows200ResponseItemActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemActionFiltersItemConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "GetOrganizationWorkflow200ResponseTriggersConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseTriggersConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "GetOrganizationWorkflow200ResponseTriggersActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseTriggersActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "GetOrganizationWorkflow200ResponseActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "GetOrganizationWorkflow200ResponseActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseActionFiltersItemActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflow200ResponseTriggersConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseTriggersConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflow200ResponseTriggersActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseTriggersActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflow200ResponseActionFiltersItemConditions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemConditionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "UpdateOrganizationWorkflow200ResponseActionFiltersItemActions": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsAnyOf1"
-          },
-          {
-            "type": "array",
-            "items": {}
-          }
-        ]
+        "type": "array",
+        "items": {}
       },
       "ListProjectCodeOwners200ResponseItemSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListProjectCodeOwners200ResponseItemSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "CreateProjectCodeOwners201ResponseSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/CreateProjectCodeOwners201ResponseSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "RetrieveProjectCodeOwners200ResponseSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/RetrieveProjectCodeOwners200ResponseSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "UpdateProjectCodeOwners200ResponseSchema": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/UpdateProjectCodeOwners200ResponseSchemaAnyOf1"
-          },
-          {
-            "type": "object",
-            "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
-          }
-        ]
+        "type": "object",
+        "description": "Legacy CODEOWNERS records can have an empty schema before it is built."
       },
       "GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFileAnyOf3"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMapAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMapAnyOf2"
-          },
-          {
-            "$ref": "#/components/schemas/GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMapAnyOf3"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "ListProjectFilters200ResponseItemActive": {
         "anyOf": [
@@ -86588,18 +86214,8 @@
         ]
       },
       "ListProjectReleaseCommits200ResponseItemAuthor": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseItemAuthorAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListProjectReleaseCommits200ResponseItemAuthorAnyOf2"
-          },
-          {
-            "type": "object",
-            "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
-          }
-        ]
+        "type": "object",
+        "description": "The commit serializer emits \u0060\u0060{}\u0060\u0060 for \u0060\u0060author\u0060\u0060 when the commit has no\nmapped author, so the published schema must allow an empty object alongside a\npopulated \u0060\u0060Author\u0060\u0060."
       },
       "ListProjectSymbolSources200ResponseItem": {
         "oneOf": [
@@ -87195,18 +86811,8 @@
         ]
       },
       "ListOrganizationIssueHashes200ResponseItemLatestEvent": {
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf1"
-          },
-          {
-            "$ref": "#/components/schemas/ListOrganizationIssueHashes200ResponseItemLatestEventAnyOf2"
-          },
-          {
-            "type": "object",
-            "nullable": true
-          }
-        ]
+        "type": "object",
+        "nullable": true
       },
       "GetOrganizationTrace200ResponseSchemaItem": {
         "anyOf": [
@@ -90953,7 +90559,7 @@
       "DashboardDetailsModelWidgetsItemChangedReasonItemEquationsItemProperty": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/DashboardDetailsModelWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
+          "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
         }
       },
       "DetailedProjectOrganizationExtraOptionsAdditionalPropertiesProperty": {
@@ -96062,7 +95668,7 @@
             "$ref": "#/components/schemas/CreateOrganizationMonitor201ResponseConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/CreateOrganizationMonitor201ResponseConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -96340,7 +95946,7 @@
             "$ref": "#/components/schemas/GetOrganizationMonitor200ResponseConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/GetOrganizationMonitor200ResponseConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -96664,7 +96270,7 @@
             "$ref": "#/components/schemas/UpdateOrganizationMonitor200ResponseConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/UpdateOrganizationMonitor200ResponseConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -103277,7 +102883,7 @@
             "$ref": "#/components/schemas/GetProjectMonitor200ResponseConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/GetProjectMonitor200ResponseConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -103601,7 +103207,7 @@
             "$ref": "#/components/schemas/UpdateProjectMonitor200ResponseConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/UpdateProjectMonitor200ResponseConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -118242,7 +117848,7 @@
             "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -118634,7 +118240,7 @@
             "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseItemMonitorConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseItemMonitorConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -122502,7 +122108,7 @@
             "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseItemMonitorConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseItemMonitorConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -125338,7 +124944,7 @@
             "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitors200ResponseItemConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -125616,7 +125222,7 @@
             "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseItemMonitorConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListOrganizationMonitorCheckins200ResponseItemMonitorConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -126963,7 +126569,7 @@
             "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseItemMonitorConfigScheduleType"
           },
           "schedule": {
-            "$ref": "#/components/schemas/ListProjectMonitorCheckins200ResponseItemMonitorConfigSchedule"
+            "$ref": "#/components/schemas/CheckInListItemMonitorConfigSchedule"
           },
           "checkin_margin": {
             "type": "integer",
@@ -128740,7 +128346,7 @@
       "GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
+          "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
         }
       },
       "UpdateOrganizationDashboardRequestWidgetsItemQueriesItemTransformations": {
@@ -128868,7 +128474,7 @@
       "UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItem": {
         "type": "object",
         "additionalProperties": {
-          "$ref": "#/components/schemas/UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
+          "$ref": "#/components/schemas/CreateOrganizationDashboard201ResponseWidgetsItemChangedReasonItemEquationsItemAdditionalProperties"
         }
       },
       "ListOrganizationDiscoverSavedQueries200ResponseItemCreatedByIdentitiesItem": {
@@ -134766,6 +134372,10 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -137091,7 +136701,17 @@
           null
         ],
         "type": "integer",
-        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay"
+        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay",
+        "x-ms-enum": {
+          "name": "SentryAppParserFeaturesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "SkipStatusCheckProvider": {
         "enum": [
@@ -140786,6 +140406,10 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -145348,7 +144972,17 @@
           null
         ],
         "type": "integer",
-        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay"
+        "description": "* \u00600\u0060 - integrations-api\n* \u00601\u0060 - integrations-issue-link\n* \u00602\u0060 - integrations-stacktrace-link\n* \u00603\u0060 - integrations-event-hooks\n* \u00604\u0060 - integrations-project-management\n* \u00605\u0060 - integrations-incident-management\n* \u00606\u0060 - integrations-feature-flag\n* \u00607\u0060 - integrations-alert-rule\n* \u00608\u0060 - integrations-release-management\n* \u00609\u0060 - integrations-visualization\n* \u006011\u0060 - integrations-chat\n* \u006012\u0060 - integrations-session-replay",
+        "x-ms-enum": {
+          "name": "UpdateSentryAppRequestFeaturesItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            }
+          ]
+        }
       },
       "CreateTeamExternalTeamRequestProvider": {
         "enum": [
@@ -150494,6 +150128,10 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -153527,6 +153165,10 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -157961,6 +157603,10 @@
             {
               "value": "localtime",
               "name": "Localtime"
+            },
+            {
+              "value": "",
+              "name": "EnumValue"
             }
           ]
         }
@@ -162023,6 +161669,10 @@
           "name": "ListOrganizationIssuesGroupStatsPeriodParameter",
           "modelAsString": false,
           "values": [
+            {
+              "value": "",
+              "name": "EnumValue"
+            },
             {
               "value": "14d",
               "name": "Value14D"

@@ -17,8 +17,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_file") is { } nullNodeSourceFile && nullNodeSourceFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFile = null;
-            if (parseNode.GetChildNode("source_map") is { } nullNodeSourceMap && nullNodeSourceMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMap = null;
+            if (parseNode.GetChildNode("source_file") is null) { _explicitNullValueSourceFile = default!; _explicitNullProperties?.Remove("source_file"); }
+            else if (parseNode.GetChildNode("source_file") is { } nullNodeSourceFile && nullNodeSourceFile.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceFile = null;
+            if (parseNode.GetChildNode("source_map") is null) { _explicitNullValueSourceMap = default!; _explicitNullProperties?.Remove("source_map"); }
+            else if (parseNode.GetChildNode("source_map") is { } nullNodeSourceMap && nullNodeSourceMap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMap = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The source_file property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile? SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_file"); else _explicitNullProperties?.Remove("source_file"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile? SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; AdditionalData?.Remove("source_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_file"); else _explicitNullProperties?.Remove("source_file"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile? _explicitNullValueSourceFile = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_file"); else _explicitNullProperties?.Remove("source_file"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile SourceFile { get => _explicitNullValueSourceFile; set { _explicitNullValueSourceFile = value; AdditionalData?.Remove("source_file"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_file"); else _explicitNullProperties?.Remove("source_file"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceFile _explicitNullValueSourceFile = default!;
 #endif
         /// <summary>The source_map property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap? SourceMap { get => _explicitNullValueSourceMap; set { _explicitNullValueSourceMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map"); else _explicitNullProperties?.Remove("source_map"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap? SourceMap { get => _explicitNullValueSourceMap; set { _explicitNullValueSourceMap = value; AdditionalData?.Remove("source_map"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map"); else _explicitNullProperties?.Remove("source_map"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap? _explicitNullValueSourceMap = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap SourceMap { get => _explicitNullValueSourceMap; set { _explicitNullValueSourceMap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map"); else _explicitNullProperties?.Remove("source_map"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap SourceMap { get => _explicitNullValueSourceMap; set { _explicitNullValueSourceMap = value; AdditionalData?.Remove("source_map"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map"); else _explicitNullProperties?.Remove("source_map"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemScrapingProcessSourceMap _explicitNullValueSourceMap = default!;
 #endif
         /// <summary>
