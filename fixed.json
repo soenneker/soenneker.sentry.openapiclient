@@ -1506,6 +1506,17 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationCodeMapping201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -2839,6 +2850,131 @@
           },
           "409": {
             "description": "Conflict"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationDashboard201Response"
+                },
+                "examples": {
+                  "CreateDashboard": {
+                    "summary": "Create Dashboard",
+                    "value": {
+                      "id": "1",
+                      "title": "Dashboard",
+                      "dateCreated": "2024-06-20T14:38:03.498574Z",
+                      "createdBy": {
+                        "id": "1",
+                        "name": "Admin",
+                        "username": "admin",
+                        "email": "admin@sentry.io",
+                        "avatarUrl": "www.example.com",
+                        "isActive": true,
+                        "isSuspended": false,
+                        "hasPasswordAuth": true,
+                        "isManaged": false,
+                        "dateJoined": "2021-10-25T17:07:33.190596Z",
+                        "lastLogin": "2024-07-16T15:28:39.261659Z",
+                        "has2fa": true,
+                        "lastActive": "2024-07-16T20:45:49.364197Z",
+                        "isSuperuser": false,
+                        "isStaff": false,
+                        "experiments": {},
+                        "emails": [
+                          {
+                            "id": "1",
+                            "email": "admin@sentry.io",
+                            "is_verified": true
+                          }
+                        ],
+                        "avatar": {
+                          "avatarType": "letter_avatar",
+                          "avatarUuid": null,
+                          "avatarUrl": "www.example.com"
+                        }
+                      },
+                      "widgets": [
+                        {
+                          "id": "658714",
+                          "title": "Custom Widget",
+                          "description": null,
+                          "displayType": "table",
+                          "thresholds": null,
+                          "interval": "5m",
+                          "dateCreated": "2024-07-16T15:36:46.048343Z",
+                          "dashboardId": "1",
+                          "datasetSource": "user",
+                          "queries": [
+                            {
+                              "id": "1",
+                              "name": "",
+                              "fields": [
+                                "avg(transaction.duration)",
+                                "transaction"
+                              ],
+                              "aggregates": [
+                                "avg(transaction.duration)"
+                              ],
+                              "transformations": {},
+                              "columns": [
+                                "transaction"
+                              ],
+                              "fieldAliases": [
+                                "",
+                                ""
+                              ],
+                              "conditions": "",
+                              "orderby": "-avg(transaction.duration)",
+                              "widgetId": "1",
+                              "onDemand": [
+                                {
+                                  "enabled": false,
+                                  "extractionState": "disabled:not-applicable",
+                                  "dashboardWidgetQueryId": 1
+                                }
+                              ],
+                              "isHidden": false,
+                              "selectedAggregate": null,
+                              "linkedDashboards": []
+                            }
+                          ],
+                          "limit": null,
+                          "widgetType": "transaction-like",
+                          "layout": {
+                            "w": 2,
+                            "y": 0,
+                            "h": 2,
+                            "minH": 2,
+                            "x": 0
+                          },
+                          "exploreUrls": null,
+                          "changedReason": null,
+                          "axisRange": null,
+                          "legendType": "default"
+                        }
+                      ],
+                      "projects": [
+                        1
+                      ],
+                      "filters": {},
+                      "environment": [
+                        "alpha"
+                      ],
+                      "period": "7d",
+                      "permissions": {
+                        "isEditableByEveryone": true,
+                        "teamsWithEditAccess": []
+                      },
+                      "isFavorited": false,
+                      "prebuiltId": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -4716,6 +4852,80 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationDiscoverSavedQuery201Response"
+                },
+                "examples": {
+                  "CreateDiscoverSavedQuery": {
+                    "summary": "Create Discover Saved Query",
+                    "value": {
+                      "id": "1",
+                      "name": "Transactions by Volume",
+                      "projects": [],
+                      "version": 2,
+                      "queryDataset": "transaction-like",
+                      "datasetSource": "unknown",
+                      "expired": false,
+                      "dateCreated": "2024-07-25T19:35:38.422859Z",
+                      "dateUpdated": "2024-07-25T19:35:38.422874Z",
+                      "lastVisited": "2024-07-25T19:35:38.422874Z",
+                      "environment": [],
+                      "query": "transaction:/api/foo",
+                      "fields": [
+                        "transaction",
+                        "project",
+                        "count()",
+                        "avg(transaction.duration)",
+                        "p75()",
+                        "p95()"
+                      ],
+                      "widths": [],
+                      "range": "24h",
+                      "orderby": "-count",
+                      "yAxis": [
+                        "count()"
+                      ],
+                      "createdBy": {
+                        "id": "1",
+                        "name": "Admin",
+                        "username": "admin",
+                        "email": "admin@sentry.io",
+                        "avatarUrl": "www.example.com",
+                        "isActive": true,
+                        "isSuspended": false,
+                        "hasPasswordAuth": true,
+                        "isManaged": false,
+                        "dateJoined": "2021-10-25T17:07:33.190596Z",
+                        "lastLogin": "2024-07-16T15:28:39.261659Z",
+                        "has2fa": true,
+                        "lastActive": "2024-07-16T20:45:49.364197Z",
+                        "isSuperuser": false,
+                        "isStaff": false,
+                        "experiments": {},
+                        "emails": [
+                          {
+                            "id": "1",
+                            "email": "admin@sentry.io",
+                            "is_verified": true
+                          }
+                        ],
+                        "avatar": {
+                          "avatarType": "letter_avatar",
+                          "avatarUuid": null,
+                          "avatarUrl": "www.example.com"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6659,6 +6869,17 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationForwarding201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -6961,6 +7182,17 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationIssueView201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -8495,6 +8727,71 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddOrganizationMember201Response"
+                },
+                "examples": {
+                  "AddAMemberToAnOrganization": {
+                    "summary": "Add a member to an organization",
+                    "value": {
+                      "id": "57377908164",
+                      "email": "sirpenguin@antarcticarocks.com",
+                      "name": "Sir Penguin",
+                      "user": {
+                        "id": "280094367316",
+                        "name": "Sir Penguin",
+                        "username": "sirpenguin@antarcticarocks.com",
+                        "email": "sirpenguin@antarcticarocks.com",
+                        "avatarUrl": "https://secure.gravatar.com/avatar/16aeb26c5fdba335c7078e9e9ddb5149?s=32\u0026d=mm",
+                        "isActive": true,
+                        "isSuspended": false,
+                        "hasPasswordAuth": true,
+                        "isManaged": false,
+                        "dateJoined": "2021-07-06T21:13:58.375239Z",
+                        "lastLogin": "2021-08-02T18:25:00.051182Z",
+                        "has2fa": false,
+                        "lastActive": "2021-08-02T21:32:18.836829Z",
+                        "isSuperuser": false,
+                        "isStaff": false,
+                        "experiments": {},
+                        "emails": [
+                          {
+                            "id": "2153450836",
+                            "email": "sirpenguin@antarcticarocks.com",
+                            "is_verified": true
+                          }
+                        ],
+                        "avatar": {
+                          "avatarType": "letter_avatar",
+                          "avatarUuid": null
+                        },
+                        "canReset2fa": true
+                      },
+                      "orgRole": "member",
+                      "pending": false,
+                      "expired": false,
+                      "flags": {
+                        "idp:provisioned": false,
+                        "idp:role-restricted": false,
+                        "sso:linked": false,
+                        "sso:invalid": false,
+                        "member-limit:restricted": false,
+                        "partnership:restricted": false
+                      },
+                      "dateCreated": "2021-07-06T21:13:01.120263Z",
+                      "inviteStatus": "approved",
+                      "inviterName": "maininviter@antarcticarocks.com"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9314,6 +9611,51 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddOrganizationMemberTeam201Response"
+                },
+                "examples": {
+                  "Join,RequestAccessToOrAddAMemberToATeam": {
+                    "summary": "Join, request access to or add a member to a team",
+                    "value": {
+                      "id": "4502349234123",
+                      "slug": "ancient-gabelers",
+                      "name": "Ancient Gabelers",
+                      "dateCreated": "2023-05-31T19:47:53.621181Z",
+                      "isMember": true,
+                      "teamRole": "contributor",
+                      "flags": {
+                        "idp:provisioned": false
+                      },
+                      "access": [
+                        "alerts:read",
+                        "event:write",
+                        "project:read",
+                        "team:read",
+                        "member:read",
+                        "project:releases",
+                        "event:read",
+                        "org:read"
+                      ],
+                      "hasAccess": true,
+                      "isPending": false,
+                      "memberCount": 3,
+                      "avatar": {
+                        "avatarType": "letter_avatar",
+                        "avatarUuid": null,
+                        "avatarUrl": null
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -9680,6 +10022,17 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationMonitor201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10083,6 +10436,36 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListOrganizationNotificationsActions201Response"
+                },
+                "examples": {
+                  "CreateANewEmailSpikeProtectionNotificationActionForAProject": {
+                    "summary": "Create a new email spike protection notification action for a project",
+                    "value": {
+                      "id": 836501735,
+                      "organizationId": 62848264,
+                      "integrationId": null,
+                      "sentryAppId": null,
+                      "serviceType": "sentry_notification",
+                      "targetDisplay": "default",
+                      "targetIdentifier": "default",
+                      "targetType": "specific",
+                      "triggerType": "spike-protection",
+                      "projects": [
+                        4505321021243392
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10162,6 +10545,36 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationNotificationsAction201Response"
+                },
+                "examples": {
+                  "CreateANewEmailSpikeProtectionNotificationActionForAProject": {
+                    "summary": "Create a new email spike protection notification action for a project",
+                    "value": {
+                      "id": 836501735,
+                      "organizationId": 62848264,
+                      "integrationId": null,
+                      "sentryAppId": null,
+                      "serviceType": "sentry_notification",
+                      "targetDisplay": "default",
+                      "targetIdentifier": "default",
+                      "targetType": "specific",
+                      "triggerType": "spike-protection",
+                      "projects": [
+                        4505321021243392
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -10321,6 +10734,36 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateOrganizationNotificationsAction202Response"
+                },
+                "examples": {
+                  "UpdateASpikeProtectionNotificationActionCreatedForAProjectToUseSentryNotificationAsNotificationService.": {
+                    "summary": "Update a spike protection notification action created for a project to use sentry_notification as notification service.",
+                    "value": {
+                      "id": 836501735,
+                      "organizationId": 62848264,
+                      "integrationId": null,
+                      "sentryAppId": null,
+                      "serviceType": "sentry_notification",
+                      "targetDisplay": "default",
+                      "targetIdentifier": "default",
+                      "targetType": "specific",
+                      "triggerType": "spike-protection",
+                      "projects": [
+                        4505321021243392
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -12223,6 +12666,99 @@
           },
           "409": {
             "description": "Conflict"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationProject201Response"
+                },
+                "examples": {
+                  "ProjectSuccessfullyCreated": {
+                    "summary": "Project successfully created",
+                    "value": {
+                      "team": {
+                        "id": "2349234102",
+                        "name": "Prime Mover",
+                        "slug": "prime-mover"
+                      },
+                      "teams": [
+                        {
+                          "id": "2349234102",
+                          "name": "Prime Mover",
+                          "slug": "prime-mover"
+                        },
+                        {
+                          "id": "47584447",
+                          "name": "Powerful Abolitionist",
+                          "slug": "powerful-abolitionist"
+                        }
+                      ],
+                      "id": "6758470122493650",
+                      "slug": "the-spoiled-yoghurt",
+                      "name": "The Spoiled Yoghurt",
+                      "isBookmarked": false,
+                      "isMember": true,
+                      "access": [
+                        "project:read",
+                        "event:read",
+                        "team:read",
+                        "alerts:read",
+                        "org:read",
+                        "event:write",
+                        "project:releases",
+                        "member:read"
+                      ],
+                      "hasAccess": true,
+                      "dateCreated": "2023-03-29T15:25:21.344565Z",
+                      "environments": [
+                        "production"
+                      ],
+                      "features": [
+                        "custom-inbound-filters",
+                        "discard-groups",
+                        "minidump",
+                        "rate-limits",
+                        "servicehooks",
+                        "similarity-indexing",
+                        "similarity-indexing-v2",
+                        "similarity-view",
+                        "similarity-view-v2"
+                      ],
+                      "firstEvent": null,
+                      "firstTransactionEvent": true,
+                      "hasSessions": false,
+                      "hasProfiles": false,
+                      "hasReplays": false,
+                      "hasFlags": false,
+                      "hasMonitors": false,
+                      "hasFeedbacks": false,
+                      "hasNewFeedbacks": false,
+                      "hasMinifiedStackTrace": false,
+                      "hasInsightsHttp": true,
+                      "hasInsightsDb": false,
+                      "hasInsightsAssets": false,
+                      "hasInsightsAppStart": false,
+                      "hasInsightsScreenLoad": false,
+                      "hasInsightsVitals": false,
+                      "hasInsightsCaches": true,
+                      "hasInsightsQueues": true,
+                      "hasInsightsAgentMonitoring": false,
+                      "hasInsightsMCP": false,
+                      "hasLogs": false,
+                      "hasTraceMetrics": false,
+                      "platform": "node-express",
+                      "platforms": [],
+                      "latestRelease": null,
+                      "hasUserReports": false,
+                      "latestDeploys": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -12373,6 +12909,90 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationProjectDetector201Response"
+                },
+                "examples": {
+                  "MonitorSuccessfullyCreated": {
+                    "summary": "Monitor successfully created",
+                    "value": {
+                      "id": "12345",
+                      "projectId": "1",
+                      "name": "Example metric monitor",
+                      "description": "Example description",
+                      "type": "metric_issue",
+                      "workflowIds": [],
+                      "owner": {
+                        "type": "user",
+                        "id": "12345",
+                        "name": "Jane Doe",
+                        "email": "jane@sentry.io"
+                      },
+                      "createdBy": "12345",
+                      "dateCreated": "2026-01-08T23:45:13.235259Z",
+                      "dateUpdated": "2026-01-08T23:45:13.235243Z",
+                      "dataSources": [
+                        {
+                          "id": "123456",
+                          "organizationId": "1",
+                          "type": "snuba_query_subscription",
+                          "sourceId": "12345",
+                          "queryObj": {
+                            "id": "23456",
+                            "status": 1,
+                            "subscription": null,
+                            "snubaQuery": {
+                              "id": "45678",
+                              "dataset": "events",
+                              "query": "is:unresolved",
+                              "aggregate": "count()",
+                              "timeWindow": 3600,
+                              "environment": null,
+                              "eventTypes": [
+                                "error",
+                                "default"
+                              ],
+                              "extrapolationMode": "unknown"
+                            }
+                          }
+                        }
+                      ],
+                      "conditionGroup": {
+                        "id": "1234567",
+                        "organizationId": "1",
+                        "logicType": "any",
+                        "conditions": [
+                          {
+                            "id": "2345677",
+                            "type": "gt",
+                            "comparison": 10,
+                            "conditionResult": 75
+                          },
+                          {
+                            "id": "567891",
+                            "type": "lte",
+                            "comparison": 10,
+                            "conditionResult": 0
+                          }
+                        ],
+                        "actions": []
+                      },
+                      "config": {
+                        "detectionType": "static"
+                      },
+                      "enabled": true,
+                      "latestGroup": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -12941,6 +13561,71 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationRelease201Response"
+                },
+                "examples": {
+                  "CreateARelease": {
+                    "summary": "Create a release",
+                    "value": {
+                      "id": 1,
+                      "version": "frontend@1.0.0",
+                      "shortVersion": "frontend@1.0.0",
+                      "status": "open",
+                      "versionInfo": {
+                        "package": "frontend",
+                        "version": {
+                          "raw": "1.0.0",
+                          "major": 1,
+                          "minor": 0,
+                          "patch": 0,
+                          "pre": null,
+                          "buildCode": null,
+                          "components": 3
+                        },
+                        "description": "1.0.0",
+                        "buildHash": null
+                      },
+                      "ref": null,
+                      "url": null,
+                      "dateReleased": null,
+                      "dateCreated": "2024-01-01T00:00:00Z",
+                      "data": {},
+                      "newGroups": 0,
+                      "owner": null,
+                      "commitCount": 0,
+                      "lastCommit": null,
+                      "deployCount": 0,
+                      "lastDeploy": null,
+                      "authors": [],
+                      "projects": [
+                        {
+                          "id": 1,
+                          "slug": "sentry",
+                          "name": "sentry",
+                          "newGroups": 0,
+                          "platform": "javascript",
+                          "platforms": [
+                            "javascript"
+                          ],
+                          "hasHealthData": false
+                        }
+                      ],
+                      "firstEvent": null,
+                      "lastEvent": null,
+                      "currentProjectMeta": {},
+                      "userAgent": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -14055,6 +14740,17 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationReleaseDeploy201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -14232,6 +14928,17 @@
           },
           "409": {
             "description": "Conflict"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadOrganizationReleaseFile201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -15839,6 +16546,33 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvisionOrganizationScimV2Group201Response"
+                },
+                "examples": {
+                  "ProvisionTeam": {
+                    "summary": "provisionTeam",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:schemas:core:2.0:Group"
+                      ],
+                      "displayName": "Test SCIMv2",
+                      "members": [],
+                      "meta": {
+                        "resourceType": "Group"
+                      },
+                      "id": "123"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -16634,6 +17368,45 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProvisionOrganizationScimV2User201Response"
+                },
+                "examples": {
+                  "ProvisionNewMember": {
+                    "summary": "Provision new member",
+                    "value": {
+                      "schemas": [
+                        "urn:ietf:params:scim:schemas:core:2.0:User"
+                      ],
+                      "id": "242",
+                      "userName": "test.user@okta.local",
+                      "emails": [
+                        {
+                          "primary": true,
+                          "value": "test.user@okta.local",
+                          "type": "work"
+                        }
+                      ],
+                      "active": true,
+                      "name": {
+                        "familyName": "N/A",
+                        "givenName": "N/A"
+                      },
+                      "meta": {
+                        "resourceType": "User"
+                      },
+                      "sentryOrgRole": "member"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -18457,6 +19230,58 @@
           },
           "404": {
             "description": "A team with this slug already exists."
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationTeam201Response"
+                },
+                "examples": {
+                  "CreateANewTeam": {
+                    "summary": "Create a new team",
+                    "value": {
+                      "id": "5151492858",
+                      "slug": "ancient-gabelers",
+                      "name": "Ancient Gabelers",
+                      "dateCreated": "2021-06-12T23:38:54.168307Z",
+                      "isMember": true,
+                      "teamRole": "admin",
+                      "flags": {
+                        "idp:provisioned": false
+                      },
+                      "access": [
+                        "project:write",
+                        "member:read",
+                        "event:write",
+                        "team:admin",
+                        "alerts:read",
+                        "project:releases",
+                        "alerts:write",
+                        "org:read",
+                        "team:read",
+                        "project:admin",
+                        "project:read",
+                        "org:integrations",
+                        "event:read",
+                        "event:admin",
+                        "team:write"
+                      ],
+                      "hasAccess": true,
+                      "isPending": false,
+                      "memberCount": 1,
+                      "avatar": {
+                        "avatarType": "letter_avatar",
+                        "avatarUuid": null,
+                        "avatarUrl": null
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -20039,6 +20864,103 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateOrganizationWorkflow201Response"
+                },
+                "examples": {
+                  "WorkflowSuccessfullyCreated": {
+                    "summary": "Workflow successfully created",
+                    "value": {
+                      "id": "1234567",
+                      "name": "Notify Jane Doe",
+                      "organizationId": "1",
+                      "createdBy": "2345",
+                      "dateCreated": "2026-01-13T21:21:15.975384Z",
+                      "dateUpdated": "2026-01-13T21:21:15.975376Z",
+                      "triggers": {
+                        "id": "456789",
+                        "organizationId": "1",
+                        "logicType": "any-short",
+                        "conditions": [
+                          {
+                            "id": "234567",
+                            "type": "first_seen_event",
+                            "comparison": true,
+                            "conditionResult": true
+                          },
+                          {
+                            "id": "1234567",
+                            "type": "issue_resolved_trigger",
+                            "comparison": true,
+                            "conditionResult": true
+                          },
+                          {
+                            "id": "678912",
+                            "type": "reappeared_event",
+                            "comparison": true,
+                            "conditionResult": true
+                          },
+                          {
+                            "id": "7891234",
+                            "type": "regression_event",
+                            "comparison": true,
+                            "conditionResult": true
+                          }
+                        ],
+                        "actions": []
+                      },
+                      "actionFilters": [
+                        {
+                          "id": "45678",
+                          "organizationId": "1",
+                          "logicType": "any-short",
+                          "conditions": [
+                            {
+                              "id": "23456789",
+                              "type": "issue_occurrences",
+                              "comparison": {
+                                "value": 10
+                              },
+                              "conditionResult": true
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "id": "1234789",
+                              "type": "email",
+                              "integrationId": null,
+                              "data": {},
+                              "config": {
+                                "targetType": "user",
+                                "targetDisplay": null,
+                                "targetIdentifier": "6789"
+                              },
+                              "status": "active"
+                            }
+                          ]
+                        }
+                      ],
+                      "environment": null,
+                      "config": {
+                        "frequency": 1440
+                      },
+                      "detectorIds": [
+                        "1000"
+                      ],
+                      "enabled": true,
+                      "lastTriggered": null,
+                      "owner": "user:123456"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -21771,6 +22693,58 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectCodeOwners201Response"
+                },
+                "examples": {
+                  "CreatedCODEOWNERSConfiguration": {
+                    "summary": "Created CODEOWNERS configuration",
+                    "value": {
+                      "id": "42",
+                      "raw": "src/* user@example.com",
+                      "dateCreated": "2024-01-15T10:30:00Z",
+                      "dateUpdated": "2024-01-15T10:30:00Z",
+                      "dateSynced": "2024-01-15T10:30:00Z",
+                      "codeMappingId": "7",
+                      "provider": "github",
+                      "errors": {
+                        "missing_external_teams": [],
+                        "missing_external_users": [],
+                        "missing_user_emails": [],
+                        "teams_without_access": [],
+                        "users_without_access": []
+                      },
+                      "schema": {
+                        "$version": 1,
+                        "rules": [
+                          {
+                            "matcher": {
+                              "type": "codeowners",
+                              "pattern": "src/*"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "1",
+                                "name": "user@example.com"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      "codeOwnersUrl": "https://github.com/example/repository/blob/main/CODEOWNERS",
+                      "ownershipSyntax": "codeowners:src/* user@example.com\n"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -22287,6 +23261,54 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateACustomInboundFilter201Response"
+                },
+                "examples": {
+                  "CustomInboundFilter": {
+                    "summary": "Custom inbound filter",
+                    "value": {
+                      "id": "42",
+                      "name": "Drop TypeErrors from the 1.x releases",
+                      "active": true,
+                      "dataType": "error",
+                      "conditions": [
+                        {
+                          "type": "error_type",
+                          "operator": "equals",
+                          "value": [
+                            "TypeError"
+                          ]
+                        },
+                        {
+                          "type": "error_message",
+                          "operator": "contains",
+                          "value": [
+                            "undefined"
+                          ]
+                        },
+                        {
+                          "type": "release",
+                          "operator": "lt",
+                          "value": [
+                            "2.0.0"
+                          ]
+                        }
+                      ],
+                      "dateCreated": "2024-07-23T17:52:53.981206Z",
+                      "dateUpdated": "2024-07-23T17:52:53.981206Z",
+                      "legacyFilter": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -24823,6 +25845,71 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectKey201Response"
+                },
+                "examples": {
+                  "ClientKeyWithRateLimiting": {
+                    "summary": "Client key with rate limiting",
+                    "value": {
+                      "id": "60120449b6b1d5e45f75561e6dabd80b",
+                      "name": "Liked Pegasus",
+                      "label": "Liked Pegasus",
+                      "public": "60120449b6b1d5e45f75561e6dabd80b",
+                      "secret": "189485c3b8ccf582bf5e12c530ef8858",
+                      "projectId": 4505281256090153,
+                      "isActive": true,
+                      "rateLimit": {
+                        "window": 7200,
+                        "count": 1000
+                      },
+                      "dsn": {
+                        "secret": "https://a785682ddda742d7a8a4088810e67701:bcd99b3790b3441c85ce4b1eaa854f66@o4504765715316736.ingest.sentry.io/4505281256090153",
+                        "public": "https://a785682ddda742d7a8a4088810e67791@o4504765715316736.ingest.sentry.io/4505281256090153",
+                        "csp": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/csp-report/?sentry_key=a785682ddda719b7a8a4011110d75598",
+                        "security": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/security/?sentry_key=a785682ddda719b7a8a4011110d75598",
+                        "minidump": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/minidump/?sentry_key=a785682ddda719b7a8a4011110d75598",
+                        "playstation": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/playstation/?sentry_key=a785682ddda719b7a8a4011110d75598",
+                        "integration": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/integration/",
+                        "otlp_traces": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/integration/otlp/v1/traces",
+                        "otlp_logs": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/integration/otlp/v1/logs",
+                        "nel": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/nel/?sentry_key=a785682ddda719b7a8a4011110d75598",
+                        "unreal": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/unreal/a785682ddda719b7a8a4011110d75598/",
+                        "cdn": "https://js.sentry-cdn.com/a785682ddda719b7a8a4011110d75598.min.js",
+                        "crons": "https://o4504765715316736.ingest.sentry.io/api/4505281256090153/crons/___MONITOR_SLUG___/a785682ddda719b7a8a4011110d75598/"
+                      },
+                      "browserSdkVersion": "7.x",
+                      "browserSdk": {
+                        "choices": [
+                          [
+                            "latest",
+                            "latest"
+                          ],
+                          [
+                            "7.x",
+                            "7.x"
+                          ]
+                        ]
+                      },
+                      "dateCreated": "2023-06-21T19:50:26.036254Z",
+                      "dynamicSdkLoaderOptions": {
+                        "hasReplay": true,
+                        "hasPerformance": true,
+                        "hasDebug": true,
+                        "hasFeedback": false,
+                        "hasLogsAndMetrics": false
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -25820,6 +26907,75 @@
           },
           "400": {
             "description": "Bad Request"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateProjectOwnership202Response"
+                },
+                "examples": {
+                  "UpdateOwnershipConfigurationForAProject": {
+                    "summary": "Update ownership configuration for a project",
+                    "value": {
+                      "raw": "path:src/views/checkout jane.smith@org.com \nurl:https://example.com/checkout jane.smith@org.com\ntags.transaction:/checkout/:page jane.smith@org.com",
+                      "fallthrough": true,
+                      "dateCreated": "2023-10-03T20:25:18.539823Z",
+                      "lastUpdated": "2023-10-03T22:49:12.294741Z",
+                      "isActive": true,
+                      "autoAssignment": "Auto Assign to Issue Owner",
+                      "codeownersAutoSync": true,
+                      "schema": {
+                        "$version": 1,
+                        "rules": [
+                          {
+                            "matcher": {
+                              "type": "path",
+                              "pattern": "src/views/checkout"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "2621754",
+                                "name": "jane.smith@org.com"
+                              }
+                            ]
+                          },
+                          {
+                            "matcher": {
+                              "type": "url",
+                              "pattern": "https://example.com/checkout"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "2621754",
+                                "name": "jane.smith@org.com"
+                              }
+                            ]
+                          },
+                          {
+                            "matcher": {
+                              "type": "tags.transaction",
+                              "pattern": "/checkout/:page"
+                            },
+                            "owners": [
+                              {
+                                "type": "user",
+                                "id": "2621754",
+                                "name": "jane.smith@org.com"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -27214,6 +28370,17 @@
           },
           "409": {
             "description": "Conflict"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadProjectReleaseFile201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -28245,6 +29412,37 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProjectReplayDeletionJob201Response"
+                },
+                "examples": {
+                  "CreateAnAsyncJobToBatchDeleteReplayInstances": {
+                    "summary": "Create an async job to batch delete replay instances",
+                    "value": {
+                      "data": {
+                        "id": 1,
+                        "dateCreated": "2024-01-01T00:00:00Z",
+                        "dateUpdated": "2024-01-01T00:05:00Z",
+                        "rangeStart": "2023-12-01T00:00:00Z",
+                        "rangeEnd": "2024-01-01T00:00:00Z",
+                        "environments": [
+                          "production"
+                        ],
+                        "status": "pending",
+                        "query": "user.email:test@example.com",
+                        "countDeleted": 0
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -28465,6 +29663,17 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LinkProjectRepository201Response"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -29232,6 +30441,35 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
+                },
+                "examples": {
+                  "AddACustomSymbolSourceToAProject.": {
+                    "summary": "Add a custom symbol source to a project.",
+                    "value": {
+                      "id": "honk",
+                      "name": "honk source",
+                      "layout": {
+                        "type": "native"
+                      },
+                      "type": "http",
+                      "url": "http://honk.beep",
+                      "username": "honkhonk",
+                      "password": {
+                        "hidden-secret": true
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -29684,6 +30922,107 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AddProjectTeam201Response"
+                },
+                "examples": {
+                  "GiveATeamAccessToAProject": {
+                    "summary": "Give a Team Access to a Project",
+                    "value": {
+                      "id": "6758470122493650",
+                      "slug": "the-spoiled-yoghurt",
+                      "name": "The Spoiled Yoghurt",
+                      "platform": "javascript",
+                      "dateCreated": "2023-03-29T15:25:21.344565Z",
+                      "isBookmarked": false,
+                      "isMember": true,
+                      "features": [
+                        "custom-inbound-filters",
+                        "discard-groups",
+                        "minidump",
+                        "rate-limits",
+                        "servicehooks",
+                        "similarity-indexing",
+                        "similarity-indexing-v2",
+                        "similarity-view",
+                        "similarity-view-v2"
+                      ],
+                      "firstEvent": null,
+                      "firstTransactionEvent": false,
+                      "access": [
+                        "member:read",
+                        "event:read",
+                        "project:admin",
+                        "team:write",
+                        "project:write",
+                        "team:admin",
+                        "project:read",
+                        "org:integrations",
+                        "org:read",
+                        "project:releases",
+                        "team:read",
+                        "alerts:write",
+                        "event:admin",
+                        "event:write",
+                        "alerts:read"
+                      ],
+                      "hasAccess": true,
+                      "hasMinifiedStackTrace": false,
+                      "hasFeedbacks": false,
+                      "hasMonitors": false,
+                      "hasNewFeedbacks": false,
+                      "hasProfiles": false,
+                      "hasReplays": false,
+                      "hasFlags": false,
+                      "hasSessions": false,
+                      "hasInsightsHttp": true,
+                      "hasInsightsDb": false,
+                      "hasInsightsAssets": true,
+                      "hasInsightsAppStart": false,
+                      "hasInsightsScreenLoad": false,
+                      "hasInsightsVitals": false,
+                      "hasInsightsCaches": false,
+                      "hasInsightsQueues": false,
+                      "hasInsightsAgentMonitoring": false,
+                      "hasInsightsMCP": false,
+                      "hasLogs": false,
+                      "hasTraceMetrics": false,
+                      "isInternal": false,
+                      "isPublic": false,
+                      "avatar": {
+                        "avatarType": "letter_avatar",
+                        "avatarUuid": null
+                      },
+                      "color": "#5cbf3f",
+                      "status": "active",
+                      "team": {
+                        "id": "2349234102",
+                        "name": "Prime Mover",
+                        "slug": "prime-mover"
+                      },
+                      "teams": [
+                        {
+                          "id": "2349234102",
+                          "name": "Prime Mover",
+                          "slug": "prime-mover"
+                        },
+                        {
+                          "id": "47584447",
+                          "name": "Powerful Abolitionist",
+                          "slug": "powerful-abolitionist"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31418,6 +32757,99 @@
           },
           "409": {
             "description": "A project with this slug already exists."
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTeamProject201Response"
+                },
+                "examples": {
+                  "ProjectSuccessfullyCreated": {
+                    "summary": "Project successfully created",
+                    "value": {
+                      "team": {
+                        "id": "2349234102",
+                        "name": "Prime Mover",
+                        "slug": "prime-mover"
+                      },
+                      "teams": [
+                        {
+                          "id": "2349234102",
+                          "name": "Prime Mover",
+                          "slug": "prime-mover"
+                        },
+                        {
+                          "id": "47584447",
+                          "name": "Powerful Abolitionist",
+                          "slug": "powerful-abolitionist"
+                        }
+                      ],
+                      "id": "6758470122493650",
+                      "slug": "the-spoiled-yoghurt",
+                      "name": "The Spoiled Yoghurt",
+                      "isBookmarked": false,
+                      "isMember": true,
+                      "access": [
+                        "project:read",
+                        "event:read",
+                        "team:read",
+                        "alerts:read",
+                        "org:read",
+                        "event:write",
+                        "project:releases",
+                        "member:read"
+                      ],
+                      "hasAccess": true,
+                      "dateCreated": "2023-03-29T15:25:21.344565Z",
+                      "environments": [
+                        "production"
+                      ],
+                      "features": [
+                        "custom-inbound-filters",
+                        "discard-groups",
+                        "minidump",
+                        "rate-limits",
+                        "servicehooks",
+                        "similarity-indexing",
+                        "similarity-indexing-v2",
+                        "similarity-view",
+                        "similarity-view-v2"
+                      ],
+                      "firstEvent": null,
+                      "firstTransactionEvent": true,
+                      "hasSessions": false,
+                      "hasProfiles": false,
+                      "hasReplays": false,
+                      "hasFlags": false,
+                      "hasMonitors": false,
+                      "hasFeedbacks": false,
+                      "hasNewFeedbacks": false,
+                      "hasMinifiedStackTrace": false,
+                      "hasInsightsHttp": true,
+                      "hasInsightsDb": false,
+                      "hasInsightsAssets": false,
+                      "hasInsightsAppStart": false,
+                      "hasInsightsScreenLoad": false,
+                      "hasInsightsVitals": false,
+                      "hasInsightsCaches": true,
+                      "hasInsightsQueues": true,
+                      "hasInsightsAgentMonitoring": false,
+                      "hasInsightsMCP": false,
+                      "hasLogs": false,
+                      "hasTraceMetrics": false,
+                      "platform": "node-express",
+                      "platforms": [],
+                      "latestRelease": null,
+                      "hasUserReports": false,
+                      "latestDeploys": null
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -31836,6 +33268,28 @@
           },
           "404": {
             "description": "The requested resource does not exist"
+          },
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RegisterANewServiceHook201Response"
+                },
+                "example": {
+                  "dateCreated": "2018-11-06T21:20:08.143Z",
+                  "events": [
+                    "event.alert",
+                    "event.created"
+                  ],
+                  "id": "4f9d73e63b7144ecb8944c41620a090b",
+                  "secret": "8fcac28aaa4c4f5fa572b61d40a8e084364db25fd37449c299e5a41c0504cbc2",
+                  "status": "active",
+                  "url": "https://empowerplant.io/sentry-hook"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -33614,6 +35068,26 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "202 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartOrganizationIssueAutofix202Response"
+                },
+                "examples": {
+                  "SuccessfulAutofixCreation": {
+                    "summary": "Successful Autofix Creation",
+                    "value": {
+                      "run_id": 12345,
+                      "sentry_run_id": "f47ac10b-58cc-4372-a567-0e02b2c3d479"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "security": [
@@ -35278,6 +36752,29 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "200": {
+            "description": "201 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAnExternalIssueAndLinkItToAnIssue201Response"
+                },
+                "examples": {
+                  "CreateOrLinkAnExternalIssue": {
+                    "summary": "Create or link an external issue",
+                    "value": {
+                      "id": 5,
+                      "key": "PROJECT-123",
+                      "url": "https://example.atlassian.net/browse/PROJECT-123",
+                      "integrationId": 123456,
+                      "displayName": "PROJECT-123"
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
