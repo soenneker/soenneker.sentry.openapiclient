@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServ
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServiceSpans.EmptyPathSegmentRequestBuilder.EmptyPathSegmentRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/api/0/organizations/{organizationIdOrSlug}/starred-service-spans/?project_id={project_id}&service_span={service_span}", RequestAdapter.BaseUrl, "https://us.sentry.io", "/api/0/organizations/{organizationIdOrSlug}/starred-service-spans/", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/starred-service-spans/?project_id={project_id}&service_span={service_span}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             return requestInfo;
         }
@@ -105,7 +105,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServ
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://us.sentry.io", "/api/0/organizations/{organizationIdOrSlug}/starred-service-spans/", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
