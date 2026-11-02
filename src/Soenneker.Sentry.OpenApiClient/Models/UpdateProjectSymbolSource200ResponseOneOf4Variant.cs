@@ -9,7 +9,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4 : global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItem, IParsable
+    public partial class UpdateProjectSymbolSource200ResponseOneOf4Variant : global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200Response, IParsable
     #pragma warning restore CS1591
     {
         // Track explicitly assigned nulls separately from absent properties.
@@ -69,12 +69,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The client_secret property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret? _explicitNullValueClientSecret = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret? _explicitNullValueClientSecret = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret _explicitNullValueClientSecret = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_secret"); else _explicitNullProperties?.Remove("client_secret"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret _explicitNullValueClientSecret = default!;
 #endif
         /// <summary>The container property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,12 +89,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The filters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters? _explicitNullValueFilters = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters _explicitNullValueFilters = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters _explicitNullValueFilters = default!;
 #endif
         /// <summary>The has_index property</summary>
         public bool? HasIndex { get => _explicitNullValueHasIndex; set { _explicitNullValueHasIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_index"); else _explicitNullProperties?.Remove("has_index"); } }
@@ -115,12 +115,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The layout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout? _explicitNullValueLayout = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout? _explicitNullValueLayout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout _explicitNullValueLayout = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout _explicitNullValueLayout = default!;
 #endif
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -165,12 +165,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Variant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Variant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Variant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -182,13 +182,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "account", n => { Account = n.GetStringValue(); } },
                 { "client_id", n => { ClientId = n.GetStringValue(); } },
-                { "client_secret", n => { ClientSecret = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret.CreateFromDiscriminatorValue); } },
+                { "client_secret", n => { ClientSecret = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret.CreateFromDiscriminatorValue); } },
                 { "container", n => { Container = n.GetStringValue(); } },
-                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters.CreateFromDiscriminatorValue); } },
                 { "has_index", n => { HasIndex = n.GetBoolValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_public", n => { IsPublic = n.GetBoolValue(); } },
-                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout.CreateFromDiscriminatorValue); } },
+                { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "prefix", n => { Prefix = n.GetStringValue(); } },
@@ -205,13 +205,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("account", Account);
             writer.WriteStringValue("client_id", ClientId);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4ClientSecret>("client_secret", ClientSecret);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4ClientSecret>("client_secret", ClientSecret);
             writer.WriteStringValue("container", Container);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Filters>("filters", Filters);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Filters>("filters", Filters);
             writer.WriteBoolValue("has_index", HasIndex);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_public", IsPublic);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Layout>("layout", Layout);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectSymbolSource200ResponseOneOf4Layout>("layout", Layout);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
             writer.WriteStringValue("prefix", Prefix);

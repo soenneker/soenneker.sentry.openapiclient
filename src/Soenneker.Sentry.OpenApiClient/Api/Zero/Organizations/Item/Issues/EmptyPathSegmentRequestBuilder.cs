@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,viewId*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*,viewId*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,viewId*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*,viewId*}", rawUrl)
         {
         }
         /// <summary>
@@ -329,6 +329,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
 #else
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
+#endif
+            /// <summary>How long ago the query period ends, in the same format as `statsPeriod`. Must be sent with `statsPeriodStart`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodEnd")]
+            public string? StatsPeriodEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodEnd")]
+            public string StatsPeriodEnd { get; set; }
+#endif
+            /// <summary>How long ago the query period starts, in the same format as `statsPeriod`. Must be sent with `statsPeriodEnd`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodStart")]
+            public string? StatsPeriodStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodStart")]
+            public string StatsPeriodStart { get; set; }
 #endif
             /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

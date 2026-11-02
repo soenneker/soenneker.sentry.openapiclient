@@ -51,11 +51,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "appStoreConnect" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf5(),
-                "azure" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4(),
-                "gcs" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf3(),
-                "http" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1(),
-                "s3" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf2(),
+                "appStoreConnect" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf5Variant(),
+                "azure" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf4Variant(),
+                "gcs" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf3Variant(),
+                "http" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Variant(),
+                "s3" => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf2Variant(),
                 _ => new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItem(),
             };
         }

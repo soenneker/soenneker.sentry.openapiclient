@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{?cursor*,end*,environment*,full*,per_page*,query*,sample*,start*,statsPeriod*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{?cursor*,end*,environment*,full*,per_page*,query*,sample*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{?cursor*,end*,environment*,full*,per_page*,query*,sample*,start*,statsPeriod*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{?cursor*,end*,environment*,full*,per_page*,query*,sample*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", rawUrl)
         {
         }
         /// <summary>
@@ -140,6 +140,26 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
 #else
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
+#endif
+            /// <summary>How long ago the query period ends, in the same format as `statsPeriod`. Must be sent with `statsPeriodStart`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodEnd")]
+            public string? StatsPeriodEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodEnd")]
+            public string StatsPeriodEnd { get; set; }
+#endif
+            /// <summary>How long ago the query period starts, in the same format as `statsPeriod`. Must be sent with `statsPeriodEnd`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodStart")]
+            public string? StatsPeriodStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodStart")]
+            public string StatsPeriodStart { get; set; }
 #endif
         }
     }

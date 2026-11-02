@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/{?collapse*,environment*,llmFormat*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/{?collapse*,end*,environment*,llmFormat*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/{?collapse*,environment*,llmFormat*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/{?collapse*,end*,environment*,llmFormat*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", rawUrl)
         {
         }
         /// <summary>
@@ -95,6 +95,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             [QueryParameter("collapse")]
             public global::Soenneker.Sentry.OpenApiClient.Models.AdjacentEventsItem[] Collapse { get; set; }
 #endif
+            /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("end")]
+            public DateTimeOffset? End { get; set; }
             /// <summary>The name of environments to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,6 +111,39 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues.Item
             /// <summary>If set, adds a `formatted` field to the response with the event rendered as the requested format for LLM consumption.</summary>
             [QueryParameter("llmFormat")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEventLlmFormatParameter? LlmFormat { get; set; }
+            /// <summary>The start of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
+            [QueryParameter("start")]
+            public DateTimeOffset? Start { get; set; }
+            /// <summary>The period of time for the query, will override the start &amp; end parameters, a number followed by one of:- `d` for days- `h` for hours- `m` for minutes- `s` for seconds- `w` for weeksFor example, `24h`, to mean query data starting from 24 hours ago to now.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriod")]
+            public string? StatsPeriod { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriod")]
+            public string StatsPeriod { get; set; }
+#endif
+            /// <summary>How long ago the query period ends, in the same format as `statsPeriod`. Must be sent with `statsPeriodStart`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodEnd")]
+            public string? StatsPeriodEnd { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodEnd")]
+            public string StatsPeriodEnd { get; set; }
+#endif
+            /// <summary>How long ago the query period starts, in the same format as `statsPeriod`. Must be sent with `statsPeriodEnd`, and is ignored when `statsPeriod` is sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("statsPeriodStart")]
+            public string? StatsPeriodStart { get; set; }
+#nullable restore
+#else
+            [QueryParameter("statsPeriodStart")]
+            public string StatsPeriodStart { get; set; }
+#endif
         }
     }
 }

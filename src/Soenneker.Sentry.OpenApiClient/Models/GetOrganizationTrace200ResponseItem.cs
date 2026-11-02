@@ -51,10 +51,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("event_type")?.GetStringValue();
             return mappingValue switch
             {
-                "error" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf2(),
-                "occurrence" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf2(),
-                "span" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf1(),
-                "uptime_check" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf3(),
+                "error" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2Variant(),
+                "occurrence" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf2Variant(),
+                "span" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf1Variant(),
+                "uptime_check" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3Variant(),
                 _ => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItem(),
             };
         }

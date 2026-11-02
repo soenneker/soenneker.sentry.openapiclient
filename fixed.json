@@ -6465,6 +6465,22 @@
             }
           },
           {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "flag",
             "in": "query",
             "description": "The name of a feature flag to filter by. Repeat the parameter to match multiple flags.",
@@ -7781,6 +7797,22 @@
             "name": "statsPeriod",
             "in": "query",
             "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
             "schema": {
               "type": "string"
             }
@@ -24010,6 +24042,22 @@
             }
           },
           {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "start",
             "in": "query",
             "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
@@ -24198,6 +24246,48 @@
               "items": {
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -35159,6 +35249,22 @@
             }
           },
           {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
             "name": "environment",
             "in": "query",
             "description": "The name of environments to filter by.",
@@ -35358,6 +35464,48 @@
               "items": {
                 "type": "string"
               }
+            }
+          },
+          {
+            "name": "start",
+            "in": "query",
+            "description": "The start of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end",
+            "in": "query",
+            "description": "The end of the period of time for the query, expected in ISO-8601 format. For example, \u00602001-12-14T12:34:56.7890\u0060.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "statsPeriod",
+            "in": "query",
+            "description": "The period of time for the query, will override the start \u0026 end parameters, a number followed by one of:\n- \u0060d\u0060 for days\n- \u0060h\u0060 for hours\n- \u0060m\u0060 for minutes\n- \u0060s\u0060 for seconds\n- \u0060w\u0060 for weeks\n\nFor example, \u006024h\u0060, to mean query data starting from 24 hours ago to now.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodStart",
+            "in": "query",
+            "description": "How long ago the query period starts, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodEnd\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "statsPeriodEnd",
+            "in": "query",
+            "description": "How long ago the query period ends, in the same format as \u0060statsPeriod\u0060. Must be sent with \u0060statsPeriodStart\u0060, and is ignored when \u0060statsPeriod\u0060 is sent.",
+            "schema": {
+              "type": "string"
             }
           },
           {
@@ -46714,11 +46862,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "http": "#/components/schemas/AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf1",
-            "s3": "#/components/schemas/AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf2",
-            "gcs": "#/components/schemas/AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf3",
-            "azure": "#/components/schemas/AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf4",
-            "appStoreConnect": "#/components/schemas/AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf5"
+            "http": "#/components/schemas/AddProjectSymbolSource201ResponseOneOf1Variant",
+            "s3": "#/components/schemas/AddProjectSymbolSource201ResponseOneOf2Variant",
+            "gcs": "#/components/schemas/AddProjectSymbolSource201ResponseOneOf3Variant",
+            "azure": "#/components/schemas/AddProjectSymbolSource201ResponseOneOf4Variant",
+            "appStoreConnect": "#/components/schemas/AddProjectSymbolSource201ResponseOneOf5Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -46849,11 +46997,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "http": "#/components/schemas/UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf1",
-            "s3": "#/components/schemas/UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf2",
-            "gcs": "#/components/schemas/UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf3",
-            "azure": "#/components/schemas/UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf4",
-            "appStoreConnect": "#/components/schemas/UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf5"
+            "http": "#/components/schemas/UpdateProjectSymbolSource200ResponseOneOf1Variant",
+            "s3": "#/components/schemas/UpdateProjectSymbolSource200ResponseOneOf2Variant",
+            "gcs": "#/components/schemas/UpdateProjectSymbolSource200ResponseOneOf3Variant",
+            "azure": "#/components/schemas/UpdateProjectSymbolSource200ResponseOneOf4Variant",
+            "appStoreConnect": "#/components/schemas/UpdateProjectSymbolSource200ResponseOneOf5Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -50394,10 +50542,10 @@
         "discriminator": {
           "propertyName": "event_type",
           "mapping": {
-            "span": "#/components/schemas/GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf1",
-            "error": "#/components/schemas/GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf2",
-            "occurrence": "#/components/schemas/GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf2",
-            "uptime_check": "#/components/schemas/GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf3"
+            "span": "#/components/schemas/GetOrganizationTrace200ResponseItemAnyOf1Variant",
+            "error": "#/components/schemas/GetOrganizationTrace200ResponseItemAnyOf2Variant",
+            "occurrence": "#/components/schemas/GetOrganizationTrace200ResponseItemAnyOf2Variant",
+            "uptime_check": "#/components/schemas/GetOrganizationTrace200ResponseItemAnyOf3Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -50577,11 +50725,11 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "http": "#/components/schemas/ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1",
-            "s3": "#/components/schemas/ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf2",
-            "gcs": "#/components/schemas/ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf3",
-            "azure": "#/components/schemas/ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4",
-            "appStoreConnect": "#/components/schemas/ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf5"
+            "http": "#/components/schemas/ListProjectSymbolSources200ResponseItemOneOf1Variant",
+            "s3": "#/components/schemas/ListProjectSymbolSources200ResponseItemOneOf2Variant",
+            "gcs": "#/components/schemas/ListProjectSymbolSources200ResponseItemOneOf3Variant",
+            "azure": "#/components/schemas/ListProjectSymbolSources200ResponseItemOneOf4Variant",
+            "appStoreConnect": "#/components/schemas/ListProjectSymbolSources200ResponseItemOneOf5Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -103894,7 +104042,7 @@
           }
         ]
       },
-      "AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf1": {
+      "AddProjectSymbolSource201ResponseOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
@@ -103950,7 +104098,7 @@
           }
         ]
       },
-      "AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf2": {
+      "AddProjectSymbolSource201ResponseOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
@@ -104015,7 +104163,7 @@
           }
         ]
       },
-      "AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf3": {
+      "AddProjectSymbolSource201ResponseOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
@@ -104076,7 +104224,7 @@
           }
         ]
       },
-      "AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf4": {
+      "AddProjectSymbolSource201ResponseOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
@@ -104146,7 +104294,7 @@
           }
         ]
       },
-      "AddProjectSymbolSource201ResponseAddProjectSymbolSource201ResponseOneOf5": {
+      "AddProjectSymbolSource201ResponseOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/AddProjectSymbolSource201Response"
@@ -104206,7 +104354,7 @@
           }
         ]
       },
-      "UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf1": {
+      "UpdateProjectSymbolSource200ResponseOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateProjectSymbolSource200Response"
@@ -104262,7 +104410,7 @@
           }
         ]
       },
-      "UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf2": {
+      "UpdateProjectSymbolSource200ResponseOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateProjectSymbolSource200Response"
@@ -104327,7 +104475,7 @@
           }
         ]
       },
-      "UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf3": {
+      "UpdateProjectSymbolSource200ResponseOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateProjectSymbolSource200Response"
@@ -104388,7 +104536,7 @@
           }
         ]
       },
-      "UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf4": {
+      "UpdateProjectSymbolSource200ResponseOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateProjectSymbolSource200Response"
@@ -104458,7 +104606,7 @@
           }
         ]
       },
-      "UpdateProjectSymbolSource200ResponseUpdateProjectSymbolSource200ResponseOneOf5": {
+      "UpdateProjectSymbolSource200ResponseOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/UpdateProjectSymbolSource200Response"
@@ -104518,7 +104666,7 @@
           }
         ]
       },
-      "GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf1": {
+      "GetOrganizationTrace200ResponseItemAnyOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/GetOrganizationTrace200ResponseItem"
@@ -104641,7 +104789,7 @@
           }
         ]
       },
-      "GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf2": {
+      "GetOrganizationTrace200ResponseItemAnyOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/GetOrganizationTrace200ResponseItem"
@@ -104711,7 +104859,7 @@
           }
         ]
       },
-      "GetOrganizationTrace200ResponseItemGetOrganizationTrace200ResponseItemAnyOf3": {
+      "GetOrganizationTrace200ResponseItemAnyOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/GetOrganizationTrace200ResponseItem"
@@ -104806,7 +104954,7 @@
           }
         ]
       },
-      "ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1": {
+      "ListProjectSymbolSources200ResponseItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
@@ -104862,7 +105010,7 @@
           }
         ]
       },
-      "ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf2": {
+      "ListProjectSymbolSources200ResponseItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
@@ -104927,7 +105075,7 @@
           }
         ]
       },
-      "ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf3": {
+      "ListProjectSymbolSources200ResponseItemOneOf3Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
@@ -104988,7 +105136,7 @@
           }
         ]
       },
-      "ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf4": {
+      "ListProjectSymbolSources200ResponseItemOneOf4Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
@@ -105058,7 +105206,7 @@
           }
         ]
       },
-      "ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf5": {
+      "ListProjectSymbolSources200ResponseItemOneOf5Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ListProjectSymbolSources200ResponseItem"
@@ -118155,10 +118303,10 @@
       "discriminator": {
         "propertyName": "event_type",
         "mapping": {
-          "span": "#/components/schemas/OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf1",
-          "error": "#/components/schemas/OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf2",
-          "occurrence": "#/components/schemas/OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf2",
-          "uptime_check": "#/components/schemas/OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf3"
+          "span": "#/components/schemas/OrganizationTraceResponseItemAnyOf1Variant",
+          "error": "#/components/schemas/OrganizationTraceResponseItemAnyOf2Variant",
+          "occurrence": "#/components/schemas/OrganizationTraceResponseItemAnyOf2Variant",
+          "uptime_check": "#/components/schemas/OrganizationTraceResponseItemAnyOf3Variant"
         }
       },
       "x-client-original-tagged-union": {
@@ -167234,7 +167382,7 @@
         }
       }
     },
-    "OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf1": {
+    "OrganizationTraceResponseItemAnyOf1Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/OrganizationTraceResponseItem"
@@ -167356,7 +167504,7 @@
         }
       ]
     },
-    "OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf2": {
+    "OrganizationTraceResponseItemAnyOf2Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/OrganizationTraceResponseItem"
@@ -167425,7 +167573,7 @@
         }
       ]
     },
-    "OrganizationTraceResponseItemOrganizationTraceResponseItemAnyOf3": {
+    "OrganizationTraceResponseItemAnyOf3Variant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/OrganizationTraceResponseItem"
