@@ -49551,7 +49551,8 @@
             "type": "integer",
             "description": "Height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "DashboardPermissionsComposed": {
         "required": [
@@ -49571,7 +49572,8 @@
             "description": "List of team IDs that have edit access to a dashboard."
           }
         },
-        "description": "Permissions that restrict users from editing dashboards"
+        "description": "Permissions that restrict users from editing dashboards",
+        "nullable": true
       },
       "DashboardCreateWidgetLayoutComposed": {
         "required": [
@@ -49604,7 +49606,8 @@
             "type": "integer",
             "description": "Height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "DashboardDetailsWidgetsItemLayout": {
         "required": [
@@ -49643,7 +49646,8 @@
             "type": "integer",
             "description": "Minimum height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "DashboardDetailsPermissions": {
         "required": [
@@ -49663,7 +49667,8 @@
             "description": "List of team IDs that have edit access to a dashboard."
           }
         },
-        "description": "Permissions that restrict users from editing dashboards"
+        "description": "Permissions that restrict users from editing dashboards",
+        "nullable": true
       },
       "DashboardDetailsModelWidgetsItemChangedReasonItemEquationsItemAdditionalProperties": {
         "anyOf": [
@@ -49715,7 +49720,8 @@
             "type": "integer",
             "description": "Minimum height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "GetReplayDataTags": {
         "anyOf": [
@@ -93363,7 +93369,8 @@
             "description": "List of team IDs that have edit access to a dashboard."
           }
         },
-        "description": "Permissions that restrict users from editing dashboards"
+        "description": "Permissions that restrict users from editing dashboards",
+        "nullable": true
       },
       "CreateOrganizationDashboard201ResponseCreatedBy": {
         "required": [
@@ -93904,7 +93911,8 @@
             "description": "List of team IDs that have edit access to a dashboard."
           }
         },
-        "description": "Permissions that restrict users from editing dashboards"
+        "description": "Permissions that restrict users from editing dashboards",
+        "nullable": true
       },
       "UpdateOrganizationDashboard200ResponseCreatedBy": {
         "required": [
@@ -116747,7 +116755,8 @@
             "type": "integer",
             "description": "Height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "CreateOrganizationDashboard201ResponseCreatedByIdentitiesItem": {
         "required": [
@@ -117293,7 +117302,8 @@
             "type": "integer",
             "description": "Minimum height in grid rows."
           }
-        }
+        },
+        "nullable": true
       },
       "UpdateOrganizationDashboard200ResponseCreatedByIdentitiesItem": {
         "required": [

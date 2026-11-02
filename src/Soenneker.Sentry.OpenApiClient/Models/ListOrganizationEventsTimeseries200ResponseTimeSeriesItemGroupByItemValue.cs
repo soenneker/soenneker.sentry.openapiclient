@@ -58,6 +58,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
+            int matchingUnionBranches = 0;
+            if (matchesUnionBranch0 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.Double == null && result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 == null && result.String == null;
+            if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1(), parseNode);
             if (result.Double == null && result.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItemValueMember1 == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
