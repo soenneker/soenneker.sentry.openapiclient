@@ -36,8 +36,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The canvas_theme property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme? CanvasTheme { get => _explicitNullValueCanvasTheme; set { _explicitNullValueCanvasTheme = value; AdditionalData?.Remove("canvas_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canvas_theme"); else _explicitNullProperties?.Remove("canvas_theme"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme? _explicitNullValueCanvasTheme = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme CanvasTheme { get => _explicitNullValueCanvasTheme; set { _explicitNullValueCanvasTheme = value; AdditionalData?.Remove("canvas_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canvas_theme"); else _explicitNullProperties?.Remove("canvas_theme"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme _explicitNullValueCanvasTheme = default!;
+#endif
         /// <summary>The display_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,7 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "canvas_theme", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCanvasTheme = default; _explicitNullProperties?.Remove("canvas_theme"); AdditionalData["canvas_theme"] = unknown; } else { CanvasTheme = parsed; AdditionalData.Remove("canvas_theme"); } } },
+                { "canvas_theme", n => { CanvasTheme = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme.CreateFromDiscriminatorValue); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetStringValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
@@ -125,7 +132,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme>("canvas_theme", CanvasTheme);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItemCanvasTheme>("canvas_theme", CanvasTheme);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("group", Group);
             writer.WriteIntValue("height", Height);

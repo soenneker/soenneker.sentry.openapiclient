@@ -54,8 +54,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The createdByType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType? CreatedByType { get => _explicitNullValueCreatedByType; set { _explicitNullValueCreatedByType = value; AdditionalData?.Remove("createdByType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdByType"); else _explicitNullProperties?.Remove("createdByType"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType? _explicitNullValueCreatedByType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType CreatedByType { get => _explicitNullValueCreatedByType; set { _explicitNullValueCreatedByType = value; AdditionalData?.Remove("createdByType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("createdByType"); else _explicitNullProperties?.Remove("createdByType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType _explicitNullValueCreatedByType = default!;
+#endif
         /// <summary>The flag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,8 +77,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>The provider property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider? _explicitNullValueProvider = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider _explicitNullValueProvider = default!;
+#endif
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,10 +124,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "createdAt", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                { "createdByType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCreatedByType = default; _explicitNullProperties?.Remove("createdByType"); AdditionalData["createdByType"] = unknown; } else { CreatedByType = parsed; AdditionalData.Remove("createdByType"); } } },
+                { "createdByType", n => { CreatedByType = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType.CreateFromDiscriminatorValue); } },
                 { "flag", n => { Flag = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "provider", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueProvider = default; _explicitNullProperties?.Remove("provider"); AdditionalData["provider"] = unknown; } else { Provider = parsed; AdditionalData.Remove("provider"); } } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataTags>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataTags.CreateFromDiscriminatorValue); } },
             };
         }
@@ -127,10 +141,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataAction>("action", Action);
             writer.WriteDateTimeOffsetValue("createdAt", CreatedAt);
             writer.WriteStringValue("createdBy", CreatedBy);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType>("createdByType", CreatedByType);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataCreatedByType>("createdByType", CreatedByType);
             writer.WriteStringValue("flag", Flag);
             writer.WriteIntValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider>("provider", Provider);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataProvider>("provider", Provider);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationFlagLog200ResponseDataTags>("tags", Tags);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

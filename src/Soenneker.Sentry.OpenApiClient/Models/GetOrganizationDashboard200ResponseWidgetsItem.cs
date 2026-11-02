@@ -166,8 +166,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>The legendType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType? LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legendType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legendType"); else _explicitNullProperties?.Remove("legendType"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType? _explicitNullValueLegendType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legendType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legendType"); else _explicitNullProperties?.Remove("legendType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType _explicitNullValueLegendType = default!;
+#endif
         /// <summary>The limit property</summary>
         public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private int? _explicitNullValueLimit = default!;
@@ -247,7 +254,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLayout>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLayout.CreateFromDiscriminatorValue); } },
-                { "legendType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLegendType = default; _explicitNullProperties?.Remove("legendType"); AdditionalData["legendType"] = unknown; } else { LegendType = parsed; AdditionalData.Remove("legendType"); } } },
+                { "legendType", n => { LegendType = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "thresholds", n => { Thresholds = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemThresholds>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemThresholds.CreateFromDiscriminatorValue); } },
@@ -273,7 +280,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interval", Interval);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLayout>("layout", Layout);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType>("legendType", LegendType);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemLegendType>("legendType", LegendType);
             writer.WriteIntValue("limit", Limit);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemQueriesItem>("queries", Queries);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemThresholds>("thresholds", Thresholds);

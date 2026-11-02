@@ -9,14 +9,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListProjectSymbolSources200ResponseItemOneOf1 : IParsable
+    public partial class ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1 : global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItem, IParsable
     #pragma warning restore CS1591
-    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+    {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
             else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
             if (parseNode.GetChildNode("has_index") is null) { _explicitNullValueHasIndex = default!; _explicitNullProperties?.Remove("has_index"); }
@@ -33,8 +34,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("password") is { } nullNodePassword && nullNodePassword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Password = null;
             if (parseNode.GetChildNode("platforms") is null) { _explicitNullValuePlatforms = default!; _explicitNullProperties?.Remove("platforms"); }
             else if (parseNode.GetChildNode("platforms") is { } nullNodePlatforms && nullNodePlatforms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platforms = null;
-            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
-            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
             else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
             if (parseNode.GetChildNode("username") is null) { _explicitNullValueUsername = default!; _explicitNullProperties?.Remove("username"); }
@@ -107,9 +106,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
         private List<string> _explicitNullValuePlatforms = default!;
 #endif
-        /// <summary>The type property</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.HttpType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.HttpType? _explicitNullValueType = default!;
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -133,20 +129,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemListProjectSymbolSources200ResponseItemOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "filters", n => { Filters = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Filters>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Filters.CreateFromDiscriminatorValue); } },
                 { "has_index", n => { HasIndex = n.GetBoolValue(); } },
@@ -156,7 +152,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "password", n => { Password = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Password>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Password.CreateFromDiscriminatorValue); } },
                 { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.HttpType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
             };
@@ -165,9 +160,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Filters>("filters", Filters);
             writer.WriteBoolValue("has_index", HasIndex);
             writer.WriteStringValue("id", Id);
@@ -176,7 +172,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectSymbolSources200ResponseItemOneOf1Password>("password", Password);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.HttpType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("username", Username);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

@@ -96,8 +96,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestRepository _explicitNullValueRepository = default!;
 #endif
         /// <summary>The status property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus? _explicitNullValueStatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus _explicitNullValueStatus = default!;
+#endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -142,7 +149,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "mergedAt", n => { MergedAt = n.GetDateTimeOffsetValue(); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "repository", n => { Repository = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestRepository>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestRepository.CreateFromDiscriminatorValue); } },
-                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -160,7 +167,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("mergedAt", MergedAt);
             writer.WriteStringValue("message", Message);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestRepository>("repository", Repository);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestStatus>("status", Status);
             writer.WriteStringValue("title", Title);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

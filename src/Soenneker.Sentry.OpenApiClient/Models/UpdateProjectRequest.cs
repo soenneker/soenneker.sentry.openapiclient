@@ -174,8 +174,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public bool? DataScrubberDefaults { get => _explicitNullValueDataScrubberDefaults; set { _explicitNullValueDataScrubberDefaults = value; AdditionalData?.Remove("dataScrubberDefaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubberDefaults"); else _explicitNullProperties?.Remove("dataScrubberDefaults"); } }
         private bool? _explicitNullValueDataScrubberDefaults = default!;
         /// <summary>The role required to download debug information files, ProGuard mappings and source maps. If not set, inherits from organization setting.* `member` - Member* `admin` - Admin* `manager` - Manager* `owner` - Owner</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; AdditionalData?.Remove("debugFilesRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole? _explicitNullValueDebugFilesRole = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; AdditionalData?.Remove("debugFilesRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole _explicitNullValueDebugFilesRole = default!;
+#endif
         /// <summary>Environment selected by default when viewing this project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -527,7 +534,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "copy_from_project", n => { CopyFromProject = n.GetIntValue(); } },
                 { "dataScrubber", n => { DataScrubber = n.GetBoolValue(); } },
                 { "dataScrubberDefaults", n => { DataScrubberDefaults = n.GetBoolValue(); } },
-                { "debugFilesRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDebugFilesRole = default; _explicitNullProperties?.Remove("debugFilesRole"); AdditionalData["debugFilesRole"] = unknown; } else { DebugFilesRole = parsed; AdditionalData.Remove("debugFilesRole"); } } },
+                { "debugFilesRole", n => { DebugFilesRole = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole.CreateFromDiscriminatorValue); } },
                 { "defaultEnvironment", n => { DefaultEnvironment = n.GetStringValue(); } },
                 { "digestsMaxDelay", n => { DigestsMaxDelay = n.GetIntValue(); } },
                 { "digestsMinDelay", n => { DigestsMinDelay = n.GetIntValue(); } },
@@ -596,7 +603,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("copy_from_project", CopyFromProject);
             writer.WriteBoolValue("dataScrubber", DataScrubber);
             writer.WriteBoolValue("dataScrubberDefaults", DataScrubberDefaults);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>("debugFilesRole", DebugFilesRole);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectRequestDebugFilesRole>("debugFilesRole", DebugFilesRole);
             writer.WriteStringValue("defaultEnvironment", DefaultEnvironment);
             writer.WriteIntValue("digestsMaxDelay", DigestsMaxDelay);
             writer.WriteIntValue("digestsMinDelay", DigestsMinDelay);

@@ -82,12 +82,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The list of features that the custom integration supports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem?>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
-        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem?>? _explicitNullValueFeatures = default!;
+        public List<int?>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private List<int?>? _explicitNullValueFeatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem?> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
-        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem?> _explicitNullValueFeatures = default!;
+        public List<int?> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
+        private List<int?> _explicitNullValueFeatures = default!;
 #endif
         /// <summary>Marks whether or not the custom integration can be used in an alert rule.</summary>
         public bool? IsAlertable { get => _explicitNullValueIsAlertable; set { _explicitNullValueIsAlertable = value; AdditionalData?.Remove("isAlertable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAlertable"); else _explicitNullProperties?.Remove("isAlertable"); } }
@@ -199,7 +199,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "author", n => { Author = n.GetStringValue(); } },
                 { "events", n => { Events = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "features", n => { Features = n.GetCollectionOfEnumValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem>()?.AsList(); } },
+                { "features", n => { Features = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "isAlertable", n => { IsAlertable = n.GetBoolValue(); } },
                 { "isInternal", n => { IsInternal = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -222,7 +222,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
             writer.WriteStringValue("author", Author);
             writer.WriteCollectionOfPrimitiveValues<string>("events", Events);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateSentryAppRequestFeaturesItem>("features", Features);
+            writer.WriteCollectionOfPrimitiveValues<int?>("features", Features);
             writer.WriteBoolValue("isAlertable", IsAlertable);
             writer.WriteBoolValue("isInternal", IsInternal);
             writer.WriteStringValue("name", Name);

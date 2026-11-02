@@ -55,8 +55,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public double? ComparisonValue { get => _explicitNullValueComparisonValue; set { _explicitNullValueComparisonValue = value; AdditionalData?.Remove("comparisonValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonValue"); else _explicitNullProperties?.Remove("comparisonValue"); } }
         private double? _explicitNullValueComparisonValue = default!;
         /// <summary>The confidence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; AdditionalData?.Remove("confidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? _explicitNullValueConfidence = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; AdditionalData?.Remove("confidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence _explicitNullValueConfidence = default!;
+#endif
         /// <summary>The filled property</summary>
         public bool? Filled { get => _explicitNullValueFilled; set { _explicitNullValueFilled = value; AdditionalData?.Remove("filled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filled"); else _explicitNullProperties?.Remove("filled"); } }
         private bool? _explicitNullValueFilled = default!;
@@ -116,7 +123,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "comparisonFilled", n => { ComparisonFilled = n.GetBoolValue(); } },
                 { "comparisonSmoothed", n => { ComparisonSmoothed = n.GetBoolValue(); } },
                 { "comparisonValue", n => { ComparisonValue = n.GetDoubleValue(); } },
-                { "confidence", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueConfidence = default; _explicitNullProperties?.Remove("confidence"); AdditionalData["confidence"] = unknown; } else { Confidence = parsed; AdditionalData.Remove("confidence"); } } },
+                { "confidence", n => { Confidence = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence.CreateFromDiscriminatorValue); } },
                 { "filled", n => { Filled = n.GetBoolValue(); } },
                 { "incomplete", n => { Incomplete = n.GetBoolValue(); } },
                 { "incompleteReason", n => { IncompleteReason = n.GetStringValue(); } },
@@ -137,7 +144,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("comparisonFilled", ComparisonFilled);
             writer.WriteBoolValue("comparisonSmoothed", ComparisonSmoothed);
             writer.WriteDoubleValue("comparisonValue", ComparisonValue);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>("confidence", Confidence);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence>("confidence", Confidence);
             writer.WriteBoolValue("filled", Filled);
             writer.WriteBoolValue("incomplete", Incomplete);
             writer.WriteStringValue("incompleteReason", IncompleteReason);

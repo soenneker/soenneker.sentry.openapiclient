@@ -47,8 +47,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>* `auto`* `dataMin`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange? AxisRange { get => _explicitNullValueAxisRange; set { _explicitNullValueAxisRange = value; AdditionalData?.Remove("axis_range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("axis_range"); else _explicitNullProperties?.Remove("axis_range"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange? _explicitNullValueAxisRange = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange AxisRange { get => _explicitNullValueAxisRange; set { _explicitNullValueAxisRange = value; AdditionalData?.Remove("axis_range"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("axis_range"); else _explicitNullProperties?.Remove("axis_range"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange _explicitNullValueAxisRange = default!;
+#endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,8 +100,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLayout _explicitNullValueLayout = default!;
 #endif
         /// <summary>* `default`* `breakdown`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType? LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legend_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legend_type"); else _explicitNullProperties?.Remove("legend_type"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType? _explicitNullValueLegendType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legend_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legend_type"); else _explicitNullProperties?.Remove("legend_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType _explicitNullValueLegendType = default!;
+#endif
         /// <summary>The limit property</summary>
         public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private int? _explicitNullValueLimit = default!;
@@ -129,8 +143,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>* `discover`* `issue`* `metrics`* `error-events`* `transaction-like`* `spans`* `logs`* `tracemetrics`* `preprod-app-size`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType? WidgetType { get => _explicitNullValueWidgetType; set { _explicitNullValueWidgetType = value; AdditionalData?.Remove("widget_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget_type"); else _explicitNullProperties?.Remove("widget_type"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType? _explicitNullValueWidgetType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType WidgetType { get => _explicitNullValueWidgetType; set { _explicitNullValueWidgetType = value; AdditionalData?.Remove("widget_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widget_type"); else _explicitNullProperties?.Remove("widget_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType _explicitNullValueWidgetType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItem"/> and sets the default values.
         /// </summary>
@@ -156,18 +177,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "axis_range", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAxisRange = default; _explicitNullProperties?.Remove("axis_range"); AdditionalData["axis_range"] = unknown; } else { AxisRange = parsed; AdditionalData.Remove("axis_range"); } } },
+                { "axis_range", n => { AxisRange = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "display_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemDisplayType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDisplayType = default; _explicitNullProperties?.Remove("display_type"); AdditionalData["display_type"] = unknown; } else { DisplayType = parsed; AdditionalData.Remove("display_type"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
                 { "layout", n => { Layout = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLayout>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLayout.CreateFromDiscriminatorValue); } },
-                { "legend_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLegendType = default; _explicitNullProperties?.Remove("legend_type"); AdditionalData["legend_type"] = unknown; } else { LegendType = parsed; AdditionalData.Remove("legend_type"); } } },
+                { "legend_type", n => { LegendType = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType.CreateFromDiscriminatorValue); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
                 { "queries", n => { Queries = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "thresholds", n => { Thresholds = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemThresholds>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemThresholds.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "widget_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueWidgetType = default; _explicitNullProperties?.Remove("widget_type"); AdditionalData["widget_type"] = unknown; } else { WidgetType = parsed; AdditionalData.Remove("widget_type"); } } },
+                { "widget_type", n => { WidgetType = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -177,18 +198,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange>("axis_range", AxisRange);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemAxisRange>("axis_range", AxisRange);
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemDisplayType>("display_type", DisplayType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interval", Interval);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLayout>("layout", Layout);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType>("legend_type", LegendType);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemLegendType>("legend_type", LegendType);
             writer.WriteIntValue("limit", Limit);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemQueriesItem>("queries", Queries);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemThresholds>("thresholds", Thresholds);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType>("widget_type", WidgetType);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboardRequestWidgetsItemWidgetType>("widget_type", WidgetType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

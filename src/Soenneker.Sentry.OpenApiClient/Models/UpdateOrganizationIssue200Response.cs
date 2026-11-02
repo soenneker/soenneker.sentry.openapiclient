@@ -241,8 +241,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>The priority property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority? _explicitNullValuePriority = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority _explicitNullValuePriority = default!;
+#endif
         /// <summary>The priorityLockedAt property</summary>
         public DateTimeOffset? PriorityLockedAt { get => _explicitNullValuePriorityLockedAt; set { _explicitNullValuePriorityLockedAt = value; AdditionalData?.Remove("priorityLockedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priorityLockedAt"); else _explicitNullProperties?.Remove("priorityLockedAt"); } }
         private DateTimeOffset? _explicitNullValuePriorityLockedAt = default!;
@@ -309,8 +316,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubscriptionDetails _explicitNullValueSubscriptionDetails = default!;
 #endif
         /// <summary>The substatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus? Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; AdditionalData?.Remove("substatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus? _explicitNullValueSubstatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; AdditionalData?.Remove("substatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus _explicitNullValueSubstatus = default!;
+#endif
         /// <summary>The title property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -373,7 +387,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "numComments", n => { NumComments = n.GetIntValue(); } },
                 { "permalink", n => { Permalink = n.GetStringValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
-                { "priority", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePriority = default; _explicitNullProperties?.Remove("priority"); AdditionalData["priority"] = unknown; } else { Priority = parsed; AdditionalData.Remove("priority"); } } },
+                { "priority", n => { Priority = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority.CreateFromDiscriminatorValue); } },
                 { "priorityLockedAt", n => { PriorityLockedAt = n.GetDateTimeOffsetValue(); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseProject>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseProject.CreateFromDiscriminatorValue); } },
                 { "seerAutofixLastTriggered", n => { SeerAutofixLastTriggered = n.GetDateTimeOffsetValue(); } },
@@ -384,7 +398,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetails.CreateFromDiscriminatorValue); } },
                 { "subscriptionDetails", n => { SubscriptionDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubscriptionDetails>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubscriptionDetails.CreateFromDiscriminatorValue); } },
-                { "substatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubstatus = default; _explicitNullProperties?.Remove("substatus"); AdditionalData["substatus"] = unknown; } else { Substatus = parsed; AdditionalData.Remove("substatus"); } } },
+                { "substatus", n => { Substatus = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
@@ -418,7 +432,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("numComments", NumComments);
             writer.WriteStringValue("permalink", Permalink);
             writer.WriteStringValue("platform", Platform);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority>("priority", Priority);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponsePriority>("priority", Priority);
             writer.WriteDateTimeOffsetValue("priorityLockedAt", PriorityLockedAt);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseProject>("project", Project);
             writer.WriteDateTimeOffsetValue("seerAutofixLastTriggered", SeerAutofixLastTriggered);
@@ -429,7 +443,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseStatusDetails>("statusDetails", StatusDetails);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubscriptionDetails>("subscriptionDetails", SubscriptionDetails);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus>("substatus", Substatus);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseSubstatus>("substatus", Substatus);
             writer.WriteStringValue("title", Title);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseType>("type", Type);
             writer.WriteIntValue("userCount", UserCount);

@@ -123,8 +123,15 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails _explicitNullValueStatusDetails = default!;
 #endif
         /// <summary>The new substatus of the issue.* `archived_until_escalating`* `archived_until_condition_met`* `archived_forever`* `escalating`* `ongoing`* `regressed`* `new`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus? Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; AdditionalData?.Remove("substatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus? _explicitNullValueSubstatus = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus Substatus { get => _explicitNullValueSubstatus; set { _explicitNullValueSubstatus = value; AdditionalData?.Remove("substatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("substatus"); else _explicitNullProperties?.Remove("substatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus _explicitNullValueSubstatus = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequest"/> and sets the default values.
         /// </summary>
@@ -167,7 +174,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "snoozeDuration", n => { SnoozeDuration = n.GetIntValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "statusDetails", n => { StatusDetails = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails.CreateFromDiscriminatorValue); } },
-                { "substatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueSubstatus = default; _explicitNullProperties?.Remove("substatus"); AdditionalData["substatus"] = unknown; } else { Substatus = parsed; AdditionalData.Remove("substatus"); } } },
+                { "substatus", n => { Substatus = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -194,7 +201,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("snoozeDuration", SnoozeDuration);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatusDetails>("statusDetails", StatusDetails);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus>("substatus", Substatus);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestSubstatus>("substatus", Substatus);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
