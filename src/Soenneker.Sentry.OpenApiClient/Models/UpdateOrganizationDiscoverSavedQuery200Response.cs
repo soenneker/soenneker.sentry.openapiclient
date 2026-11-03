@@ -120,25 +120,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueDatasetSource = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string? _explicitNullValueDateCreated = default!;
-#nullable restore
-#else
-        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string _explicitNullValueDateCreated = default!;
-#endif
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateUpdated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string? _explicitNullValueDateUpdated = default!;
-#nullable restore
-#else
-        public string DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string _explicitNullValueDateUpdated = default!;
-#endif
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
         /// <summary>The display property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -213,15 +199,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueInterval = default!;
 #endif
         /// <summary>The lastVisited property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
-        private string? _explicitNullValueLastVisited = default!;
-#nullable restore
-#else
-        public string LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
-        private string _explicitNullValueLastVisited = default!;
-#endif
+        public DateTimeOffset? LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
+        private DateTimeOffset? _explicitNullValueLastVisited = default!;
         /// <summary>The limit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -363,8 +342,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "conditions", n => { Conditions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQuery200ResponseCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQuery200ResponseCreatedBy.CreateFromDiscriminatorValue); } },
                 { "datasetSource", n => { DatasetSource = n.GetStringValue(); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
-                { "dateUpdated", n => { DateUpdated = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
                 { "display", n => { Display = n.GetStringValue(); } },
                 { "end", n => { End = n.GetStringValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -373,7 +352,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "interval", n => { Interval = n.GetStringValue(); } },
-                { "lastVisited", n => { LastVisited = n.GetStringValue(); } },
+                { "lastVisited", n => { LastVisited = n.GetDateTimeOffsetValue(); } },
                 { "limit", n => { Limit = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderby", n => { Orderby = n.GetStringValue(); } },
@@ -401,8 +380,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("conditions", Conditions);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQuery200ResponseCreatedBy>("createdBy", CreatedBy);
             writer.WriteStringValue("datasetSource", DatasetSource);
-            writer.WriteStringValue("dateCreated", DateCreated);
-            writer.WriteStringValue("dateUpdated", DateUpdated);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
             writer.WriteStringValue("display", Display);
             writer.WriteStringValue("end", End);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
@@ -411,7 +390,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("interval", Interval);
-            writer.WriteStringValue("lastVisited", LastVisited);
+            writer.WriteDateTimeOffsetValue("lastVisited", LastVisited);
             writer.WriteStringValue("limit", Limit);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderby", Orderby);

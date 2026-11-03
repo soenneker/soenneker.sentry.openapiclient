@@ -291,12 +291,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The sessionStats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
-        private UntypedNode? _explicitNullValueSessionStats = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats? _explicitNullValueSessionStats = default!;
 #nullable restore
 #else
-        public UntypedNode SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
-        private UntypedNode _explicitNullValueSessionStats = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats _explicitNullValueSessionStats = default!;
 #endif
         /// <summary>The slug property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -311,12 +311,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The stats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
-        private UntypedNode? _explicitNullValueStats = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats? _explicitNullValueStats = default!;
 #nullable restore
 #else
-        public UntypedNode Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
-        private UntypedNode _explicitNullValueStats = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats _explicitNullValueStats = default!;
 #endif
         /// <summary>The team property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -410,9 +410,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "options", n => { Options = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemOptions>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemOptions.CreateFromDiscriminatorValue); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
                 { "platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "sessionStats", n => { SessionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "sessionStats", n => { SessionStats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "stats", n => { Stats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "stats", n => { Stats = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats.CreateFromDiscriminatorValue); } },
                 { "team", n => { Team = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemTeam>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemTeam.CreateFromDiscriminatorValue); } },
                 { "teams", n => { Teams = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemTeamsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemTeamsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "transactionStats", n => { TransactionStats = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
@@ -462,9 +462,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemOptions>("options", Options);
             writer.WriteStringValue("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
-            writer.WriteObjectValue<UntypedNode>("sessionStats", SessionStats);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemSessionStats>("sessionStats", SessionStats);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteObjectValue<UntypedNode>("stats", Stats);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemStats>("stats", Stats);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseSchemaItemTeam>("team", Team);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListTeamProjects200ResponseItemTeamsItem>("teams", Teams);
             writer.WriteObjectValue<UntypedNode>("transactionStats", TransactionStats);

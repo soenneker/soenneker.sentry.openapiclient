@@ -58,25 +58,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string? _explicitNullValueDateCreated = default!;
-#nullable restore
-#else
-        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string _explicitNullValueDateCreated = default!;
-#endif
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The dateUpdated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string? _explicitNullValueDateUpdated = default!;
-#nullable restore
-#else
-        public string DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string _explicitNullValueDateUpdated = default!;
-#endif
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
         /// <summary>The environments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -98,15 +84,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The lastVisited property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
-        private string? _explicitNullValueLastVisited = default!;
-#nullable restore
-#else
-        public string LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
-        private string _explicitNullValueLastVisited = default!;
-#endif
+        public DateTimeOffset? LastVisited { get => _explicitNullValueLastVisited; set { _explicitNullValueLastVisited = value; AdditionalData?.Remove("lastVisited"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastVisited"); else _explicitNullProperties?.Remove("lastVisited"); } }
+        private DateTimeOffset? _explicitNullValueLastVisited = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -182,11 +161,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy.CreateFromDiscriminatorValue); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
-                { "dateUpdated", n => { DateUpdated = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "lastVisited", n => { LastVisited = n.GetStringValue(); } },
+                { "lastVisited", n => { LastVisited = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
@@ -204,11 +183,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItemCreatedBy>("createdBy", CreatedBy);
-            writer.WriteStringValue("dateCreated", DateCreated);
-            writer.WriteStringValue("dateUpdated", DateUpdated);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("lastVisited", LastVisited);
+            writer.WriteDateTimeOffsetValue("lastVisited", LastVisited);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
             writer.WriteStringValue("query", Query);

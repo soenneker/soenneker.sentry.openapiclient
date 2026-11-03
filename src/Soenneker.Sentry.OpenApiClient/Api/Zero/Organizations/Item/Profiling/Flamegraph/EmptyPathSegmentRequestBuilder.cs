@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling.F
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 
         {
-            /// <summary>Source dataset to build the flamegraph from. Defaults to `functions` when `fingerprint` is set and `transactions` otherwise.</summary>
+            /// <summary>Source dataset to build the flamegraph from. Defaults to `functions` when `fingerprint` is set and `transactions` otherwise.* `transactions`* `profiles`* `functions`* `spans`</summary>
             [QueryParameter("dataSource")]
             public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationProfilingFlamegraphDataSourceParameter? DataSource { get; set; }
             /// <summary>The end of the period of time for the query, expected in ISO-8601 format. For example, `2001-12-14T12:34:56.7890`.</summary>
@@ -113,7 +113,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling.F
 #endif
             /// <summary>A UInt32 function fingerprint. Only valid when `dataSource=functions`.</summary>
             [QueryParameter("fingerprint")]
-            public int? Fingerprint { get; set; }
+            public long? Fingerprint { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

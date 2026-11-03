@@ -96,15 +96,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueDatasetSource = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string? _explicitNullValueDateCreated = default!;
-#nullable restore
-#else
-        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string _explicitNullValueDateCreated = default!;
-#endif
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -247,7 +240,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "changedReason", n => { ChangedReason = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dashboardId", n => { DashboardId = n.GetStringValue(); } },
                 { "datasetSource", n => { DatasetSource = n.GetStringValue(); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayType", n => { DisplayType = n.GetStringValue(); } },
                 { "exploreUrls", n => { ExploreUrls = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -273,7 +266,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseWidgetsItemChangedReasonItem>("changedReason", ChangedReason);
             writer.WriteStringValue("dashboardId", DashboardId);
             writer.WriteStringValue("datasetSource", DatasetSource);
-            writer.WriteStringValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayType", DisplayType);
             writer.WriteCollectionOfPrimitiveValues<string>("exploreUrls", ExploreUrls);

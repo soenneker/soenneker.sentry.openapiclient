@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>The trace item dataset to compute statistics for. Defaults to `spans`.</summary>
+            /// <summary>The trace item dataset to compute statistics for. Defaults to `spans`.* `spans`* `occurrences`</summary>
             [QueryParameter("itemType")]
             public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveTraceItemStatisticsItemTypeParameter? ItemType { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>

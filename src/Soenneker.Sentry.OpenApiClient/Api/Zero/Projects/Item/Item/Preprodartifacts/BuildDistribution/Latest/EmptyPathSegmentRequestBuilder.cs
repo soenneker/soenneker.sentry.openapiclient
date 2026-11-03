@@ -155,16 +155,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
             [QueryParameter("mainBinaryIdentifier")]
             public string MainBinaryIdentifier { get; set; }
 #endif
-            /// <summary>Platform: &quot;apple&quot; or &quot;android&quot;.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+            /// <summary>Platform: &quot;apple&quot; or &quot;android&quot;.* `apple` - Apple* `android` - Android</summary>
             [QueryParameter("platform")]
-            public string? Platform { get; set; }
-#nullable restore
-#else
-            [QueryParameter("platform")]
-            public string Platform { get; set; }
-#endif
+            public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatestPlatformParameter? Platform { get; set; }
         }
     }
 }

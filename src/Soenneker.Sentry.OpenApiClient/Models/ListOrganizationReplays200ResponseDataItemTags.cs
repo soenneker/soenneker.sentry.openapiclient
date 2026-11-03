@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationReplays200ResponseDataItemTags : IComposedTypeWrapper, IParsable
@@ -26,13 +26,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 ListOrganizationReplays200ResponseDataItemTagsAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsMember1"/></summary>
+        /// <summary>Composed type representation for type List&lt;string&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsMember1? ListOrganizationReplays200ResponseDataItemTagsMember1 { get; set; }
+        public List<string>? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsMember1 ListOrganizationReplays200ResponseDataItemTagsMember1 { get; set; }
+        public List<string> String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,8 +43,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTags();
-            
-            
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
             var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? ((global::System.Func<bool?[]>)(() => { int remaining = 10000;
@@ -79,14 +84,11 @@ var matches = new bool?[1];
 remaining = 10000; matches[0] = MatchSchema0(unionPayload, 0);
 return matches; }))() : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
-            bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
-            if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && result.ListOrganizationReplays200ResponseDataItemTagsMember1 == null;
+            bool noSelectedUnionBranch = result.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && result.String == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.ListOrganizationReplays200ResponseDataItemTagsMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsMember1(), parseNode);
-            if (result.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && result.ListOrganizationReplays200ResponseDataItemTagsMember1 == null) result.UnrecognizedValue = unionPayload;
+            if (result.ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -97,9 +99,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(ListOrganizationReplays200ResponseDataItemTagsAnyOf1 != null || ListOrganizationReplays200ResponseDataItemTagsMember1 != null)
+            if(ListOrganizationReplays200ResponseDataItemTagsAnyOf1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationReplays200ResponseDataItemTagsAnyOf1, ListOrganizationReplays200ResponseDataItemTagsMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationReplays200ResponseDataItemTagsAnyOf1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -110,15 +112,21 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && ListOrganizationReplays200ResponseDataItemTagsMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 != null) selectedUnionBranches++;
-            if (ListOrganizationReplays200ResponseDataItemTagsMember1 != null) selectedUnionBranches++;
+            if (String != null) selectedUnionBranches++;
             if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 != null && selectedUnionBranches == 1) { if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationReplays200ResponseDataItemTagsAnyOf1); return; }
-            if (ListOrganizationReplays200ResponseDataItemTagsMember1 != null && selectedUnionBranches == 1) { if (ListOrganizationReplays200ResponseDataItemTagsMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationReplays200ResponseDataItemTagsMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1>(null, ListOrganizationReplays200ResponseDataItemTagsAnyOf1, ListOrganizationReplays200ResponseDataItemTagsMember1);
+            if(String != null)
+            {
+                writer.WriteCollectionOfPrimitiveValues<string>(null, String);
+            }
+            else {
+                if (ListOrganizationReplays200ResponseDataItemTagsAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplays200ResponseDataItemTagsAnyOf1>(null, ListOrganizationReplays200ResponseDataItemTagsAnyOf1);
+            }
         }
     }
 }

@@ -64,15 +64,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseCreatedBy _explicitNullValueCreatedBy = default!;
 #endif
         /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string? _explicitNullValueDateCreated = default!;
-#nullable restore
-#else
-        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string _explicitNullValueDateCreated = default!;
-#endif
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
         /// <summary>The end property</summary>
         public DateTimeOffset? End { get => _explicitNullValueEnd; set { _explicitNullValueEnd = value; AdditionalData?.Remove("end"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("end"); else _explicitNullProperties?.Remove("end"); } }
         private DateTimeOffset? _explicitNullValueEnd = default!;
@@ -204,7 +197,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseCreatedBy>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseCreatedBy.CreateFromDiscriminatorValue); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
                 { "end", n => { End = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "expired", n => { Expired = n.GetBoolValue(); } },
@@ -229,7 +222,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseCreatedBy>("createdBy", CreatedBy);
-            writer.WriteStringValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
             writer.WriteDateTimeOffsetValue("end", End);
             writer.WriteCollectionOfPrimitiveValues<string>("environment", Environment);
             writer.WriteBoolValue("expired", Expired);

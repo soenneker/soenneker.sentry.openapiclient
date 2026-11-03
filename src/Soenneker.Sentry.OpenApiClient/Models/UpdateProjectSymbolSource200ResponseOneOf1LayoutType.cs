@@ -36,9 +36,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Slashsymbols,
         #pragma warning restore CS1591
-        [EnumMember(Value = "nxsymstore")]
+        [EnumMember(Value = "nnsymstore")]
         #pragma warning disable CS1591
-        Nxsymstore,
+        Nnsymstore,
         #pragma warning restore CS1591
     }
 }

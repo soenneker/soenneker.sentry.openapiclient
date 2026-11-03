@@ -7,20 +7,176 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// JSON form field returned by an issue integration.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("autosize") is null) { _explicitNullValueAutosize = default!; _explicitNullProperties?.Remove("autosize"); }
+            else if (parseNode.GetChildNode("autosize") is { } nullNodeAutosize && nullNodeAutosize.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Autosize = null;
+            if (parseNode.GetChildNode("choices") is null) { _explicitNullValueChoices = default!; _explicitNullProperties?.Remove("choices"); }
+            else if (parseNode.GetChildNode("choices") is { } nullNodeChoices && nullNodeChoices.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Choices = null;
+            if (parseNode.GetChildNode("default") is null) { _explicitNullValueDefault = default!; _explicitNullProperties?.Remove("default"); }
+            else if (parseNode.GetChildNode("default") is { } nullNodeDefault && nullNodeDefault.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Default = null;
+            if (parseNode.GetChildNode("defaultValue") is null) { _explicitNullValueDefaultValue = default!; _explicitNullProperties?.Remove("defaultValue"); }
+            else if (parseNode.GetChildNode("defaultValue") is { } nullNodeDefaultValue && nullNodeDefaultValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultValue = null;
+            if (parseNode.GetChildNode("dependsOn") is null) { _explicitNullValueDependsOn = default!; _explicitNullProperties?.Remove("dependsOn"); }
+            else if (parseNode.GetChildNode("dependsOn") is { } nullNodeDependsOn && nullNodeDependsOn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DependsOn = null;
+            if (parseNode.GetChildNode("help") is null) { _explicitNullValueHelp = default!; _explicitNullProperties?.Remove("help"); }
+            else if (parseNode.GetChildNode("help") is { } nullNodeHelp && nullNodeHelp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Help = null;
+            if (parseNode.GetChildNode("label") is null) { _explicitNullValueLabel = default!; _explicitNullProperties?.Remove("label"); }
+            else if (parseNode.GetChildNode("label") is { } nullNodeLabel && nullNodeLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Label = null;
+            if (parseNode.GetChildNode("maxLength") is null) { _explicitNullValueMaxLength = default!; _explicitNullProperties?.Remove("maxLength"); }
+            else if (parseNode.GetChildNode("maxLength") is { } nullNodeMaxLength && nullNodeMaxLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLength = null;
+            if (parseNode.GetChildNode("maxRows") is null) { _explicitNullValueMaxRows = default!; _explicitNullProperties?.Remove("maxRows"); }
+            else if (parseNode.GetChildNode("maxRows") is { } nullNodeMaxRows && nullNodeMaxRows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxRows = null;
+            if (parseNode.GetChildNode("multiple") is null) { _explicitNullValueMultiple = default!; _explicitNullProperties?.Remove("multiple"); }
+            else if (parseNode.GetChildNode("multiple") is { } nullNodeMultiple && nullNodeMultiple.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Multiple = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("placeholder") is null) { _explicitNullValuePlaceholder = default!; _explicitNullProperties?.Remove("placeholder"); }
+            else if (parseNode.GetChildNode("placeholder") is { } nullNodePlaceholder && nullNodePlaceholder.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Placeholder = null;
+            if (parseNode.GetChildNode("prefetch") is null) { _explicitNullValuePrefetch = default!; _explicitNullProperties?.Remove("prefetch"); }
+            else if (parseNode.GetChildNode("prefetch") is { } nullNodePrefetch && nullNodePrefetch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Prefetch = null;
+            if (parseNode.GetChildNode("required") is null) { _explicitNullValueRequired = default!; _explicitNullProperties?.Remove("required"); }
+            else if (parseNode.GetChildNode("required") is { } nullNodeRequired && nullNodeRequired.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Required = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updatesForm") is null) { _explicitNullValueUpdatesForm = default!; _explicitNullProperties?.Remove("updatesForm"); }
+            else if (parseNode.GetChildNode("updatesForm") is { } nullNodeUpdatesForm && nullNodeUpdatesForm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatesForm = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The autosize property</summary>
+        public bool? Autosize { get => _explicitNullValueAutosize; set { _explicitNullValueAutosize = value; AdditionalData?.Remove("autosize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autosize"); else _explicitNullProperties?.Remove("autosize"); } }
+        private bool? _explicitNullValueAutosize = default!;
+        /// <summary>The choices property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<UntypedNode>? Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private List<UntypedNode>? _explicitNullValueChoices = default!;
+#nullable restore
+#else
+        public List<UntypedNode> Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private List<UntypedNode> _explicitNullValueChoices = default!;
+#endif
+        /// <summary>The default property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private UntypedNode? _explicitNullValueDefault = default!;
+#nullable restore
+#else
+        public UntypedNode Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private UntypedNode _explicitNullValueDefault = default!;
+#endif
+        /// <summary>The defaultValue property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public UntypedNode? DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
+        private UntypedNode? _explicitNullValueDefaultValue = default!;
+#nullable restore
+#else
+        public UntypedNode DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
+        private UntypedNode _explicitNullValueDefaultValue = default!;
+#endif
+        /// <summary>The dependsOn property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; AdditionalData?.Remove("dependsOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependsOn"); else _explicitNullProperties?.Remove("dependsOn"); } }
+        private List<string>? _explicitNullValueDependsOn = default!;
+#nullable restore
+#else
+        public List<string> DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; AdditionalData?.Remove("dependsOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependsOn"); else _explicitNullProperties?.Remove("dependsOn"); } }
+        private List<string> _explicitNullValueDependsOn = default!;
+#endif
+        /// <summary>The help property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
+        private string? _explicitNullValueHelp = default!;
+#nullable restore
+#else
+        public string Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
+        private string _explicitNullValueHelp = default!;
+#endif
+        /// <summary>The label property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string? _explicitNullValueLabel = default!;
+#nullable restore
+#else
+        public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
+        private string _explicitNullValueLabel = default!;
+#endif
+        /// <summary>The maxLength property</summary>
+        public int? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; AdditionalData?.Remove("maxLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLength"); else _explicitNullProperties?.Remove("maxLength"); } }
+        private int? _explicitNullValueMaxLength = default!;
+        /// <summary>The maxRows property</summary>
+        public int? MaxRows { get => _explicitNullValueMaxRows; set { _explicitNullValueMaxRows = value; AdditionalData?.Remove("maxRows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRows"); else _explicitNullProperties?.Remove("maxRows"); } }
+        private int? _explicitNullValueMaxRows = default!;
+        /// <summary>The multiple property</summary>
+        public bool? Multiple { get => _explicitNullValueMultiple; set { _explicitNullValueMultiple = value; AdditionalData?.Remove("multiple"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiple"); else _explicitNullProperties?.Remove("multiple"); } }
+        private bool? _explicitNullValueMultiple = default!;
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
+        /// <summary>The placeholder property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
+        private string? _explicitNullValuePlaceholder = default!;
+#nullable restore
+#else
+        public string Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
+        private string _explicitNullValuePlaceholder = default!;
+#endif
+        /// <summary>The prefetch property</summary>
+        public bool? Prefetch { get => _explicitNullValuePrefetch; set { _explicitNullValuePrefetch = value; AdditionalData?.Remove("prefetch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefetch"); else _explicitNullProperties?.Remove("prefetch"); } }
+        private bool? _explicitNullValuePrefetch = default!;
+        /// <summary>The required property</summary>
+        public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
+        private bool? _explicitNullValueRequired = default!;
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
+#endif
+        /// <summary>The updatesForm property</summary>
+        public bool? UpdatesForm { get => _explicitNullValueUpdatesForm; set { _explicitNullValueUpdatesForm = value; AdditionalData?.Remove("updatesForm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatesForm"); else _explicitNullProperties?.Remove("updatesForm"); } }
+        private bool? _explicitNullValueUpdatesForm = default!;
+        /// <summary>The url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
+#nullable restore
+#else
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseLinkIssueConfigItem"/> and sets the default values.
         /// </summary>
@@ -46,6 +202,23 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "autosize", n => { Autosize = n.GetBoolValue(); } },
+                { "choices", n => { Choices = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "default", n => { Default = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "help", n => { Help = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "maxLength", n => { MaxLength = n.GetIntValue(); } },
+                { "maxRows", n => { MaxRows = n.GetIntValue(); } },
+                { "multiple", n => { Multiple = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "placeholder", n => { Placeholder = n.GetStringValue(); } },
+                { "prefetch", n => { Prefetch = n.GetBoolValue(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "updatesForm", n => { UpdatesForm = n.GetBoolValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +228,23 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("autosize", Autosize);
+            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("choices", Choices);
+            writer.WriteObjectValue<UntypedNode>("default", Default);
+            writer.WriteObjectValue<UntypedNode>("defaultValue", DefaultValue);
+            writer.WriteCollectionOfPrimitiveValues<string>("dependsOn", DependsOn);
+            writer.WriteStringValue("help", Help);
+            writer.WriteStringValue("label", Label);
+            writer.WriteIntValue("maxLength", MaxLength);
+            writer.WriteIntValue("maxRows", MaxRows);
+            writer.WriteBoolValue("multiple", Multiple);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("placeholder", Placeholder);
+            writer.WriteBoolValue("prefetch", Prefetch);
+            writer.WriteBoolValue("required", Required);
+            writer.WriteStringValue("type", Type);
+            writer.WriteBoolValue("updatesForm", UpdatesForm);
+            writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

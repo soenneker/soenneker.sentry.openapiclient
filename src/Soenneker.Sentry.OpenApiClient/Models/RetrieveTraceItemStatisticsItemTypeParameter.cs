@@ -8,13 +8,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum RetrieveTraceItemStatisticsItemTypeParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "occurrences")]
-        #pragma warning disable CS1591
-        Occurrences,
-        #pragma warning restore CS1591
         [EnumMember(Value = "spans")]
         #pragma warning disable CS1591
         Spans,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "occurrences")]
+        #pragma warning disable CS1591
+        Occurrences,
         #pragma warning restore CS1591
     }
 }

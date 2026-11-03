@@ -8,21 +8,21 @@ namespace Soenneker.Sentry.OpenApiClient.Models
     public enum GetOrganizationProfilingFlamegraphDataSourceParameter
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "functions")]
+        [EnumMember(Value = "transactions")]
         #pragma warning disable CS1591
-        Functions,
+        Transactions,
         #pragma warning restore CS1591
         [EnumMember(Value = "profiles")]
         #pragma warning disable CS1591
         Profiles,
         #pragma warning restore CS1591
+        [EnumMember(Value = "functions")]
+        #pragma warning disable CS1591
+        Functions,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spans")]
         #pragma warning disable CS1591
         Spans,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "transactions")]
-        #pragma warning disable CS1591
-        Transactions,
         #pragma warning restore CS1591
     }
 }

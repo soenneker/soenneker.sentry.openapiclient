@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>The source&apos;s layout type.* `native`* `symstore`* `symstore_index2`* `ssqp`* `unified`* `debuginfod`* `slashsymbols`* `nxsymstore`</summary>
+    /// <summary>The source&apos;s layout type.* `native`* `symstore`* `symstore_index2`* `ssqp`* `unified`* `debuginfod`* `slashsymbols`* `nnsymstore`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AddProjectSymbolSourceRequestLayoutType
     {
@@ -35,9 +35,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         #pragma warning disable CS1591
         Slashsymbols,
         #pragma warning restore CS1591
-        [EnumMember(Value = "nxsymstore")]
+        [EnumMember(Value = "nnsymstore")]
         #pragma warning disable CS1591
-        Nxsymstore,
+        Nnsymstore,
         #pragma warning restore CS1591
     }
 }

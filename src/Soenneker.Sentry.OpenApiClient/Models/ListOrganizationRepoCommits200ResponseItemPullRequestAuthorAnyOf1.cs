@@ -66,12 +66,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The authenticators property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
-        private UntypedNode? _explicitNullValueAuthenticators = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem>? Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem>? _explicitNullValueAuthenticators = default!;
 #nullable restore
 #else
-        public UntypedNode Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
-        private UntypedNode _explicitNullValueAuthenticators = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem> Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem> _explicitNullValueAuthenticators = default!;
 #endif
         /// <summary>The avatar property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -221,7 +221,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "authenticators", n => { Authenticators = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "authenticators", n => { Authenticators = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1Avatar>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1Avatar.CreateFromDiscriminatorValue); } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "canReset2fa", n => { CanReset2fa = n.GetBoolValue(); } },
@@ -251,7 +251,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("authenticators", Authenticators);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1AuthenticatorsItem>("authenticators", Authenticators);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1Avatar>("avatar", Avatar);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteBoolValue("canReset2fa", CanReset2fa);

@@ -87,12 +87,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The identifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
-        private string? _explicitNullValueIdentifier = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier? _explicitNullValueIdentifier = default!;
 #nullable restore
 #else
-        public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
-        private string _explicitNullValueIdentifier = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier _explicitNullValueIdentifier = default!;
 #endif
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -164,7 +164,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "hash", n => { Hash = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "identifier", n => { Identifier = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier.CreateFromDiscriminatorValue); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tagValue", n => { TagValue = n.GetStringValue(); } },
@@ -183,7 +183,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("hash", Hash);
             writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("identifier", Identifier);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectUsers200ResponseItemIdentifier>("identifier", Identifier);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("tagValue", TagValue);

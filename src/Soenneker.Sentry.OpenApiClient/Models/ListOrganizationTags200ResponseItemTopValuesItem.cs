@@ -39,15 +39,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public int? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private int? _explicitNullValueCount = default!;
         /// <summary>The firstSeen property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("firstSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
-        private string? _explicitNullValueFirstSeen = default!;
-#nullable restore
-#else
-        public string FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("firstSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
-        private string _explicitNullValueFirstSeen = default!;
-#endif
+        public DateTimeOffset? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("firstSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
+        private DateTimeOffset? _explicitNullValueFirstSeen = default!;
         /// <summary>The key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,15 +52,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         private string _explicitNullValueKey = default!;
 #endif
         /// <summary>The lastSeen property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("lastSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
-        private string? _explicitNullValueLastSeen = default!;
-#nullable restore
-#else
-        public string LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("lastSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
-        private string _explicitNullValueLastSeen = default!;
-#endif
+        public DateTimeOffset? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("lastSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
+        private DateTimeOffset? _explicitNullValueLastSeen = default!;
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,9 +110,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "count", n => { Count = n.GetIntValue(); } },
-                { "firstSeen", n => { FirstSeen = n.GetStringValue(); } },
+                { "firstSeen", n => { FirstSeen = n.GetDateTimeOffsetValue(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "lastSeen", n => { LastSeen = n.GetStringValue(); } },
+                { "lastSeen", n => { LastSeen = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
@@ -140,9 +126,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("count", Count);
-            writer.WriteStringValue("firstSeen", FirstSeen);
+            writer.WriteDateTimeOffsetValue("firstSeen", FirstSeen);
             writer.WriteStringValue("key", Key);
-            writer.WriteStringValue("lastSeen", LastSeen);
+            writer.WriteDateTimeOffsetValue("lastSeen", LastSeen);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("query", Query);
             writer.WriteStringValue("value", Value);
