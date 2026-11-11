@@ -120,7 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             [QueryParameter("groupBy")]
             public string[] GroupBy { get; set; }
 #endif
-            /// <summary>The size of the bucket for the timeseries to have, must be a value smaller than the window beingqueried. If the interval is invalid a default interval will be selected instead</summary>
+            /// <summary>The size of the bucket for the timeseries to have, must be a value smaller than the window beingqueried. Either a number of seconds, or a number with a unit suffix of `s`, `m`, `h`, `d`, or `w`, such as `5m` or`1h`. If the interval is invalid a default interval will be selected instead</summary>
             [QueryParameter("interval")]
             public int? Interval { get; set; }
             /// <summary>Whether to throw an error when aggregates are passed in the query or groupBy</summary>
@@ -172,15 +172,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             /// <summary>The number of top event results to return, must be between 1 and 10.When TopEvents is passed, both sort and groupBy are required parameters</summary>
             [QueryParameter("topEvents")]
             public int? TopEvents { get; set; }
-            /// <summary>The aggregate field to create the timeseries for, defaults to `count()` when        not included.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.</summary>
+            /// <summary>The aggregate fields to create timeseries for, defaults to `count()` when        not included. Pass the parameter more than once to get a timeseries for each aggregate, for        example `?yAxis=count()&amp;yAxis=p95(span.duration)`.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("yAxis")]
-            public string? YAxis { get; set; }
+            public string[]? YAxis { get; set; }
 #nullable restore
 #else
             [QueryParameter("yAxis")]
-            public string YAxis { get; set; }
+            public string[] YAxis { get; set; }
 #endif
         }
     }

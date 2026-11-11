@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The fileCount property</summary>
+        /// <summary>Number of files under the prefix</summary>
         public int? FileCount { get => _explicitNullValueFileCount; set { _explicitNullValueFileCount = value; AdditionalData?.Remove("fileCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fileCount"); else _explicitNullProperties?.Remove("fileCount"); } }
         private int? _explicitNullValueFileCount = default!;
-        /// <summary>The path property</summary>
+        /// <summary>Path prefix</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }

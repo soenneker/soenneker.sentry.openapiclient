@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Event counts for the issue over time.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListAProjectSIssues200ResponseSchemaItemStats : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -23,7 +24,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The TwoFourh property</summary>
+        /// <summary>Hourly event counts for the last 24 hours, as [timestamp, count] pairs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? TwoFourh { get => _explicitNullValueTwoFourh; set { _explicitNullValueTwoFourh = value; AdditionalData?.Remove("24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("24h"); else _explicitNullProperties?.Remove("24h"); } }

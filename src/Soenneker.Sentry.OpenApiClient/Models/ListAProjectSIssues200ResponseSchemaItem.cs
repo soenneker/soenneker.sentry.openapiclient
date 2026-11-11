@@ -73,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The annotations property</summary>
+        /// <summary>Annotations on the issue, such as links to external issues.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
@@ -83,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Annotations { get => _explicitNullValueAnnotations; set { _explicitNullValueAnnotations = value; AdditionalData?.Remove("annotations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("annotations"); else _explicitNullProperties?.Remove("annotations"); } }
         private List<string> _explicitNullValueAnnotations = default!;
 #endif
-        /// <summary>The assignedTo property</summary>
+        /// <summary>The user or team the issue is assigned to. Null when the issue is unassigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo? AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; AdditionalData?.Remove("assignedTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo AssignedTo { get => _explicitNullValueAssignedTo; set { _explicitNullValueAssignedTo = value; AdditionalData?.Remove("assignedTo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assignedTo"); else _explicitNullProperties?.Remove("assignedTo"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemAssignedTo _explicitNullValueAssignedTo = default!;
 #endif
-        /// <summary>The count property</summary>
+        /// <summary>The total number of events in the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
@@ -103,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count"); else _explicitNullProperties?.Remove("count"); } }
         private string _explicitNullValueCount = default!;
 #endif
-        /// <summary>The culprit property</summary>
+        /// <summary>The function or module where the issue occurs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; AdditionalData?.Remove("culprit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
@@ -113,7 +113,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; AdditionalData?.Remove("culprit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
         private string _explicitNullValueCulprit = default!;
 #endif
-        /// <summary>The firstSeen property</summary>
+        /// <summary>When the issue was first seen (ISO 8601).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("firstSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
@@ -123,10 +123,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string FirstSeen { get => _explicitNullValueFirstSeen; set { _explicitNullValueFirstSeen = value; AdditionalData?.Remove("firstSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstSeen"); else _explicitNullProperties?.Remove("firstSeen"); } }
         private string _explicitNullValueFirstSeen = default!;
 #endif
-        /// <summary>The hasSeen property</summary>
+        /// <summary>Whether the requesting user has seen the issue since it last occurred.</summary>
         public bool? HasSeen { get => _explicitNullValueHasSeen; set { _explicitNullValueHasSeen = value; AdditionalData?.Remove("hasSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasSeen"); else _explicitNullProperties?.Remove("hasSeen"); } }
         private bool? _explicitNullValueHasSeen = default!;
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -136,16 +136,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isBookmarked property</summary>
+        /// <summary>Whether the requesting user bookmarked the issue.</summary>
         public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; AdditionalData?.Remove("isBookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
         private bool? _explicitNullValueIsBookmarked = default!;
-        /// <summary>The isPublic property</summary>
+        /// <summary>Whether the issue is shared publicly.</summary>
         public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; AdditionalData?.Remove("isPublic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isPublic"); else _explicitNullProperties?.Remove("isPublic"); } }
         private bool? _explicitNullValueIsPublic = default!;
-        /// <summary>The isSubscribed property</summary>
+        /// <summary>Whether the requesting user is subscribed to the issue.</summary>
         public bool? IsSubscribed { get => _explicitNullValueIsSubscribed; set { _explicitNullValueIsSubscribed = value; AdditionalData?.Remove("isSubscribed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSubscribed"); else _explicitNullProperties?.Remove("isSubscribed"); } }
         private bool? _explicitNullValueIsSubscribed = default!;
-        /// <summary>The lastSeen property</summary>
+        /// <summary>When the issue was last seen (ISO 8601).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("lastSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
@@ -155,7 +155,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string LastSeen { get => _explicitNullValueLastSeen; set { _explicitNullValueLastSeen = value; AdditionalData?.Remove("lastSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastSeen"); else _explicitNullProperties?.Remove("lastSeen"); } }
         private string _explicitNullValueLastSeen = default!;
 #endif
-        /// <summary>The level property</summary>
+        /// <summary>The severity level of the issue, such as `error` or `warning`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
@@ -165,7 +165,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Level { get => _explicitNullValueLevel; set { _explicitNullValueLevel = value; AdditionalData?.Remove("level"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("level"); else _explicitNullProperties?.Remove("level"); } }
         private string _explicitNullValueLevel = default!;
 #endif
-        /// <summary>The logger property</summary>
+        /// <summary>The logger of the issue&apos;s events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Logger { get => _explicitNullValueLogger; set { _explicitNullValueLogger = value; AdditionalData?.Remove("logger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logger"); else _explicitNullProperties?.Remove("logger"); } }
@@ -175,7 +175,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Logger { get => _explicitNullValueLogger; set { _explicitNullValueLogger = value; AdditionalData?.Remove("logger"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logger"); else _explicitNullProperties?.Remove("logger"); } }
         private string _explicitNullValueLogger = default!;
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Metadata of the issue. Its keys depend on the issue type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
@@ -185,10 +185,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemMetadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The numComments property</summary>
+        /// <summary>The number of comments on the issue.</summary>
         public int? NumComments { get => _explicitNullValueNumComments; set { _explicitNullValueNumComments = value; AdditionalData?.Remove("numComments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("numComments"); else _explicitNullProperties?.Remove("numComments"); } }
         private int? _explicitNullValueNumComments = default!;
-        /// <summary>The permalink property</summary>
+        /// <summary>The URL of the issue in Sentry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Permalink { get => _explicitNullValuePermalink; set { _explicitNullValuePermalink = value; AdditionalData?.Remove("permalink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permalink"); else _explicitNullProperties?.Remove("permalink"); } }
@@ -198,7 +198,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Permalink { get => _explicitNullValuePermalink; set { _explicitNullValuePermalink = value; AdditionalData?.Remove("permalink"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permalink"); else _explicitNullProperties?.Remove("permalink"); } }
         private string _explicitNullValuePermalink = default!;
 #endif
-        /// <summary>The project property</summary>
+        /// <summary>The project the issue belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
@@ -208,7 +208,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemProject _explicitNullValueProject = default!;
 #endif
-        /// <summary>The shareId property</summary>
+        /// <summary>The ID used in the issue&apos;s public share URL. Null when the issue isn&apos;t shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShareId { get => _explicitNullValueShareId; set { _explicitNullValueShareId = value; AdditionalData?.Remove("shareId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareId"); else _explicitNullProperties?.Remove("shareId"); } }
@@ -218,7 +218,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ShareId { get => _explicitNullValueShareId; set { _explicitNullValueShareId = value; AdditionalData?.Remove("shareId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shareId"); else _explicitNullProperties?.Remove("shareId"); } }
         private string _explicitNullValueShareId = default!;
 #endif
-        /// <summary>The shortId property</summary>
+        /// <summary>The short ID of the issue, such as `PROJECT-1A`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShortId { get => _explicitNullValueShortId; set { _explicitNullValueShortId = value; AdditionalData?.Remove("shortId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortId"); else _explicitNullProperties?.Remove("shortId"); } }
@@ -228,7 +228,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ShortId { get => _explicitNullValueShortId; set { _explicitNullValueShortId = value; AdditionalData?.Remove("shortId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortId"); else _explicitNullProperties?.Remove("shortId"); } }
         private string _explicitNullValueShortId = default!;
 #endif
-        /// <summary>The stats property</summary>
+        /// <summary>Event counts for the issue over time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
@@ -238,10 +238,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStats _explicitNullValueStats = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>The status of the issue.</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseItemStatus? _explicitNullValueStatus = default!;
-        /// <summary>The statusDetails property</summary>
+        /// <summary>Details of the issue&apos;s status, such as when an ignore expires or which release resolves it. Empty when the status has no details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails? StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; AdditionalData?.Remove("statusDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
@@ -251,7 +251,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails StatusDetails { get => _explicitNullValueStatusDetails; set { _explicitNullValueStatusDetails = value; AdditionalData?.Remove("statusDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("statusDetails"); else _explicitNullProperties?.Remove("statusDetails"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemStatusDetails _explicitNullValueStatusDetails = default!;
 #endif
-        /// <summary>The subscriptionDetails property</summary>
+        /// <summary>Why the requesting user is subscribed to the issue. Null when there&apos;s no subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails? SubscriptionDetails { get => _explicitNullValueSubscriptionDetails; set { _explicitNullValueSubscriptionDetails = value; AdditionalData?.Remove("subscriptionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionDetails"); else _explicitNullProperties?.Remove("subscriptionDetails"); } }
@@ -261,7 +261,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails SubscriptionDetails { get => _explicitNullValueSubscriptionDetails; set { _explicitNullValueSubscriptionDetails = value; AdditionalData?.Remove("subscriptionDetails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptionDetails"); else _explicitNullProperties?.Remove("subscriptionDetails"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssues200ResponseSchemaItemSubscriptionDetails _explicitNullValueSubscriptionDetails = default!;
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>The title of the issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
@@ -271,7 +271,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The event type of the issue, such as `error` or `default`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -281,7 +281,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
-        /// <summary>The userCount property</summary>
+        /// <summary>The number of users affected by the issue.</summary>
         public int? UserCount { get => _explicitNullValueUserCount; set { _explicitNullValueUserCount = value; AdditionalData?.Remove("userCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userCount"); else _explicitNullProperties?.Remove("userCount"); } }
         private int? _explicitNullValueUserCount = default!;
         /// <summary>

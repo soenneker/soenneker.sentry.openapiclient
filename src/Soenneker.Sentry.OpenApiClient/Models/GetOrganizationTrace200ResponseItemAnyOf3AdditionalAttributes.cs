@@ -7,20 +7,290 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Extra uptime check attributes, keyed by attribute name
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributes : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("actual_check_time_us") is null) { _explicitNullValueActualCheckTimeUs = default!; _explicitNullProperties?.Remove("actual_check_time_us"); }
+            else if (parseNode.GetChildNode("actual_check_time_us") is { } nullNodeActualCheckTimeUs && nullNodeActualCheckTimeUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActualCheckTimeUs = null;
+            if (parseNode.GetChildNode("assertion_failure_data") is null) { _explicitNullValueAssertionFailureData = default!; _explicitNullProperties?.Remove("assertion_failure_data"); }
+            else if (parseNode.GetChildNode("assertion_failure_data") is { } nullNodeAssertionFailureData && nullNodeAssertionFailureData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssertionFailureData = null;
+            if (parseNode.GetChildNode("check_duration_us") is null) { _explicitNullValueCheckDurationUs = default!; _explicitNullProperties?.Remove("check_duration_us"); }
+            else if (parseNode.GetChildNode("check_duration_us") is { } nullNodeCheckDurationUs && nullNodeCheckDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckDurationUs = null;
+            if (parseNode.GetChildNode("check_id") is null) { _explicitNullValueCheckId = default!; _explicitNullProperties?.Remove("check_id"); }
+            else if (parseNode.GetChildNode("check_id") is { } nullNodeCheckId && nullNodeCheckId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckId = null;
+            if (parseNode.GetChildNode("check_status") is null) { _explicitNullValueCheckStatus = default!; _explicitNullProperties?.Remove("check_status"); }
+            else if (parseNode.GetChildNode("check_status") is { } nullNodeCheckStatus && nullNodeCheckStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CheckStatus = null;
+            if (parseNode.GetChildNode("dns_lookup_duration_us") is null) { _explicitNullValueDnsLookupDurationUs = default!; _explicitNullProperties?.Remove("dns_lookup_duration_us"); }
+            else if (parseNode.GetChildNode("dns_lookup_duration_us") is { } nullNodeDnsLookupDurationUs && nullNodeDnsLookupDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsLookupDurationUs = null;
+            if (parseNode.GetChildNode("dns_lookup_start_us") is null) { _explicitNullValueDnsLookupStartUs = default!; _explicitNullProperties?.Remove("dns_lookup_start_us"); }
+            else if (parseNode.GetChildNode("dns_lookup_start_us") is { } nullNodeDnsLookupStartUs && nullNodeDnsLookupStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DnsLookupStartUs = null;
+            if (parseNode.GetChildNode("environment") is null) { _explicitNullValueEnvironment = default!; _explicitNullProperties?.Remove("environment"); }
+            else if (parseNode.GetChildNode("environment") is { } nullNodeEnvironment && nullNodeEnvironment.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Environment = null;
+            if (parseNode.GetChildNode("guid") is null) { _explicitNullValueGuid = default!; _explicitNullProperties?.Remove("guid"); }
+            else if (parseNode.GetChildNode("guid") is { } nullNodeGuid && nullNodeGuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Guid = null;
+            if (parseNode.GetChildNode("http_status_code") is null) { _explicitNullValueHttpStatusCode = default!; _explicitNullProperties?.Remove("http_status_code"); }
+            else if (parseNode.GetChildNode("http_status_code") is { } nullNodeHttpStatusCode && nullNodeHttpStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HttpStatusCode = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("incident_status") is null) { _explicitNullValueIncidentStatus = default!; _explicitNullProperties?.Remove("incident_status"); }
+            else if (parseNode.GetChildNode("incident_status") is { } nullNodeIncidentStatus && nullNodeIncidentStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncidentStatus = null;
+            if (parseNode.GetChildNode("method") is null) { _explicitNullValueMethod = default!; _explicitNullProperties?.Remove("method"); }
+            else if (parseNode.GetChildNode("method") is { } nullNodeMethod && nullNodeMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Method = null;
+            if (parseNode.GetChildNode("original_url") is null) { _explicitNullValueOriginalUrl = default!; _explicitNullProperties?.Remove("original_url"); }
+            else if (parseNode.GetChildNode("original_url") is { } nullNodeOriginalUrl && nullNodeOriginalUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OriginalUrl = null;
+            if (parseNode.GetChildNode("receive_response_duration_us") is null) { _explicitNullValueReceiveResponseDurationUs = default!; _explicitNullProperties?.Remove("receive_response_duration_us"); }
+            else if (parseNode.GetChildNode("receive_response_duration_us") is { } nullNodeReceiveResponseDurationUs && nullNodeReceiveResponseDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceiveResponseDurationUs = null;
+            if (parseNode.GetChildNode("receive_response_start_us") is null) { _explicitNullValueReceiveResponseStartUs = default!; _explicitNullProperties?.Remove("receive_response_start_us"); }
+            else if (parseNode.GetChildNode("receive_response_start_us") is { } nullNodeReceiveResponseStartUs && nullNodeReceiveResponseStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceiveResponseStartUs = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("request_body_size_bytes") is null) { _explicitNullValueRequestBodySizeBytes = default!; _explicitNullProperties?.Remove("request_body_size_bytes"); }
+            else if (parseNode.GetChildNode("request_body_size_bytes") is { } nullNodeRequestBodySizeBytes && nullNodeRequestBodySizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestBodySizeBytes = null;
+            if (parseNode.GetChildNode("request_duration_us") is null) { _explicitNullValueRequestDurationUs = default!; _explicitNullProperties?.Remove("request_duration_us"); }
+            else if (parseNode.GetChildNode("request_duration_us") is { } nullNodeRequestDurationUs && nullNodeRequestDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestDurationUs = null;
+            if (parseNode.GetChildNode("request_sequence") is null) { _explicitNullValueRequestSequence = default!; _explicitNullProperties?.Remove("request_sequence"); }
+            else if (parseNode.GetChildNode("request_sequence") is { } nullNodeRequestSequence && nullNodeRequestSequence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestSequence = null;
+            if (parseNode.GetChildNode("request_type") is null) { _explicitNullValueRequestType = default!; _explicitNullProperties?.Remove("request_type"); }
+            else if (parseNode.GetChildNode("request_type") is { } nullNodeRequestType && nullNodeRequestType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestType = null;
+            if (parseNode.GetChildNode("request_url") is null) { _explicitNullValueRequestUrl = default!; _explicitNullProperties?.Remove("request_url"); }
+            else if (parseNode.GetChildNode("request_url") is { } nullNodeRequestUrl && nullNodeRequestUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequestUrl = null;
+            if (parseNode.GetChildNode("response_body_size_bytes") is null) { _explicitNullValueResponseBodySizeBytes = default!; _explicitNullProperties?.Remove("response_body_size_bytes"); }
+            else if (parseNode.GetChildNode("response_body_size_bytes") is { } nullNodeResponseBodySizeBytes && nullNodeResponseBodySizeBytes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResponseBodySizeBytes = null;
+            if (parseNode.GetChildNode("scheduled_check_time_us") is null) { _explicitNullValueScheduledCheckTimeUs = default!; _explicitNullProperties?.Remove("scheduled_check_time_us"); }
+            else if (parseNode.GetChildNode("scheduled_check_time_us") is { } nullNodeScheduledCheckTimeUs && nullNodeScheduledCheckTimeUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledCheckTimeUs = null;
+            if (parseNode.GetChildNode("send_request_duration_us") is null) { _explicitNullValueSendRequestDurationUs = default!; _explicitNullProperties?.Remove("send_request_duration_us"); }
+            else if (parseNode.GetChildNode("send_request_duration_us") is { } nullNodeSendRequestDurationUs && nullNodeSendRequestDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendRequestDurationUs = null;
+            if (parseNode.GetChildNode("send_request_start_us") is null) { _explicitNullValueSendRequestStartUs = default!; _explicitNullProperties?.Remove("send_request_start_us"); }
+            else if (parseNode.GetChildNode("send_request_start_us") is { } nullNodeSendRequestStartUs && nullNodeSendRequestStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendRequestStartUs = null;
+            if (parseNode.GetChildNode("span_id") is null) { _explicitNullValueSpanId = default!; _explicitNullProperties?.Remove("span_id"); }
+            else if (parseNode.GetChildNode("span_id") is { } nullNodeSpanId && nullNodeSpanId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SpanId = null;
+            if (parseNode.GetChildNode("status_reason_description") is null) { _explicitNullValueStatusReasonDescription = default!; _explicitNullProperties?.Remove("status_reason_description"); }
+            else if (parseNode.GetChildNode("status_reason_description") is { } nullNodeStatusReasonDescription && nullNodeStatusReasonDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReasonDescription = null;
+            if (parseNode.GetChildNode("status_reason_type") is null) { _explicitNullValueStatusReasonType = default!; _explicitNullProperties?.Remove("status_reason_type"); }
+            else if (parseNode.GetChildNode("status_reason_type") is { } nullNodeStatusReasonType && nullNodeStatusReasonType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusReasonType = null;
+            if (parseNode.GetChildNode("subscription_id") is null) { _explicitNullValueSubscriptionId = default!; _explicitNullProperties?.Remove("subscription_id"); }
+            else if (parseNode.GetChildNode("subscription_id") is { } nullNodeSubscriptionId && nullNodeSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionId = null;
+            if (parseNode.GetChildNode("tcp_connection_duration_us") is null) { _explicitNullValueTcpConnectionDurationUs = default!; _explicitNullProperties?.Remove("tcp_connection_duration_us"); }
+            else if (parseNode.GetChildNode("tcp_connection_duration_us") is { } nullNodeTcpConnectionDurationUs && nullNodeTcpConnectionDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcpConnectionDurationUs = null;
+            if (parseNode.GetChildNode("tcp_connection_start_us") is null) { _explicitNullValueTcpConnectionStartUs = default!; _explicitNullProperties?.Remove("tcp_connection_start_us"); }
+            else if (parseNode.GetChildNode("tcp_connection_start_us") is { } nullNodeTcpConnectionStartUs && nullNodeTcpConnectionStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TcpConnectionStartUs = null;
+            if (parseNode.GetChildNode("time_to_first_byte_duration_us") is null) { _explicitNullValueTimeToFirstByteDurationUs = default!; _explicitNullProperties?.Remove("time_to_first_byte_duration_us"); }
+            else if (parseNode.GetChildNode("time_to_first_byte_duration_us") is { } nullNodeTimeToFirstByteDurationUs && nullNodeTimeToFirstByteDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToFirstByteDurationUs = null;
+            if (parseNode.GetChildNode("time_to_first_byte_start_us") is null) { _explicitNullValueTimeToFirstByteStartUs = default!; _explicitNullProperties?.Remove("time_to_first_byte_start_us"); }
+            else if (parseNode.GetChildNode("time_to_first_byte_start_us") is { } nullNodeTimeToFirstByteStartUs && nullNodeTimeToFirstByteStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeToFirstByteStartUs = null;
+            if (parseNode.GetChildNode("tls_handshake_duration_us") is null) { _explicitNullValueTlsHandshakeDurationUs = default!; _explicitNullProperties?.Remove("tls_handshake_duration_us"); }
+            else if (parseNode.GetChildNode("tls_handshake_duration_us") is { } nullNodeTlsHandshakeDurationUs && nullNodeTlsHandshakeDurationUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsHandshakeDurationUs = null;
+            if (parseNode.GetChildNode("tls_handshake_start_us") is null) { _explicitNullValueTlsHandshakeStartUs = default!; _explicitNullProperties?.Remove("tls_handshake_start_us"); }
+            else if (parseNode.GetChildNode("tls_handshake_start_us") is { } nullNodeTlsHandshakeStartUs && nullNodeTlsHandshakeStartUs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TlsHandshakeStartUs = null;
+            if (parseNode.GetChildNode("trace") is null) { _explicitNullValueTrace = default!; _explicitNullProperties?.Remove("trace"); }
+            else if (parseNode.GetChildNode("trace") is { } nullNodeTrace && nullNodeTrace.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Trace = null;
         }
 
+        /// <summary>When the check ran, in microseconds</summary>
+        public int? ActualCheckTimeUs { get => _explicitNullValueActualCheckTimeUs; set { _explicitNullValueActualCheckTimeUs = value; AdditionalData?.Remove("actual_check_time_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actual_check_time_us"); else _explicitNullProperties?.Remove("actual_check_time_us"); } }
+        private int? _explicitNullValueActualCheckTimeUs = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Assertion that failed, as JSON</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AssertionFailureData { get => _explicitNullValueAssertionFailureData; set { _explicitNullValueAssertionFailureData = value; AdditionalData?.Remove("assertion_failure_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assertion_failure_data"); else _explicitNullProperties?.Remove("assertion_failure_data"); } }
+        private string? _explicitNullValueAssertionFailureData = default!;
+#nullable restore
+#else
+        public string AssertionFailureData { get => _explicitNullValueAssertionFailureData; set { _explicitNullValueAssertionFailureData = value; AdditionalData?.Remove("assertion_failure_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("assertion_failure_data"); else _explicitNullProperties?.Remove("assertion_failure_data"); } }
+        private string _explicitNullValueAssertionFailureData = default!;
+#endif
+        /// <summary>Duration of the check in microseconds</summary>
+        public int? CheckDurationUs { get => _explicitNullValueCheckDurationUs; set { _explicitNullValueCheckDurationUs = value; AdditionalData?.Remove("check_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_duration_us"); else _explicitNullProperties?.Remove("check_duration_us"); } }
+        private int? _explicitNullValueCheckDurationUs = default!;
+        /// <summary>ID of the uptime check</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CheckId { get => _explicitNullValueCheckId; set { _explicitNullValueCheckId = value; AdditionalData?.Remove("check_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_id"); else _explicitNullProperties?.Remove("check_id"); } }
+        private string? _explicitNullValueCheckId = default!;
+#nullable restore
+#else
+        public string CheckId { get => _explicitNullValueCheckId; set { _explicitNullValueCheckId = value; AdditionalData?.Remove("check_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_id"); else _explicitNullProperties?.Remove("check_id"); } }
+        private string _explicitNullValueCheckId = default!;
+#endif
+        /// <summary>Outcome of the check</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesCheckStatus? CheckStatus { get => _explicitNullValueCheckStatus; set { _explicitNullValueCheckStatus = value; AdditionalData?.Remove("check_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("check_status"); else _explicitNullProperties?.Remove("check_status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesCheckStatus? _explicitNullValueCheckStatus = default!;
+        /// <summary>Duration of the DNS lookup in microseconds</summary>
+        public int? DnsLookupDurationUs { get => _explicitNullValueDnsLookupDurationUs; set { _explicitNullValueDnsLookupDurationUs = value; AdditionalData?.Remove("dns_lookup_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_lookup_duration_us"); else _explicitNullProperties?.Remove("dns_lookup_duration_us"); } }
+        private int? _explicitNullValueDnsLookupDurationUs = default!;
+        /// <summary>When the DNS lookup started, in microseconds</summary>
+        public int? DnsLookupStartUs { get => _explicitNullValueDnsLookupStartUs; set { _explicitNullValueDnsLookupStartUs = value; AdditionalData?.Remove("dns_lookup_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dns_lookup_start_us"); else _explicitNullProperties?.Remove("dns_lookup_start_us"); } }
+        private int? _explicitNullValueDnsLookupStartUs = default!;
+        /// <summary>Environment of the uptime monitor</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string? _explicitNullValueEnvironment = default!;
+#nullable restore
+#else
+        public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
+        private string _explicitNullValueEnvironment = default!;
+#endif
+        /// <summary>Unique ID of the uptime check</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; AdditionalData?.Remove("guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
+        private string? _explicitNullValueGuid = default!;
+#nullable restore
+#else
+        public string Guid { get => _explicitNullValueGuid; set { _explicitNullValueGuid = value; AdditionalData?.Remove("guid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("guid"); else _explicitNullProperties?.Remove("guid"); } }
+        private string _explicitNullValueGuid = default!;
+#endif
+        /// <summary>HTTP status code of the response</summary>
+        public int? HttpStatusCode { get => _explicitNullValueHttpStatusCode; set { _explicitNullValueHttpStatusCode = value; AdditionalData?.Remove("http_status_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("http_status_code"); else _explicitNullProperties?.Remove("http_status_code"); } }
+        private int? _explicitNullValueHttpStatusCode = default!;
+        /// <summary>ID of the uptime result</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
+#nullable restore
+#else
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
+#endif
+        /// <summary>Whether the check is part of an incident: 1 if it is, 0 if not</summary>
+        public int? IncidentStatus { get => _explicitNullValueIncidentStatus; set { _explicitNullValueIncidentStatus = value; AdditionalData?.Remove("incident_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incident_status"); else _explicitNullProperties?.Remove("incident_status"); } }
+        private int? _explicitNullValueIncidentStatus = default!;
+        /// <summary>HTTP method of the first request of the check</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesMethod? Method { get => _explicitNullValueMethod; set { _explicitNullValueMethod = value; AdditionalData?.Remove("method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("method"); else _explicitNullProperties?.Remove("method"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesMethod? _explicitNullValueMethod = default!;
+        /// <summary>URL of the first request of the check, before redirects</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? OriginalUrl { get => _explicitNullValueOriginalUrl; set { _explicitNullValueOriginalUrl = value; AdditionalData?.Remove("original_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_url"); else _explicitNullProperties?.Remove("original_url"); } }
+        private string? _explicitNullValueOriginalUrl = default!;
+#nullable restore
+#else
+        public string OriginalUrl { get => _explicitNullValueOriginalUrl; set { _explicitNullValueOriginalUrl = value; AdditionalData?.Remove("original_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original_url"); else _explicitNullProperties?.Remove("original_url"); } }
+        private string _explicitNullValueOriginalUrl = default!;
+#endif
+        /// <summary>Duration of receiving the response in microseconds</summary>
+        public int? ReceiveResponseDurationUs { get => _explicitNullValueReceiveResponseDurationUs; set { _explicitNullValueReceiveResponseDurationUs = value; AdditionalData?.Remove("receive_response_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receive_response_duration_us"); else _explicitNullProperties?.Remove("receive_response_duration_us"); } }
+        private int? _explicitNullValueReceiveResponseDurationUs = default!;
+        /// <summary>When receiving the response started, in microseconds</summary>
+        public int? ReceiveResponseStartUs { get => _explicitNullValueReceiveResponseStartUs; set { _explicitNullValueReceiveResponseStartUs = value; AdditionalData?.Remove("receive_response_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receive_response_start_us"); else _explicitNullProperties?.Remove("receive_response_start_us"); } }
+        private int? _explicitNullValueReceiveResponseStartUs = default!;
+        /// <summary>Slug of the region the check ran from</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string? _explicitNullValueRegion = default!;
+#nullable restore
+#else
+        public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private string _explicitNullValueRegion = default!;
+#endif
+        /// <summary>Size of the request body in bytes</summary>
+        public int? RequestBodySizeBytes { get => _explicitNullValueRequestBodySizeBytes; set { _explicitNullValueRequestBodySizeBytes = value; AdditionalData?.Remove("request_body_size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_body_size_bytes"); else _explicitNullProperties?.Remove("request_body_size_bytes"); } }
+        private int? _explicitNullValueRequestBodySizeBytes = default!;
+        /// <summary>Duration of the request in microseconds</summary>
+        public int? RequestDurationUs { get => _explicitNullValueRequestDurationUs; set { _explicitNullValueRequestDurationUs = value; AdditionalData?.Remove("request_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_duration_us"); else _explicitNullProperties?.Remove("request_duration_us"); } }
+        private int? _explicitNullValueRequestDurationUs = default!;
+        /// <summary>Position of the request in the redirect chain, starting at 0</summary>
+        public int? RequestSequence { get => _explicitNullValueRequestSequence; set { _explicitNullValueRequestSequence = value; AdditionalData?.Remove("request_sequence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_sequence"); else _explicitNullProperties?.Remove("request_sequence"); } }
+        private int? _explicitNullValueRequestSequence = default!;
+        /// <summary>HTTP method of the request</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesRequestType? RequestType { get => _explicitNullValueRequestType; set { _explicitNullValueRequestType = value; AdditionalData?.Remove("request_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_type"); else _explicitNullProperties?.Remove("request_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesRequestType? _explicitNullValueRequestType = default!;
+        /// <summary>URL of the request</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RequestUrl { get => _explicitNullValueRequestUrl; set { _explicitNullValueRequestUrl = value; AdditionalData?.Remove("request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_url"); else _explicitNullProperties?.Remove("request_url"); } }
+        private string? _explicitNullValueRequestUrl = default!;
+#nullable restore
+#else
+        public string RequestUrl { get => _explicitNullValueRequestUrl; set { _explicitNullValueRequestUrl = value; AdditionalData?.Remove("request_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request_url"); else _explicitNullProperties?.Remove("request_url"); } }
+        private string _explicitNullValueRequestUrl = default!;
+#endif
+        /// <summary>Size of the response body in bytes</summary>
+        public int? ResponseBodySizeBytes { get => _explicitNullValueResponseBodySizeBytes; set { _explicitNullValueResponseBodySizeBytes = value; AdditionalData?.Remove("response_body_size_bytes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response_body_size_bytes"); else _explicitNullProperties?.Remove("response_body_size_bytes"); } }
+        private int? _explicitNullValueResponseBodySizeBytes = default!;
+        /// <summary>When the check was scheduled to run, in microseconds</summary>
+        public int? ScheduledCheckTimeUs { get => _explicitNullValueScheduledCheckTimeUs; set { _explicitNullValueScheduledCheckTimeUs = value; AdditionalData?.Remove("scheduled_check_time_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_check_time_us"); else _explicitNullProperties?.Remove("scheduled_check_time_us"); } }
+        private int? _explicitNullValueScheduledCheckTimeUs = default!;
+        /// <summary>Duration of sending the request in microseconds</summary>
+        public int? SendRequestDurationUs { get => _explicitNullValueSendRequestDurationUs; set { _explicitNullValueSendRequestDurationUs = value; AdditionalData?.Remove("send_request_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_request_duration_us"); else _explicitNullProperties?.Remove("send_request_duration_us"); } }
+        private int? _explicitNullValueSendRequestDurationUs = default!;
+        /// <summary>When sending the request started, in microseconds</summary>
+        public int? SendRequestStartUs { get => _explicitNullValueSendRequestStartUs; set { _explicitNullValueSendRequestStartUs = value; AdditionalData?.Remove("send_request_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_request_start_us"); else _explicitNullProperties?.Remove("send_request_start_us"); } }
+        private int? _explicitNullValueSendRequestStartUs = default!;
+        /// <summary>ID of the span the uptime checker made up for the check</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("span_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_id"); else _explicitNullProperties?.Remove("span_id"); } }
+        private string? _explicitNullValueSpanId = default!;
+#nullable restore
+#else
+        public string SpanId { get => _explicitNullValueSpanId; set { _explicitNullValueSpanId = value; AdditionalData?.Remove("span_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("span_id"); else _explicitNullProperties?.Remove("span_id"); } }
+        private string _explicitNullValueSpanId = default!;
+#endif
+        /// <summary>Description of why the check failed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StatusReasonDescription { get => _explicitNullValueStatusReasonDescription; set { _explicitNullValueStatusReasonDescription = value; AdditionalData?.Remove("status_reason_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason_description"); else _explicitNullProperties?.Remove("status_reason_description"); } }
+        private string? _explicitNullValueStatusReasonDescription = default!;
+#nullable restore
+#else
+        public string StatusReasonDescription { get => _explicitNullValueStatusReasonDescription; set { _explicitNullValueStatusReasonDescription = value; AdditionalData?.Remove("status_reason_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason_description"); else _explicitNullProperties?.Remove("status_reason_description"); } }
+        private string _explicitNullValueStatusReasonDescription = default!;
+#endif
+        /// <summary>Kind of failure</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesStatusReasonType? StatusReasonType { get => _explicitNullValueStatusReasonType; set { _explicitNullValueStatusReasonType = value; AdditionalData?.Remove("status_reason_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_reason_type"); else _explicitNullProperties?.Remove("status_reason_type"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesStatusReasonType? _explicitNullValueStatusReasonType = default!;
+        /// <summary>ID of the uptime subscription the check ran for</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SubscriptionId { get => _explicitNullValueSubscriptionId; set { _explicitNullValueSubscriptionId = value; AdditionalData?.Remove("subscription_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_id"); else _explicitNullProperties?.Remove("subscription_id"); } }
+        private string? _explicitNullValueSubscriptionId = default!;
+#nullable restore
+#else
+        public string SubscriptionId { get => _explicitNullValueSubscriptionId; set { _explicitNullValueSubscriptionId = value; AdditionalData?.Remove("subscription_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_id"); else _explicitNullProperties?.Remove("subscription_id"); } }
+        private string _explicitNullValueSubscriptionId = default!;
+#endif
+        /// <summary>Duration of the TCP connection in microseconds</summary>
+        public int? TcpConnectionDurationUs { get => _explicitNullValueTcpConnectionDurationUs; set { _explicitNullValueTcpConnectionDurationUs = value; AdditionalData?.Remove("tcp_connection_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp_connection_duration_us"); else _explicitNullProperties?.Remove("tcp_connection_duration_us"); } }
+        private int? _explicitNullValueTcpConnectionDurationUs = default!;
+        /// <summary>When the TCP connection started, in microseconds</summary>
+        public int? TcpConnectionStartUs { get => _explicitNullValueTcpConnectionStartUs; set { _explicitNullValueTcpConnectionStartUs = value; AdditionalData?.Remove("tcp_connection_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tcp_connection_start_us"); else _explicitNullProperties?.Remove("tcp_connection_start_us"); } }
+        private int? _explicitNullValueTcpConnectionStartUs = default!;
+        /// <summary>Time to the first response byte in microseconds</summary>
+        public int? TimeToFirstByteDurationUs { get => _explicitNullValueTimeToFirstByteDurationUs; set { _explicitNullValueTimeToFirstByteDurationUs = value; AdditionalData?.Remove("time_to_first_byte_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_to_first_byte_duration_us"); else _explicitNullProperties?.Remove("time_to_first_byte_duration_us"); } }
+        private int? _explicitNullValueTimeToFirstByteDurationUs = default!;
+        /// <summary>When the wait for the first response byte started, in microseconds</summary>
+        public int? TimeToFirstByteStartUs { get => _explicitNullValueTimeToFirstByteStartUs; set { _explicitNullValueTimeToFirstByteStartUs = value; AdditionalData?.Remove("time_to_first_byte_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_to_first_byte_start_us"); else _explicitNullProperties?.Remove("time_to_first_byte_start_us"); } }
+        private int? _explicitNullValueTimeToFirstByteStartUs = default!;
+        /// <summary>Duration of the TLS handshake in microseconds</summary>
+        public int? TlsHandshakeDurationUs { get => _explicitNullValueTlsHandshakeDurationUs; set { _explicitNullValueTlsHandshakeDurationUs = value; AdditionalData?.Remove("tls_handshake_duration_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_handshake_duration_us"); else _explicitNullProperties?.Remove("tls_handshake_duration_us"); } }
+        private int? _explicitNullValueTlsHandshakeDurationUs = default!;
+        /// <summary>When the TLS handshake started, in microseconds</summary>
+        public int? TlsHandshakeStartUs { get => _explicitNullValueTlsHandshakeStartUs; set { _explicitNullValueTlsHandshakeStartUs = value; AdditionalData?.Remove("tls_handshake_start_us"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tls_handshake_start_us"); else _explicitNullProperties?.Remove("tls_handshake_start_us"); } }
+        private int? _explicitNullValueTlsHandshakeStartUs = default!;
+        /// <summary>ID of the trace the uptime check belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Trace { get => _explicitNullValueTrace; set { _explicitNullValueTrace = value; AdditionalData?.Remove("trace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace"); else _explicitNullProperties?.Remove("trace"); } }
+        private string? _explicitNullValueTrace = default!;
+#nullable restore
+#else
+        public string Trace { get => _explicitNullValueTrace; set { _explicitNullValueTrace = value; AdditionalData?.Remove("trace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace"); else _explicitNullProperties?.Remove("trace"); } }
+        private string _explicitNullValueTrace = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributes"/> and sets the default values.
         /// </summary>
@@ -46,6 +316,43 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actual_check_time_us", n => { ActualCheckTimeUs = n.GetIntValue(); } },
+                { "assertion_failure_data", n => { AssertionFailureData = n.GetStringValue(); } },
+                { "check_duration_us", n => { CheckDurationUs = n.GetIntValue(); } },
+                { "check_id", n => { CheckId = n.GetStringValue(); } },
+                { "check_status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesCheckStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCheckStatus = default; _explicitNullProperties?.Remove("check_status"); AdditionalData["check_status"] = unknown; } else { CheckStatus = parsed; AdditionalData.Remove("check_status"); } } },
+                { "dns_lookup_duration_us", n => { DnsLookupDurationUs = n.GetIntValue(); } },
+                { "dns_lookup_start_us", n => { DnsLookupStartUs = n.GetIntValue(); } },
+                { "environment", n => { Environment = n.GetStringValue(); } },
+                { "guid", n => { Guid = n.GetStringValue(); } },
+                { "http_status_code", n => { HttpStatusCode = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "incident_status", n => { IncidentStatus = n.GetIntValue(); } },
+                { "method", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesMethod>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMethod = default; _explicitNullProperties?.Remove("method"); AdditionalData["method"] = unknown; } else { Method = parsed; AdditionalData.Remove("method"); } } },
+                { "original_url", n => { OriginalUrl = n.GetStringValue(); } },
+                { "receive_response_duration_us", n => { ReceiveResponseDurationUs = n.GetIntValue(); } },
+                { "receive_response_start_us", n => { ReceiveResponseStartUs = n.GetIntValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "request_body_size_bytes", n => { RequestBodySizeBytes = n.GetIntValue(); } },
+                { "request_duration_us", n => { RequestDurationUs = n.GetIntValue(); } },
+                { "request_sequence", n => { RequestSequence = n.GetIntValue(); } },
+                { "request_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesRequestType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequestType = default; _explicitNullProperties?.Remove("request_type"); AdditionalData["request_type"] = unknown; } else { RequestType = parsed; AdditionalData.Remove("request_type"); } } },
+                { "request_url", n => { RequestUrl = n.GetStringValue(); } },
+                { "response_body_size_bytes", n => { ResponseBodySizeBytes = n.GetIntValue(); } },
+                { "scheduled_check_time_us", n => { ScheduledCheckTimeUs = n.GetIntValue(); } },
+                { "send_request_duration_us", n => { SendRequestDurationUs = n.GetIntValue(); } },
+                { "send_request_start_us", n => { SendRequestStartUs = n.GetIntValue(); } },
+                { "span_id", n => { SpanId = n.GetStringValue(); } },
+                { "status_reason_description", n => { StatusReasonDescription = n.GetStringValue(); } },
+                { "status_reason_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesStatusReasonType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatusReasonType = default; _explicitNullProperties?.Remove("status_reason_type"); AdditionalData["status_reason_type"] = unknown; } else { StatusReasonType = parsed; AdditionalData.Remove("status_reason_type"); } } },
+                { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
+                { "tcp_connection_duration_us", n => { TcpConnectionDurationUs = n.GetIntValue(); } },
+                { "tcp_connection_start_us", n => { TcpConnectionStartUs = n.GetIntValue(); } },
+                { "time_to_first_byte_duration_us", n => { TimeToFirstByteDurationUs = n.GetIntValue(); } },
+                { "time_to_first_byte_start_us", n => { TimeToFirstByteStartUs = n.GetIntValue(); } },
+                { "tls_handshake_duration_us", n => { TlsHandshakeDurationUs = n.GetIntValue(); } },
+                { "tls_handshake_start_us", n => { TlsHandshakeStartUs = n.GetIntValue(); } },
+                { "trace", n => { Trace = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +362,43 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("actual_check_time_us", ActualCheckTimeUs);
+            writer.WriteStringValue("assertion_failure_data", AssertionFailureData);
+            writer.WriteIntValue("check_duration_us", CheckDurationUs);
+            writer.WriteStringValue("check_id", CheckId);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesCheckStatus>("check_status", CheckStatus);
+            writer.WriteIntValue("dns_lookup_duration_us", DnsLookupDurationUs);
+            writer.WriteIntValue("dns_lookup_start_us", DnsLookupStartUs);
+            writer.WriteStringValue("environment", Environment);
+            writer.WriteStringValue("guid", Guid);
+            writer.WriteIntValue("http_status_code", HttpStatusCode);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("incident_status", IncidentStatus);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesMethod>("method", Method);
+            writer.WriteStringValue("original_url", OriginalUrl);
+            writer.WriteIntValue("receive_response_duration_us", ReceiveResponseDurationUs);
+            writer.WriteIntValue("receive_response_start_us", ReceiveResponseStartUs);
+            writer.WriteStringValue("region", Region);
+            writer.WriteIntValue("request_body_size_bytes", RequestBodySizeBytes);
+            writer.WriteIntValue("request_duration_us", RequestDurationUs);
+            writer.WriteIntValue("request_sequence", RequestSequence);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesRequestType>("request_type", RequestType);
+            writer.WriteStringValue("request_url", RequestUrl);
+            writer.WriteIntValue("response_body_size_bytes", ResponseBodySizeBytes);
+            writer.WriteIntValue("scheduled_check_time_us", ScheduledCheckTimeUs);
+            writer.WriteIntValue("send_request_duration_us", SendRequestDurationUs);
+            writer.WriteIntValue("send_request_start_us", SendRequestStartUs);
+            writer.WriteStringValue("span_id", SpanId);
+            writer.WriteStringValue("status_reason_description", StatusReasonDescription);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTrace200ResponseItemAnyOf3AdditionalAttributesStatusReasonType>("status_reason_type", StatusReasonType);
+            writer.WriteStringValue("subscription_id", SubscriptionId);
+            writer.WriteIntValue("tcp_connection_duration_us", TcpConnectionDurationUs);
+            writer.WriteIntValue("tcp_connection_start_us", TcpConnectionStartUs);
+            writer.WriteIntValue("time_to_first_byte_duration_us", TimeToFirstByteDurationUs);
+            writer.WriteIntValue("time_to_first_byte_start_us", TimeToFirstByteStartUs);
+            writer.WriteIntValue("tls_handshake_duration_us", TlsHandshakeDurationUs);
+            writer.WriteIntValue("tls_handshake_start_us", TlsHandshakeStartUs);
+            writer.WriteStringValue("trace", Trace);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// The replay
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationReplay200ResponseData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -83,12 +84,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("user") is { } nullNodeUser && nullNodeUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) User = null;
         }
 
-        /// <summary>The activity property</summary>
+        /// <summary>Replay activity score</summary>
         public int? Activity { get => _explicitNullValueActivity; set { _explicitNullValueActivity = value; AdditionalData?.Remove("activity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("activity"); else _explicitNullProperties?.Remove("activity"); } }
         private int? _explicitNullValueActivity = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The browser property</summary>
+        /// <summary>Browser metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataBrowser? Browser { get => _explicitNullValueBrowser; set { _explicitNullValueBrowser = value; AdditionalData?.Remove("browser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser"); else _explicitNullProperties?.Remove("browser"); } }
@@ -98,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataBrowser Browser { get => _explicitNullValueBrowser; set { _explicitNullValueBrowser = value; AdditionalData?.Remove("browser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browser"); else _explicitNullProperties?.Remove("browser"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataBrowser _explicitNullValueBrowser = default!;
 #endif
-        /// <summary>The clicks property</summary>
+        /// <summary>Clicks recorded during the replay, one object per click</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataClicksItem>? Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
@@ -108,28 +109,28 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataClicksItem> Clicks { get => _explicitNullValueClicks; set { _explicitNullValueClicks = value; AdditionalData?.Remove("clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clicks"); else _explicitNullProperties?.Remove("clicks"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataClicksItem> _explicitNullValueClicks = default!;
 #endif
-        /// <summary>The count_dead_clicks property</summary>
+        /// <summary>Number of dead clicks</summary>
         public int? CountDeadClicks { get => _explicitNullValueCountDeadClicks; set { _explicitNullValueCountDeadClicks = value; AdditionalData?.Remove("count_dead_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_dead_clicks"); else _explicitNullProperties?.Remove("count_dead_clicks"); } }
         private int? _explicitNullValueCountDeadClicks = default!;
-        /// <summary>The count_errors property</summary>
+        /// <summary>Number of errors linked to the replay</summary>
         public int? CountErrors { get => _explicitNullValueCountErrors; set { _explicitNullValueCountErrors = value; AdditionalData?.Remove("count_errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_errors"); else _explicitNullProperties?.Remove("count_errors"); } }
         private int? _explicitNullValueCountErrors = default!;
-        /// <summary>The count_infos property</summary>
+        /// <summary>Number of info events linked to the replay</summary>
         public int? CountInfos { get => _explicitNullValueCountInfos; set { _explicitNullValueCountInfos = value; AdditionalData?.Remove("count_infos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_infos"); else _explicitNullProperties?.Remove("count_infos"); } }
         private int? _explicitNullValueCountInfos = default!;
-        /// <summary>The count_rage_clicks property</summary>
+        /// <summary>Number of rage clicks</summary>
         public int? CountRageClicks { get => _explicitNullValueCountRageClicks; set { _explicitNullValueCountRageClicks = value; AdditionalData?.Remove("count_rage_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_rage_clicks"); else _explicitNullProperties?.Remove("count_rage_clicks"); } }
         private int? _explicitNullValueCountRageClicks = default!;
-        /// <summary>The count_segments property</summary>
+        /// <summary>Number of recording segments</summary>
         public int? CountSegments { get => _explicitNullValueCountSegments; set { _explicitNullValueCountSegments = value; AdditionalData?.Remove("count_segments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_segments"); else _explicitNullProperties?.Remove("count_segments"); } }
         private int? _explicitNullValueCountSegments = default!;
-        /// <summary>The count_urls property</summary>
+        /// <summary>Number of URLs visited during the replay</summary>
         public int? CountUrls { get => _explicitNullValueCountUrls; set { _explicitNullValueCountUrls = value; AdditionalData?.Remove("count_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_urls"); else _explicitNullProperties?.Remove("count_urls"); } }
         private int? _explicitNullValueCountUrls = default!;
-        /// <summary>The count_warnings property</summary>
+        /// <summary>Number of warning events linked to the replay</summary>
         public int? CountWarnings { get => _explicitNullValueCountWarnings; set { _explicitNullValueCountWarnings = value; AdditionalData?.Remove("count_warnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_warnings"); else _explicitNullProperties?.Remove("count_warnings"); } }
         private int? _explicitNullValueCountWarnings = default!;
-        /// <summary>The device property</summary>
+        /// <summary>Device metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
@@ -139,7 +140,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataDevice _explicitNullValueDevice = default!;
 #endif
-        /// <summary>The dist property</summary>
+        /// <summary>Distribution of the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
@@ -149,10 +150,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
         private string _explicitNullValueDist = default!;
 #endif
-        /// <summary>The duration property</summary>
+        /// <summary>Replay duration in seconds</summary>
         public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private int? _explicitNullValueDuration = default!;
-        /// <summary>The environment property</summary>
+        /// <summary>Environment of the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
@@ -162,7 +163,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string _explicitNullValueEnvironment = default!;
 #endif
-        /// <summary>The error_ids property</summary>
+        /// <summary>IDs of errors linked to the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ErrorIds { get => _explicitNullValueErrorIds; set { _explicitNullValueErrorIds = value; AdditionalData?.Remove("error_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_ids"); else _explicitNullProperties?.Remove("error_ids"); } }
@@ -172,7 +173,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> ErrorIds { get => _explicitNullValueErrorIds; set { _explicitNullValueErrorIds = value; AdditionalData?.Remove("error_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error_ids"); else _explicitNullProperties?.Remove("error_ids"); } }
         private List<string> _explicitNullValueErrorIds = default!;
 #endif
-        /// <summary>The finished_at property</summary>
+        /// <summary>When the replay finished (ISO 8601)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finished_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
@@ -182,10 +183,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string FinishedAt { get => _explicitNullValueFinishedAt; set { _explicitNullValueFinishedAt = value; AdditionalData?.Remove("finished_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("finished_at"); else _explicitNullProperties?.Remove("finished_at"); } }
         private string _explicitNullValueFinishedAt = default!;
 #endif
-        /// <summary>The has_viewed property</summary>
+        /// <summary>Whether the requesting user has viewed the replay</summary>
         public bool? HasViewed { get => _explicitNullValueHasViewed; set { _explicitNullValueHasViewed = value; AdditionalData?.Remove("has_viewed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_viewed"); else _explicitNullProperties?.Remove("has_viewed"); } }
         private bool? _explicitNullValueHasViewed = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Replay ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -195,10 +196,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The is_archived property</summary>
+        /// <summary>Whether the replay is archived</summary>
         public bool? IsArchived { get => _explicitNullValueIsArchived; set { _explicitNullValueIsArchived = value; AdditionalData?.Remove("is_archived"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_archived"); else _explicitNullProperties?.Remove("is_archived"); } }
         private bool? _explicitNullValueIsArchived = default!;
-        /// <summary>The os property</summary>
+        /// <summary>Operating system metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOs? Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; AdditionalData?.Remove("os"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
@@ -208,7 +209,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOs Os { get => _explicitNullValueOs; set { _explicitNullValueOs = value; AdditionalData?.Remove("os"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("os"); else _explicitNullProperties?.Remove("os"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOs _explicitNullValueOs = default!;
 #endif
-        /// <summary>The ota_updates property</summary>
+        /// <summary>Over-the-air update metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates? OtaUpdates { get => _explicitNullValueOtaUpdates; set { _explicitNullValueOtaUpdates = value; AdditionalData?.Remove("ota_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ota_updates"); else _explicitNullProperties?.Remove("ota_updates"); } }
@@ -218,7 +219,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates OtaUpdates { get => _explicitNullValueOtaUpdates; set { _explicitNullValueOtaUpdates = value; AdditionalData?.Remove("ota_updates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ota_updates"); else _explicitNullProperties?.Remove("ota_updates"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataOtaUpdates _explicitNullValueOtaUpdates = default!;
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -228,7 +229,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>ID of the project the replay belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
@@ -238,7 +239,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The releases property</summary>
+        /// <summary>Releases associated with the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Releases { get => _explicitNullValueReleases; set { _explicitNullValueReleases = value; AdditionalData?.Remove("releases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releases"); else _explicitNullProperties?.Remove("releases"); } }
@@ -248,7 +249,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Releases { get => _explicitNullValueReleases; set { _explicitNullValueReleases = value; AdditionalData?.Remove("releases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releases"); else _explicitNullProperties?.Remove("releases"); } }
         private List<string> _explicitNullValueReleases = default!;
 #endif
-        /// <summary>The replay_type property</summary>
+        /// <summary>Recording mode of the replay, such as session or buffer</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReplayType { get => _explicitNullValueReplayType; set { _explicitNullValueReplayType = value; AdditionalData?.Remove("replay_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_type"); else _explicitNullProperties?.Remove("replay_type"); } }
@@ -258,7 +259,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ReplayType { get => _explicitNullValueReplayType; set { _explicitNullValueReplayType = value; AdditionalData?.Remove("replay_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replay_type"); else _explicitNullProperties?.Remove("replay_type"); } }
         private string _explicitNullValueReplayType = default!;
 #endif
-        /// <summary>The sdk property</summary>
+        /// <summary>SDK metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataSdk? Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; AdditionalData?.Remove("sdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
@@ -268,7 +269,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataSdk Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; AdditionalData?.Remove("sdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataSdk _explicitNullValueSdk = default!;
 #endif
-        /// <summary>The segment_names property</summary>
+        /// <summary>Names of the replay&apos;s segments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SegmentNames { get => _explicitNullValueSegmentNames; set { _explicitNullValueSegmentNames = value; AdditionalData?.Remove("segment_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_names"); else _explicitNullProperties?.Remove("segment_names"); } }
@@ -278,7 +279,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> SegmentNames { get => _explicitNullValueSegmentNames; set { _explicitNullValueSegmentNames = value; AdditionalData?.Remove("segment_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_names"); else _explicitNullProperties?.Remove("segment_names"); } }
         private List<string> _explicitNullValueSegmentNames = default!;
 #endif
-        /// <summary>The started_at property</summary>
+        /// <summary>When the replay started (ISO 8601)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
@@ -288,7 +289,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string StartedAt { get => _explicitNullValueStartedAt; set { _explicitNullValueStartedAt = value; AdditionalData?.Remove("started_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("started_at"); else _explicitNullProperties?.Remove("started_at"); } }
         private string _explicitNullValueStartedAt = default!;
 #endif
-        /// <summary>The tags property</summary>
+        /// <summary>Replay tags</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataTags? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
@@ -298,7 +299,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataTags Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataTags _explicitNullValueTags = default!;
 #endif
-        /// <summary>The trace_ids property</summary>
+        /// <summary>IDs of traces linked to the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TraceIds { get => _explicitNullValueTraceIds; set { _explicitNullValueTraceIds = value; AdditionalData?.Remove("trace_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace_ids"); else _explicitNullProperties?.Remove("trace_ids"); } }
@@ -308,7 +309,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> TraceIds { get => _explicitNullValueTraceIds; set { _explicitNullValueTraceIds = value; AdditionalData?.Remove("trace_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trace_ids"); else _explicitNullProperties?.Remove("trace_ids"); } }
         private List<string> _explicitNullValueTraceIds = default!;
 #endif
-        /// <summary>The urls property</summary>
+        /// <summary>URLs visited during the replay</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
@@ -318,7 +319,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
         private List<string> _explicitNullValueUrls = default!;
 #endif
-        /// <summary>The user property</summary>
+        /// <summary>User metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }

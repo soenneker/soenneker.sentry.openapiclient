@@ -7,20 +7,98 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Most recent commit in the release
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationReleases200ResponseSchemaItemLastCommit : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("author") is null) { _explicitNullValueAuthor = default!; _explicitNullProperties?.Remove("author"); }
+            else if (parseNode.GetChildNode("author") is { } nullNodeAuthor && nullNodeAuthor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Author = null;
+            if (parseNode.GetChildNode("dateCreated") is null) { _explicitNullValueDateCreated = default!; _explicitNullProperties?.Remove("dateCreated"); }
+            else if (parseNode.GetChildNode("dateCreated") is { } nullNodeDateCreated && nullNodeDateCreated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DateCreated = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("pullRequest") is null) { _explicitNullValuePullRequest = default!; _explicitNullProperties?.Remove("pullRequest"); }
+            else if (parseNode.GetChildNode("pullRequest") is { } nullNodePullRequest && nullNodePullRequest.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PullRequest = null;
+            if (parseNode.GetChildNode("repository") is null) { _explicitNullValueRepository = default!; _explicitNullProperties?.Remove("repository"); }
+            else if (parseNode.GetChildNode("repository") is { } nullNodeRepository && nullNodeRepository.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repository = null;
+            if (parseNode.GetChildNode("suspectCommitType") is null) { _explicitNullValueSuspectCommitType = default!; _explicitNullProperties?.Remove("suspectCommitType"); }
+            else if (parseNode.GetChildNode("suspectCommitType") is { } nullNodeSuspectCommitType && nullNodeSuspectCommitType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuspectCommitType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Author of the commit: a Sentry user when the email matches one, otherwise the name and email from the commit</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor? _explicitNullValueAuthor = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor _explicitNullValueAuthor = default!;
+#endif
+        /// <summary>When the commit was made (ISO 8601)</summary>
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
+        /// <summary>Commit SHA</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
+#nullable restore
+#else
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
+#endif
+        /// <summary>Commit message</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
+#nullable restore
+#else
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
+#endif
+        /// <summary>Pull request the commit belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest? PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; AdditionalData?.Remove("pullRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequest"); else _explicitNullProperties?.Remove("pullRequest"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest? _explicitNullValuePullRequest = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest PullRequest { get => _explicitNullValuePullRequest; set { _explicitNullValuePullRequest = value; AdditionalData?.Remove("pullRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pullRequest"); else _explicitNullProperties?.Remove("pullRequest"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest _explicitNullValuePullRequest = default!;
+#endif
+        /// <summary>Repository the commit belongs to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository? Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository? _explicitNullValueRepository = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository Repository { get => _explicitNullValueRepository; set { _explicitNullValueRepository = value; AdditionalData?.Remove("repository"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repository"); else _explicitNullProperties?.Remove("repository"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository _explicitNullValueRepository = default!;
+#endif
+        /// <summary>How the commit was found as a suspect commit: via commit in release or via SCM integration. Empty for other commits</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SuspectCommitType { get => _explicitNullValueSuspectCommitType; set { _explicitNullValueSuspectCommitType = value; AdditionalData?.Remove("suspectCommitType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspectCommitType"); else _explicitNullProperties?.Remove("suspectCommitType"); } }
+        private string? _explicitNullValueSuspectCommitType = default!;
+#nullable restore
+#else
+        public string SuspectCommitType { get => _explicitNullValueSuspectCommitType; set { _explicitNullValueSuspectCommitType = value; AdditionalData?.Remove("suspectCommitType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suspectCommitType"); else _explicitNullProperties?.Remove("suspectCommitType"); } }
+        private string _explicitNullValueSuspectCommitType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseSchemaItemLastCommit"/> and sets the default values.
         /// </summary>
@@ -48,6 +126,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "author", n => { Author = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor.CreateFromDiscriminatorValue); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "pullRequest", n => { PullRequest = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest.CreateFromDiscriminatorValue); } },
+                { "repository", n => { Repository = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository.CreateFromDiscriminatorValue); } },
+                { "suspectCommitType", n => { SuspectCommitType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,6 +142,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitAuthor>("author", Author);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
+            writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("message", Message);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitPullRequest>("pullRequest", PullRequest);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemLastCommitRepository>("repository", Repository);
+            writer.WriteStringValue("suspectCommitType", SuspectCommitType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

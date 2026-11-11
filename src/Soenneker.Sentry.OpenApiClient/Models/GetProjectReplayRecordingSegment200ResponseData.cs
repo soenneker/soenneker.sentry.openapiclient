@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metadata of the recording segment
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectReplayRecordingSegment200ResponseData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -29,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateAdded property</summary>
+        /// <summary>When the segment was stored (ISO 8601), or null if unknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("dateAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
@@ -39,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("dateAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
         private string _explicitNullValueDateAdded = default!;
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>ID of the project the replay belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
@@ -49,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The replayId property</summary>
+        /// <summary>ID of the replay the segment belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReplayId { get => _explicitNullValueReplayId; set { _explicitNullValueReplayId = value; AdditionalData?.Remove("replayId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayId"); else _explicitNullProperties?.Remove("replayId"); } }
@@ -59,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ReplayId { get => _explicitNullValueReplayId; set { _explicitNullValueReplayId = value; AdditionalData?.Remove("replayId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replayId"); else _explicitNullProperties?.Remove("replayId"); } }
         private string _explicitNullValueReplayId = default!;
 #endif
-        /// <summary>The segmentId property</summary>
+        /// <summary>ID of the segment within the replay</summary>
         public int? SegmentId { get => _explicitNullValueSegmentId; set { _explicitNullValueSegmentId = value; AdditionalData?.Remove("segmentId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segmentId"); else _explicitNullProperties?.Remove("segmentId"); } }
         private int? _explicitNullValueSegmentId = default!;
         /// <summary>

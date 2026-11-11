@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>* `line`* `area`* `bar`* `table`* `big_number`* `details`* `categorical_bar`* `wheel`* `rage_and_dead_clicks`* `server_tree`* `text`* `agents_traces_table`* `heatmap`</summary>
+    /// <summary>How the widget is displayed, such as line, area, bar, table or big_number.* `line`* `area`* `bar`* `table`* `big_number`* `details`* `categorical_bar`* `wheel`* `rage_and_dead_clicks`* `server_tree`* `text`* `agents_traces_table`* `heatmap`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateOrganizationDashboardRequestWidgetsItemDisplayType
     {

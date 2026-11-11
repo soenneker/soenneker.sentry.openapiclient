@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Type of schedule: crontab or interval</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ListOrganizationMonitors200ResponseItemConfigScheduleType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "crontab")]
         #pragma warning disable CS1591

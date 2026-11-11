@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Version control details of the build. Null when the build has none
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectInstallableBuildLatest200ResponseCurrentArtifactGitInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -37,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The baseRef property</summary>
+        /// <summary>Branch or ref of the base commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; AdditionalData?.Remove("baseRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
@@ -47,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BaseRef { get => _explicitNullValueBaseRef; set { _explicitNullValueBaseRef = value; AdditionalData?.Remove("baseRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRef"); else _explicitNullProperties?.Remove("baseRef"); } }
         private string _explicitNullValueBaseRef = default!;
 #endif
-        /// <summary>The baseRepoName property</summary>
+        /// <summary>Repository name of the base commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; AdditionalData?.Remove("baseRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
@@ -57,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BaseRepoName { get => _explicitNullValueBaseRepoName; set { _explicitNullValueBaseRepoName = value; AdditionalData?.Remove("baseRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseRepoName"); else _explicitNullProperties?.Remove("baseRepoName"); } }
         private string _explicitNullValueBaseRepoName = default!;
 #endif
-        /// <summary>The baseSha property</summary>
+        /// <summary>Commit SHA of the base the build is compared against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; AdditionalData?.Remove("baseSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
@@ -67,7 +68,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BaseSha { get => _explicitNullValueBaseSha; set { _explicitNullValueBaseSha = value; AdditionalData?.Remove("baseSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseSha"); else _explicitNullProperties?.Remove("baseSha"); } }
         private string _explicitNullValueBaseSha = default!;
 #endif
-        /// <summary>The headRef property</summary>
+        /// <summary>Branch or ref of the head commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; AdditionalData?.Remove("headRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
@@ -77,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HeadRef { get => _explicitNullValueHeadRef; set { _explicitNullValueHeadRef = value; AdditionalData?.Remove("headRef"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRef"); else _explicitNullProperties?.Remove("headRef"); } }
         private string _explicitNullValueHeadRef = default!;
 #endif
-        /// <summary>The headRepoName property</summary>
+        /// <summary>Repository name of the head commit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; AdditionalData?.Remove("headRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
@@ -87,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HeadRepoName { get => _explicitNullValueHeadRepoName; set { _explicitNullValueHeadRepoName = value; AdditionalData?.Remove("headRepoName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headRepoName"); else _explicitNullProperties?.Remove("headRepoName"); } }
         private string _explicitNullValueHeadRepoName = default!;
 #endif
-        /// <summary>The headSha property</summary>
+        /// <summary>Commit SHA of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; AdditionalData?.Remove("headSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
@@ -97,10 +98,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HeadSha { get => _explicitNullValueHeadSha; set { _explicitNullValueHeadSha = value; AdditionalData?.Remove("headSha"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headSha"); else _explicitNullProperties?.Remove("headSha"); } }
         private string _explicitNullValueHeadSha = default!;
 #endif
-        /// <summary>The prNumber property</summary>
+        /// <summary>Pull request number</summary>
         public int? PrNumber { get => _explicitNullValuePrNumber; set { _explicitNullValuePrNumber = value; AdditionalData?.Remove("prNumber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prNumber"); else _explicitNullProperties?.Remove("prNumber"); } }
         private int? _explicitNullValuePrNumber = default!;
-        /// <summary>The provider property</summary>
+        /// <summary>Version control provider, such as github</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }

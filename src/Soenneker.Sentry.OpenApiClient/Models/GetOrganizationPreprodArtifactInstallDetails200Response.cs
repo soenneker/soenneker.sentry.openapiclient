@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appInfo property</summary>
+        /// <summary>App details of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseAppInfo? AppInfo { get => _explicitNullValueAppInfo; set { _explicitNullValueAppInfo = value; AdditionalData?.Remove("appInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appInfo"); else _explicitNullProperties?.Remove("appInfo"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseAppInfo AppInfo { get => _explicitNullValueAppInfo; set { _explicitNullValueAppInfo = value; AdditionalData?.Remove("appInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appInfo"); else _explicitNullProperties?.Remove("appInfo"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseAppInfo _explicitNullValueAppInfo = default!;
 #endif
-        /// <summary>The buildConfiguration property</summary>
+        /// <summary>Name of the build configuration, such as Release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildConfiguration { get => _explicitNullValueBuildConfiguration; set { _explicitNullValueBuildConfiguration = value; AdditionalData?.Remove("buildConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfiguration"); else _explicitNullProperties?.Remove("buildConfiguration"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BuildConfiguration { get => _explicitNullValueBuildConfiguration; set { _explicitNullValueBuildConfiguration = value; AdditionalData?.Remove("buildConfiguration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildConfiguration"); else _explicitNullProperties?.Remove("buildConfiguration"); } }
         private string _explicitNullValueBuildConfiguration = default!;
 #endif
-        /// <summary>The buildId property</summary>
+        /// <summary>ID of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BuildId { get => _explicitNullValueBuildId; set { _explicitNullValueBuildId = value; AdditionalData?.Remove("buildId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildId"); else _explicitNullProperties?.Remove("buildId"); } }
         private string _explicitNullValueBuildId = default!;
 #endif
-        /// <summary>The codesigningType property</summary>
+        /// <summary>Code signing type, such as development or app-store. Only set for Apple builds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CodesigningType { get => _explicitNullValueCodesigningType; set { _explicitNullValueCodesigningType = value; AdditionalData?.Remove("codesigningType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codesigningType"); else _explicitNullProperties?.Remove("codesigningType"); } }
@@ -95,10 +95,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string CodesigningType { get => _explicitNullValueCodesigningType; set { _explicitNullValueCodesigningType = value; AdditionalData?.Remove("codesigningType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codesigningType"); else _explicitNullProperties?.Remove("codesigningType"); } }
         private string _explicitNullValueCodesigningType = default!;
 #endif
-        /// <summary>The downloadCount property</summary>
+        /// <summary>Number of times the build was downloaded</summary>
         public int? DownloadCount { get => _explicitNullValueDownloadCount; set { _explicitNullValueDownloadCount = value; AdditionalData?.Remove("downloadCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadCount"); else _explicitNullProperties?.Remove("downloadCount"); } }
         private int? _explicitNullValueDownloadCount = default!;
-        /// <summary>The gitInfo property</summary>
+        /// <summary>Version control details of the build. Null when the build has none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo? GitInfo { get => _explicitNullValueGitInfo; set { _explicitNullValueGitInfo = value; AdditionalData?.Remove("gitInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitInfo"); else _explicitNullProperties?.Remove("gitInfo"); } }
@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo GitInfo { get => _explicitNullValueGitInfo; set { _explicitNullValueGitInfo = value; AdditionalData?.Remove("gitInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gitInfo"); else _explicitNullProperties?.Remove("gitInfo"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo _explicitNullValueGitInfo = default!;
 #endif
-        /// <summary>The installGroups property</summary>
+        /// <summary>Install groups the build belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? InstallGroups { get => _explicitNullValueInstallGroups; set { _explicitNullValueInstallGroups = value; AdditionalData?.Remove("installGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installGroups"); else _explicitNullProperties?.Remove("installGroups"); } }
@@ -118,7 +118,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> InstallGroups { get => _explicitNullValueInstallGroups; set { _explicitNullValueInstallGroups = value; AdditionalData?.Remove("installGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installGroups"); else _explicitNullProperties?.Remove("installGroups"); } }
         private List<string> _explicitNullValueInstallGroups = default!;
 #endif
-        /// <summary>The installUrl property</summary>
+        /// <summary>URL to install the build. Null when the build isn&apos;t installable</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("installUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installUrl"); else _explicitNullProperties?.Remove("installUrl"); } }
@@ -128,23 +128,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string InstallUrl { get => _explicitNullValueInstallUrl; set { _explicitNullValueInstallUrl = value; AdditionalData?.Remove("installUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installUrl"); else _explicitNullProperties?.Remove("installUrl"); } }
         private string _explicitNullValueInstallUrl = default!;
 #endif
-        /// <summary>The installUrlExpiresAt property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? InstallUrlExpiresAt { get => _explicitNullValueInstallUrlExpiresAt; set { _explicitNullValueInstallUrlExpiresAt = value; AdditionalData?.Remove("installUrlExpiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installUrlExpiresAt"); else _explicitNullProperties?.Remove("installUrlExpiresAt"); } }
-        private string? _explicitNullValueInstallUrlExpiresAt = default!;
-#nullable restore
-#else
-        public string InstallUrlExpiresAt { get => _explicitNullValueInstallUrlExpiresAt; set { _explicitNullValueInstallUrlExpiresAt = value; AdditionalData?.Remove("installUrlExpiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installUrlExpiresAt"); else _explicitNullProperties?.Remove("installUrlExpiresAt"); } }
-        private string _explicitNullValueInstallUrlExpiresAt = default!;
-#endif
-        /// <summary>The isCodeSignatureValid property</summary>
+        /// <summary>When installUrl expires (ISO 8601)</summary>
+        public DateTimeOffset? InstallUrlExpiresAt { get => _explicitNullValueInstallUrlExpiresAt; set { _explicitNullValueInstallUrlExpiresAt = value; AdditionalData?.Remove("installUrlExpiresAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installUrlExpiresAt"); else _explicitNullProperties?.Remove("installUrlExpiresAt"); } }
+        private DateTimeOffset? _explicitNullValueInstallUrlExpiresAt = default!;
+        /// <summary>Whether the build&apos;s code signature is valid. Only set for Apple builds</summary>
         public bool? IsCodeSignatureValid { get => _explicitNullValueIsCodeSignatureValid; set { _explicitNullValueIsCodeSignatureValid = value; AdditionalData?.Remove("isCodeSignatureValid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCodeSignatureValid"); else _explicitNullProperties?.Remove("isCodeSignatureValid"); } }
         private bool? _explicitNullValueIsCodeSignatureValid = default!;
-        /// <summary>The isInstallable property</summary>
+        /// <summary>Whether the build can be installed</summary>
         public bool? IsInstallable { get => _explicitNullValueIsInstallable; set { _explicitNullValueIsInstallable = value; AdditionalData?.Remove("isInstallable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInstallable"); else _explicitNullProperties?.Remove("isInstallable"); } }
         private bool? _explicitNullValueIsInstallable = default!;
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the build, in uppercase</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -154,7 +147,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The profileName property</summary>
+        /// <summary>Name of the provisioning profile. Only set for Apple builds</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProfileName { get => _explicitNullValueProfileName; set { _explicitNullValueProfileName = value; AdditionalData?.Remove("profileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileName"); else _explicitNullProperties?.Remove("profileName"); } }
@@ -164,7 +157,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProfileName { get => _explicitNullValueProfileName; set { _explicitNullValueProfileName = value; AdditionalData?.Remove("profileName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("profileName"); else _explicitNullProperties?.Remove("profileName"); } }
         private string _explicitNullValueProfileName = default!;
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>ID of the project the build belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
@@ -174,7 +167,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The projectSlug property</summary>
+        /// <summary>Slug of the project the build belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; AdditionalData?.Remove("projectSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSlug"); else _explicitNullProperties?.Remove("projectSlug"); } }
@@ -184,7 +177,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; AdditionalData?.Remove("projectSlug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectSlug"); else _explicitNullProperties?.Remove("projectSlug"); } }
         private string _explicitNullValueProjectSlug = default!;
 #endif
-        /// <summary>The releaseNotes property</summary>
+        /// <summary>Release notes uploaded with the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReleaseNotes { get => _explicitNullValueReleaseNotes; set { _explicitNullValueReleaseNotes = value; AdditionalData?.Remove("releaseNotes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseNotes"); else _explicitNullProperties?.Remove("releaseNotes"); } }
@@ -194,16 +187,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ReleaseNotes { get => _explicitNullValueReleaseNotes; set { _explicitNullValueReleaseNotes = value; AdditionalData?.Remove("releaseNotes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseNotes"); else _explicitNullProperties?.Remove("releaseNotes"); } }
         private string _explicitNullValueReleaseNotes = default!;
 #endif
-        /// <summary>The state property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
-        private string? _explicitNullValueState = default!;
-#nullable restore
-#else
-        public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
-        private string _explicitNullValueState = default!;
-#endif
+        /// <summary>State of the build</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseState? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseState? _explicitNullValueState = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200Response"/> and sets the default values.
         /// </summary>
@@ -237,7 +223,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "gitInfo", n => { GitInfo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo.CreateFromDiscriminatorValue); } },
                 { "installGroups", n => { InstallGroups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "installUrl", n => { InstallUrl = n.GetStringValue(); } },
-                { "installUrlExpiresAt", n => { InstallUrlExpiresAt = n.GetStringValue(); } },
+                { "installUrlExpiresAt", n => { InstallUrlExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "isCodeSignatureValid", n => { IsCodeSignatureValid = n.GetBoolValue(); } },
                 { "isInstallable", n => { IsInstallable = n.GetBoolValue(); } },
                 { "platform", n => { Platform = n.GetStringValue(); } },
@@ -245,7 +231,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "projectId", n => { ProjectId = n.GetStringValue(); } },
                 { "projectSlug", n => { ProjectSlug = n.GetStringValue(); } },
                 { "releaseNotes", n => { ReleaseNotes = n.GetStringValue(); } },
-                { "state", n => { State = n.GetStringValue(); } },
+                { "state", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseState>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueState = default; _explicitNullProperties?.Remove("state"); AdditionalData["state"] = unknown; } else { State = parsed; AdditionalData.Remove("state"); } } },
             };
         }
         /// <summary>
@@ -263,7 +249,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseGitInfo>("gitInfo", GitInfo);
             writer.WriteCollectionOfPrimitiveValues<string>("installGroups", InstallGroups);
             writer.WriteStringValue("installUrl", InstallUrl);
-            writer.WriteStringValue("installUrlExpiresAt", InstallUrlExpiresAt);
+            writer.WriteDateTimeOffsetValue("installUrlExpiresAt", InstallUrlExpiresAt);
             writer.WriteBoolValue("isCodeSignatureValid", IsCodeSignatureValid);
             writer.WriteBoolValue("isInstallable", IsInstallable);
             writer.WriteStringValue("platform", Platform);
@@ -271,7 +257,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("projectId", ProjectId);
             writer.WriteStringValue("projectSlug", ProjectSlug);
             writer.WriteStringValue("releaseNotes", ReleaseNotes);
-            writer.WriteStringValue("state", State);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactInstallDetails200ResponseState>("state", State);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

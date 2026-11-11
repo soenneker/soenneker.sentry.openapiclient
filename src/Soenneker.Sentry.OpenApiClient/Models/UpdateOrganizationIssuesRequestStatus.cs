@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
+    /// <summary>The new status for the issues.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateOrganizationIssuesRequestStatus
     {

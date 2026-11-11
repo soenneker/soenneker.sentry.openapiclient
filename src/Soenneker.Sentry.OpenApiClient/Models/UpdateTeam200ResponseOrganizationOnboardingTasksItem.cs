@@ -31,23 +31,23 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completionSeen property</summary>
+        /// <summary>When the task&apos;s completion was marked as seen, or null</summary>
         public DateTimeOffset? CompletionSeen { get => _explicitNullValueCompletionSeen; set { _explicitNullValueCompletionSeen = value; AdditionalData?.Remove("completionSeen"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completionSeen"); else _explicitNullProperties?.Remove("completionSeen"); } }
         private DateTimeOffset? _explicitNullValueCompletionSeen = default!;
-        /// <summary>The data property</summary>
+        /// <summary>Data recorded for the task. Most tasks record none, so it&apos;s often empty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
-        private UntypedNode? _explicitNullValueData = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public UntypedNode Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
-        private UntypedNode _explicitNullValueData = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData _explicitNullValueData = default!;
 #endif
-        /// <summary>The dateCompleted property</summary>
+        /// <summary>When the task was completed or skipped</summary>
         public DateTimeOffset? DateCompleted { get => _explicitNullValueDateCompleted; set { _explicitNullValueDateCompleted = value; AdditionalData?.Remove("dateCompleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCompleted"); else _explicitNullProperties?.Remove("dateCompleted"); } }
         private DateTimeOffset? _explicitNullValueDateCompleted = default!;
-        /// <summary>The status property</summary>
+        /// <summary>Task status: complete or skipped</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -57,7 +57,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The task property</summary>
+        /// <summary>Onboarding task key, such as create_project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Task { get => _explicitNullValueTask; set { _explicitNullValueTask = value; AdditionalData?.Remove("task"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("task"); else _explicitNullProperties?.Remove("task"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "completionSeen", n => { CompletionSeen = n.GetDateTimeOffsetValue(); } },
-                { "data", n => { Data = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData.CreateFromDiscriminatorValue); } },
                 { "dateCompleted", n => { DateCompleted = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "task", n => { Task = n.GetStringValue(); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("completionSeen", CompletionSeen);
-            writer.WriteObjectValue<UntypedNode>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateTeam200ResponseOrganizationOnboardingTasksItemData>("data", Data);
             writer.WriteDateTimeOffsetValue("dateCompleted", DateCompleted);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("task", Task);

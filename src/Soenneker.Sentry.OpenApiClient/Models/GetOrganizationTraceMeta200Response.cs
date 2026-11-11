@@ -37,22 +37,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The errorsCount property</summary>
+        /// <summary>Number of errors in the trace</summary>
         public int? ErrorsCount { get => _explicitNullValueErrorsCount; set { _explicitNullValueErrorsCount = value; AdditionalData?.Remove("errorsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errorsCount"); else _explicitNullProperties?.Remove("errorsCount"); } }
         private int? _explicitNullValueErrorsCount = default!;
-        /// <summary>The logsCount property</summary>
+        /// <summary>Number of logs in the trace</summary>
         public double? LogsCount { get => _explicitNullValueLogsCount; set { _explicitNullValueLogsCount = value; AdditionalData?.Remove("logsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logsCount"); else _explicitNullProperties?.Remove("logsCount"); } }
         private double? _explicitNullValueLogsCount = default!;
-        /// <summary>The metricsCount property</summary>
+        /// <summary>Number of metric samples in the trace, excluding metrics derived from spans</summary>
         public double? MetricsCount { get => _explicitNullValueMetricsCount; set { _explicitNullValueMetricsCount = value; AdditionalData?.Remove("metricsCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsCount"); else _explicitNullProperties?.Remove("metricsCount"); } }
         private double? _explicitNullValueMetricsCount = default!;
-        /// <summary>The performanceIssuesCount property</summary>
+        /// <summary>Number of performance issues in the trace</summary>
         public int? PerformanceIssuesCount { get => _explicitNullValuePerformanceIssuesCount; set { _explicitNullValuePerformanceIssuesCount = value; AdditionalData?.Remove("performanceIssuesCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("performanceIssuesCount"); else _explicitNullProperties?.Remove("performanceIssuesCount"); } }
         private int? _explicitNullValuePerformanceIssuesCount = default!;
-        /// <summary>The spansCount property</summary>
+        /// <summary>Number of spans in the trace</summary>
         public double? SpansCount { get => _explicitNullValueSpansCount; set { _explicitNullValueSpansCount = value; AdditionalData?.Remove("spansCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCount"); else _explicitNullProperties?.Remove("spansCount"); } }
         private double? _explicitNullValueSpansCount = default!;
-        /// <summary>The spansCountMap property</summary>
+        /// <summary>Number of spans in the trace for each span operation, keyed by `span.op`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap? SpansCountMap { get => _explicitNullValueSpansCountMap; set { _explicitNullValueSpansCountMap = value; AdditionalData?.Remove("spansCountMap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCountMap"); else _explicitNullProperties?.Remove("spansCountMap"); } }
@@ -62,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap SpansCountMap { get => _explicitNullValueSpansCountMap; set { _explicitNullValueSpansCountMap = value; AdditionalData?.Remove("spansCountMap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spansCountMap"); else _explicitNullProperties?.Remove("spansCountMap"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseSpansCountMap _explicitNullValueSpansCountMap = default!;
 #endif
-        /// <summary>The transactionChildCountMap property</summary>
+        /// <summary>Number of child spans of each transaction</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem>? TransactionChildCountMap { get => _explicitNullValueTransactionChildCountMap; set { _explicitNullValueTransactionChildCountMap = value; AdditionalData?.Remove("transactionChildCountMap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionChildCountMap"); else _explicitNullProperties?.Remove("transactionChildCountMap"); } }
@@ -72,7 +72,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem> TransactionChildCountMap { get => _explicitNullValueTransactionChildCountMap; set { _explicitNullValueTransactionChildCountMap = value; AdditionalData?.Remove("transactionChildCountMap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionChildCountMap"); else _explicitNullProperties?.Remove("transactionChildCountMap"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem> _explicitNullValueTransactionChildCountMap = default!;
 #endif
-        /// <summary>The uptimeCount property</summary>
+        /// <summary>Number of uptime checks in the trace. Only present when `include_uptime=1`</summary>
         public int? UptimeCount { get => _explicitNullValueUptimeCount; set { _explicitNullValueUptimeCount = value; AdditionalData?.Remove("uptimeCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uptimeCount"); else _explicitNullProperties?.Remove("uptimeCount"); } }
         private int? _explicitNullValueUptimeCount = default!;
         /// <summary>

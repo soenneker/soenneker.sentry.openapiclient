@@ -37,7 +37,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataForwarderId property</summary>
+        /// <summary>ID of the data forwarder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataForwarderId { get => _explicitNullValueDataForwarderId; set { _explicitNullValueDataForwarderId = value; AdditionalData?.Remove("dataForwarderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataForwarderId"); else _explicitNullProperties?.Remove("dataForwarderId"); } }
@@ -47,13 +47,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DataForwarderId { get => _explicitNullValueDataForwarderId; set { _explicitNullValueDataForwarderId = value; AdditionalData?.Remove("dataForwarderId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataForwarderId"); else _explicitNullProperties?.Remove("dataForwarderId"); } }
         private string _explicitNullValueDataForwarderId = default!;
 #endif
-        /// <summary>The dateAdded property</summary>
+        /// <summary>When the project configuration was created (ISO 8601)</summary>
         public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("dateAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
         private DateTimeOffset? _explicitNullValueDateAdded = default!;
-        /// <summary>The dateUpdated property</summary>
+        /// <summary>When the project configuration was last updated (ISO 8601)</summary>
         public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
         private DateTimeOffset? _explicitNullValueDateUpdated = default!;
-        /// <summary>The effectiveConfig property</summary>
+        /// <summary>Forwarder config merged with the project&apos;s overrides. Empty without org:write access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemEffectiveConfig? EffectiveConfig { get => _explicitNullValueEffectiveConfig; set { _explicitNullValueEffectiveConfig = value; AdditionalData?.Remove("effectiveConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveConfig"); else _explicitNullProperties?.Remove("effectiveConfig"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemEffectiveConfig EffectiveConfig { get => _explicitNullValueEffectiveConfig; set { _explicitNullValueEffectiveConfig = value; AdditionalData?.Remove("effectiveConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effectiveConfig"); else _explicitNullProperties?.Remove("effectiveConfig"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemEffectiveConfig _explicitNullValueEffectiveConfig = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the project&apos;s data forwarding configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -73,10 +73,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Whether data forwarding is on for the project</summary>
         public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; AdditionalData?.Remove("isEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEnabled"); else _explicitNullProperties?.Remove("isEnabled"); } }
         private bool? _explicitNullValueIsEnabled = default!;
-        /// <summary>The overrides property</summary>
+        /// <summary>Settings that override the forwarder&apos;s config for the project. Empty without project:write or org:write access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemOverrides? Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; AdditionalData?.Remove("overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemOverrides Overrides { get => _explicitNullValueOverrides; set { _explicitNullValueOverrides = value; AdditionalData?.Remove("overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overrides"); else _explicitNullProperties?.Remove("overrides"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemOverrides _explicitNullValueOverrides = default!;
 #endif
-        /// <summary>The project property</summary>
+        /// <summary>Project the configuration applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseItemProjectConfigsItemProject? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Kind of issue item: error or occurrence</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetOrganizationTrace200ResponseItemAnyOf1OccurrencesItemEventType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "error")]
         #pragma warning disable CS1591

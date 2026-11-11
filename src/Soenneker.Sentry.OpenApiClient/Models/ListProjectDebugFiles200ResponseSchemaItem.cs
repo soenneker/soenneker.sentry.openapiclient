@@ -45,7 +45,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The codeId property</summary>
+        /// <summary>Code ID of the file, such as the GNU build ID. Null when the file has none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CodeId { get => _explicitNullValueCodeId; set { _explicitNullValueCodeId = value; AdditionalData?.Remove("codeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeId"); else _explicitNullProperties?.Remove("codeId"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string CodeId { get => _explicitNullValueCodeId; set { _explicitNullValueCodeId = value; AdditionalData?.Remove("codeId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeId"); else _explicitNullProperties?.Remove("codeId"); } }
         private string _explicitNullValueCodeId = default!;
 #endif
-        /// <summary>The cpuName property</summary>
+        /// <summary>CPU architecture of the file, such as x86_64 or arm64</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CpuName { get => _explicitNullValueCpuName; set { _explicitNullValueCpuName = value; AdditionalData?.Remove("cpuName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpuName"); else _explicitNullProperties?.Remove("cpuName"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string CpuName { get => _explicitNullValueCpuName; set { _explicitNullValueCpuName = value; AdditionalData?.Remove("cpuName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cpuName"); else _explicitNullProperties?.Remove("cpuName"); } }
         private string _explicitNullValueCpuName = default!;
 #endif
-        /// <summary>The data property</summary>
+        /// <summary>Extra data about the file, such as its features. Empty when not known</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
@@ -75,10 +75,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemData _explicitNullValueData = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the file was uploaded (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The debugId property</summary>
+        /// <summary>Debug ID of the file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; AdditionalData?.Remove("debugId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugId"); else _explicitNullProperties?.Remove("debugId"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DebugId { get => _explicitNullValueDebugId; set { _explicitNullValueDebugId = value; AdditionalData?.Remove("debugId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugId"); else _explicitNullProperties?.Remove("debugId"); } }
         private string _explicitNullValueDebugId = default!;
 #endif
-        /// <summary>The headers property</summary>
+        /// <summary>HTTP headers to download the file with, such as Content-Type</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders? Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
@@ -98,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders Headers { get => _explicitNullValueHeaders; set { _explicitNullValueHeaders = value; AdditionalData?.Remove("headers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headers"); else _explicitNullProperties?.Remove("headers"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectDebugFiles200ResponseSchemaItemHeaders _explicitNullValueHeaders = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the debug file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The objectName property</summary>
+        /// <summary>Name of the object file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ObjectName { get => _explicitNullValueObjectName; set { _explicitNullValueObjectName = value; AdditionalData?.Remove("objectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectName"); else _explicitNullProperties?.Remove("objectName"); } }
@@ -118,7 +118,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ObjectName { get => _explicitNullValueObjectName; set { _explicitNullValueObjectName = value; AdditionalData?.Remove("objectName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("objectName"); else _explicitNullProperties?.Remove("objectName"); } }
         private string _explicitNullValueObjectName = default!;
 #endif
-        /// <summary>The sha1 property</summary>
+        /// <summary>SHA-1 checksum of the file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; AdditionalData?.Remove("sha1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
@@ -128,10 +128,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Sha1 { get => _explicitNullValueSha1; set { _explicitNullValueSha1 = value; AdditionalData?.Remove("sha1"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sha1"); else _explicitNullProperties?.Remove("sha1"); } }
         private string _explicitNullValueSha1 = default!;
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>Size of the file in bytes</summary>
         public int? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; AdditionalData?.Remove("size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
         private int? _explicitNullValueSize = default!;
-        /// <summary>The symbolType property</summary>
+        /// <summary>Format of the file, such as macho, elf, pe, pdb, breakpad or proguard</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SymbolType { get => _explicitNullValueSymbolType; set { _explicitNullValueSymbolType = value; AdditionalData?.Remove("symbolType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolType"); else _explicitNullProperties?.Remove("symbolType"); } }
@@ -141,7 +141,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SymbolType { get => _explicitNullValueSymbolType; set { _explicitNullValueSymbolType = value; AdditionalData?.Remove("symbolType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolType"); else _explicitNullProperties?.Remove("symbolType"); } }
         private string _explicitNullValueSymbolType = default!;
 #endif
-        /// <summary>The uuid property</summary>
+        /// <summary>Debug ID without the age suffix, as a UUID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }

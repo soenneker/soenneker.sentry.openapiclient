@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// User who ignored or resolved the issue
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ResolveOrganizationShortId200ResponseGroupStatusDetailsActor : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -63,7 +64,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authenticators property</summary>
+        /// <summary>Two-factor authenticators of the user, without backup methods such as recovery codes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAuthenticatorsItem>? Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
@@ -73,7 +74,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAuthenticatorsItem> Authenticators { get => _explicitNullValueAuthenticators; set { _explicitNullValueAuthenticators = value; AdditionalData?.Remove("authenticators"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticators"); else _explicitNullProperties?.Remove("authenticators"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAuthenticatorsItem> _explicitNullValueAuthenticators = default!;
 #endif
-        /// <summary>The avatar property</summary>
+        /// <summary>User avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAvatar? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
@@ -83,7 +84,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAvatar Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorAvatar _explicitNullValueAvatar = default!;
 #endif
-        /// <summary>The avatarUrl property</summary>
+        /// <summary>Gravatar URL for the primary email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
@@ -93,13 +94,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
         private string _explicitNullValueAvatarUrl = default!;
 #endif
-        /// <summary>The canReset2fa property</summary>
+        /// <summary>Whether the organization can reset the user&apos;s two-factor authentication. True only if the user is a member of exactly one active organization</summary>
         public bool? CanReset2fa { get => _explicitNullValueCanReset2fa; set { _explicitNullValueCanReset2fa = value; AdditionalData?.Remove("canReset2fa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canReset2fa"); else _explicitNullProperties?.Remove("canReset2fa"); } }
         private bool? _explicitNullValueCanReset2fa = default!;
-        /// <summary>The dateJoined property</summary>
+        /// <summary>When the account was created</summary>
         public DateTimeOffset? DateJoined { get => _explicitNullValueDateJoined; set { _explicitNullValueDateJoined = value; AdditionalData?.Remove("dateJoined"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateJoined"); else _explicitNullProperties?.Remove("dateJoined"); } }
         private DateTimeOffset? _explicitNullValueDateJoined = default!;
-        /// <summary>The email property</summary>
+        /// <summary>Primary email address</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
@@ -109,7 +110,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
-        /// <summary>The emails property</summary>
+        /// <summary>Email addresses of the user. Only included for the requesting user or superusers; empty otherwise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorEmailsItem>? Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
@@ -119,7 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorEmailsItem> Emails { get => _explicitNullValueEmails; set { _explicitNullValueEmails = value; AdditionalData?.Remove("emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("emails"); else _explicitNullProperties?.Remove("emails"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorEmailsItem> _explicitNullValueEmails = default!;
 #endif
-        /// <summary>The experiments property</summary>
+        /// <summary>Deprecated. Always an empty object</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorExperiments? Experiments { get => _explicitNullValueExperiments; set { _explicitNullValueExperiments = value; AdditionalData?.Remove("experiments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experiments"); else _explicitNullProperties?.Remove("experiments"); } }
@@ -129,13 +130,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorExperiments Experiments { get => _explicitNullValueExperiments; set { _explicitNullValueExperiments = value; AdditionalData?.Remove("experiments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("experiments"); else _explicitNullProperties?.Remove("experiments"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorExperiments _explicitNullValueExperiments = default!;
 #endif
-        /// <summary>The has2fa property</summary>
+        /// <summary>Whether the user has two-factor authentication enabled</summary>
         public bool? Has2fa { get => _explicitNullValueHas2fa; set { _explicitNullValueHas2fa = value; AdditionalData?.Remove("has2fa"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has2fa"); else _explicitNullProperties?.Remove("has2fa"); } }
         private bool? _explicitNullValueHas2fa = default!;
-        /// <summary>The hasPasswordAuth property</summary>
+        /// <summary>Whether the user has a password set</summary>
         public bool? HasPasswordAuth { get => _explicitNullValueHasPasswordAuth; set { _explicitNullValueHasPasswordAuth = value; AdditionalData?.Remove("hasPasswordAuth"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPasswordAuth"); else _explicitNullProperties?.Remove("hasPasswordAuth"); } }
         private bool? _explicitNullValueHasPasswordAuth = default!;
-        /// <summary>The id property</summary>
+        /// <summary>User ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -145,7 +146,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The identities property</summary>
+        /// <summary>SSO identities of the user. Only included for the requesting user, unless the request has active superuser or staff access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorIdentitiesItem>? Identities { get => _explicitNullValueIdentities; set { _explicitNullValueIdentities = value; AdditionalData?.Remove("identities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identities"); else _explicitNullProperties?.Remove("identities"); } }
@@ -155,28 +156,28 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorIdentitiesItem> Identities { get => _explicitNullValueIdentities; set { _explicitNullValueIdentities = value; AdditionalData?.Remove("identities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identities"); else _explicitNullProperties?.Remove("identities"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActorIdentitiesItem> _explicitNullValueIdentities = default!;
 #endif
-        /// <summary>The isActive property</summary>
+        /// <summary>Whether the account is active</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("isActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
         private bool? _explicitNullValueIsActive = default!;
-        /// <summary>The isManaged property</summary>
+        /// <summary>Whether the account is managed, which stops the user from changing their username, password and similar details</summary>
         public bool? IsManaged { get => _explicitNullValueIsManaged; set { _explicitNullValueIsManaged = value; AdditionalData?.Remove("isManaged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isManaged"); else _explicitNullProperties?.Remove("isManaged"); } }
         private bool? _explicitNullValueIsManaged = default!;
-        /// <summary>The isStaff property</summary>
+        /// <summary>Whether the user has staff status</summary>
         public bool? IsStaff { get => _explicitNullValueIsStaff; set { _explicitNullValueIsStaff = value; AdditionalData?.Remove("isStaff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isStaff"); else _explicitNullProperties?.Remove("isStaff"); } }
         private bool? _explicitNullValueIsStaff = default!;
-        /// <summary>The isSuperuser property</summary>
+        /// <summary>Whether the user is a superuser</summary>
         public bool? IsSuperuser { get => _explicitNullValueIsSuperuser; set { _explicitNullValueIsSuperuser = value; AdditionalData?.Remove("isSuperuser"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSuperuser"); else _explicitNullProperties?.Remove("isSuperuser"); } }
         private bool? _explicitNullValueIsSuperuser = default!;
-        /// <summary>The isSuspended property</summary>
+        /// <summary>Whether the account is suspended. Suspended users can&apos;t sign in</summary>
         public bool? IsSuspended { get => _explicitNullValueIsSuspended; set { _explicitNullValueIsSuspended = value; AdditionalData?.Remove("isSuspended"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isSuspended"); else _explicitNullProperties?.Remove("isSuspended"); } }
         private bool? _explicitNullValueIsSuspended = default!;
-        /// <summary>The lastActive property</summary>
+        /// <summary>When the user was last active, or null</summary>
         public DateTimeOffset? LastActive { get => _explicitNullValueLastActive; set { _explicitNullValueLastActive = value; AdditionalData?.Remove("lastActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastActive"); else _explicitNullProperties?.Remove("lastActive"); } }
         private DateTimeOffset? _explicitNullValueLastActive = default!;
-        /// <summary>The lastLogin property</summary>
+        /// <summary>When the user last signed in, or null</summary>
         public DateTimeOffset? LastLogin { get => _explicitNullValueLastLogin; set { _explicitNullValueLastLogin = value; AdditionalData?.Remove("lastLogin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastLogin"); else _explicitNullProperties?.Remove("lastLogin"); } }
         private DateTimeOffset? _explicitNullValueLastLogin = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Display name: the user&apos;s name, or their email or username if no name is set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -186,7 +187,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The username property</summary>
+        /// <summary>Username</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Username { get => _explicitNullValueUsername; set { _explicitNullValueUsername = value; AdditionalData?.Remove("username"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("username"); else _explicitNullProperties?.Remove("username"); } }
@@ -211,6 +212,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
             return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActor(), parseNode);
         }
         /// <summary>

@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Archive;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Images;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodarti
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithSnapshotItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The archive property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The EmptyPathSegment property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.Snapshots.Item.EmptyPathSegmentRequestBuilder EmptyPathSegment
         {

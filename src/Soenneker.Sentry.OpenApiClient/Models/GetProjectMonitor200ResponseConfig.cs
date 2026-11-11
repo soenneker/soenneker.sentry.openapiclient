@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Configuration of the monitor
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectMonitor200ResponseConfig : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -37,35 +38,35 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alert_rule_id property</summary>
+        /// <summary>ID of the alert rule linked to the monitor</summary>
         public int? AlertRuleId { get => _explicitNullValueAlertRuleId; set { _explicitNullValueAlertRuleId = value; AdditionalData?.Remove("alert_rule_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alert_rule_id"); else _explicitNullProperties?.Remove("alert_rule_id"); } }
         private int? _explicitNullValueAlertRuleId = default!;
-        /// <summary>The checkin_margin property</summary>
+        /// <summary>How long in minutes after the expected check-in time to wait before the check-in counts as missed</summary>
         public int? CheckinMargin { get => _explicitNullValueCheckinMargin; set { _explicitNullValueCheckinMargin = value; AdditionalData?.Remove("checkin_margin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkin_margin"); else _explicitNullProperties?.Remove("checkin_margin"); } }
         private int? _explicitNullValueCheckinMargin = default!;
-        /// <summary>The failure_issue_threshold property</summary>
+        /// <summary>Number of consecutive missed or failed check-ins before an issue is created</summary>
         public int? FailureIssueThreshold { get => _explicitNullValueFailureIssueThreshold; set { _explicitNullValueFailureIssueThreshold = value; AdditionalData?.Remove("failure_issue_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failure_issue_threshold"); else _explicitNullProperties?.Remove("failure_issue_threshold"); } }
         private int? _explicitNullValueFailureIssueThreshold = default!;
-        /// <summary>The max_runtime property</summary>
+        /// <summary>How long in minutes a check-in can stay in progress before it counts as failed</summary>
         public int? MaxRuntime { get => _explicitNullValueMaxRuntime; set { _explicitNullValueMaxRuntime = value; AdditionalData?.Remove("max_runtime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_runtime"); else _explicitNullProperties?.Remove("max_runtime"); } }
         private int? _explicitNullValueMaxRuntime = default!;
-        /// <summary>The recovery_threshold property</summary>
+        /// <summary>Number of consecutive successful check-ins before the issue is resolved</summary>
         public int? RecoveryThreshold { get => _explicitNullValueRecoveryThreshold; set { _explicitNullValueRecoveryThreshold = value; AdditionalData?.Remove("recovery_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recovery_threshold"); else _explicitNullProperties?.Remove("recovery_threshold"); } }
         private int? _explicitNullValueRecoveryThreshold = default!;
-        /// <summary>The schedule property</summary>
+        /// <summary>Schedule of the monitor: a crontab string, or a [value, unit] pair for intervals, such as [1, &quot;day&quot;]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule? _explicitNullValueSchedule = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule? Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule? _explicitNullValueSchedule = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule _explicitNullValueSchedule = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule Schedule { get => _explicitNullValueSchedule; set { _explicitNullValueSchedule = value; AdditionalData?.Remove("schedule"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule"); else _explicitNullProperties?.Remove("schedule"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule _explicitNullValueSchedule = default!;
 #endif
-        /// <summary>The schedule_type property</summary>
+        /// <summary>Type of schedule: crontab or interval</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigScheduleType? ScheduleType { get => _explicitNullValueScheduleType; set { _explicitNullValueScheduleType = value; AdditionalData?.Remove("schedule_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schedule_type"); else _explicitNullProperties?.Remove("schedule_type"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigScheduleType? _explicitNullValueScheduleType = default!;
-        /// <summary>The timezone property</summary>
+        /// <summary>Timezone the schedule is evaluated in, as a tz database name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Timezone { get => _explicitNullValueTimezone; set { _explicitNullValueTimezone = value; AdditionalData?.Remove("timezone"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timezone"); else _explicitNullProperties?.Remove("timezone"); } }
@@ -105,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "failure_issue_threshold", n => { FailureIssueThreshold = n.GetIntValue(); } },
                 { "max_runtime", n => { MaxRuntime = n.GetIntValue(); } },
                 { "recovery_threshold", n => { RecoveryThreshold = n.GetIntValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule>(global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule>(global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule.CreateFromDiscriminatorValue); } },
                 { "schedule_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigScheduleType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueScheduleType = default; _explicitNullProperties?.Remove("schedule_type"); AdditionalData["schedule_type"] = unknown; } else { ScheduleType = parsed; AdditionalData.Remove("schedule_type"); } } },
                 { "timezone", n => { Timezone = n.GetStringValue(); } },
             };
@@ -122,7 +123,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("failure_issue_threshold", FailureIssueThreshold);
             writer.WriteIntValue("max_runtime", MaxRuntime);
             writer.WriteIntValue("recovery_threshold", RecoveryThreshold);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CheckInListItemMonitorConfigSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigSchedule>("schedule", Schedule);
             writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectMonitor200ResponseConfigScheduleType>("schedule_type", ScheduleType);
             writer.WriteStringValue("timezone", Timezone);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

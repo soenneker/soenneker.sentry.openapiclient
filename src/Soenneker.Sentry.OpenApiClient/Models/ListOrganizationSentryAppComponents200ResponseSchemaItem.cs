@@ -33,7 +33,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The error property</summary>
+        /// <summary>Error from loading the component. Empty when there&apos;s none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError? Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
@@ -43,27 +43,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError Error { get => _explicitNullValueError; set { _explicitNullValueError = value; AdditionalData?.Remove("error"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("error"); else _explicitNullProperties?.Remove("error"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError _explicitNullValueError = default!;
 #endif
-        /// <summary>The installationUuid property</summary>
+        /// <summary>UUID of the integration installation the component belongs to</summary>
+        public Guid? InstallationUuid { get => _explicitNullValueInstallationUuid; set { _explicitNullValueInstallationUuid = value; AdditionalData?.Remove("installationUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationUuid"); else _explicitNullProperties?.Remove("installationUuid"); } }
+        private Guid? _explicitNullValueInstallationUuid = default!;
+        /// <summary>UI schema of the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InstallationUuid { get => _explicitNullValueInstallationUuid; set { _explicitNullValueInstallationUuid = value; AdditionalData?.Remove("installationUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationUuid"); else _explicitNullProperties?.Remove("installationUuid"); } }
-        private string? _explicitNullValueInstallationUuid = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema? _explicitNullValueSchema = default!;
 #nullable restore
 #else
-        public string InstallationUuid { get => _explicitNullValueInstallationUuid; set { _explicitNullValueInstallationUuid = value; AdditionalData?.Remove("installationUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installationUuid"); else _explicitNullProperties?.Remove("installationUuid"); } }
-        private string _explicitNullValueInstallationUuid = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema _explicitNullValueSchema = default!;
 #endif
-        /// <summary>The schema property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema? _explicitNullValueSchema = default!;
-#nullable restore
-#else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema _explicitNullValueSchema = default!;
-#endif
-        /// <summary>The sentryApp property</summary>
+        /// <summary>Custom integration that provides the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp? SentryApp { get => _explicitNullValueSentryApp; set { _explicitNullValueSentryApp = value; AdditionalData?.Remove("sentryApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryApp"); else _explicitNullProperties?.Remove("sentryApp"); } }
@@ -73,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp SentryApp { get => _explicitNullValueSentryApp; set { _explicitNullValueSentryApp = value; AdditionalData?.Remove("sentryApp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryApp"); else _explicitNullProperties?.Remove("sentryApp"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp _explicitNullValueSentryApp = default!;
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Type of the component, such as issue-link, stacktrace-link or alert-rule-action</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -83,16 +76,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
-        /// <summary>The uuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
-        private string? _explicitNullValueUuid = default!;
-#nullable restore
-#else
-        public string Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
-        private string _explicitNullValueUuid = default!;
-#endif
+        /// <summary>UUID of the component</summary>
+        public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private Guid? _explicitNullValueUuid = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -119,11 +105,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "error", n => { Error = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError.CreateFromDiscriminatorValue); } },
-                { "installationUuid", n => { InstallationUuid = n.GetStringValue(); } },
-                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema.CreateFromDiscriminatorValue); } },
+                { "installationUuid", n => { InstallationUuid = n.GetGuidValue(); } },
+                { "schema", n => { Schema = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema.CreateFromDiscriminatorValue); } },
                 { "sentryApp", n => { SentryApp = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "uuid", n => { Uuid = n.GetStringValue(); } },
+                { "uuid", n => { Uuid = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -134,11 +120,11 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemError>("error", Error);
-            writer.WriteStringValue("installationUuid", InstallationUuid);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSchema>("schema", Schema);
+            writer.WriteGuidValue("installationUuid", InstallationUuid);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseItemSchema>("schema", Schema);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationSentryAppComponents200ResponseSchemaItemSentryApp>("sentryApp", SentryApp);
             writer.WriteStringValue("type", Type);
-            writer.WriteStringValue("uuid", Uuid);
+            writer.WriteGuidValue("uuid", Uuid);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

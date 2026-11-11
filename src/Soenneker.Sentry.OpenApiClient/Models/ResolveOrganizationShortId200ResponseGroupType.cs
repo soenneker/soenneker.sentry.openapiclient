@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Event type of the issue, such as error or default</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ResolveOrganizationShortId200ResponseGroupType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "default")]
         #pragma warning disable CS1591

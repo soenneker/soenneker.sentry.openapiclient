@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Whether the event&apos;s SDK supports debug IDs: not-supported, unofficial-sdk, needs-upgrade or full</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "not-supported")]
         #pragma warning disable CS1591

@@ -26,7 +26,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autofix property</summary>
+        /// <summary>Autofix state of the issue. Null when Autofix hasn&apos;t run</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueAutofixState200ResponseAutofix? Autofix { get => _explicitNullValueAutofix; set { _explicitNullValueAutofix = value; AdditionalData?.Remove("autofix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofix"); else _explicitNullProperties?.Remove("autofix"); } }

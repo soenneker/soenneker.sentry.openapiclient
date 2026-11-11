@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The complete property</summary>
+        /// <summary>Whether the project completed the step</summary>
         public bool? Complete { get => _explicitNullValueComplete; set { _explicitNullValueComplete = value; AdditionalData?.Remove("complete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("complete"); else _explicitNullProperties?.Remove("complete"); } }
         private bool? _explicitNullValueComplete = default!;
-        /// <summary>The step property</summary>
+        /// <summary>Setup step: tag, repo, commit or deploy</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReleaseSetupCompletion200ResponseItemStep? Step { get => _explicitNullValueStep; set { _explicitNullValueStep = value; AdditionalData?.Remove("step"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("step"); else _explicitNullProperties?.Remove("step"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectReleaseSetupCompletion200ResponseItemStep? _explicitNullValueStep = default!;
         /// <summary>

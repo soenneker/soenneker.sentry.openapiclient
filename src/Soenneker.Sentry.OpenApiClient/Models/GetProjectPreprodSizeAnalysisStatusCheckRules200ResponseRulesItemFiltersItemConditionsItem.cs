@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The operator property</summary>
+        /// <summary>How the condition compares the build&apos;s value, such as equals or startsWith</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator? _explicitNullValueOperator = default!;
-        /// <summary>The values property</summary>
+        /// <summary>Values the condition compares against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Values { get => _explicitNullValueValues; set { _explicitNullValueValues = value; AdditionalData?.Remove("values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("values"); else _explicitNullProperties?.Remove("values"); } }

@@ -39,10 +39,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowed property</summary>
+        /// <summary>Deprecated alias of isAllowed</summary>
         public bool? Allowed { get => _explicitNullValueAllowed; set { _explicitNullValueAllowed = value; AdditionalData?.Remove("allowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowed"); else _explicitNullProperties?.Remove("allowed"); } }
         private bool? _explicitNullValueAllowed = default!;
-        /// <summary>The desc property</summary>
+        /// <summary>Description of what the role can do</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Desc { get => _explicitNullValueDesc; set { _explicitNullValueDesc = value; AdditionalData?.Remove("desc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desc"); else _explicitNullProperties?.Remove("desc"); } }
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Desc { get => _explicitNullValueDesc; set { _explicitNullValueDesc = value; AdditionalData?.Remove("desc"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("desc"); else _explicitNullProperties?.Remove("desc"); } }
         private string _explicitNullValueDesc = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Role ID, such as member or admin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -62,10 +62,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isAllowed property</summary>
+        /// <summary>Whether the requesting user can assign this role</summary>
         public bool? IsAllowed { get => _explicitNullValueIsAllowed; set { _explicitNullValueIsAllowed = value; AdditionalData?.Remove("isAllowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAllowed"); else _explicitNullProperties?.Remove("isAllowed"); } }
         private bool? _explicitNullValueIsAllowed = default!;
-        /// <summary>The isMinimumRoleFor property</summary>
+        /// <summary>ID of the organization role whose members hold at least this team role on every team, or null</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IsMinimumRoleFor { get => _explicitNullValueIsMinimumRoleFor; set { _explicitNullValueIsMinimumRoleFor = value; AdditionalData?.Remove("isMinimumRoleFor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMinimumRoleFor"); else _explicitNullProperties?.Remove("isMinimumRoleFor"); } }
@@ -75,13 +75,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string IsMinimumRoleFor { get => _explicitNullValueIsMinimumRoleFor; set { _explicitNullValueIsMinimumRoleFor = value; AdditionalData?.Remove("isMinimumRoleFor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMinimumRoleFor"); else _explicitNullProperties?.Remove("isMinimumRoleFor"); } }
         private string _explicitNullValueIsMinimumRoleFor = default!;
 #endif
-        /// <summary>The isRetired property</summary>
+        /// <summary>Whether the role is retired and shouldn&apos;t be assigned to more members</summary>
         public bool? IsRetired { get => _explicitNullValueIsRetired; set { _explicitNullValueIsRetired = value; AdditionalData?.Remove("isRetired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isRetired"); else _explicitNullProperties?.Remove("isRetired"); } }
         private bool? _explicitNullValueIsRetired = default!;
-        /// <summary>The isTeamRolesAllowed property</summary>
+        /// <summary>Whether members with this role can have team-level roles</summary>
         public bool? IsTeamRolesAllowed { get => _explicitNullValueIsTeamRolesAllowed; set { _explicitNullValueIsTeamRolesAllowed = value; AdditionalData?.Remove("isTeamRolesAllowed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isTeamRolesAllowed"); else _explicitNullProperties?.Remove("isTeamRolesAllowed"); } }
         private bool? _explicitNullValueIsTeamRolesAllowed = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The scopes property</summary>
+        /// <summary>Scopes the role grants in this organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>ID of the member&apos;s team role</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UpdateOrganizationMemberTeam200ResponseTeamRole
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "contributor")]
         #pragma warning disable CS1591

@@ -45,16 +45,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The comparisonFilled property</summary>
+        /// <summary>Whether the comparison value was filled in by a fill transformation</summary>
         public bool? ComparisonFilled { get => _explicitNullValueComparisonFilled; set { _explicitNullValueComparisonFilled = value; AdditionalData?.Remove("comparisonFilled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonFilled"); else _explicitNullProperties?.Remove("comparisonFilled"); } }
         private bool? _explicitNullValueComparisonFilled = default!;
-        /// <summary>The comparisonSmoothed property</summary>
+        /// <summary>Whether the comparison value was produced by a smoothing transformation</summary>
         public bool? ComparisonSmoothed { get => _explicitNullValueComparisonSmoothed; set { _explicitNullValueComparisonSmoothed = value; AdditionalData?.Remove("comparisonSmoothed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonSmoothed"); else _explicitNullProperties?.Remove("comparisonSmoothed"); } }
         private bool? _explicitNullValueComparisonSmoothed = default!;
-        /// <summary>The comparisonValue property</summary>
+        /// <summary>Value of the aggregate for the same bucket in the comparison period</summary>
         public double? ComparisonValue { get => _explicitNullValueComparisonValue; set { _explicitNullValueComparisonValue = value; AdditionalData?.Remove("comparisonValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparisonValue"); else _explicitNullProperties?.Remove("comparisonValue"); } }
         private double? _explicitNullValueComparisonValue = default!;
-        /// <summary>The confidence property</summary>
+        /// <summary>Confidence in the extrapolated value: `low` or `high`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; AdditionalData?.Remove("confidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
@@ -64,13 +64,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; AdditionalData?.Remove("confidence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemValuesItemConfidence _explicitNullValueConfidence = default!;
 #endif
-        /// <summary>The filled property</summary>
+        /// <summary>Whether this value was filled in by a fill transformation</summary>
         public bool? Filled { get => _explicitNullValueFilled; set { _explicitNullValueFilled = value; AdditionalData?.Remove("filled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filled"); else _explicitNullProperties?.Remove("filled"); } }
         private bool? _explicitNullValueFilled = default!;
-        /// <summary>The incomplete property</summary>
+        /// <summary>Whether this bucket may hold incomplete data</summary>
         public bool? Incomplete { get => _explicitNullValueIncomplete; set { _explicitNullValueIncomplete = value; AdditionalData?.Remove("incomplete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incomplete"); else _explicitNullProperties?.Remove("incomplete"); } }
         private bool? _explicitNullValueIncomplete = default!;
-        /// <summary>The incompleteReason property</summary>
+        /// <summary>Why the bucket is incomplete: `NOT_ELAPSED`, `INGESTION_PENDING` or `OUTSIDE_RETENTION`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; AdditionalData?.Remove("incompleteReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incompleteReason"); else _explicitNullProperties?.Remove("incompleteReason"); } }
@@ -80,19 +80,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string IncompleteReason { get => _explicitNullValueIncompleteReason; set { _explicitNullValueIncompleteReason = value; AdditionalData?.Remove("incompleteReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("incompleteReason"); else _explicitNullProperties?.Remove("incompleteReason"); } }
         private string _explicitNullValueIncompleteReason = default!;
 #endif
-        /// <summary>The sampleCount property</summary>
+        /// <summary>Number of sampled rows that make up this bucket</summary>
         public double? SampleCount { get => _explicitNullValueSampleCount; set { _explicitNullValueSampleCount = value; AdditionalData?.Remove("sampleCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleCount"); else _explicitNullProperties?.Remove("sampleCount"); } }
         private double? _explicitNullValueSampleCount = default!;
-        /// <summary>The sampleRate property</summary>
+        /// <summary>Sampling rate of the data in this bucket, or null if the bucket has no data</summary>
         public double? SampleRate { get => _explicitNullValueSampleRate; set { _explicitNullValueSampleRate = value; AdditionalData?.Remove("sampleRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sampleRate"); else _explicitNullProperties?.Remove("sampleRate"); } }
         private double? _explicitNullValueSampleRate = default!;
-        /// <summary>The smoothed property</summary>
+        /// <summary>Whether this value was produced by a smoothing transformation</summary>
         public bool? Smoothed { get => _explicitNullValueSmoothed; set { _explicitNullValueSmoothed = value; AdditionalData?.Remove("smoothed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("smoothed"); else _explicitNullProperties?.Remove("smoothed"); } }
         private bool? _explicitNullValueSmoothed = default!;
-        /// <summary>The timestamp property</summary>
+        /// <summary>Start of the bucket, in milliseconds since the Unix epoch</summary>
         public double? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private double? _explicitNullValueTimestamp = default!;
-        /// <summary>The value property</summary>
+        /// <summary>Value of the aggregate for this bucket, or null if there is no data</summary>
         public double? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
         private double? _explicitNullValueValue = default!;
         /// <summary>

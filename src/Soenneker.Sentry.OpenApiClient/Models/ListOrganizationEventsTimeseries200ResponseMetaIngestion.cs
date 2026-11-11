@@ -28,13 +28,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The completeThrough property</summary>
+        /// <summary>Time through which the data is complete, as a Unix timestamp in milliseconds</summary>
         public double? CompleteThrough { get => _explicitNullValueCompleteThrough; set { _explicitNullValueCompleteThrough = value; AdditionalData?.Remove("completeThrough"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("completeThrough"); else _explicitNullProperties?.Remove("completeThrough"); } }
         private double? _explicitNullValueCompleteThrough = default!;
-        /// <summary>The delaySeconds property</summary>
+        /// <summary>Measured ingestion delay in seconds</summary>
         public double? DelaySeconds { get => _explicitNullValueDelaySeconds; set { _explicitNullValueDelaySeconds = value; AdditionalData?.Remove("delaySeconds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delaySeconds"); else _explicitNullProperties?.Remove("delaySeconds"); } }
         private double? _explicitNullValueDelaySeconds = default!;
-        /// <summary>The status property</summary>
+        /// <summary>Ingestion status of the data: healthy, stalled, idle or unknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }

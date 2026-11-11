@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.Revisions;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.EmptyPathSegmentRequestBuilder EmptyPathSegment
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The revisions property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.Revisions.RevisionsRequestBuilder Revisions
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.Revisions.RevisionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards.Item.WithDashboardItemRequestBuilder"/> and sets the default values.

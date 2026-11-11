@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Restrictions on which debug files are requested from the source.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class AddProjectSymbolSource201ResponseOneOf4Filters : IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,7 +26,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("requires_checksum") is { } nullNodeRequiresChecksum && nullNodeRequiresChecksum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresChecksum = null;
         }
 
-        /// <summary>The filetypes property</summary>
+        /// <summary>The file types requested from the source. Empty means all file types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4FiltersFiletypesItem?>? Filetypes { get => _explicitNullValueFiletypes; set { _explicitNullValueFiletypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filetypes"); else _explicitNullProperties?.Remove("filetypes"); } }
@@ -35,7 +36,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4FiltersFiletypesItem?> Filetypes { get => _explicitNullValueFiletypes; set { _explicitNullValueFiletypes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filetypes"); else _explicitNullProperties?.Remove("filetypes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.AddProjectSymbolSource201ResponseOneOf4FiltersFiletypesItem?> _explicitNullValueFiletypes = default!;
 #endif
-        /// <summary>The path_patterns property</summary>
+        /// <summary>Glob patterns matched against debug and code file paths. Only matching files are requested. Empty means no path filtering.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? PathPatterns { get => _explicitNullValuePathPatterns; set { _explicitNullValuePathPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_patterns"); else _explicitNullProperties?.Remove("path_patterns"); } }
@@ -45,7 +46,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> PathPatterns { get => _explicitNullValuePathPatterns; set { _explicitNullValuePathPatterns = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path_patterns"); else _explicitNullProperties?.Remove("path_patterns"); } }
         private List<string> _explicitNullValuePathPatterns = default!;
 #endif
-        /// <summary>The requires_checksum property</summary>
+        /// <summary>Whether requests to the source must include a debug checksum.</summary>
         public bool? RequiresChecksum { get => _explicitNullValueRequiresChecksum; set { _explicitNullValueRequiresChecksum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_checksum"); else _explicitNullProperties?.Remove("requires_checksum"); } }
         private bool? _explicitNullValueRequiresChecksum = default!;
         /// <summary>

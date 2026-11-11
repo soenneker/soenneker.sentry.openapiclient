@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Where the attribute comes from
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,10 +26,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The is_transformed_alias property</summary>
+        /// <summary>Whether the attribute name is an alias Sentry maps to an internal column</summary>
         public bool? IsTransformedAlias { get => _explicitNullValueIsTransformedAlias; set { _explicitNullValueIsTransformedAlias = value; AdditionalData?.Remove("is_transformed_alias"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_transformed_alias"); else _explicitNullProperties?.Remove("is_transformed_alias"); } }
         private bool? _explicitNullValueIsTransformedAlias = default!;
-        /// <summary>The source_type property</summary>
+        /// <summary>Who set the attribute: `sentry` for attributes Sentry defines, or `user` for custom attributes</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType? SourceType { get => _explicitNullValueSourceType; set { _explicitNullValueSourceType = value; AdditionalData?.Remove("source_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_type"); else _explicitNullProperties?.Remove("source_type"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType? _explicitNullValueSourceType = default!;
         /// <summary>

@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The canvas_theme property</summary>
+        /// <summary>Theme the image was rendered with: light or dark</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItemCanvasTheme? CanvasTheme { get => _explicitNullValueCanvasTheme; set { _explicitNullValueCanvasTheme = value; AdditionalData?.Remove("canvas_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canvas_theme"); else _explicitNullProperties?.Remove("canvas_theme"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItemCanvasTheme CanvasTheme { get => _explicitNullValueCanvasTheme; set { _explicitNullValueCanvasTheme = value; AdditionalData?.Remove("canvas_theme"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canvas_theme"); else _explicitNullProperties?.Remove("canvas_theme"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItemCanvasTheme _explicitNullValueCanvasTheme = default!;
 #endif
-        /// <summary>The display_name property</summary>
+        /// <summary>Display name of the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; AdditionalData?.Remove("display_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
-        /// <summary>The group property</summary>
+        /// <summary>Group the image belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Group { get => _explicitNullValueGroup; set { _explicitNullValueGroup = value; AdditionalData?.Remove("group"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group"); else _explicitNullProperties?.Remove("group"); } }
         private string _explicitNullValueGroup = default!;
 #endif
-        /// <summary>The height property</summary>
+        /// <summary>Height of the image in pixels</summary>
         public int? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; AdditionalData?.Remove("height"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
         private int? _explicitNullValueHeight = default!;
-        /// <summary>The image_file_name property</summary>
+        /// <summary>File name of the image, which identifies it within the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; AdditionalData?.Remove("image_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; AdditionalData?.Remove("image_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
         private string _explicitNullValueImageFileName = default!;
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>Content hash of the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
-        /// <summary>The width property</summary>
+        /// <summary>Width of the image in pixels</summary>
         public int? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; AdditionalData?.Remove("width"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
         private int? _explicitNullValueWidth = default!;
         /// <summary>

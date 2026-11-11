@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Severity level of the issue</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ResolveOrganizationShortId200ResponseGroupLevel
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "sample")]
         #pragma warning disable CS1591

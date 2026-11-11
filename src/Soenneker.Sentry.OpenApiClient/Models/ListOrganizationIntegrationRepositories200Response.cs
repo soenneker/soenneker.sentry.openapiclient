@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The repos property</summary>
+        /// <summary>Repositories the integration can access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrationRepositories200ResponseReposItem>? Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; AdditionalData?.Remove("repos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrationRepositories200ResponseReposItem> Repos { get => _explicitNullValueRepos; set { _explicitNullValueRepos = value; AdditionalData?.Remove("repos"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repos"); else _explicitNullProperties?.Remove("repos"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrationRepositories200ResponseReposItem> _explicitNullValueRepos = default!;
 #endif
-        /// <summary>The searchable property</summary>
+        /// <summary>Whether the provider supports searching repositories with the search query parameter</summary>
         public bool? Searchable { get => _explicitNullValueSearchable; set { _explicitNullValueSearchable = value; AdditionalData?.Remove("searchable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("searchable"); else _explicitNullProperties?.Remove("searchable"); } }
         private bool? _explicitNullValueSearchable = default!;
         /// <summary>

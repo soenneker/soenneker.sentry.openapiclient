@@ -24,8 +24,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("conditions") is { } nullNodeConditions && nullNodeConditions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Conditions = null;
             if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("logic_type") is null) { _explicitNullValueLogicType = default!; _explicitNullProperties?.Remove("logic_type"); }
-            else if (parseNode.GetChildNode("logic_type") is { } nullNodeLogicType && nullNodeLogicType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogicType = null;
+            if (parseNode.GetChildNode("logicType") is null) { _explicitNullValueLogicType = default!; _explicitNullProperties?.Remove("logicType"); }
+            else if (parseNode.GetChildNode("logicType") is { } nullNodeLogicType && nullNodeLogicType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LogicType = null;
         }
 
         /// <summary>The actions property</summary>
@@ -43,18 +43,18 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>The conditions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
-        private UntypedNode? _explicitNullValueConditions = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem>? Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem>? _explicitNullValueConditions = default!;
 #nullable restore
 #else
-        public UntypedNode Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
-        private UntypedNode _explicitNullValueConditions = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem> Conditions { get => _explicitNullValueConditions; set { _explicitNullValueConditions = value; AdditionalData?.Remove("conditions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conditions"); else _explicitNullProperties?.Remove("conditions"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem> _explicitNullValueConditions = default!;
 #endif
         /// <summary>The id property</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
         /// <summary>* `any`* `any-short`* `all`* `none`</summary>
-        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType? LogicType { get => _explicitNullValueLogicType; set { _explicitNullValueLogicType = value; AdditionalData?.Remove("logic_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logic_type"); else _explicitNullProperties?.Remove("logic_type"); } }
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType? LogicType { get => _explicitNullValueLogicType; set { _explicitNullValueLogicType = value; AdditionalData?.Remove("logicType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("logicType"); else _explicitNullProperties?.Remove("logicType"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType? _explicitNullValueLogicType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItem"/> and sets the default values.
@@ -82,9 +82,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "actions", n => { Actions = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemActionsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemActionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "conditions", n => { Conditions = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
-                { "logic_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLogicType = default; _explicitNullProperties?.Remove("logic_type"); AdditionalData["logic_type"] = unknown; } else { LogicType = parsed; AdditionalData.Remove("logic_type"); } } },
+                { "logicType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueLogicType = default; _explicitNullProperties?.Remove("logicType"); AdditionalData["logicType"] = unknown; } else { LogicType = parsed; AdditionalData.Remove("logicType"); } } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemActionsItem>("actions", Actions);
-            writer.WriteObjectValue<UntypedNode>("conditions", Conditions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemConditionsItem>("conditions", Conditions);
             writer.WriteIntValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType>("logic_type", LogicType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationWorkflowRequestActionFiltersItemLogicType>("logicType", LogicType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

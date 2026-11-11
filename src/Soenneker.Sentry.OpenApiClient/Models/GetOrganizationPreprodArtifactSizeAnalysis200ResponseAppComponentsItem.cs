@@ -33,7 +33,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The appId property</summary>
+        /// <summary>App identifier of the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("appId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
@@ -43,23 +43,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("appId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
         private string _explicitNullValueAppId = default!;
 #endif
-        /// <summary>The componentType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ComponentType { get => _explicitNullValueComponentType; set { _explicitNullValueComponentType = value; AdditionalData?.Remove("componentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("componentType"); else _explicitNullProperties?.Remove("componentType"); } }
-        private string? _explicitNullValueComponentType = default!;
-#nullable restore
-#else
-        public string ComponentType { get => _explicitNullValueComponentType; set { _explicitNullValueComponentType = value; AdditionalData?.Remove("componentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("componentType"); else _explicitNullProperties?.Remove("componentType"); } }
-        private string _explicitNullValueComponentType = default!;
-#endif
-        /// <summary>The downloadSize property</summary>
+        /// <summary>Type of the component</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItemComponentType? ComponentType { get => _explicitNullValueComponentType; set { _explicitNullValueComponentType = value; AdditionalData?.Remove("componentType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("componentType"); else _explicitNullProperties?.Remove("componentType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItemComponentType? _explicitNullValueComponentType = default!;
+        /// <summary>Download size of the component in bytes</summary>
         public int? DownloadSize { get => _explicitNullValueDownloadSize; set { _explicitNullValueDownloadSize = value; AdditionalData?.Remove("downloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("downloadSize"); else _explicitNullProperties?.Remove("downloadSize"); } }
         private int? _explicitNullValueDownloadSize = default!;
-        /// <summary>The installSize property</summary>
+        /// <summary>Install size of the component in bytes</summary>
         public int? InstallSize { get => _explicitNullValueInstallSize; set { _explicitNullValueInstallSize = value; AdditionalData?.Remove("installSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("installSize"); else _explicitNullProperties?.Remove("installSize"); } }
         private int? _explicitNullValueInstallSize = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the component</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -69,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The path property</summary>
+        /// <summary>Path of the component inside the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Path { get => _explicitNullValuePath; set { _explicitNullValuePath = value; AdditionalData?.Remove("path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("path"); else _explicitNullProperties?.Remove("path"); } }
@@ -105,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "componentType", n => { ComponentType = n.GetStringValue(); } },
+                { "componentType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItemComponentType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueComponentType = default; _explicitNullProperties?.Remove("componentType"); AdditionalData["componentType"] = unknown; } else { ComponentType = parsed; AdditionalData.Remove("componentType"); } } },
                 { "downloadSize", n => { DownloadSize = n.GetIntValue(); } },
                 { "installSize", n => { InstallSize = n.GetIntValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -120,7 +113,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
-            writer.WriteStringValue("componentType", ComponentType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseAppComponentsItemComponentType>("componentType", ComponentType);
             writer.WriteIntValue("downloadSize", DownloadSize);
             writer.WriteIntValue("installSize", InstallSize);
             writer.WriteStringValue("name", Name);

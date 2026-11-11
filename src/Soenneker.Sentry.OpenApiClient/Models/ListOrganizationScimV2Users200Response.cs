@@ -31,10 +31,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The itemsPerPage property</summary>
+        /// <summary>Number of resources in this page</summary>
         public int? ItemsPerPage { get => _explicitNullValueItemsPerPage; set { _explicitNullValueItemsPerPage = value; AdditionalData?.Remove("itemsPerPage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("itemsPerPage"); else _explicitNullProperties?.Remove("itemsPerPage"); } }
         private int? _explicitNullValueItemsPerPage = default!;
-        /// <summary>The Resources property</summary>
+        /// <summary>Organization members in this page, as SCIM users</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Users200ResponseResourcesItem>? Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("Resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Resources"); else _explicitNullProperties?.Remove("Resources"); } }
@@ -44,7 +44,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Users200ResponseResourcesItem> Resources { get => _explicitNullValueResources; set { _explicitNullValueResources = value; AdditionalData?.Remove("Resources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("Resources"); else _explicitNullProperties?.Remove("Resources"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationScimV2Users200ResponseResourcesItem> _explicitNullValueResources = default!;
 #endif
-        /// <summary>The schemas property</summary>
+        /// <summary>SCIM schema URIs of the response, always the ListResponse message schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
@@ -54,10 +54,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string> _explicitNullValueSchemas = default!;
 #endif
-        /// <summary>The startIndex property</summary>
+        /// <summary>1-based index of the first resource in this page</summary>
         public int? StartIndex { get => _explicitNullValueStartIndex; set { _explicitNullValueStartIndex = value; AdditionalData?.Remove("startIndex"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startIndex"); else _explicitNullProperties?.Remove("startIndex"); } }
         private int? _explicitNullValueStartIndex = default!;
-        /// <summary>The totalResults property</summary>
+        /// <summary>Total number of resources that match the query</summary>
         public int? TotalResults { get => _explicitNullValueTotalResults; set { _explicitNullValueTotalResults = value; AdditionalData?.Remove("totalResults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalResults"); else _explicitNullProperties?.Remove("totalResults"); } }
         private int? _explicitNullValueTotalResults = default!;
         /// <summary>

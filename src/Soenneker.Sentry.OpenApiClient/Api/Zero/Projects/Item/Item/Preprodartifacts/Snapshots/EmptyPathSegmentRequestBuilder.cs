@@ -34,40 +34,45 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Preprodarti
         {
         }
         /// <summary>
-        /// Upload a new snapshot with image metadata.The request body is a JSON object containing `app_id` (required),`images` (required, a mapping of filenames to image metadata objects),and optional VCS fields (`head_sha`, `base_sha`, `provider`,`head_repo_name`, `head_ref`, `base_repo_name`, `base_ref`, `pr_number`).When VCS info with a `base_sha` is provided and a matching base snapshotexists, a comparison is automatically triggered.This endpoint requires a bearer token with `project:write` access.
+        /// Upload a new snapshot with image metadata.The request body is a JSON object containing `app_id` (required),`images` (required, a mapping of filenames to image metadata objects),and optional VCS fields (`head_sha`, `base_sha`, `provider`,`head_repo_name`, `head_ref`, `base_repo_name`, `base_ref`, `pr_number`).The body can be compressed with zstd: send it with the header`Content-Encoding: zstd`. It can be up to 256 MiB after decompression.When VCS info with a `base_sha` is provided and a matching base snapshotexists, a comparison is automatically triggered.This endpoint requires a bearer token with `project:write` access.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response?> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshotRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response> PostAsync(global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshotRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
-            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshot200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Upload a new snapshot with image metadata.The request body is a JSON object containing `app_id` (required),`images` (required, a mapping of filenames to image metadata objects),and optional VCS fields (`head_sha`, `base_sha`, `provider`,`head_repo_name`, `head_ref`, `base_repo_name`, `base_ref`, `pr_number`).When VCS info with a `base_sha` is provided and a matching base snapshotexists, a comparison is automatically triggered.This endpoint requires a bearer token with `project:write` access.
+        /// Upload a new snapshot with image metadata.The request body is a JSON object containing `app_id` (required),`images` (required, a mapping of filenames to image metadata objects),and optional VCS fields (`head_sha`, `base_sha`, `provider`,`head_repo_name`, `head_ref`, `base_repo_name`, `base_ref`, `pr_number`).The body can be compressed with zstd: send it with the header`Content-Encoding: zstd`. It can be up to 256 MiB after decompression.When VCS info with a `base_sha` is provided and a matching base snapshotexists, a comparison is automatically triggered.This endpoint requires a bearer token with `project:write` access.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshotRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Sentry.OpenApiClient.Models.UploadProjectPreprodArtifactSnapshotRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

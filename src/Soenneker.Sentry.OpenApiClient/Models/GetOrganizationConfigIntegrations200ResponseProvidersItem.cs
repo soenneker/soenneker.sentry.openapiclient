@@ -35,13 +35,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The canAdd property</summary>
+        /// <summary>Whether the integration can be installed from Sentry</summary>
         public bool? CanAdd { get => _explicitNullValueCanAdd; set { _explicitNullValueCanAdd = value; AdditionalData?.Remove("canAdd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canAdd"); else _explicitNullProperties?.Remove("canAdd"); } }
         private bool? _explicitNullValueCanAdd = default!;
-        /// <summary>The canDisable property</summary>
+        /// <summary>Whether the integration must be uninstalled from the provider instead of in Sentry</summary>
         public bool? CanDisable { get => _explicitNullValueCanDisable; set { _explicitNullValueCanDisable = value; AdditionalData?.Remove("canDisable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canDisable"); else _explicitNullProperties?.Remove("canDisable"); } }
         private bool? _explicitNullValueCanDisable = default!;
-        /// <summary>The features property</summary>
+        /// <summary>Features the integration provider supports, such as issue-basic or commits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string> _explicitNullValueFeatures = default!;
 #endif
-        /// <summary>The key property</summary>
+        /// <summary>Key of the integration provider, such as github</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
@@ -61,17 +61,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Provider metadata, such as description, author, source URL and setup details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private UntypedNode? _explicitNullValueMetadata = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata? _explicitNullValueMetadata = default!;
 #nullable restore
 #else
-        public UntypedNode Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
-        private UntypedNode _explicitNullValueMetadata = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the integration provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug of the integration provider, same as key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -120,7 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "canDisable", n => { CanDisable = n.GetBoolValue(); } },
                 { "features", n => { Features = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
             };
@@ -136,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("canDisable", CanDisable);
             writer.WriteCollectionOfPrimitiveValues<string>("features", Features);
             writer.WriteStringValue("key", Key);
-            writer.WriteObjectValue<UntypedNode>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationConfigIntegrations200ResponseProvidersItemMetadata>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("slug", Slug);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

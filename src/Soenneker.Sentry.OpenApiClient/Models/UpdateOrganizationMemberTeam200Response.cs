@@ -25,10 +25,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The isActive property</summary>
+        /// <summary>Whether the team membership is active. An inactive membership removes the team from the member&apos;s default list, but the member can rejoin without a request</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("isActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
         private bool? _explicitNullValueIsActive = default!;
-        /// <summary>The teamRole property</summary>
+        /// <summary>ID of the member&apos;s team role</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberTeam200ResponseTeamRole? TeamRole { get => _explicitNullValueTeamRole; set { _explicitNullValueTeamRole = value; AdditionalData?.Remove("teamRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teamRole"); else _explicitNullProperties?.Remove("teamRole"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationMemberTeam200ResponseTeamRole? _explicitNullValueTeamRole = default!;
         /// <summary>

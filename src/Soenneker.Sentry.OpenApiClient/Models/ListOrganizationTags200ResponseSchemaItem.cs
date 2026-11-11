@@ -31,7 +31,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The key property</summary>
+        /// <summary>Tag key, with the `sentry:` prefix removed from built-in keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; AdditionalData?.Remove("key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display label of the tag key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The topValues property</summary>
+        /// <summary>Most frequent values of the tag key, ordered by count</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem>? TopValues { get => _explicitNullValueTopValues; set { _explicitNullValueTopValues = value; AdditionalData?.Remove("topValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topValues"); else _explicitNullProperties?.Remove("topValues"); } }
@@ -61,10 +61,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem> TopValues { get => _explicitNullValueTopValues; set { _explicitNullValueTopValues = value; AdditionalData?.Remove("topValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topValues"); else _explicitNullProperties?.Remove("topValues"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTags200ResponseItemTopValuesItem> _explicitNullValueTopValues = default!;
 #endif
-        /// <summary>The totalValues property</summary>
+        /// <summary>Number of events counted for the tag key. For an issue tag, this is the issue&apos;s retained event count, including events without the tag</summary>
         public int? TotalValues { get => _explicitNullValueTotalValues; set { _explicitNullValueTotalValues = value; AdditionalData?.Remove("totalValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalValues"); else _explicitNullProperties?.Remove("totalValues"); } }
         private int? _explicitNullValueTotalValues = default!;
-        /// <summary>The uniqueValues property</summary>
+        /// <summary>Number of distinct values seen for the tag key</summary>
         public int? UniqueValues { get => _explicitNullValueUniqueValues; set { _explicitNullValueUniqueValues = value; AdditionalData?.Remove("uniqueValues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uniqueValues"); else _explicitNullProperties?.Remove("uniqueValues"); } }
         private int? _explicitNullValueUniqueValues = default!;
         /// <summary>

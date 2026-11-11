@@ -69,7 +69,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adoptionStages property</summary>
+        /// <summary>Adoption stage of the release in each project, keyed by project slug</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAdoptionStages? AdoptionStages { get => _explicitNullValueAdoptionStages; set { _explicitNullValueAdoptionStages = value; AdditionalData?.Remove("adoptionStages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adoptionStages"); else _explicitNullProperties?.Remove("adoptionStages"); } }
@@ -79,7 +79,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAdoptionStages AdoptionStages { get => _explicitNullValueAdoptionStages; set { _explicitNullValueAdoptionStages = value; AdditionalData?.Remove("adoptionStages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adoptionStages"); else _explicitNullProperties?.Remove("adoptionStages"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAdoptionStages _explicitNullValueAdoptionStages = default!;
 #endif
-        /// <summary>The authors property</summary>
+        /// <summary>Authors of the release&apos;s commits</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem>? Authors { get => _explicitNullValueAuthors; set { _explicitNullValueAuthors = value; AdditionalData?.Remove("authors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authors"); else _explicitNullProperties?.Remove("authors"); } }
@@ -89,10 +89,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem> Authors { get => _explicitNullValueAuthors; set { _explicitNullValueAuthors = value; AdditionalData?.Remove("authors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authors"); else _explicitNullProperties?.Remove("authors"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseAuthorsItem> _explicitNullValueAuthors = default!;
 #endif
-        /// <summary>The commitCount property</summary>
+        /// <summary>Number of commits in the release</summary>
         public int? CommitCount { get => _explicitNullValueCommitCount; set { _explicitNullValueCommitCount = value; AdditionalData?.Remove("commitCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("commitCount"); else _explicitNullProperties?.Remove("commitCount"); } }
         private int? _explicitNullValueCommitCount = default!;
-        /// <summary>The currentProjectMeta property</summary>
+        /// <summary>Session bounds and neighboring release versions in the current project, when a project is requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseCurrentProjectMeta? CurrentProjectMeta { get => _explicitNullValueCurrentProjectMeta; set { _explicitNullValueCurrentProjectMeta = value; AdditionalData?.Remove("currentProjectMeta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentProjectMeta"); else _explicitNullProperties?.Remove("currentProjectMeta"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseCurrentProjectMeta CurrentProjectMeta { get => _explicitNullValueCurrentProjectMeta; set { _explicitNullValueCurrentProjectMeta = value; AdditionalData?.Remove("currentProjectMeta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentProjectMeta"); else _explicitNullProperties?.Remove("currentProjectMeta"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseCurrentProjectMeta _explicitNullValueCurrentProjectMeta = default!;
 #endif
-        /// <summary>The data property</summary>
+        /// <summary>Extra data stored on the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
@@ -112,25 +112,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseData _explicitNullValueData = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the release was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The dateReleased property</summary>
+        /// <summary>When the release went live (ISO 8601)</summary>
         public DateTimeOffset? DateReleased { get => _explicitNullValueDateReleased; set { _explicitNullValueDateReleased = value; AdditionalData?.Remove("dateReleased"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReleased"); else _explicitNullProperties?.Remove("dateReleased"); } }
         private DateTimeOffset? _explicitNullValueDateReleased = default!;
-        /// <summary>The dateStarted property</summary>
+        /// <summary>When the release started (ISO 8601)</summary>
         public DateTimeOffset? DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; AdditionalData?.Remove("dateStarted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
         private DateTimeOffset? _explicitNullValueDateStarted = default!;
-        /// <summary>The deployCount property</summary>
+        /// <summary>Number of deploys of the release</summary>
         public int? DeployCount { get => _explicitNullValueDeployCount; set { _explicitNullValueDeployCount = value; AdditionalData?.Remove("deployCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deployCount"); else _explicitNullProperties?.Remove("deployCount"); } }
         private int? _explicitNullValueDeployCount = default!;
-        /// <summary>The firstEvent property</summary>
+        /// <summary>When the release received its first event (ISO 8601)</summary>
         public DateTimeOffset? FirstEvent { get => _explicitNullValueFirstEvent; set { _explicitNullValueFirstEvent = value; AdditionalData?.Remove("firstEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstEvent"); else _explicitNullProperties?.Remove("firstEvent"); } }
         private DateTimeOffset? _explicitNullValueFirstEvent = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Release ID</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
-        /// <summary>The lastCommit property</summary>
+        /// <summary>Most recent commit in the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastCommit? LastCommit { get => _explicitNullValueLastCommit; set { _explicitNullValueLastCommit = value; AdditionalData?.Remove("lastCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCommit"); else _explicitNullProperties?.Remove("lastCommit"); } }
@@ -140,7 +140,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastCommit LastCommit { get => _explicitNullValueLastCommit; set { _explicitNullValueLastCommit = value; AdditionalData?.Remove("lastCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCommit"); else _explicitNullProperties?.Remove("lastCommit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastCommit _explicitNullValueLastCommit = default!;
 #endif
-        /// <summary>The lastDeploy property</summary>
+        /// <summary>Most recent deploy of the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastDeploy? LastDeploy { get => _explicitNullValueLastDeploy; set { _explicitNullValueLastDeploy = value; AdditionalData?.Remove("lastDeploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastDeploy"); else _explicitNullProperties?.Remove("lastDeploy"); } }
@@ -150,13 +150,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastDeploy LastDeploy { get => _explicitNullValueLastDeploy; set { _explicitNullValueLastDeploy = value; AdditionalData?.Remove("lastDeploy"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastDeploy"); else _explicitNullProperties?.Remove("lastDeploy"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseLastDeploy _explicitNullValueLastDeploy = default!;
 #endif
-        /// <summary>The lastEvent property</summary>
+        /// <summary>When the release received its most recent event (ISO 8601)</summary>
         public DateTimeOffset? LastEvent { get => _explicitNullValueLastEvent; set { _explicitNullValueLastEvent = value; AdditionalData?.Remove("lastEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastEvent"); else _explicitNullProperties?.Remove("lastEvent"); } }
         private DateTimeOffset? _explicitNullValueLastEvent = default!;
-        /// <summary>The newGroups property</summary>
+        /// <summary>Number of new issues first seen in the release</summary>
         public int? NewGroups { get => _explicitNullValueNewGroups; set { _explicitNullValueNewGroups = value; AdditionalData?.Remove("newGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newGroups"); else _explicitNullProperties?.Remove("newGroups"); } }
         private int? _explicitNullValueNewGroups = default!;
-        /// <summary>The owner property</summary>
+        /// <summary>Release owner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
@@ -166,7 +166,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseOwner _explicitNullValueOwner = default!;
 #endif
-        /// <summary>The projects property</summary>
+        /// <summary>Projects in the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
@@ -176,7 +176,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem> _explicitNullValueProjects = default!;
 #endif
-        /// <summary>The ref property</summary>
+        /// <summary>Version control reference, such as a commit SHA or tag</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; AdditionalData?.Remove("ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
@@ -186,7 +186,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Ref { get => _explicitNullValueRef; set { _explicitNullValueRef = value; AdditionalData?.Remove("ref"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ref"); else _explicitNullProperties?.Remove("ref"); } }
         private string _explicitNullValueRef = default!;
 #endif
-        /// <summary>The shortVersion property</summary>
+        /// <summary>Shortened release version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ShortVersion { get => _explicitNullValueShortVersion; set { _explicitNullValueShortVersion = value; AdditionalData?.Remove("shortVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortVersion"); else _explicitNullProperties?.Remove("shortVersion"); } }
@@ -196,17 +196,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ShortVersion { get => _explicitNullValueShortVersion; set { _explicitNullValueShortVersion = value; AdditionalData?.Remove("shortVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shortVersion"); else _explicitNullProperties?.Remove("shortVersion"); } }
         private string _explicitNullValueShortVersion = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
-        /// <summary>The url property</summary>
+        /// <summary>Release status</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseStatus? _explicitNullValueStatus = default!;
+        /// <summary>Release URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
@@ -216,7 +209,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
         private string _explicitNullValueUrl = default!;
 #endif
-        /// <summary>The userAgent property</summary>
+        /// <summary>User agent of the client that created the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
@@ -226,7 +219,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string UserAgent { get => _explicitNullValueUserAgent; set { _explicitNullValueUserAgent = value; AdditionalData?.Remove("userAgent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userAgent"); else _explicitNullProperties?.Remove("userAgent"); } }
         private string _explicitNullValueUserAgent = default!;
 #endif
-        /// <summary>The version property</summary>
+        /// <summary>Version of the release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
@@ -236,7 +229,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Version { get => _explicitNullValueVersion; set { _explicitNullValueVersion = value; AdditionalData?.Remove("version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("version"); else _explicitNullProperties?.Remove("version"); } }
         private string _explicitNullValueVersion = default!;
 #endif
-        /// <summary>The versionInfo property</summary>
+        /// <summary>Parsed version information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseVersionInfo? VersionInfo { get => _explicitNullValueVersionInfo; set { _explicitNullValueVersionInfo = value; AdditionalData?.Remove("versionInfo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("versionInfo"); else _explicitNullProperties?.Remove("versionInfo"); } }
@@ -290,7 +283,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "projects", n => { Projects = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "ref", n => { Ref = n.GetStringValue(); } },
                 { "shortVersion", n => { ShortVersion = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
@@ -323,7 +316,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItem>("projects", Projects);
             writer.WriteStringValue("ref", Ref);
             writer.WriteStringValue("shortVersion", ShortVersion);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseStatus>("status", Status);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("userAgent", UserAgent);
             writer.WriteStringValue("version", Version);

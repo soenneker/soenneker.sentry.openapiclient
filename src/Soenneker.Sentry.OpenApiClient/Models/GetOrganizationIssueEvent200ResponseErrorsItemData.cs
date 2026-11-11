@@ -7,20 +7,175 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Details of the error, such as the name of the invalid field. Other keys depend on the error type
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationIssueEvent200ResponseErrorsItemData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("column") is null) { _explicitNullValueColumn = default!; _explicitNullProperties?.Remove("column"); }
+            else if (parseNode.GetChildNode("column") is { } nullNodeColumn && nullNodeColumn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Column = null;
+            if (parseNode.GetChildNode("image_arch") is null) { _explicitNullValueImageArch = default!; _explicitNullProperties?.Remove("image_arch"); }
+            else if (parseNode.GetChildNode("image_arch") is { } nullNodeImageArch && nullNodeImageArch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageArch = null;
+            if (parseNode.GetChildNode("image_name") is null) { _explicitNullValueImageName = default!; _explicitNullProperties?.Remove("image_name"); }
+            else if (parseNode.GetChildNode("image_name") is { } nullNodeImageName && nullNodeImageName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageName = null;
+            if (parseNode.GetChildNode("image_path") is null) { _explicitNullValueImagePath = default!; _explicitNullProperties?.Remove("image_path"); }
+            else if (parseNode.GetChildNode("image_path") is { } nullNodeImagePath && nullNodeImagePath.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImagePath = null;
+            if (parseNode.GetChildNode("image_uuid") is null) { _explicitNullValueImageUuid = default!; _explicitNullProperties?.Remove("image_uuid"); }
+            else if (parseNode.GetChildNode("image_uuid") is { } nullNodeImageUuid && nullNodeImageUuid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUuid = null;
+            if (parseNode.GetChildNode("message") is null) { _explicitNullValueMessage = default!; _explicitNullProperties?.Remove("message"); }
+            else if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("row") is null) { _explicitNullValueRow = default!; _explicitNullProperties?.Remove("row"); }
+            else if (parseNode.GetChildNode("row") is { } nullNodeRow && nullNodeRow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Row = null;
+            if (parseNode.GetChildNode("sdk_time") is null) { _explicitNullValueSdkTime = default!; _explicitNullProperties?.Remove("sdk_time"); }
+            else if (parseNode.GetChildNode("sdk_time") is { } nullNodeSdkTime && nullNodeSdkTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SdkTime = null;
+            if (parseNode.GetChildNode("server_time") is null) { _explicitNullValueServerTime = default!; _explicitNullProperties?.Remove("server_time"); }
+            else if (parseNode.GetChildNode("server_time") is { } nullNodeServerTime && nullNodeServerTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ServerTime = null;
+            if (parseNode.GetChildNode("source") is null) { _explicitNullValueSource = default!; _explicitNullProperties?.Remove("source"); }
+            else if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+            if (parseNode.GetChildNode("sourcemap") is null) { _explicitNullValueSourcemap = default!; _explicitNullProperties?.Remove("sourcemap"); }
+            else if (parseNode.GetChildNode("sourcemap") is { } nullNodeSourcemap && nullNodeSourcemap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sourcemap = null;
+            if (parseNode.GetChildNode("symbolicator_type") is null) { _explicitNullValueSymbolicatorType = default!; _explicitNullProperties?.Remove("symbolicator_type"); }
+            else if (parseNode.GetChildNode("symbolicator_type") is { } nullNodeSymbolicatorType && nullNodeSymbolicatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SymbolicatorType = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Column of the location that couldn&apos;t be mapped</summary>
+        public int? Column { get => _explicitNullValueColumn; set { _explicitNullValueColumn = value; AdditionalData?.Remove("column"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("column"); else _explicitNullProperties?.Remove("column"); } }
+        private int? _explicitNullValueColumn = default!;
+        /// <summary>CPU architecture of the image the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImageArch { get => _explicitNullValueImageArch; set { _explicitNullValueImageArch = value; AdditionalData?.Remove("image_arch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_arch"); else _explicitNullProperties?.Remove("image_arch"); } }
+        private string? _explicitNullValueImageArch = default!;
+#nullable restore
+#else
+        public string ImageArch { get => _explicitNullValueImageArch; set { _explicitNullValueImageArch = value; AdditionalData?.Remove("image_arch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_arch"); else _explicitNullProperties?.Remove("image_arch"); } }
+        private string _explicitNullValueImageArch = default!;
+#endif
+        /// <summary>Name of the debug image the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImageName { get => _explicitNullValueImageName; set { _explicitNullValueImageName = value; AdditionalData?.Remove("image_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_name"); else _explicitNullProperties?.Remove("image_name"); } }
+        private string? _explicitNullValueImageName = default!;
+#nullable restore
+#else
+        public string ImageName { get => _explicitNullValueImageName; set { _explicitNullValueImageName = value; AdditionalData?.Remove("image_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_name"); else _explicitNullProperties?.Remove("image_name"); } }
+        private string _explicitNullValueImageName = default!;
+#endif
+        /// <summary>Path of the debug image the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImagePath { get => _explicitNullValueImagePath; set { _explicitNullValueImagePath = value; AdditionalData?.Remove("image_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_path"); else _explicitNullProperties?.Remove("image_path"); } }
+        private string? _explicitNullValueImagePath = default!;
+#nullable restore
+#else
+        public string ImagePath { get => _explicitNullValueImagePath; set { _explicitNullValueImagePath = value; AdditionalData?.Remove("image_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_path"); else _explicitNullProperties?.Remove("image_path"); } }
+        private string _explicitNullValueImagePath = default!;
+#endif
+        /// <summary>Debug ID of the image the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ImageUuid { get => _explicitNullValueImageUuid; set { _explicitNullValueImageUuid = value; AdditionalData?.Remove("image_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_uuid"); else _explicitNullProperties?.Remove("image_uuid"); } }
+        private string? _explicitNullValueImageUuid = default!;
+#nullable restore
+#else
+        public string ImageUuid { get => _explicitNullValueImageUuid; set { _explicitNullValueImageUuid = value; AdditionalData?.Remove("image_uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_uuid"); else _explicitNullProperties?.Remove("image_uuid"); } }
+        private string _explicitNullValueImageUuid = default!;
+#endif
+        /// <summary>Details of the error from the processor that hit it</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string? _explicitNullValueMessage = default!;
+#nullable restore
+#else
+        public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private string _explicitNullValueMessage = default!;
+#endif
+        /// <summary>Affected key or path in the event</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
+#nullable restore
+#else
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
+#endif
+        /// <summary>Line of the location that couldn&apos;t be mapped</summary>
+        public int? Row { get => _explicitNullValueRow; set { _explicitNullValueRow = value; AdditionalData?.Remove("row"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("row"); else _explicitNullProperties?.Remove("row"); } }
+        private int? _explicitNullValueRow = default!;
+        /// <summary>Time the SDK reported, for clock drift errors</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SdkTime { get => _explicitNullValueSdkTime; set { _explicitNullValueSdkTime = value; AdditionalData?.Remove("sdk_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_time"); else _explicitNullProperties?.Remove("sdk_time"); } }
+        private string? _explicitNullValueSdkTime = default!;
+#nullable restore
+#else
+        public string SdkTime { get => _explicitNullValueSdkTime; set { _explicitNullValueSdkTime = value; AdditionalData?.Remove("sdk_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_time"); else _explicitNullProperties?.Remove("sdk_time"); } }
+        private string _explicitNullValueSdkTime = default!;
+#endif
+        /// <summary>Time the server received the event, for clock drift errors</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ServerTime { get => _explicitNullValueServerTime; set { _explicitNullValueServerTime = value; AdditionalData?.Remove("server_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_time"); else _explicitNullProperties?.Remove("server_time"); } }
+        private string? _explicitNullValueServerTime = default!;
+#nullable restore
+#else
+        public string ServerTime { get => _explicitNullValueServerTime; set { _explicitNullValueServerTime = value; AdditionalData?.Remove("server_time"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("server_time"); else _explicitNullProperties?.Remove("server_time"); } }
+        private string _explicitNullValueServerTime = default!;
+#endif
+        /// <summary>Source file or URL the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string? _explicitNullValueSource = default!;
+#nullable restore
+#else
+        public string Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; AdditionalData?.Remove("source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private string _explicitNullValueSource = default!;
+#endif
+        /// <summary>Source map the error is about</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Sourcemap { get => _explicitNullValueSourcemap; set { _explicitNullValueSourcemap = value; AdditionalData?.Remove("sourcemap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcemap"); else _explicitNullProperties?.Remove("sourcemap"); } }
+        private string? _explicitNullValueSourcemap = default!;
+#nullable restore
+#else
+        public string Sourcemap { get => _explicitNullValueSourcemap; set { _explicitNullValueSourcemap = value; AdditionalData?.Remove("sourcemap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourcemap"); else _explicitNullProperties?.Remove("sourcemap"); } }
+        private string _explicitNullValueSourcemap = default!;
+#endif
+        /// <summary>Error type Symbolicator reported, such as missing_source</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SymbolicatorType { get => _explicitNullValueSymbolicatorType; set { _explicitNullValueSymbolicatorType = value; AdditionalData?.Remove("symbolicator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolicator_type"); else _explicitNullProperties?.Remove("symbolicator_type"); } }
+        private string? _explicitNullValueSymbolicatorType = default!;
+#nullable restore
+#else
+        public string SymbolicatorType { get => _explicitNullValueSymbolicatorType; set { _explicitNullValueSymbolicatorType = value; AdditionalData?.Remove("symbolicator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolicator_type"); else _explicitNullProperties?.Remove("symbolicator_type"); } }
+        private string _explicitNullValueSymbolicatorType = default!;
+#endif
+        /// <summary>URL that couldn&apos;t be fetched, such as a source file</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
+#nullable restore
+#else
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssueEvent200ResponseErrorsItemData"/> and sets the default values.
         /// </summary>
@@ -46,6 +201,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "column", n => { Column = n.GetIntValue(); } },
+                { "image_arch", n => { ImageArch = n.GetStringValue(); } },
+                { "image_name", n => { ImageName = n.GetStringValue(); } },
+                { "image_path", n => { ImagePath = n.GetStringValue(); } },
+                { "image_uuid", n => { ImageUuid = n.GetStringValue(); } },
+                { "message", n => { Message = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "row", n => { Row = n.GetIntValue(); } },
+                { "sdk_time", n => { SdkTime = n.GetStringValue(); } },
+                { "server_time", n => { ServerTime = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "sourcemap", n => { Sourcemap = n.GetStringValue(); } },
+                { "symbolicator_type", n => { SymbolicatorType = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +224,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("column", Column);
+            writer.WriteStringValue("image_arch", ImageArch);
+            writer.WriteStringValue("image_name", ImageName);
+            writer.WriteStringValue("image_path", ImagePath);
+            writer.WriteStringValue("image_uuid", ImageUuid);
+            writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("name", Name);
+            writer.WriteIntValue("row", Row);
+            writer.WriteStringValue("sdk_time", SdkTime);
+            writer.WriteStringValue("server_time", ServerTime);
+            writer.WriteStringValue("source", Source);
+            writer.WriteStringValue("sourcemap", Sourcemap);
+            writer.WriteStringValue("symbolicator_type", SymbolicatorType);
+            writer.WriteStringValue("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

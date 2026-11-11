@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Owners that couldn&apos;t be associated, by reason. Only set when expand includes errors
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RetrieveProjectCodeOwners200ResponseErrors : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -31,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The missing_external_teams property</summary>
+        /// <summary>Team owners in the CODEOWNERS file with no external team mapping</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; AdditionalData?.Remove("missing_external_teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
@@ -41,7 +42,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> MissingExternalTeams { get => _explicitNullValueMissingExternalTeams; set { _explicitNullValueMissingExternalTeams = value; AdditionalData?.Remove("missing_external_teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_teams"); else _explicitNullProperties?.Remove("missing_external_teams"); } }
         private List<string> _explicitNullValueMissingExternalTeams = default!;
 #endif
-        /// <summary>The missing_external_users property</summary>
+        /// <summary>User owners in the CODEOWNERS file with no external user mapping</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; AdditionalData?.Remove("missing_external_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
@@ -51,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> MissingExternalUsers { get => _explicitNullValueMissingExternalUsers; set { _explicitNullValueMissingExternalUsers = value; AdditionalData?.Remove("missing_external_users"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_external_users"); else _explicitNullProperties?.Remove("missing_external_users"); } }
         private List<string> _explicitNullValueMissingExternalUsers = default!;
 #endif
-        /// <summary>The missing_user_emails property</summary>
+        /// <summary>Email owners in the CODEOWNERS file with no matching Sentry user</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; AdditionalData?.Remove("missing_user_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
@@ -61,7 +62,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> MissingUserEmails { get => _explicitNullValueMissingUserEmails; set { _explicitNullValueMissingUserEmails = value; AdditionalData?.Remove("missing_user_emails"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missing_user_emails"); else _explicitNullProperties?.Remove("missing_user_emails"); } }
         private List<string> _explicitNullValueMissingUserEmails = default!;
 #endif
-        /// <summary>The teams_without_access property</summary>
+        /// <summary>Teams in the CODEOWNERS file that don&apos;t have access to the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; AdditionalData?.Remove("teams_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
@@ -71,7 +72,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> TeamsWithoutAccess { get => _explicitNullValueTeamsWithoutAccess; set { _explicitNullValueTeamsWithoutAccess = value; AdditionalData?.Remove("teams_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams_without_access"); else _explicitNullProperties?.Remove("teams_without_access"); } }
         private List<string> _explicitNullValueTeamsWithoutAccess = default!;
 #endif
-        /// <summary>The users_without_access property</summary>
+        /// <summary>Users in the CODEOWNERS file who aren&apos;t members of a team with access to the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UsersWithoutAccess { get => _explicitNullValueUsersWithoutAccess; set { _explicitNullValueUsersWithoutAccess = value; AdditionalData?.Remove("users_without_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users_without_access"); else _explicitNullProperties?.Remove("users_without_access"); } }

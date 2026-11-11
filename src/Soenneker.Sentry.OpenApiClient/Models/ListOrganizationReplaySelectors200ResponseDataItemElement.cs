@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Attributes of the clicked element
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationReplaySelectors200ResponseDataItemElement : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -39,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The alt property</summary>
+        /// <summary>`alt` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Alt { get => _explicitNullValueAlt; set { _explicitNullValueAlt = value; AdditionalData?.Remove("alt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alt"); else _explicitNullProperties?.Remove("alt"); } }
@@ -49,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Alt { get => _explicitNullValueAlt; set { _explicitNullValueAlt = value; AdditionalData?.Remove("alt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alt"); else _explicitNullProperties?.Remove("alt"); } }
         private string _explicitNullValueAlt = default!;
 #endif
-        /// <summary>The aria_label property</summary>
+        /// <summary>`aria-label` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AriaLabel { get => _explicitNullValueAriaLabel; set { _explicitNullValueAriaLabel = value; AdditionalData?.Remove("aria_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aria_label"); else _explicitNullProperties?.Remove("aria_label"); } }
@@ -59,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AriaLabel { get => _explicitNullValueAriaLabel; set { _explicitNullValueAriaLabel = value; AdditionalData?.Remove("aria_label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("aria_label"); else _explicitNullProperties?.Remove("aria_label"); } }
         private string _explicitNullValueAriaLabel = default!;
 #endif
-        /// <summary>The class property</summary>
+        /// <summary>CSS classes of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Class { get => _explicitNullValueClass; set { _explicitNullValueClass = value; AdditionalData?.Remove("class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class"); else _explicitNullProperties?.Remove("class"); } }
@@ -69,7 +70,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Class { get => _explicitNullValueClass; set { _explicitNullValueClass = value; AdditionalData?.Remove("class"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("class"); else _explicitNullProperties?.Remove("class"); } }
         private List<string> _explicitNullValueClass = default!;
 #endif
-        /// <summary>The component_name property</summary>
+        /// <summary>`data-sentry-component` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComponentName { get => _explicitNullValueComponentName; set { _explicitNullValueComponentName = value; AdditionalData?.Remove("component_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_name"); else _explicitNullProperties?.Remove("component_name"); } }
@@ -79,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ComponentName { get => _explicitNullValueComponentName; set { _explicitNullValueComponentName = value; AdditionalData?.Remove("component_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("component_name"); else _explicitNullProperties?.Remove("component_name"); } }
         private string _explicitNullValueComponentName = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>`id` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -89,7 +90,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The role property</summary>
+        /// <summary>`role` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
@@ -99,7 +100,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Role { get => _explicitNullValueRole; set { _explicitNullValueRole = value; AdditionalData?.Remove("role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("role"); else _explicitNullProperties?.Remove("role"); } }
         private string _explicitNullValueRole = default!;
 #endif
-        /// <summary>The tag property</summary>
+        /// <summary>HTML tag of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; AdditionalData?.Remove("tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
@@ -109,7 +110,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Tag { get => _explicitNullValueTag; set { _explicitNullValueTag = value; AdditionalData?.Remove("tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tag"); else _explicitNullProperties?.Remove("tag"); } }
         private string _explicitNullValueTag = default!;
 #endif
-        /// <summary>The testid property</summary>
+        /// <summary>`data-testid` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Testid { get => _explicitNullValueTestid; set { _explicitNullValueTestid = value; AdditionalData?.Remove("testid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testid"); else _explicitNullProperties?.Remove("testid"); } }
@@ -119,7 +120,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Testid { get => _explicitNullValueTestid; set { _explicitNullValueTestid = value; AdditionalData?.Remove("testid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("testid"); else _explicitNullProperties?.Remove("testid"); } }
         private string _explicitNullValueTestid = default!;
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>`title` attribute of the element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }

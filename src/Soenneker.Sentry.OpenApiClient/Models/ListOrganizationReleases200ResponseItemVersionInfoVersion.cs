@@ -7,20 +7,77 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Parsed version: the raw string, plus major, minor, patch, pre, buildCode and components when it&apos;s a semantic version
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationReleases200ResponseItemVersionInfoVersion : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("buildCode") is null) { _explicitNullValueBuildCode = default!; _explicitNullProperties?.Remove("buildCode"); }
+            else if (parseNode.GetChildNode("buildCode") is { } nullNodeBuildCode && nullNodeBuildCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BuildCode = null;
+            if (parseNode.GetChildNode("components") is null) { _explicitNullValueComponents = default!; _explicitNullProperties?.Remove("components"); }
+            else if (parseNode.GetChildNode("components") is { } nullNodeComponents && nullNodeComponents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Components = null;
+            if (parseNode.GetChildNode("major") is null) { _explicitNullValueMajor = default!; _explicitNullProperties?.Remove("major"); }
+            else if (parseNode.GetChildNode("major") is { } nullNodeMajor && nullNodeMajor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Major = null;
+            if (parseNode.GetChildNode("minor") is null) { _explicitNullValueMinor = default!; _explicitNullProperties?.Remove("minor"); }
+            else if (parseNode.GetChildNode("minor") is { } nullNodeMinor && nullNodeMinor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Minor = null;
+            if (parseNode.GetChildNode("patch") is null) { _explicitNullValuePatch = default!; _explicitNullProperties?.Remove("patch"); }
+            else if (parseNode.GetChildNode("patch") is { } nullNodePatch && nullNodePatch.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Patch = null;
+            if (parseNode.GetChildNode("pre") is null) { _explicitNullValuePre = default!; _explicitNullProperties?.Remove("pre"); }
+            else if (parseNode.GetChildNode("pre") is { } nullNodePre && nullNodePre.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pre = null;
+            if (parseNode.GetChildNode("raw") is null) { _explicitNullValueRaw = default!; _explicitNullProperties?.Remove("raw"); }
+            else if (parseNode.GetChildNode("raw") is { } nullNodeRaw && nullNodeRaw.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Raw = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Build code, such as 123</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? BuildCode { get => _explicitNullValueBuildCode; set { _explicitNullValueBuildCode = value; AdditionalData?.Remove("buildCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCode"); else _explicitNullProperties?.Remove("buildCode"); } }
+        private string? _explicitNullValueBuildCode = default!;
+#nullable restore
+#else
+        public string BuildCode { get => _explicitNullValueBuildCode; set { _explicitNullValueBuildCode = value; AdditionalData?.Remove("buildCode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("buildCode"); else _explicitNullProperties?.Remove("buildCode"); } }
+        private string _explicitNullValueBuildCode = default!;
+#endif
+        /// <summary>Number of version components given</summary>
+        public int? Components { get => _explicitNullValueComponents; set { _explicitNullValueComponents = value; AdditionalData?.Remove("components"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("components"); else _explicitNullProperties?.Remove("components"); } }
+        private int? _explicitNullValueComponents = default!;
+        /// <summary>Major version</summary>
+        public int? Major { get => _explicitNullValueMajor; set { _explicitNullValueMajor = value; AdditionalData?.Remove("major"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("major"); else _explicitNullProperties?.Remove("major"); } }
+        private int? _explicitNullValueMajor = default!;
+        /// <summary>Minor version</summary>
+        public int? Minor { get => _explicitNullValueMinor; set { _explicitNullValueMinor = value; AdditionalData?.Remove("minor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minor"); else _explicitNullProperties?.Remove("minor"); } }
+        private int? _explicitNullValueMinor = default!;
+        /// <summary>Patch version</summary>
+        public int? Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; AdditionalData?.Remove("patch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
+        private int? _explicitNullValuePatch = default!;
+        /// <summary>Pre-release identifier, such as rc1</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Pre { get => _explicitNullValuePre; set { _explicitNullValuePre = value; AdditionalData?.Remove("pre"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pre"); else _explicitNullProperties?.Remove("pre"); } }
+        private string? _explicitNullValuePre = default!;
+#nullable restore
+#else
+        public string Pre { get => _explicitNullValuePre; set { _explicitNullValuePre = value; AdditionalData?.Remove("pre"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pre"); else _explicitNullProperties?.Remove("pre"); } }
+        private string _explicitNullValuePre = default!;
+#endif
+        /// <summary>Version string the release was created with</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string? _explicitNullValueRaw = default!;
+#nullable restore
+#else
+        public string Raw { get => _explicitNullValueRaw; set { _explicitNullValueRaw = value; AdditionalData?.Remove("raw"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("raw"); else _explicitNullProperties?.Remove("raw"); } }
+        private string _explicitNullValueRaw = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReleases200ResponseItemVersionInfoVersion"/> and sets the default values.
         /// </summary>
@@ -46,6 +103,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "buildCode", n => { BuildCode = n.GetStringValue(); } },
+                { "components", n => { Components = n.GetIntValue(); } },
+                { "major", n => { Major = n.GetIntValue(); } },
+                { "minor", n => { Minor = n.GetIntValue(); } },
+                { "patch", n => { Patch = n.GetIntValue(); } },
+                { "pre", n => { Pre = n.GetStringValue(); } },
+                { "raw", n => { Raw = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +119,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("buildCode", BuildCode);
+            writer.WriteIntValue("components", Components);
+            writer.WriteIntValue("major", Major);
+            writer.WriteIntValue("minor", Minor);
+            writer.WriteIntValue("patch", Patch);
+            writer.WriteStringValue("pre", Pre);
+            writer.WriteStringValue("raw", Raw);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -6,6 +6,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.C
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.Commits;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.Deploys;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.Files;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.PreviousWithCommits;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -42,6 +43,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.It
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.Files.FilesRequestBuilder Files
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.Files.FilesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The previousWithCommits property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.PreviousWithCommits.PreviousWithCommitsRequestBuilder PreviousWithCommits
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.PreviousWithCommits.PreviousWithCommitsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Releases.Item.WithVersionItemRequestBuilder"/> and sets the default values.

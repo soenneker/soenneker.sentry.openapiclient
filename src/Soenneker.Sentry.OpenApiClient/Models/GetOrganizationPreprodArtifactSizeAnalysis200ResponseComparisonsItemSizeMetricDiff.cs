@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Head and base sizes. Only set when the comparison succeeded
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -33,19 +34,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The baseDownloadSize property</summary>
+        /// <summary>Download size of the base build in bytes</summary>
         public int? BaseDownloadSize { get => _explicitNullValueBaseDownloadSize; set { _explicitNullValueBaseDownloadSize = value; AdditionalData?.Remove("baseDownloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseDownloadSize"); else _explicitNullProperties?.Remove("baseDownloadSize"); } }
         private int? _explicitNullValueBaseDownloadSize = default!;
-        /// <summary>The baseInstallSize property</summary>
+        /// <summary>Install size of the base build in bytes</summary>
         public int? BaseInstallSize { get => _explicitNullValueBaseInstallSize; set { _explicitNullValueBaseInstallSize = value; AdditionalData?.Remove("baseInstallSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("baseInstallSize"); else _explicitNullProperties?.Remove("baseInstallSize"); } }
         private int? _explicitNullValueBaseInstallSize = default!;
-        /// <summary>The headDownloadSize property</summary>
+        /// <summary>Download size of the head build in bytes</summary>
         public int? HeadDownloadSize { get => _explicitNullValueHeadDownloadSize; set { _explicitNullValueHeadDownloadSize = value; AdditionalData?.Remove("headDownloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headDownloadSize"); else _explicitNullProperties?.Remove("headDownloadSize"); } }
         private int? _explicitNullValueHeadDownloadSize = default!;
-        /// <summary>The headInstallSize property</summary>
+        /// <summary>Install size of the head build in bytes</summary>
         public int? HeadInstallSize { get => _explicitNullValueHeadInstallSize; set { _explicitNullValueHeadInstallSize = value; AdditionalData?.Remove("headInstallSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("headInstallSize"); else _explicitNullProperties?.Remove("headInstallSize"); } }
         private int? _explicitNullValueHeadInstallSize = default!;
-        /// <summary>The identifier property</summary>
+        /// <summary>Identifier of the component, such as a dynamic feature name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
@@ -55,16 +56,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Identifier { get => _explicitNullValueIdentifier; set { _explicitNullValueIdentifier = value; AdditionalData?.Remove("identifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identifier"); else _explicitNullProperties?.Remove("identifier"); } }
         private string _explicitNullValueIdentifier = default!;
 #endif
-        /// <summary>The metricsArtifactType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; AdditionalData?.Remove("metricsArtifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
-        private string? _explicitNullValueMetricsArtifactType = default!;
-#nullable restore
-#else
-        public string MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; AdditionalData?.Remove("metricsArtifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
-        private string _explicitNullValueMetricsArtifactType = default!;
-#endif
+        /// <summary>Type of the component the sizes are for</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiffMetricsArtifactType? MetricsArtifactType { get => _explicitNullValueMetricsArtifactType; set { _explicitNullValueMetricsArtifactType = value; AdditionalData?.Remove("metricsArtifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metricsArtifactType"); else _explicitNullProperties?.Remove("metricsArtifactType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiffMetricsArtifactType? _explicitNullValueMetricsArtifactType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiff"/> and sets the default values.
         /// </summary>
@@ -97,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "headDownloadSize", n => { HeadDownloadSize = n.GetIntValue(); } },
                 { "headInstallSize", n => { HeadInstallSize = n.GetIntValue(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
-                { "metricsArtifactType", n => { MetricsArtifactType = n.GetStringValue(); } },
+                { "metricsArtifactType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiffMetricsArtifactType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMetricsArtifactType = default; _explicitNullProperties?.Remove("metricsArtifactType"); AdditionalData["metricsArtifactType"] = unknown; } else { MetricsArtifactType = parsed; AdditionalData.Remove("metricsArtifactType"); } } },
             };
         }
         /// <summary>
@@ -112,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteIntValue("headDownloadSize", HeadDownloadSize);
             writer.WriteIntValue("headInstallSize", HeadInstallSize);
             writer.WriteStringValue("identifier", Identifier);
-            writer.WriteStringValue("metricsArtifactType", MetricsArtifactType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemSizeMetricDiffMetricsArtifactType>("metricsArtifactType", MetricsArtifactType);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

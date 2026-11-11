@@ -8,6 +8,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Seer;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.SentryAppInstallations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.SentryApps;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Teams;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Users;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -20,6 +21,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ZeroRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The EmptyPathSegment property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.EmptyPathSegmentRequestBuilder EmptyPathSegment
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.EmptyPathSegmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The organizations property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.OrganizationsRequestBuilder Organizations
         {
@@ -49,6 +55,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.TeamsRequestBuilder Teams
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The users property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Users.UsersRequestBuilder Users
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.ZeroRequestBuilder"/> and sets the default values.

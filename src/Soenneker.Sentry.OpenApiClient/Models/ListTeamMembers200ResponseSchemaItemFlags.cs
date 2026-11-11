@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Member flags
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListTeamMembers200ResponseSchemaItemFlags : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -33,22 +34,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The idpProvisioned property</summary>
+        /// <summary>Whether the member is provisioned and managed through the organization&apos;s identity provider (SCIM)</summary>
         public bool? IdpProvisioned { get => _explicitNullValueIdpProvisioned; set { _explicitNullValueIdpProvisioned = value; AdditionalData?.Remove("idp:provisioned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp:provisioned"); else _explicitNullProperties?.Remove("idp:provisioned"); } }
         private bool? _explicitNullValueIdpProvisioned = default!;
-        /// <summary>The idpRoleRestricted property</summary>
+        /// <summary>Whether the member&apos;s organization role is set by the identity provider through SCIM</summary>
         public bool? IdpRoleRestricted { get => _explicitNullValueIdpRoleRestricted; set { _explicitNullValueIdpRoleRestricted = value; AdditionalData?.Remove("idp:role-restricted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("idp:role-restricted"); else _explicitNullProperties?.Remove("idp:role-restricted"); } }
         private bool? _explicitNullValueIdpRoleRestricted = default!;
-        /// <summary>The memberLimitRestricted property</summary>
+        /// <summary>Whether the member is restricted by the plan&apos;s member limit</summary>
         public bool? MemberLimitRestricted { get => _explicitNullValueMemberLimitRestricted; set { _explicitNullValueMemberLimitRestricted = value; AdditionalData?.Remove("member-limit:restricted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("member-limit:restricted"); else _explicitNullProperties?.Remove("member-limit:restricted"); } }
         private bool? _explicitNullValueMemberLimitRestricted = default!;
-        /// <summary>The partnershipRestricted property</summary>
+        /// <summary>Whether the member is managed by an active partnership and can&apos;t be changed until it ends</summary>
         public bool? PartnershipRestricted { get => _explicitNullValuePartnershipRestricted; set { _explicitNullValuePartnershipRestricted = value; AdditionalData?.Remove("partnership:restricted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("partnership:restricted"); else _explicitNullProperties?.Remove("partnership:restricted"); } }
         private bool? _explicitNullValuePartnershipRestricted = default!;
-        /// <summary>The ssoInvalid property</summary>
+        /// <summary>Whether the member&apos;s SSO link is invalid</summary>
         public bool? SsoInvalid { get => _explicitNullValueSsoInvalid; set { _explicitNullValueSsoInvalid = value; AdditionalData?.Remove("sso:invalid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso:invalid"); else _explicitNullProperties?.Remove("sso:invalid"); } }
         private bool? _explicitNullValueSsoInvalid = default!;
-        /// <summary>The ssoLinked property</summary>
+        /// <summary>Whether the member has linked their account to the organization&apos;s SSO provider</summary>
         public bool? SsoLinked { get => _explicitNullValueSsoLinked; set { _explicitNullValueSsoLinked = value; AdditionalData?.Remove("sso:linked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sso:linked"); else _explicitNullProperties?.Remove("sso:linked"); } }
         private bool? _explicitNullValueSsoLinked = default!;
         /// <summary>

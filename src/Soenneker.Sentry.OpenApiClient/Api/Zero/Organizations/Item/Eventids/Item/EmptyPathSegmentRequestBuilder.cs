@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Eventids.It
         {
         }
         /// <summary>
-        /// This resolves an event ID to the project slug and internal issue ID and internal event ID.
+        /// Resolve an event ID to its project slug, issue ID, and event details. Only projects thecaller can access are searched.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Eventids.It
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationEventId200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This resolves an event ID to the project slug and internal issue ID and internal event ID.
+        /// Resolve an event ID to its project slug, issue ID, and event details. Only projects thecaller can access are searched.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

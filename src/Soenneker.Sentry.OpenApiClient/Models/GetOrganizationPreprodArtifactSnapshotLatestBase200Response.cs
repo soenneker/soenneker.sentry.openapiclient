@@ -39,7 +39,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The app_id property</summary>
+        /// <summary>App identifier of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
@@ -49,20 +49,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
         private string _explicitNullValueAppId = default!;
 #endif
-        /// <summary>The date_added property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("date_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_added"); else _explicitNullProperties?.Remove("date_added"); } }
-        private string? _explicitNullValueDateAdded = default!;
-#nullable restore
-#else
-        public string DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("date_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_added"); else _explicitNullProperties?.Remove("date_added"); } }
-        private string _explicitNullValueDateAdded = default!;
-#endif
-        /// <summary>The diff_threshold property</summary>
+        /// <summary>When the build was uploaded (ISO 8601)</summary>
+        public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("date_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_added"); else _explicitNullProperties?.Remove("date_added"); } }
+        private DateTimeOffset? _explicitNullValueDateAdded = default!;
+        /// <summary>Fraction of changed pixels, from 0 to 1, above which an image counts as changed. Images can override it</summary>
         public double? DiffThreshold { get => _explicitNullValueDiffThreshold; set { _explicitNullValueDiffThreshold = value; AdditionalData?.Remove("diff_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_threshold"); else _explicitNullProperties?.Remove("diff_threshold"); } }
         private double? _explicitNullValueDiffThreshold = default!;
-        /// <summary>The head_artifact_id property</summary>
+        /// <summary>ID of the build the snapshot belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; AdditionalData?.Remove("head_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
@@ -72,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; AdditionalData?.Remove("head_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
         private string _explicitNullValueHeadArtifactId = default!;
 #endif
-        /// <summary>The image_count property</summary>
+        /// <summary>Number of images in the snapshot</summary>
         public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; AdditionalData?.Remove("image_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_count"); else _explicitNullProperties?.Remove("image_count"); } }
         private int? _explicitNullValueImageCount = default!;
-        /// <summary>The images property</summary>
+        /// <summary>Images in the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200ResponseImagesItem>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
@@ -85,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200ResponseImagesItem> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200ResponseImagesItem> _explicitNullValueImages = default!;
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>ID of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
@@ -95,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The project_slug property</summary>
+        /// <summary>Slug of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; AdditionalData?.Remove("project_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_slug"); else _explicitNullProperties?.Remove("project_slug"); } }
@@ -105,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectSlug { get => _explicitNullValueProjectSlug; set { _explicitNullValueProjectSlug = value; AdditionalData?.Remove("project_slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_slug"); else _explicitNullProperties?.Remove("project_slug"); } }
         private string _explicitNullValueProjectSlug = default!;
 #endif
-        /// <summary>The vcs_info property</summary>
+        /// <summary>Version control details of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotLatestBase200ResponseVcsInfo? VcsInfo { get => _explicitNullValueVcsInfo; set { _explicitNullValueVcsInfo = value; AdditionalData?.Remove("vcs_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcs_info"); else _explicitNullProperties?.Remove("vcs_info"); } }
@@ -141,7 +134,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "app_id", n => { AppId = n.GetStringValue(); } },
-                { "date_added", n => { DateAdded = n.GetStringValue(); } },
+                { "date_added", n => { DateAdded = n.GetDateTimeOffsetValue(); } },
                 { "diff_threshold", n => { DiffThreshold = n.GetDoubleValue(); } },
                 { "head_artifact_id", n => { HeadArtifactId = n.GetStringValue(); } },
                 { "image_count", n => { ImageCount = n.GetIntValue(); } },
@@ -159,7 +152,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("app_id", AppId);
-            writer.WriteStringValue("date_added", DateAdded);
+            writer.WriteDateTimeOffsetValue("date_added", DateAdded);
             writer.WriteDoubleValue("diff_threshold", DiffThreshold);
             writer.WriteStringValue("head_artifact_id", HeadArtifactId);
             writer.WriteIntValue("image_count", ImageCount);

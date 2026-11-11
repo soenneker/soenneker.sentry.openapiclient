@@ -41,16 +41,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>ID of the notification action</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
-        /// <summary>The integrationId property</summary>
+        /// <summary>ID of the integration that sends the notification. Null when none is used</summary>
         public int? IntegrationId { get => _explicitNullValueIntegrationId; set { _explicitNullValueIntegrationId = value; AdditionalData?.Remove("integrationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integrationId"); else _explicitNullProperties?.Remove("integrationId"); } }
         private int? _explicitNullValueIntegrationId = default!;
-        /// <summary>The organizationId property</summary>
+        /// <summary>ID of the organization</summary>
         public int? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private int? _explicitNullValueOrganizationId = default!;
-        /// <summary>The projects property</summary>
+        /// <summary>IDs of the projects the action applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<long?>? Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
@@ -60,10 +60,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<long?> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
         private List<long?> _explicitNullValueProjects = default!;
 #endif
-        /// <summary>The sentryAppId property</summary>
+        /// <summary>ID of the Sentry app that receives the notification. Null when none is used</summary>
         public int? SentryAppId { get => _explicitNullValueSentryAppId; set { _explicitNullValueSentryAppId = value; AdditionalData?.Remove("sentryAppId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentryAppId"); else _explicitNullProperties?.Remove("sentryAppId"); } }
         private int? _explicitNullValueSentryAppId = default!;
-        /// <summary>The serviceType property</summary>
+        /// <summary>Service that sends the notification, such as email, slack or pagerduty</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceType { get => _explicitNullValueServiceType; set { _explicitNullValueServiceType = value; AdditionalData?.Remove("serviceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceType"); else _explicitNullProperties?.Remove("serviceType"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ServiceType { get => _explicitNullValueServiceType; set { _explicitNullValueServiceType = value; AdditionalData?.Remove("serviceType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("serviceType"); else _explicitNullProperties?.Remove("serviceType"); } }
         private string _explicitNullValueServiceType = default!;
 #endif
-        /// <summary>The targetDisplay property</summary>
+        /// <summary>Name of the target, such as #alerts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetDisplay { get => _explicitNullValueTargetDisplay; set { _explicitNullValueTargetDisplay = value; AdditionalData?.Remove("targetDisplay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetDisplay"); else _explicitNullProperties?.Remove("targetDisplay"); } }
@@ -83,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string TargetDisplay { get => _explicitNullValueTargetDisplay; set { _explicitNullValueTargetDisplay = value; AdditionalData?.Remove("targetDisplay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetDisplay"); else _explicitNullProperties?.Remove("targetDisplay"); } }
         private string _explicitNullValueTargetDisplay = default!;
 #endif
-        /// <summary>The targetIdentifier property</summary>
+        /// <summary>ID of the target in the service, such as a Slack channel ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetIdentifier { get => _explicitNullValueTargetIdentifier; set { _explicitNullValueTargetIdentifier = value; AdditionalData?.Remove("targetIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetIdentifier"); else _explicitNullProperties?.Remove("targetIdentifier"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string TargetIdentifier { get => _explicitNullValueTargetIdentifier; set { _explicitNullValueTargetIdentifier = value; AdditionalData?.Remove("targetIdentifier"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetIdentifier"); else _explicitNullProperties?.Remove("targetIdentifier"); } }
         private string _explicitNullValueTargetIdentifier = default!;
 #endif
-        /// <summary>The targetType property</summary>
+        /// <summary>Kind of target: specific, user, team, sentry_app or issue_owners</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; AdditionalData?.Remove("targetType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetType"); else _explicitNullProperties?.Remove("targetType"); } }
@@ -103,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string TargetType { get => _explicitNullValueTargetType; set { _explicitNullValueTargetType = value; AdditionalData?.Remove("targetType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetType"); else _explicitNullProperties?.Remove("targetType"); } }
         private string _explicitNullValueTargetType = default!;
 #endif
-        /// <summary>The triggerType property</summary>
+        /// <summary>What triggers the action, such as audit-log or spike-protection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TriggerType { get => _explicitNullValueTriggerType; set { _explicitNullValueTriggerType = value; AdditionalData?.Remove("triggerType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("triggerType"); else _explicitNullProperties?.Remove("triggerType"); } }

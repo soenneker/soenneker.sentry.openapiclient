@@ -17,10 +17,130 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("click.alt") is null) { _explicitNullValueClickAlt = default!; _explicitNullProperties?.Remove("click.alt"); }
+            else if (parseNode.GetChildNode("click.alt") is { } nullNodeClickAlt && nullNodeClickAlt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickAlt = null;
+            if (parseNode.GetChildNode("click.classes") is null) { _explicitNullValueClickClasses = default!; _explicitNullProperties?.Remove("click.classes"); }
+            else if (parseNode.GetChildNode("click.classes") is { } nullNodeClickClasses && nullNodeClickClasses.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickClasses = null;
+            if (parseNode.GetChildNode("click.component_name") is null) { _explicitNullValueClickComponentName = default!; _explicitNullProperties?.Remove("click.component_name"); }
+            else if (parseNode.GetChildNode("click.component_name") is { } nullNodeClickComponentName && nullNodeClickComponentName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickComponentName = null;
+            if (parseNode.GetChildNode("click.id") is null) { _explicitNullValueClickId = default!; _explicitNullProperties?.Remove("click.id"); }
+            else if (parseNode.GetChildNode("click.id") is { } nullNodeClickId && nullNodeClickId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickId = null;
+            if (parseNode.GetChildNode("click.label") is null) { _explicitNullValueClickLabel = default!; _explicitNullProperties?.Remove("click.label"); }
+            else if (parseNode.GetChildNode("click.label") is { } nullNodeClickLabel && nullNodeClickLabel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickLabel = null;
+            if (parseNode.GetChildNode("click.role") is null) { _explicitNullValueClickRole = default!; _explicitNullProperties?.Remove("click.role"); }
+            else if (parseNode.GetChildNode("click.role") is { } nullNodeClickRole && nullNodeClickRole.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickRole = null;
+            if (parseNode.GetChildNode("click.tag") is null) { _explicitNullValueClickTag = default!; _explicitNullProperties?.Remove("click.tag"); }
+            else if (parseNode.GetChildNode("click.tag") is { } nullNodeClickTag && nullNodeClickTag.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTag = null;
+            if (parseNode.GetChildNode("click.testid") is null) { _explicitNullValueClickTestid = default!; _explicitNullProperties?.Remove("click.testid"); }
+            else if (parseNode.GetChildNode("click.testid") is { } nullNodeClickTestid && nullNodeClickTestid.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTestid = null;
+            if (parseNode.GetChildNode("click.text") is null) { _explicitNullValueClickText = default!; _explicitNullProperties?.Remove("click.text"); }
+            else if (parseNode.GetChildNode("click.text") is { } nullNodeClickText && nullNodeClickText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickText = null;
+            if (parseNode.GetChildNode("click.title") is null) { _explicitNullValueClickTitle = default!; _explicitNullProperties?.Remove("click.title"); }
+            else if (parseNode.GetChildNode("click.title") is { } nullNodeClickTitle && nullNodeClickTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClickTitle = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Alt text of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickAlt { get => _explicitNullValueClickAlt; set { _explicitNullValueClickAlt = value; AdditionalData?.Remove("click.alt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.alt"); else _explicitNullProperties?.Remove("click.alt"); } }
+        private string? _explicitNullValueClickAlt = default!;
+#nullable restore
+#else
+        public string ClickAlt { get => _explicitNullValueClickAlt; set { _explicitNullValueClickAlt = value; AdditionalData?.Remove("click.alt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.alt"); else _explicitNullProperties?.Remove("click.alt"); } }
+        private string _explicitNullValueClickAlt = default!;
+#endif
+        /// <summary>CSS classes of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? ClickClasses { get => _explicitNullValueClickClasses; set { _explicitNullValueClickClasses = value; AdditionalData?.Remove("click.classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.classes"); else _explicitNullProperties?.Remove("click.classes"); } }
+        private List<string>? _explicitNullValueClickClasses = default!;
+#nullable restore
+#else
+        public List<string> ClickClasses { get => _explicitNullValueClickClasses; set { _explicitNullValueClickClasses = value; AdditionalData?.Remove("click.classes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.classes"); else _explicitNullProperties?.Remove("click.classes"); } }
+        private List<string> _explicitNullValueClickClasses = default!;
+#endif
+        /// <summary>Name of the frontend component that was clicked</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickComponentName { get => _explicitNullValueClickComponentName; set { _explicitNullValueClickComponentName = value; AdditionalData?.Remove("click.component_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.component_name"); else _explicitNullProperties?.Remove("click.component_name"); } }
+        private string? _explicitNullValueClickComponentName = default!;
+#nullable restore
+#else
+        public string ClickComponentName { get => _explicitNullValueClickComponentName; set { _explicitNullValueClickComponentName = value; AdditionalData?.Remove("click.component_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.component_name"); else _explicitNullProperties?.Remove("click.component_name"); } }
+        private string _explicitNullValueClickComponentName = default!;
+#endif
+        /// <summary>ID of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickId { get => _explicitNullValueClickId; set { _explicitNullValueClickId = value; AdditionalData?.Remove("click.id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.id"); else _explicitNullProperties?.Remove("click.id"); } }
+        private string? _explicitNullValueClickId = default!;
+#nullable restore
+#else
+        public string ClickId { get => _explicitNullValueClickId; set { _explicitNullValueClickId = value; AdditionalData?.Remove("click.id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.id"); else _explicitNullProperties?.Remove("click.id"); } }
+        private string _explicitNullValueClickId = default!;
+#endif
+        /// <summary>ARIA label of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickLabel { get => _explicitNullValueClickLabel; set { _explicitNullValueClickLabel = value; AdditionalData?.Remove("click.label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.label"); else _explicitNullProperties?.Remove("click.label"); } }
+        private string? _explicitNullValueClickLabel = default!;
+#nullable restore
+#else
+        public string ClickLabel { get => _explicitNullValueClickLabel; set { _explicitNullValueClickLabel = value; AdditionalData?.Remove("click.label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.label"); else _explicitNullProperties?.Remove("click.label"); } }
+        private string _explicitNullValueClickLabel = default!;
+#endif
+        /// <summary>Role of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickRole { get => _explicitNullValueClickRole; set { _explicitNullValueClickRole = value; AdditionalData?.Remove("click.role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.role"); else _explicitNullProperties?.Remove("click.role"); } }
+        private string? _explicitNullValueClickRole = default!;
+#nullable restore
+#else
+        public string ClickRole { get => _explicitNullValueClickRole; set { _explicitNullValueClickRole = value; AdditionalData?.Remove("click.role"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.role"); else _explicitNullProperties?.Remove("click.role"); } }
+        private string _explicitNullValueClickRole = default!;
+#endif
+        /// <summary>HTML tag of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickTag { get => _explicitNullValueClickTag; set { _explicitNullValueClickTag = value; AdditionalData?.Remove("click.tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.tag"); else _explicitNullProperties?.Remove("click.tag"); } }
+        private string? _explicitNullValueClickTag = default!;
+#nullable restore
+#else
+        public string ClickTag { get => _explicitNullValueClickTag; set { _explicitNullValueClickTag = value; AdditionalData?.Remove("click.tag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.tag"); else _explicitNullProperties?.Remove("click.tag"); } }
+        private string _explicitNullValueClickTag = default!;
+#endif
+        /// <summary>Test ID of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickTestid { get => _explicitNullValueClickTestid; set { _explicitNullValueClickTestid = value; AdditionalData?.Remove("click.testid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.testid"); else _explicitNullProperties?.Remove("click.testid"); } }
+        private string? _explicitNullValueClickTestid = default!;
+#nullable restore
+#else
+        public string ClickTestid { get => _explicitNullValueClickTestid; set { _explicitNullValueClickTestid = value; AdditionalData?.Remove("click.testid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.testid"); else _explicitNullProperties?.Remove("click.testid"); } }
+        private string _explicitNullValueClickTestid = default!;
+#endif
+        /// <summary>Text of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickText { get => _explicitNullValueClickText; set { _explicitNullValueClickText = value; AdditionalData?.Remove("click.text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.text"); else _explicitNullProperties?.Remove("click.text"); } }
+        private string? _explicitNullValueClickText = default!;
+#nullable restore
+#else
+        public string ClickText { get => _explicitNullValueClickText; set { _explicitNullValueClickText = value; AdditionalData?.Remove("click.text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.text"); else _explicitNullProperties?.Remove("click.text"); } }
+        private string _explicitNullValueClickText = default!;
+#endif
+        /// <summary>Title of the clicked element</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ClickTitle { get => _explicitNullValueClickTitle; set { _explicitNullValueClickTitle = value; AdditionalData?.Remove("click.title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.title"); else _explicitNullProperties?.Remove("click.title"); } }
+        private string? _explicitNullValueClickTitle = default!;
+#nullable restore
+#else
+        public string ClickTitle { get => _explicitNullValueClickTitle; set { _explicitNullValueClickTitle = value; AdditionalData?.Remove("click.title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("click.title"); else _explicitNullProperties?.Remove("click.title"); } }
+        private string _explicitNullValueClickTitle = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationReplay200ResponseDataClicksItem"/> and sets the default values.
         /// </summary>
@@ -46,6 +166,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "click.alt", n => { ClickAlt = n.GetStringValue(); } },
+                { "click.classes", n => { ClickClasses = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "click.component_name", n => { ClickComponentName = n.GetStringValue(); } },
+                { "click.id", n => { ClickId = n.GetStringValue(); } },
+                { "click.label", n => { ClickLabel = n.GetStringValue(); } },
+                { "click.role", n => { ClickRole = n.GetStringValue(); } },
+                { "click.tag", n => { ClickTag = n.GetStringValue(); } },
+                { "click.testid", n => { ClickTestid = n.GetStringValue(); } },
+                { "click.text", n => { ClickText = n.GetStringValue(); } },
+                { "click.title", n => { ClickTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +185,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("click.alt", ClickAlt);
+            writer.WriteCollectionOfPrimitiveValues<string>("click.classes", ClickClasses);
+            writer.WriteStringValue("click.component_name", ClickComponentName);
+            writer.WriteStringValue("click.id", ClickId);
+            writer.WriteStringValue("click.label", ClickLabel);
+            writer.WriteStringValue("click.role", ClickRole);
+            writer.WriteStringValue("click.tag", ClickTag);
+            writer.WriteStringValue("click.testid", ClickTestid);
+            writer.WriteStringValue("click.text", ClickText);
+            writer.WriteStringValue("click.title", ClickTitle);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,7 +34,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearch
         {
         }
         /// <summary>
-        /// List the current organization member&apos;s custom views`````````````````````````````````````````Retrieve a list of custom views for the current organization member.
+        /// Return the current organization member&apos;s issue views, with starred views first. Set`createdBy=others` to list organization-visible views created by other members instead.
         /// </summary>
         /// <returns>A List&lt;global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueViews200ResponseSchemaItem&gt;</returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -73,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearch
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationIssueView201Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List the current organization member&apos;s custom views`````````````````````````````````````````Retrieve a list of custom views for the current organization member.
+        /// Return the current organization member&apos;s issue views, with starred views first. Set`createdBy=others` to list organization-visible views created by other members instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -123,7 +123,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearch
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.GroupSearchViews.EmptyPathSegmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// List the current organization member&apos;s custom views`````````````````````````````````````````Retrieve a list of custom views for the current organization member.
+        /// Return the current organization member&apos;s issue views, with starred views first. Set`createdBy=others` to list organization-visible views created by other members instead.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 

@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Who set the attribute: `sentry` for attributes Sentry defines, or `user` for custom attributes</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ListOrganizationTraceItemAttributes200ResponseItemAttributeSourceSourceType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "sentry")]
         #pragma warning disable CS1591

@@ -97,7 +97,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The breakdowns property</summary>
+        /// <summary>Span operation breakdowns for the transaction, keyed by breakdown name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseBreakdowns? Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; AdditionalData?.Remove("breakdowns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
@@ -107,7 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseBreakdowns Breakdowns { get => _explicitNullValueBreakdowns; set { _explicitNullValueBreakdowns = value; AdditionalData?.Remove("breakdowns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdowns"); else _explicitNullProperties?.Remove("breakdowns"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseBreakdowns _explicitNullValueBreakdowns = default!;
 #endif
-        /// <summary>The context property</summary>
+        /// <summary>Additional data sent with the event in its extra field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
@@ -117,7 +117,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContext _explicitNullValueContext = default!;
 #endif
-        /// <summary>The contexts property</summary>
+        /// <summary>Contexts of the event, such as device, os, browser and runtime, keyed by alias</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContexts? Contexts { get => _explicitNullValueContexts; set { _explicitNullValueContexts = value; AdditionalData?.Remove("contexts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contexts"); else _explicitNullProperties?.Remove("contexts"); } }
@@ -127,7 +127,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContexts Contexts { get => _explicitNullValueContexts; set { _explicitNullValueContexts = value; AdditionalData?.Remove("contexts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("contexts"); else _explicitNullProperties?.Remove("contexts"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseContexts _explicitNullValueContexts = default!;
 #endif
-        /// <summary>The crashFile property</summary>
+        /// <summary>Crash report attachment of the event, if any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CrashFile { get => _explicitNullValueCrashFile; set { _explicitNullValueCrashFile = value; AdditionalData?.Remove("crashFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFile"); else _explicitNullProperties?.Remove("crashFile"); } }
@@ -137,7 +137,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string CrashFile { get => _explicitNullValueCrashFile; set { _explicitNullValueCrashFile = value; AdditionalData?.Remove("crashFile"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFile"); else _explicitNullProperties?.Remove("crashFile"); } }
         private string _explicitNullValueCrashFile = default!;
 #endif
-        /// <summary>The culprit property</summary>
+        /// <summary>Function or module that caused the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; AdditionalData?.Remove("culprit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
@@ -147,13 +147,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Culprit { get => _explicitNullValueCulprit; set { _explicitNullValueCulprit = value; AdditionalData?.Remove("culprit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("culprit"); else _explicitNullProperties?.Remove("culprit"); } }
         private string _explicitNullValueCulprit = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the event occurred (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The dateReceived property</summary>
+        /// <summary>When Sentry received the event (ISO 8601)</summary>
         public DateTimeOffset? DateReceived { get => _explicitNullValueDateReceived; set { _explicitNullValueDateReceived = value; AdditionalData?.Remove("dateReceived"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReceived"); else _explicitNullProperties?.Remove("dateReceived"); } }
         private DateTimeOffset? _explicitNullValueDateReceived = default!;
-        /// <summary>The dist property</summary>
+        /// <summary>Distribution of the release the event was sent with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
@@ -163,10 +163,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
         private string _explicitNullValueDist = default!;
 #endif
-        /// <summary>The endTimestamp property</summary>
+        /// <summary>When the transaction ended, as a Unix timestamp in seconds</summary>
         public double? EndTimestamp { get => _explicitNullValueEndTimestamp; set { _explicitNullValueEndTimestamp = value; AdditionalData?.Remove("endTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endTimestamp"); else _explicitNullProperties?.Remove("endTimestamp"); } }
         private double? _explicitNullValueEndTimestamp = default!;
-        /// <summary>The entries property</summary>
+        /// <summary>Event interfaces, such as exception, breadcrumbs and request, each with a type and data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
@@ -176,7 +176,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode Entries { get => _explicitNullValueEntries; set { _explicitNullValueEntries = value; AdditionalData?.Remove("entries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entries"); else _explicitNullProperties?.Remove("entries"); } }
         private UntypedNode _explicitNullValueEntries = default!;
 #endif
-        /// <summary>The errors property</summary>
+        /// <summary>Errors Sentry found while processing the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseErrorsItem>? Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
@@ -186,7 +186,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseErrorsItem> Errors { get => _explicitNullValueErrors; set { _explicitNullValueErrors = value; AdditionalData?.Remove("errors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errors"); else _explicitNullProperties?.Remove("errors"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseErrorsItem> _explicitNullValueErrors = default!;
 #endif
-        /// <summary>The eventID property</summary>
+        /// <summary>ID of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; AdditionalData?.Remove("eventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
@@ -196,7 +196,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string EventID { get => _explicitNullValueEventID; set { _explicitNullValueEventID = value; AdditionalData?.Remove("eventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("eventID"); else _explicitNullProperties?.Remove("eventID"); } }
         private string _explicitNullValueEventID = default!;
 #endif
-        /// <summary>The fingerprints property</summary>
+        /// <summary>Grouping hashes calculated for the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Fingerprints { get => _explicitNullValueFingerprints; set { _explicitNullValueFingerprints = value; AdditionalData?.Remove("fingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprints"); else _explicitNullProperties?.Remove("fingerprints"); } }
@@ -206,7 +206,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Fingerprints { get => _explicitNullValueFingerprints; set { _explicitNullValueFingerprints = value; AdditionalData?.Remove("fingerprints"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprints"); else _explicitNullProperties?.Remove("fingerprints"); } }
         private List<string> _explicitNullValueFingerprints = default!;
 #endif
-        /// <summary>The groupID property</summary>
+        /// <summary>ID of the issue the event belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupID { get => _explicitNullValueGroupID; set { _explicitNullValueGroupID = value; AdditionalData?.Remove("groupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupID"); else _explicitNullProperties?.Remove("groupID"); } }
@@ -216,7 +216,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string GroupID { get => _explicitNullValueGroupID; set { _explicitNullValueGroupID = value; AdditionalData?.Remove("groupID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupID"); else _explicitNullProperties?.Remove("groupID"); } }
         private string _explicitNullValueGroupID = default!;
 #endif
-        /// <summary>The groupingConfig property</summary>
+        /// <summary>Grouping configuration used to group the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseGroupingConfig? GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; AdditionalData?.Remove("groupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
@@ -226,7 +226,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseGroupingConfig GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; AdditionalData?.Remove("groupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseGroupingConfig _explicitNullValueGroupingConfig = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -236,7 +236,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The location property</summary>
+        /// <summary>Source location of the event, such as a file and line</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
@@ -246,7 +246,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Location { get => _explicitNullValueLocation; set { _explicitNullValueLocation = value; AdditionalData?.Remove("location"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("location"); else _explicitNullProperties?.Remove("location"); } }
         private string _explicitNullValueLocation = default!;
 #endif
-        /// <summary>The measurements property</summary>
+        /// <summary>Measurements recorded for the transaction, such as web vitals, keyed by name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeasurements? Measurements { get => _explicitNullValueMeasurements; set { _explicitNullValueMeasurements = value; AdditionalData?.Remove("measurements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurements"); else _explicitNullProperties?.Remove("measurements"); } }
@@ -256,7 +256,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeasurements Measurements { get => _explicitNullValueMeasurements; set { _explicitNullValueMeasurements = value; AdditionalData?.Remove("measurements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurements"); else _explicitNullProperties?.Remove("measurements"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeasurements _explicitNullValueMeasurements = default!;
 #endif
-        /// <summary>The message property</summary>
+        /// <summary>Event message</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
@@ -266,7 +266,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; AdditionalData?.Remove("message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
         private string _explicitNullValueMessage = default!;
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>Metadata about changes Sentry made to the event&apos;s fields, such as data scrubbing or trimming</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
@@ -276,7 +276,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("_meta"); else _explicitNullProperties?.Remove("_meta"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMeta _explicitNullValueMeta = default!;
 #endif
-        /// <summary>The metadata property</summary>
+        /// <summary>Event metadata</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMetadata? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
@@ -286,7 +286,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMetadata Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseMetadata _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The nextEventID property</summary>
+        /// <summary>ID of the next event in the issue. Null for the latest event or when adjacentEvents is collapsed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? NextEventID { get => _explicitNullValueNextEventID; set { _explicitNullValueNextEventID = value; AdditionalData?.Remove("nextEventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextEventID"); else _explicitNullProperties?.Remove("nextEventID"); } }
@@ -296,7 +296,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string NextEventID { get => _explicitNullValueNextEventID; set { _explicitNullValueNextEventID = value; AdditionalData?.Remove("nextEventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nextEventID"); else _explicitNullProperties?.Remove("nextEventID"); } }
         private string _explicitNullValueNextEventID = default!;
 #endif
-        /// <summary>The occurrence property</summary>
+        /// <summary>Issue occurrence data for events in non-error issues, such as performance issues. Null otherwise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseOccurrence? Occurrence { get => _explicitNullValueOccurrence; set { _explicitNullValueOccurrence = value; AdditionalData?.Remove("occurrence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrence"); else _explicitNullProperties?.Remove("occurrence"); } }
@@ -306,7 +306,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseOccurrence Occurrence { get => _explicitNullValueOccurrence; set { _explicitNullValueOccurrence = value; AdditionalData?.Remove("occurrence"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurrence"); else _explicitNullProperties?.Remove("occurrence"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseOccurrence _explicitNullValueOccurrence = default!;
 #endif
-        /// <summary>The packages property</summary>
+        /// <summary>Modules loaded when the event occurred, keyed by module name with their versions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponsePackages? Packages { get => _explicitNullValuePackages; set { _explicitNullValuePackages = value; AdditionalData?.Remove("packages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packages"); else _explicitNullProperties?.Remove("packages"); } }
@@ -316,7 +316,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponsePackages Packages { get => _explicitNullValuePackages; set { _explicitNullValuePackages = value; AdditionalData?.Remove("packages"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("packages"); else _explicitNullProperties?.Remove("packages"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponsePackages _explicitNullValuePackages = default!;
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the event, such as python or javascript</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -326,7 +326,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The previousEventID property</summary>
+        /// <summary>ID of the previous event in the issue. Null for the first event or when adjacentEvents is collapsed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviousEventID { get => _explicitNullValuePreviousEventID; set { _explicitNullValuePreviousEventID = value; AdditionalData?.Remove("previousEventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEventID"); else _explicitNullProperties?.Remove("previousEventID"); } }
@@ -336,7 +336,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string PreviousEventID { get => _explicitNullValuePreviousEventID; set { _explicitNullValuePreviousEventID = value; AdditionalData?.Remove("previousEventID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousEventID"); else _explicitNullProperties?.Remove("previousEventID"); } }
         private string _explicitNullValuePreviousEventID = default!;
 #endif
-        /// <summary>The projectID property</summary>
+        /// <summary>ID of the project the event belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; AdditionalData?.Remove("projectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
@@ -346,7 +346,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectID { get => _explicitNullValueProjectID; set { _explicitNullValueProjectID = value; AdditionalData?.Remove("projectID"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectID"); else _explicitNullProperties?.Remove("projectID"); } }
         private string _explicitNullValueProjectID = default!;
 #endif
-        /// <summary>The release property</summary>
+        /// <summary>Release the event was sent with. Null when the event has no release</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseRelease? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
@@ -356,7 +356,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseRelease Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseRelease _explicitNullValueRelease = default!;
 #endif
-        /// <summary>The resolvedWith property</summary>
+        /// <summary>How the event&apos;s stack frames were resolved during processing, such as which source map lookup method was used</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ResolvedWith { get => _explicitNullValueResolvedWith; set { _explicitNullValueResolvedWith = value; AdditionalData?.Remove("resolvedWith"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolvedWith"); else _explicitNullProperties?.Remove("resolvedWith"); } }
@@ -366,7 +366,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> ResolvedWith { get => _explicitNullValueResolvedWith; set { _explicitNullValueResolvedWith = value; AdditionalData?.Remove("resolvedWith"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolvedWith"); else _explicitNullProperties?.Remove("resolvedWith"); } }
         private List<string> _explicitNullValueResolvedWith = default!;
 #endif
-        /// <summary>The sdk property</summary>
+        /// <summary>SDK that sent the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdk? Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; AdditionalData?.Remove("sdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
@@ -376,7 +376,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdk Sdk { get => _explicitNullValueSdk; set { _explicitNullValueSdk = value; AdditionalData?.Remove("sdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk"); else _explicitNullProperties?.Remove("sdk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdk _explicitNullValueSdk = default!;
 #endif
-        /// <summary>The sdkUpdates property</summary>
+        /// <summary>Suggested updates for the SDK that sent the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdkUpdatesItem>? SdkUpdates { get => _explicitNullValueSdkUpdates; set { _explicitNullValueSdkUpdates = value; AdditionalData?.Remove("sdkUpdates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUpdates"); else _explicitNullProperties?.Remove("sdkUpdates"); } }
@@ -386,13 +386,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdkUpdatesItem> SdkUpdates { get => _explicitNullValueSdkUpdates; set { _explicitNullValueSdkUpdates = value; AdditionalData?.Remove("sdkUpdates"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdkUpdates"); else _explicitNullProperties?.Remove("sdkUpdates"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseSdkUpdatesItem> _explicitNullValueSdkUpdates = default!;
 #endif
-        /// <summary>The size property</summary>
+        /// <summary>Size of the event payload in bytes</summary>
         public int? Size { get => _explicitNullValueSize; set { _explicitNullValueSize = value; AdditionalData?.Remove("size"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("size"); else _explicitNullProperties?.Remove("size"); } }
         private int? _explicitNullValueSize = default!;
-        /// <summary>The startTimestamp property</summary>
+        /// <summary>When the transaction started, as a Unix timestamp in seconds</summary>
         public double? StartTimestamp { get => _explicitNullValueStartTimestamp; set { _explicitNullValueStartTimestamp = value; AdditionalData?.Remove("startTimestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("startTimestamp"); else _explicitNullProperties?.Remove("startTimestamp"); } }
         private double? _explicitNullValueStartTimestamp = default!;
-        /// <summary>The tags property</summary>
+        /// <summary>Tags attached to the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseTagsItem>? Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
@@ -402,7 +402,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseTagsItem> Tags { get => _explicitNullValueTags; set { _explicitNullValueTags = value; AdditionalData?.Remove("tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tags"); else _explicitNullProperties?.Remove("tags"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseTagsItem> _explicitNullValueTags = default!;
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Event title</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
@@ -412,10 +412,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Event type, such as error, default or transaction</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseType? _explicitNullValueType = default!;
-        /// <summary>The user property</summary>
+        /// <summary>User context of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
@@ -425,7 +425,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseUser User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseUser _explicitNullValueUser = default!;
 #endif
-        /// <summary>The userReport property</summary>
+        /// <summary>User feedback submitted for the event. Null when there&apos;s none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEvent200ResponseUserReport? UserReport { get => _explicitNullValueUserReport; set { _explicitNullValueUserReport = value; AdditionalData?.Remove("userReport"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("userReport"); else _explicitNullProperties?.Remove("userReport"); } }

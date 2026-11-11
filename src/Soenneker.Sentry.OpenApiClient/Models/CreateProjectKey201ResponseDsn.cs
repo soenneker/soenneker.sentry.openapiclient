@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// DSN and ingestion endpoints for the key
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateProjectKey201ResponseDsn : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -47,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The cdn property</summary>
+        /// <summary>URL of the JavaScript SDK Loader script</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Cdn { get => _explicitNullValueCdn; set { _explicitNullValueCdn = value; AdditionalData?.Remove("cdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdn"); else _explicitNullProperties?.Remove("cdn"); } }
@@ -57,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Cdn { get => _explicitNullValueCdn; set { _explicitNullValueCdn = value; AdditionalData?.Remove("cdn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cdn"); else _explicitNullProperties?.Remove("cdn"); } }
         private string _explicitNullValueCdn = default!;
 #endif
-        /// <summary>The crons property</summary>
+        /// <summary>Endpoint for cron monitor check-ins</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Crons { get => _explicitNullValueCrons; set { _explicitNullValueCrons = value; AdditionalData?.Remove("crons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crons"); else _explicitNullProperties?.Remove("crons"); } }
@@ -67,7 +68,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Crons { get => _explicitNullValueCrons; set { _explicitNullValueCrons = value; AdditionalData?.Remove("crons"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crons"); else _explicitNullProperties?.Remove("crons"); } }
         private string _explicitNullValueCrons = default!;
 #endif
-        /// <summary>The csp property</summary>
+        /// <summary>Endpoint for Content Security Policy reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Csp { get => _explicitNullValueCsp; set { _explicitNullValueCsp = value; AdditionalData?.Remove("csp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csp"); else _explicitNullProperties?.Remove("csp"); } }
@@ -77,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Csp { get => _explicitNullValueCsp; set { _explicitNullValueCsp = value; AdditionalData?.Remove("csp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("csp"); else _explicitNullProperties?.Remove("csp"); } }
         private string _explicitNullValueCsp = default!;
 #endif
-        /// <summary>The integration property</summary>
+        /// <summary>Base URL for integration endpoints, such as the OpenTelemetry endpoints</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
@@ -87,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Integration { get => _explicitNullValueIntegration; set { _explicitNullValueIntegration = value; AdditionalData?.Remove("integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("integration"); else _explicitNullProperties?.Remove("integration"); } }
         private string _explicitNullValueIntegration = default!;
 #endif
-        /// <summary>The minidump property</summary>
+        /// <summary>Endpoint for minidump crash reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Minidump { get => _explicitNullValueMinidump; set { _explicitNullValueMinidump = value; AdditionalData?.Remove("minidump"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minidump"); else _explicitNullProperties?.Remove("minidump"); } }
@@ -97,7 +98,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Minidump { get => _explicitNullValueMinidump; set { _explicitNullValueMinidump = value; AdditionalData?.Remove("minidump"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("minidump"); else _explicitNullProperties?.Remove("minidump"); } }
         private string _explicitNullValueMinidump = default!;
 #endif
-        /// <summary>The nel property</summary>
+        /// <summary>Endpoint for Network Error Logging reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Nel { get => _explicitNullValueNel; set { _explicitNullValueNel = value; AdditionalData?.Remove("nel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nel"); else _explicitNullProperties?.Remove("nel"); } }
@@ -107,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Nel { get => _explicitNullValueNel; set { _explicitNullValueNel = value; AdditionalData?.Remove("nel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nel"); else _explicitNullProperties?.Remove("nel"); } }
         private string _explicitNullValueNel = default!;
 #endif
-        /// <summary>The otlp_logs property</summary>
+        /// <summary>OpenTelemetry (OTLP) endpoint for logs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtlpLogs { get => _explicitNullValueOtlpLogs; set { _explicitNullValueOtlpLogs = value; AdditionalData?.Remove("otlp_logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otlp_logs"); else _explicitNullProperties?.Remove("otlp_logs"); } }
@@ -117,7 +118,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string OtlpLogs { get => _explicitNullValueOtlpLogs; set { _explicitNullValueOtlpLogs = value; AdditionalData?.Remove("otlp_logs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otlp_logs"); else _explicitNullProperties?.Remove("otlp_logs"); } }
         private string _explicitNullValueOtlpLogs = default!;
 #endif
-        /// <summary>The otlp_traces property</summary>
+        /// <summary>OpenTelemetry (OTLP) endpoint for traces</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OtlpTraces { get => _explicitNullValueOtlpTraces; set { _explicitNullValueOtlpTraces = value; AdditionalData?.Remove("otlp_traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otlp_traces"); else _explicitNullProperties?.Remove("otlp_traces"); } }
@@ -127,7 +128,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string OtlpTraces { get => _explicitNullValueOtlpTraces; set { _explicitNullValueOtlpTraces = value; AdditionalData?.Remove("otlp_traces"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("otlp_traces"); else _explicitNullProperties?.Remove("otlp_traces"); } }
         private string _explicitNullValueOtlpTraces = default!;
 #endif
-        /// <summary>The playstation property</summary>
+        /// <summary>Endpoint for PlayStation crash reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Playstation { get => _explicitNullValuePlaystation; set { _explicitNullValuePlaystation = value; AdditionalData?.Remove("playstation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playstation"); else _explicitNullProperties?.Remove("playstation"); } }
@@ -137,7 +138,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Playstation { get => _explicitNullValuePlaystation; set { _explicitNullValuePlaystation = value; AdditionalData?.Remove("playstation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playstation"); else _explicitNullProperties?.Remove("playstation"); } }
         private string _explicitNullValuePlaystation = default!;
 #endif
-        /// <summary>The public property</summary>
+        /// <summary>Public DSN to configure SDKs with</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
@@ -147,7 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
         private string _explicitNullValuePublic = default!;
 #endif
-        /// <summary>The secret property</summary>
+        /// <summary>DSN that includes the secret key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
@@ -157,7 +158,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string _explicitNullValueSecret = default!;
 #endif
-        /// <summary>The security property</summary>
+        /// <summary>Endpoint for security reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Security { get => _explicitNullValueSecurity; set { _explicitNullValueSecurity = value; AdditionalData?.Remove("security"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security"); else _explicitNullProperties?.Remove("security"); } }
@@ -167,7 +168,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Security { get => _explicitNullValueSecurity; set { _explicitNullValueSecurity = value; AdditionalData?.Remove("security"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("security"); else _explicitNullProperties?.Remove("security"); } }
         private string _explicitNullValueSecurity = default!;
 #endif
-        /// <summary>The unreal property</summary>
+        /// <summary>Endpoint for Unreal Engine crash reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unreal { get => _explicitNullValueUnreal; set { _explicitNullValueUnreal = value; AdditionalData?.Remove("unreal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unreal"); else _explicitNullProperties?.Remove("unreal"); } }

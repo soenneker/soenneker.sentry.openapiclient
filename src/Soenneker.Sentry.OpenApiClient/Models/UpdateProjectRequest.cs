@@ -131,8 +131,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("subjectTemplate") is { } nullNodeSubjectTemplate && nullNodeSubjectTemplate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubjectTemplate = null;
             if (parseNode.GetChildNode("symbolSources") is null) { _explicitNullValueSymbolSources = default!; _explicitNullProperties?.Remove("symbolSources"); }
             else if (parseNode.GetChildNode("symbolSources") is { } nullNodeSymbolSources && nullNodeSymbolSources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SymbolSources = null;
-            if (parseNode.GetChildNode("targetSampleRate") is null) { _explicitNullValueTargetSampleRate = default!; _explicitNullProperties?.Remove("targetSampleRate"); }
-            else if (parseNode.GetChildNode("targetSampleRate") is { } nullNodeTargetSampleRate && nullNodeTargetSampleRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TargetSampleRate = null;
             if (parseNode.GetChildNode("tempestFetchScreenshots") is null) { _explicitNullValueTempestFetchScreenshots = default!; _explicitNullProperties?.Remove("tempestFetchScreenshots"); }
             else if (parseNode.GetChildNode("tempestFetchScreenshots") is { } nullNodeTempestFetchScreenshots && nullNodeTempestFetchScreenshots.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TempestFetchScreenshots = null;
             if (parseNode.GetChildNode("verifySSL") is null) { _explicitNullValueVerifySSL = default!; _explicitNullProperties?.Remove("verifySSL"); }
@@ -494,9 +492,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SymbolSources { get => _explicitNullValueSymbolSources; set { _explicitNullValueSymbolSources = value; AdditionalData?.Remove("symbolSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolSources"); else _explicitNullProperties?.Remove("symbolSources"); } }
         private string _explicitNullValueSymbolSources = default!;
 #endif
-        /// <summary>Target proportion of transactions to retain, from `0` to `1`. Requires manual dynamic sampling mode.</summary>
-        public double? TargetSampleRate { get => _explicitNullValueTargetSampleRate; set { _explicitNullValueTargetSampleRate = value; AdditionalData?.Remove("targetSampleRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("targetSampleRate"); else _explicitNullProperties?.Remove("targetSampleRate"); } }
-        private double? _explicitNullValueTargetSampleRate = default!;
         /// <summary>Fetch screenshots attached to console crash reports. Requires the Tempest feature.</summary>
         public bool? TempestFetchScreenshots { get => _explicitNullValueTempestFetchScreenshots; set { _explicitNullValueTempestFetchScreenshots = value; AdditionalData?.Remove("tempestFetchScreenshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempestFetchScreenshots"); else _explicitNullProperties?.Remove("tempestFetchScreenshots"); } }
         private bool? _explicitNullValueTempestFetchScreenshots = default!;
@@ -585,7 +580,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "subjectPrefix", n => { SubjectPrefix = n.GetStringValue(); } },
                 { "subjectTemplate", n => { SubjectTemplate = n.GetStringValue(); } },
                 { "symbolSources", n => { SymbolSources = n.GetStringValue(); } },
-                { "targetSampleRate", n => { TargetSampleRate = n.GetDoubleValue(); } },
                 { "tempestFetchScreenshots", n => { TempestFetchScreenshots = n.GetBoolValue(); } },
                 { "verifySSL", n => { VerifySSL = n.GetBoolValue(); } },
             };
@@ -654,7 +648,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("subjectPrefix", SubjectPrefix);
             writer.WriteStringValue("subjectTemplate", SubjectTemplate);
             writer.WriteStringValue("symbolSources", SymbolSources);
-            writer.WriteDoubleValue("targetSampleRate", TargetSampleRate);
             writer.WriteBoolValue("tempestFetchScreenshots", TempestFetchScreenshots);
             writer.WriteBoolValue("verifySSL", VerifySSL);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

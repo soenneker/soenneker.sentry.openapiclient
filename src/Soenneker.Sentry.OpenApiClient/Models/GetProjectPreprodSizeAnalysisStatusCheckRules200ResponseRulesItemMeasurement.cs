@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>How the rule measures size: absolute (size in bytes), absolute_diff (increase in bytes) or relative_diff (increase in percent)</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemMeasurement
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "absolute")]
         #pragma warning disable CS1591

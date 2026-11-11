@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Which snapshot changes make the status check fail
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectPreprodSnapshotStatusCheckRules200ResponseRules : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -29,16 +30,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The failOnAdded property</summary>
+        /// <summary>Whether the snapshot status check fails when snapshots are added</summary>
         public bool? FailOnAdded { get => _explicitNullValueFailOnAdded; set { _explicitNullValueFailOnAdded = value; AdditionalData?.Remove("failOnAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnAdded"); else _explicitNullProperties?.Remove("failOnAdded"); } }
         private bool? _explicitNullValueFailOnAdded = default!;
-        /// <summary>The failOnChanged property</summary>
+        /// <summary>Whether the snapshot status check fails when snapshots change</summary>
         public bool? FailOnChanged { get => _explicitNullValueFailOnChanged; set { _explicitNullValueFailOnChanged = value; AdditionalData?.Remove("failOnChanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnChanged"); else _explicitNullProperties?.Remove("failOnChanged"); } }
         private bool? _explicitNullValueFailOnChanged = default!;
-        /// <summary>The failOnRemoved property</summary>
+        /// <summary>Whether the snapshot status check fails when snapshots are removed</summary>
         public bool? FailOnRemoved { get => _explicitNullValueFailOnRemoved; set { _explicitNullValueFailOnRemoved = value; AdditionalData?.Remove("failOnRemoved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRemoved"); else _explicitNullProperties?.Remove("failOnRemoved"); } }
         private bool? _explicitNullValueFailOnRemoved = default!;
-        /// <summary>The failOnRenamed property</summary>
+        /// <summary>Whether the snapshot status check fails when snapshots are renamed</summary>
         public bool? FailOnRenamed { get => _explicitNullValueFailOnRenamed; set { _explicitNullValueFailOnRenamed = value; AdditionalData?.Remove("failOnRenamed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failOnRenamed"); else _explicitNullProperties?.Remove("failOnRenamed"); } }
         private bool? _explicitNullValueFailOnRenamed = default!;
         /// <summary>

@@ -31,7 +31,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatarType property</summary>
+        /// <summary>Avatar type: `default` or `upload`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
@@ -41,7 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
         private string _explicitNullValueAvatarType = default!;
 #endif
-        /// <summary>The avatarUrl property</summary>
+        /// <summary>Absolute URL of the avatar image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
         private string _explicitNullValueAvatarUrl = default!;
 #endif
-        /// <summary>The avatarUuid property</summary>
+        /// <summary>Unique identifier of the uploaded avatar file, or an empty string if none is set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; AdditionalData?.Remove("avatarUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
@@ -61,10 +61,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; AdditionalData?.Remove("avatarUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
         private string _explicitNullValueAvatarUuid = default!;
 #endif
-        /// <summary>The color property</summary>
+        /// <summary>Whether this is the color logo (`true`) or the simple icon (`false`)</summary>
         public bool? Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
         private bool? _explicitNullValueColor = default!;
-        /// <summary>The photoType property</summary>
+        /// <summary>Kind of image: `logo` for the color logo or `icon` for the simple icon</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PhotoType { get => _explicitNullValuePhotoType; set { _explicitNullValuePhotoType = value; AdditionalData?.Remove("photoType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("photoType"); else _explicitNullProperties?.Remove("photoType"); } }

@@ -27,13 +27,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dashboardWidgetQueryId property</summary>
+        /// <summary>ID of the widget query</summary>
         public int? DashboardWidgetQueryId { get => _explicitNullValueDashboardWidgetQueryId; set { _explicitNullValueDashboardWidgetQueryId = value; AdditionalData?.Remove("dashboardWidgetQueryId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboardWidgetQueryId"); else _explicitNullProperties?.Remove("dashboardWidgetQueryId"); } }
         private int? _explicitNullValueDashboardWidgetQueryId = default!;
-        /// <summary>The enabled property</summary>
+        /// <summary>Whether on-demand metric extraction is enabled for the query</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; AdditionalData?.Remove("enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
         private bool? _explicitNullValueEnabled = default!;
-        /// <summary>The extractionState property</summary>
+        /// <summary>On-demand extraction state, such as enabled:enrolled or disabled:high-cardinality</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExtractionState { get => _explicitNullValueExtractionState; set { _explicitNullValueExtractionState = value; AdditionalData?.Remove("extractionState"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extractionState"); else _explicitNullProperties?.Remove("extractionState"); } }

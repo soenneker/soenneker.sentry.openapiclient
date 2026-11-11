@@ -17,10 +17,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem"/> and sets the default values.
         /// </summary>
@@ -36,7 +48,55 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public static global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem(), parseNode);
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            return mappingValue switch
+            {
+                "assigned" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf1Variant(),
+                "auto_set_ongoing" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf2Variant(),
+                "create_issue" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf3Variant(),
+                "deleted_attachment" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf4Variant(),
+                "first_seen" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf5Variant(),
+                "impact_assessment" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf6Variant(),
+                "investigation_linked" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf7Variant(),
+                "mark_reviewed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf8Variant(),
+                "merge" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf9Variant(),
+                "note" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf10Variant(),
+                "pull_request_closed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf11Variant(),
+                "pull_request_merged" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf12Variant(),
+                "pull_request_reopened" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf13Variant(),
+                "pull_request_unlinked" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf14Variant(),
+                "referenced_in_commit" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf15Variant(),
+                "reprocess" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf16Variant(),
+                "seer_coding_completed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf17Variant(),
+                "seer_coding_started" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf18Variant(),
+                "seer_iteration_completed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf19Variant(),
+                "seer_iteration_started" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf20Variant(),
+                "seer_pr_created" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf21Variant(),
+                "seer_pr_ready_for_review" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf22Variant(),
+                "seer_rca_completed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf23Variant(),
+                "seer_rca_started" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf24Variant(),
+                "seer_solution_completed" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf25Variant(),
+                "seer_solution_started" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf26Variant(),
+                "set_escalating" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf27Variant(),
+                "set_ignored" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf28Variant(),
+                "set_priority" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf29Variant(),
+                "set_private" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf30Variant(),
+                "set_public" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf31Variant(),
+                "set_regression" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf32Variant(),
+                "set_resolved" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf33Variant(),
+                "set_resolved_by_age" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf34Variant(),
+                "set_resolved_in_commit" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf35Variant(),
+                "set_resolved_in_pull_request" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf36Variant(),
+                "set_resolved_in_release" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf37Variant(),
+                "set_unresolved" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf38Variant(),
+                "trigger_autofix" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf39Variant(),
+                "unassigned" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf40Variant(),
+                "unlink_external_issue" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf41Variant(),
+                "unlink_platform_external_issue" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf42Variant(),
+                "unmerge_destination" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf43Variant(),
+                "unmerge_source" => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf44Variant(),
+                _ => new global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -46,6 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("type", Type);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

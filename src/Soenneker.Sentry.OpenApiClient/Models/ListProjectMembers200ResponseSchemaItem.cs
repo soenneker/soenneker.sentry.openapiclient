@@ -45,10 +45,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the member was added or invited</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The email property</summary>
+        /// <summary>Email address of the member&apos;s user, or the invited email address if they have no account yet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
@@ -58,10 +58,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; AdditionalData?.Remove("email"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
         private string _explicitNullValueEmail = default!;
 #endif
-        /// <summary>The expired property</summary>
+        /// <summary>Whether the member&apos;s invite has expired</summary>
         public bool? Expired { get => _explicitNullValueExpired; set { _explicitNullValueExpired = value; AdditionalData?.Remove("expired"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expired"); else _explicitNullProperties?.Remove("expired"); } }
         private bool? _explicitNullValueExpired = default!;
-        /// <summary>The externalUsers property</summary>
+        /// <summary>Users in external providers, such as Slack or GitHub, linked to the member&apos;s user. Included only when requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemExternalUsersItem>? ExternalUsers { get => _explicitNullValueExternalUsers; set { _explicitNullValueExternalUsers = value; AdditionalData?.Remove("externalUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalUsers"); else _explicitNullProperties?.Remove("externalUsers"); } }
@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemExternalUsersItem> ExternalUsers { get => _explicitNullValueExternalUsers; set { _explicitNullValueExternalUsers = value; AdditionalData?.Remove("externalUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalUsers"); else _explicitNullProperties?.Remove("externalUsers"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemExternalUsersItem> _explicitNullValueExternalUsers = default!;
 #endif
-        /// <summary>The flags property</summary>
+        /// <summary>Member flags</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags? Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags Flags { get => _explicitNullValueFlags; set { _explicitNullValueFlags = value; AdditionalData?.Remove("flags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("flags"); else _explicitNullProperties?.Remove("flags"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags _explicitNullValueFlags = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Organization member ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The inviterName property</summary>
+        /// <summary>Name of the user who invited the member, or null</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InviterName { get => _explicitNullValueInviterName; set { _explicitNullValueInviterName = value; AdditionalData?.Remove("inviterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviterName"); else _explicitNullProperties?.Remove("inviterName"); } }
@@ -101,17 +101,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string InviterName { get => _explicitNullValueInviterName; set { _explicitNullValueInviterName = value; AdditionalData?.Remove("inviterName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviterName"); else _explicitNullProperties?.Remove("inviterName"); } }
         private string _explicitNullValueInviterName = default!;
 #endif
-        /// <summary>The inviteStatus property</summary>
+        /// <summary>Invite status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InviteStatus { get => _explicitNullValueInviteStatus; set { _explicitNullValueInviteStatus = value; AdditionalData?.Remove("inviteStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteStatus"); else _explicitNullProperties?.Remove("inviteStatus"); } }
-        private string? _explicitNullValueInviteStatus = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus? InviteStatus { get => _explicitNullValueInviteStatus; set { _explicitNullValueInviteStatus = value; AdditionalData?.Remove("inviteStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteStatus"); else _explicitNullProperties?.Remove("inviteStatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus? _explicitNullValueInviteStatus = default!;
 #nullable restore
 #else
-        public string InviteStatus { get => _explicitNullValueInviteStatus; set { _explicitNullValueInviteStatus = value; AdditionalData?.Remove("inviteStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteStatus"); else _explicitNullProperties?.Remove("inviteStatus"); } }
-        private string _explicitNullValueInviteStatus = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus InviteStatus { get => _explicitNullValueInviteStatus; set { _explicitNullValueInviteStatus = value; AdditionalData?.Remove("inviteStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inviteStatus"); else _explicitNullProperties?.Remove("inviteStatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus _explicitNullValueInviteStatus = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Display name of the member&apos;s user, or their email address if they have no account yet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -121,7 +121,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The orgRole property</summary>
+        /// <summary>ID of the member&apos;s organization role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrgRole { get => _explicitNullValueOrgRole; set { _explicitNullValueOrgRole = value; AdditionalData?.Remove("orgRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orgRole"); else _explicitNullProperties?.Remove("orgRole"); } }
@@ -131,10 +131,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string OrgRole { get => _explicitNullValueOrgRole; set { _explicitNullValueOrgRole = value; AdditionalData?.Remove("orgRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orgRole"); else _explicitNullProperties?.Remove("orgRole"); } }
         private string _explicitNullValueOrgRole = default!;
 #endif
-        /// <summary>The pending property</summary>
+        /// <summary>Whether the member has no user account linked yet, as with an invite that hasn&apos;t been accepted</summary>
         public bool? Pending { get => _explicitNullValuePending; set { _explicitNullValuePending = value; AdditionalData?.Remove("pending"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending"); else _explicitNullProperties?.Remove("pending"); } }
         private bool? _explicitNullValuePending = default!;
-        /// <summary>The user property</summary>
+        /// <summary>The member&apos;s user. Null for invited members without an account, or if the user can&apos;t be found</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemUser? User { get => _explicitNullValueUser; set { _explicitNullValueUser = value; AdditionalData?.Remove("user"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user"); else _explicitNullProperties?.Remove("user"); } }
@@ -175,7 +175,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "externalUsers", n => { ExternalUsers = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemExternalUsersItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemExternalUsersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "flags", n => { Flags = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "inviteStatus", n => { InviteStatus = n.GetStringValue(); } },
+                { "inviteStatus", n => { InviteStatus = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus.CreateFromDiscriminatorValue); } },
                 { "inviterName", n => { InviterName = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orgRole", n => { OrgRole = n.GetStringValue(); } },
@@ -197,7 +197,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseSchemaItemFlags>("flags", Flags);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("inviterName", InviterName);
-            writer.WriteStringValue("inviteStatus", InviteStatus);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMembers200ResponseItemInviteStatus>("inviteStatus", InviteStatus);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orgRole", OrgRole);
             writer.WriteBoolValue("pending", Pending);

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Settings of the repository. Only set when expand includes settings. Null when it has none
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationRepoCommits200ResponseItemRepositorySettings : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,7 +26,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The codeReviewTriggers property</summary>
+        /// <summary>Pull request events that start a code review: on_new_commit or on_ready_for_review</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; AdditionalData?.Remove("codeReviewTriggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
@@ -35,7 +36,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> CodeReviewTriggers { get => _explicitNullValueCodeReviewTriggers; set { _explicitNullValueCodeReviewTriggers = value; AdditionalData?.Remove("codeReviewTriggers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("codeReviewTriggers"); else _explicitNullProperties?.Remove("codeReviewTriggers"); } }
         private List<string> _explicitNullValueCodeReviewTriggers = default!;
 #endif
-        /// <summary>The enabledCodeReview property</summary>
+        /// <summary>Whether AI code review is on for the repository</summary>
         public bool? EnabledCodeReview { get => _explicitNullValueEnabledCodeReview; set { _explicitNullValueEnabledCodeReview = value; AdditionalData?.Remove("enabledCodeReview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabledCodeReview"); else _explicitNullProperties?.Remove("enabledCodeReview"); } }
         private bool? _explicitNullValueEnabledCodeReview = default!;
         /// <summary>

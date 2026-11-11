@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/{?cursor*,hashes*,id*,limit*,query*,shortIdLookup*,sort*,statsPeriod*,status*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/{?cursor*,hashes*,id*,limit*,query*,shortIdLookup*,sort*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/{?cursor*,hashes*,id*,limit*,query*,shortIdLookup*,sort*,statsPeriod*,status*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/{?cursor*,hashes*,id*,limit*,query*,shortIdLookup*,sort*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
-        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.Only queries by &apos;id&apos; are accepted.If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             return collectionResult?.AsList();
         }
         /// <summary>
-        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- An optional `status` query parameter may be used to restrictmutations to only events with the given status.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- To restrict a batch &quot;update all&quot; to issues with a given status,use the `query` parameter, e.g. `query=is:resolved`.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200Response"/></returns>
         /// <param name="body">The request body</param>
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.Only queries by &apos;id&apos; are accepted.If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             return requestInfo;
         }
         /// <summary>
-        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- An optional `status` query parameter may be used to restrictmutations to only events with the given status.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- To restrict a batch &quot;update all&quot; to issues with a given status,use the `query` parameter, e.g. `query=is:resolved`.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -160,7 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues.EmptyPathSegmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.Only queries by &apos;id&apos; are accepted.If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Permanently remove the given issues. The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be removed.If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderDeleteQueryParameters 
@@ -168,6 +168,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             /// <summary>A list of IDs of the issues to be removed. This parameter shall be repeated for each issue, e.g. `?id=1&amp;id=2&amp;id=3`. If this parameter is not provided, it will attempt to remove the first 1000 issues.</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
+            /// <summary>An optional Sentry structured search query that selects the issues to remove when `id` is not provided. If not provided an implied `&quot;is:unresolved&quot;` is assumed. Use `is:&lt;status&gt;` (e.g. `is:resolved`) to limit it to issues with that status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("query")]
+            public string? Query { get; set; }
+#nullable restore
+#else
+            [QueryParameter("query")]
+            public string Query { get; set; }
+#endif
         }
         /// <summary>
         /// **Deprecated**: This endpoint has been replaced with the [Organization Issues endpoint](/api/events/list-an-organizations-issues/) whichsupports filtering on project and additional functionality.Return a list of issues (groups) bound to a project.  All parameters are supplied as query string parameters.  A default query of ``is:unresolved`` is applied. To return results with other statuses send an new query value (i.e. ``?query=`` for all results).The ``statsPeriod`` parameter can be used to select the timeline stats which should be present. Possible values are: ``&quot;&quot;`` (disable),``&quot;24h&quot;`` (default), ``&quot;14d&quot;``User feedback items from the [User Feedback Widget](https://docs.sentry.io/product/user-feedback/#user-feedback-widget) are built off the issue platform, so to return a list of user feedback items for a specific project, filter for `issue.category:feedback`.
@@ -208,9 +218,9 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             [QueryParameter("query")]
             public string Query { get; set; }
 #endif
-            /// <summary>If this is set to true then short IDs are looked up by this function as well. This can cause the return value of the function to return an event issue of a different project which is why this is an opt-in. Set to 1 to enable.</summary>
+            /// <summary>If this is set to `1` then short IDs are looked up by this function as well. This can cause the return value of the function to return an event issue of a different project which is why this is an opt-in.</summary>
             [QueryParameter("shortIdLookup")]
-            public bool? ShortIdLookup { get; set; }
+            public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssuesShortIdLookupParameter? ShortIdLookup { get; set; }
             /// <summary>The sort order of the issues. Options include &apos;Last Seen&apos; (`date`), &apos;First Seen&apos; (`new`), &apos;Trends&apos; (`trends`), &apos;Events&apos; (`freq`), &apos;Users&apos; (`user`), and &apos;Recommended&apos; (`recommended`).</summary>
             [QueryParameter("sort")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListAProjectSIssuesSortParameter? Sort { get; set; }
@@ -226,7 +236,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
 #endif
         }
         /// <summary>
-        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- An optional `status` query parameter may be used to restrictmutations to only events with the given status.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
+        /// Bulk mutate various attributes on issues.  The list of issues to modify is given through the `id` query parameter.  It is repeated for each issue that should be modified.- For non-status updates, the `id` query parameter is required.- For status updates, the `id` query parameter may be omittedfor a batch &quot;update all&quot; query.- To restrict a batch &quot;update all&quot; to issues with a given status,use the `query` parameter, e.g. `query=is:resolved`.The following attributes can be modified and are supplied as JSON object in the body:If any IDs are out of scope this operation will succeed without any data mutation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderPutQueryParameters 
@@ -234,15 +244,15 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Issues
             /// <summary>A list of IDs of the issues to be mutated. This parameter shall be repeated for each issue. It is optional only if a status is mutated in which case an implicit update all is assumed.</summary>
             [QueryParameter("id")]
             public int? Id { get; set; }
-            /// <summary>Optionally limits the query to issues of the specified status. Valid values are `&quot;resolved&quot;`, `&quot;reprocessing&quot;`, `&quot;unresolved&quot;`, and `&quot;ignored&quot;`.</summary>
+            /// <summary>An optional Sentry structured search query that selects the issues to update when `id` is not provided. If not provided an implied `&quot;is:unresolved&quot;` is assumed. Use `is:&lt;status&gt;` (e.g. `is:resolved`) to limit it to issues with that status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("status")]
-            public string? Status { get; set; }
+            [QueryParameter("query")]
+            public string? Query { get; set; }
 #nullable restore
 #else
-            [QueryParameter("status")]
-            public string Status { get; set; }
+            [QueryParameter("query")]
+            public string Query { get; set; }
 #endif
         }
     }

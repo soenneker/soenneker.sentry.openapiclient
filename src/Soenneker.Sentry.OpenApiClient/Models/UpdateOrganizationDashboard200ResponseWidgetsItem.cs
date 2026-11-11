@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The axisRange property</summary>
+        /// <summary>Y-axis range: auto or dataMin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AxisRange { get => _explicitNullValueAxisRange; set { _explicitNullValueAxisRange = value; AdditionalData?.Remove("axisRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("axisRange"); else _explicitNullProperties?.Remove("axisRange"); } }
@@ -65,7 +65,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AxisRange { get => _explicitNullValueAxisRange; set { _explicitNullValueAxisRange = value; AdditionalData?.Remove("axisRange"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("axisRange"); else _explicitNullProperties?.Remove("axisRange"); } }
         private string _explicitNullValueAxisRange = default!;
 #endif
-        /// <summary>The changedReason property</summary>
+        /// <summary>Parts of each query that were dropped when the widget was migrated from transactions to spans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItem>? ChangedReason { get => _explicitNullValueChangedReason; set { _explicitNullValueChangedReason = value; AdditionalData?.Remove("changedReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedReason"); else _explicitNullProperties?.Remove("changedReason"); } }
@@ -75,7 +75,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItem> ChangedReason { get => _explicitNullValueChangedReason; set { _explicitNullValueChangedReason = value; AdditionalData?.Remove("changedReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changedReason"); else _explicitNullProperties?.Remove("changedReason"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItem> _explicitNullValueChangedReason = default!;
 #endif
-        /// <summary>The dashboardId property</summary>
+        /// <summary>ID of the dashboard the widget belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; AdditionalData?.Remove("dashboardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboardId"); else _explicitNullProperties?.Remove("dashboardId"); } }
@@ -85,7 +85,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DashboardId { get => _explicitNullValueDashboardId; set { _explicitNullValueDashboardId = value; AdditionalData?.Remove("dashboardId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dashboardId"); else _explicitNullProperties?.Remove("dashboardId"); } }
         private string _explicitNullValueDashboardId = default!;
 #endif
-        /// <summary>The datasetSource property</summary>
+        /// <summary>Whether the widget&apos;s dataset was chosen by the user or inferred</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DatasetSource { get => _explicitNullValueDatasetSource; set { _explicitNullValueDatasetSource = value; AdditionalData?.Remove("datasetSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetSource"); else _explicitNullProperties?.Remove("datasetSource"); } }
@@ -95,10 +95,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DatasetSource { get => _explicitNullValueDatasetSource; set { _explicitNullValueDatasetSource = value; AdditionalData?.Remove("datasetSource"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetSource"); else _explicitNullProperties?.Remove("datasetSource"); } }
         private string _explicitNullValueDatasetSource = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the widget was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The description property</summary>
+        /// <summary>Description of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
-        /// <summary>The displayType property</summary>
+        /// <summary>How the widget is displayed, such as line, area, bar, table or big_number</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayType { get => _explicitNullValueDisplayType; set { _explicitNullValueDisplayType = value; AdditionalData?.Remove("displayType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayType"); else _explicitNullProperties?.Remove("displayType"); } }
@@ -118,7 +118,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DisplayType { get => _explicitNullValueDisplayType; set { _explicitNullValueDisplayType = value; AdditionalData?.Remove("displayType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("displayType"); else _explicitNullProperties?.Remove("displayType"); } }
         private string _explicitNullValueDisplayType = default!;
 #endif
-        /// <summary>The exploreUrls property</summary>
+        /// <summary>Explore URLs for each query, for widgets that query transactions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExploreUrls { get => _explicitNullValueExploreUrls; set { _explicitNullValueExploreUrls = value; AdditionalData?.Remove("exploreUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exploreUrls"); else _explicitNullProperties?.Remove("exploreUrls"); } }
@@ -128,7 +128,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> ExploreUrls { get => _explicitNullValueExploreUrls; set { _explicitNullValueExploreUrls = value; AdditionalData?.Remove("exploreUrls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exploreUrls"); else _explicitNullProperties?.Remove("exploreUrls"); } }
         private List<string> _explicitNullValueExploreUrls = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -138,7 +138,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The interval property</summary>
+        /// <summary>Time interval for the widget&apos;s series, such as 5m</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
@@ -148,7 +148,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private string _explicitNullValueInterval = default!;
 #endif
-        /// <summary>The layout property</summary>
+        /// <summary>Position and size of the widget on the dashboard grid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLayout? Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
@@ -158,7 +158,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLayout Layout { get => _explicitNullValueLayout; set { _explicitNullValueLayout = value; AdditionalData?.Remove("layout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("layout"); else _explicitNullProperties?.Remove("layout"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLayout _explicitNullValueLayout = default!;
 #endif
-        /// <summary>The legendType property</summary>
+        /// <summary>Legend style: default or breakdown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLegendType? LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legendType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legendType"); else _explicitNullProperties?.Remove("legendType"); } }
@@ -168,10 +168,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLegendType LegendType { get => _explicitNullValueLegendType; set { _explicitNullValueLegendType = value; AdditionalData?.Remove("legendType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legendType"); else _explicitNullProperties?.Remove("legendType"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemLegendType _explicitNullValueLegendType = default!;
 #endif
-        /// <summary>The limit property</summary>
+        /// <summary>Maximum number of series or rows the widget shows</summary>
         public int? Limit { get => _explicitNullValueLimit; set { _explicitNullValueLimit = value; AdditionalData?.Remove("limit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("limit"); else _explicitNullProperties?.Remove("limit"); } }
         private int? _explicitNullValueLimit = default!;
-        /// <summary>The queries property</summary>
+        /// <summary>Queries that provide the widget&apos;s data</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItem>? Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
@@ -181,7 +181,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItem> Queries { get => _explicitNullValueQueries; set { _explicitNullValueQueries = value; AdditionalData?.Remove("queries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queries"); else _explicitNullProperties?.Remove("queries"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemQueriesItem> _explicitNullValueQueries = default!;
 #endif
-        /// <summary>The thresholds property</summary>
+        /// <summary>Thresholds that color the widget&apos;s values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholds? Thresholds { get => _explicitNullValueThresholds; set { _explicitNullValueThresholds = value; AdditionalData?.Remove("thresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thresholds"); else _explicitNullProperties?.Remove("thresholds"); } }
@@ -191,7 +191,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholds Thresholds { get => _explicitNullValueThresholds; set { _explicitNullValueThresholds = value; AdditionalData?.Remove("thresholds"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("thresholds"); else _explicitNullProperties?.Remove("thresholds"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemThresholds _explicitNullValueThresholds = default!;
 #endif
-        /// <summary>The title property</summary>
+        /// <summary>Title of the widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
@@ -201,7 +201,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; AdditionalData?.Remove("title"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
         private string _explicitNullValueTitle = default!;
 #endif
-        /// <summary>The widgetType property</summary>
+        /// <summary>Dataset the widget queries, such as error-events, spans, logs or issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WidgetType { get => _explicitNullValueWidgetType; set { _explicitNullValueWidgetType = value; AdditionalData?.Remove("widgetType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("widgetType"); else _explicitNullProperties?.Remove("widgetType"); } }

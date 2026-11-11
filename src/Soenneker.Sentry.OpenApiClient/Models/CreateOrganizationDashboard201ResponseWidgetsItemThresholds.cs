@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Thresholds that color the widget&apos;s values
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateOrganizationDashboard201ResponseWidgetsItemThresholds : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -29,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The max_values property</summary>
+        /// <summary>Threshold maximums, keyed max1 and max2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues? MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; AdditionalData?.Remove("max_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
@@ -39,7 +40,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues MaxValues { get => _explicitNullValueMaxValues; set { _explicitNullValueMaxValues = value; AdditionalData?.Remove("max_values"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_values"); else _explicitNullProperties?.Remove("max_values"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboard201ResponseWidgetsItemThresholdsMaxValues _explicitNullValueMaxValues = default!;
 #endif
-        /// <summary>The preferredPolarity property</summary>
+        /// <summary>Whether higher (+) or lower (-) values are better. Empty when unset</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; AdditionalData?.Remove("preferredPolarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
@@ -49,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string PreferredPolarity { get => _explicitNullValuePreferredPolarity; set { _explicitNullValuePreferredPolarity = value; AdditionalData?.Remove("preferredPolarity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferredPolarity"); else _explicitNullProperties?.Remove("preferredPolarity"); } }
         private string _explicitNullValuePreferredPolarity = default!;
 #endif
-        /// <summary>The timeWindow property</summary>
+        /// <summary>Time window the thresholds apply to, as a stats period such as 5m, 1h or 1d</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; AdditionalData?.Remove("timeWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
@@ -59,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string TimeWindow { get => _explicitNullValueTimeWindow; set { _explicitNullValueTimeWindow = value; AdditionalData?.Remove("timeWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeWindow"); else _explicitNullProperties?.Remove("timeWindow"); } }
         private string _explicitNullValueTimeWindow = default!;
 #endif
-        /// <summary>The unit property</summary>
+        /// <summary>Unit of the threshold values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }

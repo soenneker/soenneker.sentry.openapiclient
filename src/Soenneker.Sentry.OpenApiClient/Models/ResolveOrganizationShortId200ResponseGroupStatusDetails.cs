@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Details of the issue&apos;s status, such as when an ignore expires or which release resolves it
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ResolveOrganizationShortId200ResponseGroupStatusDetails : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -41,7 +42,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("pendingEvents") is { } nullNodePendingEvents && nullNodePendingEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingEvents = null;
         }
 
-        /// <summary>The actor property</summary>
+        /// <summary>User who ignored or resolved the issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
@@ -53,22 +54,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ignoreCount property</summary>
+        /// <summary>Number of additional events after which the issue stops being ignored</summary>
         public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; AdditionalData?.Remove("ignoreCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
         private int? _explicitNullValueIgnoreCount = default!;
-        /// <summary>The ignoreUntil property</summary>
+        /// <summary>When the issue stops being ignored (ISO 8601)</summary>
         public DateTimeOffset? IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; AdditionalData?.Remove("ignoreUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
         private DateTimeOffset? _explicitNullValueIgnoreUntil = default!;
-        /// <summary>The ignoreUserCount property</summary>
+        /// <summary>Number of additional affected users after which the issue stops being ignored</summary>
         public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; AdditionalData?.Remove("ignoreUserCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
         private int? _explicitNullValueIgnoreUserCount = default!;
-        /// <summary>The ignoreUserWindow property</summary>
+        /// <summary>Time window in minutes for ignoreUserCount</summary>
         public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; AdditionalData?.Remove("ignoreUserWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
         private int? _explicitNullValueIgnoreUserWindow = default!;
-        /// <summary>The ignoreWindow property</summary>
+        /// <summary>Time window in minutes for ignoreCount</summary>
         public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; AdditionalData?.Remove("ignoreWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
         private int? _explicitNullValueIgnoreWindow = default!;
-        /// <summary>The inCommit property</summary>
+        /// <summary>Commit the issue is resolved in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
@@ -78,7 +79,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
         private string _explicitNullValueInCommit = default!;
 #endif
-        /// <summary>The info property</summary>
+        /// <summary>Reprocessing progress details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsInfo? Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
@@ -88,10 +89,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsInfo Info { get => _explicitNullValueInfo; set { _explicitNullValueInfo = value; AdditionalData?.Remove("info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("info"); else _explicitNullProperties?.Remove("info"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroupStatusDetailsInfo _explicitNullValueInfo = default!;
 #endif
-        /// <summary>The inNextRelease property</summary>
+        /// <summary>Whether the issue is resolved in the next release</summary>
         public bool? InNextRelease { get => _explicitNullValueInNextRelease; set { _explicitNullValueInNextRelease = value; AdditionalData?.Remove("inNextRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inNextRelease"); else _explicitNullProperties?.Remove("inNextRelease"); } }
         private bool? _explicitNullValueInNextRelease = default!;
-        /// <summary>The inRelease property</summary>
+        /// <summary>Version of the release the issue is resolved in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
@@ -101,7 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
         private string _explicitNullValueInRelease = default!;
 #endif
-        /// <summary>The pendingEvents property</summary>
+        /// <summary>Number of events still waiting to be reprocessed</summary>
         public int? PendingEvents { get => _explicitNullValuePendingEvents; set { _explicitNullValuePendingEvents = value; AdditionalData?.Remove("pendingEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pendingEvents"); else _explicitNullProperties?.Remove("pendingEvents"); } }
         private int? _explicitNullValuePendingEvents = default!;
         /// <summary>

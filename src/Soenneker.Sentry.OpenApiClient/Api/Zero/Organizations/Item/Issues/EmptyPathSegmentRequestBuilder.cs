@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*,viewId*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*,viewId*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/issues/{?collapse*,cursor*,end*,environment*,expand*,groupStatsPeriod*,id*,limit*,project*,query*,shortIdLookup*,sort*,start*,statsPeriod*,statsPeriodEnd*,statsPeriodStart*}", rawUrl)
         {
         }
         /// <summary>
@@ -186,9 +186,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("id")]
             public int?[] Id { get; set; }
 #endif
-            /// <summary>The maximum number of issues to affect. The maximum is 100.</summary>
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -199,7 +196,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.</summary>
+            /// <summary>An optional search query for filtering issues. A default query will apply if no query is set. For all results use this parameter with an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -224,16 +221,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
 #else
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
-#endif
-            /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("viewId")]
-            public string? ViewId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("viewId")]
-            public string ViewId { get; set; }
 #endif
         }
         /// <summary>
@@ -288,7 +275,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             /// <summary>The timeline on which stats for the groups should be presented.</summary>
             [QueryParameter("groupStatsPeriod")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssuesGroupStatsPeriodParameter? GroupStatsPeriod { get; set; }
-            /// <summary>The maximum number of issues to affect. The maximum is 100.</summary>
+            /// <summary>The maximum number of issues to return. The maximum is 100.</summary>
             [QueryParameter("limit")]
             public int? Limit { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
@@ -301,7 +288,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.</summary>
+            /// <summary>An optional search query for filtering issues. A default query will apply if no query is set. For all results use this parameter with an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -350,16 +337,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("statsPeriodStart")]
             public string StatsPeriodStart { get; set; }
 #endif
-            /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("viewId")]
-            public string? ViewId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("viewId")]
-            public string ViewId { get; set; }
-#endif
         }
         /// <summary>
         /// Bulk mutate various attributes on a maxmimum of 1000 issues. - For non-status updates, the `id` query parameter is required. - For status updates, the `id` query parameter may be omitted to update issues that match the filtering. If any IDs are out of scope, the data won&apos;t be mutated but the endpoint will still produce a successful response. For example, if no issues were found matching the criteria, a HTTP 204 is returned.
@@ -390,9 +367,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("id")]
             public int?[] Id { get; set; }
 #endif
-            /// <summary>The maximum number of issues to affect. The maximum is 100.</summary>
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
             /// <summary>The IDs or slugs of projects to filter by. Project slugs are unique within each organization. Omit this parameter to include all accessible projects. `-1` is also accepted to include all accessible projects.For example, the following are valid parameters:- `/?project=1234&amp;project=56789`- `/?project=android&amp;project=javascript-react`- `/?project=-1`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -403,7 +377,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
             [QueryParameter("project")]
             public string[] Project { get; set; }
 #endif
-            /// <summary>An optional search query for filtering issues. A default query will apply if no view/query is set. For all results use this parameter with an empty string.</summary>
+            /// <summary>An optional search query for filtering issues. A default query will apply if no query is set. For all results use this parameter with an empty string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]
@@ -428,16 +402,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues
 #else
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
-#endif
-            /// <summary>The ID of the view to use. If no query is present, the view&apos;s query and filters will be applied.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("viewId")]
-            public string? ViewId { get; set; }
-#nullable restore
-#else
-            [QueryParameter("viewId")]
-            public string ViewId { get; set; }
 #endif
         }
     }

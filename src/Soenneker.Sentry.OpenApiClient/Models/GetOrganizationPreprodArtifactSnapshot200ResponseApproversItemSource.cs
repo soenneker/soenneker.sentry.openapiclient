@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Where the approval was given: sentry or github</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetOrganizationPreprodArtifactSnapshot200ResponseApproversItemSource
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "sentry")]
         #pragma warning disable CS1591

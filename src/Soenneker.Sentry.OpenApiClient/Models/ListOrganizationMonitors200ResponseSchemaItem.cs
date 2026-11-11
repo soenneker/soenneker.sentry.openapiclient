@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>Configuration of the monitor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
@@ -53,20 +53,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig _explicitNullValueConfig = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the monitor was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The environments property</summary>
+        /// <summary>Environments the monitor has received check-ins for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments? _explicitNullValueEnvironments = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem>? _explicitNullValueEnvironments = default!;
 #nullable restore
 #else
-        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
-        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments _explicitNullValueEnvironments = default!;
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem> _explicitNullValueEnvironments = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the monitor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -76,13 +76,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isMuted property</summary>
+        /// <summary>Whether incidents are muted in all of the monitor&apos;s environments</summary>
         public bool? IsMuted { get => _explicitNullValueIsMuted; set { _explicitNullValueIsMuted = value; AdditionalData?.Remove("isMuted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMuted"); else _explicitNullProperties?.Remove("isMuted"); } }
         private bool? _explicitNullValueIsMuted = default!;
-        /// <summary>The isUpserting property</summary>
+        /// <summary>Whether the most recent check-in was an upsert check-in</summary>
         public bool? IsUpserting { get => _explicitNullValueIsUpserting; set { _explicitNullValueIsUpserting = value; AdditionalData?.Remove("isUpserting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isUpserting"); else _explicitNullProperties?.Remove("isUpserting"); } }
         private bool? _explicitNullValueIsUpserting = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the monitor</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -92,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Team or user that owns the monitor. Null when there&apos;s no owner</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner _explicitNullValueOwner = default!;
 #endif
-        /// <summary>The project property</summary>
+        /// <summary>Project the monitor belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject? Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
@@ -112,7 +112,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject Project { get => _explicitNullValueProject; set { _explicitNullValueProject = value; AdditionalData?.Remove("project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project"); else _explicitNullProperties?.Remove("project"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject _explicitNullValueProject = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug that identifies the monitor in the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -122,16 +122,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
+        /// <summary>Status of the monitor. Disabled monitors don&apos;t accept check-ins</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -159,7 +152,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
-                { "environments", n => { Environments = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments.CreateFromDiscriminatorValue); } },
+                { "environments", n => { Environments = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isMuted", n => { IsMuted = n.GetBoolValue(); } },
                 { "isUpserting", n => { IsUpserting = n.GetBoolValue(); } },
@@ -167,7 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner.CreateFromDiscriminatorValue); } },
                 { "project", n => { Project = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject.CreateFromDiscriminatorValue); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -179,7 +172,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemEnvironments>("environments", Environments);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemEnvironmentsItem>("environments", Environments);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isMuted", IsMuted);
             writer.WriteBoolValue("isUpserting", IsUpserting);
@@ -187,7 +180,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemOwner>("owner", Owner);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseSchemaItemProject>("project", Project);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationMonitors200ResponseItemStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

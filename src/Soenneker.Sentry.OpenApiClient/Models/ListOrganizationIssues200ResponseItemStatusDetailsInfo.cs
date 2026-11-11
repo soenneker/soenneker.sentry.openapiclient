@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Reprocessing progress details
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationIssues200ResponseItemStatusDetailsInfo : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,7 +28,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When reprocessing started (ISO 8601)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
@@ -37,10 +38,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private string _explicitNullValueDateCreated = default!;
 #endif
-        /// <summary>The syncCount property</summary>
+        /// <summary>Number of events in the issue when reprocessing started</summary>
         public int? SyncCount { get => _explicitNullValueSyncCount; set { _explicitNullValueSyncCount = value; AdditionalData?.Remove("syncCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("syncCount"); else _explicitNullProperties?.Remove("syncCount"); } }
         private int? _explicitNullValueSyncCount = default!;
-        /// <summary>The totalEvents property</summary>
+        /// <summary>Number of events to reprocess, at most the requested maximum</summary>
         public int? TotalEvents { get => _explicitNullValueTotalEvents; set { _explicitNullValueTotalEvents = value; AdditionalData?.Remove("totalEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalEvents"); else _explicitNullProperties?.Remove("totalEvents"); } }
         private int? _explicitNullValueTotalEvents = default!;
         /// <summary>

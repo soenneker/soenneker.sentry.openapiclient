@@ -23,7 +23,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The prefixes property</summary>
+        /// <summary>Path prefixes of the project&apos;s stack trace frames</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListStackCodeMappingPrefixes200ResponsePrefixesItem>? Prefixes { get => _explicitNullValuePrefixes; set { _explicitNullValuePrefixes = value; AdditionalData?.Remove("prefixes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefixes"); else _explicitNullProperties?.Remove("prefixes"); } }

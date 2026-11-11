@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AvailableActions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeMappings;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.CodeownersAssociations;
@@ -11,6 +12,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Config;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Dashboards;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Detectors;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.DsnLookup;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Environments;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Eventids;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Events;
@@ -25,6 +27,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Issues;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Members;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Monitors;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.OrgAuthTokens;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Profiling;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ProjectKeys;
@@ -41,6 +44,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppCompon
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryAppInstallations;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SentryApps;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shared;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.SpikeProtections;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.StarredServiceSpans;
@@ -50,6 +54,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Tags;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Teams;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Trace;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceLogs;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceMeta;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.UserTeams;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows;
@@ -74,6 +79,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle.ArtifactbundleRequestBuilder Artifactbundle
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Artifactbundle.ArtifactbundleRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The availableActions property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AvailableActions.AvailableActionsRequestBuilder AvailableActions
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.AvailableActions.AvailableActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chunkUpload property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.ChunkUpload.ChunkUploadRequestBuilder ChunkUpload
@@ -109,6 +119,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover.DiscoverRequestBuilder Discover
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Discover.DiscoverRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dsnLookup property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.DsnLookup.DsnLookupRequestBuilder DsnLookup
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.DsnLookup.DsnLookupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The EmptyPathSegment property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EmptyPathSegmentRequestBuilder EmptyPathSegment
@@ -184,6 +199,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.NotificationsRequestBuilder Notifications
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Notifications.NotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The orgAuthTokens property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.OrgAuthTokens.OrgAuthTokensRequestBuilder OrgAuthTokens
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.OrgAuthTokens.OrgAuthTokensRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The preprodartifacts property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Preprodartifacts.PreprodartifactsRequestBuilder Preprodartifacts
@@ -265,6 +285,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Sessions.SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The shared property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shared.SharedRequestBuilder Shared
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shared.SharedRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The shortids property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Shortids.ShortidsRequestBuilder Shortids
         {
@@ -304,6 +329,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.TraceItemsRequestBuilder TraceItems
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceItems.TraceItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The traceLogs property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceLogs.TraceLogsRequestBuilder TraceLogs
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceLogs.TraceLogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The traceMeta property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.TraceMeta.TraceMetaRequestBuilder TraceMeta

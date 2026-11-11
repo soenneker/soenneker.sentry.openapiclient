@@ -77,7 +77,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("vcs_info") is { } nullNodeVcsInfo && nullNodeVcsInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VcsInfo = null;
         }
 
-        /// <summary>The added property</summary>
+        /// <summary>Images in the head snapshot but not the base</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem>? Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
@@ -87,12 +87,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem> Added { get => _explicitNullValueAdded; set { _explicitNullValueAdded = value; AdditionalData?.Remove("added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added"); else _explicitNullProperties?.Remove("added"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseAddedItem> _explicitNullValueAdded = default!;
 #endif
-        /// <summary>The added_count property</summary>
+        /// <summary>Number of added images</summary>
         public int? AddedCount { get => _explicitNullValueAddedCount; set { _explicitNullValueAddedCount = value; AdditionalData?.Remove("added_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_count"); else _explicitNullProperties?.Remove("added_count"); } }
         private int? _explicitNullValueAddedCount = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The app_id property</summary>
+        /// <summary>App identifier of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
@@ -102,7 +102,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; AdditionalData?.Remove("app_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_id"); else _explicitNullProperties?.Remove("app_id"); } }
         private string _explicitNullValueAppId = default!;
 #endif
-        /// <summary>The approval_status property</summary>
+        /// <summary>Approval status of the latest comparison: approved, auto_approved or requires_approval</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ApprovalStatus { get => _explicitNullValueApprovalStatus; set { _explicitNullValueApprovalStatus = value; AdditionalData?.Remove("approval_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_status"); else _explicitNullProperties?.Remove("approval_status"); } }
@@ -112,7 +112,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ApprovalStatus { get => _explicitNullValueApprovalStatus; set { _explicitNullValueApprovalStatus = value; AdditionalData?.Remove("approval_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approval_status"); else _explicitNullProperties?.Remove("approval_status"); } }
         private string _explicitNullValueApprovalStatus = default!;
 #endif
-        /// <summary>The approvers property</summary>
+        /// <summary>People who approved the snapshot changes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem>? Approvers { get => _explicitNullValueApprovers; set { _explicitNullValueApprovers = value; AdditionalData?.Remove("approvers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvers"); else _explicitNullProperties?.Remove("approvers"); } }
@@ -122,7 +122,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem> Approvers { get => _explicitNullValueApprovers; set { _explicitNullValueApprovers = value; AdditionalData?.Remove("approvers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("approvers"); else _explicitNullProperties?.Remove("approvers"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseApproversItem> _explicitNullValueApprovers = default!;
 #endif
-        /// <summary>The base_artifact_id property</summary>
+        /// <summary>ID of the base build the snapshot is compared against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BaseArtifactId { get => _explicitNullValueBaseArtifactId; set { _explicitNullValueBaseArtifactId = value; AdditionalData?.Remove("base_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_artifact_id"); else _explicitNullProperties?.Remove("base_artifact_id"); } }
@@ -132,7 +132,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BaseArtifactId { get => _explicitNullValueBaseArtifactId; set { _explicitNullValueBaseArtifactId = value; AdditionalData?.Remove("base_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_artifact_id"); else _explicitNullProperties?.Remove("base_artifact_id"); } }
         private string _explicitNullValueBaseArtifactId = default!;
 #endif
-        /// <summary>The changed property</summary>
+        /// <summary>Images whose changed pixels exceed the diff threshold, sorted by most changed first</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem>? Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; AdditionalData?.Remove("changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
@@ -142,10 +142,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem> Changed { get => _explicitNullValueChanged; set { _explicitNullValueChanged = value; AdditionalData?.Remove("changed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed"); else _explicitNullProperties?.Remove("changed"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItem> _explicitNullValueChanged = default!;
 #endif
-        /// <summary>The changed_count property</summary>
+        /// <summary>Number of changed images</summary>
         public int? ChangedCount { get => _explicitNullValueChangedCount; set { _explicitNullValueChangedCount = value; AdditionalData?.Remove("changed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changed_count"); else _explicitNullProperties?.Remove("changed_count"); } }
         private int? _explicitNullValueChangedCount = default!;
-        /// <summary>The comparison_error_message property</summary>
+        /// <summary>Error message when the latest comparison failed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComparisonErrorMessage { get => _explicitNullValueComparisonErrorMessage; set { _explicitNullValueComparisonErrorMessage = value; AdditionalData?.Remove("comparison_error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_error_message"); else _explicitNullProperties?.Remove("comparison_error_message"); } }
@@ -155,7 +155,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ComparisonErrorMessage { get => _explicitNullValueComparisonErrorMessage; set { _explicitNullValueComparisonErrorMessage = value; AdditionalData?.Remove("comparison_error_message"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_error_message"); else _explicitNullProperties?.Remove("comparison_error_message"); } }
         private string _explicitNullValueComparisonErrorMessage = default!;
 #endif
-        /// <summary>The comparison_state property</summary>
+        /// <summary>State of the latest comparison: pending, processing, success, failed, waiting_for_base or no_base_build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComparisonState { get => _explicitNullValueComparisonState; set { _explicitNullValueComparisonState = value; AdditionalData?.Remove("comparison_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_state"); else _explicitNullProperties?.Remove("comparison_state"); } }
@@ -165,7 +165,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ComparisonState { get => _explicitNullValueComparisonState; set { _explicitNullValueComparisonState = value; AdditionalData?.Remove("comparison_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_state"); else _explicitNullProperties?.Remove("comparison_state"); } }
         private string _explicitNullValueComparisonState = default!;
 #endif
-        /// <summary>The comparison_type property</summary>
+        /// <summary>How the snapshot is compared: diff when a comparison exists, waiting_for_base when the build has a base commit but no comparison yet, or solo otherwise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComparisonType { get => _explicitNullValueComparisonType; set { _explicitNullValueComparisonType = value; AdditionalData?.Remove("comparison_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_type"); else _explicitNullProperties?.Remove("comparison_type"); } }
@@ -175,10 +175,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ComparisonType { get => _explicitNullValueComparisonType; set { _explicitNullValueComparisonType = value; AdditionalData?.Remove("comparison_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_type"); else _explicitNullProperties?.Remove("comparison_type"); } }
         private string _explicitNullValueComparisonType = default!;
 #endif
-        /// <summary>The diff_threshold property</summary>
+        /// <summary>Fraction of changed pixels, from 0 to 1, above which an image counts as changed. Images can override it</summary>
         public double? DiffThreshold { get => _explicitNullValueDiffThreshold; set { _explicitNullValueDiffThreshold = value; AdditionalData?.Remove("diff_threshold"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_threshold"); else _explicitNullProperties?.Remove("diff_threshold"); } }
         private double? _explicitNullValueDiffThreshold = default!;
-        /// <summary>The errored property</summary>
+        /// <summary>Images that couldn&apos;t be compared</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem>? Errored { get => _explicitNullValueErrored; set { _explicitNullValueErrored = value; AdditionalData?.Remove("errored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored"); else _explicitNullProperties?.Remove("errored"); } }
@@ -188,10 +188,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem> Errored { get => _explicitNullValueErrored; set { _explicitNullValueErrored = value; AdditionalData?.Remove("errored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored"); else _explicitNullProperties?.Remove("errored"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseErroredItem> _explicitNullValueErrored = default!;
 #endif
-        /// <summary>The errored_count property</summary>
+        /// <summary>Number of errored images</summary>
         public int? ErroredCount { get => _explicitNullValueErroredCount; set { _explicitNullValueErroredCount = value; AdditionalData?.Remove("errored_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("errored_count"); else _explicitNullProperties?.Remove("errored_count"); } }
         private int? _explicitNullValueErroredCount = default!;
-        /// <summary>The head_artifact_id property</summary>
+        /// <summary>ID of the build the snapshot belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; AdditionalData?.Remove("head_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
@@ -201,10 +201,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HeadArtifactId { get => _explicitNullValueHeadArtifactId; set { _explicitNullValueHeadArtifactId = value; AdditionalData?.Remove("head_artifact_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_artifact_id"); else _explicitNullProperties?.Remove("head_artifact_id"); } }
         private string _explicitNullValueHeadArtifactId = default!;
 #endif
-        /// <summary>The image_count property</summary>
+        /// <summary>Number of images in the snapshot</summary>
         public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; AdditionalData?.Remove("image_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_count"); else _explicitNullProperties?.Remove("image_count"); } }
         private int? _explicitNullValueImageCount = default!;
-        /// <summary>The images property</summary>
+        /// <summary>All images in the snapshot. Empty when comparison_type is diff</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
@@ -214,10 +214,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseImagesItem> _explicitNullValueImages = default!;
 #endif
-        /// <summary>The is_selective property</summary>
+        /// <summary>Whether the upload contained only a subset of the app&apos;s images</summary>
         public bool? IsSelective { get => _explicitNullValueIsSelective; set { _explicitNullValueIsSelective = value; AdditionalData?.Remove("is_selective"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_selective"); else _explicitNullProperties?.Remove("is_selective"); } }
         private bool? _explicitNullValueIsSelective = default!;
-        /// <summary>The project_id property</summary>
+        /// <summary>ID of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
@@ -227,7 +227,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
-        /// <summary>The removed property</summary>
+        /// <summary>Images in the base snapshot but not the head</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem>? Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; AdditionalData?.Remove("removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
@@ -237,10 +237,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem> Removed { get => _explicitNullValueRemoved; set { _explicitNullValueRemoved = value; AdditionalData?.Remove("removed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed"); else _explicitNullProperties?.Remove("removed"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRemovedItem> _explicitNullValueRemoved = default!;
 #endif
-        /// <summary>The removed_count property</summary>
+        /// <summary>Number of removed images</summary>
         public int? RemovedCount { get => _explicitNullValueRemovedCount; set { _explicitNullValueRemovedCount = value; AdditionalData?.Remove("removed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removed_count"); else _explicitNullProperties?.Remove("removed_count"); } }
         private int? _explicitNullValueRemovedCount = default!;
-        /// <summary>The renamed property</summary>
+        /// <summary>Images whose file name changed but whose content didn&apos;t</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem>? Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; AdditionalData?.Remove("renamed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
@@ -250,10 +250,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem> Renamed { get => _explicitNullValueRenamed; set { _explicitNullValueRenamed = value; AdditionalData?.Remove("renamed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed"); else _explicitNullProperties?.Remove("renamed"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseRenamedItem> _explicitNullValueRenamed = default!;
 #endif
-        /// <summary>The renamed_count property</summary>
+        /// <summary>Number of renamed images</summary>
         public int? RenamedCount { get => _explicitNullValueRenamedCount; set { _explicitNullValueRenamedCount = value; AdditionalData?.Remove("renamed_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("renamed_count"); else _explicitNullProperties?.Remove("renamed_count"); } }
         private int? _explicitNullValueRenamedCount = default!;
-        /// <summary>The skipped property</summary>
+        /// <summary>Base images that a selective upload didn&apos;t include</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem>? Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; AdditionalData?.Remove("skipped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
@@ -263,10 +263,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem> Skipped { get => _explicitNullValueSkipped; set { _explicitNullValueSkipped = value; AdditionalData?.Remove("skipped"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped"); else _explicitNullProperties?.Remove("skipped"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseSkippedItem> _explicitNullValueSkipped = default!;
 #endif
-        /// <summary>The skipped_count property</summary>
+        /// <summary>Number of skipped images</summary>
         public int? SkippedCount { get => _explicitNullValueSkippedCount; set { _explicitNullValueSkippedCount = value; AdditionalData?.Remove("skipped_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipped_count"); else _explicitNullProperties?.Remove("skipped_count"); } }
         private int? _explicitNullValueSkippedCount = default!;
-        /// <summary>The state property</summary>
+        /// <summary>State of the build: UPLOADING, UPLOADED, PROCESSED or FAILED</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
@@ -276,7 +276,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string State { get => _explicitNullValueState; set { _explicitNullValueState = value; AdditionalData?.Remove("state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("state"); else _explicitNullProperties?.Remove("state"); } }
         private string _explicitNullValueState = default!;
 #endif
-        /// <summary>The unchanged property</summary>
+        /// <summary>Images that match the base snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem>? Unchanged { get => _explicitNullValueUnchanged; set { _explicitNullValueUnchanged = value; AdditionalData?.Remove("unchanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged"); else _explicitNullProperties?.Remove("unchanged"); } }
@@ -286,10 +286,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem> Unchanged { get => _explicitNullValueUnchanged; set { _explicitNullValueUnchanged = value; AdditionalData?.Remove("unchanged"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged"); else _explicitNullProperties?.Remove("unchanged"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseUnchangedItem> _explicitNullValueUnchanged = default!;
 #endif
-        /// <summary>The unchanged_count property</summary>
+        /// <summary>Number of unchanged images</summary>
         public int? UnchangedCount { get => _explicitNullValueUnchangedCount; set { _explicitNullValueUnchangedCount = value; AdditionalData?.Remove("unchanged_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unchanged_count"); else _explicitNullProperties?.Remove("unchanged_count"); } }
         private int? _explicitNullValueUnchangedCount = default!;
-        /// <summary>The vcs_info property</summary>
+        /// <summary>Version control details of the build</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseVcsInfo? VcsInfo { get => _explicitNullValueVcsInfo; set { _explicitNullValueVcsInfo = value; AdditionalData?.Remove("vcs_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("vcs_info"); else _explicitNullProperties?.Remove("vcs_info"); } }

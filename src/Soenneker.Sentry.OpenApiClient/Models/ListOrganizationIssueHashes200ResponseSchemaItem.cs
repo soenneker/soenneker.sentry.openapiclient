@@ -29,7 +29,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Fingerprint hash</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -39,7 +39,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The latestEvent property</summary>
+        /// <summary>Latest event with the hash. Null when the event isn&apos;t found</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent? LatestEvent { get => _explicitNullValueLatestEvent; set { _explicitNullValueLatestEvent = value; AdditionalData?.Remove("latestEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestEvent"); else _explicitNullProperties?.Remove("latestEvent"); } }
@@ -49,10 +49,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent LatestEvent { get => _explicitNullValueLatestEvent; set { _explicitNullValueLatestEvent = value; AdditionalData?.Remove("latestEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestEvent"); else _explicitNullProperties?.Remove("latestEvent"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIssueHashes200ResponseItemLatestEvent _explicitNullValueLatestEvent = default!;
 #endif
-        /// <summary>The mergedBySeer property</summary>
+        /// <summary>Whether Seer merged the hash into the issue as a similar error</summary>
         public bool? MergedBySeer { get => _explicitNullValueMergedBySeer; set { _explicitNullValueMergedBySeer = value; AdditionalData?.Remove("mergedBySeer"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mergedBySeer"); else _explicitNullProperties?.Remove("mergedBySeer"); } }
         private bool? _explicitNullValueMergedBySeer = default!;
-        /// <summary>The seerMatchDistance property</summary>
+        /// <summary>Distance between the hash&apos;s stack trace and the issue&apos;s when Seer merged them. Null when Seer didn&apos;t merge the hash</summary>
         public double? SeerMatchDistance { get => _explicitNullValueSeerMatchDistance; set { _explicitNullValueSeerMatchDistance = value; AdditionalData?.Remove("seerMatchDistance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerMatchDistance"); else _explicitNullProperties?.Remove("seerMatchDistance"); } }
         private double? _explicitNullValueSeerMatchDistance = default!;
         /// <summary>

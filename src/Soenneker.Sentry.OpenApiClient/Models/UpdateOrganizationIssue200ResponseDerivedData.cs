@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Additional data derived for the issue. Only included when requested with expand
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class UpdateOrganizationIssue200ResponseDerivedData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -23,6 +24,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("hasOpenFixPr") is { } nullNodeHasOpenFixPr && nullNodeHasOpenFixPr.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasOpenFixPr = null;
             if (parseNode.GetChildNode("hasRootCause") is null) { _explicitNullValueHasRootCause = default!; _explicitNullProperties?.Remove("hasRootCause"); }
             else if (parseNode.GetChildNode("hasRootCause") is { } nullNodeHasRootCause && nullNodeHasRootCause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasRootCause = null;
+            if (parseNode.GetChildNode("impact") is null) { _explicitNullValueImpact = default!; _explicitNullProperties?.Remove("impact"); }
+            else if (parseNode.GetChildNode("impact") is { } nullNodeImpact && nullNodeImpact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impact = null;
             if (parseNode.GetChildNode("isAssigned") is null) { _explicitNullValueIsAssigned = default!; _explicitNullProperties?.Remove("isAssigned"); }
             else if (parseNode.GetChildNode("isAssigned") is { } nullNodeIsAssigned && nullNodeIsAssigned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsAssigned = null;
             if (parseNode.GetChildNode("lastCompletedAutofixStep") is null) { _explicitNullValueLastCompletedAutofixStep = default!; _explicitNullProperties?.Remove("lastCompletedAutofixStep"); }
@@ -39,7 +42,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The blocker property</summary>
+        /// <summary>Action that blocks progress on the issue: none, approve_root_cause, approve_plan, approve_code_changes or merge_pr</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Blocker { get => _explicitNullValueBlocker; set { _explicitNullValueBlocker = value; AdditionalData?.Remove("blocker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocker"); else _explicitNullProperties?.Remove("blocker"); } }
@@ -49,16 +52,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Blocker { get => _explicitNullValueBlocker; set { _explicitNullValueBlocker = value; AdditionalData?.Remove("blocker"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocker"); else _explicitNullProperties?.Remove("blocker"); } }
         private string _explicitNullValueBlocker = default!;
 #endif
-        /// <summary>The hasOpenFixPr property</summary>
+        /// <summary>Whether an open pull request is linked to the issue</summary>
         public bool? HasOpenFixPr { get => _explicitNullValueHasOpenFixPr; set { _explicitNullValueHasOpenFixPr = value; AdditionalData?.Remove("hasOpenFixPr"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasOpenFixPr"); else _explicitNullProperties?.Remove("hasOpenFixPr"); } }
         private bool? _explicitNullValueHasOpenFixPr = default!;
-        /// <summary>The hasRootCause property</summary>
+        /// <summary>Whether a root cause was found for the issue</summary>
         public bool? HasRootCause { get => _explicitNullValueHasRootCause; set { _explicitNullValueHasRootCause = value; AdditionalData?.Remove("hasRootCause"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasRootCause"); else _explicitNullProperties?.Remove("hasRootCause"); } }
         private bool? _explicitNullValueHasRootCause = default!;
-        /// <summary>The isAssigned property</summary>
+        /// <summary>The issue&apos;s impact assessment, or null when no assessment is available</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact? Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact? _explicitNullValueImpact = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact Impact { get => _explicitNullValueImpact; set { _explicitNullValueImpact = value; AdditionalData?.Remove("impact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impact"); else _explicitNullProperties?.Remove("impact"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact _explicitNullValueImpact = default!;
+#endif
+        /// <summary>Whether the issue has an assignee</summary>
         public bool? IsAssigned { get => _explicitNullValueIsAssigned; set { _explicitNullValueIsAssigned = value; AdditionalData?.Remove("isAssigned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAssigned"); else _explicitNullProperties?.Remove("isAssigned"); } }
         private bool? _explicitNullValueIsAssigned = default!;
-        /// <summary>The lastCompletedAutofixStep property</summary>
+        /// <summary>Furthest Autofix step completed: none, root_cause, solution, code_changes, pr_created or pr_iteration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LastCompletedAutofixStep { get => _explicitNullValueLastCompletedAutofixStep; set { _explicitNullValueLastCompletedAutofixStep = value; AdditionalData?.Remove("lastCompletedAutofixStep"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCompletedAutofixStep"); else _explicitNullProperties?.Remove("lastCompletedAutofixStep"); } }
@@ -68,10 +81,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string LastCompletedAutofixStep { get => _explicitNullValueLastCompletedAutofixStep; set { _explicitNullValueLastCompletedAutofixStep = value; AdditionalData?.Remove("lastCompletedAutofixStep"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastCompletedAutofixStep"); else _explicitNullProperties?.Remove("lastCompletedAutofixStep"); } }
         private string _explicitNullValueLastCompletedAutofixStep = default!;
 #endif
-        /// <summary>The lastProgressedAt property</summary>
+        /// <summary>When the issue&apos;s progress last advanced (ISO 8601)</summary>
         public DateTimeOffset? LastProgressedAt { get => _explicitNullValueLastProgressedAt; set { _explicitNullValueLastProgressedAt = value; AdditionalData?.Remove("lastProgressedAt"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("lastProgressedAt"); else _explicitNullProperties?.Remove("lastProgressedAt"); } }
         private DateTimeOffset? _explicitNullValueLastProgressedAt = default!;
-        /// <summary>The progress property</summary>
+        /// <summary>How far the issue is toward resolution: identified, assigned, diagnosed, fix_proposed or fix_applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; AdditionalData?.Remove("progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
@@ -81,7 +94,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Progress { get => _explicitNullValueProgress; set { _explicitNullValueProgress = value; AdditionalData?.Remove("progress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress"); else _explicitNullProperties?.Remove("progress"); } }
         private string _explicitNullValueProgress = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the issue from its action log: open or closed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -91,7 +104,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The viewCount property</summary>
+        /// <summary>Number of times the issue was viewed</summary>
         public int? ViewCount { get => _explicitNullValueViewCount; set { _explicitNullValueViewCount = value; AdditionalData?.Remove("viewCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("viewCount"); else _explicitNullProperties?.Remove("viewCount"); } }
         private int? _explicitNullValueViewCount = default!;
         /// <summary>
@@ -122,6 +135,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "blocker", n => { Blocker = n.GetStringValue(); } },
                 { "hasOpenFixPr", n => { HasOpenFixPr = n.GetBoolValue(); } },
                 { "hasRootCause", n => { HasRootCause = n.GetBoolValue(); } },
+                { "impact", n => { Impact = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact.CreateFromDiscriminatorValue); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 { "lastCompletedAutofixStep", n => { LastCompletedAutofixStep = n.GetStringValue(); } },
                 { "lastProgressedAt", n => { LastProgressedAt = n.GetDateTimeOffsetValue(); } },
@@ -140,6 +154,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("blocker", Blocker);
             writer.WriteBoolValue("hasOpenFixPr", HasOpenFixPr);
             writer.WriteBoolValue("hasRootCause", HasRootCause);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssue200ResponseDerivedDataImpact>("impact", Impact);
             writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteStringValue("lastCompletedAutofixStep", LastCompletedAutofixStep);
             writer.WriteDateTimeOffsetValue("lastProgressedAt", LastProgressedAt);

@@ -56,40 +56,40 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The autosize property</summary>
+        /// <summary>Whether a text field grows with its content</summary>
         public bool? Autosize { get => _explicitNullValueAutosize; set { _explicitNullValueAutosize = value; AdditionalData?.Remove("autosize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autosize"); else _explicitNullProperties?.Remove("autosize"); } }
         private bool? _explicitNullValueAutosize = default!;
-        /// <summary>The choices property</summary>
+        /// <summary>Options of a select field, as [value, label] pairs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UntypedNode>? Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
-        private List<UntypedNode>? _explicitNullValueChoices = default!;
+        public UntypedNode? Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private UntypedNode? _explicitNullValueChoices = default!;
 #nullable restore
 #else
-        public List<UntypedNode> Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
-        private List<UntypedNode> _explicitNullValueChoices = default!;
+        public UntypedNode Choices { get => _explicitNullValueChoices; set { _explicitNullValueChoices = value; AdditionalData?.Remove("choices"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("choices"); else _explicitNullProperties?.Remove("choices"); } }
+        private UntypedNode _explicitNullValueChoices = default!;
 #endif
-        /// <summary>The default property</summary>
+        /// <summary>Default value of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
-        private UntypedNode? _explicitNullValueDefault = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault? Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault? _explicitNullValueDefault = default!;
 #nullable restore
 #else
-        public UntypedNode Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
-        private UntypedNode _explicitNullValueDefault = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault Default { get => _explicitNullValueDefault; set { _explicitNullValueDefault = value; AdditionalData?.Remove("default"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default"); else _explicitNullProperties?.Remove("default"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault _explicitNullValueDefault = default!;
 #endif
-        /// <summary>The defaultValue property</summary>
+        /// <summary>Default value of the field, for integrations that use this key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
-        private UntypedNode? _explicitNullValueDefaultValue = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue? DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue? _explicitNullValueDefaultValue = default!;
 #nullable restore
 #else
-        public UntypedNode DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
-        private UntypedNode _explicitNullValueDefaultValue = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue DefaultValue { get => _explicitNullValueDefaultValue; set { _explicitNullValueDefaultValue = value; AdditionalData?.Remove("defaultValue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultValue"); else _explicitNullProperties?.Remove("defaultValue"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue _explicitNullValueDefaultValue = default!;
 #endif
-        /// <summary>The dependsOn property</summary>
+        /// <summary>Names of the fields whose values the field&apos;s options depend on</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; AdditionalData?.Remove("dependsOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependsOn"); else _explicitNullProperties?.Remove("dependsOn"); } }
@@ -99,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> DependsOn { get => _explicitNullValueDependsOn; set { _explicitNullValueDependsOn = value; AdditionalData?.Remove("dependsOn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dependsOn"); else _explicitNullProperties?.Remove("dependsOn"); } }
         private List<string> _explicitNullValueDependsOn = default!;
 #endif
-        /// <summary>The help property</summary>
+        /// <summary>Help text of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
@@ -109,7 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Help { get => _explicitNullValueHelp; set { _explicitNullValueHelp = value; AdditionalData?.Remove("help"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("help"); else _explicitNullProperties?.Remove("help"); } }
         private string _explicitNullValueHelp = default!;
 #endif
-        /// <summary>The label property</summary>
+        /// <summary>Label of the form field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
@@ -119,16 +119,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
-        /// <summary>The maxLength property</summary>
+        /// <summary>Maximum length of the value</summary>
         public int? MaxLength { get => _explicitNullValueMaxLength; set { _explicitNullValueMaxLength = value; AdditionalData?.Remove("maxLength"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxLength"); else _explicitNullProperties?.Remove("maxLength"); } }
         private int? _explicitNullValueMaxLength = default!;
-        /// <summary>The maxRows property</summary>
+        /// <summary>Maximum number of rows of a text field</summary>
         public int? MaxRows { get => _explicitNullValueMaxRows; set { _explicitNullValueMaxRows = value; AdditionalData?.Remove("maxRows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRows"); else _explicitNullProperties?.Remove("maxRows"); } }
         private int? _explicitNullValueMaxRows = default!;
-        /// <summary>The multiple property</summary>
+        /// <summary>Whether the field accepts more than one value</summary>
         public bool? Multiple { get => _explicitNullValueMultiple; set { _explicitNullValueMultiple = value; AdditionalData?.Remove("multiple"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multiple"); else _explicitNullProperties?.Remove("multiple"); } }
         private bool? _explicitNullValueMultiple = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the form field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -138,7 +138,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The placeholder property</summary>
+        /// <summary>Placeholder of the field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
@@ -148,13 +148,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Placeholder { get => _explicitNullValuePlaceholder; set { _explicitNullValuePlaceholder = value; AdditionalData?.Remove("placeholder"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("placeholder"); else _explicitNullProperties?.Remove("placeholder"); } }
         private string _explicitNullValuePlaceholder = default!;
 #endif
-        /// <summary>The prefetch property</summary>
+        /// <summary>Whether the field&apos;s options load before the user types</summary>
         public bool? Prefetch { get => _explicitNullValuePrefetch; set { _explicitNullValuePrefetch = value; AdditionalData?.Remove("prefetch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prefetch"); else _explicitNullProperties?.Remove("prefetch"); } }
         private bool? _explicitNullValuePrefetch = default!;
-        /// <summary>The required property</summary>
+        /// <summary>Whether the field is required</summary>
         public bool? Required { get => _explicitNullValueRequired; set { _explicitNullValueRequired = value; AdditionalData?.Remove("required"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("required"); else _explicitNullProperties?.Remove("required"); } }
         private bool? _explicitNullValueRequired = default!;
-        /// <summary>The type property</summary>
+        /// <summary>Type of the form field, such as string, text, select or boolean</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -164,10 +164,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private string _explicitNullValueType = default!;
 #endif
-        /// <summary>The updatesForm property</summary>
+        /// <summary>Whether changing the field reloads the form</summary>
         public bool? UpdatesForm { get => _explicitNullValueUpdatesForm; set { _explicitNullValueUpdatesForm = value; AdditionalData?.Remove("updatesForm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updatesForm"); else _explicitNullProperties?.Remove("updatesForm"); } }
         private bool? _explicitNullValueUpdatesForm = default!;
-        /// <summary>The url property</summary>
+        /// <summary>URL that returns the field&apos;s options as the user types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
@@ -203,9 +203,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "autosize", n => { Autosize = n.GetBoolValue(); } },
-                { "choices", n => { Choices = n.GetCollectionOfObjectValues<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "default", n => { Default = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "defaultValue", n => { DefaultValue = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "choices", n => { Choices = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "default", n => { Default = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault>(global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue>(global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue.CreateFromDiscriminatorValue); } },
                 { "dependsOn", n => { DependsOn = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "help", n => { Help = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
@@ -229,9 +229,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autosize", Autosize);
-            writer.WriteCollectionOfPrimitiveValues<UntypedNode>("choices", Choices);
-            writer.WriteObjectValue<UntypedNode>("default", Default);
-            writer.WriteObjectValue<UntypedNode>("defaultValue", DefaultValue);
+            writer.WriteObjectValue<UntypedNode>("choices", Choices);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefault>("default", Default);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.IntegrationIssueConfigResponseCreateIssueConfigItemDefaultValue>("defaultValue", DefaultValue);
             writer.WriteCollectionOfPrimitiveValues<string>("dependsOn", DependsOn);
             writer.WriteStringValue("help", Help);
             writer.WriteStringValue("label", Label);

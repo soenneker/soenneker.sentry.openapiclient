@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The source type, always `s3`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum S3Type
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "s3")]
         #pragma warning disable CS1591

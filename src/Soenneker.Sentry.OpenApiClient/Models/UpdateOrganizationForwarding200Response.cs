@@ -41,7 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The config property</summary>
+        /// <summary>Provider settings of the forwarder. Null without org:write access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
@@ -51,13 +51,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; AdditionalData?.Remove("config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseConfig _explicitNullValueConfig = default!;
 #endif
-        /// <summary>The dateAdded property</summary>
+        /// <summary>When the data forwarder was created (ISO 8601)</summary>
         public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("dateAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
         private DateTimeOffset? _explicitNullValueDateAdded = default!;
-        /// <summary>The dateUpdated property</summary>
+        /// <summary>When the data forwarder was last updated (ISO 8601)</summary>
         public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
         private DateTimeOffset? _explicitNullValueDateUpdated = default!;
-        /// <summary>The enrolledProjects property</summary>
+        /// <summary>Projects enrolled in the forwarder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseEnrolledProjectsItem>? EnrolledProjects { get => _explicitNullValueEnrolledProjects; set { _explicitNullValueEnrolledProjects = value; AdditionalData?.Remove("enrolledProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrolledProjects"); else _explicitNullProperties?.Remove("enrolledProjects"); } }
@@ -67,10 +67,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseEnrolledProjectsItem> EnrolledProjects { get => _explicitNullValueEnrolledProjects; set { _explicitNullValueEnrolledProjects = value; AdditionalData?.Remove("enrolledProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrolledProjects"); else _explicitNullProperties?.Remove("enrolledProjects"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseEnrolledProjectsItem> _explicitNullValueEnrolledProjects = default!;
 #endif
-        /// <summary>The enrollNewProjects property</summary>
+        /// <summary>Whether new projects are enrolled in the forwarder automatically</summary>
         public bool? EnrollNewProjects { get => _explicitNullValueEnrollNewProjects; set { _explicitNullValueEnrollNewProjects = value; AdditionalData?.Remove("enrollNewProjects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enrollNewProjects"); else _explicitNullProperties?.Remove("enrollNewProjects"); } }
         private bool? _explicitNullValueEnrollNewProjects = default!;
-        /// <summary>The id property</summary>
+        /// <summary>ID of the data forwarder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -80,10 +80,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Whether the data forwarder is on</summary>
         public bool? IsEnabled { get => _explicitNullValueIsEnabled; set { _explicitNullValueIsEnabled = value; AdditionalData?.Remove("isEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEnabled"); else _explicitNullProperties?.Remove("isEnabled"); } }
         private bool? _explicitNullValueIsEnabled = default!;
-        /// <summary>The organizationId property</summary>
+        /// <summary>ID of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private string _explicitNullValueOrganizationId = default!;
 #endif
-        /// <summary>The projectConfigs property</summary>
+        /// <summary>Configuration of each enrolled project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseProjectConfigsItem>? ProjectConfigs { get => _explicitNullValueProjectConfigs; set { _explicitNullValueProjectConfigs = value; AdditionalData?.Remove("projectConfigs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectConfigs"); else _explicitNullProperties?.Remove("projectConfigs"); } }
@@ -103,7 +103,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseProjectConfigsItem> ProjectConfigs { get => _explicitNullValueProjectConfigs; set { _explicitNullValueProjectConfigs = value; AdditionalData?.Remove("projectConfigs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectConfigs"); else _explicitNullProperties?.Remove("projectConfigs"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationForwarding200ResponseProjectConfigsItem> _explicitNullValueProjectConfigs = default!;
 #endif
-        /// <summary>The provider property</summary>
+        /// <summary>Service the data is forwarded to: segment, sqs or splunk</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }

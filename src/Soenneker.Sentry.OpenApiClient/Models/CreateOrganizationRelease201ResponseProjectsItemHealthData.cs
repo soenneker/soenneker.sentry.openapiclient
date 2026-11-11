@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Release health data for the project. Only included when health data is requested
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateOrganizationRelease201ResponseProjectsItemHealthData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -53,34 +54,34 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The adoption property</summary>
+        /// <summary>Percentage of the project&apos;s users over the last 24 hours that were on the release</summary>
         public double? Adoption { get => _explicitNullValueAdoption; set { _explicitNullValueAdoption = value; AdditionalData?.Remove("adoption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adoption"); else _explicitNullProperties?.Remove("adoption"); } }
         private double? _explicitNullValueAdoption = default!;
-        /// <summary>The crashFreeSessions property</summary>
+        /// <summary>Percentage of sessions that didn&apos;t crash</summary>
         public double? CrashFreeSessions { get => _explicitNullValueCrashFreeSessions; set { _explicitNullValueCrashFreeSessions = value; AdditionalData?.Remove("crashFreeSessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFreeSessions"); else _explicitNullProperties?.Remove("crashFreeSessions"); } }
         private double? _explicitNullValueCrashFreeSessions = default!;
-        /// <summary>The crashFreeUsers property</summary>
+        /// <summary>Percentage of users who didn&apos;t experience a crash</summary>
         public double? CrashFreeUsers { get => _explicitNullValueCrashFreeUsers; set { _explicitNullValueCrashFreeUsers = value; AdditionalData?.Remove("crashFreeUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("crashFreeUsers"); else _explicitNullProperties?.Remove("crashFreeUsers"); } }
         private double? _explicitNullValueCrashFreeUsers = default!;
-        /// <summary>The durationP50 property</summary>
+        /// <summary>Median session duration in seconds</summary>
         public double? DurationP50 { get => _explicitNullValueDurationP50; set { _explicitNullValueDurationP50 = value; AdditionalData?.Remove("durationP50"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationP50"); else _explicitNullProperties?.Remove("durationP50"); } }
         private double? _explicitNullValueDurationP50 = default!;
-        /// <summary>The durationP90 property</summary>
+        /// <summary>90th percentile session duration in seconds</summary>
         public double? DurationP90 { get => _explicitNullValueDurationP90; set { _explicitNullValueDurationP90 = value; AdditionalData?.Remove("durationP90"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("durationP90"); else _explicitNullProperties?.Remove("durationP90"); } }
         private double? _explicitNullValueDurationP90 = default!;
-        /// <summary>The hasHealthData property</summary>
+        /// <summary>Whether the release has session data</summary>
         public bool? HasHealthData { get => _explicitNullValueHasHealthData; set { _explicitNullValueHasHealthData = value; AdditionalData?.Remove("hasHealthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasHealthData"); else _explicitNullProperties?.Remove("hasHealthData"); } }
         private bool? _explicitNullValueHasHealthData = default!;
-        /// <summary>The sessionsAdoption property</summary>
+        /// <summary>Percentage of the project&apos;s sessions over the last 24 hours that were on the release</summary>
         public double? SessionsAdoption { get => _explicitNullValueSessionsAdoption; set { _explicitNullValueSessionsAdoption = value; AdditionalData?.Remove("sessionsAdoption"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionsAdoption"); else _explicitNullProperties?.Remove("sessionsAdoption"); } }
         private double? _explicitNullValueSessionsAdoption = default!;
-        /// <summary>The sessionsCrashed property</summary>
+        /// <summary>Number of crashed sessions</summary>
         public int? SessionsCrashed { get => _explicitNullValueSessionsCrashed; set { _explicitNullValueSessionsCrashed = value; AdditionalData?.Remove("sessionsCrashed"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionsCrashed"); else _explicitNullProperties?.Remove("sessionsCrashed"); } }
         private int? _explicitNullValueSessionsCrashed = default!;
-        /// <summary>The sessionsErrored property</summary>
+        /// <summary>Number of sessions with errors</summary>
         public int? SessionsErrored { get => _explicitNullValueSessionsErrored; set { _explicitNullValueSessionsErrored = value; AdditionalData?.Remove("sessionsErrored"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionsErrored"); else _explicitNullProperties?.Remove("sessionsErrored"); } }
         private int? _explicitNullValueSessionsErrored = default!;
-        /// <summary>The stats property</summary>
+        /// <summary>Session or user counts over time, keyed by stats period</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201ResponseProjectsItemHealthDataStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
@@ -90,22 +91,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201ResponseProjectsItemHealthDataStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationRelease201ResponseProjectsItemHealthDataStats _explicitNullValueStats = default!;
 #endif
-        /// <summary>The totalProjectSessions24h property</summary>
+        /// <summary>Number of sessions in the project over the last 24 hours</summary>
         public int? TotalProjectSessions24h { get => _explicitNullValueTotalProjectSessions24h; set { _explicitNullValueTotalProjectSessions24h = value; AdditionalData?.Remove("totalProjectSessions24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalProjectSessions24h"); else _explicitNullProperties?.Remove("totalProjectSessions24h"); } }
         private int? _explicitNullValueTotalProjectSessions24h = default!;
-        /// <summary>The totalProjectUsers24h property</summary>
+        /// <summary>Number of users in the project over the last 24 hours</summary>
         public int? TotalProjectUsers24h { get => _explicitNullValueTotalProjectUsers24h; set { _explicitNullValueTotalProjectUsers24h = value; AdditionalData?.Remove("totalProjectUsers24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalProjectUsers24h"); else _explicitNullProperties?.Remove("totalProjectUsers24h"); } }
         private int? _explicitNullValueTotalProjectUsers24h = default!;
-        /// <summary>The totalSessions property</summary>
+        /// <summary>Total number of sessions in the release</summary>
         public int? TotalSessions { get => _explicitNullValueTotalSessions; set { _explicitNullValueTotalSessions = value; AdditionalData?.Remove("totalSessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalSessions"); else _explicitNullProperties?.Remove("totalSessions"); } }
         private int? _explicitNullValueTotalSessions = default!;
-        /// <summary>The totalSessions24h property</summary>
+        /// <summary>Number of sessions in the release over the last 24 hours</summary>
         public int? TotalSessions24h { get => _explicitNullValueTotalSessions24h; set { _explicitNullValueTotalSessions24h = value; AdditionalData?.Remove("totalSessions24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalSessions24h"); else _explicitNullProperties?.Remove("totalSessions24h"); } }
         private int? _explicitNullValueTotalSessions24h = default!;
-        /// <summary>The totalUsers property</summary>
+        /// <summary>Total number of users in the release</summary>
         public int? TotalUsers { get => _explicitNullValueTotalUsers; set { _explicitNullValueTotalUsers = value; AdditionalData?.Remove("totalUsers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalUsers"); else _explicitNullProperties?.Remove("totalUsers"); } }
         private int? _explicitNullValueTotalUsers = default!;
-        /// <summary>The totalUsers24h property</summary>
+        /// <summary>Number of users in the release over the last 24 hours</summary>
         public int? TotalUsers24h { get => _explicitNullValueTotalUsers24h; set { _explicitNullValueTotalUsers24h = value; AdditionalData?.Remove("totalUsers24h"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totalUsers24h"); else _explicitNullProperties?.Remove("totalUsers24h"); } }
         private int? _explicitNullValueTotalUsers24h = default!;
         /// <summary>

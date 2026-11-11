@@ -7,20 +7,86 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Extra provider details shown during setup, such as alerts and configuration instructions
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspects : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("alerts") is null) { _explicitNullValueAlerts = default!; _explicitNullProperties?.Remove("alerts"); }
+            else if (parseNode.GetChildNode("alerts") is { } nullNodeAlerts && nullNodeAlerts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alerts = null;
+            if (parseNode.GetChildNode("configure_integration") is null) { _explicitNullValueConfigureIntegration = default!; _explicitNullProperties?.Remove("configure_integration"); }
+            else if (parseNode.GetChildNode("configure_integration") is { } nullNodeConfigureIntegration && nullNodeConfigureIntegration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConfigureIntegration = null;
+            if (parseNode.GetChildNode("directEnable") is null) { _explicitNullValueDirectEnable = default!; _explicitNullProperties?.Remove("directEnable"); }
+            else if (parseNode.GetChildNode("directEnable") is { } nullNodeDirectEnable && nullNodeDirectEnable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectEnable = null;
+            if (parseNode.GetChildNode("disable_dialog") is null) { _explicitNullValueDisableDialog = default!; _explicitNullProperties?.Remove("disable_dialog"); }
+            else if (parseNode.GetChildNode("disable_dialog") is { } nullNodeDisableDialog && nullNodeDisableDialog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisableDialog = null;
+            if (parseNode.GetChildNode("externalInstall") is null) { _explicitNullValueExternalInstall = default!; _explicitNullProperties?.Remove("externalInstall"); }
+            else if (parseNode.GetChildNode("externalInstall") is { } nullNodeExternalInstall && nullNodeExternalInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalInstall = null;
+            if (parseNode.GetChildNode("removal_dialog") is null) { _explicitNullValueRemovalDialog = default!; _explicitNullProperties?.Remove("removal_dialog"); }
+            else if (parseNode.GetChildNode("removal_dialog") is { } nullNodeRemovalDialog && nullNodeRemovalDialog.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RemovalDialog = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Alerts shown during setup</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem>? Alerts { get => _explicitNullValueAlerts; set { _explicitNullValueAlerts = value; AdditionalData?.Remove("alerts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerts"); else _explicitNullProperties?.Remove("alerts"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem>? _explicitNullValueAlerts = default!;
+#nullable restore
+#else
+        public List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem> Alerts { get => _explicitNullValueAlerts; set { _explicitNullValueAlerts = value; AdditionalData?.Remove("alerts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alerts"); else _explicitNullProperties?.Remove("alerts"); } }
+        private List<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem> _explicitNullValueAlerts = default!;
+#endif
+        /// <summary>Configuration step after install</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration? ConfigureIntegration { get => _explicitNullValueConfigureIntegration; set { _explicitNullValueConfigureIntegration = value; AdditionalData?.Remove("configure_integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configure_integration"); else _explicitNullProperties?.Remove("configure_integration"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration? _explicitNullValueConfigureIntegration = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration ConfigureIntegration { get => _explicitNullValueConfigureIntegration; set { _explicitNullValueConfigureIntegration = value; AdditionalData?.Remove("configure_integration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configure_integration"); else _explicitNullProperties?.Remove("configure_integration"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration _explicitNullValueConfigureIntegration = default!;
+#endif
+        /// <summary>Whether the integration is enabled without an install flow</summary>
+        public bool? DirectEnable { get => _explicitNullValueDirectEnable; set { _explicitNullValueDirectEnable = value; AdditionalData?.Remove("directEnable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("directEnable"); else _explicitNullProperties?.Remove("directEnable"); } }
+        private bool? _explicitNullValueDirectEnable = default!;
+        /// <summary>Dialog shown before the integration is disabled</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog? DisableDialog { get => _explicitNullValueDisableDialog; set { _explicitNullValueDisableDialog = value; AdditionalData?.Remove("disable_dialog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_dialog"); else _explicitNullProperties?.Remove("disable_dialog"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog? _explicitNullValueDisableDialog = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog DisableDialog { get => _explicitNullValueDisableDialog; set { _explicitNullValueDisableDialog = value; AdditionalData?.Remove("disable_dialog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disable_dialog"); else _explicitNullProperties?.Remove("disable_dialog"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog _explicitNullValueDisableDialog = default!;
+#endif
+        /// <summary>Where to install the integration when it&apos;s installed outside Sentry</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall? ExternalInstall { get => _explicitNullValueExternalInstall; set { _explicitNullValueExternalInstall = value; AdditionalData?.Remove("externalInstall"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalInstall"); else _explicitNullProperties?.Remove("externalInstall"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall? _explicitNullValueExternalInstall = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall ExternalInstall { get => _explicitNullValueExternalInstall; set { _explicitNullValueExternalInstall = value; AdditionalData?.Remove("externalInstall"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalInstall"); else _explicitNullProperties?.Remove("externalInstall"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall _explicitNullValueExternalInstall = default!;
+#endif
+        /// <summary>Dialog shown before the integration is removed</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog? RemovalDialog { get => _explicitNullValueRemovalDialog; set { _explicitNullValueRemovalDialog = value; AdditionalData?.Remove("removal_dialog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removal_dialog"); else _explicitNullProperties?.Remove("removal_dialog"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog? _explicitNullValueRemovalDialog = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog RemovalDialog { get => _explicitNullValueRemovalDialog; set { _explicitNullValueRemovalDialog = value; AdditionalData?.Remove("removal_dialog"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("removal_dialog"); else _explicitNullProperties?.Remove("removal_dialog"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog _explicitNullValueRemovalDialog = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspects"/> and sets the default values.
         /// </summary>
@@ -46,6 +112,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "configure_integration", n => { ConfigureIntegration = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration.CreateFromDiscriminatorValue); } },
+                { "directEnable", n => { DirectEnable = n.GetBoolValue(); } },
+                { "disable_dialog", n => { DisableDialog = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog.CreateFromDiscriminatorValue); } },
+                { "externalInstall", n => { ExternalInstall = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall.CreateFromDiscriminatorValue); } },
+                { "removal_dialog", n => { RemovalDialog = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,6 +127,12 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsAlertsItem>("alerts", Alerts);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsConfigureIntegration>("configure_integration", ConfigureIntegration);
+            writer.WriteBoolValue("directEnable", DirectEnable);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsDisableDialog>("disable_dialog", DisableDialog);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsExternalInstall>("externalInstall", ExternalInstall);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectCodeOwners200ResponseCodeMappingProviderAspectsRemovalDialog>("removal_dialog", RemovalDialog);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

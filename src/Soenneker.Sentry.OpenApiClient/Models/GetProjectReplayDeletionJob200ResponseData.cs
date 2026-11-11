@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// The deletion job
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectReplayDeletionJob200ResponseData : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -39,30 +40,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The countDeleted property</summary>
+        /// <summary>Number of replays the job has deleted</summary>
         public int? CountDeleted { get => _explicitNullValueCountDeleted; set { _explicitNullValueCountDeleted = value; AdditionalData?.Remove("countDeleted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("countDeleted"); else _explicitNullProperties?.Remove("countDeleted"); } }
         private int? _explicitNullValueCountDeleted = default!;
-        /// <summary>The dateCreated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string? _explicitNullValueDateCreated = default!;
-#nullable restore
-#else
-        public string DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
-        private string _explicitNullValueDateCreated = default!;
-#endif
-        /// <summary>The dateUpdated property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string? _explicitNullValueDateUpdated = default!;
-#nullable restore
-#else
-        public string DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
-        private string _explicitNullValueDateUpdated = default!;
-#endif
-        /// <summary>The environments property</summary>
+        /// <summary>When the job was created</summary>
+        public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
+        private DateTimeOffset? _explicitNullValueDateCreated = default!;
+        /// <summary>When the job was last updated</summary>
+        public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
+        private DateTimeOffset? _explicitNullValueDateUpdated = default!;
+        /// <summary>Environments of the replays to delete. Empty means all environments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
@@ -72,10 +59,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Environments { get => _explicitNullValueEnvironments; set { _explicitNullValueEnvironments = value; AdditionalData?.Remove("environments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environments"); else _explicitNullProperties?.Remove("environments"); } }
         private List<string> _explicitNullValueEnvironments = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the deletion job</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
-        /// <summary>The query property</summary>
+        /// <summary>Search query that matches the replays to delete</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
@@ -85,27 +72,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Query { get => _explicitNullValueQuery; set { _explicitNullValueQuery = value; AdditionalData?.Remove("query"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query"); else _explicitNullProperties?.Remove("query"); } }
         private string _explicitNullValueQuery = default!;
 #endif
-        /// <summary>The rangeEnd property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; AdditionalData?.Remove("rangeEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
-        private string? _explicitNullValueRangeEnd = default!;
-#nullable restore
-#else
-        public string RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; AdditionalData?.Remove("rangeEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
-        private string _explicitNullValueRangeEnd = default!;
-#endif
-        /// <summary>The rangeStart property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("rangeStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
-        private string? _explicitNullValueRangeStart = default!;
-#nullable restore
-#else
-        public string RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("rangeStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
-        private string _explicitNullValueRangeStart = default!;
-#endif
-        /// <summary>The status property</summary>
+        /// <summary>Latest UTC timestamp in the deletion range</summary>
+        public DateTimeOffset? RangeEnd { get => _explicitNullValueRangeEnd; set { _explicitNullValueRangeEnd = value; AdditionalData?.Remove("rangeEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeEnd"); else _explicitNullProperties?.Remove("rangeEnd"); } }
+        private DateTimeOffset? _explicitNullValueRangeEnd = default!;
+        /// <summary>Earliest UTC timestamp in the deletion range</summary>
+        public DateTimeOffset? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("rangeStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rangeStart"); else _explicitNullProperties?.Remove("rangeStart"); } }
+        private DateTimeOffset? _explicitNullValueRangeStart = default!;
+        /// <summary>Status of the job: `pending`, `in-progress`, `completed` or `failed`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -141,13 +114,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "countDeleted", n => { CountDeleted = n.GetIntValue(); } },
-                { "dateCreated", n => { DateCreated = n.GetStringValue(); } },
-                { "dateUpdated", n => { DateUpdated = n.GetStringValue(); } },
+                { "dateCreated", n => { DateCreated = n.GetDateTimeOffsetValue(); } },
+                { "dateUpdated", n => { DateUpdated = n.GetDateTimeOffsetValue(); } },
                 { "environments", n => { Environments = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetIntValue(); } },
                 { "query", n => { Query = n.GetStringValue(); } },
-                { "rangeEnd", n => { RangeEnd = n.GetStringValue(); } },
-                { "rangeStart", n => { RangeStart = n.GetStringValue(); } },
+                { "rangeEnd", n => { RangeEnd = n.GetDateTimeOffsetValue(); } },
+                { "rangeStart", n => { RangeStart = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
             };
         }
@@ -159,13 +132,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("countDeleted", CountDeleted);
-            writer.WriteStringValue("dateCreated", DateCreated);
-            writer.WriteStringValue("dateUpdated", DateUpdated);
+            writer.WriteDateTimeOffsetValue("dateCreated", DateCreated);
+            writer.WriteDateTimeOffsetValue("dateUpdated", DateUpdated);
             writer.WriteCollectionOfPrimitiveValues<string>("environments", Environments);
             writer.WriteIntValue("id", Id);
             writer.WriteStringValue("query", Query);
-            writer.WriteStringValue("rangeEnd", RangeEnd);
-            writer.WriteStringValue("rangeStart", RangeStart);
+            writer.WriteDateTimeOffsetValue("rangeEnd", RangeEnd);
+            writer.WriteDateTimeOffsetValue("rangeStart", RangeStart);
             writer.WriteStringValue("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

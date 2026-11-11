@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Difs;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Preprodartifacts;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder Dsyms
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Dsyms.DsymsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The preprodartifacts property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Preprodartifacts.PreprodartifactsRequestBuilder Preprodartifacts
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.Preprodartifacts.PreprodartifactsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Files.FilesRequestBuilder"/> and sets the default values.

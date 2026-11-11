@@ -101,7 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsDropp
             [QueryParameter("environment")]
             public string[] Environment { get; set; }
 #endif
-            /// <summary>The size of the bucket for the timeseries to have, must be a value smaller than the window beingqueried. If the interval is invalid a default interval will be selected instead</summary>
+            /// <summary>The size of the bucket for the timeseries to have, must be a value smaller than the window beingqueried. Either a number of seconds, or a number with a unit suffix of `s`, `m`, `h`, `d`, or `w`, such as `5m` or`1h`. If the interval is invalid a default interval will be selected instead</summary>
             [QueryParameter("interval")]
             public int? Interval { get; set; }
             /// <summary>Narrow the dropped events (only) to a single top-level drop classification (e.g. `rate_limited`, `filtered`).* `filtered`* `rate_limited`* `invalid`* `abuse`* `client_discard`* `cardinality_limited`</summary>

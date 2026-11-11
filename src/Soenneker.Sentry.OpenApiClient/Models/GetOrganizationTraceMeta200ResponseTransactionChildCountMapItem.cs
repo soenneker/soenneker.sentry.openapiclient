@@ -17,10 +17,27 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("count()") is null) { _explicitNullValueCount = default!; _explicitNullProperties?.Remove("count()"); }
+            else if (parseNode.GetChildNode("count()") is { } nullNodeCount && nullNodeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Count = null;
+            if (parseNode.GetChildNode("transaction.event_id") is null) { _explicitNullValueTransactionEventId = default!; _explicitNullProperties?.Remove("transaction.event_id"); }
+            else if (parseNode.GetChildNode("transaction.event_id") is { } nullNodeTransactionEventId && nullNodeTransactionEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionEventId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of child spans of the transaction</summary>
+        public double? Count { get => _explicitNullValueCount; set { _explicitNullValueCount = value; AdditionalData?.Remove("count()"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count()"); else _explicitNullProperties?.Remove("count()"); } }
+        private double? _explicitNullValueCount = default!;
+        /// <summary>ID of the transaction. Null for spans that belong to no transaction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? TransactionEventId { get => _explicitNullValueTransactionEventId; set { _explicitNullValueTransactionEventId = value; AdditionalData?.Remove("transaction.event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction.event_id"); else _explicitNullProperties?.Remove("transaction.event_id"); } }
+        private string? _explicitNullValueTransactionEventId = default!;
+#nullable restore
+#else
+        public string TransactionEventId { get => _explicitNullValueTransactionEventId; set { _explicitNullValueTransactionEventId = value; AdditionalData?.Remove("transaction.event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction.event_id"); else _explicitNullProperties?.Remove("transaction.event_id"); } }
+        private string _explicitNullValueTransactionEventId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationTraceMeta200ResponseTransactionChildCountMapItem"/> and sets the default values.
         /// </summary>
@@ -46,6 +63,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "count()", n => { Count = n.GetDoubleValue(); } },
+                { "transaction.event_id", n => { TransactionEventId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +74,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDoubleValue("count()", Count);
+            writer.WriteStringValue("transaction.event_id", TransactionEventId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

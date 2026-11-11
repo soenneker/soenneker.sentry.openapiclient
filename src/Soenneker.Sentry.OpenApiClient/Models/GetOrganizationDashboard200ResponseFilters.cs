@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Saved release and global filters for the dashboard
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationDashboard200ResponseFilters : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,7 +28,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The globalFilter property</summary>
+        /// <summary>Saved global filters applied to every widget</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem>? GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; AdditionalData?.Remove("globalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
@@ -37,7 +38,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem> GlobalFilter { get => _explicitNullValueGlobalFilter; set { _explicitNullValueGlobalFilter = value; AdditionalData?.Remove("globalFilter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("globalFilter"); else _explicitNullProperties?.Remove("globalFilter"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationDashboard200ResponseFiltersGlobalFilterItem> _explicitNullValueGlobalFilter = default!;
 #endif
-        /// <summary>The release property</summary>
+        /// <summary>Saved release filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
@@ -47,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
         private List<string> _explicitNullValueRelease = default!;
 #endif
-        /// <summary>The releaseId property</summary>
+        /// <summary>Saved release ID filter</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ReleaseId { get => _explicitNullValueReleaseId; set { _explicitNullValueReleaseId = value; AdditionalData?.Remove("releaseId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("releaseId"); else _explicitNullProperties?.Remove("releaseId"); } }

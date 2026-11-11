@@ -43,19 +43,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the release was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The dateReleased property</summary>
+        /// <summary>When the release was released in the project (ISO 8601)</summary>
         public DateTimeOffset? DateReleased { get => _explicitNullValueDateReleased; set { _explicitNullValueDateReleased = value; AdditionalData?.Remove("dateReleased"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateReleased"); else _explicitNullProperties?.Remove("dateReleased"); } }
         private DateTimeOffset? _explicitNullValueDateReleased = default!;
-        /// <summary>The dateStarted property</summary>
+        /// <summary>When work on the release started (ISO 8601)</summary>
         public DateTimeOffset? DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; AdditionalData?.Remove("dateStarted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
         private DateTimeOffset? _explicitNullValueDateStarted = default!;
-        /// <summary>The hasHealthData property</summary>
+        /// <summary>Whether the release has session data in the project</summary>
         public bool? HasHealthData { get => _explicitNullValueHasHealthData; set { _explicitNullValueHasHealthData = value; AdditionalData?.Remove("hasHealthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasHealthData"); else _explicitNullProperties?.Remove("hasHealthData"); } }
         private bool? _explicitNullValueHasHealthData = default!;
-        /// <summary>The healthData property</summary>
+        /// <summary>Release health data for the project. Only included when health data is requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItemHealthData? HealthData { get => _explicitNullValueHealthData; set { _explicitNullValueHealthData = value; AdditionalData?.Remove("healthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthData"); else _explicitNullProperties?.Remove("healthData"); } }
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItemHealthData HealthData { get => _explicitNullValueHealthData; set { _explicitNullValueHealthData = value; AdditionalData?.Remove("healthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("healthData"); else _explicitNullProperties?.Remove("healthData"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationRelease200ResponseProjectsItemHealthData _explicitNullValueHealthData = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the project</summary>
         public int? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private int? _explicitNullValueId = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -78,10 +78,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The newGroups property</summary>
+        /// <summary>Number of new issues first seen in the release in the project</summary>
         public int? NewGroups { get => _explicitNullValueNewGroups; set { _explicitNullValueNewGroups = value; AdditionalData?.Remove("newGroups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("newGroups"); else _explicitNullProperties?.Remove("newGroups"); } }
         private int? _explicitNullValueNewGroups = default!;
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The platforms property</summary>
+        /// <summary>Platforms of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; AdditionalData?.Remove("platforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
@@ -101,7 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; AdditionalData?.Remove("platforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
         private List<string> _explicitNullValuePlatforms = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }

@@ -109,7 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <summary>Snooze the issue for this many minutes.</summary>
         public int? SnoozeDuration { get => _explicitNullValueSnoozeDuration; set { _explicitNullValueSnoozeDuration = value; AdditionalData?.Remove("snoozeDuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snoozeDuration"); else _explicitNullProperties?.Remove("snoozeDuration"); } }
         private int? _explicitNullValueSnoozeDuration = default!;
-        /// <summary>Limit mutations to only issues with the given status.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
+        /// <summary>The new status for the issues.* `resolved`* `unresolved`* `ignored`* `resolvedInNextRelease`* `muted`</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationIssuesRequestStatus? _explicitNullValueStatus = default!;
         /// <summary>Additional details about the resolution. Status detail updates that include release data are only allowed for issues within a single project.</summary>

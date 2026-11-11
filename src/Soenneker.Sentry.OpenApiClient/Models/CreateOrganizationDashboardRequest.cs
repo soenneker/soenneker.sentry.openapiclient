@@ -34,6 +34,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
             if (parseNode.GetChildNode("projects") is null) { _explicitNullValueProjects = default!; _explicitNullProperties?.Remove("projects"); }
             else if (parseNode.GetChildNode("projects") is { } nullNodeProjects && nullNodeProjects.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Projects = null;
+            if (parseNode.GetChildNode("query_priority") is null) { _explicitNullValueQueryPriority = default!; _explicitNullProperties?.Remove("query_priority"); }
+            else if (parseNode.GetChildNode("query_priority") is { } nullNodeQueryPriority && nullNodeQueryPriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QueryPriority = null;
             if (parseNode.GetChildNode("start") is null) { _explicitNullValueStart = default!; _explicitNullProperties?.Remove("start"); }
             else if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
             if (parseNode.GetChildNode("title") is null) { _explicitNullValueTitle = default!; _explicitNullProperties?.Remove("title"); }
@@ -112,6 +114,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<int?> Projects { get => _explicitNullValueProjects; set { _explicitNullValueProjects = value; AdditionalData?.Remove("projects"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projects"); else _explicitNullProperties?.Remove("projects"); } }
         private List<int?> _explicitNullValueProjects = default!;
 #endif
+        /// <summary>The query priority* `normal`* `faster`</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority? QueryPriority { get => _explicitNullValueQueryPriority; set { _explicitNullValueQueryPriority = value; AdditionalData?.Remove("query_priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_priority"); else _explicitNullProperties?.Remove("query_priority"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority? _explicitNullValueQueryPriority = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority QueryPriority { get => _explicitNullValueQueryPriority; set { _explicitNullValueQueryPriority = value; AdditionalData?.Remove("query_priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("query_priority"); else _explicitNullProperties?.Remove("query_priority"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority _explicitNullValueQueryPriority = default!;
+#endif
         /// <summary>The saved start time for this dashboard.</summary>
         public DateTimeOffset? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; AdditionalData?.Remove("start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
         private DateTimeOffset? _explicitNullValueStart = default!;
@@ -172,6 +184,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "period", n => { Period = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestPermissions>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestPermissions.CreateFromDiscriminatorValue); } },
                 { "projects", n => { Projects = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
+                { "query_priority", n => { QueryPriority = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority.CreateFromDiscriminatorValue); } },
                 { "start", n => { Start = n.GetDateTimeOffsetValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
                 { "utc", n => { Utc = n.GetBoolValue(); } },
@@ -193,6 +206,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("period", Period);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestPermissions>("permissions", Permissions);
             writer.WriteCollectionOfPrimitiveValues<int?>("projects", Projects);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationDashboardRequestQueryPriority>("query_priority", QueryPriority);
             writer.WriteDateTimeOffsetValue("start", Start);
             writer.WriteStringValue("title", Title);
             writer.WriteBoolValue("utc", Utc);

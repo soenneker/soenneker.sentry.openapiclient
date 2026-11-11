@@ -31,13 +31,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The count_dead_clicks property</summary>
+        /// <summary>Number of dead clicks on the element</summary>
         public int? CountDeadClicks { get => _explicitNullValueCountDeadClicks; set { _explicitNullValueCountDeadClicks = value; AdditionalData?.Remove("count_dead_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_dead_clicks"); else _explicitNullProperties?.Remove("count_dead_clicks"); } }
         private int? _explicitNullValueCountDeadClicks = default!;
-        /// <summary>The count_rage_clicks property</summary>
+        /// <summary>Number of rage clicks on the element</summary>
         public int? CountRageClicks { get => _explicitNullValueCountRageClicks; set { _explicitNullValueCountRageClicks = value; AdditionalData?.Remove("count_rage_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("count_rage_clicks"); else _explicitNullProperties?.Remove("count_rage_clicks"); } }
         private int? _explicitNullValueCountRageClicks = default!;
-        /// <summary>The dom_element property</summary>
+        /// <summary>CSS selector of the element, built from its tag, ID and classes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomElement { get => _explicitNullValueDomElement; set { _explicitNullValueDomElement = value; AdditionalData?.Remove("dom_element"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dom_element"); else _explicitNullProperties?.Remove("dom_element"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DomElement { get => _explicitNullValueDomElement; set { _explicitNullValueDomElement = value; AdditionalData?.Remove("dom_element"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dom_element"); else _explicitNullProperties?.Remove("dom_element"); } }
         private string _explicitNullValueDomElement = default!;
 #endif
-        /// <summary>The element property</summary>
+        /// <summary>Attributes of the clicked element</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200ResponseDataItemElement? Element { get => _explicitNullValueElement; set { _explicitNullValueElement = value; AdditionalData?.Remove("element"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("element"); else _explicitNullProperties?.Remove("element"); } }
@@ -57,7 +57,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200ResponseDataItemElement Element { get => _explicitNullValueElement; set { _explicitNullValueElement = value; AdditionalData?.Remove("element"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("element"); else _explicitNullProperties?.Remove("element"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationReplaySelectors200ResponseDataItemElement _explicitNullValueElement = default!;
 #endif
-        /// <summary>The project_id property</summary>
+        /// <summary>ID of the project the clicks were recorded in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }

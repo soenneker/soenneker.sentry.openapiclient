@@ -35,10 +35,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The artifactType property</summary>
+        /// <summary>Components the rule applies to, such as main_artifact or all_artifacts</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemArtifactType? ArtifactType { get => _explicitNullValueArtifactType; set { _explicitNullValueArtifactType = value; AdditionalData?.Remove("artifactType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactType"); else _explicitNullProperties?.Remove("artifactType"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemArtifactType? _explicitNullValueArtifactType = default!;
-        /// <summary>The filterQuery property</summary>
+        /// <summary>Search query that selects the builds the rule applies to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FilterQuery { get => _explicitNullValueFilterQuery; set { _explicitNullValueFilterQuery = value; AdditionalData?.Remove("filterQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterQuery"); else _explicitNullProperties?.Remove("filterQuery"); } }
@@ -48,7 +48,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string FilterQuery { get => _explicitNullValueFilterQuery; set { _explicitNullValueFilterQuery = value; AdditionalData?.Remove("filterQuery"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filterQuery"); else _explicitNullProperties?.Remove("filterQuery"); } }
         private string _explicitNullValueFilterQuery = default!;
 #endif
-        /// <summary>The filters property</summary>
+        /// <summary>filterQuery parsed into filters. Null when the query can&apos;t be parsed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
@@ -58,7 +58,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItem> _explicitNullValueFilters = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -68,13 +68,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The measurement property</summary>
+        /// <summary>How the rule measures size: absolute (size in bytes), absolute_diff (increase in bytes) or relative_diff (increase in percent)</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemMeasurement? Measurement { get => _explicitNullValueMeasurement; set { _explicitNullValueMeasurement = value; AdditionalData?.Remove("measurement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measurement"); else _explicitNullProperties?.Remove("measurement"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemMeasurement? _explicitNullValueMeasurement = default!;
-        /// <summary>The metric property</summary>
+        /// <summary>Size metric the rule checks: install_size or download_size</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemMetric? Metric { get => _explicitNullValueMetric; set { _explicitNullValueMetric = value; AdditionalData?.Remove("metric"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metric"); else _explicitNullProperties?.Remove("metric"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemMetric? _explicitNullValueMetric = default!;
-        /// <summary>The value property</summary>
+        /// <summary>Threshold that makes the status check fail, in bytes or percent depending on measurement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }

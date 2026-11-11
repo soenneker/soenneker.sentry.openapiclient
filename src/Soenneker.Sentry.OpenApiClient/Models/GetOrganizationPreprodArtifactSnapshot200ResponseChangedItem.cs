@@ -29,7 +29,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The base_image property</summary>
+        /// <summary>Image from the base snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage? BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
@@ -39,10 +39,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemBaseImage _explicitNullValueBaseImage = default!;
 #endif
-        /// <summary>The diff property</summary>
+        /// <summary>Fraction of pixels that changed, from 0 to 1. Only set for changed images</summary>
         public double? Diff { get => _explicitNullValueDiff; set { _explicitNullValueDiff = value; AdditionalData?.Remove("diff"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff"); else _explicitNullProperties?.Remove("diff"); } }
         private double? _explicitNullValueDiff = default!;
-        /// <summary>The diff_image_key property</summary>
+        /// <summary>ID of the diff mask image highlighting changed pixels. Only set for changed images</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; AdditionalData?.Remove("diff_image_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DiffImageKey { get => _explicitNullValueDiffImageKey; set { _explicitNullValueDiffImageKey = value; AdditionalData?.Remove("diff_image_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_key"); else _explicitNullProperties?.Remove("diff_image_key"); } }
         private string _explicitNullValueDiffImageKey = default!;
 #endif
-        /// <summary>The head_image property</summary>
+        /// <summary>Image from the head snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshot200ResponseChangedItemHeadImage? HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; AdditionalData?.Remove("head_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }

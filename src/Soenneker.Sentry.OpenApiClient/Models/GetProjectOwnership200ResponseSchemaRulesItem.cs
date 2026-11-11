@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The matcher property</summary>
+        /// <summary>What the rule matches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchemaRulesItemMatcher? Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; AdditionalData?.Remove("matcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchemaRulesItemMatcher Matcher { get => _explicitNullValueMatcher; set { _explicitNullValueMatcher = value; AdditionalData?.Remove("matcher"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matcher"); else _explicitNullProperties?.Remove("matcher"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchemaRulesItemMatcher _explicitNullValueMatcher = default!;
 #endif
-        /// <summary>The owners property</summary>
+        /// <summary>Owners the rule assigns</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectOwnership200ResponseSchemaRulesItemOwnersItem>? Owners { get => _explicitNullValueOwners; set { _explicitNullValueOwners = value; AdditionalData?.Remove("owners"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owners"); else _explicitNullProperties?.Remove("owners"); } }

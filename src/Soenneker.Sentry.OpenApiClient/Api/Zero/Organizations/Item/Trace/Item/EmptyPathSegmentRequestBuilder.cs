@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Trace.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}/{?additional_attributes*,end*,errorId*,include_uptime*,referrer*,start*,statsPeriod*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}/{?additional_attributes*,end*,errorId*,include_uptime*,referrer*,start*,statsPeriod*,timestamp*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Trace.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}/{?additional_attributes*,end*,errorId*,include_uptime*,referrer*,start*,statsPeriod*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}/{?additional_attributes*,end*,errorId*,include_uptime*,referrer*,start*,statsPeriod*,timestamp*}", rawUrl)
         {
         }
         /// <summary>
@@ -134,6 +134,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Trace.Item
 #else
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
+#endif
+            /// <summary>The timestamp of an event in the trace, as an ISO 8601 string or Unix timestamp inseconds. When passed, the query is narrowed to a window around this time, which is faster thansearching the full time range.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("timestamp")]
+            public string? Timestamp { get; set; }
+#nullable restore
+#else
+            [QueryParameter("timestamp")]
+            public string Timestamp { get; set; }
 #endif
         }
     }

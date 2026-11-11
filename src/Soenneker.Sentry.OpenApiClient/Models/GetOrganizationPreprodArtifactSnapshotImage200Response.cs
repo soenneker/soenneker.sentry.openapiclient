@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The base_image property</summary>
+        /// <summary>Image in the base snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage? BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
@@ -45,7 +45,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage BaseImage { get => _explicitNullValueBaseImage; set { _explicitNullValueBaseImage = value; AdditionalData?.Remove("base_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base_image"); else _explicitNullProperties?.Remove("base_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseBaseImage _explicitNullValueBaseImage = default!;
 #endif
-        /// <summary>The comparison_status property</summary>
+        /// <summary>Comparison result for the image: added, removed, changed, unchanged, renamed, errored or skipped. Null when there is no comparison</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ComparisonStatus { get => _explicitNullValueComparisonStatus; set { _explicitNullValueComparisonStatus = value; AdditionalData?.Remove("comparison_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_status"); else _explicitNullProperties?.Remove("comparison_status"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ComparisonStatus { get => _explicitNullValueComparisonStatus; set { _explicitNullValueComparisonStatus = value; AdditionalData?.Remove("comparison_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("comparison_status"); else _explicitNullProperties?.Remove("comparison_status"); } }
         private string _explicitNullValueComparisonStatus = default!;
 #endif
-        /// <summary>The diff_image_url property</summary>
+        /// <summary>API URL to download the diff mask image. Only set for changed images</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiffImageUrl { get => _explicitNullValueDiffImageUrl; set { _explicitNullValueDiffImageUrl = value; AdditionalData?.Remove("diff_image_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_url"); else _explicitNullProperties?.Remove("diff_image_url"); } }
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DiffImageUrl { get => _explicitNullValueDiffImageUrl; set { _explicitNullValueDiffImageUrl = value; AdditionalData?.Remove("diff_image_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_image_url"); else _explicitNullProperties?.Remove("diff_image_url"); } }
         private string _explicitNullValueDiffImageUrl = default!;
 #endif
-        /// <summary>The diff_percentage property</summary>
+        /// <summary>Fraction of pixels that changed, from 0 to 1. Only set for changed images</summary>
         public double? DiffPercentage { get => _explicitNullValueDiffPercentage; set { _explicitNullValueDiffPercentage = value; AdditionalData?.Remove("diff_percentage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("diff_percentage"); else _explicitNullProperties?.Remove("diff_percentage"); } }
         private double? _explicitNullValueDiffPercentage = default!;
-        /// <summary>The head_image property</summary>
+        /// <summary>Image in the head snapshot. Null when the image was removed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage? HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; AdditionalData?.Remove("head_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
@@ -78,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage HeadImage { get => _explicitNullValueHeadImage; set { _explicitNullValueHeadImage = value; AdditionalData?.Remove("head_image"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("head_image"); else _explicitNullProperties?.Remove("head_image"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSnapshotImage200ResponseHeadImage _explicitNullValueHeadImage = default!;
 #endif
-        /// <summary>The image_file_name property</summary>
+        /// <summary>File name of the image</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; AdditionalData?.Remove("image_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
@@ -88,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ImageFileName { get => _explicitNullValueImageFileName; set { _explicitNullValueImageFileName = value; AdditionalData?.Remove("image_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_file_name"); else _explicitNullProperties?.Remove("image_file_name"); } }
         private string _explicitNullValueImageFileName = default!;
 #endif
-        /// <summary>The previous_image_file_name property</summary>
+        /// <summary>Previous file name of the image. Only set for renamed images</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PreviousImageFileName { get => _explicitNullValuePreviousImageFileName; set { _explicitNullValuePreviousImageFileName = value; AdditionalData?.Remove("previous_image_file_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_image_file_name"); else _explicitNullProperties?.Remove("previous_image_file_name"); } }

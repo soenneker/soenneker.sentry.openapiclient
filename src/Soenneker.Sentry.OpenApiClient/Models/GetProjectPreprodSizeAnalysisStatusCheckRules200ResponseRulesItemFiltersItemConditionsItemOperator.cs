@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>How the condition compares the build&apos;s value, such as equals or startsWith</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemConditionsItemOperator
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "contains")]
         #pragma warning disable CS1591

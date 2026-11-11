@@ -36,7 +36,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
         }
 
-        /// <summary>The appconnectIssuer property</summary>
+        /// <summary>The issuer ID of the App Store Connect API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppconnectIssuer { get => _explicitNullValueAppconnectIssuer; set { _explicitNullValueAppconnectIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectIssuer"); else _explicitNullProperties?.Remove("appconnectIssuer"); } }
@@ -46,7 +46,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppconnectIssuer { get => _explicitNullValueAppconnectIssuer; set { _explicitNullValueAppconnectIssuer = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectIssuer"); else _explicitNullProperties?.Remove("appconnectIssuer"); } }
         private string _explicitNullValueAppconnectIssuer = default!;
 #endif
-        /// <summary>The appconnectKey property</summary>
+        /// <summary>The key ID of the App Store Connect API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppconnectKey { get => _explicitNullValueAppconnectKey; set { _explicitNullValueAppconnectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectKey"); else _explicitNullProperties?.Remove("appconnectKey"); } }
@@ -56,7 +56,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppconnectKey { get => _explicitNullValueAppconnectKey; set { _explicitNullValueAppconnectKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectKey"); else _explicitNullProperties?.Remove("appconnectKey"); } }
         private string _explicitNullValueAppconnectKey = default!;
 #endif
-        /// <summary>The appconnectPrivateKey property</summary>
+        /// <summary>The private key of the App Store Connect API key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppconnectPrivateKey { get => _explicitNullValueAppconnectPrivateKey; set { _explicitNullValueAppconnectPrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectPrivateKey"); else _explicitNullProperties?.Remove("appconnectPrivateKey"); } }
@@ -66,7 +66,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppconnectPrivateKey { get => _explicitNullValueAppconnectPrivateKey; set { _explicitNullValueAppconnectPrivateKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appconnectPrivateKey"); else _explicitNullProperties?.Remove("appconnectPrivateKey"); } }
         private string _explicitNullValueAppconnectPrivateKey = default!;
 #endif
-        /// <summary>The appId property</summary>
+        /// <summary>The ID of the app in App Store Connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
@@ -76,7 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppId { get => _explicitNullValueAppId; set { _explicitNullValueAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appId"); else _explicitNullProperties?.Remove("appId"); } }
         private string _explicitNullValueAppId = default!;
 #endif
-        /// <summary>The appName property</summary>
+        /// <summary>The name of the app in App Store Connect.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AppName { get => _explicitNullValueAppName; set { _explicitNullValueAppName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("appName"); else _explicitNullProperties?.Remove("appName"); } }
         private string _explicitNullValueAppName = default!;
 #endif
-        /// <summary>The bundleId property</summary>
+        /// <summary>The bundle ID of the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BundleId { get => _explicitNullValueBundleId; set { _explicitNullValueBundleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bundleId"); else _explicitNullProperties?.Remove("bundleId"); } }
@@ -96,7 +96,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BundleId { get => _explicitNullValueBundleId; set { _explicitNullValueBundleId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bundleId"); else _explicitNullProperties?.Remove("bundleId"); } }
         private string _explicitNullValueBundleId = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The ID of the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -106,7 +106,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>The human-readable name of the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }

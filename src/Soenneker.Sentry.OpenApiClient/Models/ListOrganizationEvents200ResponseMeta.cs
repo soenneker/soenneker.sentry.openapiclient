@@ -48,10 +48,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The bytesScanned property</summary>
+        /// <summary>Number of bytes the query scanned</summary>
         public int? BytesScanned { get => _explicitNullValueBytesScanned; set { _explicitNullValueBytesScanned = value; AdditionalData?.Remove("bytesScanned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bytesScanned"); else _explicitNullProperties?.Remove("bytesScanned"); } }
         private int? _explicitNullValueBytesScanned = default!;
-        /// <summary>The dataScanned property</summary>
+        /// <summary>Whether the query scanned the `full` data set or only a `partial` sample</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; AdditionalData?.Remove("dataScanned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
@@ -61,7 +61,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; AdditionalData?.Remove("dataScanned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
         private string _explicitNullValueDataScanned = default!;
 #endif
-        /// <summary>The dataset property</summary>
+        /// <summary>Dataset that was queried</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dataset { get => _explicitNullValueDataset; set { _explicitNullValueDataset = value; AdditionalData?.Remove("dataset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset"); else _explicitNullProperties?.Remove("dataset"); } }
@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Dataset { get => _explicitNullValueDataset; set { _explicitNullValueDataset = value; AdditionalData?.Remove("dataset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataset"); else _explicitNullProperties?.Remove("dataset"); } }
         private string _explicitNullValueDataset = default!;
 #endif
-        /// <summary>The datasetReason property</summary>
+        /// <summary>Why the query ran on a different dataset than requested, or unchanged</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DatasetReason { get => _explicitNullValueDatasetReason; set { _explicitNullValueDatasetReason = value; AdditionalData?.Remove("datasetReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetReason"); else _explicitNullProperties?.Remove("datasetReason"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DatasetReason { get => _explicitNullValueDatasetReason; set { _explicitNullValueDatasetReason = value; AdditionalData?.Remove("datasetReason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datasetReason"); else _explicitNullProperties?.Remove("datasetReason"); } }
         private string _explicitNullValueDatasetReason = default!;
 #endif
-        /// <summary>The debug_info property</summary>
+        /// <summary>Debug information about the query. Only present when `debug` is passed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? DebugInfo { get => _explicitNullValueDebugInfo; set { _explicitNullValueDebugInfo = value; AdditionalData?.Remove("debug_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_info"); else _explicitNullProperties?.Remove("debug_info"); } }
@@ -91,17 +91,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode DebugInfo { get => _explicitNullValueDebugInfo; set { _explicitNullValueDebugInfo = value; AdditionalData?.Remove("debug_info"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debug_info"); else _explicitNullProperties?.Remove("debug_info"); } }
         private UntypedNode _explicitNullValueDebugInfo = default!;
 #endif
-        /// <summary>The discoverSplitDecision property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? DiscoverSplitDecision { get => _explicitNullValueDiscoverSplitDecision; set { _explicitNullValueDiscoverSplitDecision = value; AdditionalData?.Remove("discoverSplitDecision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoverSplitDecision"); else _explicitNullProperties?.Remove("discoverSplitDecision"); } }
-        private UntypedNode? _explicitNullValueDiscoverSplitDecision = default!;
-#nullable restore
-#else
-        public UntypedNode DiscoverSplitDecision { get => _explicitNullValueDiscoverSplitDecision; set { _explicitNullValueDiscoverSplitDecision = value; AdditionalData?.Remove("discoverSplitDecision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoverSplitDecision"); else _explicitNullProperties?.Remove("discoverSplitDecision"); } }
-        private UntypedNode _explicitNullValueDiscoverSplitDecision = default!;
-#endif
-        /// <summary>The fields property</summary>
+        /// <summary>Dataset the results were taken from when a Discover dashboard widget query was split between errors and transactions</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision? DiscoverSplitDecision { get => _explicitNullValueDiscoverSplitDecision; set { _explicitNullValueDiscoverSplitDecision = value; AdditionalData?.Remove("discoverSplitDecision"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discoverSplitDecision"); else _explicitNullProperties?.Remove("discoverSplitDecision"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision? _explicitNullValueDiscoverSplitDecision = default!;
+        /// <summary>Type of each returned field, keyed by field name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
@@ -121,13 +114,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion Ingestion { get => _explicitNullValueIngestion; set { _explicitNullValueIngestion = value; AdditionalData?.Remove("ingestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ingestion"); else _explicitNullProperties?.Remove("ingestion"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion _explicitNullValueIngestion = default!;
 #endif
-        /// <summary>The isMetricsData property</summary>
+        /// <summary>Whether the results came from metrics data</summary>
         public bool? IsMetricsData { get => _explicitNullValueIsMetricsData; set { _explicitNullValueIsMetricsData = value; AdditionalData?.Remove("isMetricsData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMetricsData"); else _explicitNullProperties?.Remove("isMetricsData"); } }
         private bool? _explicitNullValueIsMetricsData = default!;
-        /// <summary>The isMetricsExtractedData property</summary>
+        /// <summary>Whether the results came from metrics extracted on demand</summary>
         public bool? IsMetricsExtractedData { get => _explicitNullValueIsMetricsExtractedData; set { _explicitNullValueIsMetricsExtractedData = value; AdditionalData?.Remove("isMetricsExtractedData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMetricsExtractedData"); else _explicitNullProperties?.Remove("isMetricsExtractedData"); } }
         private bool? _explicitNullValueIsMetricsExtractedData = default!;
-        /// <summary>The routingHint property</summary>
+        /// <summary>Opaque routing hint of an EAP table query. Pass it unchanged as routing_hint when fetching item details for a row</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RoutingHint { get => _explicitNullValueRoutingHint; set { _explicitNullValueRoutingHint = value; AdditionalData?.Remove("routingHint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingHint"); else _explicitNullProperties?.Remove("routingHint"); } }
@@ -137,7 +130,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string RoutingHint { get => _explicitNullValueRoutingHint; set { _explicitNullValueRoutingHint = value; AdditionalData?.Remove("routingHint"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("routingHint"); else _explicitNullProperties?.Remove("routingHint"); } }
         private string _explicitNullValueRoutingHint = default!;
 #endif
-        /// <summary>The tips property</summary>
+        /// <summary>Suggestions for improving the query, under the `query` and `columns` keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips? Tips { get => _explicitNullValueTips; set { _explicitNullValueTips = value; AdditionalData?.Remove("tips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tips"); else _explicitNullProperties?.Remove("tips"); } }
@@ -147,7 +140,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips Tips { get => _explicitNullValueTips; set { _explicitNullValueTips = value; AdditionalData?.Remove("tips"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tips"); else _explicitNullProperties?.Remove("tips"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaTips _explicitNullValueTips = default!;
 #endif
-        /// <summary>The units property</summary>
+        /// <summary>Unit of each returned field, keyed by field name, or null if the field has no unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaUnits? Units { get => _explicitNullValueUnits; set { _explicitNullValueUnits = value; AdditionalData?.Remove("units"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("units"); else _explicitNullProperties?.Remove("units"); } }
@@ -187,7 +180,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "dataset", n => { Dataset = n.GetStringValue(); } },
                 { "datasetReason", n => { DatasetReason = n.GetStringValue(); } },
                 { "debug_info", n => { DebugInfo = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "discoverSplitDecision", n => { DiscoverSplitDecision = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "discoverSplitDecision", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDiscoverSplitDecision = default; _explicitNullProperties?.Remove("discoverSplitDecision"); AdditionalData["discoverSplitDecision"] = unknown; } else { DiscoverSplitDecision = parsed; AdditionalData.Remove("discoverSplitDecision"); } } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields.CreateFromDiscriminatorValue); } },
                 { "ingestion", n => { Ingestion = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion.CreateFromDiscriminatorValue); } },
                 { "isMetricsData", n => { IsMetricsData = n.GetBoolValue(); } },
@@ -209,7 +202,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("dataset", Dataset);
             writer.WriteStringValue("datasetReason", DatasetReason);
             writer.WriteObjectValue<UntypedNode>("debug_info", DebugInfo);
-            writer.WriteObjectValue<UntypedNode>("discoverSplitDecision", DiscoverSplitDecision);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaDiscoverSplitDecision>("discoverSplitDecision", DiscoverSplitDecision);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaFields>("fields", Fields);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEvents200ResponseMetaIngestion>("ingestion", Ingestion);
             writer.WriteBoolValue("isMetricsData", IsMetricsData);

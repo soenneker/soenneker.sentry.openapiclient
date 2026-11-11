@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Crash-free session rates for the current and previous stats period. Only included when session stats are requested
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListTeamProjects200ResponseSchemaItemSessionStats : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,13 +28,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currentCrashFreeRate property</summary>
+        /// <summary>Crash-free rate in the current period, as a percentage. Null when there&apos;s no session data</summary>
         public double? CurrentCrashFreeRate { get => _explicitNullValueCurrentCrashFreeRate; set { _explicitNullValueCurrentCrashFreeRate = value; AdditionalData?.Remove("currentCrashFreeRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentCrashFreeRate"); else _explicitNullProperties?.Remove("currentCrashFreeRate"); } }
         private double? _explicitNullValueCurrentCrashFreeRate = default!;
-        /// <summary>The hasHealthData property</summary>
+        /// <summary>Whether the project has release health (session) data</summary>
         public bool? HasHealthData { get => _explicitNullValueHasHealthData; set { _explicitNullValueHasHealthData = value; AdditionalData?.Remove("hasHealthData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasHealthData"); else _explicitNullProperties?.Remove("hasHealthData"); } }
         private bool? _explicitNullValueHasHealthData = default!;
-        /// <summary>The previousCrashFreeRate property</summary>
+        /// <summary>Crash-free rate in the previous period, as a percentage. Null when there&apos;s no session data</summary>
         public double? PreviousCrashFreeRate { get => _explicitNullValuePreviousCrashFreeRate; set { _explicitNullValuePreviousCrashFreeRate = value; AdditionalData?.Remove("previousCrashFreeRate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previousCrashFreeRate"); else _explicitNullProperties?.Remove("previousCrashFreeRate"); } }
         private double? _explicitNullValuePreviousCrashFreeRate = default!;
         /// <summary>

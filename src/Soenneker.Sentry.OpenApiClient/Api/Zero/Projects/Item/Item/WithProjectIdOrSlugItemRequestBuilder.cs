@@ -27,6 +27,7 @@ using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Stats;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.SymbolSources;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Tags;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Teams;
+using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.TraceItems;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback;
 using Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Users;
 using System.Collections.Generic;
@@ -170,6 +171,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Teams.TeamsRequestBuilder Teams
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.Teams.TeamsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The traceItems property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.TraceItems.TraceItemsRequestBuilder TraceItems
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.TraceItems.TraceItemsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The userFeedback property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Api.Zero.Projects.Item.Item.UserFeedback.UserFeedbackRequestBuilder UserFeedback

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Avatar of the project. Always a letter avatar
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProject200ResponseAvatar : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,17 +28,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatarType property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
-        private string? _explicitNullValueAvatarType = default!;
-#nullable restore
-#else
-        public string AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
-        private string _explicitNullValueAvatarType = default!;
-#endif
-        /// <summary>The avatarUrl property</summary>
+        /// <summary>Avatar type</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetProject200ResponseAvatarAvatarType? AvatarType { get => _explicitNullValueAvatarType; set { _explicitNullValueAvatarType = value; AdditionalData?.Remove("avatarType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarType"); else _explicitNullProperties?.Remove("avatarType"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetProject200ResponseAvatarAvatarType? _explicitNullValueAvatarType = default!;
+        /// <summary>URL of the avatar image, or null if none is set</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
@@ -47,7 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AvatarUrl { get => _explicitNullValueAvatarUrl; set { _explicitNullValueAvatarUrl = value; AdditionalData?.Remove("avatarUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUrl"); else _explicitNullProperties?.Remove("avatarUrl"); } }
         private string _explicitNullValueAvatarUrl = default!;
 #endif
-        /// <summary>The avatarUuid property</summary>
+        /// <summary>ID of the uploaded avatar image, or null</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AvatarUuid { get => _explicitNullValueAvatarUuid; set { _explicitNullValueAvatarUuid = value; AdditionalData?.Remove("avatarUuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatarUuid"); else _explicitNullProperties?.Remove("avatarUuid"); } }
@@ -82,7 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "avatarType", n => { AvatarType = n.GetStringValue(); } },
+                { "avatarType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProject200ResponseAvatarAvatarType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAvatarType = default; _explicitNullProperties?.Remove("avatarType"); AdditionalData["avatarType"] = unknown; } else { AvatarType = parsed; AdditionalData.Remove("avatarType"); } } },
                 { "avatarUrl", n => { AvatarUrl = n.GetStringValue(); } },
                 { "avatarUuid", n => { AvatarUuid = n.GetStringValue(); } },
             };
@@ -94,7 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("avatarType", AvatarType);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProject200ResponseAvatarAvatarType>("avatarType", AvatarType);
             writer.WriteStringValue("avatarUrl", AvatarUrl);
             writer.WriteStringValue("avatarUuid", AvatarUuid);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

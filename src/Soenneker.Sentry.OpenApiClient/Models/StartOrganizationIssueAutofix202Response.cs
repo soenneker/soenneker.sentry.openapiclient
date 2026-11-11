@@ -18,6 +18,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("feature_id") is null) { _explicitNullValueFeatureId = default!; _explicitNullProperties?.Remove("feature_id"); }
+            else if (parseNode.GetChildNode("feature_id") is { } nullNodeFeatureId && nullNodeFeatureId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FeatureId = null;
             if (parseNode.GetChildNode("run_id") is null) { _explicitNullValueRunId = default!; _explicitNullProperties?.Remove("run_id"); }
             else if (parseNode.GetChildNode("run_id") is { } nullNodeRunId && nullNodeRunId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RunId = null;
             if (parseNode.GetChildNode("sentry_run_id") is null) { _explicitNullValueSentryRunId = default!; _explicitNullProperties?.Remove("sentry_run_id"); }
@@ -26,10 +28,20 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The run_id property</summary>
+        /// <summary>&quot;autofix_single_run&quot; for a single-run Autofix run, otherwise &quot;autofix&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; AdditionalData?.Remove("feature_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
+        private string? _explicitNullValueFeatureId = default!;
+#nullable restore
+#else
+        public string FeatureId { get => _explicitNullValueFeatureId; set { _explicitNullValueFeatureId = value; AdditionalData?.Remove("feature_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("feature_id"); else _explicitNullProperties?.Remove("feature_id"); } }
+        private string _explicitNullValueFeatureId = default!;
+#endif
+        /// <summary>ID of the Autofix run in Seer</summary>
         public int? RunId { get => _explicitNullValueRunId; set { _explicitNullValueRunId = value; AdditionalData?.Remove("run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("run_id"); else _explicitNullProperties?.Remove("run_id"); } }
         private int? _explicitNullValueRunId = default!;
-        /// <summary>The sentry_run_id property</summary>
+        /// <summary>ID of the run in Sentry. Null for legacy runs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SentryRunId { get => _explicitNullValueSentryRunId; set { _explicitNullValueSentryRunId = value; AdditionalData?.Remove("sentry_run_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sentry_run_id"); else _explicitNullProperties?.Remove("sentry_run_id"); } }
@@ -64,6 +76,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "feature_id", n => { FeatureId = n.GetStringValue(); } },
                 { "run_id", n => { RunId = n.GetIntValue(); } },
                 { "sentry_run_id", n => { SentryRunId = n.GetStringValue(); } },
             };
@@ -75,6 +88,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("feature_id", FeatureId);
             writer.WriteIntValue("run_id", RunId);
             writer.WriteStringValue("sentry_run_id", SentryRunId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

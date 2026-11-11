@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The directory layout, for example `native` or `symstore`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UpdateProjectSymbolSource200ResponseOneOf3LayoutType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "native")]
         #pragma warning disable CS1591

@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowedOrigins property</summary>
+        /// <summary>Allowed origins for CORS</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowedOrigins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> AllowedOrigins { get => _explicitNullValueAllowedOrigins; set { _explicitNullValueAllowedOrigins = value; AdditionalData?.Remove("allowedOrigins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedOrigins"); else _explicitNullProperties?.Remove("allowedOrigins"); } }
         private List<string> _explicitNullValueAllowedOrigins = default!;
 #endif
-        /// <summary>The author property</summary>
+        /// <summary>Author of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Author { get => _explicitNullValueAuthor; set { _explicitNullValueAuthor = value; AdditionalData?.Remove("author"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("author"); else _explicitNullProperties?.Remove("author"); } }
         private string _explicitNullValueAuthor = default!;
 #endif
-        /// <summary>The avatars property</summary>
+        /// <summary>Avatars of the custom integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseAvatarsItem>? Avatars { get => _explicitNullValueAvatars; set { _explicitNullValueAvatars = value; AdditionalData?.Remove("avatars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatars"); else _explicitNullProperties?.Remove("avatars"); } }
@@ -101,7 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseAvatarsItem> Avatars { get => _explicitNullValueAvatars; set { _explicitNullValueAvatars = value; AdditionalData?.Remove("avatars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatars"); else _explicitNullProperties?.Remove("avatars"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseAvatarsItem> _explicitNullValueAvatars = default!;
 #endif
-        /// <summary>The clientId property</summary>
+        /// <summary>OAuth client ID. Only included for members of the owner organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("clientId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
@@ -111,7 +111,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ClientId { get => _explicitNullValueClientId; set { _explicitNullValueClientId = value; AdditionalData?.Remove("clientId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientId"); else _explicitNullProperties?.Remove("clientId"); } }
         private string _explicitNullValueClientId = default!;
 #endif
-        /// <summary>The clientSecret property</summary>
+        /// <summary>OAuth client secret. Only shown to authorized users within 5 minutes of creation, and masked otherwise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("clientSecret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
@@ -121,10 +121,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ClientSecret { get => _explicitNullValueClientSecret; set { _explicitNullValueClientSecret = value; AdditionalData?.Remove("clientSecret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clientSecret"); else _explicitNullProperties?.Remove("clientSecret"); } }
         private string _explicitNullValueClientSecret = default!;
 #endif
-        /// <summary>The datePublished property</summary>
+        /// <summary>When the integration was published (ISO 8601). Only set for published integrations</summary>
         public DateTimeOffset? DatePublished { get => _explicitNullValueDatePublished; set { _explicitNullValueDatePublished = value; AdditionalData?.Remove("datePublished"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("datePublished"); else _explicitNullProperties?.Remove("datePublished"); } }
         private DateTimeOffset? _explicitNullValueDatePublished = default!;
-        /// <summary>The events property</summary>
+        /// <summary>Resources the integration&apos;s webhooks are subscribed to, such as issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
@@ -134,7 +134,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Events { get => _explicitNullValueEvents; set { _explicitNullValueEvents = value; AdditionalData?.Remove("events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("events"); else _explicitNullProperties?.Remove("events"); } }
         private List<string> _explicitNullValueEvents = default!;
 #endif
-        /// <summary>The featureData property</summary>
+        /// <summary>Features the integration supports. Empty for internal integrations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? FeatureData { get => _explicitNullValueFeatureData; set { _explicitNullValueFeatureData = value; AdditionalData?.Remove("featureData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureData"); else _explicitNullProperties?.Remove("featureData"); } }
@@ -144,13 +144,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> FeatureData { get => _explicitNullValueFeatureData; set { _explicitNullValueFeatureData = value; AdditionalData?.Remove("featureData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("featureData"); else _explicitNullProperties?.Remove("featureData"); } }
         private List<string> _explicitNullValueFeatureData = default!;
 #endif
-        /// <summary>The isAlertable property</summary>
+        /// <summary>Whether the integration can be used in alert rules</summary>
         public bool? IsAlertable { get => _explicitNullValueIsAlertable; set { _explicitNullValueIsAlertable = value; AdditionalData?.Remove("isAlertable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isAlertable"); else _explicitNullProperties?.Remove("isAlertable"); } }
         private bool? _explicitNullValueIsAlertable = default!;
-        /// <summary>The isDisabled property</summary>
+        /// <summary>Whether the integration is disabled</summary>
         public bool? IsDisabled { get => _explicitNullValueIsDisabled; set { _explicitNullValueIsDisabled = value; AdditionalData?.Remove("isDisabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDisabled"); else _explicitNullProperties?.Remove("isDisabled"); } }
         private bool? _explicitNullValueIsDisabled = default!;
-        /// <summary>The metadata property</summary>
+        /// <summary>Metadata of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
@@ -160,7 +160,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Metadata { get => _explicitNullValueMetadata; set { _explicitNullValueMetadata = value; AdditionalData?.Remove("metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("metadata"); else _explicitNullProperties?.Remove("metadata"); } }
         private string _explicitNullValueMetadata = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the custom integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -170,7 +170,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The overview property</summary>
+        /// <summary>Description of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Overview { get => _explicitNullValueOverview; set { _explicitNullValueOverview = value; AdditionalData?.Remove("overview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overview"); else _explicitNullProperties?.Remove("overview"); } }
@@ -180,7 +180,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Overview { get => _explicitNullValueOverview; set { _explicitNullValueOverview = value; AdditionalData?.Remove("overview"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("overview"); else _explicitNullProperties?.Remove("overview"); } }
         private string _explicitNullValueOverview = default!;
 #endif
-        /// <summary>The owner property</summary>
+        /// <summary>Organization that owns the integration. Only included for members of the owner organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseOwner? Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
@@ -190,10 +190,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseOwner Owner { get => _explicitNullValueOwner; set { _explicitNullValueOwner = value; AdditionalData?.Remove("owner"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner"); else _explicitNullProperties?.Remove("owner"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseOwner _explicitNullValueOwner = default!;
 #endif
-        /// <summary>The popularity property</summary>
+        /// <summary>Popularity score of the integration</summary>
         public int? Popularity { get => _explicitNullValuePopularity; set { _explicitNullValuePopularity = value; AdditionalData?.Remove("popularity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity"); else _explicitNullProperties?.Remove("popularity"); } }
         private int? _explicitNullValuePopularity = default!;
-        /// <summary>The redirectUrl property</summary>
+        /// <summary>URL to redirect to after installation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
@@ -203,7 +203,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string RedirectUrl { get => _explicitNullValueRedirectUrl; set { _explicitNullValueRedirectUrl = value; AdditionalData?.Remove("redirectUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("redirectUrl"); else _explicitNullProperties?.Remove("redirectUrl"); } }
         private string _explicitNullValueRedirectUrl = default!;
 #endif
-        /// <summary>The schema property</summary>
+        /// <summary>UI components schema used to render the integration&apos;s UI elements</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
@@ -213,7 +213,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Schema { get => _explicitNullValueSchema; set { _explicitNullValueSchema = value; AdditionalData?.Remove("schema"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schema"); else _explicitNullProperties?.Remove("schema"); } }
         private string _explicitNullValueSchema = default!;
 #endif
-        /// <summary>The scopes property</summary>
+        /// <summary>Permission scopes for API access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
@@ -223,7 +223,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug of the custom integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -233,30 +233,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
-        /// <summary>The uuid property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
-        private string? _explicitNullValueUuid = default!;
-#nullable restore
-#else
-        public string Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
-        private string _explicitNullValueUuid = default!;
-#endif
-        /// <summary>The verifyInstall property</summary>
+        /// <summary>Status of the integration</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseStatus? _explicitNullValueStatus = default!;
+        /// <summary>UUID of the custom integration</summary>
+        public Guid? Uuid { get => _explicitNullValueUuid; set { _explicitNullValueUuid = value; AdditionalData?.Remove("uuid"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uuid"); else _explicitNullProperties?.Remove("uuid"); } }
+        private Guid? _explicitNullValueUuid = default!;
+        /// <summary>Whether installations of the integration must be verified</summary>
         public bool? VerifyInstall { get => _explicitNullValueVerifyInstall; set { _explicitNullValueVerifyInstall = value; AdditionalData?.Remove("verifyInstall"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifyInstall"); else _explicitNullProperties?.Remove("verifyInstall"); } }
         private bool? _explicitNullValueVerifyInstall = default!;
-        /// <summary>The webhookEvents property</summary>
+        /// <summary>Webhook events the integration is subscribed to, such as issue.resolved</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WebhookEvents { get => _explicitNullValueWebhookEvents; set { _explicitNullValueWebhookEvents = value; AdditionalData?.Remove("webhookEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookEvents"); else _explicitNullProperties?.Remove("webhookEvents"); } }
@@ -266,7 +252,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> WebhookEvents { get => _explicitNullValueWebhookEvents; set { _explicitNullValueWebhookEvents = value; AdditionalData?.Remove("webhookEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookEvents"); else _explicitNullProperties?.Remove("webhookEvents"); } }
         private List<string> _explicitNullValueWebhookEvents = default!;
 #endif
-        /// <summary>The webhookHeaders property</summary>
+        /// <summary>Custom headers sent with every webhook request, as Header-Name: value pairs. Values are masked</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? WebhookHeaders { get => _explicitNullValueWebhookHeaders; set { _explicitNullValueWebhookHeaders = value; AdditionalData?.Remove("webhookHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookHeaders"); else _explicitNullProperties?.Remove("webhookHeaders"); } }
@@ -276,7 +262,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> WebhookHeaders { get => _explicitNullValueWebhookHeaders; set { _explicitNullValueWebhookHeaders = value; AdditionalData?.Remove("webhookHeaders"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookHeaders"); else _explicitNullProperties?.Remove("webhookHeaders"); } }
         private List<string> _explicitNullValueWebhookHeaders = default!;
 #endif
-        /// <summary>The webhookUrl property</summary>
+        /// <summary>Webhook destination URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? WebhookUrl { get => _explicitNullValueWebhookUrl; set { _explicitNullValueWebhookUrl = value; AdditionalData?.Remove("webhookUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhookUrl"); else _explicitNullProperties?.Remove("webhookUrl"); } }
@@ -330,8 +316,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "schema", n => { Schema = n.GetStringValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "slug", n => { Slug = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
-                { "uuid", n => { Uuid = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
+                { "uuid", n => { Uuid = n.GetGuidValue(); } },
                 { "verifyInstall", n => { VerifyInstall = n.GetBoolValue(); } },
                 { "webhookEvents", n => { WebhookEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "webhookHeaders", n => { WebhookHeaders = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -364,8 +350,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteStringValue("schema", Schema);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
             writer.WriteStringValue("slug", Slug);
-            writer.WriteStringValue("status", Status);
-            writer.WriteStringValue("uuid", Uuid);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetSentryApp200ResponseStatus>("status", Status);
+            writer.WriteGuidValue("uuid", Uuid);
             writer.WriteBoolValue("verifyInstall", VerifyInstall);
             writer.WriteCollectionOfPrimitiveValues<string>("webhookEvents", WebhookEvents);
             writer.WriteCollectionOfPrimitiveValues<string>("webhookHeaders", WebhookHeaders);

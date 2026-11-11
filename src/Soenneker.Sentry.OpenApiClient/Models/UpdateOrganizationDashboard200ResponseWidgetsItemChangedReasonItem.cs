@@ -27,7 +27,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The equations property</summary>
+        /// <summary>Equations that were dropped when the widget was migrated from transactions to spans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItem>? Equations { get => _explicitNullValueEquations; set { _explicitNullValueEquations = value; AdditionalData?.Remove("equations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equations"); else _explicitNullProperties?.Remove("equations"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItem> Equations { get => _explicitNullValueEquations; set { _explicitNullValueEquations = value; AdditionalData?.Remove("equations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("equations"); else _explicitNullProperties?.Remove("equations"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemEquationsItem> _explicitNullValueEquations = default!;
 #endif
-        /// <summary>The orderby property</summary>
+        /// <summary>Sort orders that were dropped when the widget was migrated from transactions to spans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemOrderbyItem>? Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; AdditionalData?.Remove("orderby"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemOrderbyItem> Orderby { get => _explicitNullValueOrderby; set { _explicitNullValueOrderby = value; AdditionalData?.Remove("orderby"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("orderby"); else _explicitNullProperties?.Remove("orderby"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDashboard200ResponseWidgetsItemChangedReasonItemOrderbyItem> _explicitNullValueOrderby = default!;
 #endif
-        /// <summary>The selected_columns property</summary>
+        /// <summary>Columns that were dropped when the widget was migrated from transactions to spans</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SelectedColumns { get => _explicitNullValueSelectedColumns; set { _explicitNullValueSelectedColumns = value; AdditionalData?.Remove("selected_columns"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("selected_columns"); else _explicitNullProperties?.Remove("selected_columns"); } }

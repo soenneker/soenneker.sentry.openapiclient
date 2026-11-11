@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Results of resolving the frame with release artifacts. Null when the event has no release
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcess : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -31,7 +32,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("source_map_reference") is { } nullNodeSourceMapReference && nullNodeSourceMapReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceMapReference = null;
         }
 
-        /// <summary>The abs_path property</summary>
+        /// <summary>Absolute path of the frame&apos;s file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AbsPath { get => _explicitNullValueAbsPath; set { _explicitNullValueAbsPath = value; AdditionalData?.Remove("abs_path"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("abs_path"); else _explicitNullProperties?.Remove("abs_path"); } }
@@ -43,7 +44,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The matching_source_file_names property</summary>
+        /// <summary>Uploaded file names that could match the frame&apos;s file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MatchingSourceFileNames { get => _explicitNullValueMatchingSourceFileNames; set { _explicitNullValueMatchingSourceFileNames = value; AdditionalData?.Remove("matching_source_file_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matching_source_file_names"); else _explicitNullProperties?.Remove("matching_source_file_names"); } }
@@ -53,7 +54,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> MatchingSourceFileNames { get => _explicitNullValueMatchingSourceFileNames; set { _explicitNullValueMatchingSourceFileNames = value; AdditionalData?.Remove("matching_source_file_names"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matching_source_file_names"); else _explicitNullProperties?.Remove("matching_source_file_names"); } }
         private List<string> _explicitNullValueMatchingSourceFileNames = default!;
 #endif
-        /// <summary>The matching_source_map_name property</summary>
+        /// <summary>Name of the uploaded source map that matches the frame&apos;s file</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MatchingSourceMapName { get => _explicitNullValueMatchingSourceMapName; set { _explicitNullValueMatchingSourceMapName = value; AdditionalData?.Remove("matching_source_map_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matching_source_map_name"); else _explicitNullProperties?.Remove("matching_source_map_name"); } }
@@ -63,13 +64,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string MatchingSourceMapName { get => _explicitNullValueMatchingSourceMapName; set { _explicitNullValueMatchingSourceMapName = value; AdditionalData?.Remove("matching_source_map_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("matching_source_map_name"); else _explicitNullProperties?.Remove("matching_source_map_name"); } }
         private string _explicitNullValueMatchingSourceMapName = default!;
 #endif
-        /// <summary>The source_file_lookup_result property</summary>
+        /// <summary>Result of looking up the source file in the release: found, wrong-dist or unsuccessful</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcessSourceFileLookupResult? SourceFileLookupResult { get => _explicitNullValueSourceFileLookupResult; set { _explicitNullValueSourceFileLookupResult = value; AdditionalData?.Remove("source_file_lookup_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_file_lookup_result"); else _explicitNullProperties?.Remove("source_file_lookup_result"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcessSourceFileLookupResult? _explicitNullValueSourceFileLookupResult = default!;
-        /// <summary>The source_map_lookup_result property</summary>
+        /// <summary>Result of looking up the source map in the release: found, wrong-dist or unsuccessful</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcessSourceMapLookupResult? SourceMapLookupResult { get => _explicitNullValueSourceMapLookupResult; set { _explicitNullValueSourceMapLookupResult = value; AdditionalData?.Remove("source_map_lookup_result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map_lookup_result"); else _explicitNullProperties?.Remove("source_map_lookup_result"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcessSourceMapLookupResult? _explicitNullValueSourceMapLookupResult = default!;
-        /// <summary>The source_map_reference property</summary>
+        /// <summary>Source map the source file refers to, from its sourceMappingURL or SourceMap header</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceMapReference { get => _explicitNullValueSourceMapReference; set { _explicitNullValueSourceMapReference = value; AdditionalData?.Remove("source_map_reference"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_map_reference"); else _explicitNullProperties?.Remove("source_map_reference"); } }

@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows/{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows/{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*,type*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows/{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/workflows/{?cursor*,detector*,id*,per_page*,project*,query*,sortBy*,type*}", rawUrl)
         {
         }
         /// <summary>
@@ -305,6 +305,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Workflows
 #else
             [QueryParameter("sortBy")]
             public string SortBy { get; set; }
+#endif
+            /// <summary>The type of workflow you&apos;d like to query. If not specified, all types are returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("type")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.AlertItem[]? Type { get; set; }
+#nullable restore
+#else
+            [QueryParameter("type")]
+            public global::Soenneker.Sentry.OpenApiClient.Models.AlertItem[] Type { get; set; }
 #endif
         }
         /// <summary>

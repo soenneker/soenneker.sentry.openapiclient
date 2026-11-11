@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Whether the query scanned the `full` data set or only a `partial` sample</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "partial")]
         #pragma warning disable CS1591

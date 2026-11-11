@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Type of the metric: counter, gauge or distribution</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum ListOrganizationTraceMetrics200ResponseItemType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "counter")]
         #pragma warning disable CS1591

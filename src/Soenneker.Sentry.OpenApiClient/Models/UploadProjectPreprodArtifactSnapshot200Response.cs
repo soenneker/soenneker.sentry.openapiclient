@@ -29,7 +29,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The artifactId property</summary>
+        /// <summary>ID of the build created for the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; AdditionalData?.Remove("artifactId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
@@ -39,10 +39,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ArtifactId { get => _explicitNullValueArtifactId; set { _explicitNullValueArtifactId = value; AdditionalData?.Remove("artifactId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artifactId"); else _explicitNullProperties?.Remove("artifactId"); } }
         private string _explicitNullValueArtifactId = default!;
 #endif
-        /// <summary>The imageCount property</summary>
+        /// <summary>Number of images in the snapshot</summary>
         public int? ImageCount { get => _explicitNullValueImageCount; set { _explicitNullValueImageCount = value; AdditionalData?.Remove("imageCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imageCount"); else _explicitNullProperties?.Remove("imageCount"); } }
         private int? _explicitNullValueImageCount = default!;
-        /// <summary>The snapshotMetricsId property</summary>
+        /// <summary>ID of the snapshot</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; AdditionalData?.Remove("snapshotMetricsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SnapshotMetricsId { get => _explicitNullValueSnapshotMetricsId; set { _explicitNullValueSnapshotMetricsId = value; AdditionalData?.Remove("snapshotMetricsId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotMetricsId"); else _explicitNullProperties?.Remove("snapshotMetricsId"); } }
         private string _explicitNullValueSnapshotMetricsId = default!;
 #endif
-        /// <summary>The snapshotUrl property</summary>
+        /// <summary>URL of the snapshot in Sentry</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SnapshotUrl { get => _explicitNullValueSnapshotUrl; set { _explicitNullValueSnapshotUrl = value; AdditionalData?.Remove("snapshotUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshotUrl"); else _explicitNullProperties?.Remove("snapshotUrl"); } }

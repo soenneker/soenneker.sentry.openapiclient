@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Build field the filter checks: app_id, build_configuration_name, git_head_ref or platform_name</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemFiltersItemKey
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "app_id")]
         #pragma warning disable CS1591

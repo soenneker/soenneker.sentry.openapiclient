@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.* `glob`* `equals`* `starts_with`* `contains`* `ends_with`* `does_not_start_with`* `does_not_contain`* `does_not_end_with`* `cidr`* `not_cidr`* `gt`* `gte`* `lt`* `lte`</summary>
+    /// <summary>How the field compares to `value`. `glob` matches the field against each value as a glob pattern. `equals`, `starts_with`, `contains` and `ends_with` match the field against each value case-insensitively, with every character read literally; `does_not_start_with`, `does_not_contain` and `does_not_end_with` match when the field is set and no value does. `cidr` matches `ip_address` against each value as an address or a CIDR range, and `not_cidr` matches when no value does. `gt`, `gte`, `lt` and `lte` compare one value as a version and only apply to `release`.* `glob`* `equals`* `starts_with`* `contains`* `ends_with`* `does_not_start_with`* `does_not_contain`* `does_not_end_with`* `cidr`* `not_cidr`* `gt`* `gte`* `lt`* `lte`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateACustomInboundFilter200ResponseConditionsItemOperator
     {

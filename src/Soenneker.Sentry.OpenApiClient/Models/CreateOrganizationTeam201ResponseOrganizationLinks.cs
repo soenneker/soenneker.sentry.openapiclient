@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Organization and region URLs
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class CreateOrganizationTeam201ResponseOrganizationLinks : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -25,7 +26,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The organizationUrl property</summary>
+        /// <summary>Base URL of the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; AdditionalData?.Remove("organizationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
@@ -35,7 +36,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string OrganizationUrl { get => _explicitNullValueOrganizationUrl; set { _explicitNullValueOrganizationUrl = value; AdditionalData?.Remove("organizationUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationUrl"); else _explicitNullProperties?.Remove("organizationUrl"); } }
         private string _explicitNullValueOrganizationUrl = default!;
 #endif
-        /// <summary>The regionUrl property</summary>
+        /// <summary>Base URL of the API for the organization&apos;s region</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RegionUrl { get => _explicitNullValueRegionUrl; set { _explicitNullValueRegionUrl = value; AdditionalData?.Remove("regionUrl"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("regionUrl"); else _explicitNullProperties?.Remove("regionUrl"); } }

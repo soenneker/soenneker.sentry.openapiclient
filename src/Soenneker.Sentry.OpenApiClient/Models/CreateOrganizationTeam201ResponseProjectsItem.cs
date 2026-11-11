@@ -99,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("transactionStats") is { } nullNodeTransactionStats && nullNodeTransactionStats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionStats = null;
         }
 
-        /// <summary>The access property</summary>
+        /// <summary>Scopes the requesting user has on the project through team membership and organization role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
@@ -111,7 +111,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The avatar property</summary>
+        /// <summary>Avatar of the project. Always a letter avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemAvatar? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
@@ -121,7 +121,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemAvatar Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemAvatar _explicitNullValueAvatar = default!;
 #endif
-        /// <summary>The color property</summary>
+        /// <summary>Hex color code for the project, derived from its slug unless set explicitly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
@@ -131,10 +131,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
         private string _explicitNullValueColor = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the project was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The features property</summary>
+        /// <summary>Features enabled for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
@@ -144,76 +144,76 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string> _explicitNullValueFeatures = default!;
 #endif
-        /// <summary>The firstEvent property</summary>
+        /// <summary>When the project received its first event (ISO 8601)</summary>
         public DateTimeOffset? FirstEvent { get => _explicitNullValueFirstEvent; set { _explicitNullValueFirstEvent = value; AdditionalData?.Remove("firstEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstEvent"); else _explicitNullProperties?.Remove("firstEvent"); } }
         private DateTimeOffset? _explicitNullValueFirstEvent = default!;
-        /// <summary>The firstTransactionEvent property</summary>
+        /// <summary>Whether the project has sent transactions</summary>
         public bool? FirstTransactionEvent { get => _explicitNullValueFirstTransactionEvent; set { _explicitNullValueFirstTransactionEvent = value; AdditionalData?.Remove("firstTransactionEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstTransactionEvent"); else _explicitNullProperties?.Remove("firstTransactionEvent"); } }
         private bool? _explicitNullValueFirstTransactionEvent = default!;
-        /// <summary>The hasAccess property</summary>
+        /// <summary>Whether the requesting user has access to the project</summary>
         public bool? HasAccess { get => _explicitNullValueHasAccess; set { _explicitNullValueHasAccess = value; AdditionalData?.Remove("hasAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasAccess"); else _explicitNullProperties?.Remove("hasAccess"); } }
         private bool? _explicitNullValueHasAccess = default!;
-        /// <summary>The hasFeedbacks property</summary>
+        /// <summary>Whether the project has sent user feedback</summary>
         public bool? HasFeedbacks { get => _explicitNullValueHasFeedbacks; set { _explicitNullValueHasFeedbacks = value; AdditionalData?.Remove("hasFeedbacks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFeedbacks"); else _explicitNullProperties?.Remove("hasFeedbacks"); } }
         private bool? _explicitNullValueHasFeedbacks = default!;
-        /// <summary>The hasFlags property</summary>
+        /// <summary>Whether the project has sent feature flags</summary>
         public bool? HasFlags { get => _explicitNullValueHasFlags; set { _explicitNullValueHasFlags = value; AdditionalData?.Remove("hasFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFlags"); else _explicitNullProperties?.Remove("hasFlags"); } }
         private bool? _explicitNullValueHasFlags = default!;
-        /// <summary>The hasInsightsAgentMonitoring property</summary>
+        /// <summary>Whether the project has sent AI agent spans used by Insights</summary>
         public bool? HasInsightsAgentMonitoring { get => _explicitNullValueHasInsightsAgentMonitoring; set { _explicitNullValueHasInsightsAgentMonitoring = value; AdditionalData?.Remove("hasInsightsAgentMonitoring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAgentMonitoring"); else _explicitNullProperties?.Remove("hasInsightsAgentMonitoring"); } }
         private bool? _explicitNullValueHasInsightsAgentMonitoring = default!;
-        /// <summary>The hasInsightsAppStart property</summary>
+        /// <summary>Whether the project has sent app start spans used by Insights</summary>
         public bool? HasInsightsAppStart { get => _explicitNullValueHasInsightsAppStart; set { _explicitNullValueHasInsightsAppStart = value; AdditionalData?.Remove("hasInsightsAppStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAppStart"); else _explicitNullProperties?.Remove("hasInsightsAppStart"); } }
         private bool? _explicitNullValueHasInsightsAppStart = default!;
-        /// <summary>The hasInsightsAssets property</summary>
+        /// <summary>Whether the project has sent asset spans used by Insights</summary>
         public bool? HasInsightsAssets { get => _explicitNullValueHasInsightsAssets; set { _explicitNullValueHasInsightsAssets = value; AdditionalData?.Remove("hasInsightsAssets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAssets"); else _explicitNullProperties?.Remove("hasInsightsAssets"); } }
         private bool? _explicitNullValueHasInsightsAssets = default!;
-        /// <summary>The hasInsightsCaches property</summary>
+        /// <summary>Whether the project has sent cache spans used by Insights</summary>
         public bool? HasInsightsCaches { get => _explicitNullValueHasInsightsCaches; set { _explicitNullValueHasInsightsCaches = value; AdditionalData?.Remove("hasInsightsCaches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsCaches"); else _explicitNullProperties?.Remove("hasInsightsCaches"); } }
         private bool? _explicitNullValueHasInsightsCaches = default!;
-        /// <summary>The hasInsightsDb property</summary>
+        /// <summary>Whether the project has sent database spans used by Insights</summary>
         public bool? HasInsightsDb { get => _explicitNullValueHasInsightsDb; set { _explicitNullValueHasInsightsDb = value; AdditionalData?.Remove("hasInsightsDb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsDb"); else _explicitNullProperties?.Remove("hasInsightsDb"); } }
         private bool? _explicitNullValueHasInsightsDb = default!;
-        /// <summary>The hasInsightsHttp property</summary>
+        /// <summary>Whether the project has sent HTTP request spans used by Insights</summary>
         public bool? HasInsightsHttp { get => _explicitNullValueHasInsightsHttp; set { _explicitNullValueHasInsightsHttp = value; AdditionalData?.Remove("hasInsightsHttp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsHttp"); else _explicitNullProperties?.Remove("hasInsightsHttp"); } }
         private bool? _explicitNullValueHasInsightsHttp = default!;
-        /// <summary>The hasInsightsMCP property</summary>
+        /// <summary>Whether the project has sent MCP spans used by Insights</summary>
         public bool? HasInsightsMCP { get => _explicitNullValueHasInsightsMCP; set { _explicitNullValueHasInsightsMCP = value; AdditionalData?.Remove("hasInsightsMCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsMCP"); else _explicitNullProperties?.Remove("hasInsightsMCP"); } }
         private bool? _explicitNullValueHasInsightsMCP = default!;
-        /// <summary>The hasInsightsQueues property</summary>
+        /// <summary>Whether the project has sent queue spans used by Insights</summary>
         public bool? HasInsightsQueues { get => _explicitNullValueHasInsightsQueues; set { _explicitNullValueHasInsightsQueues = value; AdditionalData?.Remove("hasInsightsQueues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsQueues"); else _explicitNullProperties?.Remove("hasInsightsQueues"); } }
         private bool? _explicitNullValueHasInsightsQueues = default!;
-        /// <summary>The hasInsightsScreenLoad property</summary>
+        /// <summary>Whether the project has sent screen load spans used by Insights</summary>
         public bool? HasInsightsScreenLoad { get => _explicitNullValueHasInsightsScreenLoad; set { _explicitNullValueHasInsightsScreenLoad = value; AdditionalData?.Remove("hasInsightsScreenLoad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsScreenLoad"); else _explicitNullProperties?.Remove("hasInsightsScreenLoad"); } }
         private bool? _explicitNullValueHasInsightsScreenLoad = default!;
-        /// <summary>The hasInsightsVitals property</summary>
+        /// <summary>Whether the project has sent web vitals spans used by Insights</summary>
         public bool? HasInsightsVitals { get => _explicitNullValueHasInsightsVitals; set { _explicitNullValueHasInsightsVitals = value; AdditionalData?.Remove("hasInsightsVitals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsVitals"); else _explicitNullProperties?.Remove("hasInsightsVitals"); } }
         private bool? _explicitNullValueHasInsightsVitals = default!;
-        /// <summary>The hasLogs property</summary>
+        /// <summary>Whether the project has sent logs. Always true outside sentry.io</summary>
         public bool? HasLogs { get => _explicitNullValueHasLogs; set { _explicitNullValueHasLogs = value; AdditionalData?.Remove("hasLogs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasLogs"); else _explicitNullProperties?.Remove("hasLogs"); } }
         private bool? _explicitNullValueHasLogs = default!;
-        /// <summary>The hasMinifiedStackTrace property</summary>
+        /// <summary>Whether the project has sent an event with a minified stack trace</summary>
         public bool? HasMinifiedStackTrace { get => _explicitNullValueHasMinifiedStackTrace; set { _explicitNullValueHasMinifiedStackTrace = value; AdditionalData?.Remove("hasMinifiedStackTrace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMinifiedStackTrace"); else _explicitNullProperties?.Remove("hasMinifiedStackTrace"); } }
         private bool? _explicitNullValueHasMinifiedStackTrace = default!;
-        /// <summary>The hasMonitors property</summary>
+        /// <summary>Whether the project has cron monitors</summary>
         public bool? HasMonitors { get => _explicitNullValueHasMonitors; set { _explicitNullValueHasMonitors = value; AdditionalData?.Remove("hasMonitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMonitors"); else _explicitNullProperties?.Remove("hasMonitors"); } }
         private bool? _explicitNullValueHasMonitors = default!;
-        /// <summary>The hasNewFeedbacks property</summary>
+        /// <summary>Whether the project has sent user feedback from the user feedback widget</summary>
         public bool? HasNewFeedbacks { get => _explicitNullValueHasNewFeedbacks; set { _explicitNullValueHasNewFeedbacks = value; AdditionalData?.Remove("hasNewFeedbacks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNewFeedbacks"); else _explicitNullProperties?.Remove("hasNewFeedbacks"); } }
         private bool? _explicitNullValueHasNewFeedbacks = default!;
-        /// <summary>The hasProfiles property</summary>
+        /// <summary>Whether the project has sent profiles</summary>
         public bool? HasProfiles { get => _explicitNullValueHasProfiles; set { _explicitNullValueHasProfiles = value; AdditionalData?.Remove("hasProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasProfiles"); else _explicitNullProperties?.Remove("hasProfiles"); } }
         private bool? _explicitNullValueHasProfiles = default!;
-        /// <summary>The hasReplays property</summary>
+        /// <summary>Whether the project has sent replays</summary>
         public bool? HasReplays { get => _explicitNullValueHasReplays; set { _explicitNullValueHasReplays = value; AdditionalData?.Remove("hasReplays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasReplays"); else _explicitNullProperties?.Remove("hasReplays"); } }
         private bool? _explicitNullValueHasReplays = default!;
-        /// <summary>The hasSessions property</summary>
+        /// <summary>Whether the project has sent sessions</summary>
         public bool? HasSessions { get => _explicitNullValueHasSessions; set { _explicitNullValueHasSessions = value; AdditionalData?.Remove("hasSessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasSessions"); else _explicitNullProperties?.Remove("hasSessions"); } }
         private bool? _explicitNullValueHasSessions = default!;
-        /// <summary>The hasTraceMetrics property</summary>
+        /// <summary>Whether the project has sent trace metrics. Always true outside sentry.io</summary>
         public bool? HasTraceMetrics { get => _explicitNullValueHasTraceMetrics; set { _explicitNullValueHasTraceMetrics = value; AdditionalData?.Remove("hasTraceMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasTraceMetrics"); else _explicitNullProperties?.Remove("hasTraceMetrics"); } }
         private bool? _explicitNullValueHasTraceMetrics = default!;
-        /// <summary>The id property</summary>
+        /// <summary>ID of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -223,19 +223,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isBookmarked property</summary>
+        /// <summary>Whether the requesting user bookmarked the project</summary>
         public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; AdditionalData?.Remove("isBookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
         private bool? _explicitNullValueIsBookmarked = default!;
-        /// <summary>The isInternal property</summary>
+        /// <summary>Whether this is the Sentry install&apos;s own internal project</summary>
         public bool? IsInternal { get => _explicitNullValueIsInternal; set { _explicitNullValueIsInternal = value; AdditionalData?.Remove("isInternal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInternal"); else _explicitNullProperties?.Remove("isInternal"); } }
         private bool? _explicitNullValueIsInternal = default!;
-        /// <summary>The isMember property</summary>
+        /// <summary>Whether the requesting user is a member of a team with access to the project</summary>
         public bool? IsMember { get => _explicitNullValueIsMember; set { _explicitNullValueIsMember = value; AdditionalData?.Remove("isMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMember"); else _explicitNullProperties?.Remove("isMember"); } }
         private bool? _explicitNullValueIsMember = default!;
-        /// <summary>The isPublic property</summary>
+        /// <summary>Whether the project is public</summary>
         public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; AdditionalData?.Remove("isPublic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isPublic"); else _explicitNullProperties?.Remove("isPublic"); } }
         private bool? _explicitNullValueIsPublic = default!;
-        /// <summary>The name property</summary>
+        /// <summary>Name of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -245,7 +245,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -255,7 +255,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The sessionStats property</summary>
+        /// <summary>Crash-free session rates for the current and previous stats period. Only included when session stats are requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemSessionStats? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
@@ -265,7 +265,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemSessionStats SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemSessionStats _explicitNullValueSessionStats = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -275,7 +275,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
-        /// <summary>The stats property</summary>
+        /// <summary>Counts of non-transaction events per interval over the requested stats period, as [timestamp, count] pairs. Only included when a stats period is requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
@@ -285,7 +285,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationTeam201ResponseProjectsItemStats _explicitNullValueStats = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the project: active, deleted, or unknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -295,7 +295,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The transactionStats property</summary>
+        /// <summary>Counts of transactions per interval over the requested stats period, as [timestamp, count] pairs. Only included when transaction stats are requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? TransactionStats { get => _explicitNullValueTransactionStats; set { _explicitNullValueTransactionStats = value; AdditionalData?.Remove("transactionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionStats"); else _explicitNullProperties?.Remove("transactionStats"); } }

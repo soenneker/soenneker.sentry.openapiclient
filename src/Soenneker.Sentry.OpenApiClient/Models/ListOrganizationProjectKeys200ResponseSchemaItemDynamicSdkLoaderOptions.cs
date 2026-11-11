@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Features the JavaScript SDK Loader enables
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationProjectKeys200ResponseSchemaItemDynamicSdkLoaderOptions : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -31,19 +32,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The hasDebug property</summary>
+        /// <summary>Whether the Loader loads the debug bundle</summary>
         public bool? HasDebug { get => _explicitNullValueHasDebug; set { _explicitNullValueHasDebug = value; AdditionalData?.Remove("hasDebug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasDebug"); else _explicitNullProperties?.Remove("hasDebug"); } }
         private bool? _explicitNullValueHasDebug = default!;
-        /// <summary>The hasFeedback property</summary>
+        /// <summary>Whether the Loader enables User Feedback</summary>
         public bool? HasFeedback { get => _explicitNullValueHasFeedback; set { _explicitNullValueHasFeedback = value; AdditionalData?.Remove("hasFeedback"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFeedback"); else _explicitNullProperties?.Remove("hasFeedback"); } }
         private bool? _explicitNullValueHasFeedback = default!;
-        /// <summary>The hasLogsAndMetrics property</summary>
+        /// <summary>Whether the Loader enables logs and metrics</summary>
         public bool? HasLogsAndMetrics { get => _explicitNullValueHasLogsAndMetrics; set { _explicitNullValueHasLogsAndMetrics = value; AdditionalData?.Remove("hasLogsAndMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasLogsAndMetrics"); else _explicitNullProperties?.Remove("hasLogsAndMetrics"); } }
         private bool? _explicitNullValueHasLogsAndMetrics = default!;
-        /// <summary>The hasPerformance property</summary>
+        /// <summary>Whether the Loader enables tracing</summary>
         public bool? HasPerformance { get => _explicitNullValueHasPerformance; set { _explicitNullValueHasPerformance = value; AdditionalData?.Remove("hasPerformance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasPerformance"); else _explicitNullProperties?.Remove("hasPerformance"); } }
         private bool? _explicitNullValueHasPerformance = default!;
-        /// <summary>The hasReplay property</summary>
+        /// <summary>Whether the Loader enables Session Replay</summary>
         public bool? HasReplay { get => _explicitNullValueHasReplay; set { _explicitNullValueHasReplay = value; AdditionalData?.Remove("hasReplay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasReplay"); else _explicitNullProperties?.Remove("hasReplay"); } }
         private bool? _explicitNullValueHasReplay = default!;
         /// <summary>

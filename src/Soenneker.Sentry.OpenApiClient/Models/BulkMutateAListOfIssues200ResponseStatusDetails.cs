@@ -7,20 +7,92 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Details of the new status, such as the release that resolves the issues or when an ignore expires. Empty when the new status has no details.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class BulkMutateAListOfIssues200ResponseStatusDetails : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("actor") is null) { _explicitNullValueActor = default!; _explicitNullProperties?.Remove("actor"); }
+            else if (parseNode.GetChildNode("actor") is { } nullNodeActor && nullNodeActor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actor = null;
+            if (parseNode.GetChildNode("ignoreCount") is null) { _explicitNullValueIgnoreCount = default!; _explicitNullProperties?.Remove("ignoreCount"); }
+            else if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
+            if (parseNode.GetChildNode("ignoreUntil") is null) { _explicitNullValueIgnoreUntil = default!; _explicitNullProperties?.Remove("ignoreUntil"); }
+            else if (parseNode.GetChildNode("ignoreUntil") is { } nullNodeIgnoreUntil && nullNodeIgnoreUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntil = null;
+            if (parseNode.GetChildNode("ignoreUntilEscalating") is null) { _explicitNullValueIgnoreUntilEscalating = default!; _explicitNullProperties?.Remove("ignoreUntilEscalating"); }
+            else if (parseNode.GetChildNode("ignoreUntilEscalating") is { } nullNodeIgnoreUntilEscalating && nullNodeIgnoreUntilEscalating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntilEscalating = null;
+            if (parseNode.GetChildNode("ignoreUserCount") is null) { _explicitNullValueIgnoreUserCount = default!; _explicitNullProperties?.Remove("ignoreUserCount"); }
+            else if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
+            if (parseNode.GetChildNode("ignoreUserWindow") is null) { _explicitNullValueIgnoreUserWindow = default!; _explicitNullProperties?.Remove("ignoreUserWindow"); }
+            else if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
+            if (parseNode.GetChildNode("ignoreWindow") is null) { _explicitNullValueIgnoreWindow = default!; _explicitNullProperties?.Remove("ignoreWindow"); }
+            else if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
+            if (parseNode.GetChildNode("inCommit") is null) { _explicitNullValueInCommit = default!; _explicitNullProperties?.Remove("inCommit"); }
+            else if (parseNode.GetChildNode("inCommit") is { } nullNodeInCommit && nullNodeInCommit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InCommit = null;
+            if (parseNode.GetChildNode("inNextRelease") is null) { _explicitNullValueInNextRelease = default!; _explicitNullProperties?.Remove("inNextRelease"); }
+            else if (parseNode.GetChildNode("inNextRelease") is { } nullNodeInNextRelease && nullNodeInNextRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InNextRelease = null;
+            if (parseNode.GetChildNode("inRelease") is null) { _explicitNullValueInRelease = default!; _explicitNullProperties?.Remove("inRelease"); }
+            else if (parseNode.GetChildNode("inRelease") is { } nullNodeInRelease && nullNodeInRelease.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InRelease = null;
         }
 
+        /// <summary>User who ignored or resolved the issues.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor? Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor? _explicitNullValueActor = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor Actor { get => _explicitNullValueActor; set { _explicitNullValueActor = value; AdditionalData?.Remove("actor"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actor"); else _explicitNullProperties?.Remove("actor"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor _explicitNullValueActor = default!;
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of additional events after which the issues stop being ignored.</summary>
+        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; AdditionalData?.Remove("ignoreCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
+        private int? _explicitNullValueIgnoreCount = default!;
+        /// <summary>When the issues stop being ignored.</summary>
+        public DateTimeOffset? IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; AdditionalData?.Remove("ignoreUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
+        private DateTimeOffset? _explicitNullValueIgnoreUntil = default!;
+        /// <summary>Whether the issues stay ignored until they escalate.</summary>
+        public bool? IgnoreUntilEscalating { get => _explicitNullValueIgnoreUntilEscalating; set { _explicitNullValueIgnoreUntilEscalating = value; AdditionalData?.Remove("ignoreUntilEscalating"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntilEscalating"); else _explicitNullProperties?.Remove("ignoreUntilEscalating"); } }
+        private bool? _explicitNullValueIgnoreUntilEscalating = default!;
+        /// <summary>Number of additional affected users after which the issues stop being ignored.</summary>
+        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; AdditionalData?.Remove("ignoreUserCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
+        private int? _explicitNullValueIgnoreUserCount = default!;
+        /// <summary>Time window in minutes for ignoreUserCount.</summary>
+        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; AdditionalData?.Remove("ignoreUserWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
+        private int? _explicitNullValueIgnoreUserWindow = default!;
+        /// <summary>Time window in minutes for ignoreCount.</summary>
+        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; AdditionalData?.Remove("ignoreWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
+        private int? _explicitNullValueIgnoreWindow = default!;
+        /// <summary>Commit the issues are resolved in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit? InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit? _explicitNullValueInCommit = default!;
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit InCommit { get => _explicitNullValueInCommit; set { _explicitNullValueInCommit = value; AdditionalData?.Remove("inCommit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inCommit"); else _explicitNullProperties?.Remove("inCommit"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit _explicitNullValueInCommit = default!;
+#endif
+        /// <summary>Whether the issues are resolved in the next release.</summary>
+        public bool? InNextRelease { get => _explicitNullValueInNextRelease; set { _explicitNullValueInNextRelease = value; AdditionalData?.Remove("inNextRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inNextRelease"); else _explicitNullProperties?.Remove("inNextRelease"); } }
+        private bool? _explicitNullValueInNextRelease = default!;
+        /// <summary>Version of the release the issues are resolved in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        private string? _explicitNullValueInRelease = default!;
+#nullable restore
+#else
+        public string InRelease { get => _explicitNullValueInRelease; set { _explicitNullValueInRelease = value; AdditionalData?.Remove("inRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inRelease"); else _explicitNullProperties?.Remove("inRelease"); } }
+        private string _explicitNullValueInRelease = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetails"/> and sets the default values.
         /// </summary>
@@ -46,6 +118,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor>(global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor.CreateFromDiscriminatorValue); } },
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreUntil", n => { IgnoreUntil = n.GetDateTimeOffsetValue(); } },
+                { "ignoreUntilEscalating", n => { IgnoreUntilEscalating = n.GetBoolValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
+                { "inCommit", n => { InCommit = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit>(global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit.CreateFromDiscriminatorValue); } },
+                { "inNextRelease", n => { InNextRelease = n.GetBoolValue(); } },
+                { "inRelease", n => { InRelease = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +137,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsActor>("actor", Actor);
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteDateTimeOffsetValue("ignoreUntil", IgnoreUntil);
+            writer.WriteBoolValue("ignoreUntilEscalating", IgnoreUntilEscalating);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.BulkMutateAListOfIssues200ResponseStatusDetailsInCommit>("inCommit", InCommit);
+            writer.WriteBoolValue("inNextRelease", InNextRelease);
+            writer.WriteStringValue("inRelease", InRelease);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

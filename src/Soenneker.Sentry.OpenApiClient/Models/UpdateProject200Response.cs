@@ -191,7 +191,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("verifySSL") is { } nullNodeVerifySSL && nullNodeVerifySSL.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VerifySSL = null;
         }
 
-        /// <summary>The access property</summary>
+        /// <summary>Scopes the requesting user has on the project through team membership and organization role</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
@@ -203,7 +203,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowedDomains property</summary>
+        /// <summary>Origins permitted to send events to this project. `*` allows any</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; AdditionalData?.Remove("allowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
@@ -213,7 +213,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> AllowedDomains { get => _explicitNullValueAllowedDomains; set { _explicitNullValueAllowedDomains = value; AdditionalData?.Remove("allowedDomains"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowedDomains"); else _explicitNullProperties?.Remove("allowedDomains"); } }
         private List<string> _explicitNullValueAllowedDomains = default!;
 #endif
-        /// <summary>The autofixAutomationTuning property</summary>
+        /// <summary>How aggressively Seer runs Autofix on new issues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AutofixAutomationTuning { get => _explicitNullValueAutofixAutomationTuning; set { _explicitNullValueAutofixAutomationTuning = value; AdditionalData?.Remove("autofixAutomationTuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofixAutomationTuning"); else _explicitNullProperties?.Remove("autofixAutomationTuning"); } }
@@ -223,7 +223,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string AutofixAutomationTuning { get => _explicitNullValueAutofixAutomationTuning; set { _explicitNullValueAutofixAutomationTuning = value; AdditionalData?.Remove("autofixAutomationTuning"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("autofixAutomationTuning"); else _explicitNullProperties?.Remove("autofixAutomationTuning"); } }
         private string _explicitNullValueAutofixAutomationTuning = default!;
 #endif
-        /// <summary>The avatar property</summary>
+        /// <summary>Avatar of the project. Always a letter avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseAvatar? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
@@ -233,7 +233,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseAvatar Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseAvatar _explicitNullValueAvatar = default!;
 #endif
-        /// <summary>The builtinSymbolSources property</summary>
+        /// <summary>Identifiers of Sentry-hosted symbol sources used when symbolicating events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? BuiltinSymbolSources { get => _explicitNullValueBuiltinSymbolSources; set { _explicitNullValueBuiltinSymbolSources = value; AdditionalData?.Remove("builtinSymbolSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builtinSymbolSources"); else _explicitNullProperties?.Remove("builtinSymbolSources"); } }
@@ -243,7 +243,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> BuiltinSymbolSources { get => _explicitNullValueBuiltinSymbolSources; set { _explicitNullValueBuiltinSymbolSources = value; AdditionalData?.Remove("builtinSymbolSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("builtinSymbolSources"); else _explicitNullProperties?.Remove("builtinSymbolSources"); } }
         private List<string> _explicitNullValueBuiltinSymbolSources = default!;
 #endif
-        /// <summary>The color property</summary>
+        /// <summary>Hex color code for the project, derived from its slug unless set explicitly</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
@@ -253,16 +253,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Color { get => _explicitNullValueColor; set { _explicitNullValueColor = value; AdditionalData?.Remove("color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("color"); else _explicitNullProperties?.Remove("color"); } }
         private string _explicitNullValueColor = default!;
 #endif
-        /// <summary>The dataScrubber property</summary>
+        /// <summary>Whether known sensitive values are removed from events before they are stored</summary>
         public bool? DataScrubber { get => _explicitNullValueDataScrubber; set { _explicitNullValueDataScrubber = value; AdditionalData?.Remove("dataScrubber"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubber"); else _explicitNullProperties?.Remove("dataScrubber"); } }
         private bool? _explicitNullValueDataScrubber = default!;
-        /// <summary>The dataScrubberDefaults property</summary>
+        /// <summary>Whether Sentry&apos;s built-in list of sensitive field names is also scrubbed</summary>
         public bool? DataScrubberDefaults { get => _explicitNullValueDataScrubberDefaults; set { _explicitNullValueDataScrubberDefaults = value; AdditionalData?.Remove("dataScrubberDefaults"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScrubberDefaults"); else _explicitNullProperties?.Remove("dataScrubberDefaults"); } }
         private bool? _explicitNullValueDataScrubberDefaults = default!;
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the project was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The debugFilesRole property</summary>
+        /// <summary>Role required to download debug information files, ProGuard mappings and source maps. Null inherits the organization setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; AdditionalData?.Remove("debugFilesRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
@@ -272,7 +272,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DebugFilesRole { get => _explicitNullValueDebugFilesRole; set { _explicitNullValueDebugFilesRole = value; AdditionalData?.Remove("debugFilesRole"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("debugFilesRole"); else _explicitNullProperties?.Remove("debugFilesRole"); } }
         private string _explicitNullValueDebugFilesRole = default!;
 #endif
-        /// <summary>The defaultEnvironment property</summary>
+        /// <summary>Environment selected by default when viewing this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultEnvironment { get => _explicitNullValueDefaultEnvironment; set { _explicitNullValueDefaultEnvironment = value; AdditionalData?.Remove("defaultEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultEnvironment"); else _explicitNullProperties?.Remove("defaultEnvironment"); } }
@@ -282,7 +282,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DefaultEnvironment { get => _explicitNullValueDefaultEnvironment; set { _explicitNullValueDefaultEnvironment = value; AdditionalData?.Remove("defaultEnvironment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("defaultEnvironment"); else _explicitNullProperties?.Remove("defaultEnvironment"); } }
         private string _explicitNullValueDefaultEnvironment = default!;
 #endif
-        /// <summary>The derivedGroupingEnhancements property</summary>
+        /// <summary>Stack trace rules that Sentry derives from the project&apos;s code mappings, as a newline-delimited config string</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DerivedGroupingEnhancements { get => _explicitNullValueDerivedGroupingEnhancements; set { _explicitNullValueDerivedGroupingEnhancements = value; AdditionalData?.Remove("derivedGroupingEnhancements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("derivedGroupingEnhancements"); else _explicitNullProperties?.Remove("derivedGroupingEnhancements"); } }
@@ -292,13 +292,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DerivedGroupingEnhancements { get => _explicitNullValueDerivedGroupingEnhancements; set { _explicitNullValueDerivedGroupingEnhancements = value; AdditionalData?.Remove("derivedGroupingEnhancements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("derivedGroupingEnhancements"); else _explicitNullProperties?.Remove("derivedGroupingEnhancements"); } }
         private string _explicitNullValueDerivedGroupingEnhancements = default!;
 #endif
-        /// <summary>The digestsMaxDelay property</summary>
+        /// <summary>Maximum time in seconds to wait before sending an issue digest email</summary>
         public int? DigestsMaxDelay { get => _explicitNullValueDigestsMaxDelay; set { _explicitNullValueDigestsMaxDelay = value; AdditionalData?.Remove("digestsMaxDelay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digestsMaxDelay"); else _explicitNullProperties?.Remove("digestsMaxDelay"); } }
         private int? _explicitNullValueDigestsMaxDelay = default!;
-        /// <summary>The digestsMinDelay property</summary>
+        /// <summary>Minimum time in seconds to wait before sending an issue digest email</summary>
         public int? DigestsMinDelay { get => _explicitNullValueDigestsMinDelay; set { _explicitNullValueDigestsMinDelay = value; AdditionalData?.Remove("digestsMinDelay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("digestsMinDelay"); else _explicitNullProperties?.Remove("digestsMinDelay"); } }
         private int? _explicitNullValueDigestsMinDelay = default!;
-        /// <summary>The dynamicSamplingBiases property</summary>
+        /// <summary>Per-bias toggles adjusting which transactions dynamic sampling favors retaining</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem>? DynamicSamplingBiases { get => _explicitNullValueDynamicSamplingBiases; set { _explicitNullValueDynamicSamplingBiases = value; AdditionalData?.Remove("dynamicSamplingBiases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSamplingBiases"); else _explicitNullProperties?.Remove("dynamicSamplingBiases"); } }
@@ -308,13 +308,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem> DynamicSamplingBiases { get => _explicitNullValueDynamicSamplingBiases; set { _explicitNullValueDynamicSamplingBiases = value; AdditionalData?.Remove("dynamicSamplingBiases"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSamplingBiases"); else _explicitNullProperties?.Remove("dynamicSamplingBiases"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseDynamicSamplingBiasesItem> _explicitNullValueDynamicSamplingBiases = default!;
 #endif
-        /// <summary>The enableAutoReleaseCreation property</summary>
+        /// <summary>Whether releases are created automatically from ingested events</summary>
         public bool? EnableAutoReleaseCreation { get => _explicitNullValueEnableAutoReleaseCreation; set { _explicitNullValueEnableAutoReleaseCreation = value; AdditionalData?.Remove("enableAutoReleaseCreation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableAutoReleaseCreation"); else _explicitNullProperties?.Remove("enableAutoReleaseCreation"); } }
         private bool? _explicitNullValueEnableAutoReleaseCreation = default!;
-        /// <summary>The enableNativeSourceServerMapping property</summary>
+        /// <summary>Whether source server (srcsrv) information from native debug files is applied to symbolicated frames</summary>
         public bool? EnableNativeSourceServerMapping { get => _explicitNullValueEnableNativeSourceServerMapping; set { _explicitNullValueEnableNativeSourceServerMapping = value; AdditionalData?.Remove("enableNativeSourceServerMapping"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enableNativeSourceServerMapping"); else _explicitNullProperties?.Remove("enableNativeSourceServerMapping"); } }
         private bool? _explicitNullValueEnableNativeSourceServerMapping = default!;
-        /// <summary>The features property</summary>
+        /// <summary>Features enabled for the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
@@ -324,7 +324,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string> _explicitNullValueFeatures = default!;
 #endif
-        /// <summary>The fingerprintingRules property</summary>
+        /// <summary>Fingerprinting rules, as a newline-delimited config string, controlling how events are grouped into issues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? FingerprintingRules { get => _explicitNullValueFingerprintingRules; set { _explicitNullValueFingerprintingRules = value; AdditionalData?.Remove("fingerprintingRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprintingRules"); else _explicitNullProperties?.Remove("fingerprintingRules"); } }
@@ -334,13 +334,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string FingerprintingRules { get => _explicitNullValueFingerprintingRules; set { _explicitNullValueFingerprintingRules = value; AdditionalData?.Remove("fingerprintingRules"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fingerprintingRules"); else _explicitNullProperties?.Remove("fingerprintingRules"); } }
         private string _explicitNullValueFingerprintingRules = default!;
 #endif
-        /// <summary>The firstEvent property</summary>
+        /// <summary>When the project received its first event (ISO 8601)</summary>
         public DateTimeOffset? FirstEvent { get => _explicitNullValueFirstEvent; set { _explicitNullValueFirstEvent = value; AdditionalData?.Remove("firstEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstEvent"); else _explicitNullProperties?.Remove("firstEvent"); } }
         private DateTimeOffset? _explicitNullValueFirstEvent = default!;
-        /// <summary>The firstTransactionEvent property</summary>
+        /// <summary>Whether the project has sent transactions</summary>
         public bool? FirstTransactionEvent { get => _explicitNullValueFirstTransactionEvent; set { _explicitNullValueFirstTransactionEvent = value; AdditionalData?.Remove("firstTransactionEvent"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("firstTransactionEvent"); else _explicitNullProperties?.Remove("firstTransactionEvent"); } }
         private bool? _explicitNullValueFirstTransactionEvent = default!;
-        /// <summary>The groupingConfig property</summary>
+        /// <summary>Identifier of the grouping algorithm used to assign events to issues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; AdditionalData?.Remove("groupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
@@ -350,7 +350,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string GroupingConfig { get => _explicitNullValueGroupingConfig; set { _explicitNullValueGroupingConfig = value; AdditionalData?.Remove("groupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingConfig"); else _explicitNullProperties?.Remove("groupingConfig"); } }
         private string _explicitNullValueGroupingConfig = default!;
 #endif
-        /// <summary>The groupingEnhancements property</summary>
+        /// <summary>Grouping enhancement rules, as a newline-delimited config string, adjusting which stack frames contribute to an issue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? GroupingEnhancements { get => _explicitNullValueGroupingEnhancements; set { _explicitNullValueGroupingEnhancements = value; AdditionalData?.Remove("groupingEnhancements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingEnhancements"); else _explicitNullProperties?.Remove("groupingEnhancements"); } }
@@ -360,70 +360,70 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string GroupingEnhancements { get => _explicitNullValueGroupingEnhancements; set { _explicitNullValueGroupingEnhancements = value; AdditionalData?.Remove("groupingEnhancements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groupingEnhancements"); else _explicitNullProperties?.Remove("groupingEnhancements"); } }
         private string _explicitNullValueGroupingEnhancements = default!;
 #endif
-        /// <summary>The hasAccess property</summary>
+        /// <summary>Whether the requesting user has access to the project</summary>
         public bool? HasAccess { get => _explicitNullValueHasAccess; set { _explicitNullValueHasAccess = value; AdditionalData?.Remove("hasAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasAccess"); else _explicitNullProperties?.Remove("hasAccess"); } }
         private bool? _explicitNullValueHasAccess = default!;
-        /// <summary>The hasFeedbacks property</summary>
+        /// <summary>Whether the project has sent user feedback</summary>
         public bool? HasFeedbacks { get => _explicitNullValueHasFeedbacks; set { _explicitNullValueHasFeedbacks = value; AdditionalData?.Remove("hasFeedbacks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFeedbacks"); else _explicitNullProperties?.Remove("hasFeedbacks"); } }
         private bool? _explicitNullValueHasFeedbacks = default!;
-        /// <summary>The hasFlags property</summary>
+        /// <summary>Whether the project has sent feature flags</summary>
         public bool? HasFlags { get => _explicitNullValueHasFlags; set { _explicitNullValueHasFlags = value; AdditionalData?.Remove("hasFlags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasFlags"); else _explicitNullProperties?.Remove("hasFlags"); } }
         private bool? _explicitNullValueHasFlags = default!;
-        /// <summary>The hasInsightsAgentMonitoring property</summary>
+        /// <summary>Whether the project has sent AI agent spans used by Insights</summary>
         public bool? HasInsightsAgentMonitoring { get => _explicitNullValueHasInsightsAgentMonitoring; set { _explicitNullValueHasInsightsAgentMonitoring = value; AdditionalData?.Remove("hasInsightsAgentMonitoring"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAgentMonitoring"); else _explicitNullProperties?.Remove("hasInsightsAgentMonitoring"); } }
         private bool? _explicitNullValueHasInsightsAgentMonitoring = default!;
-        /// <summary>The hasInsightsAppStart property</summary>
+        /// <summary>Whether the project has sent app start spans used by Insights</summary>
         public bool? HasInsightsAppStart { get => _explicitNullValueHasInsightsAppStart; set { _explicitNullValueHasInsightsAppStart = value; AdditionalData?.Remove("hasInsightsAppStart"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAppStart"); else _explicitNullProperties?.Remove("hasInsightsAppStart"); } }
         private bool? _explicitNullValueHasInsightsAppStart = default!;
-        /// <summary>The hasInsightsAssets property</summary>
+        /// <summary>Whether the project has sent asset spans used by Insights</summary>
         public bool? HasInsightsAssets { get => _explicitNullValueHasInsightsAssets; set { _explicitNullValueHasInsightsAssets = value; AdditionalData?.Remove("hasInsightsAssets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsAssets"); else _explicitNullProperties?.Remove("hasInsightsAssets"); } }
         private bool? _explicitNullValueHasInsightsAssets = default!;
-        /// <summary>The hasInsightsCaches property</summary>
+        /// <summary>Whether the project has sent cache spans used by Insights</summary>
         public bool? HasInsightsCaches { get => _explicitNullValueHasInsightsCaches; set { _explicitNullValueHasInsightsCaches = value; AdditionalData?.Remove("hasInsightsCaches"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsCaches"); else _explicitNullProperties?.Remove("hasInsightsCaches"); } }
         private bool? _explicitNullValueHasInsightsCaches = default!;
-        /// <summary>The hasInsightsDb property</summary>
+        /// <summary>Whether the project has sent database spans used by Insights</summary>
         public bool? HasInsightsDb { get => _explicitNullValueHasInsightsDb; set { _explicitNullValueHasInsightsDb = value; AdditionalData?.Remove("hasInsightsDb"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsDb"); else _explicitNullProperties?.Remove("hasInsightsDb"); } }
         private bool? _explicitNullValueHasInsightsDb = default!;
-        /// <summary>The hasInsightsHttp property</summary>
+        /// <summary>Whether the project has sent HTTP request spans used by Insights</summary>
         public bool? HasInsightsHttp { get => _explicitNullValueHasInsightsHttp; set { _explicitNullValueHasInsightsHttp = value; AdditionalData?.Remove("hasInsightsHttp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsHttp"); else _explicitNullProperties?.Remove("hasInsightsHttp"); } }
         private bool? _explicitNullValueHasInsightsHttp = default!;
-        /// <summary>The hasInsightsMCP property</summary>
+        /// <summary>Whether the project has sent MCP spans used by Insights</summary>
         public bool? HasInsightsMCP { get => _explicitNullValueHasInsightsMCP; set { _explicitNullValueHasInsightsMCP = value; AdditionalData?.Remove("hasInsightsMCP"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsMCP"); else _explicitNullProperties?.Remove("hasInsightsMCP"); } }
         private bool? _explicitNullValueHasInsightsMCP = default!;
-        /// <summary>The hasInsightsQueues property</summary>
+        /// <summary>Whether the project has sent queue spans used by Insights</summary>
         public bool? HasInsightsQueues { get => _explicitNullValueHasInsightsQueues; set { _explicitNullValueHasInsightsQueues = value; AdditionalData?.Remove("hasInsightsQueues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsQueues"); else _explicitNullProperties?.Remove("hasInsightsQueues"); } }
         private bool? _explicitNullValueHasInsightsQueues = default!;
-        /// <summary>The hasInsightsScreenLoad property</summary>
+        /// <summary>Whether the project has sent screen load spans used by Insights</summary>
         public bool? HasInsightsScreenLoad { get => _explicitNullValueHasInsightsScreenLoad; set { _explicitNullValueHasInsightsScreenLoad = value; AdditionalData?.Remove("hasInsightsScreenLoad"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsScreenLoad"); else _explicitNullProperties?.Remove("hasInsightsScreenLoad"); } }
         private bool? _explicitNullValueHasInsightsScreenLoad = default!;
-        /// <summary>The hasInsightsVitals property</summary>
+        /// <summary>Whether the project has sent web vitals spans used by Insights</summary>
         public bool? HasInsightsVitals { get => _explicitNullValueHasInsightsVitals; set { _explicitNullValueHasInsightsVitals = value; AdditionalData?.Remove("hasInsightsVitals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasInsightsVitals"); else _explicitNullProperties?.Remove("hasInsightsVitals"); } }
         private bool? _explicitNullValueHasInsightsVitals = default!;
-        /// <summary>The hasLogs property</summary>
+        /// <summary>Whether the project has sent logs. Always true outside sentry.io</summary>
         public bool? HasLogs { get => _explicitNullValueHasLogs; set { _explicitNullValueHasLogs = value; AdditionalData?.Remove("hasLogs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasLogs"); else _explicitNullProperties?.Remove("hasLogs"); } }
         private bool? _explicitNullValueHasLogs = default!;
-        /// <summary>The hasMinifiedStackTrace property</summary>
+        /// <summary>Whether the project has sent an event with a minified stack trace</summary>
         public bool? HasMinifiedStackTrace { get => _explicitNullValueHasMinifiedStackTrace; set { _explicitNullValueHasMinifiedStackTrace = value; AdditionalData?.Remove("hasMinifiedStackTrace"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMinifiedStackTrace"); else _explicitNullProperties?.Remove("hasMinifiedStackTrace"); } }
         private bool? _explicitNullValueHasMinifiedStackTrace = default!;
-        /// <summary>The hasMonitors property</summary>
+        /// <summary>Whether the project has cron monitors</summary>
         public bool? HasMonitors { get => _explicitNullValueHasMonitors; set { _explicitNullValueHasMonitors = value; AdditionalData?.Remove("hasMonitors"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasMonitors"); else _explicitNullProperties?.Remove("hasMonitors"); } }
         private bool? _explicitNullValueHasMonitors = default!;
-        /// <summary>The hasNewFeedbacks property</summary>
+        /// <summary>Whether the project has sent user feedback from the user feedback widget</summary>
         public bool? HasNewFeedbacks { get => _explicitNullValueHasNewFeedbacks; set { _explicitNullValueHasNewFeedbacks = value; AdditionalData?.Remove("hasNewFeedbacks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasNewFeedbacks"); else _explicitNullProperties?.Remove("hasNewFeedbacks"); } }
         private bool? _explicitNullValueHasNewFeedbacks = default!;
-        /// <summary>The hasProfiles property</summary>
+        /// <summary>Whether the project has sent profiles</summary>
         public bool? HasProfiles { get => _explicitNullValueHasProfiles; set { _explicitNullValueHasProfiles = value; AdditionalData?.Remove("hasProfiles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasProfiles"); else _explicitNullProperties?.Remove("hasProfiles"); } }
         private bool? _explicitNullValueHasProfiles = default!;
-        /// <summary>The hasReplays property</summary>
+        /// <summary>Whether the project has sent replays</summary>
         public bool? HasReplays { get => _explicitNullValueHasReplays; set { _explicitNullValueHasReplays = value; AdditionalData?.Remove("hasReplays"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasReplays"); else _explicitNullProperties?.Remove("hasReplays"); } }
         private bool? _explicitNullValueHasReplays = default!;
-        /// <summary>The hasSessions property</summary>
+        /// <summary>Whether the project has sent sessions</summary>
         public bool? HasSessions { get => _explicitNullValueHasSessions; set { _explicitNullValueHasSessions = value; AdditionalData?.Remove("hasSessions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasSessions"); else _explicitNullProperties?.Remove("hasSessions"); } }
         private bool? _explicitNullValueHasSessions = default!;
-        /// <summary>The hasTraceMetrics property</summary>
+        /// <summary>Whether the project has sent trace metrics. Always true outside sentry.io</summary>
         public bool? HasTraceMetrics { get => _explicitNullValueHasTraceMetrics; set { _explicitNullValueHasTraceMetrics = value; AdditionalData?.Remove("hasTraceMetrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasTraceMetrics"); else _explicitNullProperties?.Remove("hasTraceMetrics"); } }
         private bool? _explicitNullValueHasTraceMetrics = default!;
-        /// <summary>The highlightContext property</summary>
+        /// <summary>Context keys highlighted on the project&apos;s issues, as a mapping of context types to lists of keys</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightContext? HighlightContext { get => _explicitNullValueHighlightContext; set { _explicitNullValueHighlightContext = value; AdditionalData?.Remove("highlightContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightContext"); else _explicitNullProperties?.Remove("highlightContext"); } }
@@ -433,7 +433,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightContext HighlightContext { get => _explicitNullValueHighlightContext; set { _explicitNullValueHighlightContext = value; AdditionalData?.Remove("highlightContext"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightContext"); else _explicitNullProperties?.Remove("highlightContext"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightContext _explicitNullValueHighlightContext = default!;
 #endif
-        /// <summary>The highlightPreset property</summary>
+        /// <summary>Default highlighted tags and context for the project&apos;s platform</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightPreset? HighlightPreset { get => _explicitNullValueHighlightPreset; set { _explicitNullValueHighlightPreset = value; AdditionalData?.Remove("highlightPreset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPreset"); else _explicitNullProperties?.Remove("highlightPreset"); } }
@@ -443,7 +443,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightPreset HighlightPreset { get => _explicitNullValueHighlightPreset; set { _explicitNullValueHighlightPreset = value; AdditionalData?.Remove("highlightPreset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightPreset"); else _explicitNullProperties?.Remove("highlightPreset"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseHighlightPreset _explicitNullValueHighlightPreset = default!;
 #endif
-        /// <summary>The highlightTags property</summary>
+        /// <summary>Tag keys highlighted on the project&apos;s issues</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? HighlightTags { get => _explicitNullValueHighlightTags; set { _explicitNullValueHighlightTags = value; AdditionalData?.Remove("highlightTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightTags"); else _explicitNullProperties?.Remove("highlightTags"); } }
@@ -453,7 +453,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> HighlightTags { get => _explicitNullValueHighlightTags; set { _explicitNullValueHighlightTags = value; AdditionalData?.Remove("highlightTags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("highlightTags"); else _explicitNullProperties?.Remove("highlightTags"); } }
         private List<string> _explicitNullValueHighlightTags = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -463,22 +463,22 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isBookmarked property</summary>
+        /// <summary>Whether the requesting user bookmarked the project</summary>
         public bool? IsBookmarked { get => _explicitNullValueIsBookmarked; set { _explicitNullValueIsBookmarked = value; AdditionalData?.Remove("isBookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isBookmarked"); else _explicitNullProperties?.Remove("isBookmarked"); } }
         private bool? _explicitNullValueIsBookmarked = default!;
-        /// <summary>The isDynamicallySampled property</summary>
+        /// <summary>Whether dynamic sampling retains less than 100% of the project&apos;s transactions</summary>
         public bool? IsDynamicallySampled { get => _explicitNullValueIsDynamicallySampled; set { _explicitNullValueIsDynamicallySampled = value; AdditionalData?.Remove("isDynamicallySampled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDynamicallySampled"); else _explicitNullProperties?.Remove("isDynamicallySampled"); } }
         private bool? _explicitNullValueIsDynamicallySampled = default!;
-        /// <summary>The isInternal property</summary>
+        /// <summary>Whether this is the Sentry install&apos;s own internal project</summary>
         public bool? IsInternal { get => _explicitNullValueIsInternal; set { _explicitNullValueIsInternal = value; AdditionalData?.Remove("isInternal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInternal"); else _explicitNullProperties?.Remove("isInternal"); } }
         private bool? _explicitNullValueIsInternal = default!;
-        /// <summary>The isMember property</summary>
+        /// <summary>Whether the requesting user is a member of a team with access to the project</summary>
         public bool? IsMember { get => _explicitNullValueIsMember; set { _explicitNullValueIsMember = value; AdditionalData?.Remove("isMember"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isMember"); else _explicitNullProperties?.Remove("isMember"); } }
         private bool? _explicitNullValueIsMember = default!;
-        /// <summary>The isPublic property</summary>
+        /// <summary>Whether the project is public</summary>
         public bool? IsPublic { get => _explicitNullValueIsPublic; set { _explicitNullValueIsPublic = value; AdditionalData?.Remove("isPublic"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isPublic"); else _explicitNullProperties?.Remove("isPublic"); } }
         private bool? _explicitNullValueIsPublic = default!;
-        /// <summary>The latestRelease property</summary>
+        /// <summary>Latest release of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseLatestRelease? LatestRelease { get => _explicitNullValueLatestRelease; set { _explicitNullValueLatestRelease = value; AdditionalData?.Remove("latestRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestRelease"); else _explicitNullProperties?.Remove("latestRelease"); } }
@@ -488,7 +488,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseLatestRelease LatestRelease { get => _explicitNullValueLatestRelease; set { _explicitNullValueLatestRelease = value; AdditionalData?.Remove("latestRelease"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestRelease"); else _explicitNullProperties?.Remove("latestRelease"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseLatestRelease _explicitNullValueLatestRelease = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -498,7 +498,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The options property</summary>
+        /// <summary>Additional project settings keyed by option name, such as inbound filters and preprod settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOptions? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
@@ -508,7 +508,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOptions Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOptions _explicitNullValueOptions = default!;
 #endif
-        /// <summary>The organization property</summary>
+        /// <summary>Organization that owns the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOrganization? Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
@@ -518,7 +518,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOrganization Organization { get => _explicitNullValueOrganization; set { _explicitNullValueOrganization = value; AdditionalData?.Remove("organization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organization"); else _explicitNullProperties?.Remove("organization"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseOrganization _explicitNullValueOrganization = default!;
 #endif
-        /// <summary>The platform property</summary>
+        /// <summary>Platform of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
@@ -528,7 +528,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; AdditionalData?.Remove("platform"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
         private string _explicitNullValuePlatform = default!;
 #endif
-        /// <summary>The platforms property</summary>
+        /// <summary>Platforms seen in the project&apos;s events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; AdditionalData?.Remove("platforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
@@ -538,10 +538,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Platforms { get => _explicitNullValuePlatforms; set { _explicitNullValuePlatforms = value; AdditionalData?.Remove("platforms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platforms"); else _explicitNullProperties?.Remove("platforms"); } }
         private List<string> _explicitNullValuePlatforms = default!;
 #endif
-        /// <summary>The processingIssues property</summary>
+        /// <summary>Always 0</summary>
         public int? ProcessingIssues { get => _explicitNullValueProcessingIssues; set { _explicitNullValueProcessingIssues = value; AdditionalData?.Remove("processingIssues"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("processingIssues"); else _explicitNullProperties?.Remove("processingIssues"); } }
         private int? _explicitNullValueProcessingIssues = default!;
-        /// <summary>The relayPiiConfig property</summary>
+        /// <summary>Advanced data scrubbing rules, as a JSON string, applied before events are stored</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; AdditionalData?.Remove("relayPiiConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
@@ -551,10 +551,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string RelayPiiConfig { get => _explicitNullValueRelayPiiConfig; set { _explicitNullValueRelayPiiConfig = value; AdditionalData?.Remove("relayPiiConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relayPiiConfig"); else _explicitNullProperties?.Remove("relayPiiConfig"); } }
         private string _explicitNullValueRelayPiiConfig = default!;
 #endif
-        /// <summary>The resolveAge property</summary>
+        /// <summary>Hours after which an issue that hasn&apos;t been seen is automatically resolved. 0 disables auto-resolve</summary>
         public int? ResolveAge { get => _explicitNullValueResolveAge; set { _explicitNullValueResolveAge = value; AdditionalData?.Remove("resolveAge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resolveAge"); else _explicitNullProperties?.Remove("resolveAge"); } }
         private int? _explicitNullValueResolveAge = default!;
-        /// <summary>The safeFields property</summary>
+        /// <summary>Field names exempt from scrubbing</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; AdditionalData?.Remove("safeFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
@@ -564,16 +564,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> SafeFields { get => _explicitNullValueSafeFields; set { _explicitNullValueSafeFields = value; AdditionalData?.Remove("safeFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("safeFields"); else _explicitNullProperties?.Remove("safeFields"); } }
         private List<string> _explicitNullValueSafeFields = default!;
 #endif
-        /// <summary>The scmSourceContextEnabled property</summary>
+        /// <summary>Whether source context is fetched on demand from SCM integrations for stack traces</summary>
         public bool? ScmSourceContextEnabled { get => _explicitNullValueScmSourceContextEnabled; set { _explicitNullValueScmSourceContextEnabled = value; AdditionalData?.Remove("scmSourceContextEnabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scmSourceContextEnabled"); else _explicitNullProperties?.Remove("scmSourceContextEnabled"); } }
         private bool? _explicitNullValueScmSourceContextEnabled = default!;
-        /// <summary>The scrapeJavaScript property</summary>
+        /// <summary>Whether Sentry may fetch source files and source maps from your servers</summary>
         public bool? ScrapeJavaScript { get => _explicitNullValueScrapeJavaScript; set { _explicitNullValueScrapeJavaScript = value; AdditionalData?.Remove("scrapeJavaScript"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrapeJavaScript"); else _explicitNullProperties?.Remove("scrapeJavaScript"); } }
         private bool? _explicitNullValueScrapeJavaScript = default!;
-        /// <summary>The scrubIPAddresses property</summary>
+        /// <summary>Whether client IP addresses are discarded rather than stored on events</summary>
         public bool? ScrubIPAddresses { get => _explicitNullValueScrubIPAddresses; set { _explicitNullValueScrubIPAddresses = value; AdditionalData?.Remove("scrubIPAddresses"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrubIPAddresses"); else _explicitNullProperties?.Remove("scrubIPAddresses"); } }
         private bool? _explicitNullValueScrubIPAddresses = default!;
-        /// <summary>The secondaryGroupingConfig property</summary>
+        /// <summary>Grouping algorithm run alongside the primary one during a grouping migration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecondaryGroupingConfig { get => _explicitNullValueSecondaryGroupingConfig; set { _explicitNullValueSecondaryGroupingConfig = value; AdditionalData?.Remove("secondaryGroupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingConfig"); else _explicitNullProperties?.Remove("secondaryGroupingConfig"); } }
@@ -583,10 +583,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SecondaryGroupingConfig { get => _explicitNullValueSecondaryGroupingConfig; set { _explicitNullValueSecondaryGroupingConfig = value; AdditionalData?.Remove("secondaryGroupingConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingConfig"); else _explicitNullProperties?.Remove("secondaryGroupingConfig"); } }
         private string _explicitNullValueSecondaryGroupingConfig = default!;
 #endif
-        /// <summary>The secondaryGroupingExpiry property</summary>
+        /// <summary>Unix timestamp after which the secondary grouping algorithm stops running</summary>
         public int? SecondaryGroupingExpiry { get => _explicitNullValueSecondaryGroupingExpiry; set { _explicitNullValueSecondaryGroupingExpiry = value; AdditionalData?.Remove("secondaryGroupingExpiry"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secondaryGroupingExpiry"); else _explicitNullProperties?.Remove("secondaryGroupingExpiry"); } }
         private int? _explicitNullValueSecondaryGroupingExpiry = default!;
-        /// <summary>The securityToken property</summary>
+        /// <summary>Token sent with security reports (CSP, Expect-CT, HPKP) so Sentry can verify their origin</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecurityToken { get => _explicitNullValueSecurityToken; set { _explicitNullValueSecurityToken = value; AdditionalData?.Remove("securityToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityToken"); else _explicitNullProperties?.Remove("securityToken"); } }
@@ -596,7 +596,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SecurityToken { get => _explicitNullValueSecurityToken; set { _explicitNullValueSecurityToken = value; AdditionalData?.Remove("securityToken"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityToken"); else _explicitNullProperties?.Remove("securityToken"); } }
         private string _explicitNullValueSecurityToken = default!;
 #endif
-        /// <summary>The securityTokenHeader property</summary>
+        /// <summary>Name of the header carrying the security token on inbound security reports</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SecurityTokenHeader { get => _explicitNullValueSecurityTokenHeader; set { _explicitNullValueSecurityTokenHeader = value; AdditionalData?.Remove("securityTokenHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityTokenHeader"); else _explicitNullProperties?.Remove("securityTokenHeader"); } }
@@ -606,7 +606,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SecurityTokenHeader { get => _explicitNullValueSecurityTokenHeader; set { _explicitNullValueSecurityTokenHeader = value; AdditionalData?.Remove("securityTokenHeader"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("securityTokenHeader"); else _explicitNullProperties?.Remove("securityTokenHeader"); } }
         private string _explicitNullValueSecurityTokenHeader = default!;
 #endif
-        /// <summary>The seerNightshiftTweaks property</summary>
+        /// <summary>Experimental Seer settings with no stable shape</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? SeerNightshiftTweaks { get => _explicitNullValueSeerNightshiftTweaks; set { _explicitNullValueSeerNightshiftTweaks = value; AdditionalData?.Remove("seerNightshiftTweaks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerNightshiftTweaks"); else _explicitNullProperties?.Remove("seerNightshiftTweaks"); } }
@@ -616,10 +616,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode SeerNightshiftTweaks { get => _explicitNullValueSeerNightshiftTweaks; set { _explicitNullValueSeerNightshiftTweaks = value; AdditionalData?.Remove("seerNightshiftTweaks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerNightshiftTweaks"); else _explicitNullProperties?.Remove("seerNightshiftTweaks"); } }
         private UntypedNode _explicitNullValueSeerNightshiftTweaks = default!;
 #endif
-        /// <summary>The seerScannerAutomation property</summary>
+        /// <summary>Whether Seer scans new issues automatically</summary>
         public bool? SeerScannerAutomation { get => _explicitNullValueSeerScannerAutomation; set { _explicitNullValueSeerScannerAutomation = value; AdditionalData?.Remove("seerScannerAutomation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seerScannerAutomation"); else _explicitNullProperties?.Remove("seerScannerAutomation"); } }
         private bool? _explicitNullValueSeerScannerAutomation = default!;
-        /// <summary>The sensitiveFields property</summary>
+        /// <summary>Additional field names scrubbed from events, beyond the defaults</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; AdditionalData?.Remove("sensitiveFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
@@ -629,7 +629,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> SensitiveFields { get => _explicitNullValueSensitiveFields; set { _explicitNullValueSensitiveFields = value; AdditionalData?.Remove("sensitiveFields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sensitiveFields"); else _explicitNullProperties?.Remove("sensitiveFields"); } }
         private List<string> _explicitNullValueSensitiveFields = default!;
 #endif
-        /// <summary>The sessionStats property</summary>
+        /// <summary>Crash-free session rates for the current and previous stats period. Only included when session stats are requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats? SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
@@ -639,7 +639,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats SessionStats { get => _explicitNullValueSessionStats; set { _explicitNullValueSessionStats = value; AdditionalData?.Remove("sessionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sessionStats"); else _explicitNullProperties?.Remove("sessionStats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseSessionStats _explicitNullValueSessionStats = default!;
 #endif
-        /// <summary>The slug property</summary>
+        /// <summary>Slug of the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -649,7 +649,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
-        /// <summary>The stats property</summary>
+        /// <summary>Counts of non-transaction events per interval over the requested stats period, as [timestamp, count] pairs. Only included when a stats period is requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats? Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
@@ -659,7 +659,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats Stats { get => _explicitNullValueStats; set { _explicitNullValueStats = value; AdditionalData?.Remove("stats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stats"); else _explicitNullProperties?.Remove("stats"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseStats _explicitNullValueStats = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of the project: active, deleted, or unknown</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
@@ -669,10 +669,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private string _explicitNullValueStatus = default!;
 #endif
-        /// <summary>The storeCrashReports property</summary>
+        /// <summary>Number of native crash report files stored per issue. -1 means unlimited, 0 stores none, and null inherits the organization setting</summary>
         public int? StoreCrashReports { get => _explicitNullValueStoreCrashReports; set { _explicitNullValueStoreCrashReports = value; AdditionalData?.Remove("storeCrashReports"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("storeCrashReports"); else _explicitNullProperties?.Remove("storeCrashReports"); } }
         private int? _explicitNullValueStoreCrashReports = default!;
-        /// <summary>The subjectPrefix property</summary>
+        /// <summary>Custom prefix for emails from this project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubjectPrefix { get => _explicitNullValueSubjectPrefix; set { _explicitNullValueSubjectPrefix = value; AdditionalData?.Remove("subjectPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectPrefix"); else _explicitNullProperties?.Remove("subjectPrefix"); } }
@@ -682,7 +682,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SubjectPrefix { get => _explicitNullValueSubjectPrefix; set { _explicitNullValueSubjectPrefix = value; AdditionalData?.Remove("subjectPrefix"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectPrefix"); else _explicitNullProperties?.Remove("subjectPrefix"); } }
         private string _explicitNullValueSubjectPrefix = default!;
 #endif
-        /// <summary>The subjectTemplate property</summary>
+        /// <summary>Email subject used for individual alerts, excluding the prefix</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubjectTemplate { get => _explicitNullValueSubjectTemplate; set { _explicitNullValueSubjectTemplate = value; AdditionalData?.Remove("subjectTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectTemplate"); else _explicitNullProperties?.Remove("subjectTemplate"); } }
@@ -692,7 +692,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SubjectTemplate { get => _explicitNullValueSubjectTemplate; set { _explicitNullValueSubjectTemplate = value; AdditionalData?.Remove("subjectTemplate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subjectTemplate"); else _explicitNullProperties?.Remove("subjectTemplate"); } }
         private string _explicitNullValueSubjectTemplate = default!;
 #endif
-        /// <summary>The symbolSources property</summary>
+        /// <summary>Custom symbol sources as a JSON string, with secrets redacted</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SymbolSources { get => _explicitNullValueSymbolSources; set { _explicitNullValueSymbolSources = value; AdditionalData?.Remove("symbolSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolSources"); else _explicitNullProperties?.Remove("symbolSources"); } }
@@ -702,7 +702,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SymbolSources { get => _explicitNullValueSymbolSources; set { _explicitNullValueSymbolSources = value; AdditionalData?.Remove("symbolSources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("symbolSources"); else _explicitNullProperties?.Remove("symbolSources"); } }
         private string _explicitNullValueSymbolSources = default!;
 #endif
-        /// <summary>The team property</summary>
+        /// <summary>First team with access to the project; use teams instead</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam? Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
@@ -712,7 +712,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam Team { get => _explicitNullValueTeam; set { _explicitNullValueTeam = value; AdditionalData?.Remove("team"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("team"); else _explicitNullProperties?.Remove("team"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeam _explicitNullValueTeam = default!;
 #endif
-        /// <summary>The teams property</summary>
+        /// <summary>Teams with access to the project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem>? Teams { get => _explicitNullValueTeams; set { _explicitNullValueTeams = value; AdditionalData?.Remove("teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams"); else _explicitNullProperties?.Remove("teams"); } }
@@ -722,10 +722,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem> Teams { get => _explicitNullValueTeams; set { _explicitNullValueTeams = value; AdditionalData?.Remove("teams"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("teams"); else _explicitNullProperties?.Remove("teams"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProject200ResponseTeamsItem> _explicitNullValueTeams = default!;
 #endif
-        /// <summary>The tempestFetchScreenshots property</summary>
+        /// <summary>Whether screenshots attached to console crash reports are fetched. Only included when the organization has Tempest access</summary>
         public bool? TempestFetchScreenshots { get => _explicitNullValueTempestFetchScreenshots; set { _explicitNullValueTempestFetchScreenshots = value; AdditionalData?.Remove("tempestFetchScreenshots"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempestFetchScreenshots"); else _explicitNullProperties?.Remove("tempestFetchScreenshots"); } }
         private bool? _explicitNullValueTempestFetchScreenshots = default!;
-        /// <summary>The transactionStats property</summary>
+        /// <summary>Counts of transactions per interval over the requested stats period, as [timestamp, count] pairs. Only included when transaction stats are requested</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? TransactionStats { get => _explicitNullValueTransactionStats; set { _explicitNullValueTransactionStats = value; AdditionalData?.Remove("transactionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionStats"); else _explicitNullProperties?.Remove("transactionStats"); } }
@@ -735,7 +735,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode TransactionStats { get => _explicitNullValueTransactionStats; set { _explicitNullValueTransactionStats = value; AdditionalData?.Remove("transactionStats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transactionStats"); else _explicitNullProperties?.Remove("transactionStats"); } }
         private UntypedNode _explicitNullValueTransactionStats = default!;
 #endif
-        /// <summary>The verifySSL property</summary>
+        /// <summary>Whether SSL certificates are verified when delivering outbound webhooks and service hooks</summary>
         public bool? VerifySSL { get => _explicitNullValueVerifySSL; set { _explicitNullValueVerifySSL = value; AdditionalData?.Remove("verifySSL"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("verifySSL"); else _explicitNullProperties?.Remove("verifySSL"); } }
         private bool? _explicitNullValueVerifySSL = default!;
         /// <summary>

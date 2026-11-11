@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The source type, always `appStoreConnect`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AppStoreConnectType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "appStoreConnect")]
         #pragma warning disable CS1591

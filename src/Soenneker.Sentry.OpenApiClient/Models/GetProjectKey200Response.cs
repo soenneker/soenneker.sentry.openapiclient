@@ -50,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The browserSdk property</summary>
+        /// <summary>JavaScript SDK versions the Loader can serve</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseBrowserSdk? BrowserSdk { get => _explicitNullValueBrowserSdk; set { _explicitNullValueBrowserSdk = value; AdditionalData?.Remove("browserSdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdk"); else _explicitNullProperties?.Remove("browserSdk"); } }
@@ -60,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseBrowserSdk BrowserSdk { get => _explicitNullValueBrowserSdk; set { _explicitNullValueBrowserSdk = value; AdditionalData?.Remove("browserSdk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdk"); else _explicitNullProperties?.Remove("browserSdk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseBrowserSdk _explicitNullValueBrowserSdk = default!;
 #endif
-        /// <summary>The browserSdkVersion property</summary>
+        /// <summary>JavaScript SDK version the Loader serves</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BrowserSdkVersion { get => _explicitNullValueBrowserSdkVersion; set { _explicitNullValueBrowserSdkVersion = value; AdditionalData?.Remove("browserSdkVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdkVersion"); else _explicitNullProperties?.Remove("browserSdkVersion"); } }
@@ -70,10 +70,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string BrowserSdkVersion { get => _explicitNullValueBrowserSdkVersion; set { _explicitNullValueBrowserSdkVersion = value; AdditionalData?.Remove("browserSdkVersion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("browserSdkVersion"); else _explicitNullProperties?.Remove("browserSdkVersion"); } }
         private string _explicitNullValueBrowserSdkVersion = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the client key was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The dsn property</summary>
+        /// <summary>DSN and ingestion endpoints for the key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDsn? Dsn { get => _explicitNullValueDsn; set { _explicitNullValueDsn = value; AdditionalData?.Remove("dsn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsn"); else _explicitNullProperties?.Remove("dsn"); } }
@@ -83,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDsn Dsn { get => _explicitNullValueDsn; set { _explicitNullValueDsn = value; AdditionalData?.Remove("dsn"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dsn"); else _explicitNullProperties?.Remove("dsn"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDsn _explicitNullValueDsn = default!;
 #endif
-        /// <summary>The dynamicSdkLoaderOptions property</summary>
+        /// <summary>Features the JavaScript SDK Loader enables</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDynamicSdkLoaderOptions? DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; AdditionalData?.Remove("dynamicSdkLoaderOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDynamicSdkLoaderOptions DynamicSdkLoaderOptions { get => _explicitNullValueDynamicSdkLoaderOptions; set { _explicitNullValueDynamicSdkLoaderOptions = value; AdditionalData?.Remove("dynamicSdkLoaderOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dynamicSdkLoaderOptions"); else _explicitNullProperties?.Remove("dynamicSdkLoaderOptions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseDynamicSdkLoaderOptions _explicitNullValueDynamicSdkLoaderOptions = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the client key, same as its public key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -103,10 +103,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isActive property</summary>
+        /// <summary>Whether the client key accepts events</summary>
         public bool? IsActive { get => _explicitNullValueIsActive; set { _explicitNullValueIsActive = value; AdditionalData?.Remove("isActive"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isActive"); else _explicitNullProperties?.Remove("isActive"); } }
         private bool? _explicitNullValueIsActive = default!;
-        /// <summary>The label property</summary>
+        /// <summary>Name of the client key, same as name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
@@ -116,7 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Label { get => _explicitNullValueLabel; set { _explicitNullValueLabel = value; AdditionalData?.Remove("label"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("label"); else _explicitNullProperties?.Remove("label"); } }
         private string _explicitNullValueLabel = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the client key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -126,10 +126,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The projectId property</summary>
+        /// <summary>ID of the project the key belongs to</summary>
         public long? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("projectId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("projectId"); else _explicitNullProperties?.Remove("projectId"); } }
         private long? _explicitNullValueProjectId = default!;
-        /// <summary>The public property</summary>
+        /// <summary>Public key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
@@ -139,7 +139,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Public { get => _explicitNullValuePublic; set { _explicitNullValuePublic = value; AdditionalData?.Remove("public"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public"); else _explicitNullProperties?.Remove("public"); } }
         private string _explicitNullValuePublic = default!;
 #endif
-        /// <summary>The rateLimit property</summary>
+        /// <summary>Rate limit for events sent with the key. Null when there&apos;s none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseRateLimit? RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
@@ -149,7 +149,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseRateLimit RateLimit { get => _explicitNullValueRateLimit; set { _explicitNullValueRateLimit = value; AdditionalData?.Remove("rateLimit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rateLimit"); else _explicitNullProperties?.Remove("rateLimit"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectKey200ResponseRateLimit _explicitNullValueRateLimit = default!;
 #endif
-        /// <summary>The secret property</summary>
+        /// <summary>Secret key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
@@ -159,7 +159,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Secret { get => _explicitNullValueSecret; set { _explicitNullValueSecret = value; AdditionalData?.Remove("secret"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("secret"); else _explicitNullProperties?.Remove("secret"); } }
         private string _explicitNullValueSecret = default!;
 #endif
-        /// <summary>The useCase property</summary>
+        /// <summary>What the key is used for, such as user or profiling. Only included for superusers</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UseCase { get => _explicitNullValueUseCase; set { _explicitNullValueUseCase = value; AdditionalData?.Remove("useCase"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("useCase"); else _explicitNullProperties?.Remove("useCase"); } }

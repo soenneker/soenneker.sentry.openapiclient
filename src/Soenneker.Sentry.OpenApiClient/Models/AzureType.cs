@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The source type, always `azure`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum AzureType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "azure")]
         #pragma warning disable CS1591

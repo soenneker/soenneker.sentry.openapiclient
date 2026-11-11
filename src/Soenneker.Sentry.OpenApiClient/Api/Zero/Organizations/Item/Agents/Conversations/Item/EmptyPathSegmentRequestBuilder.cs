@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*,view*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,11 +30,11 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*,view*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/{?cursor*,end*,environment*,per_page*,project*,start*,statsPeriod*}", rawUrl)
         {
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search across available retention. A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search to the last 30 days. Ranges that reach further back, including a`statsPeriod` longer than 30 days, return a 400. A missing conversation returns anempty `spans` list.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -52,7 +52,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return await RequestAdapter.SendAsync<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response>(requestInfo, global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversation200Response.CreateFromDiscriminatorValue, new global::System.Collections.Generic.Dictionary<string, global::Microsoft.Kiota.Abstractions.Serialization.ParsableFactory<global::Microsoft.Kiota.Abstractions.Serialization.IParsable>> { { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue }, { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue } }, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search across available retention. A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search to the last 30 days. Ranges that reach further back, including a`statsPeriod` longer than 30 days, return a 400. A missing conversation returns anempty `spans` list.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -80,7 +80,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             return new global::Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conversations.Item.EmptyPathSegmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search across available retention. A missing conversation returns an empty `spans` list.
+        /// **Experimental:** This API is under active development and may change.Return spans recorded for one AI conversation in start-time order.Message, tool, and response attributes contain their recorded string values.`stats.errors` counts spans whose status is not `ok`, `cancelled`, or `unknown`.`stats.errorToolNames` lists tools used by those spans.`stats.inputTokens` includes cache-read and cache-write tokens. In `stats.usageByModel`,`inputCost` includes cache-read and cache-write costs, and `outputCost` includesreasoning cost. These cost breakdowns are not added to `totalCost`.Stats are returned on the first page only. Without an explicit range, Sentry widensthe search to the last 30 days. Ranges that reach further back, including a`statsPeriod` longer than 30 days, return a 400. A missing conversation returns anempty `spans` list.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 
@@ -134,9 +134,6 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Agents.Conv
             [QueryParameter("statsPeriod")]
             public string StatsPeriod { get; set; }
 #endif
-            /// <summary>Defaults to timeline (paginated raw spans). Transcript returns paginated normalized messages; requires feature access. Transcript timestamps and durations are seconds.</summary>
-            [QueryParameter("view")]
-            public global::Soenneker.Sentry.OpenApiClient.Models.RetrieveOrganizationAiConversationViewParameter? View { get; set; }
         }
     }
 }

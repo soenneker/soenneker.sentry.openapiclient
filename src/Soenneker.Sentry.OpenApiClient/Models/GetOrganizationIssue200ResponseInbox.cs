@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Why the issue is in the inbox. Only included when requested with expand
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationIssue200ResponseInbox : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,13 +28,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The date_added property</summary>
+        /// <summary>When the issue was added to the inbox (ISO 8601)</summary>
         public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("date_added"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("date_added"); else _explicitNullProperties?.Remove("date_added"); } }
         private DateTimeOffset? _explicitNullValueDateAdded = default!;
-        /// <summary>The reason property</summary>
+        /// <summary>Why the issue is in the inbox: 0 new, 1 unignored, 2 regression, 3 manual, 4 reprocessed, 5 escalating or 6 ongoing</summary>
         public int? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
         private int? _explicitNullValueReason = default!;
-        /// <summary>The reason_details property</summary>
+        /// <summary>Details of the ignore that ended when the issue came back to the inbox. Null otherwise</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseInboxReasonDetails? ReasonDetails { get => _explicitNullValueReasonDetails; set { _explicitNullValueReasonDetails = value; AdditionalData?.Remove("reason_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason_details"); else _explicitNullProperties?.Remove("reason_details"); } }

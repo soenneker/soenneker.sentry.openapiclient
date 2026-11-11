@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>The accountType property</summary>
+        /// <summary>Type of the connected account, such as Organization or User</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AccountType { get => _explicitNullValueAccountType; set { _explicitNullValueAccountType = value; AdditionalData?.Remove("accountType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accountType"); else _explicitNullProperties?.Remove("accountType"); } }
@@ -63,7 +63,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The configData property</summary>
+        /// <summary>Configuration values the organization set for the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? ConfigData { get => _explicitNullValueConfigData; set { _explicitNullValueConfigData = value; AdditionalData?.Remove("configData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configData"); else _explicitNullProperties?.Remove("configData"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode ConfigData { get => _explicitNullValueConfigData; set { _explicitNullValueConfigData = value; AdditionalData?.Remove("configData"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configData"); else _explicitNullProperties?.Remove("configData"); } }
         private UntypedNode _explicitNullValueConfigData = default!;
 #endif
-        /// <summary>The configOrganization property</summary>
+        /// <summary>Organization-level configuration fields of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? ConfigOrganization { get => _explicitNullValueConfigOrganization; set { _explicitNullValueConfigOrganization = value; AdditionalData?.Remove("configOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configOrganization"); else _explicitNullProperties?.Remove("configOrganization"); } }
@@ -83,7 +83,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public UntypedNode ConfigOrganization { get => _explicitNullValueConfigOrganization; set { _explicitNullValueConfigOrganization = value; AdditionalData?.Remove("configOrganization"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("configOrganization"); else _explicitNullProperties?.Remove("configOrganization"); } }
         private UntypedNode _explicitNullValueConfigOrganization = default!;
 #endif
-        /// <summary>The domainName property</summary>
+        /// <summary>Domain of the connected account, such as github.com/example-org</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; AdditionalData?.Remove("domainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
@@ -93,7 +93,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DomainName { get => _explicitNullValueDomainName; set { _explicitNullValueDomainName = value; AdditionalData?.Remove("domainName"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("domainName"); else _explicitNullProperties?.Remove("domainName"); } }
         private string _explicitNullValueDomainName = default!;
 #endif
-        /// <summary>The externalId property</summary>
+        /// <summary>ID of the connected account in the provider</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("externalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalId"); else _explicitNullProperties?.Remove("externalId"); } }
@@ -103,17 +103,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("externalId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("externalId"); else _explicitNullProperties?.Remove("externalId"); } }
         private string _explicitNullValueExternalId = default!;
 #endif
-        /// <summary>The gracePeriodEnd property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? GracePeriodEnd { get => _explicitNullValueGracePeriodEnd; set { _explicitNullValueGracePeriodEnd = value; AdditionalData?.Remove("gracePeriodEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gracePeriodEnd"); else _explicitNullProperties?.Remove("gracePeriodEnd"); } }
-        private string? _explicitNullValueGracePeriodEnd = default!;
-#nullable restore
-#else
-        public string GracePeriodEnd { get => _explicitNullValueGracePeriodEnd; set { _explicitNullValueGracePeriodEnd = value; AdditionalData?.Remove("gracePeriodEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gracePeriodEnd"); else _explicitNullProperties?.Remove("gracePeriodEnd"); } }
-        private string _explicitNullValueGracePeriodEnd = default!;
-#endif
-        /// <summary>The icon property</summary>
+        /// <summary>When the integration&apos;s grace period ends (ISO 8601). Null when there&apos;s no grace period</summary>
+        public DateTimeOffset? GracePeriodEnd { get => _explicitNullValueGracePeriodEnd; set { _explicitNullValueGracePeriodEnd = value; AdditionalData?.Remove("gracePeriodEnd"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("gracePeriodEnd"); else _explicitNullProperties?.Remove("gracePeriodEnd"); } }
+        private DateTimeOffset? _explicitNullValueGracePeriodEnd = default!;
+        /// <summary>URL of the connected account&apos;s icon</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; AdditionalData?.Remove("icon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
@@ -123,7 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Icon { get => _explicitNullValueIcon; set { _explicitNullValueIcon = value; AdditionalData?.Remove("icon"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("icon"); else _explicitNullProperties?.Remove("icon"); } }
         private string _explicitNullValueIcon = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -133,7 +126,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The missingFeatures property</summary>
+        /// <summary>Features the installation can&apos;t support because of missing permissions. Null for providers without a permissions model</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>? MissingFeatures { get => _explicitNullValueMissingFeatures; set { _explicitNullValueMissingFeatures = value; AdditionalData?.Remove("missingFeatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingFeatures"); else _explicitNullProperties?.Remove("missingFeatures"); } }
@@ -143,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem> MissingFeatures { get => _explicitNullValueMissingFeatures; set { _explicitNullValueMissingFeatures = value; AdditionalData?.Remove("missingFeatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("missingFeatures"); else _explicitNullProperties?.Remove("missingFeatures"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem> _explicitNullValueMissingFeatures = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the integration, usually the connected account or workspace</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -153,33 +146,26 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The organizationId property</summary>
+        /// <summary>ID of the organization the integration is installed in</summary>
         public int? OrganizationId { get => _explicitNullValueOrganizationId; set { _explicitNullValueOrganizationId = value; AdditionalData?.Remove("organizationId"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationId"); else _explicitNullProperties?.Remove("organizationId"); } }
         private int? _explicitNullValueOrganizationId = default!;
-        /// <summary>The organizationIntegrationStatus property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OrganizationIntegrationStatus { get => _explicitNullValueOrganizationIntegrationStatus; set { _explicitNullValueOrganizationIntegrationStatus = value; AdditionalData?.Remove("organizationIntegrationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationIntegrationStatus"); else _explicitNullProperties?.Remove("organizationIntegrationStatus"); } }
-        private string? _explicitNullValueOrganizationIntegrationStatus = default!;
-#nullable restore
-#else
-        public string OrganizationIntegrationStatus { get => _explicitNullValueOrganizationIntegrationStatus; set { _explicitNullValueOrganizationIntegrationStatus = value; AdditionalData?.Remove("organizationIntegrationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationIntegrationStatus"); else _explicitNullProperties?.Remove("organizationIntegrationStatus"); } }
-        private string _explicitNullValueOrganizationIntegrationStatus = default!;
-#endif
-        /// <summary>The outOfDate property</summary>
+        /// <summary>Status of the integration in this organization</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemOrganizationIntegrationStatus? OrganizationIntegrationStatus { get => _explicitNullValueOrganizationIntegrationStatus; set { _explicitNullValueOrganizationIntegrationStatus = value; AdditionalData?.Remove("organizationIntegrationStatus"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organizationIntegrationStatus"); else _explicitNullProperties?.Remove("organizationIntegrationStatus"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemOrganizationIntegrationStatus? _explicitNullValueOrganizationIntegrationStatus = default!;
+        /// <summary>Whether the installation lacks permissions the latest version of the integration needs. Null for providers without a permissions model</summary>
         public bool? OutOfDate { get => _explicitNullValueOutOfDate; set { _explicitNullValueOutOfDate = value; AdditionalData?.Remove("outOfDate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("outOfDate"); else _explicitNullProperties?.Remove("outOfDate"); } }
         private bool? _explicitNullValueOutOfDate = default!;
-        /// <summary>The provider property</summary>
+        /// <summary>Integration provider details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private UntypedNode? _explicitNullValueProvider = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider? _explicitNullValueProvider = default!;
 #nullable restore
 #else
-        public UntypedNode Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private UntypedNode _explicitNullValueProvider = default!;
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider _explicitNullValueProvider = default!;
 #endif
-        /// <summary>The scopes property</summary>
+        /// <summary>Permission scopes granted to the integration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
@@ -189,16 +175,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Scopes { get => _explicitNullValueScopes; set { _explicitNullValueScopes = value; AdditionalData?.Remove("scopes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scopes"); else _explicitNullProperties?.Remove("scopes"); } }
         private List<string> _explicitNullValueScopes = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
+        /// <summary>Status of the integration</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -229,17 +208,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "configOrganization", n => { ConfigOrganization = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "gracePeriodEnd", n => { GracePeriodEnd = n.GetStringValue(); } },
+                { "gracePeriodEnd", n => { GracePeriodEnd = n.GetDateTimeOffsetValue(); } },
                 { "icon", n => { Icon = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "missingFeatures", n => { MissingFeatures = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "organizationId", n => { OrganizationId = n.GetIntValue(); } },
-                { "organizationIntegrationStatus", n => { OrganizationIntegrationStatus = n.GetStringValue(); } },
+                { "organizationIntegrationStatus", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemOrganizationIntegrationStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrganizationIntegrationStatus = default; _explicitNullProperties?.Remove("organizationIntegrationStatus"); AdditionalData["organizationIntegrationStatus"] = unknown; } else { OrganizationIntegrationStatus = parsed; AdditionalData.Remove("organizationIntegrationStatus"); } } },
                 { "outOfDate", n => { OutOfDate = n.GetBoolValue(); } },
-                { "provider", n => { Provider = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "provider", n => { Provider = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider.CreateFromDiscriminatorValue); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -254,17 +233,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteObjectValue<UntypedNode>("configOrganization", ConfigOrganization);
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteStringValue("gracePeriodEnd", GracePeriodEnd);
+            writer.WriteDateTimeOffsetValue("gracePeriodEnd", GracePeriodEnd);
             writer.WriteStringValue("icon", Icon);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemMissingFeaturesItem>("missingFeatures", MissingFeatures);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("organizationId", OrganizationId);
-            writer.WriteStringValue("organizationIntegrationStatus", OrganizationIntegrationStatus);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemOrganizationIntegrationStatus>("organizationIntegrationStatus", OrganizationIntegrationStatus);
             writer.WriteBoolValue("outOfDate", OutOfDate);
-            writer.WriteObjectValue<UntypedNode>("provider", Provider);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseSchemaItemProvider>("provider", Provider);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationIntegrations200ResponseItemStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Metadata about the series
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMeta : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -33,19 +34,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dataScanned property</summary>
+        /// <summary>Whether the query scanned the `full` data set or only a `partial` sample</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned? DataScanned { get => _explicitNullValueDataScanned; set { _explicitNullValueDataScanned = value; AdditionalData?.Remove("dataScanned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dataScanned"); else _explicitNullProperties?.Remove("dataScanned"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMetaDataScanned? _explicitNullValueDataScanned = default!;
-        /// <summary>The interval property</summary>
+        /// <summary>Width of each bucket, in milliseconds</summary>
         public double? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private double? _explicitNullValueInterval = default!;
-        /// <summary>The isOther property</summary>
+        /// <summary>Whether this series aggregates all events outside the top events</summary>
         public bool? IsOther { get => _explicitNullValueIsOther; set { _explicitNullValueIsOther = value; AdditionalData?.Remove("isOther"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isOther"); else _explicitNullProperties?.Remove("isOther"); } }
         private bool? _explicitNullValueIsOther = default!;
-        /// <summary>The order property</summary>
+        /// <summary>Position of this series among the top events series</summary>
         public int? Order { get => _explicitNullValueOrder; set { _explicitNullValueOrder = value; AdditionalData?.Remove("order"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order"); else _explicitNullProperties?.Remove("order"); } }
         private int? _explicitNullValueOrder = default!;
-        /// <summary>The valueType property</summary>
+        /// <summary>Type of the values, such as `integer`, `duration` or `size`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("valueType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
@@ -55,7 +56,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ValueType { get => _explicitNullValueValueType; set { _explicitNullValueValueType = value; AdditionalData?.Remove("valueType"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueType"); else _explicitNullProperties?.Remove("valueType"); } }
         private string _explicitNullValueValueType = default!;
 #endif
-        /// <summary>The valueUnit property</summary>
+        /// <summary>Unit of the values, such as `millisecond` or `byte`, or null if they have no unit</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ValueUnit { get => _explicitNullValueValueUnit; set { _explicitNullValueValueUnit = value; AdditionalData?.Remove("valueUnit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("valueUnit"); else _explicitNullProperties?.Remove("valueUnit"); } }

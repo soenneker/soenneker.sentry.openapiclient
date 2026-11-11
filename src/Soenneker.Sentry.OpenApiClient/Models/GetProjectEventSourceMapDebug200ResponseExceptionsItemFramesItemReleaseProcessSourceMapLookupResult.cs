@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Result of looking up the source map in the release: found, wrong-dist or unsuccessful</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectEventSourceMapDebug200ResponseExceptionsItemFramesItemReleaseProcessSourceMapLookupResult
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "found")]
         #pragma warning disable CS1591

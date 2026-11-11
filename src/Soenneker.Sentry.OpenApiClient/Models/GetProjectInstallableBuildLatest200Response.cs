@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The currentArtifact property</summary>
+        /// <summary>Build that matches the given buildVersion. Null when buildVersion isn&apos;t given or no build matches</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact? CurrentArtifact { get => _explicitNullValueCurrentArtifact; set { _explicitNullValueCurrentArtifact = value; AdditionalData?.Remove("currentArtifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentArtifact"); else _explicitNullProperties?.Remove("currentArtifact"); } }
@@ -35,7 +35,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact CurrentArtifact { get => _explicitNullValueCurrentArtifact; set { _explicitNullValueCurrentArtifact = value; AdditionalData?.Remove("currentArtifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currentArtifact"); else _explicitNullProperties?.Remove("currentArtifact"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseCurrentArtifact _explicitNullValueCurrentArtifact = default!;
 #endif
-        /// <summary>The latestArtifact property</summary>
+        /// <summary>Latest installable build that matches the filters. Null when there&apos;s none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifact? LatestArtifact { get => _explicitNullValueLatestArtifact; set { _explicitNullValueLatestArtifact = value; AdditionalData?.Remove("latestArtifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("latestArtifact"); else _explicitNullProperties?.Remove("latestArtifact"); } }

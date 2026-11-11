@@ -45,25 +45,25 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateAdded property</summary>
+        /// <summary>When the check-in was received (ISO 8601)</summary>
         public DateTimeOffset? DateAdded { get => _explicitNullValueDateAdded; set { _explicitNullValueDateAdded = value; AdditionalData?.Remove("dateAdded"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateAdded"); else _explicitNullProperties?.Remove("dateAdded"); } }
         private DateTimeOffset? _explicitNullValueDateAdded = default!;
-        /// <summary>The dateClock property</summary>
+        /// <summary>Clock time the check-in was processed at, relative to other check-in tasks (ISO 8601)</summary>
         public DateTimeOffset? DateClock { get => _explicitNullValueDateClock; set { _explicitNullValueDateClock = value; AdditionalData?.Remove("dateClock"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateClock"); else _explicitNullProperties?.Remove("dateClock"); } }
         private DateTimeOffset? _explicitNullValueDateClock = default!;
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the check-in was stored (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The dateInProgress property</summary>
+        /// <summary>When the first in_progress check-in was received (ISO 8601). Null when none was sent</summary>
         public DateTimeOffset? DateInProgress { get => _explicitNullValueDateInProgress; set { _explicitNullValueDateInProgress = value; AdditionalData?.Remove("dateInProgress"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateInProgress"); else _explicitNullProperties?.Remove("dateInProgress"); } }
         private DateTimeOffset? _explicitNullValueDateInProgress = default!;
-        /// <summary>The dateUpdated property</summary>
+        /// <summary>When the check-in was last updated (ISO 8601)</summary>
         public DateTimeOffset? DateUpdated { get => _explicitNullValueDateUpdated; set { _explicitNullValueDateUpdated = value; AdditionalData?.Remove("dateUpdated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateUpdated"); else _explicitNullProperties?.Remove("dateUpdated"); } }
         private DateTimeOffset? _explicitNullValueDateUpdated = default!;
-        /// <summary>The duration property</summary>
+        /// <summary>Duration of the job run in milliseconds</summary>
         public int? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; AdditionalData?.Remove("duration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
         private int? _explicitNullValueDuration = default!;
-        /// <summary>The environment property</summary>
+        /// <summary>Name of the environment the check-in belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
@@ -73,10 +73,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string _explicitNullValueEnvironment = default!;
 #endif
-        /// <summary>The expectedTime property</summary>
+        /// <summary>When the check-in was expected (ISO 8601)</summary>
         public DateTimeOffset? ExpectedTime { get => _explicitNullValueExpectedTime; set { _explicitNullValueExpectedTime = value; AdditionalData?.Remove("expectedTime"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expectedTime"); else _explicitNullProperties?.Remove("expectedTime"); } }
         private DateTimeOffset? _explicitNullValueExpectedTime = default!;
-        /// <summary>The groups property</summary>
+        /// <summary>Issues linked to the check-in&apos;s trace. Only included when requested with expand=groups</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; AdditionalData?.Remove("groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Groups { get => _explicitNullValueGroups; set { _explicitNullValueGroups = value; AdditionalData?.Remove("groups"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("groups"); else _explicitNullProperties?.Remove("groups"); } }
         private List<string> _explicitNullValueGroups = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the check-in</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -96,7 +96,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The monitorConfig property</summary>
+        /// <summary>Monitor configuration when the check-in was received</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig? MonitorConfig { get => _explicitNullValueMonitorConfig; set { _explicitNullValueMonitorConfig = value; AdditionalData?.Remove("monitorConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitorConfig"); else _explicitNullProperties?.Remove("monitorConfig"); } }
@@ -106,16 +106,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig MonitorConfig { get => _explicitNullValueMonitorConfig; set { _explicitNullValueMonitorConfig = value; AdditionalData?.Remove("monitorConfig"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("monitorConfig"); else _explicitNullProperties?.Remove("monitorConfig"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig _explicitNullValueMonitorConfig = default!;
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string? _explicitNullValueStatus = default!;
-#nullable restore
-#else
-        public string Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private string _explicitNullValueStatus = default!;
-#endif
+        /// <summary>Status of the check-in</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseItemStatus? _explicitNullValueStatus = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItem"/> and sets the default values.
         /// </summary>
@@ -152,7 +145,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "monitorConfig", n => { MonitorConfig = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetStringValue(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
             };
         }
         /// <summary>
@@ -173,7 +166,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("groups", Groups);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseSchemaItemMonitorConfig>("monitorConfig", MonitorConfig);
-            writer.WriteStringValue("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListProjectMonitorCheckins200ResponseItemStatus>("status", Status);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

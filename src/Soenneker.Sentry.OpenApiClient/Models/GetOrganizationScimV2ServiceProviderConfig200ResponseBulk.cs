@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Bulk operation support
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class GetOrganizationScimV2ServiceProviderConfig200ResponseBulk : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -27,13 +28,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The maxOperations property</summary>
+        /// <summary>Maximum number of operations in a bulk request. Always 0</summary>
         public int? MaxOperations { get => _explicitNullValueMaxOperations; set { _explicitNullValueMaxOperations = value; AdditionalData?.Remove("maxOperations"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxOperations"); else _explicitNullProperties?.Remove("maxOperations"); } }
         private int? _explicitNullValueMaxOperations = default!;
-        /// <summary>The maxPayloadSize property</summary>
+        /// <summary>Maximum payload size of a bulk request in bytes. Always 0</summary>
         public int? MaxPayloadSize { get => _explicitNullValueMaxPayloadSize; set { _explicitNullValueMaxPayloadSize = value; AdditionalData?.Remove("maxPayloadSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxPayloadSize"); else _explicitNullProperties?.Remove("maxPayloadSize"); } }
         private int? _explicitNullValueMaxPayloadSize = default!;
-        /// <summary>The supported property</summary>
+        /// <summary>Whether Sentry supports bulk operations. Always false</summary>
         public bool? Supported { get => _explicitNullValueSupported; set { _explicitNullValueSupported = value; AdditionalData?.Remove("supported"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("supported"); else _explicitNullProperties?.Remove("supported"); } }
         private bool? _explicitNullValueSupported = default!;
         /// <summary>

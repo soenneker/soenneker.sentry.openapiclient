@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>The casing applied to file paths on the source.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum UpdateProjectSymbolSource200ResponseOneOf4LayoutCasing
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "lowercase")]
         #pragma warning disable CS1591

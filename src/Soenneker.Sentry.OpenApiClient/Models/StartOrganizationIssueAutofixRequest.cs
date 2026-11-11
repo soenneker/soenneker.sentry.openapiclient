@@ -18,8 +18,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("enable_bash_mode") is null) { _explicitNullValueEnableBashMode = default!; _explicitNullProperties?.Remove("enable_bash_mode"); }
-            else if (parseNode.GetChildNode("enable_bash_mode") is { } nullNodeEnableBashMode && nullNodeEnableBashMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableBashMode = null;
             if (parseNode.GetChildNode("insert_index") is null) { _explicitNullValueInsertIndex = default!; _explicitNullProperties?.Remove("insert_index"); }
             else if (parseNode.GetChildNode("insert_index") is { } nullNodeInsertIndex && nullNodeInsertIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertIndex = null;
             if (parseNode.GetChildNode("integration_id") is null) { _explicitNullValueIntegrationId = default!; _explicitNullProperties?.Remove("integration_id"); }
@@ -44,9 +42,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Override bash mode tools.</summary>
-        public bool? EnableBashMode { get => _explicitNullValueEnableBashMode; set { _explicitNullValueEnableBashMode = value; AdditionalData?.Remove("enable_bash_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_bash_mode"); else _explicitNullProperties?.Remove("enable_bash_mode"); } }
-        private bool? _explicitNullValueEnableBashMode = default!;
         /// <summary>Block index to insert at. When provided, truncates blocks after this point for retry-from-step.</summary>
         public int? InsertIndex { get => _explicitNullValueInsertIndex; set { _explicitNullValueInsertIndex = value; AdditionalData?.Remove("insert_index"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert_index"); else _explicitNullProperties?.Remove("insert_index"); } }
         private int? _explicitNullValueInsertIndex = default!;
@@ -111,7 +106,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public StartOrganizationIssueAutofixRequest()
         {
             AdditionalData = new Dictionary<string, object>();
-            EnableBashMode = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -131,7 +125,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "enable_bash_mode", n => { EnableBashMode = n.GetBoolValue(); } },
                 { "insert_index", n => { InsertIndex = n.GetIntValue(); } },
                 { "integration_id", n => { IntegrationId = n.GetIntValue(); } },
                 { "provider", n => { Provider = n.GetStringValue(); } },
@@ -151,7 +144,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteBoolValue("enable_bash_mode", EnableBashMode);
             writer.WriteIntValue("insert_index", InsertIndex);
             writer.WriteIntValue("integration_id", IntegrationId);
             writer.WriteStringValue("provider", Provider);

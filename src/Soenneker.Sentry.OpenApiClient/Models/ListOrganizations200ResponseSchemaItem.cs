@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>The access property</summary>
+        /// <summary>Scopes the requesting user has in the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Access { get => _explicitNullValueAccess; set { _explicitNullValueAccess = value; AdditionalData?.Remove("access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("access"); else _explicitNullProperties?.Remove("access"); } }
@@ -65,16 +65,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The allowMemberInvite property</summary>
+        /// <summary>Whether members can invite other members</summary>
         public bool? AllowMemberInvite { get => _explicitNullValueAllowMemberInvite; set { _explicitNullValueAllowMemberInvite = value; AdditionalData?.Remove("allowMemberInvite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowMemberInvite"); else _explicitNullProperties?.Remove("allowMemberInvite"); } }
         private bool? _explicitNullValueAllowMemberInvite = default!;
-        /// <summary>The allowMemberProjectCreation property</summary>
+        /// <summary>Whether members can create projects</summary>
         public bool? AllowMemberProjectCreation { get => _explicitNullValueAllowMemberProjectCreation; set { _explicitNullValueAllowMemberProjectCreation = value; AdditionalData?.Remove("allowMemberProjectCreation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowMemberProjectCreation"); else _explicitNullProperties?.Remove("allowMemberProjectCreation"); } }
         private bool? _explicitNullValueAllowMemberProjectCreation = default!;
-        /// <summary>The allowSuperuserAccess property</summary>
+        /// <summary>Whether Sentry superusers can access the organization</summary>
         public bool? AllowSuperuserAccess { get => _explicitNullValueAllowSuperuserAccess; set { _explicitNullValueAllowSuperuserAccess = value; AdditionalData?.Remove("allowSuperuserAccess"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allowSuperuserAccess"); else _explicitNullProperties?.Remove("allowSuperuserAccess"); } }
         private bool? _explicitNullValueAllowSuperuserAccess = default!;
-        /// <summary>The avatar property</summary>
+        /// <summary>Organization avatar</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar? Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
@@ -84,10 +84,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar Avatar { get => _explicitNullValueAvatar; set { _explicitNullValueAvatar = value; AdditionalData?.Remove("avatar"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("avatar"); else _explicitNullProperties?.Remove("avatar"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemAvatar _explicitNullValueAvatar = default!;
 #endif
-        /// <summary>The dateCreated property</summary>
+        /// <summary>When the organization was created (ISO 8601)</summary>
         public DateTimeOffset? DateCreated { get => _explicitNullValueDateCreated; set { _explicitNullValueDateCreated = value; AdditionalData?.Remove("dateCreated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateCreated"); else _explicitNullProperties?.Remove("dateCreated"); } }
         private DateTimeOffset? _explicitNullValueDateCreated = default!;
-        /// <summary>The extraOptions property</summary>
+        /// <summary>Server-wide options that the Sentry UI reads</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions? ExtraOptions { get => _explicitNullValueExtraOptions; set { _explicitNullValueExtraOptions = value; AdditionalData?.Remove("extraOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraOptions"); else _explicitNullProperties?.Remove("extraOptions"); } }
@@ -97,7 +97,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions ExtraOptions { get => _explicitNullValueExtraOptions; set { _explicitNullValueExtraOptions = value; AdditionalData?.Remove("extraOptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("extraOptions"); else _explicitNullProperties?.Remove("extraOptions"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemExtraOptions _explicitNullValueExtraOptions = default!;
 #endif
-        /// <summary>The features property</summary>
+        /// <summary>Features enabled for the organization</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
@@ -107,10 +107,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Features { get => _explicitNullValueFeatures; set { _explicitNullValueFeatures = value; AdditionalData?.Remove("features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("features"); else _explicitNullProperties?.Remove("features"); } }
         private List<string> _explicitNullValueFeatures = default!;
 #endif
-        /// <summary>The hasAuthProvider property</summary>
+        /// <summary>Whether SSO is configured for the organization</summary>
         public bool? HasAuthProvider { get => _explicitNullValueHasAuthProvider; set { _explicitNullValueHasAuthProvider = value; AdditionalData?.Remove("hasAuthProvider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hasAuthProvider"); else _explicitNullProperties?.Remove("hasAuthProvider"); } }
         private bool? _explicitNullValueHasAuthProvider = default!;
-        /// <summary>The id property</summary>
+        /// <summary>Organization ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -120,10 +120,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The isEarlyAdopter property</summary>
+        /// <summary>Whether the organization is an early adopter</summary>
         public bool? IsEarlyAdopter { get => _explicitNullValueIsEarlyAdopter; set { _explicitNullValueIsEarlyAdopter = value; AdditionalData?.Remove("isEarlyAdopter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isEarlyAdopter"); else _explicitNullProperties?.Remove("isEarlyAdopter"); } }
         private bool? _explicitNullValueIsEarlyAdopter = default!;
-        /// <summary>The links property</summary>
+        /// <summary>Organization and region URLs</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks? Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
@@ -133,7 +133,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks Links { get => _explicitNullValueLinks; set { _explicitNullValueLinks = value; AdditionalData?.Remove("links"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("links"); else _explicitNullProperties?.Remove("links"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemLinks _explicitNullValueLinks = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Organization name, or its slug when it has no name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -143,7 +143,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The onboardingTasks property</summary>
+        /// <summary>Onboarding tasks the organization has completed or skipped</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem>? OnboardingTasks { get => _explicitNullValueOnboardingTasks; set { _explicitNullValueOnboardingTasks = value; AdditionalData?.Remove("onboardingTasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onboardingTasks"); else _explicitNullProperties?.Remove("onboardingTasks"); } }
@@ -153,10 +153,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem> OnboardingTasks { get => _explicitNullValueOnboardingTasks; set { _explicitNullValueOnboardingTasks = value; AdditionalData?.Remove("onboardingTasks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("onboardingTasks"); else _explicitNullProperties?.Remove("onboardingTasks"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseItemOnboardingTasksItem> _explicitNullValueOnboardingTasks = default!;
 #endif
-        /// <summary>The require2FA property</summary>
+        /// <summary>Whether members must use two-factor authentication</summary>
         public bool? Require2FA { get => _explicitNullValueRequire2FA; set { _explicitNullValueRequire2FA = value; AdditionalData?.Remove("require2FA"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("require2FA"); else _explicitNullProperties?.Remove("require2FA"); } }
         private bool? _explicitNullValueRequire2FA = default!;
-        /// <summary>The slug property</summary>
+        /// <summary>Organization slug</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
@@ -166,7 +166,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Slug { get => _explicitNullValueSlug; set { _explicitNullValueSlug = value; AdditionalData?.Remove("slug"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("slug"); else _explicitNullProperties?.Remove("slug"); } }
         private string _explicitNullValueSlug = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Organization status</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizations200ResponseSchemaItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }

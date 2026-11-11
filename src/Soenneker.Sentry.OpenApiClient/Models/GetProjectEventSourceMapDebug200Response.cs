@@ -43,7 +43,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dist property</summary>
+        /// <summary>Distribution of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
@@ -53,7 +53,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Dist { get => _explicitNullValueDist; set { _explicitNullValueDist = value; AdditionalData?.Remove("dist"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dist"); else _explicitNullProperties?.Remove("dist"); } }
         private string _explicitNullValueDist = default!;
 #endif
-        /// <summary>The exceptions property</summary>
+        /// <summary>Source map debug results for each exception in the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem>? Exceptions { get => _explicitNullValueExceptions; set { _explicitNullValueExceptions = value; AdditionalData?.Remove("exceptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceptions"); else _explicitNullProperties?.Remove("exceptions"); } }
@@ -63,16 +63,16 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem> Exceptions { get => _explicitNullValueExceptions; set { _explicitNullValueExceptions = value; AdditionalData?.Remove("exceptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exceptions"); else _explicitNullProperties?.Remove("exceptions"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseExceptionsItem> _explicitNullValueExceptions = default!;
 #endif
-        /// <summary>The has_debug_ids property</summary>
+        /// <summary>Whether the event has debug IDs</summary>
         public bool? HasDebugIds { get => _explicitNullValueHasDebugIds; set { _explicitNullValueHasDebugIds = value; AdditionalData?.Remove("has_debug_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_debug_ids"); else _explicitNullProperties?.Remove("has_debug_ids"); } }
         private bool? _explicitNullValueHasDebugIds = default!;
-        /// <summary>The has_scraping_data property</summary>
+        /// <summary>Whether the event has data about fetching source files from the web</summary>
         public bool? HasScrapingData { get => _explicitNullValueHasScrapingData; set { _explicitNullValueHasScrapingData = value; AdditionalData?.Remove("has_scraping_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_scraping_data"); else _explicitNullProperties?.Remove("has_scraping_data"); } }
         private bool? _explicitNullValueHasScrapingData = default!;
-        /// <summary>The has_uploaded_some_artifact_with_a_debug_id property</summary>
+        /// <summary>Whether any artifact with a debug ID was uploaded for the project</summary>
         public bool? HasUploadedSomeArtifactWithADebugId { get => _explicitNullValueHasUploadedSomeArtifactWithADebugId; set { _explicitNullValueHasUploadedSomeArtifactWithADebugId = value; AdditionalData?.Remove("has_uploaded_some_artifact_with_a_debug_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_uploaded_some_artifact_with_a_debug_id"); else _explicitNullProperties?.Remove("has_uploaded_some_artifact_with_a_debug_id"); } }
         private bool? _explicitNullValueHasUploadedSomeArtifactWithADebugId = default!;
-        /// <summary>The min_debug_id_sdk_version property</summary>
+        /// <summary>Minimum SDK version that supports debug IDs. Null when there&apos;s none</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MinDebugIdSdkVersion { get => _explicitNullValueMinDebugIdSdkVersion; set { _explicitNullValueMinDebugIdSdkVersion = value; AdditionalData?.Remove("min_debug_id_sdk_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_debug_id_sdk_version"); else _explicitNullProperties?.Remove("min_debug_id_sdk_version"); } }
@@ -82,10 +82,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string MinDebugIdSdkVersion { get => _explicitNullValueMinDebugIdSdkVersion; set { _explicitNullValueMinDebugIdSdkVersion = value; AdditionalData?.Remove("min_debug_id_sdk_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("min_debug_id_sdk_version"); else _explicitNullProperties?.Remove("min_debug_id_sdk_version"); } }
         private string _explicitNullValueMinDebugIdSdkVersion = default!;
 #endif
-        /// <summary>The project_has_some_artifact_bundle property</summary>
+        /// <summary>Whether the project has any artifact bundles</summary>
         public bool? ProjectHasSomeArtifactBundle { get => _explicitNullValueProjectHasSomeArtifactBundle; set { _explicitNullValueProjectHasSomeArtifactBundle = value; AdditionalData?.Remove("project_has_some_artifact_bundle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_has_some_artifact_bundle"); else _explicitNullProperties?.Remove("project_has_some_artifact_bundle"); } }
         private bool? _explicitNullValueProjectHasSomeArtifactBundle = default!;
-        /// <summary>The release property</summary>
+        /// <summary>Release of the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
@@ -95,13 +95,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Release { get => _explicitNullValueRelease; set { _explicitNullValueRelease = value; AdditionalData?.Remove("release"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release"); else _explicitNullProperties?.Remove("release"); } }
         private string _explicitNullValueRelease = default!;
 #endif
-        /// <summary>The release_has_some_artifact property</summary>
+        /// <summary>Whether the event&apos;s release has any uploaded artifacts</summary>
         public bool? ReleaseHasSomeArtifact { get => _explicitNullValueReleaseHasSomeArtifact; set { _explicitNullValueReleaseHasSomeArtifact = value; AdditionalData?.Remove("release_has_some_artifact"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("release_has_some_artifact"); else _explicitNullProperties?.Remove("release_has_some_artifact"); } }
         private bool? _explicitNullValueReleaseHasSomeArtifact = default!;
-        /// <summary>The sdk_debug_id_support property</summary>
+        /// <summary>Whether the event&apos;s SDK supports debug IDs: not-supported, unofficial-sdk, needs-upgrade or full</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport? SdkDebugIdSupport { get => _explicitNullValueSdkDebugIdSupport; set { _explicitNullValueSdkDebugIdSupport = value; AdditionalData?.Remove("sdk_debug_id_support"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_debug_id_support"); else _explicitNullProperties?.Remove("sdk_debug_id_support"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetProjectEventSourceMapDebug200ResponseSdkDebugIdSupport? _explicitNullValueSdkDebugIdSupport = default!;
-        /// <summary>The sdk_version property</summary>
+        /// <summary>Version of the SDK that sent the event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SdkVersion { get => _explicitNullValueSdkVersion; set { _explicitNullValueSdkVersion = value; AdditionalData?.Remove("sdk_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sdk_version"); else _explicitNullProperties?.Remove("sdk_version"); } }

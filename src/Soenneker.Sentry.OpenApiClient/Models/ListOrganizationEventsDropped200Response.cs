@@ -25,7 +25,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
         }
 
-        /// <summary>The acceptedEvents property</summary>
+        /// <summary>Accepted event volume, one entry per bucket</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseAcceptedEventsItem>? AcceptedEvents { get => _explicitNullValueAcceptedEvents; set { _explicitNullValueAcceptedEvents = value; AdditionalData?.Remove("acceptedEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("acceptedEvents"); else _explicitNullProperties?.Remove("acceptedEvents"); } }
@@ -37,7 +37,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The droppedEvents property</summary>
+        /// <summary>Dropped event volume, one entry per bucket, outcome and reason</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem>? DroppedEvents { get => _explicitNullValueDroppedEvents; set { _explicitNullValueDroppedEvents = value; AdditionalData?.Remove("droppedEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("droppedEvents"); else _explicitNullProperties?.Remove("droppedEvents"); } }
@@ -47,7 +47,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem> DroppedEvents { get => _explicitNullValueDroppedEvents; set { _explicitNullValueDroppedEvents = value; AdditionalData?.Remove("droppedEvents"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("droppedEvents"); else _explicitNullProperties?.Remove("droppedEvents"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseDroppedEventsItem> _explicitNullValueDroppedEvents = default!;
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>Metadata about the query</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsDropped200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }

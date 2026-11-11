@@ -86,7 +86,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.Environment
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class EmptyPathSegmentRequestBuilderGetQueryParameters 
         {
-            /// <summary>The visibility of the environments to filter by. Defaults to `visible`.</summary>
+            /// <summary>The visibility of the environments to filter by. Defaults to `visible`.* `all`* `hidden`* `visible`</summary>
             [QueryParameter("visibility")]
             public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEnvironmentsVisibilityParameter? Visibility { get; set; }
         }

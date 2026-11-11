@@ -41,7 +41,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The authenticationSchemes property</summary>
+        /// <summary>Authentication schemes the SCIM API accepts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem>? AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; AdditionalData?.Remove("authenticationSchemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem> AuthenticationSchemes { get => _explicitNullValueAuthenticationSchemes; set { _explicitNullValueAuthenticationSchemes = value; AdditionalData?.Remove("authenticationSchemes"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("authenticationSchemes"); else _explicitNullProperties?.Remove("authenticationSchemes"); } }
         private List<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem> _explicitNullValueAuthenticationSchemes = default!;
 #endif
-        /// <summary>The bulk property</summary>
+        /// <summary>Bulk operation support</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk? Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; AdditionalData?.Remove("bulk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
@@ -61,7 +61,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk Bulk { get => _explicitNullValueBulk; set { _explicitNullValueBulk = value; AdditionalData?.Remove("bulk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bulk"); else _explicitNullProperties?.Remove("bulk"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk _explicitNullValueBulk = default!;
 #endif
-        /// <summary>The changePassword property</summary>
+        /// <summary>Whether password changes are supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword? ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; AdditionalData?.Remove("changePassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
@@ -71,7 +71,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword ChangePassword { get => _explicitNullValueChangePassword; set { _explicitNullValueChangePassword = value; AdditionalData?.Remove("changePassword"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("changePassword"); else _explicitNullProperties?.Remove("changePassword"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseChangePassword _explicitNullValueChangePassword = default!;
 #endif
-        /// <summary>The documentationUri property</summary>
+        /// <summary>URL of Sentry&apos;s SCIM documentation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; AdditionalData?.Remove("documentationUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string DocumentationUri { get => _explicitNullValueDocumentationUri; set { _explicitNullValueDocumentationUri = value; AdditionalData?.Remove("documentationUri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("documentationUri"); else _explicitNullProperties?.Remove("documentationUri"); } }
         private string _explicitNullValueDocumentationUri = default!;
 #endif
-        /// <summary>The etag property</summary>
+        /// <summary>Whether ETags are supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag? Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; AdditionalData?.Remove("etag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
@@ -91,7 +91,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag Etag { get => _explicitNullValueEtag; set { _explicitNullValueEtag = value; AdditionalData?.Remove("etag"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("etag"); else _explicitNullProperties?.Remove("etag"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseEtag _explicitNullValueEtag = default!;
 #endif
-        /// <summary>The filter property</summary>
+        /// <summary>Filter support</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter? Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
@@ -101,7 +101,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter Filter { get => _explicitNullValueFilter; set { _explicitNullValueFilter = value; AdditionalData?.Remove("filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter"); else _explicitNullProperties?.Remove("filter"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseFilter _explicitNullValueFilter = default!;
 #endif
-        /// <summary>The meta property</summary>
+        /// <summary>Resource type and location of the configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
@@ -111,7 +111,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseMeta _explicitNullValueMeta = default!;
 #endif
-        /// <summary>The patch property</summary>
+        /// <summary>Whether PATCH operations are supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch? Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; AdditionalData?.Remove("patch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
@@ -121,7 +121,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch Patch { get => _explicitNullValuePatch; set { _explicitNullValuePatch = value; AdditionalData?.Remove("patch"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("patch"); else _explicitNullProperties?.Remove("patch"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponsePatch _explicitNullValuePatch = default!;
 #endif
-        /// <summary>The schemas property</summary>
+        /// <summary>SCIM schema URIs of the response, always the ServiceProviderConfig schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
@@ -131,7 +131,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Schemas { get => _explicitNullValueSchemas; set { _explicitNullValueSchemas = value; AdditionalData?.Remove("schemas"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("schemas"); else _explicitNullProperties?.Remove("schemas"); } }
         private List<string> _explicitNullValueSchemas = default!;
 #endif
-        /// <summary>The sort property</summary>
+        /// <summary>Whether sorting is supported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseSort? Sort { get => _explicitNullValueSort; set { _explicitNullValueSort = value; AdditionalData?.Remove("sort"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sort"); else _explicitNullProperties?.Remove("sort"); } }

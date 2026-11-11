@@ -37,7 +37,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
-        /// <summary>The accept property</summary>
+        /// <summary>Kinds of files the server can assemble from chunks, such as debug_files or artifact_bundles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Accept { get => _explicitNullValueAccept; set { _explicitNullValueAccept = value; AdditionalData?.Remove("accept"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept"); else _explicitNullProperties?.Remove("accept"); } }
@@ -49,13 +49,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The chunkSize property</summary>
+        /// <summary>Size of each chunk in bytes</summary>
         public int? ChunkSize { get => _explicitNullValueChunkSize; set { _explicitNullValueChunkSize = value; AdditionalData?.Remove("chunkSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunkSize"); else _explicitNullProperties?.Remove("chunkSize"); } }
         private int? _explicitNullValueChunkSize = default!;
-        /// <summary>The chunksPerRequest property</summary>
+        /// <summary>Maximum number of chunks in one upload request</summary>
         public int? ChunksPerRequest { get => _explicitNullValueChunksPerRequest; set { _explicitNullValueChunksPerRequest = value; AdditionalData?.Remove("chunksPerRequest"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chunksPerRequest"); else _explicitNullProperties?.Remove("chunksPerRequest"); } }
         private int? _explicitNullValueChunksPerRequest = default!;
-        /// <summary>The compression property</summary>
+        /// <summary>Compression formats the server accepts for chunks, such as gzip and zstd. Empty when compression is off</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; AdditionalData?.Remove("compression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
@@ -65,10 +65,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Compression { get => _explicitNullValueCompression; set { _explicitNullValueCompression = value; AdditionalData?.Remove("compression"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("compression"); else _explicitNullProperties?.Remove("compression"); } }
         private List<string> _explicitNullValueCompression = default!;
 #endif
-        /// <summary>The concurrency property</summary>
+        /// <summary>Maximum number of upload requests to run at the same time</summary>
         public int? Concurrency { get => _explicitNullValueConcurrency; set { _explicitNullValueConcurrency = value; AdditionalData?.Remove("concurrency"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("concurrency"); else _explicitNullProperties?.Remove("concurrency"); } }
         private int? _explicitNullValueConcurrency = default!;
-        /// <summary>The hashAlgorithm property</summary>
+        /// <summary>Algorithm used to checksum chunks, always sha1</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; AdditionalData?.Remove("hashAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
@@ -78,13 +78,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string HashAlgorithm { get => _explicitNullValueHashAlgorithm; set { _explicitNullValueHashAlgorithm = value; AdditionalData?.Remove("hashAlgorithm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashAlgorithm"); else _explicitNullProperties?.Remove("hashAlgorithm"); } }
         private string _explicitNullValueHashAlgorithm = default!;
 #endif
-        /// <summary>The maxFileSize property</summary>
+        /// <summary>Maximum size of an assembled file in bytes</summary>
         public int? MaxFileSize { get => _explicitNullValueMaxFileSize; set { _explicitNullValueMaxFileSize = value; AdditionalData?.Remove("maxFileSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxFileSize"); else _explicitNullProperties?.Remove("maxFileSize"); } }
         private int? _explicitNullValueMaxFileSize = default!;
-        /// <summary>The maxRequestSize property</summary>
+        /// <summary>Maximum size of one upload request in bytes</summary>
         public int? MaxRequestSize { get => _explicitNullValueMaxRequestSize; set { _explicitNullValueMaxRequestSize = value; AdditionalData?.Remove("maxRequestSize"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maxRequestSize"); else _explicitNullProperties?.Remove("maxRequestSize"); } }
         private int? _explicitNullValueMaxRequestSize = default!;
-        /// <summary>The url property</summary>
+        /// <summary>URL to upload chunks to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }

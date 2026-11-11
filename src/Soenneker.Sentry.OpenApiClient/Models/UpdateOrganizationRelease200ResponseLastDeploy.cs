@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>
+    /// Most recent deploy of the release
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class UpdateOrganizationRelease200ResponseLastDeploy : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -33,27 +34,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The dateFinished property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateFinished { get => _explicitNullValueDateFinished; set { _explicitNullValueDateFinished = value; AdditionalData?.Remove("dateFinished"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateFinished"); else _explicitNullProperties?.Remove("dateFinished"); } }
-        private string? _explicitNullValueDateFinished = default!;
-#nullable restore
-#else
-        public string DateFinished { get => _explicitNullValueDateFinished; set { _explicitNullValueDateFinished = value; AdditionalData?.Remove("dateFinished"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateFinished"); else _explicitNullProperties?.Remove("dateFinished"); } }
-        private string _explicitNullValueDateFinished = default!;
-#endif
-        /// <summary>The dateStarted property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; AdditionalData?.Remove("dateStarted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
-        private string? _explicitNullValueDateStarted = default!;
-#nullable restore
-#else
-        public string DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; AdditionalData?.Remove("dateStarted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
-        private string _explicitNullValueDateStarted = default!;
-#endif
-        /// <summary>The environment property</summary>
+        /// <summary>When the deploy finished (ISO 8601)</summary>
+        public DateTimeOffset? DateFinished { get => _explicitNullValueDateFinished; set { _explicitNullValueDateFinished = value; AdditionalData?.Remove("dateFinished"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateFinished"); else _explicitNullProperties?.Remove("dateFinished"); } }
+        private DateTimeOffset? _explicitNullValueDateFinished = default!;
+        /// <summary>When the deploy started (ISO 8601)</summary>
+        public DateTimeOffset? DateStarted { get => _explicitNullValueDateStarted; set { _explicitNullValueDateStarted = value; AdditionalData?.Remove("dateStarted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dateStarted"); else _explicitNullProperties?.Remove("dateStarted"); } }
+        private DateTimeOffset? _explicitNullValueDateStarted = default!;
+        /// <summary>Environment the release was deployed to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
@@ -63,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Environment { get => _explicitNullValueEnvironment; set { _explicitNullValueEnvironment = value; AdditionalData?.Remove("environment"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("environment"); else _explicitNullProperties?.Remove("environment"); } }
         private string _explicitNullValueEnvironment = default!;
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>ID of the deploy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -73,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of the deploy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
@@ -83,7 +70,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>The url property</summary>
+        /// <summary>URL of the deploy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
@@ -120,8 +107,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dateFinished", n => { DateFinished = n.GetStringValue(); } },
-                { "dateStarted", n => { DateStarted = n.GetStringValue(); } },
+                { "dateFinished", n => { DateFinished = n.GetDateTimeOffsetValue(); } },
+                { "dateStarted", n => { DateStarted = n.GetDateTimeOffsetValue(); } },
                 { "environment", n => { Environment = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -135,8 +122,8 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("dateFinished", DateFinished);
-            writer.WriteStringValue("dateStarted", DateStarted);
+            writer.WriteDateTimeOffsetValue("dateFinished", DateFinished);
+            writer.WriteDateTimeOffsetValue("dateStarted", DateStarted);
             writer.WriteStringValue("environment", Environment);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

@@ -29,7 +29,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Why the mapping failed. Only set when status is error</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; AdditionalData?.Remove("detail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
@@ -39,7 +39,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Detail { get => _explicitNullValueDetail; set { _explicitNullValueDetail = value; AdditionalData?.Remove("detail"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail"); else _explicitNullProperties?.Remove("detail"); } }
         private string _explicitNullValueDetail = default!;
 #endif
-        /// <summary>The sourceRoot property</summary>
+        /// <summary>Repository path prefix of the mapping</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; AdditionalData?.Remove("sourceRoot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceRoot"); else _explicitNullProperties?.Remove("sourceRoot"); } }
@@ -49,7 +49,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string SourceRoot { get => _explicitNullValueSourceRoot; set { _explicitNullValueSourceRoot = value; AdditionalData?.Remove("sourceRoot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sourceRoot"); else _explicitNullProperties?.Remove("sourceRoot"); } }
         private string _explicitNullValueSourceRoot = default!;
 #endif
-        /// <summary>The stackRoot property</summary>
+        /// <summary>Stack trace path prefix of the mapping</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; AdditionalData?.Remove("stackRoot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stackRoot"); else _explicitNullProperties?.Remove("stackRoot"); } }
@@ -59,7 +59,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string StackRoot { get => _explicitNullValueStackRoot; set { _explicitNullValueStackRoot = value; AdditionalData?.Remove("stackRoot"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stackRoot"); else _explicitNullProperties?.Remove("stackRoot"); } }
         private string _explicitNullValueStackRoot = default!;
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Whether the mapping was created, updated or failed</summary>
         public global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings207ResponseMappingsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Sentry.OpenApiClient.Models.BulkUpsertOrganizationCodeMappings207ResponseMappingsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>

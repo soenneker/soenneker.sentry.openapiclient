@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2"/>, <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListOrganizationRepoCommits200ResponseItemPullRequestAuthor : IComposedTypeWrapper, IParsable
@@ -34,6 +34,14 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 #else
         public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1? ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,6 +51,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthor();
+            
             
             
             
@@ -145,6 +154,7 @@ return result;
 bool? MatchSchema6(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
+result = null;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
@@ -291,12 +301,18 @@ bool? MatchSchema26(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNo
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
+bool? enumMatch = false;
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "letter_avatar".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "upload".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ enumMatch |= ((node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString text && "gravatar".Equals(text.GetValue(), global::System.StringComparison.Ordinal))); }
+{ result &= (enumMatch); if (result == false) return false; }
 return result;
 }
 bool? MatchSchema27(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode? node, int depth) {
 if (depth > 64 || --remaining < 0) return null;
 bool? result = true;
 if (node == null || node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return true;
+result = null;
 { result &= (node is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString); if (result == false) return false; }
 return result;
 }
@@ -472,13 +488,16 @@ remaining = 10000; matches[1] = MatchSchema1(unionPayload, 0);
 return matches; }))() : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
+            bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? (bool?)null : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null;
+            if (matchesUnionBranch2 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2(), parseNode);
-            if (result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null) result.UnrecognizedValue = unionPayload;
+            if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1(), parseNode);
+            if (result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null && result.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -489,9 +508,9 @@ return result;
         {
             if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
 
-            if(ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 != null || ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 != null)
+            if(ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 != null || ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 != null || ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -502,15 +521,17 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 == null && ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 == null && ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 != null) selectedUnionBranches++;
             if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 != null) selectedUnionBranches++;
+            if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 != null) selectedUnionBranches++;
             if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 != null && selectedUnionBranches == 1) { if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1); return; }
             if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 != null && selectedUnionBranches == 1) { if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2); return; }
+            if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 != null && selectedUnionBranches == 1) { if (ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1>(null, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2);
+            writer.WriteObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1>(null, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf1, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorAnyOf2, ListOrganizationRepoCommits200ResponseItemPullRequestAuthorMember1);
         }
     }
 }

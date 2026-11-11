@@ -3,10 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
+    /// <summary>Components the rule applies to, such as main_artifact or all_artifacts</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public enum GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemArtifactType
-    #pragma warning restore CS1591
     {
         [EnumMember(Value = "main_artifact")]
         #pragma warning disable CS1591

@@ -30,13 +30,17 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             else if (parseNode.GetChildNode("isCustom") is { } nullNodeIsCustom && nullNodeIsCustom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsCustom = null;
             if (parseNode.GetChildNode("isDeprecated") is null) { _explicitNullValueIsDeprecated = default!; _explicitNullProperties?.Remove("isDeprecated"); }
             else if (parseNode.GetChildNode("isDeprecated") is { } nullNodeIsDeprecated && nullNodeIsDeprecated.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsDeprecated = null;
+            if (parseNode.GetChildNode("isInOtel") is null) { _explicitNullValueIsInOtel = default!; _explicitNullProperties?.Remove("isInOtel"); }
+            else if (parseNode.GetChildNode("isInOtel") is { } nullNodeIsInOtel && nullNodeIsInOtel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsInOtel = null;
             if (parseNode.GetChildNode("replacementAttribute") is null) { _explicitNullValueReplacementAttribute = default!; _explicitNullProperties?.Remove("replacementAttribute"); }
             else if (parseNode.GetChildNode("replacementAttribute") is { } nullNodeReplacementAttribute && nullNodeReplacementAttribute.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplacementAttribute = null;
+            if (parseNode.GetChildNode("unit") is null) { _explicitNullValueUnit = default!; _explicitNullProperties?.Remove("unit"); }
+            else if (parseNode.GetChildNode("unit") is { } nullNodeUnit && nullNodeUnit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The brief property</summary>
+        /// <summary>Short description of the attribute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Brief { get => _explicitNullValueBrief; set { _explicitNullValueBrief = value; AdditionalData?.Remove("brief"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brief"); else _explicitNullProperties?.Remove("brief"); } }
@@ -46,7 +50,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string Brief { get => _explicitNullValueBrief; set { _explicitNullValueBrief = value; AdditionalData?.Remove("brief"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("brief"); else _explicitNullProperties?.Remove("brief"); } }
         private string _explicitNullValueBrief = default!;
 #endif
-        /// <summary>The details property</summary>
+        /// <summary>Longer notes about the attribute, such as caveats</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
@@ -56,7 +60,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<string> Details { get => _explicitNullValueDetails; set { _explicitNullValueDetails = value; AdditionalData?.Remove("details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("details"); else _explicitNullProperties?.Remove("details"); } }
         private List<string> _explicitNullValueDetails = default!;
 #endif
-        /// <summary>The examples property</summary>
+        /// <summary>Example values for the attribute</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>? Examples { get => _explicitNullValueExamples; set { _explicitNullValueExamples = value; AdditionalData?.Remove("examples"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("examples"); else _explicitNullProperties?.Remove("examples"); } }
@@ -66,16 +70,19 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> Examples { get => _explicitNullValueExamples; set { _explicitNullValueExamples = value; AdditionalData?.Remove("examples"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("examples"); else _explicitNullProperties?.Remove("examples"); } }
         private List<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode> _explicitNullValueExamples = default!;
 #endif
-        /// <summary>The isConvention property</summary>
+        /// <summary>Whether this context comes from a known Sentry convention</summary>
         public bool? IsConvention { get => _explicitNullValueIsConvention; set { _explicitNullValueIsConvention = value; AdditionalData?.Remove("isConvention"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isConvention"); else _explicitNullProperties?.Remove("isConvention"); } }
         private bool? _explicitNullValueIsConvention = default!;
-        /// <summary>The isCustom property</summary>
+        /// <summary>Whether this context was written by a user</summary>
         public bool? IsCustom { get => _explicitNullValueIsCustom; set { _explicitNullValueIsCustom = value; AdditionalData?.Remove("isCustom"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isCustom"); else _explicitNullProperties?.Remove("isCustom"); } }
         private bool? _explicitNullValueIsCustom = default!;
-        /// <summary>The isDeprecated property</summary>
+        /// <summary>Whether the convention is deprecated</summary>
         public bool? IsDeprecated { get => _explicitNullValueIsDeprecated; set { _explicitNullValueIsDeprecated = value; AdditionalData?.Remove("isDeprecated"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isDeprecated"); else _explicitNullProperties?.Remove("isDeprecated"); } }
         private bool? _explicitNullValueIsDeprecated = default!;
-        /// <summary>The replacementAttribute property</summary>
+        /// <summary>Whether this Sentry convention is part of the OpenTelemetry semantic conventions. Present (and true) only for such conventions; OpenTelemetry attributes that aren&apos;t Sentry conventions are never marked</summary>
+        public bool? IsInOtel { get => _explicitNullValueIsInOtel; set { _explicitNullValueIsInOtel = value; AdditionalData?.Remove("isInOtel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isInOtel"); else _explicitNullProperties?.Remove("isInOtel"); } }
+        private bool? _explicitNullValueIsInOtel = default!;
+        /// <summary>Attribute that replaces this one, when it is deprecated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReplacementAttribute { get => _explicitNullValueReplacementAttribute; set { _explicitNullValueReplacementAttribute = value; AdditionalData?.Remove("replacementAttribute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacementAttribute"); else _explicitNullProperties?.Remove("replacementAttribute"); } }
@@ -85,6 +92,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public string ReplacementAttribute { get => _explicitNullValueReplacementAttribute; set { _explicitNullValueReplacementAttribute = value; AdditionalData?.Remove("replacementAttribute"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replacementAttribute"); else _explicitNullProperties?.Remove("replacementAttribute"); } }
         private string _explicitNullValueReplacementAttribute = default!;
 #endif
+        /// <summary>Unit of a number attribute, from the dataset&apos;s Sentry-defined attributes or from Sentry conventions, which apply in every dataset</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextUnit? Unit { get => _explicitNullValueUnit; set { _explicitNullValueUnit = value; AdditionalData?.Remove("unit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit"); else _explicitNullProperties?.Remove("unit"); } }
+        private global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextUnit? _explicitNullValueUnit = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemContext"/> and sets the default values.
         /// </summary>
@@ -116,7 +126,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
                 { "isConvention", n => { IsConvention = n.GetBoolValue(); } },
                 { "isCustom", n => { IsCustom = n.GetBoolValue(); } },
                 { "isDeprecated", n => { IsDeprecated = n.GetBoolValue(); } },
+                { "isInOtel", n => { IsInOtel = n.GetBoolValue(); } },
                 { "replacementAttribute", n => { ReplacementAttribute = n.GetStringValue(); } },
+                { "unit", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextUnit>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueUnit = default; _explicitNullProperties?.Remove("unit"); AdditionalData["unit"] = unknown; } else { Unit = parsed; AdditionalData.Remove("unit"); } } },
             };
         }
         /// <summary>
@@ -132,7 +144,9 @@ namespace Soenneker.Sentry.OpenApiClient.Models
             writer.WriteBoolValue("isConvention", IsConvention);
             writer.WriteBoolValue("isCustom", IsCustom);
             writer.WriteBoolValue("isDeprecated", IsDeprecated);
+            writer.WriteBoolValue("isInOtel", IsInOtel);
             writer.WriteStringValue("replacementAttribute", ReplacementAttribute);
+            writer.WriteEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemContextUnit>("unit", Unit);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
