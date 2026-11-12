@@ -18,34 +18,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("external_issue_key") is null) { _explicitNullValueExternalIssueKey = default!; _explicitNullProperties?.Remove("external_issue_key"); }
-            else if (parseNode.GetChildNode("external_issue_key") is { } nullNodeExternalIssueKey && nullNodeExternalIssueKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIssueKey = null;
-            if (parseNode.GetChildNode("provider") is null) { _explicitNullValueProvider = default!; _explicitNullProperties?.Remove("provider"); }
-            else if (parseNode.GetChildNode("provider") is { } nullNodeProvider && nullNodeProvider.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provider = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Key of the external issue, such as PROJ-123</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? ExternalIssueKey { get => _explicitNullValueExternalIssueKey; set { _explicitNullValueExternalIssueKey = value; AdditionalData?.Remove("external_issue_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_issue_key"); else _explicitNullProperties?.Remove("external_issue_key"); } }
-        private string? _explicitNullValueExternalIssueKey = default!;
-#nullable restore
-#else
-        public string ExternalIssueKey { get => _explicitNullValueExternalIssueKey; set { _explicitNullValueExternalIssueKey = value; AdditionalData?.Remove("external_issue_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_issue_key"); else _explicitNullProperties?.Remove("external_issue_key"); } }
-        private string _explicitNullValueExternalIssueKey = default!;
-#endif
-        /// <summary>Integration provider, such as Jira or GitHub</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private string? _explicitNullValueProvider = default!;
-#nullable restore
-#else
-        public string Provider { get => _explicitNullValueProvider; set { _explicitNullValueProvider = value; AdditionalData?.Remove("provider"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provider"); else _explicitNullProperties?.Remove("provider"); } }
-        private string _explicitNullValueProvider = default!;
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf41Data"/> and sets the default values.
         /// </summary>
@@ -71,8 +47,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "external_issue_key", n => { ExternalIssueKey = n.GetStringValue(); } },
-                { "provider", n => { Provider = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +56,6 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("external_issue_key", ExternalIssueKey);
-            writer.WriteStringValue("provider", Provider);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

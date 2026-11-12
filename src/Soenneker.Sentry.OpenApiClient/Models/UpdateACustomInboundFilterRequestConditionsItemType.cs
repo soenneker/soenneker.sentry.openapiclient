@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Sentry.OpenApiClient.Models
 {
-    /// <summary>The field the condition matches against. Every `dataType` accepts `release` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `ip_address`* `geo_country_code`</summary>
+    /// <summary>The field the condition matches against. Every `dataType` accepts `release`, `environment` and `ip_address`. In addition, `error` accepts `error_type`, `error_message` and `geo_country_code`, `log` accepts `log_message`, and `metric` accepts `metric_name`. `span` and `all` accept no other types.* `error_type`* `error_message`* `log_message`* `metric_name`* `release`* `environment`* `ip_address`* `geo_country_code`</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateACustomInboundFilterRequestConditionsItemType
     {
@@ -26,6 +26,10 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         [EnumMember(Value = "release")]
         #pragma warning disable CS1591
         Release,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "environment")]
+        #pragma warning disable CS1591
+        Environment,
         #pragma warning restore CS1591
         [EnumMember(Value = "ip_address")]
         #pragma warning disable CS1591

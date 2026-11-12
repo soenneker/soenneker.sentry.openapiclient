@@ -18,34 +18,52 @@ namespace Soenneker.Sentry.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("priority") is null) { _explicitNullValuePriority = default!; _explicitNullProperties?.Remove("priority"); }
-            else if (parseNode.GetChildNode("priority") is { } nullNodePriority && nullNodePriority.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Priority = null;
-            if (parseNode.GetChildNode("reason") is null) { _explicitNullValueReason = default!; _explicitNullProperties?.Remove("reason"); }
-            else if (parseNode.GetChildNode("reason") is { } nullNodeReason && nullNodeReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reason = null;
+            if (parseNode.GetChildNode("ignoreCount") is null) { _explicitNullValueIgnoreCount = default!; _explicitNullProperties?.Remove("ignoreCount"); }
+            else if (parseNode.GetChildNode("ignoreCount") is { } nullNodeIgnoreCount && nullNodeIgnoreCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreCount = null;
+            if (parseNode.GetChildNode("ignoreDuration") is null) { _explicitNullValueIgnoreDuration = default!; _explicitNullProperties?.Remove("ignoreDuration"); }
+            else if (parseNode.GetChildNode("ignoreDuration") is { } nullNodeIgnoreDuration && nullNodeIgnoreDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreDuration = null;
+            if (parseNode.GetChildNode("ignoreUntil") is null) { _explicitNullValueIgnoreUntil = default!; _explicitNullProperties?.Remove("ignoreUntil"); }
+            else if (parseNode.GetChildNode("ignoreUntil") is { } nullNodeIgnoreUntil && nullNodeIgnoreUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntil = null;
+            if (parseNode.GetChildNode("ignoreUntilEscalating") is null) { _explicitNullValueIgnoreUntilEscalating = default!; _explicitNullProperties?.Remove("ignoreUntilEscalating"); }
+            else if (parseNode.GetChildNode("ignoreUntilEscalating") is { } nullNodeIgnoreUntilEscalating && nullNodeIgnoreUntilEscalating.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUntilEscalating = null;
+            if (parseNode.GetChildNode("ignoreUserCount") is null) { _explicitNullValueIgnoreUserCount = default!; _explicitNullProperties?.Remove("ignoreUserCount"); }
+            else if (parseNode.GetChildNode("ignoreUserCount") is { } nullNodeIgnoreUserCount && nullNodeIgnoreUserCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserCount = null;
+            if (parseNode.GetChildNode("ignoreUserWindow") is null) { _explicitNullValueIgnoreUserWindow = default!; _explicitNullProperties?.Remove("ignoreUserWindow"); }
+            else if (parseNode.GetChildNode("ignoreUserWindow") is { } nullNodeIgnoreUserWindow && nullNodeIgnoreUserWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreUserWindow = null;
+            if (parseNode.GetChildNode("ignoreWindow") is null) { _explicitNullValueIgnoreWindow = default!; _explicitNullProperties?.Remove("ignoreWindow"); }
+            else if (parseNode.GetChildNode("ignoreWindow") is { } nullNodeIgnoreWindow && nullNodeIgnoreWindow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreWindow = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>New priority of the issue: high, medium or low</summary>
+        /// <summary>Number of events after which the issue is unarchived</summary>
+        public int? IgnoreCount { get => _explicitNullValueIgnoreCount; set { _explicitNullValueIgnoreCount = value; AdditionalData?.Remove("ignoreCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreCount"); else _explicitNullProperties?.Remove("ignoreCount"); } }
+        private int? _explicitNullValueIgnoreCount = default!;
+        /// <summary>Minutes the issue is archived for</summary>
+        public int? IgnoreDuration { get => _explicitNullValueIgnoreDuration; set { _explicitNullValueIgnoreDuration = value; AdditionalData?.Remove("ignoreDuration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreDuration"); else _explicitNullProperties?.Remove("ignoreDuration"); } }
+        private int? _explicitNullValueIgnoreDuration = default!;
+        /// <summary>When the issue is unarchived (ISO 8601)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
-        private string? _explicitNullValuePriority = default!;
+        public string? IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; AdditionalData?.Remove("ignoreUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
+        private string? _explicitNullValueIgnoreUntil = default!;
 #nullable restore
 #else
-        public string Priority { get => _explicitNullValuePriority; set { _explicitNullValuePriority = value; AdditionalData?.Remove("priority"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("priority"); else _explicitNullProperties?.Remove("priority"); } }
-        private string _explicitNullValuePriority = default!;
+        public string IgnoreUntil { get => _explicitNullValueIgnoreUntil; set { _explicitNullValueIgnoreUntil = value; AdditionalData?.Remove("ignoreUntil"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntil"); else _explicitNullProperties?.Remove("ignoreUntil"); } }
+        private string _explicitNullValueIgnoreUntil = default!;
 #endif
-        /// <summary>Why the priority changed, such as escalating or ongoing</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string? _explicitNullValueReason = default!;
-#nullable restore
-#else
-        public string Reason { get => _explicitNullValueReason; set { _explicitNullValueReason = value; AdditionalData?.Remove("reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reason"); else _explicitNullProperties?.Remove("reason"); } }
-        private string _explicitNullValueReason = default!;
-#endif
+        /// <summary>Whether the issue is archived until it escalates</summary>
+        public bool? IgnoreUntilEscalating { get => _explicitNullValueIgnoreUntilEscalating; set { _explicitNullValueIgnoreUntilEscalating = value; AdditionalData?.Remove("ignoreUntilEscalating"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUntilEscalating"); else _explicitNullProperties?.Remove("ignoreUntilEscalating"); } }
+        private bool? _explicitNullValueIgnoreUntilEscalating = default!;
+        /// <summary>Number of affected users after which the issue is unarchived</summary>
+        public int? IgnoreUserCount { get => _explicitNullValueIgnoreUserCount; set { _explicitNullValueIgnoreUserCount = value; AdditionalData?.Remove("ignoreUserCount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserCount"); else _explicitNullProperties?.Remove("ignoreUserCount"); } }
+        private int? _explicitNullValueIgnoreUserCount = default!;
+        /// <summary>Minutes over which ignoreUserCount is counted</summary>
+        public int? IgnoreUserWindow { get => _explicitNullValueIgnoreUserWindow; set { _explicitNullValueIgnoreUserWindow = value; AdditionalData?.Remove("ignoreUserWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreUserWindow"); else _explicitNullProperties?.Remove("ignoreUserWindow"); } }
+        private int? _explicitNullValueIgnoreUserWindow = default!;
+        /// <summary>Minutes over which ignoreCount is counted</summary>
+        public int? IgnoreWindow { get => _explicitNullValueIgnoreWindow; set { _explicitNullValueIgnoreWindow = value; AdditionalData?.Remove("ignoreWindow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignoreWindow"); else _explicitNullProperties?.Remove("ignoreWindow"); } }
+        private int? _explicitNullValueIgnoreWindow = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItemAnyOf29Data"/> and sets the default values.
         /// </summary>
@@ -71,8 +89,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "priority", n => { Priority = n.GetStringValue(); } },
-                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "ignoreCount", n => { IgnoreCount = n.GetIntValue(); } },
+                { "ignoreDuration", n => { IgnoreDuration = n.GetIntValue(); } },
+                { "ignoreUntil", n => { IgnoreUntil = n.GetStringValue(); } },
+                { "ignoreUntilEscalating", n => { IgnoreUntilEscalating = n.GetBoolValue(); } },
+                { "ignoreUserCount", n => { IgnoreUserCount = n.GetIntValue(); } },
+                { "ignoreUserWindow", n => { IgnoreUserWindow = n.GetIntValue(); } },
+                { "ignoreWindow", n => { IgnoreWindow = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +105,13 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("priority", Priority);
-            writer.WriteStringValue("reason", Reason);
+            writer.WriteIntValue("ignoreCount", IgnoreCount);
+            writer.WriteIntValue("ignoreDuration", IgnoreDuration);
+            writer.WriteStringValue("ignoreUntil", IgnoreUntil);
+            writer.WriteBoolValue("ignoreUntilEscalating", IgnoreUntilEscalating);
+            writer.WriteIntValue("ignoreUserCount", IgnoreUserCount);
+            writer.WriteIntValue("ignoreUserWindow", IgnoreUserWindow);
+            writer.WriteIntValue("ignoreWindow", IgnoreWindow);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

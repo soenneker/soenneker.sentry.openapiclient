@@ -22,7 +22,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries/?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", pathParameters)
+        public EmptyPathSegmentRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries/?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,transformations%5B0%5D*,yAxis*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries/?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,yAxis*}", rawUrl)
+        public EmptyPathSegmentRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/api/0/organizations/{organizationIdOrSlug}/events-timeseries/?dataset={dataset}{&comparisonDelta*,disableAggregateExtrapolation*,end*,environment*,excludeOther*,groupBy*,interval*,preventMetricAggregates*,project*,query*,sort*,start*,statsPeriod*,topEvents*,transformations%5B0%5D*,yAxis*}", rawUrl)
         {
         }
         /// <summary>
@@ -172,6 +172,16 @@ namespace Soenneker.Sentry.OpenApiClient.Api.Zero.Organizations.Item.EventsTimes
             /// <summary>The number of top event results to return, must be between 1 and 10.When TopEvents is passed, both sort and groupBy are required parameters</summary>
             [QueryParameter("topEvents")]
             public int? TopEvents { get; set; }
+            /// <summary>Ordered transformations for a zero-based `yAxis` position. Replace `0` with the target axis index.Repeat the indexed key for each operation, for example`transformations[0]=fill(locf)&amp;transformations[0]=smooth(sma,3)`.Each axis accepts at most one fill and one smooth operation, in execution order.Fill modes are `locf`, `zero`, and `linear`. Smoothing modes are `sma`, `ema`, and `asap`.Omit the indexed key to leave that axis unchanged. Requires the interpolation and smoothing feature.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("transformations%5B0%5D")]
+            public string[]? Transformations0 { get; set; }
+#nullable restore
+#else
+            [QueryParameter("transformations%5B0%5D")]
+            public string[] Transformations0 { get; set; }
+#endif
             /// <summary>The aggregate fields to create timeseries for, defaults to `count()` when        not included. Pass the parameter more than once to get a timeseries for each aggregate, for        example `?yAxis=count()&amp;yAxis=p95(span.duration)`.- `count()` - Total count of events over the period.- `avg(field)` - Average value of the field over the period.- `pXX(field)` - Percentile value of the field over the period. One of: `p50`, `p75`, `p90`, `p95`, `p99`, `p100`.- `sum(field)` - Sum of all values for the field over the period.- `min(field)` - Lowest value observed for the field over the period.- `max(field)` - Highest value observed for the field over the period.- `count_unique(field)` - Count of unique values observed for the field over the period. See *Note:* regarding accuracy on sampled data.- `epm` - Average number of events received per minute.- `eps` - Average number of events received per second.- `failure_rate()` - Percentage of events whose `status` indicates failure.- `failure_count()` - Total count of events with an error `status` over period.- `performance_score(field)` - Web Vitals performance score for the selected measurement.- `opportunity_score(field)` - Web Vitals opportunity score for the selected measurement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
