@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "https://{region}.sentry.io",
+      "url": "https://{region}.sentry.io/api/0",
       "variables": {
         "region": {
           "default": "us",
@@ -29,7 +29,7 @@
     }
   ],
   "paths": {
-    "/api/0/": {
+    "/": {
       "get": {
         "tags": [
           "Users"
@@ -123,7 +123,7 @@
         }
       }
     },
-    "/api/0/organizations/": {
+    "/organizations/": {
       "get": {
         "tags": [
           "Users"
@@ -248,7 +248,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/": {
+    "/organizations/{organizationIdOrSlug}/": {
       "get": {
         "tags": [
           "Organizations"
@@ -806,7 +806,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/agents/conversations/": {
+    "/organizations/{organizationIdOrSlug}/agents/conversations/": {
       "get": {
         "tags": [
           "Explore"
@@ -1004,7 +1004,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/": {
+    "/organizations/{organizationIdOrSlug}/agents/conversations/{conversationId}/": {
       "get": {
         "tags": [
           "Explore"
@@ -1230,7 +1230,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/artifactbundle/assemble/": {
+    "/organizations/{organizationIdOrSlug}/artifactbundle/assemble/": {
       "post": {
         "tags": [
           "Releases"
@@ -1300,7 +1300,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/available-actions/": {
+    "/organizations/{organizationIdOrSlug}/available-actions/": {
       "get": {
         "tags": [
           "Monitors"
@@ -1370,7 +1370,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/chunk-upload/": {
+    "/organizations/{organizationIdOrSlug}/chunk-upload/": {
       "get": {
         "tags": [
           "Organizations"
@@ -1490,7 +1490,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/code-mappings/": {
+    "/organizations/{organizationIdOrSlug}/code-mappings/": {
       "get": {
         "tags": [
           "Integrations"
@@ -1662,7 +1662,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/code-mappings/{configId}/": {
+    "/organizations/{organizationIdOrSlug}/code-mappings/{configId}/": {
       "put": {
         "tags": [
           "Integrations"
@@ -1798,7 +1798,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/code-mappings/bulk/": {
+    "/organizations/{organizationIdOrSlug}/code-mappings/bulk/": {
       "post": {
         "tags": [
           "Integrations"
@@ -1888,7 +1888,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/codeowners-associations/": {
+    "/organizations/{organizationIdOrSlug}/codeowners-associations/": {
       "get": {
         "tags": [
           "Integrations"
@@ -1963,7 +1963,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/config/integrations/": {
+    "/organizations/{organizationIdOrSlug}/config/integrations/": {
       "get": {
         "tags": [
           "Integrations"
@@ -2593,7 +2593,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/dashboards/": {
+    "/organizations/{organizationIdOrSlug}/dashboards/": {
       "get": {
         "tags": [
           "Dashboards"
@@ -2793,6 +2793,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "403": {
             "description": "Forbidden"
           },
@@ -2971,6 +2974,9 @@
           "400": {
             "description": "Bad Request"
           },
+          "401": {
+            "description": "Unauthorized"
+          },
           "403": {
             "description": "Forbidden"
           },
@@ -3122,7 +3128,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/": {
+    "/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/": {
       "get": {
         "tags": [
           "Dashboards"
@@ -3536,7 +3542,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/revisions/": {
+    "/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/revisions/": {
       "get": {
         "tags": [
           "Dashboards"
@@ -3648,7 +3654,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/revisions/{revisionId}/restore/": {
+    "/organizations/{organizationIdOrSlug}/dashboards/{dashboardId}/revisions/{revisionId}/restore/": {
       "post": {
         "tags": [
           "Dashboards"
@@ -3839,7 +3845,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/detectors/": {
+    "/organizations/{organizationIdOrSlug}/detectors/": {
       "get": {
         "tags": [
           "Monitors"
@@ -4579,7 +4585,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/detectors/{detectorId}/": {
+    "/organizations/{organizationIdOrSlug}/detectors/{detectorId}/": {
       "get": {
         "tags": [
           "Monitors"
@@ -4981,7 +4987,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/discover/saved/": {
+    "/organizations/{organizationIdOrSlug}/discover/saved/": {
       "get": {
         "tags": [
           "Discover"
@@ -5390,7 +5396,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/discover/saved/{queryId}/": {
+    "/organizations/{organizationIdOrSlug}/discover/saved/{queryId}/": {
       "get": {
         "tags": [
           "Discover"
@@ -5702,7 +5708,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/dsn-lookup/": {
+    "/organizations/{organizationIdOrSlug}/dsn-lookup/": {
       "get": {
         "tags": [
           "Projects"
@@ -5786,7 +5792,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/environments/": {
+    "/organizations/{organizationIdOrSlug}/environments/": {
       "get": {
         "tags": [
           "Environments"
@@ -5861,7 +5867,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/eventids/{eventId}/": {
+    "/organizations/{organizationIdOrSlug}/eventids/{eventId}/": {
       "get": {
         "tags": [
           "Organizations"
@@ -6072,7 +6078,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/events/": {
+    "/organizations/{organizationIdOrSlug}/events/": {
       "get": {
         "tags": [
           "Explore"
@@ -6285,7 +6291,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/events-dropped/": {
+    "/organizations/{organizationIdOrSlug}/events-dropped/": {
       "get": {
         "tags": [
           "Explore"
@@ -6435,7 +6441,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/events-timeseries/": {
+    "/organizations/{organizationIdOrSlug}/events-timeseries/": {
       "get": {
         "tags": [
           "Explore"
@@ -6757,7 +6763,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/external-users/": {
+    "/organizations/{organizationIdOrSlug}/external-users/": {
       "post": {
         "tags": [
           "Integrations"
@@ -6858,7 +6864,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/external-users/{externalUserId}/": {
+    "/organizations/{organizationIdOrSlug}/external-users/{externalUserId}/": {
       "put": {
         "tags": [
           "Integrations"
@@ -6992,7 +6998,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/flags/logs/": {
+    "/organizations/{organizationIdOrSlug}/flags/logs/": {
       "get": {
         "tags": [
           "Flags"
@@ -7158,7 +7164,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/flags/logs/{flagLogId}/": {
+    "/organizations/{organizationIdOrSlug}/flags/logs/{flagLogId}/": {
       "get": {
         "tags": [
           "Flags"
@@ -7241,7 +7247,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/forwarding/": {
+    "/organizations/{organizationIdOrSlug}/forwarding/": {
       "get": {
         "tags": [
           "Integrations"
@@ -7483,7 +7489,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/forwarding/{dataForwarderId}/": {
+    "/organizations/{organizationIdOrSlug}/forwarding/{dataForwarderId}/": {
       "put": {
         "tags": [
           "Integrations"
@@ -7624,7 +7630,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/group-search-views/": {
+    "/organizations/{organizationIdOrSlug}/group-search-views/": {
       "get": {
         "tags": [
           "Events"
@@ -7798,7 +7804,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/integrations/": {
+    "/organizations/{organizationIdOrSlug}/integrations/": {
       "get": {
         "tags": [
           "Integrations"
@@ -7916,6 +7922,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           }
         },
         "security": [
@@ -7934,7 +7943,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/": {
+    "/organizations/{organizationIdOrSlug}/integrations/{integrationId}/": {
       "get": {
         "tags": [
           "Integrations"
@@ -8088,7 +8097,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channel-validate/": {
+    "/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channel-validate/": {
       "get": {
         "tags": [
           "Integration"
@@ -8163,7 +8172,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channels/": {
+    "/organizations/{organizationIdOrSlug}/integrations/{integrationId}/channels/": {
       "get": {
         "tags": [
           "Integration"
@@ -8229,7 +8238,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/integrations/{integrationId}/repos/": {
+    "/organizations/{organizationIdOrSlug}/integrations/{integrationId}/repos/": {
       "get": {
         "tags": [
           "Integration"
@@ -8319,7 +8328,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/": {
+    "/organizations/{organizationIdOrSlug}/issues/": {
       "get": {
         "tags": [
           "Events"
@@ -9047,7 +9056,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/members/": {
+    "/organizations/{organizationIdOrSlug}/members/": {
       "get": {
         "tags": [
           "Organizations"
@@ -9288,6 +9297,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -9296,6 +9308,9 @@
           },
           "404": {
             "description": "Not Found"
+          },
+          "429": {
+            "description": "Too Many Requests"
           },
           "200": {
             "description": "201 response",
@@ -9378,7 +9393,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/members/{memberId}/": {
+    "/organizations/{organizationIdOrSlug}/members/{memberId}/": {
       "get": {
         "tags": [
           "Organizations"
@@ -10010,6 +10025,9 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "429": {
+            "description": "Too Many Requests"
           }
         },
         "security": [
@@ -10057,6 +10075,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -10082,7 +10103,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/members/{memberId}/teams/{teamIdOrSlug}/": {
+    "/organizations/{organizationIdOrSlug}/members/{memberId}/teams/{teamIdOrSlug}/": {
       "post": {
         "tags": [
           "Teams"
@@ -10439,7 +10460,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/monitors/": {
+    "/organizations/{organizationIdOrSlug}/monitors/": {
       "get": {
         "tags": [
           "Crons"
@@ -10623,7 +10644,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}/": {
+    "/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}/": {
       "get": {
         "tags": [
           "Crons"
@@ -10841,7 +10862,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}/checkins/": {
+    "/organizations/{organizationIdOrSlug}/monitors/{monitorIdOrSlug}/checkins/": {
       "get": {
         "tags": [
           "Crons"
@@ -10917,7 +10938,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/notifications/actions/": {
+    "/organizations/{organizationIdOrSlug}/notifications/actions/": {
       "get": {
         "tags": [
           "Spike Protection"
@@ -11164,7 +11185,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/notifications/actions/{actionId}/": {
+    "/organizations/{organizationIdOrSlug}/notifications/actions/{actionId}/": {
       "get": {
         "tags": [
           "Spike Protection"
@@ -11399,7 +11420,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/org-auth-tokens/": {
+    "/organizations/{organizationIdOrSlug}/org-auth-tokens/": {
       "get": {
         "tags": [
           "Organizations"
@@ -11587,7 +11608,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/org-auth-tokens/{tokenId}/": {
+    "/organizations/{organizationIdOrSlug}/org-auth-tokens/{tokenId}/": {
       "delete": {
         "tags": [
           "Organizations"
@@ -11640,7 +11661,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/install-details/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/install-details/": {
       "get": {
         "tags": [
           "Mobile Builds"
@@ -11813,7 +11834,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/size-analysis/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/{artifactId}/size-analysis/": {
       "get": {
         "tags": [
           "Mobile Builds"
@@ -12071,7 +12092,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/": {
       "get": {
         "tags": [
           "Snapshots"
@@ -12293,6 +12314,9 @@
           "204": {
             "description": "No response body"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "403": {
             "description": "Forbidden"
           },
@@ -12314,7 +12338,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/archive/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/archive/": {
       "get": {
         "tags": [
           "Snapshots"
@@ -12483,7 +12507,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/images/{imageIdentifier}/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/{snapshotId}/images/{imageIdentifier}/": {
       "get": {
         "tags": [
           "Snapshots"
@@ -12617,7 +12641,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/latest-base/": {
+    "/organizations/{organizationIdOrSlug}/preprodartifacts/snapshots/latest-base/": {
       "get": {
         "tags": [
           "Snapshots"
@@ -12748,7 +12772,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/profiling/chunks/": {
+    "/organizations/{organizationIdOrSlug}/profiling/chunks/": {
       "get": {
         "tags": [
           "Profiling"
@@ -12907,7 +12931,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/profiling/flamegraph/": {
+    "/organizations/{organizationIdOrSlug}/profiling/flamegraph/": {
       "get": {
         "tags": [
           "Profiling"
@@ -13167,6 +13191,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -13192,7 +13219,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/project-keys/": {
+    "/organizations/{organizationIdOrSlug}/project-keys/": {
       "get": {
         "tags": [
           "Organizations"
@@ -13376,7 +13403,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/projects/": {
+    "/organizations/{organizationIdOrSlug}/projects/": {
       "get": {
         "tags": [
           "Organizations"
@@ -13492,6 +13519,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "401": {
             "description": "Unauthorized"
@@ -13762,7 +13792,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/projects/{projectIdOrSlug}/detectors/": {
+    "/organizations/{organizationIdOrSlug}/projects/{projectIdOrSlug}/detectors/": {
       "post": {
         "tags": [
           "Monitors"
@@ -14115,7 +14145,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/relay_usage/": {
+    "/organizations/{organizationIdOrSlug}/relay_usage/": {
       "get": {
         "tags": [
           "Organizations"
@@ -14178,7 +14208,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/release-threshold-statuses/": {
+    "/organizations/{organizationIdOrSlug}/release-threshold-statuses/": {
       "get": {
         "tags": [
           "Releases"
@@ -14396,7 +14426,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/": {
+    "/organizations/{organizationIdOrSlug}/releases/": {
       "get": {
         "tags": [
           "Releases"
@@ -14750,7 +14780,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/": {
       "get": {
         "tags": [
           "Releases"
@@ -15143,6 +15173,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -15490,6 +15523,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -15546,6 +15582,9 @@
           "204": {
             "description": "No Content"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -15570,7 +15609,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/commits/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/commits/": {
       "get": {
         "tags": [
           "Releases"
@@ -15670,7 +15709,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/deploys/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/deploys/": {
       "get": {
         "tags": [
           "Releases"
@@ -15815,7 +15854,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/files/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/files/": {
       "get": {
         "tags": [
           "Releases"
@@ -16003,7 +16042,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/files/{fileId}/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/files/{fileId}/": {
       "get": {
         "tags": [
           "Releases"
@@ -16235,7 +16274,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/previous-with-commits/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/previous-with-commits/": {
       "get": {
         "tags": [
           "Releases"
@@ -16383,7 +16422,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/replay-count/": {
+    "/organizations/{organizationIdOrSlug}/replay-count/": {
       "get": {
         "tags": [
           "Replays"
@@ -16524,6 +16563,9 @@
           },
           "403": {
             "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
           }
         },
         "security": [
@@ -16541,7 +16583,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/replay-selectors/": {
+    "/organizations/{organizationIdOrSlug}/replay-selectors/": {
       "get": {
         "tags": [
           "Replays"
@@ -16742,7 +16784,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/replays/": {
+    "/organizations/{organizationIdOrSlug}/replays/": {
       "get": {
         "tags": [
           "Replays"
@@ -17004,7 +17046,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/replays/{replayId}/": {
+    "/organizations/{organizationIdOrSlug}/replays/{replayId}/": {
       "get": {
         "tags": [
           "Replays"
@@ -17277,7 +17319,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/repos/": {
+    "/organizations/{organizationIdOrSlug}/repos/": {
       "get": {
         "tags": [
           "Organizations"
@@ -17399,7 +17441,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/repos/{repoId}/commits/": {
+    "/organizations/{organizationIdOrSlug}/repos/{repoId}/commits/": {
       "get": {
         "tags": [
           "Organizations"
@@ -17490,7 +17532,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/repos/settings/": {
+    "/organizations/{organizationIdOrSlug}/repos/settings/": {
       "put": {
         "tags": [
           "Integrations"
@@ -17558,7 +17600,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Groups": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/Groups": {
       "get": {
         "tags": [
           "SCIM"
@@ -17733,6 +17775,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -17784,7 +17829,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Groups/{teamIdOrSlug}": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/Groups/{teamIdOrSlug}": {
       "get": {
         "tags": [
           "SCIM"
@@ -17904,6 +17949,9 @@
           "204": {
             "description": "Success"
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -17981,7 +18029,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes": {
       "get": {
         "tags": [
           "SCIM"
@@ -18079,7 +18127,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes/{resourceTypeName}": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/ResourceTypes/{resourceTypeName}": {
       "get": {
         "tags": [
           "SCIM"
@@ -18162,7 +18210,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Schemas/{schemaUri}": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/Schemas/{schemaUri}": {
       "get": {
         "tags": [
           "SCIM"
@@ -18256,7 +18304,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/ServiceProviderConfig": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/ServiceProviderConfig": {
       "get": {
         "tags": [
           "SCIM"
@@ -18356,7 +18404,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Users": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/Users": {
       "get": {
         "tags": [
           "SCIM"
@@ -18618,7 +18666,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/scim/v2/Users/{memberId}": {
+    "/organizations/{organizationIdOrSlug}/scim/v2/Users/{memberId}": {
       "get": {
         "tags": [
           "SCIM"
@@ -18827,7 +18875,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/sentry-app-components/": {
+    "/organizations/{organizationIdOrSlug}/sentry-app-components/": {
       "get": {
         "tags": [
           "Integration"
@@ -18901,7 +18949,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/sentry-apps/": {
+    "/organizations/{organizationIdOrSlug}/sentry-apps/": {
       "get": {
         "tags": [
           "Integration"
@@ -19042,7 +19090,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/sessions/": {
+    "/organizations/{organizationIdOrSlug}/sessions/": {
       "get": {
         "tags": [
           "Releases"
@@ -19267,7 +19315,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/shortids/{issueId}/": {
+    "/organizations/{organizationIdOrSlug}/shortids/{issueId}/": {
       "get": {
         "tags": [
           "Organizations"
@@ -19404,7 +19452,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/starred-service-spans/": {
+    "/organizations/{organizationIdOrSlug}/starred-service-spans/": {
       "post": {
         "tags": [
           "Explore"
@@ -19533,7 +19581,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/stats-summary/": {
+    "/organizations/{organizationIdOrSlug}/stats-summary/": {
       "get": {
         "tags": [
           "Organizations"
@@ -19721,7 +19769,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/stats_v2/": {
+    "/organizations/{organizationIdOrSlug}/stats_v2/": {
       "get": {
         "tags": [
           "Organizations"
@@ -19891,7 +19939,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/tags/": {
+    "/organizations/{organizationIdOrSlug}/tags/": {
       "get": {
         "tags": [
           "Discover"
@@ -20062,7 +20110,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/teams/": {
+    "/organizations/{organizationIdOrSlug}/teams/": {
       "get": {
         "tags": [
           "Teams"
@@ -20427,6 +20475,9 @@
           "404": {
             "description": "A team with this slug already exists."
           },
+          "409": {
+            "description": "Conflict"
+          },
           "200": {
             "description": "201 response",
             "content": {
@@ -20495,7 +20546,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace-items/attributes/": {
+    "/organizations/{organizationIdOrSlug}/trace-items/attributes/": {
       "get": {
         "tags": [
           "Discover"
@@ -20669,6 +20720,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -20694,7 +20748,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace-items/metrics/": {
+    "/organizations/{organizationIdOrSlug}/trace-items/metrics/": {
       "get": {
         "tags": [
           "Explore"
@@ -20870,7 +20924,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace-items/stats/": {
+    "/organizations/{organizationIdOrSlug}/trace-items/stats/": {
       "get": {
         "tags": [
           "Explore"
@@ -21047,6 +21101,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -21072,7 +21129,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace-logs/": {
+    "/organizations/{organizationIdOrSlug}/trace-logs/": {
       "get": {
         "tags": [
           "Explore"
@@ -21257,7 +21314,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace-meta/{traceId}/": {
+    "/organizations/{organizationIdOrSlug}/trace-meta/{traceId}/": {
       "get": {
         "tags": [
           "Discover"
@@ -21390,7 +21447,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/trace/{traceId}/": {
+    "/organizations/{organizationIdOrSlug}/trace/{traceId}/": {
       "get": {
         "tags": [
           "Discover"
@@ -21569,7 +21626,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/user-teams/": {
+    "/organizations/{organizationIdOrSlug}/user-teams/": {
       "get": {
         "tags": [
           "Teams"
@@ -21813,7 +21870,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/workflows/": {
+    "/organizations/{organizationIdOrSlug}/workflows/": {
       "get": {
         "tags": [
           "Monitors"
@@ -22778,7 +22835,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/workflows/{workflowId}/": {
+    "/organizations/{organizationIdOrSlug}/workflows/{workflowId}/": {
       "get": {
         "tags": [
           "Monitors"
@@ -23151,7 +23208,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/": {
       "get": {
         "tags": [
           "Projects"
@@ -23437,6 +23494,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "403": {
             "description": "Forbidden"
@@ -23755,11 +23815,17 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "403": {
             "description": "Forbidden"
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
           }
         },
         "security": [
@@ -23827,7 +23893,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/code-mapping-prefixes/stack/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/code-mapping-prefixes/stack/": {
       "get": {
         "tags": [
           "Integrations"
@@ -23891,7 +23957,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/": {
       "get": {
         "tags": [
           "Projects"
@@ -24184,7 +24250,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/{codeownersId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/codeowners/{codeownersId}/": {
       "get": {
         "tags": [
           "Projects"
@@ -24491,7 +24557,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters/": {
       "get": {
         "tags": [
           "Projects"
@@ -24750,7 +24816,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters/{filterId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/custom-inbound-filters/{filterId}/": {
       "get": {
         "tags": [
           "Projects"
@@ -25041,7 +25107,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments/": {
       "get": {
         "tags": [
           "Environments"
@@ -25224,7 +25290,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments/{environment}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/environments/{environment}/": {
       "get": {
         "tags": [
           "Environments"
@@ -25401,7 +25467,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/": {
       "get": {
         "tags": [
           "Events"
@@ -25595,7 +25661,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/": {
       "get": {
         "tags": [
           "Events"
@@ -26264,7 +26330,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments/": {
       "get": {
         "tags": [
           "Events"
@@ -26389,7 +26455,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments/{attachmentId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/attachments/{attachmentId}/": {
       "get": {
         "tags": [
           "Events"
@@ -26498,7 +26564,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/source-map-debug/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/events/{eventId}/source-map-debug/": {
       "get": {
         "tags": [
           "Events"
@@ -26622,7 +26688,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/difs/assemble/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/difs/assemble/": {
       "post": {
         "tags": [
           "Projects"
@@ -26701,7 +26767,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/dsyms/": {
       "get": {
         "tags": [
           "Projects"
@@ -26860,7 +26926,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/preprodartifacts/assemble/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/files/preprodartifacts/assemble/": {
       "post": {
         "tags": [
           "Mobile Builds"
@@ -26956,7 +27022,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters/": {
       "get": {
         "tags": [
           "Projects"
@@ -27050,7 +27116,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters/{filterId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/filters/{filterId}/": {
       "put": {
         "tags": [
           "Projects"
@@ -27124,7 +27190,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys/": {
       "get": {
         "tags": [
           "Projects"
@@ -27491,7 +27557,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys/{keyId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/keys/{keyId}/": {
       "get": {
         "tags": [
           "Projects"
@@ -27807,7 +27873,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/members/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/members/": {
       "get": {
         "tags": [
           "Projects"
@@ -27944,7 +28010,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}/": {
       "get": {
         "tags": [
           "Crons"
@@ -28178,7 +28244,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}/checkins/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/monitors/{monitorIdOrSlug}/checkins/": {
       "get": {
         "tags": [
           "Crons"
@@ -28253,7 +28319,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/ownership/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/ownership/": {
       "get": {
         "tags": [
           "Projects"
@@ -28489,7 +28555,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-check-rules/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-check-rules/": {
       "get": {
         "tags": [
           "Mobile Builds"
@@ -28603,7 +28669,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-checks/skip/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/size-analysis/status-checks/skip/": {
       "post": {
         "tags": [
           "Mobile Builds"
@@ -28677,7 +28743,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-check-rules/": {
       "get": {
         "tags": [
           "Snapshots"
@@ -28752,7 +28818,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-checks/skip/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprod/snapshots/status-checks/skip/": {
       "post": {
         "tags": [
           "Snapshots"
@@ -28826,7 +28892,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/build-distribution/latest/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/build-distribution/latest/": {
       "get": {
         "tags": [
           "Mobile Builds"
@@ -29177,7 +29243,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/snapshots/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/preprodartifacts/snapshots/": {
       "post": {
         "tags": [
           "Snapshots"
@@ -29259,7 +29325,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/profiling/profiles/{profileId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/profiling/profiles/{profileId}/": {
       "get": {
         "tags": [
           "Profiling"
@@ -29435,7 +29501,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/": {
       "get": {
         "tags": [
           "Releases"
@@ -29594,7 +29660,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/commits/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/commits/": {
       "get": {
         "tags": [
           "Releases"
@@ -29703,7 +29769,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files/": {
       "get": {
         "tags": [
           "Releases"
@@ -29909,7 +29975,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files/{fileId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/{version}/files/{fileId}/": {
       "get": {
         "tags": [
           "Releases"
@@ -30168,7 +30234,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/completion/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/releases/completion/": {
       "get": {
         "tags": [
           "Releases"
@@ -30234,7 +30300,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/": {
       "delete": {
         "tags": [
           "Replays"
@@ -30294,7 +30360,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/clicks/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/clicks/": {
       "get": {
         "tags": [
           "Replays"
@@ -30418,7 +30484,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments/": {
       "get": {
         "tags": [
           "Replays"
@@ -30561,7 +30627,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments/{segmentId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/recording-segments/{segmentId}/": {
       "get": {
         "tags": [
           "Replays"
@@ -30657,7 +30723,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/viewed-by/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/{replayId}/viewed-by/": {
       "get": {
         "tags": [
           "Replays"
@@ -30772,7 +30838,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete/": {
       "get": {
         "tags": [
           "Replays"
@@ -30970,7 +31036,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete/{jobId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/replays/jobs/delete/{jobId}/": {
       "get": {
         "tags": [
           "Replays"
@@ -31059,7 +31125,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/repo/": {
       "get": {
         "tags": [
           "Projects"
@@ -31202,7 +31268,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/seer/repos/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/seer/repos/": {
       "get": {
         "tags": [
           "Projects"
@@ -31440,7 +31506,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stacktrace-link/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stacktrace-link/": {
       "get": {
         "tags": [
           "Integrations"
@@ -31580,7 +31646,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/stats/": {
       "get": {
         "tags": [
           "Projects"
@@ -31781,7 +31847,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/symbol-sources/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/symbol-sources/": {
       "get": {
         "tags": [
           "Projects"
@@ -32155,7 +32221,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams/": {
       "get": {
         "tags": [
           "Teams"
@@ -32291,7 +32357,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams/{teamIdOrSlug}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/teams/{teamIdOrSlug}/": {
       "post": {
         "tags": [
           "Projects"
@@ -32703,7 +32769,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/trace-items/{itemId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/trace-items/{itemId}/": {
       "get": {
         "tags": [
           "Explore"
@@ -32928,7 +32994,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/user-feedback/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/user-feedback/": {
       "get": {
         "tags": [
           "Projects"
@@ -33123,7 +33189,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/users/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/users/": {
       "get": {
         "tags": [
           "Projects"
@@ -33224,7 +33290,7 @@
         }
       }
     },
-    "/api/0/seer/models/": {
+    "/seer/models/": {
       "get": {
         "tags": [
           "Seer"
@@ -33251,7 +33317,7 @@
         ],
         "servers": [
           {
-            "url": "https://{region}.sentry.io"
+            "url": "https://{region}.sentry.io/api/0"
           }
         ],
         "x-sentry-routing": {
@@ -33259,7 +33325,7 @@
         }
       }
     },
-    "/api/0/sentry-app-installations/{uuid}/external-issue-actions/": {
+    "/sentry-app-installations/{uuid}/external-issue-actions/": {
       "post": {
         "tags": [
           "Integration"
@@ -33355,7 +33421,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/sentry-app-installations/{uuid}/external-requests/": {
+    "/sentry-app-installations/{uuid}/external-requests/": {
       "get": {
         "tags": [
           "Integration"
@@ -33450,7 +33516,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/sentry-apps/{sentryAppIdOrSlug}/": {
+    "/sentry-apps/{sentryAppIdOrSlug}/": {
       "get": {
         "tags": [
           "Integration"
@@ -33705,7 +33771,7 @@
         }
       }
     },
-    "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/": {
+    "/teams/{organizationIdOrSlug}/{teamIdOrSlug}/": {
       "get": {
         "tags": [
           "Teams"
@@ -33928,6 +33994,9 @@
               }
             }
           },
+          "400": {
+            "description": "Bad Request"
+          },
           "401": {
             "description": "Unauthorized"
           },
@@ -34002,7 +34071,7 @@
         }
       }
     },
-    "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams/": {
+    "/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams/": {
       "post": {
         "tags": [
           "Integrations"
@@ -34114,7 +34183,7 @@
         }
       }
     },
-    "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams/{externalTeamId}/": {
+    "/teams/{organizationIdOrSlug}/{teamIdOrSlug}/external-teams/{externalTeamId}/": {
       "put": {
         "tags": [
           "Integrations"
@@ -34266,7 +34335,7 @@
         }
       }
     },
-    "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/members/": {
+    "/teams/{organizationIdOrSlug}/{teamIdOrSlug}/members/": {
       "get": {
         "tags": [
           "Teams"
@@ -34395,7 +34464,7 @@
         }
       }
     },
-    "/api/0/teams/{organizationIdOrSlug}/{teamIdOrSlug}/projects/": {
+    "/teams/{organizationIdOrSlug}/{teamIdOrSlug}/projects/": {
       "get": {
         "tags": [
           "Teams"
@@ -34527,6 +34596,9 @@
                 }
               }
             }
+          },
+          "400": {
+            "description": "Bad Request"
           },
           "403": {
             "description": "Forbidden"
@@ -34799,7 +34871,7 @@
         }
       }
     },
-    "/api/0/users/{userId}/": {
+    "/users/{userId}/": {
       "get": {
         "tags": [
           "Users"
@@ -34907,7 +34979,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/tags/{key}/values/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/tags/{key}/values/": {
       "get": {
         "tags": [
           "Projects"
@@ -34985,7 +35057,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks/": {
       "get": {
         "tags": [
           "Projects"
@@ -35168,7 +35240,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks/{hookId}/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/hooks/{hookId}/": {
       "get": {
         "tags": [
           "Projects"
@@ -35399,7 +35471,7 @@
         }
       }
     },
-    "/api/0/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/": {
+    "/projects/{organizationIdOrSlug}/{projectIdOrSlug}/issues/": {
       "get": {
         "tags": [
           "Events"
@@ -35807,7 +35879,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/releases/{version}/commitfiles/": {
+    "/organizations/{organizationIdOrSlug}/releases/{version}/commitfiles/": {
       "get": {
         "tags": [
           "Releases"
@@ -35858,7 +35930,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/sentry-app-installations/": {
+    "/organizations/{organizationIdOrSlug}/sentry-app-installations/": {
       "get": {
         "tags": [
           "Integration"
@@ -35931,7 +36003,7 @@
         }
       }
     },
-    "/api/0/sentry-app-installations/{uuid}/external-issues/": {
+    "/sentry-app-installations/{uuid}/external-issues/": {
       "post": {
         "tags": [
           "Integration"
@@ -36002,7 +36074,7 @@
         }
       }
     },
-    "/api/0/sentry-app-installations/{uuid}/external-issues/{externalIssueId}/": {
+    "/sentry-app-installations/{uuid}/external-issues/{externalIssueId}/": {
       "delete": {
         "tags": [
           "Integration"
@@ -36056,7 +36128,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/spike-protections/": {
+    "/organizations/{organizationIdOrSlug}/spike-protections/": {
       "post": {
         "tags": [
           "Projects"
@@ -36162,7 +36234,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/": {
       "get": {
         "tags": [
           "Events"
@@ -36538,7 +36610,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/autofix/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/autofix/": {
       "get": {
         "tags": [
           "Seer"
@@ -36845,11 +36917,31 @@
           "401": {
             "description": "Unauthorized"
           },
+          "402": {
+            "description": "402 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartOrganizationIssueAutofix402Response"
+                }
+              }
+            }
+          },
           "403": {
             "description": "Forbidden"
           },
           "404": {
             "description": "Not Found"
+          },
+          "409": {
+            "description": "409 response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/StartOrganizationIssueAutofix409Response"
+                }
+              }
+            }
           },
           "200": {
             "description": "202 response",
@@ -36888,7 +36980,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/events/": {
       "get": {
         "tags": [
           "Events"
@@ -37112,7 +37204,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/events/{eventId}/": {
       "get": {
         "tags": [
           "Events"
@@ -37791,7 +37883,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues/": {
       "get": {
         "tags": [
           "Integration"
@@ -37870,7 +37962,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues/{externalIssueId}/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/external-issues/{externalIssueId}/": {
       "delete": {
         "tags": [
           "Integration"
@@ -37940,7 +38032,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/hashes/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/hashes/": {
       "get": {
         "tags": [
           "Events"
@@ -38264,7 +38356,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/": {
       "get": {
         "tags": [
           "Integration"
@@ -38338,7 +38430,7 @@
         "x-sentry-experimental": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/{integrationId}/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/integrations/{integrationId}/": {
       "get": {
         "tags": [
           "Integration"
@@ -38817,7 +38909,7 @@
         "x-sentry-idempotent": true
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}/": {
       "get": {
         "tags": [
           "Events"
@@ -38933,7 +39025,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}/values/": {
+    "/organizations/{organizationIdOrSlug}/issues/{issueId}/tags/{key}/values/": {
       "get": {
         "tags": [
           "Events"
@@ -39067,7 +39159,7 @@
         }
       }
     },
-    "/api/0/organizations/{organizationIdOrSlug}/shared/issues/{shareId}/": {
+    "/organizations/{organizationIdOrSlug}/shared/issues/{shareId}/": {
       "get": {
         "tags": [
           "Events"
@@ -54136,6 +54228,46 @@
         },
         "description": "Response type for the POST endpoint (default kickoff and step paths)."
       },
+      "StartOrganizationIssueAutofix402Response": {
+        "required": [
+          "code",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "Why the organization can\u0027t run Seer"
+          },
+          "code": {
+            "$ref": "#/components/schemas/StartOrganizationIssueAutofix402ResponseCode"
+          }
+        }
+      },
+      "StartOrganizationIssueAutofix409Response": {
+        "required": [
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string",
+            "description": "Why the step can\u0027t run"
+          },
+          "code": {
+            "$ref": "#/components/schemas/StartOrganizationIssueAutofix409ResponseCode"
+          },
+          "run_id": {
+            "type": "integer",
+            "description": "ID of the run in Seer. Set with \u0060run_in_flight\u0060"
+          },
+          "sentry_run_id": {
+            "type": "string",
+            "description": "ID of the run in Sentry. Set with \u0060run_in_flight\u0060, null for legacy runs",
+            "nullable": true
+          }
+        }
+      },
       "GetOrganizationIssueEvent200Response": {
         "required": [
           "_meta",
@@ -55971,6 +56103,9 @@
           },
           {
             "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/ListOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -56197,6 +56332,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -56423,6 +56561,9 @@
           },
           {
             "$ref": "#/components/schemas/GetOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -56668,6 +56809,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -57284,6 +57428,9 @@
           },
           {
             "$ref": "#/components/schemas/CreateOrganizationProjectDetector201ResponseConditionGroupActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/CreateOrganizationProjectDetector201ResponseConditionGroupActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -58089,6 +58236,9 @@
           },
           {
             "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -58264,6 +58414,9 @@
           },
           {
             "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -58727,6 +58880,9 @@
           },
           {
             "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseTriggersActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseTriggersActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -58902,6 +59058,9 @@
           },
           {
             "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseActionFiltersItemActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/CreateOrganizationWorkflow201ResponseActionFiltersItemActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -59077,6 +59236,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -59252,6 +59414,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -59427,6 +59592,9 @@
           },
           {
             "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -59602,6 +59770,9 @@
           },
           {
             "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/GetOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -60065,6 +60236,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -60240,6 +60414,9 @@
           },
           {
             "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf9"
+          },
+          {
+            "$ref": "#/components/schemas/UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf10"
           }
         ],
         "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -62416,6 +62593,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "ListOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "ListOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -63329,6 +63527,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationDetectors200ResponseItemConditionGroupActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -64242,6 +64461,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "GetOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "GetOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -65483,6 +65723,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationDetector200ResponseConditionGroupActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -67052,6 +67313,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "CreateOrganizationProjectDetector201ResponseConditionGroupActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "CreateOrganizationProjectDetector201ResponseConditionGroupActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -70094,6 +70376,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "ListOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "ListOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -70766,6 +71069,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "ListOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -71438,6 +71762,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "CreateOrganizationWorkflow201ResponseTriggersActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "CreateOrganizationWorkflow201ResponseTriggersActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -72110,6 +72455,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "CreateOrganizationWorkflow201ResponseActionFiltersItemActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "CreateOrganizationWorkflow201ResponseActionFiltersItemActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -72782,6 +73148,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationWorkflows200ResponseItemTriggersActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -73454,6 +73841,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationWorkflows200ResponseItemActionFiltersItemActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -74126,6 +74534,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "GetOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "GetOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -74798,6 +75227,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "GetOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "GetOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -75470,6 +75920,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationWorkflow200ResponseTriggersActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -76142,6 +76613,27 @@
         "description": "The configuration schema for a Sentry App Action"
       },
       "UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf9": {
+        "required": [
+          "targetType"
+        ],
+        "type": "object",
+        "properties": {
+          "targetIdentifier": {
+            "type": "string",
+            "description": "ID of the target, such as a channel, user or team ID"
+          },
+          "targetDisplay": {
+            "type": "string",
+            "description": "Display name of the target, such as a channel name"
+          },
+          "targetType": {
+            "$ref": "#/components/schemas/SpecificTargetType"
+          }
+        },
+        "additionalProperties": false,
+        "description": "The configuration schema for a Messaging Action"
+      },
+      "UpdateOrganizationWorkflow200ResponseActionFiltersItemActionsItemConfigAnyOf10": {
         "type": "object",
         "properties": {
           "targetIdentifier": {
@@ -120585,7 +121077,6 @@
       },
       "CreateOrganizationWorkflowRequestActionFiltersItemActionsItemSlackWorkflowActionConfig": {
         "required": [
-          "targetDisplay",
           "targetType"
         ],
         "type": "object",
@@ -120620,7 +121111,6 @@
       },
       "CreateOrganizationWorkflowRequestActionFiltersItemActionsItemSlackStagingWorkflowActionConfig": {
         "required": [
-          "targetDisplay",
           "targetType"
         ],
         "type": "object",
@@ -121735,7 +122225,6 @@
       },
       "UpdateOrganizationWorkflowRequestActionFiltersItemActionsItemSlackWorkflowActionConfig": {
         "required": [
-          "targetDisplay",
           "targetType"
         ],
         "type": "object",
@@ -121770,7 +122259,6 @@
       },
       "UpdateOrganizationWorkflowRequestActionFiltersItemActionsItemSlackStagingWorkflowActionConfig": {
         "required": [
-          "targetDisplay",
           "targetType"
         ],
         "type": "object",
@@ -188038,6 +188526,55 @@
             {
               "value": "open_pr",
               "name": "OpenPr"
+            }
+          ]
+        }
+      },
+      "StartOrganizationIssueAutofix402ResponseCode": {
+        "enum": [
+          "seer_out_of_credits",
+          "seer_out_of_quota"
+        ],
+        "type": "string",
+        "description": "\u0060seer_out_of_credits\u0060 when the organization has no Seer credits left, \u0060seer_out_of_quota\u0060 when it has no Seer budget",
+        "x-ms-enum": {
+          "name": "StartOrganizationIssueAutofix402ResponseCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "seer_out_of_credits",
+              "name": "SeerOutOfCredits"
+            },
+            {
+              "value": "seer_out_of_quota",
+              "name": "SeerOutOfQuota"
+            }
+          ]
+        }
+      },
+      "StartOrganizationIssueAutofix409ResponseCode": {
+        "enum": [
+          "scm_integration_required",
+          "repos_not_linked",
+          "run_in_flight"
+        ],
+        "type": "string",
+        "description": "Set when a client can act on the conflict. \u0060scm_integration_required\u0060 and \u0060repos_not_linked\u0060 mean the organization or project must finish Seer setup before a new run can start. \u0060run_in_flight\u0060 means a step is already running for the run in \u0060run_id\u0060, so poll it instead of retrying",
+        "x-ms-enum": {
+          "name": "StartOrganizationIssueAutofix409ResponseCode",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "scm_integration_required",
+              "name": "ScmIntegrationRequired"
+            },
+            {
+              "value": "repos_not_linked",
+              "name": "ReposNotLinked"
+            },
+            {
+              "value": "run_in_flight",
+              "name": "RunInFlight"
             }
           ]
         }
@@ -298286,6 +298823,46 @@
         "$ref": "#/components/schemas/AssembleProjectDebugFilesResponseAdditionalProperties"
       }
     },
+    "AutofixConflictResponse": {
+      "required": [
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string",
+          "description": "Why the step can\u0027t run"
+        },
+        "code": {
+          "$ref": "#/components/schemas/AutofixConflictResponseCode"
+        },
+        "run_id": {
+          "type": "integer",
+          "description": "ID of the run in Seer. Set with \u0060run_in_flight\u0060"
+        },
+        "sentry_run_id": {
+          "type": "string",
+          "description": "ID of the run in Sentry. Set with \u0060run_in_flight\u0060, null for legacy runs",
+          "nullable": true
+        }
+      }
+    },
+    "AutofixPaymentRequiredResponse": {
+      "required": [
+        "code",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string",
+          "description": "Why the organization can\u0027t run Seer"
+        },
+        "code": {
+          "$ref": "#/components/schemas/AutofixPaymentRequiredResponseCode"
+        }
+      }
+    },
     "AutofixPostResponse": {
       "required": [
         "feature_id",
@@ -314330,6 +314907,9 @@
         },
         {
           "$ref": "#/components/schemas/DetectorConditionGroupActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/DetectorConditionGroupActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -316784,6 +317364,9 @@
         },
         {
           "$ref": "#/components/schemas/WorkflowTriggersActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/WorkflowTriggersActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -316986,6 +317569,9 @@
         },
         {
           "$ref": "#/components/schemas/WorkflowActionFiltersItemActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/WorkflowActionFiltersItemActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -318320,6 +318906,9 @@
         },
         {
           "$ref": "#/components/schemas/ListDetectorSerializerResponseItemConditionGroupActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/ListDetectorSerializerResponseItemConditionGroupActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -318793,6 +319382,9 @@
         },
         {
           "$ref": "#/components/schemas/ListWorkflowItemTriggersActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/ListWorkflowItemTriggersActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -318995,6 +319587,9 @@
         },
         {
           "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemActionsItemConfigAnyOf9"
+        },
+        {
+          "$ref": "#/components/schemas/ListWorkflowItemActionFiltersItemActionsItemConfigAnyOf10"
         }
       ],
       "description": "Configuration of the action, such as targetType and targetIdentifier"
@@ -321342,6 +321937,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "DetectorConditionGroupActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "DetectorConditionGroupActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -329629,6 +330245,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "WorkflowTriggersActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "WorkflowTriggersActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -330301,6 +330938,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "WorkflowActionFiltersItemActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "WorkflowActionFiltersItemActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -332784,6 +333442,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "ListDetectorSerializerResponseItemConditionGroupActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "ListDetectorSerializerResponseItemConditionGroupActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -334938,6 +335617,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "ListWorkflowItemTriggersActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "ListWorkflowItemTriggersActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -335610,6 +336310,27 @@
       "description": "The configuration schema for a Sentry App Action"
     },
     "ListWorkflowItemActionFiltersItemActionsItemConfigAnyOf9": {
+      "required": [
+        "targetType"
+      ],
+      "type": "object",
+      "properties": {
+        "targetIdentifier": {
+          "type": "string",
+          "description": "ID of the target, such as a channel, user or team ID"
+        },
+        "targetDisplay": {
+          "type": "string",
+          "description": "Display name of the target, such as a channel name"
+        },
+        "targetType": {
+          "$ref": "#/components/schemas/SpecificTargetType"
+        }
+      },
+      "additionalProperties": false,
+      "description": "The configuration schema for a Messaging Action"
+    },
+    "ListWorkflowItemActionFiltersItemActionsItemConfigAnyOf10": {
       "type": "object",
       "properties": {
         "targetIdentifier": {
@@ -369007,7 +369728,6 @@
     },
     "WorkflowActionSlackWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -369042,7 +369762,6 @@
     },
     "WorkflowActionSlackStagingWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -369737,7 +370456,6 @@
     },
     "ActionFilterValidatorActionsItemSlackWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -369772,7 +370490,6 @@
     },
     "ActionFilterValidatorActionsItemSlackStagingWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -382247,7 +382964,6 @@
     },
     "WorkflowValidatorActionFiltersItemActionsItemSlackWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -382282,7 +382998,6 @@
     },
     "WorkflowValidatorActionFiltersItemActionsItemSlackStagingWorkflowActionConfig": {
       "required": [
-        "targetDisplay",
         "targetType"
       ],
       "type": "object",
@@ -454343,6 +455058,55 @@
           {
             "value": "none",
             "name": "None"
+          }
+        ]
+      }
+    },
+    "AutofixConflictResponseCode": {
+      "enum": [
+        "scm_integration_required",
+        "repos_not_linked",
+        "run_in_flight"
+      ],
+      "type": "string",
+      "description": "Set when a client can act on the conflict. \u0060scm_integration_required\u0060 and \u0060repos_not_linked\u0060 mean the organization or project must finish Seer setup before a new run can start. \u0060run_in_flight\u0060 means a step is already running for the run in \u0060run_id\u0060, so poll it instead of retrying",
+      "x-ms-enum": {
+        "name": "AutofixConflictResponseCode",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "scm_integration_required",
+            "name": "ScmIntegrationRequired"
+          },
+          {
+            "value": "repos_not_linked",
+            "name": "ReposNotLinked"
+          },
+          {
+            "value": "run_in_flight",
+            "name": "RunInFlight"
+          }
+        ]
+      }
+    },
+    "AutofixPaymentRequiredResponseCode": {
+      "enum": [
+        "seer_out_of_credits",
+        "seer_out_of_quota"
+      ],
+      "type": "string",
+      "description": "\u0060seer_out_of_credits\u0060 when the organization has no Seer credits left, \u0060seer_out_of_quota\u0060 when it has no Seer budget",
+      "x-ms-enum": {
+        "name": "AutofixPaymentRequiredResponseCode",
+        "modelAsString": false,
+        "values": [
+          {
+            "value": "seer_out_of_credits",
+            "name": "SeerOutOfCredits"
+          },
+          {
+            "value": "seer_out_of_quota",
+            "name": "SeerOutOfQuota"
           }
         ]
       }

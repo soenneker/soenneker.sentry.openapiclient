@@ -3,7 +3,7 @@
 namespace Soenneker.OpenApi.Generated;
 internal static class OpenApiServiceRoutes
 {
-    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://us.sentry.io" };
+    private static readonly global::System.Collections.Generic.HashSet<string> KnownServers = new(global::System.StringComparer.OrdinalIgnoreCase) { "https://us.sentry.io", "https://us.sentry.io/api/0" };
     internal static string Resolve(string template, string? configuredBaseUrl, string server, string path, bool rawUrl)
     {
         int query = template.IndexOf('?');
