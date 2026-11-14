@@ -26,6 +26,7 @@ using Soenneker.Sentry.OpenApiClient.Organizations.Item.Integrations;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.Issues;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.Members;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.Monitors;
+using Soenneker.Sentry.OpenApiClient.Organizations.Item.Notebooks;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.Notifications;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.OrgAuthTokens;
 using Soenneker.Sentry.OpenApiClient.Organizations.Item.Preprodartifacts;
@@ -194,6 +195,11 @@ namespace Soenneker.Sentry.OpenApiClient.Organizations.Item
         public global::Soenneker.Sentry.OpenApiClient.Organizations.Item.Monitors.MonitorsRequestBuilder Monitors
         {
             get => new global::Soenneker.Sentry.OpenApiClient.Organizations.Item.Monitors.MonitorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The notebooks property</summary>
+        public global::Soenneker.Sentry.OpenApiClient.Organizations.Item.Notebooks.NotebooksRequestBuilder Notebooks
+        {
+            get => new global::Soenneker.Sentry.OpenApiClient.Organizations.Item.Notebooks.NotebooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
         public global::Soenneker.Sentry.OpenApiClient.Organizations.Item.Notifications.NotificationsRequestBuilder Notifications
