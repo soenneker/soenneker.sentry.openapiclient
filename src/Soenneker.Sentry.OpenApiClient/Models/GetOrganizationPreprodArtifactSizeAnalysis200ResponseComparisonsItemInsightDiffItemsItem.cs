@@ -90,7 +90,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "fileDiffs", n => { FileDiffs = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemFileDiffsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "groupDiffs", n => { GroupDiffs = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationPreprodArtifactSizeAnalysis200ResponseComparisonsItemInsightDiffItemsItemGroupDiffsItem.CreateFromDiscriminatorValue)?.AsList(); } },

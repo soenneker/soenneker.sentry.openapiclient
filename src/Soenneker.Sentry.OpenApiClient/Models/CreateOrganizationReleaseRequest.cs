@@ -157,7 +157,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "commits", n => { Commits = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestCommitsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationReleaseRequestCommitsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "dateReleased", n => { DateReleased = n.GetDateTimeOffsetValue(); } },

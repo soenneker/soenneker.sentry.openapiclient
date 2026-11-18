@@ -104,7 +104,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "group", n => { Group = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup>(global::Soenneker.Sentry.OpenApiClient.Models.ResolveOrganizationShortId200ResponseGroup.CreateFromDiscriminatorValue); } },
                 { "groupId", n => { GroupId = n.GetStringValue(); } },

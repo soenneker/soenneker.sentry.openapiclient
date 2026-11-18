@@ -90,7 +90,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "browserSdkVersion", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestBrowserSdkVersion>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueBrowserSdkVersion = default; _explicitNullProperties?.Remove("browserSdkVersion"); AdditionalData["browserSdkVersion"] = unknown; } else { BrowserSdkVersion = parsed; AdditionalData.Remove("browserSdkVersion"); } } },
                 { "dynamicSdkLoaderOptions", n => { DynamicSdkLoaderOptions = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateProjectKeyRequestDynamicSdkLoaderOptions.CreateFromDiscriminatorValue); } },

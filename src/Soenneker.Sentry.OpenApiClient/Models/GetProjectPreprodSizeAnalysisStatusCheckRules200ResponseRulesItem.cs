@@ -107,7 +107,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "artifactType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectPreprodSizeAnalysisStatusCheckRules200ResponseRulesItemArtifactType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueArtifactType = default; _explicitNullProperties?.Remove("artifactType"); AdditionalData["artifactType"] = unknown; } else { ArtifactType = parsed; AdditionalData.Remove("artifactType"); } } },
                 { "filterQuery", n => { FilterQuery = n.GetStringValue(); } },

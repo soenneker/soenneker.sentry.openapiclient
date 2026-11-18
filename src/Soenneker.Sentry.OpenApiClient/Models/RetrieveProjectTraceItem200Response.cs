@@ -116,7 +116,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectTraceItem200ResponseAttributesItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectTraceItem200ResponseAttributesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "event", n => { Event = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectTraceItem200ResponseEvent>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveProjectTraceItem200ResponseEvent.CreateFromDiscriminatorValue); } },

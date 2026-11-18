@@ -87,7 +87,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "branch_name", n => { BranchName = n.GetStringValue(); } },
                 { "branch_overrides", n => { BranchOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem>(global::Soenneker.Sentry.OpenApiClient.Models.ReplaceProjectSeerRepositoriesRequestReposItemBranchOverridesItem.CreateFromDiscriminatorValue)?.AsList(); } },

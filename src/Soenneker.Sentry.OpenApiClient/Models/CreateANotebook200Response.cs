@@ -274,7 +274,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(22)
             {
                 { "actionRequests", n => { ActionRequests = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook200ResponseActionRequestsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook200ResponseActionRequestsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "blockCount", n => { BlockCount = n.GetIntValue(); } },

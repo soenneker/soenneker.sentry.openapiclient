@@ -92,7 +92,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "groupBy", n => { GroupBy = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemGroupByItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMeta>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationEventsTimeseries200ResponseTimeSeriesItemMeta.CreateFromDiscriminatorValue); } },

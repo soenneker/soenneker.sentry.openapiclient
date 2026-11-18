@@ -168,7 +168,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "constraints", n => { Constraints = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ReorderNotebookBlocks200ResponseParametersItemConstraints>(global::Soenneker.Sentry.OpenApiClient.Models.ReorderNotebookBlocks200ResponseParametersItemConstraints.CreateFromDiscriminatorValue); } },
                 { "defaultValue", n => { DefaultValue = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook200ResponseParametersItemDefaultValue>(global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook200ResponseParametersItemDefaultValue.CreateFromDiscriminatorValue); } },

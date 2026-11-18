@@ -329,7 +329,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(40)
             {
                 { "access", n => { Access = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItemQueryObjAnyOf2ProjectAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.CreateOrganizationProjectDetector201ResponseDataSourcesItemQueryObjAnyOf2ProjectAvatar.CreateFromDiscriminatorValue); } },

@@ -78,7 +78,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "comparison", n => { Comparison = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSharedIssue200ResponseLatestEventOccurrenceAnyOf1EvidenceDataConditionsItemComparison>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationSharedIssue200ResponseLatestEventOccurrenceAnyOf1EvidenceDataConditionsItemComparison.CreateFromDiscriminatorValue); } },
                 { "conditionResult", n => { ConditionResult = n.GetIntValue(); } },

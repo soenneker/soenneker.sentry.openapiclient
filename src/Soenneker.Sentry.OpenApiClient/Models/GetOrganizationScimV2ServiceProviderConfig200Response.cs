@@ -164,7 +164,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "authenticationSchemes", n => { AuthenticationSchemes = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseAuthenticationSchemesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "bulk", n => { Bulk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationScimV2ServiceProviderConfig200ResponseBulk.CreateFromDiscriminatorValue); } },

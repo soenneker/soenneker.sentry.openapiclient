@@ -182,7 +182,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "changedReason", n => { ChangedReason = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQueryChangedReason>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQueryChangedReason.CreateFromDiscriminatorValue); } },
                 { "dataset", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationDiscoverSavedQueries200ResponseItemExploreQueryDataset>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDataset = default; _explicitNullProperties?.Remove("dataset"); AdditionalData["dataset"] = unknown; } else { Dataset = parsed; AdditionalData.Remove("dataset"); } } },

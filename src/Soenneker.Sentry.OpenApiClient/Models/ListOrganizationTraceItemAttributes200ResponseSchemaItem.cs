@@ -109,7 +109,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "attributeSource", n => { AttributeSource = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseSchemaItemAttributeSource.CreateFromDiscriminatorValue); } },
                 { "attributeType", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationTraceItemAttributes200ResponseItemAttributeType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAttributeType = default; _explicitNullProperties?.Remove("attributeType"); AdditionalData["attributeType"] = unknown; } else { AttributeType = parsed; AdditionalData.Remove("attributeType"); } } },

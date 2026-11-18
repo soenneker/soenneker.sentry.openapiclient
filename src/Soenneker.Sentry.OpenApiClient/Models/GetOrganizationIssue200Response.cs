@@ -518,7 +518,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(50)
             {
                 { "activity", n => { Activity = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseActivityItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.GetOrganizationIssue200ResponseAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },

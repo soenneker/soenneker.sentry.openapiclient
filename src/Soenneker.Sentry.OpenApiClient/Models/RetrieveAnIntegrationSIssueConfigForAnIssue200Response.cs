@@ -174,7 +174,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(12)
             {
                 { "accountType", n => { AccountType = n.GetStringValue(); } },
                 { "createIssueConfig", n => { CreateIssueConfig = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseCreateIssueConfigItem>(global::Soenneker.Sentry.OpenApiClient.Models.RetrieveAnIntegrationSIssueConfigForAnIssue200ResponseCreateIssueConfigItem.CreateFromDiscriminatorValue)?.AsList(); } },

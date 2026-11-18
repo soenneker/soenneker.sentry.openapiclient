@@ -110,7 +110,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProviderAspectsAlertsItem>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProviderAspectsAlertsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "configure_integration", n => { ConfigureIntegration = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProviderAspectsConfigureIntegration>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationCodeMappings200ResponseItemProviderAspectsConfigureIntegration.CreateFromDiscriminatorValue); } },

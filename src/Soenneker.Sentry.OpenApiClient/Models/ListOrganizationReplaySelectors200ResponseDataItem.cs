@@ -90,7 +90,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "count_dead_clicks", n => { CountDeadClicks = n.GetIntValue(); } },
                 { "count_rage_clicks", n => { CountRageClicks = n.GetIntValue(); } },

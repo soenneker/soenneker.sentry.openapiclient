@@ -136,7 +136,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationForwarding200ResponseSchemaItemConfig.CreateFromDiscriminatorValue); } },
                 { "dateAdded", n => { DateAdded = n.GetDateTimeOffsetValue(); } },

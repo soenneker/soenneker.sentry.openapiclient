@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
                 { "artifactType", n => { ArtifactType = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifactAppInfoArtifactType>(global::Soenneker.Sentry.OpenApiClient.Models.GetProjectInstallableBuildLatest200ResponseLatestArtifactAppInfoArtifactType.CreateFromDiscriminatorValue); } },

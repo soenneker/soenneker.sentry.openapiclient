@@ -192,7 +192,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "browserSdk", n => { BrowserSdk = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk>(global::Soenneker.Sentry.OpenApiClient.Models.ListOrganizationProjectKeys200ResponseSchemaItemBrowserSdk.CreateFromDiscriminatorValue); } },
                 { "browserSdkVersion", n => { BrowserSdkVersion = n.GetStringValue(); } },

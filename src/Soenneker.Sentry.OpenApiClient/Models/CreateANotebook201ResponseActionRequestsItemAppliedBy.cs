@@ -222,7 +222,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(21)
             {
                 { "authenticators", n => { Authenticators = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook201ResponseActionRequestsItemAppliedByAuthenticatorsItem>(global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook201ResponseActionRequestsItemAppliedByAuthenticatorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "avatar", n => { Avatar = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook201ResponseActionRequestsItemAppliedByAvatar>(global::Soenneker.Sentry.OpenApiClient.Models.CreateANotebook201ResponseActionRequestsItemAppliedByAvatar.CreateFromDiscriminatorValue); } },

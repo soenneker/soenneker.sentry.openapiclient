@@ -367,7 +367,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(36)
             {
                 { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssueAnnotationsItem>(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssueAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "assignedTo", n => { AssignedTo = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssueAssignedTo>(global::Soenneker.Sentry.OpenApiClient.Models.SubmitUserFeedback200ResponseIssueAssignedTo.CreateFromDiscriminatorValue); } },

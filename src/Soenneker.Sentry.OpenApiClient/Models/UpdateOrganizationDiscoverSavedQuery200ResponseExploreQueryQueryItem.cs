@@ -150,7 +150,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "aggregateField", n => { AggregateField = n.GetCollectionOfObjectValues<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQuery200ResponseExploreQueryQueryItemAggregateFieldItem>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDiscoverSavedQuery200ResponseExploreQueryQueryItemAggregateFieldItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "aggregateOrderby", n => { AggregateOrderby = n.GetStringValue(); } },

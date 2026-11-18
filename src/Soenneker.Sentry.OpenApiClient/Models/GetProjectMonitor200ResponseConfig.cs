@@ -99,7 +99,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "alert_rule_id", n => { AlertRuleId = n.GetIntValue(); } },
                 { "checkin_margin", n => { CheckinMargin = n.GetIntValue(); } },

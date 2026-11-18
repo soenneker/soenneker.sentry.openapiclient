@@ -138,7 +138,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "conditionGroup", n => { ConditionGroup = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetectorRequestAnyOf5_conditionGroup>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetectorRequestAnyOf5_conditionGroup.CreateFromDiscriminatorValue); } },
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetectorRequestAnyOf5_config>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetectorRequestAnyOf5_config.CreateFromDiscriminatorValue); } },

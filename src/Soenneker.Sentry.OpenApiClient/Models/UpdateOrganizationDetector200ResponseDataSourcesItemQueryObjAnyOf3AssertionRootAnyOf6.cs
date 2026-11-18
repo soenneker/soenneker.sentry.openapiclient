@@ -79,7 +79,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "key_op", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetector200ResponseDataSourcesItemQueryObjAnyOf3AssertionRootAnyOf6KeyOp>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueKeyOp = default; _explicitNullProperties?.Remove("key_op"); AdditionalData["key_op"] = unknown; } else { KeyOp = parsed; AdditionalData.Remove("key_op"); } } },
                 { "key_operand", n => { KeyOperand = n.GetObjectValue<global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetector200ResponseDataSourcesItemQueryObjAnyOf3AssertionRootAnyOf6KeyOperand>(global::Soenneker.Sentry.OpenApiClient.Models.UpdateOrganizationDetector200ResponseDataSourcesItemQueryObjAnyOf3AssertionRootAnyOf6KeyOperand.CreateFromDiscriminatorValue); } },

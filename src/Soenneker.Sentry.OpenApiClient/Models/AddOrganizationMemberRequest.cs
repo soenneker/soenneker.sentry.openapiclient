@@ -108,7 +108,7 @@ namespace Soenneker.Sentry.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "orgRole", n => { var parsed = n.GetEnumValue<global::Soenneker.Sentry.OpenApiClient.Models.AddOrganizationMemberRequestOrgRole>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrgRole = default; _explicitNullProperties?.Remove("orgRole"); AdditionalData["orgRole"] = unknown; } else { OrgRole = parsed; AdditionalData.Remove("orgRole"); } } },
